@@ -1,0 +1,427 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1888B3C419CADBDC0030DB88 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1888B3C319CADBDC0030DB88 /* main.m */; };
+		1888B3C719CADBDC0030DB88 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1888B3C619CADBDC0030DB88 /* AppDelegate.m */; };
+		1888B3CA19CADBDC0030DB88 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1888B3C919CADBDC0030DB88 /* ViewController.m */; };
+		1888B3CD19CADBDC0030DB88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1888B3CB19CADBDC0030DB88 /* Main.storyboard */; };
+		1888B3CF19CADBDC0030DB88 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1888B3CE19CADBDC0030DB88 /* Images.xcassets */; };
+		1888B3D219CADBDC0030DB88 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1888B3D019CADBDC0030DB88 /* LaunchScreen.xib */; };
+		1888B3DE19CADBDD0030DB88 /* FoodBankTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1888B3DD19CADBDD0030DB88 /* FoodBankTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1888B3D819CADBDD0030DB88 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1888B3B619CADBDC0030DB88 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1888B3BD19CADBDC0030DB88;
+			remoteInfo = FoodBank;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1888B3BE19CADBDC0030DB88 /* FoodBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1888B3C219CADBDC0030DB88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1888B3C319CADBDC0030DB88 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1888B3C519CADBDC0030DB88 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1888B3C619CADBDC0030DB88 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1888B3C819CADBDC0030DB88 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		1888B3C919CADBDC0030DB88 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		1888B3CC19CADBDC0030DB88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1888B3CE19CADBDC0030DB88 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		1888B3D119CADBDC0030DB88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		1888B3D719CADBDD0030DB88 /* FoodBankTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodBankTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1888B3DC19CADBDD0030DB88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1888B3DD19CADBDD0030DB88 /* FoodBankTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FoodBankTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1888B3BB19CADBDC0030DB88 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1888B3D419CADBDD0030DB88 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1888B3B519CADBDC0030DB88 = {
+			isa = PBXGroup;
+			children = (
+				1888B3C019CADBDC0030DB88 /* FoodBank */,
+				1888B3DA19CADBDD0030DB88 /* FoodBankTests */,
+				1888B3BF19CADBDC0030DB88 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1888B3BF19CADBDC0030DB88 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1888B3BE19CADBDC0030DB88 /* FoodBank.app */,
+				1888B3D719CADBDD0030DB88 /* FoodBankTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1888B3C019CADBDC0030DB88 /* FoodBank */ = {
+			isa = PBXGroup;
+			children = (
+				1888B3C519CADBDC0030DB88 /* AppDelegate.h */,
+				1888B3C619CADBDC0030DB88 /* AppDelegate.m */,
+				1888B3C819CADBDC0030DB88 /* ViewController.h */,
+				1888B3C919CADBDC0030DB88 /* ViewController.m */,
+				1888B3CB19CADBDC0030DB88 /* Main.storyboard */,
+				1888B3CE19CADBDC0030DB88 /* Images.xcassets */,
+				1888B3D019CADBDC0030DB88 /* LaunchScreen.xib */,
+				1888B3C119CADBDC0030DB88 /* Supporting Files */,
+			);
+			path = FoodBank;
+			sourceTree = "<group>";
+		};
+		1888B3C119CADBDC0030DB88 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1888B3C219CADBDC0030DB88 /* Info.plist */,
+				1888B3C319CADBDC0030DB88 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1888B3DA19CADBDD0030DB88 /* FoodBankTests */ = {
+			isa = PBXGroup;
+			children = (
+				1888B3DD19CADBDD0030DB88 /* FoodBankTests.m */,
+				1888B3DB19CADBDD0030DB88 /* Supporting Files */,
+			);
+			path = FoodBankTests;
+			sourceTree = "<group>";
+		};
+		1888B3DB19CADBDD0030DB88 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1888B3DC19CADBDD0030DB88 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1888B3BD19CADBDC0030DB88 /* FoodBank */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1888B3E119CADBDD0030DB88 /* Build configuration list for PBXNativeTarget "FoodBank" */;
+			buildPhases = (
+				1888B3BA19CADBDC0030DB88 /* Sources */,
+				1888B3BB19CADBDC0030DB88 /* Frameworks */,
+				1888B3BC19CADBDC0030DB88 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FoodBank;
+			productName = FoodBank;
+			productReference = 1888B3BE19CADBDC0030DB88 /* FoodBank.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1888B3D619CADBDD0030DB88 /* FoodBankTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1888B3E419CADBDD0030DB88 /* Build configuration list for PBXNativeTarget "FoodBankTests" */;
+			buildPhases = (
+				1888B3D319CADBDD0030DB88 /* Sources */,
+				1888B3D419CADBDD0030DB88 /* Frameworks */,
+				1888B3D519CADBDD0030DB88 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1888B3D919CADBDD0030DB88 /* PBXTargetDependency */,
+			);
+			name = FoodBankTests;
+			productName = FoodBankTests;
+			productReference = 1888B3D719CADBDD0030DB88 /* FoodBankTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1888B3B619CADBDC0030DB88 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = Dong;
+				TargetAttributes = {
+					1888B3BD19CADBDC0030DB88 = {
+						CreatedOnToolsVersion = 6.0.1;
+					};
+					1888B3D619CADBDD0030DB88 = {
+						CreatedOnToolsVersion = 6.0.1;
+						TestTargetID = 1888B3BD19CADBDC0030DB88;
+					};
+				};
+			};
+			buildConfigurationList = 1888B3B919CADBDC0030DB88 /* Build configuration list for PBXProject "FoodBank" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1888B3B519CADBDC0030DB88;
+			productRefGroup = 1888B3BF19CADBDC0030DB88 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1888B3BD19CADBDC0030DB88 /* FoodBank */,
+				1888B3D619CADBDD0030DB88 /* FoodBankTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1888B3BC19CADBDC0030DB88 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1888B3CD19CADBDC0030DB88 /* Main.storyboard in Resources */,
+				1888B3D219CADBDC0030DB88 /* LaunchScreen.xib in Resources */,
+				1888B3CF19CADBDC0030DB88 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1888B3D519CADBDD0030DB88 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1888B3BA19CADBDC0030DB88 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1888B3CA19CADBDC0030DB88 /* ViewController.m in Sources */,
+				1888B3C719CADBDC0030DB88 /* AppDelegate.m in Sources */,
+				1888B3C419CADBDC0030DB88 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1888B3D319CADBDD0030DB88 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1888B3DE19CADBDD0030DB88 /* FoodBankTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1888B3D919CADBDD0030DB88 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1888B3BD19CADBDC0030DB88 /* FoodBank */;
+			targetProxy = 1888B3D819CADBDD0030DB88 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1888B3CB19CADBDC0030DB88 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1888B3CC19CADBDC0030DB88 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1888B3D019CADBDC0030DB88 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1888B3D119CADBDC0030DB88 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1888B3DF19CADBDD0030DB88 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1888B3E019CADBDD0030DB88 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1888B3E219CADBDD0030DB88 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = FoodBank/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1888B3E319CADBDD0030DB88 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = FoodBank/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		1888B3E519CADBDD0030DB88 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = FoodBankTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FoodBank.app/FoodBank";
+			};
+			name = Debug;
+		};
+		1888B3E619CADBDD0030DB88 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = FoodBankTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FoodBank.app/FoodBank";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1888B3B919CADBDC0030DB88 /* Build configuration list for PBXProject "FoodBank" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1888B3DF19CADBDD0030DB88 /* Debug */,
+				1888B3E019CADBDD0030DB88 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1888B3E119CADBDD0030DB88 /* Build configuration list for PBXNativeTarget "FoodBank" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1888B3E219CADBDD0030DB88 /* Debug */,
+				1888B3E319CADBDD0030DB88 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1888B3E419CADBDD0030DB88 /* Build configuration list for PBXNativeTarget "FoodBankTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1888B3E519CADBDD0030DB88 /* Debug */,
+				1888B3E619CADBDD0030DB88 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1888B3B619CADBDC0030DB88 /* Project object */;
+}
