@@ -9,11 +9,28 @@
 /* Begin PBXBuildFile section */
 		1888B3C419CADBDC0030DB88 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1888B3C319CADBDC0030DB88 /* main.m */; };
 		1888B3C719CADBDC0030DB88 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1888B3C619CADBDC0030DB88 /* AppDelegate.m */; };
-		1888B3CA19CADBDC0030DB88 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1888B3C919CADBDC0030DB88 /* ViewController.m */; };
-		1888B3CD19CADBDC0030DB88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1888B3CB19CADBDC0030DB88 /* Main.storyboard */; };
 		1888B3CF19CADBDC0030DB88 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1888B3CE19CADBDC0030DB88 /* Images.xcassets */; };
 		1888B3D219CADBDC0030DB88 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1888B3D019CADBDC0030DB88 /* LaunchScreen.xib */; };
 		1888B3DE19CADBDD0030DB88 /* FoodBankTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1888B3DD19CADBDD0030DB88 /* FoodBankTests.m */; };
+		1888B3E919CADCBA0030DB88 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1888B3E819CADCBA0030DB88 /* RegisterViewController.m */; };
+		18F891C119CBBD4F0046C022 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F891B519CBBD4F0046C022 /* NSArray+Log.m */; };
+		18F891C219CBBD4F0046C022 /* NSDate+ZD.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F891B619CBBD4F0046C022 /* NSDate+ZD.m */; };
+		18F891C319CBBD4F0046C022 /* NSDictionary+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F891B719CBBD4F0046C022 /* NSDictionary+Log.m */; };
+		18F891C419CBBD4F0046C022 /* NSString+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F891B819CBBD4F0046C022 /* NSString+Extend.m */; };
+		18F891C519CBBD4F0046C022 /* NSString+Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F891B919CBBD4F0046C022 /* NSString+Hash.m */; };
+		18F891C619CBBD4F0046C022 /* NSString+Path.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F891BA19CBBD4F0046C022 /* NSString+Path.m */; };
+		18F891C719CBBD4F0046C022 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F891BB19CBBD4F0046C022 /* Reachability.m */; };
+		18F891C819CBBD4F0046C022 /* UIBarButtonItem+ZD.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F891BC19CBBD4F0046C022 /* UIBarButtonItem+ZD.m */; };
+		18F891C919CBBD4F0046C022 /* UIImage+ZD.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F891BD19CBBD4F0046C022 /* UIImage+ZD.m */; };
+		18F891CB19CBBD4F0046C022 /* UIView+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F891BF19CBBD4F0046C022 /* UIView+Add.m */; };
+		18F891CC19CBBD4F0046C022 /* UIView+ZD.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F891C019CBBD4F0046C022 /* UIView+ZD.m */; };
+		18F891DD19CBD2DF0046C022 /* ZDCommonArrowItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F891D619CBD2DF0046C022 /* ZDCommonArrowItem.m */; };
+		18F891DE19CBD2DF0046C022 /* ZDCommonCheckGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F891D719CBD2DF0046C022 /* ZDCommonCheckGroup.m */; };
+		18F891DF19CBD2DF0046C022 /* ZDCommonCheckItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F891D819CBD2DF0046C022 /* ZDCommonCheckItem.m */; };
+		18F891E019CBD2DF0046C022 /* ZDCommonGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F891D919CBD2DF0046C022 /* ZDCommonGroup.m */; };
+		18F891E119CBD2DF0046C022 /* ZDCommonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F891DA19CBD2DF0046C022 /* ZDCommonItem.m */; };
+		18F891E219CBD2DF0046C022 /* ZDCommonLabelItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F891DB19CBD2DF0046C022 /* ZDCommonLabelItem.m */; };
+		18F891E319CBD2DF0046C022 /* ZDCommonSwitchItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F891DC19CBD2DF0046C022 /* ZDCommonSwitchItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,16 +47,53 @@
 		1888B3BE19CADBDC0030DB88 /* FoodBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1888B3C219CADBDC0030DB88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1888B3C319CADBDC0030DB88 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		1888B3C519CADBDC0030DB88 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		1888B3C619CADBDC0030DB88 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		1888B3C819CADBDC0030DB88 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		1888B3C919CADBDC0030DB88 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		1888B3CC19CADBDC0030DB88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		1888B3CE19CADBDC0030DB88 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		1888B3C519CADBDC0030DB88 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../AppDelegate.h; sourceTree = "<group>"; };
+		1888B3C619CADBDC0030DB88 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../AppDelegate.m; sourceTree = "<group>"; };
+		1888B3CE19CADBDC0030DB88 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Images.xcassets; sourceTree = "<group>"; };
 		1888B3D119CADBDC0030DB88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		1888B3D719CADBDD0030DB88 /* FoodBankTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodBankTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1888B3DC19CADBDD0030DB88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1888B3DD19CADBDD0030DB88 /* FoodBankTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FoodBankTests.m; sourceTree = "<group>"; };
+		1888B3E719CADCBA0030DB88 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterViewController.h; path = FoodBank/RegisterViewController.h; sourceTree = SOURCE_ROOT; };
+		1888B3E819CADCBA0030DB88 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterViewController.m; path = FoodBank/RegisterViewController.m; sourceTree = SOURCE_ROOT; };
+		18F891A819CBBD4F0046C022 /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
+		18F891A919CBBD4F0046C022 /* NSDate+ZD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ZD.h"; sourceTree = "<group>"; };
+		18F891AA19CBBD4F0046C022 /* NSDictionary+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Log.h"; sourceTree = "<group>"; };
+		18F891AB19CBBD4F0046C022 /* NSString+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extend.h"; sourceTree = "<group>"; };
+		18F891AC19CBBD4F0046C022 /* NSString+Hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Hash.h"; sourceTree = "<group>"; };
+		18F891AD19CBBD4F0046C022 /* NSString+Path.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Path.h"; sourceTree = "<group>"; };
+		18F891AE19CBBD4F0046C022 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		18F891AF19CBBD4F0046C022 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
+		18F891B019CBBD4F0046C022 /* UIBarButtonItem+ZD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+ZD.h"; sourceTree = "<group>"; };
+		18F891B119CBBD4F0046C022 /* UIImage+ZD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ZD.h"; sourceTree = "<group>"; };
+		18F891B319CBBD4F0046C022 /* UIView+Add.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Add.h"; sourceTree = "<group>"; };
+		18F891B419CBBD4F0046C022 /* UIView+ZD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZD.h"; sourceTree = "<group>"; };
+		18F891B519CBBD4F0046C022 /* NSArray+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Log.m"; sourceTree = "<group>"; };
+		18F891B619CBBD4F0046C022 /* NSDate+ZD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ZD.m"; sourceTree = "<group>"; };
+		18F891B719CBBD4F0046C022 /* NSDictionary+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Log.m"; sourceTree = "<group>"; };
+		18F891B819CBBD4F0046C022 /* NSString+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extend.m"; sourceTree = "<group>"; };
+		18F891B919CBBD4F0046C022 /* NSString+Hash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Hash.m"; sourceTree = "<group>"; };
+		18F891BA19CBBD4F0046C022 /* NSString+Path.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Path.m"; sourceTree = "<group>"; };
+		18F891BB19CBBD4F0046C022 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		18F891BC19CBBD4F0046C022 /* UIBarButtonItem+ZD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+ZD.m"; sourceTree = "<group>"; };
+		18F891BD19CBBD4F0046C022 /* UIImage+ZD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ZD.m"; sourceTree = "<group>"; };
+		18F891BF19CBBD4F0046C022 /* UIView+Add.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Add.m"; sourceTree = "<group>"; };
+		18F891C019CBBD4F0046C022 /* UIView+ZD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZD.m"; sourceTree = "<group>"; };
+		18F891CD19CBC2650046C022 /* FoodBank.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodBank.pch; sourceTree = "<group>"; };
+		18F891CF19CBD2DF0046C022 /* ZDCommonArrowItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDCommonArrowItem.h; sourceTree = "<group>"; };
+		18F891D019CBD2DF0046C022 /* ZDCommonCheckGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDCommonCheckGroup.h; sourceTree = "<group>"; };
+		18F891D119CBD2DF0046C022 /* ZDCommonCheckItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDCommonCheckItem.h; sourceTree = "<group>"; };
+		18F891D219CBD2DF0046C022 /* ZDCommonGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDCommonGroup.h; sourceTree = "<group>"; };
+		18F891D319CBD2DF0046C022 /* ZDCommonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDCommonItem.h; sourceTree = "<group>"; };
+		18F891D419CBD2DF0046C022 /* ZDCommonLabelItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDCommonLabelItem.h; sourceTree = "<group>"; };
+		18F891D519CBD2DF0046C022 /* ZDCommonSwitchItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDCommonSwitchItem.h; sourceTree = "<group>"; };
+		18F891D619CBD2DF0046C022 /* ZDCommonArrowItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDCommonArrowItem.m; sourceTree = "<group>"; };
+		18F891D719CBD2DF0046C022 /* ZDCommonCheckGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDCommonCheckGroup.m; sourceTree = "<group>"; };
+		18F891D819CBD2DF0046C022 /* ZDCommonCheckItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDCommonCheckItem.m; sourceTree = "<group>"; };
+		18F891D919CBD2DF0046C022 /* ZDCommonGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDCommonGroup.m; sourceTree = "<group>"; };
+		18F891DA19CBD2DF0046C022 /* ZDCommonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDCommonItem.m; sourceTree = "<group>"; };
+		18F891DB19CBD2DF0046C022 /* ZDCommonLabelItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDCommonLabelItem.m; sourceTree = "<group>"; };
+		18F891DC19CBD2DF0046C022 /* ZDCommonSwitchItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDCommonSwitchItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,13 +135,11 @@
 		1888B3C019CADBDC0030DB88 /* FoodBank */ = {
 			isa = PBXGroup;
 			children = (
-				1888B3C519CADBDC0030DB88 /* AppDelegate.h */,
-				1888B3C619CADBDC0030DB88 /* AppDelegate.m */,
-				1888B3C819CADBDC0030DB88 /* ViewController.h */,
-				1888B3C919CADBDC0030DB88 /* ViewController.m */,
-				1888B3CB19CADBDC0030DB88 /* Main.storyboard */,
-				1888B3CE19CADBDC0030DB88 /* Images.xcassets */,
-				1888B3D019CADBDC0030DB88 /* LaunchScreen.xib */,
+				1888B3FA19CADE1D0030DB88 /* Register(注册) */,
+				1888B3EE19CADDF50030DB88 /* MyBaby(我的宝贝) */,
+				1888B3EA19CADDE40030DB88 /* Try(尝试周期) */,
+				1888B3F219CADE000030DB88 /* Main(主要) */,
+				1888B3F619CADE0C0030DB88 /* Other(其他) */,
 				1888B3C119CADBDC0030DB88 /* Supporting Files */,
 			);
 			path = FoodBank;
@@ -117,6 +169,218 @@
 				1888B3DC19CADBDD0030DB88 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1888B3EA19CADDE40030DB88 /* Try(尝试周期) */ = {
+			isa = PBXGroup;
+			children = (
+				1888B3EB19CADDE40030DB88 /* Controller */,
+				1888B3EC19CADDE40030DB88 /* Model */,
+				1888B3ED19CADDE40030DB88 /* View */,
+			);
+			name = "Try(尝试周期)";
+			path = Try;
+			sourceTree = "<group>";
+		};
+		1888B3EB19CADDE40030DB88 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1888B3EC19CADDE40030DB88 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1888B3ED19CADDE40030DB88 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1888B3EE19CADDF50030DB88 /* MyBaby(我的宝贝) */ = {
+			isa = PBXGroup;
+			children = (
+				1888B3EF19CADDF50030DB88 /* Controller */,
+				1888B3F019CADDF50030DB88 /* Model */,
+				1888B3F119CADDF50030DB88 /* View */,
+			);
+			name = "MyBaby(我的宝贝)";
+			path = MyBaby;
+			sourceTree = "<group>";
+		};
+		1888B3EF19CADDF50030DB88 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1888B3F019CADDF50030DB88 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1888B3F119CADDF50030DB88 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1888B3F219CADE000030DB88 /* Main(主要) */ = {
+			isa = PBXGroup;
+			children = (
+				18F891A719CBBD0E0046C022 /* Setting */,
+				1888B40019CADE750030DB88 /* Category */,
+				1888B3FF19CADE5A0030DB88 /* Tool */,
+				1888B3FE19CADE520030DB88 /* Lib */,
+				1888B3F319CADE000030DB88 /* Controller */,
+				1888B3F419CADE000030DB88 /* Model */,
+				1888B3F519CADE000030DB88 /* View */,
+			);
+			name = "Main(主要)";
+			path = Main;
+			sourceTree = "<group>";
+		};
+		1888B3F319CADE000030DB88 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1888B3F419CADE000030DB88 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1888B3F519CADE000030DB88 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1888B3F619CADE0C0030DB88 /* Other(其他) */ = {
+			isa = PBXGroup;
+			children = (
+				18F891CD19CBC2650046C022 /* FoodBank.pch */,
+				1888B3C519CADBDC0030DB88 /* AppDelegate.h */,
+				1888B3C619CADBDC0030DB88 /* AppDelegate.m */,
+				1888B3CE19CADBDC0030DB88 /* Images.xcassets */,
+				1888B3D019CADBDC0030DB88 /* LaunchScreen.xib */,
+			);
+			name = "Other(其他)";
+			path = Other;
+			sourceTree = "<group>";
+		};
+		1888B3FA19CADE1D0030DB88 /* Register(注册) */ = {
+			isa = PBXGroup;
+			children = (
+				1888B3FB19CADE1E0030DB88 /* Controller */,
+				1888B3FC19CADE1E0030DB88 /* Model */,
+				1888B3FD19CADE1E0030DB88 /* View */,
+			);
+			name = "Register(注册)";
+			path = Register;
+			sourceTree = "<group>";
+		};
+		1888B3FB19CADE1E0030DB88 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1888B3E719CADCBA0030DB88 /* RegisterViewController.h */,
+				1888B3E819CADCBA0030DB88 /* RegisterViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1888B3FC19CADE1E0030DB88 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1888B3FD19CADE1E0030DB88 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1888B3FE19CADE520030DB88 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		1888B3FF19CADE5A0030DB88 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		1888B40019CADE750030DB88 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				18F891AF19CBBD4F0046C022 /* Singleton.h */,
+				18F891A819CBBD4F0046C022 /* NSArray+Log.h */,
+				18F891B519CBBD4F0046C022 /* NSArray+Log.m */,
+				18F891A919CBBD4F0046C022 /* NSDate+ZD.h */,
+				18F891B619CBBD4F0046C022 /* NSDate+ZD.m */,
+				18F891AA19CBBD4F0046C022 /* NSDictionary+Log.h */,
+				18F891B719CBBD4F0046C022 /* NSDictionary+Log.m */,
+				18F891AB19CBBD4F0046C022 /* NSString+Extend.h */,
+				18F891B819CBBD4F0046C022 /* NSString+Extend.m */,
+				18F891AC19CBBD4F0046C022 /* NSString+Hash.h */,
+				18F891B919CBBD4F0046C022 /* NSString+Hash.m */,
+				18F891AD19CBBD4F0046C022 /* NSString+Path.h */,
+				18F891BA19CBBD4F0046C022 /* NSString+Path.m */,
+				18F891AE19CBBD4F0046C022 /* Reachability.h */,
+				18F891BB19CBBD4F0046C022 /* Reachability.m */,
+				18F891B019CBBD4F0046C022 /* UIBarButtonItem+ZD.h */,
+				18F891BC19CBBD4F0046C022 /* UIBarButtonItem+ZD.m */,
+				18F891B119CBBD4F0046C022 /* UIImage+ZD.h */,
+				18F891BD19CBBD4F0046C022 /* UIImage+ZD.m */,
+				18F891B319CBBD4F0046C022 /* UIView+Add.h */,
+				18F891BF19CBBD4F0046C022 /* UIView+Add.m */,
+				18F891B419CBBD4F0046C022 /* UIView+ZD.h */,
+				18F891C019CBBD4F0046C022 /* UIView+ZD.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		18F891A719CBBD0E0046C022 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				18F891CF19CBD2DF0046C022 /* ZDCommonArrowItem.h */,
+				18F891D019CBD2DF0046C022 /* ZDCommonCheckGroup.h */,
+				18F891D119CBD2DF0046C022 /* ZDCommonCheckItem.h */,
+				18F891D219CBD2DF0046C022 /* ZDCommonGroup.h */,
+				18F891D319CBD2DF0046C022 /* ZDCommonItem.h */,
+				18F891D419CBD2DF0046C022 /* ZDCommonLabelItem.h */,
+				18F891D519CBD2DF0046C022 /* ZDCommonSwitchItem.h */,
+				18F891D619CBD2DF0046C022 /* ZDCommonArrowItem.m */,
+				18F891D719CBD2DF0046C022 /* ZDCommonCheckGroup.m */,
+				18F891D819CBD2DF0046C022 /* ZDCommonCheckItem.m */,
+				18F891D919CBD2DF0046C022 /* ZDCommonGroup.m */,
+				18F891DA19CBD2DF0046C022 /* ZDCommonItem.m */,
+				18F891DB19CBD2DF0046C022 /* ZDCommonLabelItem.m */,
+				18F891DC19CBD2DF0046C022 /* ZDCommonSwitchItem.m */,
+			);
+			path = Setting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,7 +463,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1888B3CD19CADBDC0030DB88 /* Main.storyboard in Resources */,
 				1888B3D219CADBDC0030DB88 /* LaunchScreen.xib in Resources */,
 				1888B3CF19CADBDC0030DB88 /* Images.xcassets in Resources */,
 			);
@@ -219,9 +482,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1888B3CA19CADBDC0030DB88 /* ViewController.m in Sources */,
 				1888B3C719CADBDC0030DB88 /* AppDelegate.m in Sources */,
+				18F891C519CBBD4F0046C022 /* NSString+Hash.m in Sources */,
+				18F891DE19CBD2DF0046C022 /* ZDCommonCheckGroup.m in Sources */,
+				18F891E119CBD2DF0046C022 /* ZDCommonItem.m in Sources */,
+				18F891CB19CBBD4F0046C022 /* UIView+Add.m in Sources */,
+				18F891C319CBBD4F0046C022 /* NSDictionary+Log.m in Sources */,
+				18F891C219CBBD4F0046C022 /* NSDate+ZD.m in Sources */,
+				18F891DF19CBD2DF0046C022 /* ZDCommonCheckItem.m in Sources */,
+				18F891C719CBBD4F0046C022 /* Reachability.m in Sources */,
+				18F891C619CBBD4F0046C022 /* NSString+Path.m in Sources */,
+				18F891CC19CBBD4F0046C022 /* UIView+ZD.m in Sources */,
+				18F891C119CBBD4F0046C022 /* NSArray+Log.m in Sources */,
+				18F891C819CBBD4F0046C022 /* UIBarButtonItem+ZD.m in Sources */,
+				18F891C919CBBD4F0046C022 /* UIImage+ZD.m in Sources */,
+				18F891E219CBD2DF0046C022 /* ZDCommonLabelItem.m in Sources */,
+				18F891C419CBBD4F0046C022 /* NSString+Extend.m in Sources */,
 				1888B3C419CADBDC0030DB88 /* main.m in Sources */,
+				1888B3E919CADCBA0030DB88 /* RegisterViewController.m in Sources */,
+				18F891DD19CBD2DF0046C022 /* ZDCommonArrowItem.m in Sources */,
+				18F891E019CBD2DF0046C022 /* ZDCommonGroup.m in Sources */,
+				18F891E319CBD2DF0046C022 /* ZDCommonSwitchItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,20 +525,13 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		1888B3CB19CADBDC0030DB88 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1888B3CC19CADBDC0030DB88 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1888B3D019CADBDC0030DB88 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				1888B3D119CADBDC0030DB88 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -343,7 +617,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = /Users/apple/Desktop/Code/FoodBanks/FoodBank/Other/FoodBank.pch;
 				INFOPLIST_FILE = FoodBank/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -353,7 +631,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = /Users/apple/Desktop/Code/FoodBanks/FoodBank/Other/FoodBank.pch;
 				INFOPLIST_FILE = FoodBank/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -412,6 +694,7 @@
 				1888B3E319CADBDD0030DB88 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1888B3E419CADBDD0030DB88 /* Build configuration list for PBXNativeTarget "FoodBankTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +703,7 @@
 				1888B3E619CADBDD0030DB88 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
