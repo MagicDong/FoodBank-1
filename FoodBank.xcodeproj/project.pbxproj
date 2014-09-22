@@ -12,7 +12,7 @@
 		1888B3CF19CADBDC0030DB88 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1888B3CE19CADBDC0030DB88 /* Images.xcassets */; };
 		1888B3D219CADBDC0030DB88 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1888B3D019CADBDC0030DB88 /* LaunchScreen.xib */; };
 		1888B3DE19CADBDD0030DB88 /* FoodBankTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1888B3DD19CADBDD0030DB88 /* FoodBankTests.m */; };
-		1888B3E919CADCBA0030DB88 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1888B3E819CADCBA0030DB88 /* RegisterViewController.m */; };
+		1888B3E919CADCBA0030DB88 /* ZDRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1888B3E819CADCBA0030DB88 /* ZDRegisterViewController.m */; };
 		18F891C119CBBD4F0046C022 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F891B519CBBD4F0046C022 /* NSArray+Log.m */; };
 		18F891C219CBBD4F0046C022 /* NSDate+ZD.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F891B619CBBD4F0046C022 /* NSDate+ZD.m */; };
 		18F891C319CBBD4F0046C022 /* NSDictionary+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F891B719CBBD4F0046C022 /* NSDictionary+Log.m */; };
@@ -31,6 +31,13 @@
 		18F891E119CBD2DF0046C022 /* ZDCommonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F891DA19CBD2DF0046C022 /* ZDCommonItem.m */; };
 		18F891E219CBD2DF0046C022 /* ZDCommonLabelItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F891DB19CBD2DF0046C022 /* ZDCommonLabelItem.m */; };
 		18F891E319CBD2DF0046C022 /* ZDCommonSwitchItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F891DC19CBD2DF0046C022 /* ZDCommonSwitchItem.m */; };
+		18F891E619CC06070046C022 /* ZDTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F891E519CC06070046C022 /* ZDTabBarController.m */; };
+		18F891E919CC06880046C022 /* ZDTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F891E819CC06880046C022 /* ZDTabBar.m */; };
+		18F891EF19CC0F4E0046C022 /* ZDTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F891EE19CC0F4E0046C022 /* ZDTabBarButton.m */; };
+		18F891F219CC189E0046C022 /* ZDNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F891F119CC189E0046C022 /* ZDNavViewController.m */; };
+		18FA20AC19CFB8C700430E37 /* ZDMyBabyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FA20AB19CFB8C700430E37 /* ZDMyBabyViewController.m */; };
+		18FA20B319CFB99100430E37 /* ZDCommonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FA20B019CFB99100430E37 /* ZDCommonCell.m */; };
+		18FA20B419CFB99100430E37 /* ZDBadgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FA20B219CFB99100430E37 /* ZDBadgeButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,8 +61,8 @@
 		1888B3D719CADBDD0030DB88 /* FoodBankTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodBankTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1888B3DC19CADBDD0030DB88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1888B3DD19CADBDD0030DB88 /* FoodBankTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FoodBankTests.m; sourceTree = "<group>"; };
-		1888B3E719CADCBA0030DB88 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterViewController.h; path = FoodBank/RegisterViewController.h; sourceTree = SOURCE_ROOT; };
-		1888B3E819CADCBA0030DB88 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterViewController.m; path = FoodBank/RegisterViewController.m; sourceTree = SOURCE_ROOT; };
+		1888B3E719CADCBA0030DB88 /* ZDRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZDRegisterViewController.h; path = FoodBank/ZDRegisterViewController.h; sourceTree = SOURCE_ROOT; };
+		1888B3E819CADCBA0030DB88 /* ZDRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZDRegisterViewController.m; path = FoodBank/ZDRegisterViewController.m; sourceTree = SOURCE_ROOT; };
 		18F891A819CBBD4F0046C022 /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
 		18F891A919CBBD4F0046C022 /* NSDate+ZD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ZD.h"; sourceTree = "<group>"; };
 		18F891AA19CBBD4F0046C022 /* NSDictionary+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Log.h"; sourceTree = "<group>"; };
@@ -94,6 +101,20 @@
 		18F891DA19CBD2DF0046C022 /* ZDCommonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDCommonItem.m; sourceTree = "<group>"; };
 		18F891DB19CBD2DF0046C022 /* ZDCommonLabelItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDCommonLabelItem.m; sourceTree = "<group>"; };
 		18F891DC19CBD2DF0046C022 /* ZDCommonSwitchItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDCommonSwitchItem.m; sourceTree = "<group>"; };
+		18F891E419CC06070046C022 /* ZDTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDTabBarController.h; sourceTree = "<group>"; };
+		18F891E519CC06070046C022 /* ZDTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDTabBarController.m; sourceTree = "<group>"; };
+		18F891E719CC06880046C022 /* ZDTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDTabBar.h; sourceTree = "<group>"; };
+		18F891E819CC06880046C022 /* ZDTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDTabBar.m; sourceTree = "<group>"; };
+		18F891ED19CC0F4E0046C022 /* ZDTabBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDTabBarButton.h; sourceTree = "<group>"; };
+		18F891EE19CC0F4E0046C022 /* ZDTabBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDTabBarButton.m; sourceTree = "<group>"; };
+		18F891F019CC189E0046C022 /* ZDNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDNavViewController.h; sourceTree = "<group>"; };
+		18F891F119CC189E0046C022 /* ZDNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDNavViewController.m; sourceTree = "<group>"; };
+		18FA20AA19CFB8C700430E37 /* ZDMyBabyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDMyBabyViewController.h; sourceTree = "<group>"; };
+		18FA20AB19CFB8C700430E37 /* ZDMyBabyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDMyBabyViewController.m; sourceTree = "<group>"; };
+		18FA20AF19CFB99100430E37 /* ZDCommonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDCommonCell.h; sourceTree = "<group>"; };
+		18FA20B019CFB99100430E37 /* ZDCommonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDCommonCell.m; sourceTree = "<group>"; };
+		18FA20B119CFB99100430E37 /* ZDBadgeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDBadgeButton.h; sourceTree = "<group>"; };
+		18FA20B219CFB99100430E37 /* ZDBadgeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDBadgeButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +156,8 @@
 		1888B3C019CADBDC0030DB88 /* FoodBank */ = {
 			isa = PBXGroup;
 			children = (
+				18FA20AE19CFB92B00430E37 /* OAuth(授权) */,
+				18FA20AD19CFB90300430E37 /* Newfeature(新特性) */,
 				1888B3FA19CADE1D0030DB88 /* Register(注册) */,
 				1888B3EE19CADDF50030DB88 /* MyBaby(我的宝贝) */,
 				1888B3EA19CADDE40030DB88 /* Try(尝试周期) */,
@@ -253,6 +276,12 @@
 		1888B3F319CADE000030DB88 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				18F891E419CC06070046C022 /* ZDTabBarController.h */,
+				18F891E519CC06070046C022 /* ZDTabBarController.m */,
+				18F891F019CC189E0046C022 /* ZDNavViewController.h */,
+				18F891F119CC189E0046C022 /* ZDNavViewController.m */,
+				18FA20AA19CFB8C700430E37 /* ZDMyBabyViewController.h */,
+				18FA20AB19CFB8C700430E37 /* ZDMyBabyViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -267,6 +296,14 @@
 		1888B3F519CADE000030DB88 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				18F891E719CC06880046C022 /* ZDTabBar.h */,
+				18F891E819CC06880046C022 /* ZDTabBar.m */,
+				18F891ED19CC0F4E0046C022 /* ZDTabBarButton.h */,
+				18F891EE19CC0F4E0046C022 /* ZDTabBarButton.m */,
+				18FA20AF19CFB99100430E37 /* ZDCommonCell.h */,
+				18FA20B019CFB99100430E37 /* ZDCommonCell.m */,
+				18FA20B119CFB99100430E37 /* ZDBadgeButton.h */,
+				18FA20B219CFB99100430E37 /* ZDBadgeButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -298,8 +335,8 @@
 		1888B3FB19CADE1E0030DB88 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				1888B3E719CADCBA0030DB88 /* RegisterViewController.h */,
-				1888B3E819CADCBA0030DB88 /* RegisterViewController.m */,
+				1888B3E719CADCBA0030DB88 /* ZDRegisterViewController.h */,
+				1888B3E819CADCBA0030DB88 /* ZDRegisterViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -366,21 +403,35 @@
 			isa = PBXGroup;
 			children = (
 				18F891CF19CBD2DF0046C022 /* ZDCommonArrowItem.h */,
-				18F891D019CBD2DF0046C022 /* ZDCommonCheckGroup.h */,
-				18F891D119CBD2DF0046C022 /* ZDCommonCheckItem.h */,
-				18F891D219CBD2DF0046C022 /* ZDCommonGroup.h */,
-				18F891D319CBD2DF0046C022 /* ZDCommonItem.h */,
-				18F891D419CBD2DF0046C022 /* ZDCommonLabelItem.h */,
-				18F891D519CBD2DF0046C022 /* ZDCommonSwitchItem.h */,
 				18F891D619CBD2DF0046C022 /* ZDCommonArrowItem.m */,
+				18F891D019CBD2DF0046C022 /* ZDCommonCheckGroup.h */,
 				18F891D719CBD2DF0046C022 /* ZDCommonCheckGroup.m */,
+				18F891D119CBD2DF0046C022 /* ZDCommonCheckItem.h */,
 				18F891D819CBD2DF0046C022 /* ZDCommonCheckItem.m */,
+				18F891D219CBD2DF0046C022 /* ZDCommonGroup.h */,
 				18F891D919CBD2DF0046C022 /* ZDCommonGroup.m */,
+				18F891D319CBD2DF0046C022 /* ZDCommonItem.h */,
 				18F891DA19CBD2DF0046C022 /* ZDCommonItem.m */,
+				18F891D419CBD2DF0046C022 /* ZDCommonLabelItem.h */,
 				18F891DB19CBD2DF0046C022 /* ZDCommonLabelItem.m */,
+				18F891D519CBD2DF0046C022 /* ZDCommonSwitchItem.h */,
 				18F891DC19CBD2DF0046C022 /* ZDCommonSwitchItem.m */,
 			);
 			path = Setting;
+			sourceTree = "<group>";
+		};
+		18FA20AD19CFB90300430E37 /* Newfeature(新特性) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Newfeature(新特性)";
+			sourceTree = "<group>";
+		};
+		18FA20AE19CFB92B00430E37 /* OAuth(授权) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "OAuth(授权)";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -483,13 +534,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				1888B3C719CADBDC0030DB88 /* AppDelegate.m in Sources */,
+				18FA20B419CFB99100430E37 /* ZDBadgeButton.m in Sources */,
+				18F891EF19CC0F4E0046C022 /* ZDTabBarButton.m in Sources */,
 				18F891C519CBBD4F0046C022 /* NSString+Hash.m in Sources */,
+				18FA20B319CFB99100430E37 /* ZDCommonCell.m in Sources */,
 				18F891DE19CBD2DF0046C022 /* ZDCommonCheckGroup.m in Sources */,
 				18F891E119CBD2DF0046C022 /* ZDCommonItem.m in Sources */,
 				18F891CB19CBBD4F0046C022 /* UIView+Add.m in Sources */,
+				18F891E619CC06070046C022 /* ZDTabBarController.m in Sources */,
 				18F891C319CBBD4F0046C022 /* NSDictionary+Log.m in Sources */,
 				18F891C219CBBD4F0046C022 /* NSDate+ZD.m in Sources */,
 				18F891DF19CBD2DF0046C022 /* ZDCommonCheckItem.m in Sources */,
+				18FA20AC19CFB8C700430E37 /* ZDMyBabyViewController.m in Sources */,
 				18F891C719CBBD4F0046C022 /* Reachability.m in Sources */,
 				18F891C619CBBD4F0046C022 /* NSString+Path.m in Sources */,
 				18F891CC19CBBD4F0046C022 /* UIView+ZD.m in Sources */,
@@ -497,9 +553,11 @@
 				18F891C819CBBD4F0046C022 /* UIBarButtonItem+ZD.m in Sources */,
 				18F891C919CBBD4F0046C022 /* UIImage+ZD.m in Sources */,
 				18F891E219CBD2DF0046C022 /* ZDCommonLabelItem.m in Sources */,
+				18F891F219CC189E0046C022 /* ZDNavViewController.m in Sources */,
+				18F891E919CC06880046C022 /* ZDTabBar.m in Sources */,
 				18F891C419CBBD4F0046C022 /* NSString+Extend.m in Sources */,
 				1888B3C419CADBDC0030DB88 /* main.m in Sources */,
-				1888B3E919CADCBA0030DB88 /* RegisterViewController.m in Sources */,
+				1888B3E919CADCBA0030DB88 /* ZDRegisterViewController.m in Sources */,
 				18F891DD19CBD2DF0046C022 /* ZDCommonArrowItem.m in Sources */,
 				18F891E019CBD2DF0046C022 /* ZDCommonGroup.m in Sources */,
 				18F891E319CBD2DF0046C022 /* ZDCommonSwitchItem.m in Sources */,
@@ -621,7 +679,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = /Users/apple/Desktop/Code/FoodBanks/FoodBank/Other/FoodBank.pch;
 				INFOPLIST_FILE = FoodBank/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -635,7 +693,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = /Users/apple/Desktop/Code/FoodBanks/FoodBank/Other/FoodBank.pch;
 				INFOPLIST_FILE = FoodBank/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

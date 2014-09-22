@@ -13,7 +13,7 @@
 - (void)setCheckedIndex:(int)checkedIndex
 {
     _checkedIndex = checkedIndex;
-    int count = self.items.count;
+    NSInteger count = self.items.count;
     for (int i=0; i<count; i++) {
         ZDCommonCheckItem *item = self.items[i];
         if (i==checkedIndex) {
@@ -28,7 +28,7 @@
 {
     [super setItems:items];
     // 重新设置选中的行
-    //    self.checkedIndex = self.checkedIndex;
     [self setCheckedIndex:[self checkedIndex]];
 }
+
 @end

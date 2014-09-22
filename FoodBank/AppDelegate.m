@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-#import "RegisterViewController.h"
+#import "ZDRegisterViewController.h"
+#import "ZDTabBarController.h"
 
 @interface AppDelegate ()
 
@@ -20,10 +21,10 @@
     application.statusBarHidden = NO;
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    if(1){
-        self.window.rootViewController = [[RegisterViewController alloc]init];
+    if(/* DISABLES CODE */ (1)==2){
+        self.window.rootViewController = [[ZDRegisterViewController alloc]init];
     }else{
-        
+        self.window.rootViewController = [[ZDTabBarController alloc]init];
     }
     
     self.window.backgroundColor = [UIColor whiteColor];

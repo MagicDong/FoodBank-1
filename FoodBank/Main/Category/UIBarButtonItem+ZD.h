@@ -20,5 +20,5 @@
  */
 + (UIBarButtonItem *)itemImage:(NSString *)image highlightedImage:(NSString *)highlightedImage target:(id)target action:(SEL)action;
 
-+ (UIBarButtonItem *)itemHomeImage:(NSString *)image highlightedImage:(NSString *)highlightedImage target:(id)target action:(SEL)action;
+//+ (UIBarButtonItem *)itemHomeImage:(NSString *)image highlightedImage:(NSString *)highlightedImage target:(id)target action:(SEL)action;
 @end
