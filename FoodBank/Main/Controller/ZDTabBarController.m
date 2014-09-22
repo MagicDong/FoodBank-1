@@ -11,6 +11,7 @@
 #import "ZDTabBarButton.h"
 #import "ZDRegisterViewController.h"
 #import "ZDNavViewController.h"
+#import "ZDMyBabyViewController.h"
 
 @interface ZDTabBarController () <ZDTabBarDelegate>
 /**
@@ -21,7 +22,7 @@
 @property (nonatomic, strong) ZDRegisterViewController *home;
 @property (nonatomic, strong) ZDRegisterViewController *message;
 @property (nonatomic, strong) ZDRegisterViewController *discover;
-@property (nonatomic, strong) ZDRegisterViewController *profile;
+@property (nonatomic, strong) ZDMyBabyViewController *baby;
 @end
 
 @implementation ZDTabBarController
@@ -50,9 +51,9 @@
         self.discover = discover;
         
         // 4.我
-        ZDRegisterViewController *profile = [[ZDRegisterViewController alloc] init];
-        [self setupChileViewController:profile title:@"我" imageName:@"tab004_4" selectedImageName:@"tab004"];
-        self.profile = profile;
+        ZDMyBabyViewController *baby = [[ZDMyBabyViewController alloc] init];
+        [self setupChileViewController:baby title:@"我" imageName:@"tab004_4" selectedImageName:@"tab004"];
+        self.baby = baby;
     }
     return self;
 }
@@ -93,30 +94,17 @@
  */
 - (void)setupChileViewController:(UIViewController *)child title:(NSString *)title imageName:(NSString *)imageName selectedImageName:(NSString *)selectedImageName
 {
-    //    child.view.backgroundColor =  IWRandomColor;
-    // 1.2设置控制器对应的tabBar的属性
-    //    child.tabBarItem.title = title;
-    //    child.navigationItem.title = title;
     child.title = title;
-    
     child.tabBarItem.image = [UIImage imageWithNamed:imageName];
     // 如果是iOS7 就告诉系统不要渲染图片
     UIImage *selectedImage = [UIImage imageWithNamed:selectedImageName];
-    
     if (iOS7) { //只有iOS7才需要设置原样显示
         selectedImage = [selectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     }
     child.tabBarItem.selectedImage = selectedImage;
-    
-    // 包装一个导航控制器
-    //    IWNavigationController *nav = [[IWNavigationController alloc] initWithRootViewController:child];
-    
     ZDNavViewController *nav = [[ZDNavViewController alloc] init];
     [nav addChildViewController:child];
-    
-    // 1.3添加自定义控制器到TabBarController
     [self addChildViewController:nav];
-    
     // 2.根据对应的子控制器创建子控制器对应的按钮
     [self.customTabBar addTabBarButton:child.tabBarItem];
 }

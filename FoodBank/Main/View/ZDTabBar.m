@@ -58,29 +58,20 @@
  */
 - (void)addTabBarButton:(UITabBarItem *)item
 {
-    // 1.创建对应自控制器的按钮
+
     ZDTabBarButton *btn = [[ZDTabBarButton alloc] init];
     
-    // 2.设置按钮显示的内容
     btn.item = item;
     
-    // 监听按钮点击事件
     [btn addTarget:self action:@selector(btnOnClick:) forControlEvents:UIControlEventTouchDown];
     
-    // 设置tag
     btn.tag = self.buttons.count;
     
-    // 3.添加按钮到当前view
     [self addSubview:btn];
     
-    // 4.将刚刚创建的选项卡按钮添加到数组中
     [self.buttons addObject:btn];
     
-    // 5.设置默认选中
     if (self.buttons.count == 1) {
-        //        btn.selected = YES;
-        //        self.selectedBtn = btn;
-        
         [self btnOnClick:btn];
     }
     
@@ -91,18 +82,11 @@
  */
 - (void)btnOnClick:(ZDTabBarButton *)btn
 {
-    // 0.通知代理
     if ([self.delegate respondsToSelector:@selector(tabBar:didSelectedFrom:to:)]) {
-        // 传递上一次选中的按钮的tag, 和当前选中按钮的tag
         [self.delegate tabBar:self didSelectedFrom:self.selectedBtn.tag to:btn.tag];
     }
-    
-    //    IWLog(@"btnOnClick");
-    // 1.取消上次选中
     self.selectedBtn.selected = NO;
-    // 2.选中本次
     btn.selected = YES;
-    // 3.记录当前选中
     self.selectedBtn = btn;
 }
 
@@ -112,7 +96,6 @@
     if (_buttons == nil) {
         _buttons = [NSMutableArray array];
     }
-    
     return _buttons;
 }
 

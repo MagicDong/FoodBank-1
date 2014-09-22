@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZDMyBabyViewController : UITableViewController
+@interface ZDMyBabyViewController : UIViewController
 
 @end

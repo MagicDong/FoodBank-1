@@ -21,10 +21,10 @@
     application.statusBarHidden = NO;
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    if(/* DISABLES CODE */ (1)==2){
-        self.window.rootViewController = [[ZDRegisterViewController alloc]init];
-    }else{
+    if(/* DISABLES CODE */ (1)){
         self.window.rootViewController = [[ZDTabBarController alloc]init];
+    }else{
+        self.window.rootViewController = [[ZDRegisterViewController alloc]init];
     }
     
     self.window.backgroundColor = [UIColor whiteColor];
