@@ -12,6 +12,9 @@
 #import "ZDRegisterViewController.h"
 #import "ZDNavViewController.h"
 #import "ZDMyBabyViewController.h"
+#import "ZDHelpViewController.h"
+#import "ZDPlanViewController.h"
+#import "ZDSquareViewController.h"
 
 @interface ZDTabBarController () <ZDTabBarDelegate>
 /**
@@ -19,9 +22,9 @@
  */
 @property (nonatomic, weak) ZDTabBar *customTabBar;
 
-@property (nonatomic, strong) ZDRegisterViewController *home;
-@property (nonatomic, strong) ZDRegisterViewController *message;
-@property (nonatomic, strong) ZDRegisterViewController *discover;
+@property (nonatomic, strong) ZDSquareViewController *home;
+@property (nonatomic, strong) ZDPlanViewController *message;
+@property (nonatomic, strong) ZDHelpViewController *discover;
 @property (nonatomic, strong) ZDMyBabyViewController *baby;
 @end
 
@@ -35,24 +38,24 @@
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
         
         // 1.1创建自定义控制器
-        ZDRegisterViewController *home = [[ZDRegisterViewController alloc] init];
-        [self setupChileViewController:home title:@"首页" imageName:@"tab001_1" selectedImageName:@"tab001"];
+        ZDSquareViewController *home = [[ZDSquareViewController alloc] init];
+        [self setupChileViewController:home title:@"广场" imageName:@"tab001_1" selectedImageName:@"tab001"];
         self.home = home;
         
         
         // 2.消息
-        ZDRegisterViewController *message = [[ZDRegisterViewController alloc] init];
-        [self setupChileViewController:message title:@"消息" imageName:@"tab002_2" selectedImageName:@"tab002"];
+        ZDPlanViewController *message = [[ZDPlanViewController alloc] init];
+        [self setupChileViewController:message title:@"全计划" imageName:@"tab002_2" selectedImageName:@"tab002"];
         self.message = message;
         
         // 3.广场
-        ZDRegisterViewController *discover = [[ZDRegisterViewController alloc] init];
-        [self setupChileViewController:discover title:@"广场" imageName:@"tab003_3" selectedImageName:@"tab003"];
+        ZDHelpViewController *discover = [[ZDHelpViewController alloc] init];
+        [self setupChileViewController:discover title:@"助手" imageName:@"tab003_3" selectedImageName:@"tab003"];
         self.discover = discover;
         
         // 4.我
         ZDMyBabyViewController *baby = [[ZDMyBabyViewController alloc] init];
-        [self setupChileViewController:baby title:@"我" imageName:@"tab004_4" selectedImageName:@"tab004"];
+        [self setupChileViewController:baby title:@"我的宝贝" imageName:@"tab004_4" selectedImageName:@"tab004"];
         self.baby = baby;
     }
     return self;
@@ -102,8 +105,7 @@
         selectedImage = [selectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     }
     child.tabBarItem.selectedImage = selectedImage;
-    ZDNavViewController *nav = [[ZDNavViewController alloc] init];
-    [nav addChildViewController:child];
+    ZDNavViewController *nav = [[ZDNavViewController alloc] initWithRootViewController:child];
     [self addChildViewController:nav];
     // 2.根据对应的子控制器创建子控制器对应的按钮
     [self.customTabBar addTabBarButton:child.tabBarItem];

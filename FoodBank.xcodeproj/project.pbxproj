@@ -38,6 +38,13 @@
 		18FA20AC19CFB8C700430E37 /* ZDMyBabyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FA20AB19CFB8C700430E37 /* ZDMyBabyViewController.m */; };
 		18FA20B319CFB99100430E37 /* ZDCommonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FA20B019CFB99100430E37 /* ZDCommonCell.m */; };
 		18FA20B419CFB99100430E37 /* ZDBadgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FA20B219CFB99100430E37 /* ZDBadgeButton.m */; };
+		18FA20B719CFDF2700430E37 /* ZDHelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FA20B619CFDF2700430E37 /* ZDHelpViewController.m */; };
+		18FA20BA19CFE0CA00430E37 /* ZDPlanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FA20B919CFE0CA00430E37 /* ZDPlanViewController.m */; };
+		18FA20BD19CFE14000430E37 /* ZDSquareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FA20BC19CFE14000430E37 /* ZDSquareViewController.m */; };
+		18FA20C019CFE84800430E37 /* ZDNewfeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FA20BF19CFE84800430E37 /* ZDNewfeatureViewController.m */; };
+		18FA20C719CFF2D200430E37 /* MBProgressHUD+ZD.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FA20C319CFF2D200430E37 /* MBProgressHUD+ZD.m */; };
+		18FA20C819CFF2D200430E37 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 18FA20C419CFF2D200430E37 /* MBProgressHUD.bundle */; };
+		18FA20C919CFF2D200430E37 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FA20C619CFF2D200430E37 /* MBProgressHUD.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +122,19 @@
 		18FA20B019CFB99100430E37 /* ZDCommonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDCommonCell.m; sourceTree = "<group>"; };
 		18FA20B119CFB99100430E37 /* ZDBadgeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDBadgeButton.h; sourceTree = "<group>"; };
 		18FA20B219CFB99100430E37 /* ZDBadgeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDBadgeButton.m; sourceTree = "<group>"; };
+		18FA20B519CFDF2700430E37 /* ZDHelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDHelpViewController.h; sourceTree = "<group>"; };
+		18FA20B619CFDF2700430E37 /* ZDHelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDHelpViewController.m; sourceTree = "<group>"; };
+		18FA20B819CFE0CA00430E37 /* ZDPlanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDPlanViewController.h; sourceTree = "<group>"; };
+		18FA20B919CFE0CA00430E37 /* ZDPlanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDPlanViewController.m; sourceTree = "<group>"; };
+		18FA20BB19CFE14000430E37 /* ZDSquareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDSquareViewController.h; sourceTree = "<group>"; };
+		18FA20BC19CFE14000430E37 /* ZDSquareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDSquareViewController.m; sourceTree = "<group>"; };
+		18FA20BE19CFE84800430E37 /* ZDNewfeatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDNewfeatureViewController.h; sourceTree = "<group>"; };
+		18FA20BF19CFE84800430E37 /* ZDNewfeatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDNewfeatureViewController.m; sourceTree = "<group>"; };
+		18FA20C219CFF2D200430E37 /* MBProgressHUD+ZD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+ZD.h"; sourceTree = "<group>"; };
+		18FA20C319CFF2D200430E37 /* MBProgressHUD+ZD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+ZD.m"; sourceTree = "<group>"; };
+		18FA20C419CFF2D200430E37 /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
+		18FA20C519CFF2D200430E37 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		18FA20C619CFF2D200430E37 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -282,6 +302,12 @@
 				18F891F119CC189E0046C022 /* ZDNavViewController.m */,
 				18FA20AA19CFB8C700430E37 /* ZDMyBabyViewController.h */,
 				18FA20AB19CFB8C700430E37 /* ZDMyBabyViewController.m */,
+				18FA20B519CFDF2700430E37 /* ZDHelpViewController.h */,
+				18FA20B619CFDF2700430E37 /* ZDHelpViewController.m */,
+				18FA20B819CFE0CA00430E37 /* ZDPlanViewController.h */,
+				18FA20B919CFE0CA00430E37 /* ZDPlanViewController.m */,
+				18FA20BB19CFE14000430E37 /* ZDSquareViewController.h */,
+				18FA20BC19CFE14000430E37 /* ZDSquareViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -358,6 +384,7 @@
 		1888B3FE19CADE520030DB88 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				18FA20C119CFF2D200430E37 /* MBProgressHUD */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -423,6 +450,8 @@
 		18FA20AD19CFB90300430E37 /* Newfeature(新特性) */ = {
 			isa = PBXGroup;
 			children = (
+				18FA20BE19CFE84800430E37 /* ZDNewfeatureViewController.h */,
+				18FA20BF19CFE84800430E37 /* ZDNewfeatureViewController.m */,
 			);
 			path = "Newfeature(新特性)";
 			sourceTree = "<group>";
@@ -432,6 +461,18 @@
 			children = (
 			);
 			path = "OAuth(授权)";
+			sourceTree = "<group>";
+		};
+		18FA20C119CFF2D200430E37 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				18FA20C219CFF2D200430E37 /* MBProgressHUD+ZD.h */,
+				18FA20C319CFF2D200430E37 /* MBProgressHUD+ZD.m */,
+				18FA20C419CFF2D200430E37 /* MBProgressHUD.bundle */,
+				18FA20C519CFF2D200430E37 /* MBProgressHUD.h */,
+				18FA20C619CFF2D200430E37 /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -516,6 +557,7 @@
 			files = (
 				1888B3D219CADBDC0030DB88 /* LaunchScreen.xib in Resources */,
 				1888B3CF19CADBDC0030DB88 /* Images.xcassets in Resources */,
+				18FA20C819CFF2D200430E37 /* MBProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -535,22 +577,28 @@
 			files = (
 				1888B3C719CADBDC0030DB88 /* AppDelegate.m in Sources */,
 				18FA20B419CFB99100430E37 /* ZDBadgeButton.m in Sources */,
+				18FA20B719CFDF2700430E37 /* ZDHelpViewController.m in Sources */,
 				18F891EF19CC0F4E0046C022 /* ZDTabBarButton.m in Sources */,
 				18F891C519CBBD4F0046C022 /* NSString+Hash.m in Sources */,
 				18FA20B319CFB99100430E37 /* ZDCommonCell.m in Sources */,
 				18F891DE19CBD2DF0046C022 /* ZDCommonCheckGroup.m in Sources */,
+				18FA20C919CFF2D200430E37 /* MBProgressHUD.m in Sources */,
 				18F891E119CBD2DF0046C022 /* ZDCommonItem.m in Sources */,
 				18F891CB19CBBD4F0046C022 /* UIView+Add.m in Sources */,
+				18FA20BD19CFE14000430E37 /* ZDSquareViewController.m in Sources */,
 				18F891E619CC06070046C022 /* ZDTabBarController.m in Sources */,
 				18F891C319CBBD4F0046C022 /* NSDictionary+Log.m in Sources */,
+				18FA20C019CFE84800430E37 /* ZDNewfeatureViewController.m in Sources */,
 				18F891C219CBBD4F0046C022 /* NSDate+ZD.m in Sources */,
 				18F891DF19CBD2DF0046C022 /* ZDCommonCheckItem.m in Sources */,
 				18FA20AC19CFB8C700430E37 /* ZDMyBabyViewController.m in Sources */,
 				18F891C719CBBD4F0046C022 /* Reachability.m in Sources */,
 				18F891C619CBBD4F0046C022 /* NSString+Path.m in Sources */,
 				18F891CC19CBBD4F0046C022 /* UIView+ZD.m in Sources */,
+				18FA20C719CFF2D200430E37 /* MBProgressHUD+ZD.m in Sources */,
 				18F891C119CBBD4F0046C022 /* NSArray+Log.m in Sources */,
 				18F891C819CBBD4F0046C022 /* UIBarButtonItem+ZD.m in Sources */,
+				18FA20BA19CFE0CA00430E37 /* ZDPlanViewController.m in Sources */,
 				18F891C919CBBD4F0046C022 /* UIImage+ZD.m in Sources */,
 				18F891E219CBD2DF0046C022 /* ZDCommonLabelItem.m in Sources */,
 				18F891F219CC189E0046C022 /* ZDNavViewController.m in Sources */,

@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "ZDRegisterViewController.h"
 #import "ZDTabBarController.h"
+#import "ZDNewfeatureViewController.h"
 
 @interface AppDelegate ()
 
@@ -22,7 +23,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     if(/* DISABLES CODE */ (1)){
-        self.window.rootViewController = [[ZDTabBarController alloc]init];
+        self.window.rootViewController = [[ZDNewfeatureViewController alloc]init];
     }else{
         self.window.rootViewController = [[ZDRegisterViewController alloc]init];
     }

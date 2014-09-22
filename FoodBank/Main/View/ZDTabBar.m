@@ -82,8 +82,8 @@
  */
 - (void)btnOnClick:(ZDTabBarButton *)btn
 {
-    if ([self.delegate respondsToSelector:@selector(tabBar:didSelectedFrom:to:)]) {
-        [self.delegate tabBar:self didSelectedFrom:self.selectedBtn.tag to:btn.tag];
+    if ([self.delegate respondsToSelector:@selector(tabBar:didSelectedButtonFrom:to:)]) {
+        [self.delegate tabBar:self didSelectedButtonFrom:self.selectedBtn.tag to:btn.tag];
     }
     self.selectedBtn.selected = NO;
     btn.selected = YES;

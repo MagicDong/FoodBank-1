@@ -10,4 +10,6 @@
 
 @interface ZDRegisterViewController : UIViewController
 
+@end
+
                                                  

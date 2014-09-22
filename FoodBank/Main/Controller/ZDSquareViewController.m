@@ -1,18 +1,18 @@
 //
-//  RegisterViewController.m
+//  ZDSquareViewController.m
 //  FoodBank
 //
-//  Created by apple-jiexian on 14-9-18.
+//  Created by apple-jiexian on 14-9-22.
 //  Copyright (c) 2014年 Dong. All rights reserved.
 //
 
-#import "ZDRegisterViewController.h"
+#import "ZDSquareViewController.h"
 
-@interface ZDRegisterViewController ()
+@interface ZDSquareViewController ()
 
 @end
 
-@implementation ZDRegisterViewController
+@implementation ZDSquareViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

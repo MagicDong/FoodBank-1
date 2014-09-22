@@ -14,7 +14,7 @@
 
 @optional
 
-- (void)tabBar:(ZDTabBar *)tabBar didSelectedFrom:(NSInteger  )from to:(NSInteger)to;
+- (void)tabBar:(ZDTabBar *)tabBar didSelectedButtonFrom:(NSInteger  )from to:(NSInteger)to;
 
 @end
 
