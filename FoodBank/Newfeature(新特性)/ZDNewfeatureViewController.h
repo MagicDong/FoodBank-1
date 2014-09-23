@@ -1,9 +1,9 @@
 //
-//  IWNewfeatureViewController.h
-//  传智微博
+//  RegisterViewController.h
+//  FoodBank
 //
-//  Created by apple on 14-7-7.
-//  Copyright (c) 2014年 itcast. All rights reserved.
+//  Created by apple-jiexian on 14-9-18.
+//  Copyright (c) 2014年 Dong. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

@@ -1,9 +1,9 @@
 //
-//  IWNewfeatureViewController.m
-//  传智微博
+//  RegisterViewController.h
+//  FoodBank
 //
-//  Created by apple on 14-7-7.
-//  Copyright (c) 2014年 itcast. All rights reserved.
+//  Created by apple-jiexian on 14-9-18.
+//  Copyright (c) 2014年 Dong. All rights reserved.
 //
 
 #import "ZDNewfeatureViewController.h"
@@ -55,6 +55,7 @@
  */
 - (void)setupScrollerView
 {
+    
     UIScrollView *scrollerView = [[UIScrollView alloc] init];
     scrollerView.frame = self.view.bounds;
     scrollerView.delegate = self;
@@ -89,7 +90,7 @@
         
         // 5.拿到最后一个UIImageView添加按钮
         if (i == (ZDNewfeatureImageCount - 1)) {
-            // 1.添加开始微博按钮
+            // 1.添加开始按钮
             [self setupStartButton:iv];
             // 2.添加分享按钮
             [self setupShareButton:iv];
@@ -124,14 +125,11 @@
     shareButton.centerY = self.view.height * 0.7;
     shareButton.titleEdgeInsets = UIEdgeInsetsMake(0, 20, 0, 0);
     
-
 }
 
 - (void)shareButtonClick:(UIButton *)shareBtn
 {
-    
     shareBtn.selected = !shareBtn.isSelected;
-    
 }
 
 /**
@@ -150,7 +148,7 @@
     [startButton setBackgroundImage:[UIImage imageWithNamed:@"new_feature_finish_button"] forState:UIControlStateNormal];
     [startButton setBackgroundImage:[UIImage imageWithNamed:@"new_feature_finish_button_highlighted"] forState:UIControlStateHighlighted];
     // 3.设置文字
-    [startButton setTitle:@"开始微博" forState:UIControlStateNormal];
+    [startButton setTitle:@"随便逛逛" forState:UIControlStateNormal];
     // 4.设置frame
     startButton.size = startButton.currentBackgroundImage.size;
     startButton.centerX = self.view.width * 0.5;
@@ -159,7 +157,6 @@
     [startButton addTarget:self action:@selector(start) forControlEvents:UIControlEventTouchUpInside];
 }
 
-
 /*
  push: 必须有导航控制器 : 原有的控制器不会被销毁
  modal: 从下面钻出来: 原有的控制器不会被销毁
@@ -167,17 +164,15 @@
  */
 - (void)start
 {
-//    NSLog(@"开始微博");
     // 跳转到TabBarController
     ZDTabBarController *tabBarVc = [[ZDTabBarController alloc] init];
-//    [self presentViewController:tabBarVc animated:YES completion:nil];
+
     UIApplication *app = [UIApplication sharedApplication];
 
     UIWindow *window = app.keyWindow;
-    
     // 显示状态栏
     app.statusBarHidden = NO;
- 
+    
     window.rootViewController = tabBarVc;
 }
 
@@ -193,6 +188,6 @@
 
 - (void)dealloc
 {
-//    NSLog(@"dealloc");
+    ZDLog(@"dealloc");
 }
 @end

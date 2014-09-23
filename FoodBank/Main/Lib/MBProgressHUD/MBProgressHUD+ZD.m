@@ -1,9 +1,10 @@
 //
-//  MBProgressHUD+NJ.m
+//  MBProgressHUD+ZD.h
 //
-//  Created by 李南江 on 14-5-5.
-//  Copyright (c) 2014年 itcast. All rights reserved.
+//  Created by Dong on 14-9-22.
+//  Copyright (c) 2014年 jiexian. All rights reserved.
 //
+
 
 #import "MBProgressHUD+ZD.h"
 

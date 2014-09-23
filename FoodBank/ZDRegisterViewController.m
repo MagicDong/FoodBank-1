@@ -10,13 +10,24 @@
 
 @interface ZDRegisterViewController ()
 
+@property (weak, nonatomic) IBOutlet UITextField *user;
+@property (weak, nonatomic) IBOutlet UITextField *pwd;
+@property (weak, nonatomic) IBOutlet UIButton *login;
+@property (weak, nonatomic) IBOutlet UIButton *rgs;
+@property (weak, nonatomic) IBOutlet UIView *other;
+@property (weak, nonatomic) IBOutlet UIButton *qq;
+@property (weak, nonatomic) IBOutlet UIButton *sina;
+
+
 @end
 
 @implementation ZDRegisterViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor orangeColor];
+    self.title = @"宝贝通行证";
 }
+
+
 
 @end
