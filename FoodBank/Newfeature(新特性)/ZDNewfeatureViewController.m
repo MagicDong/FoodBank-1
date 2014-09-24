@@ -8,6 +8,8 @@
 
 #import "ZDNewfeatureViewController.h"
 #import "ZDTabBarController.h"
+#import "ZDRegisterViewController.h"
+#import "ZDNavViewController.h"
 
 // 当前新特性页面的个数
 #define ZDNewfeatureImageCount 5
@@ -165,15 +167,15 @@
 - (void)start
 {
     // 跳转到TabBarController
-    ZDTabBarController *tabBarVc = [[ZDTabBarController alloc] init];
-
+    ZDRegisterViewController *tabBarVc = [[ZDRegisterViewController alloc] init];
+    ZDNavViewController *nav = [[ZDNavViewController alloc]initWithRootViewController:tabBarVc];
     UIApplication *app = [UIApplication sharedApplication];
 
     UIWindow *window = app.keyWindow;
     // 显示状态栏
     app.statusBarHidden = NO;
     
-    window.rootViewController = tabBarVc;
+    window.rootViewController = nav;
 }
 
 #pragma mark - UIScrollViewDelegate

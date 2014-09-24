@@ -8,6 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		1823B0F919D146C10081E5A2 /* ZDRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1823B0F819D146C10081E5A2 /* ZDRegisterViewController.xib */; };
+		1823B0FC19D155620081E5A2 /* ZDSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1823B0FB19D155620081E5A2 /* ZDSearchBar.m */; };
+		1823B0FF19D161220081E5A2 /* ZDHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 1823B0FE19D161220081E5A2 /* ZDHttpTool.m */; };
+		1823B10219D1612B0081E5A2 /* ZDAccountTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 1823B10119D1612B0081E5A2 /* ZDAccountTool.m */; };
+		1823B10519D161580081E5A2 /* ZDAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 1823B10419D161580081E5A2 /* ZDAccount.m */; };
+		1823B10919D16E490081E5A2 /* ZDRgsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1823B10719D16E490081E5A2 /* ZDRgsViewController.m */; };
+		1823B10C19D173410081E5A2 /* ZDRgsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1823B10B19D173410081E5A2 /* ZDRgsViewController.xib */; };
+		183EC3E719D26B3B00C756DE /* ZDDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 183EC3E519D26B3B00C756DE /* ZDDatePickerView.m */; };
+		183EC3E819D26B3B00C756DE /* ZDDatePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183EC3E619D26B3B00C756DE /* ZDDatePickerView.xib */; };
+		183EC3EA19D28A0000C756DE /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 183EC3E919D28A0000C756DE /* TencentOpenAPI.framework */; };
+		183EC3EC19D28A1800C756DE /* TencentOpenApi_IOS_Bundle.bundle in Frameworks */ = {isa = PBXBuildFile; fileRef = 183EC3EB19D28A1800C756DE /* TencentOpenApi_IOS_Bundle.bundle */; };
 		1888B3C419CADBDC0030DB88 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1888B3C319CADBDC0030DB88 /* main.m */; };
 		1888B3C719CADBDC0030DB88 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1888B3C619CADBDC0030DB88 /* AppDelegate.m */; };
 		1888B3CF19CADBDC0030DB88 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1888B3CE19CADBDC0030DB88 /* Images.xcassets */; };
@@ -104,6 +114,22 @@
 
 /* Begin PBXFileReference section */
 		1823B0F819D146C10081E5A2 /* ZDRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDRegisterViewController.xib; sourceTree = "<group>"; };
+		1823B0FA19D155620081E5A2 /* ZDSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDSearchBar.h; sourceTree = "<group>"; };
+		1823B0FB19D155620081E5A2 /* ZDSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDSearchBar.m; sourceTree = "<group>"; };
+		1823B0FD19D161220081E5A2 /* ZDHttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDHttpTool.h; sourceTree = "<group>"; };
+		1823B0FE19D161220081E5A2 /* ZDHttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDHttpTool.m; sourceTree = "<group>"; };
+		1823B10019D1612B0081E5A2 /* ZDAccountTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDAccountTool.h; sourceTree = "<group>"; };
+		1823B10119D1612B0081E5A2 /* ZDAccountTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDAccountTool.m; sourceTree = "<group>"; };
+		1823B10319D161580081E5A2 /* ZDAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDAccount.h; sourceTree = "<group>"; };
+		1823B10419D161580081E5A2 /* ZDAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDAccount.m; sourceTree = "<group>"; };
+		1823B10619D16E490081E5A2 /* ZDRgsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDRgsViewController.h; sourceTree = "<group>"; };
+		1823B10719D16E490081E5A2 /* ZDRgsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDRgsViewController.m; sourceTree = "<group>"; };
+		1823B10B19D173410081E5A2 /* ZDRgsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDRgsViewController.xib; sourceTree = "<group>"; };
+		183EC3E419D26B3B00C756DE /* ZDDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDDatePickerView.h; sourceTree = "<group>"; };
+		183EC3E519D26B3B00C756DE /* ZDDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDDatePickerView.m; sourceTree = "<group>"; };
+		183EC3E619D26B3B00C756DE /* ZDDatePickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDDatePickerView.xib; sourceTree = "<group>"; };
+		183EC3E919D28A0000C756DE /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
+		183EC3EB19D28A1800C756DE /* TencentOpenApi_IOS_Bundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TencentOpenApi_IOS_Bundle.bundle; path = FoodBank/Main/Lib/TencentOpenApi_IOS_Bundle.bundle; sourceTree = "<group>"; };
 		1888B3BE19CADBDC0030DB88 /* FoodBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1888B3C219CADBDC0030DB88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1888B3C319CADBDC0030DB88 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -279,6 +305,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				183EC3EC19D28A1800C756DE /* TencentOpenApi_IOS_Bundle.bundle in Frameworks */,
+				183EC3EA19D28A0000C756DE /* TencentOpenAPI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +323,8 @@
 		1888B3B519CADBDC0030DB88 = {
 			isa = PBXGroup;
 			children = (
+				183EC3EB19D28A1800C756DE /* TencentOpenApi_IOS_Bundle.bundle */,
+				183EC3E919D28A0000C756DE /* TencentOpenAPI.framework */,
 				1888B3C019CADBDC0030DB88 /* FoodBank */,
 				1888B3DA19CADBDD0030DB88 /* FoodBankTests */,
 				1888B3BF19CADBDC0030DB88 /* Products */,
@@ -501,6 +531,9 @@
 				1888B3E719CADCBA0030DB88 /* ZDRegisterViewController.h */,
 				1888B3E819CADCBA0030DB88 /* ZDRegisterViewController.m */,
 				1823B0F819D146C10081E5A2 /* ZDRegisterViewController.xib */,
+				1823B10619D16E490081E5A2 /* ZDRgsViewController.h */,
+				1823B10719D16E490081E5A2 /* ZDRgsViewController.m */,
+				1823B10B19D173410081E5A2 /* ZDRgsViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -515,6 +548,11 @@
 		1888B3FD19CADE1E0030DB88 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1823B0FA19D155620081E5A2 /* ZDSearchBar.h */,
+				1823B0FB19D155620081E5A2 /* ZDSearchBar.m */,
+				183EC3E419D26B3B00C756DE /* ZDDatePickerView.h */,
+				183EC3E519D26B3B00C756DE /* ZDDatePickerView.m */,
+				183EC3E619D26B3B00C756DE /* ZDDatePickerView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -534,6 +572,12 @@
 		1888B3FF19CADE5A0030DB88 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				1823B0FD19D161220081E5A2 /* ZDHttpTool.h */,
+				1823B0FE19D161220081E5A2 /* ZDHttpTool.m */,
+				1823B10319D161580081E5A2 /* ZDAccount.h */,
+				1823B10419D161580081E5A2 /* ZDAccount.m */,
+				1823B10019D1612B0081E5A2 /* ZDAccountTool.h */,
+				1823B10119D1612B0081E5A2 /* ZDAccountTool.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -817,6 +861,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1823B0F919D146C10081E5A2 /* ZDRegisterViewController.xib in Resources */,
+				1823B10C19D173410081E5A2 /* ZDRgsViewController.xib in Resources */,
+				183EC3E819D26B3B00C756DE /* ZDDatePickerView.xib in Resources */,
 				1888B3D219CADBDC0030DB88 /* LaunchScreen.xib in Resources */,
 				1888B3CF19CADBDC0030DB88 /* Images.xcassets in Resources */,
 				18FA211B19CFF40200430E37 /* MJRefresh.bundle in Resources */,
@@ -848,6 +894,7 @@
 				18FA20B719CFDF2700430E37 /* ZDHelpViewController.m in Sources */,
 				18FA20E419CFF3D600430E37 /* AFURLRequestSerialization.m in Sources */,
 				18FA210319CFF3E600430E37 /* MJMember.m in Sources */,
+				1823B0FF19D161220081E5A2 /* ZDHttpTool.m in Sources */,
 				18FA215319CFF40D00430E37 /* UIImageView+WebCache.m in Sources */,
 				18F891EF19CC0F4E0046C022 /* ZDTabBarButton.m in Sources */,
 				18FA212119CFF40200430E37 /* UIScrollView+MJRefresh.m in Sources */,
@@ -866,6 +913,7 @@
 				18FA20BD19CFE14000430E37 /* ZDSquareViewController.m in Sources */,
 				18F891E619CC06070046C022 /* ZDTabBarController.m in Sources */,
 				18F891C319CBBD4F0046C022 /* NSDictionary+Log.m in Sources */,
+				183EC3E719D26B3B00C756DE /* ZDDatePickerView.m in Sources */,
 				18FA210519CFF3E700430E37 /* MJType.m in Sources */,
 				18FA20C019CFE84800430E37 /* ZDNewfeatureViewController.m in Sources */,
 				18FA214519CFF40D00430E37 /* MKAnnotationView+WebCache.m in Sources */,
@@ -886,6 +934,7 @@
 				18F891C819CBBD4F0046C022 /* UIBarButtonItem+ZD.m in Sources */,
 				18FA212019CFF40200430E37 /* UIScrollView+MJExtension.m in Sources */,
 				18FA20E319CFF3D600430E37 /* AFURLConnectionOperation.m in Sources */,
+				1823B10519D161580081E5A2 /* ZDAccount.m in Sources */,
 				18FA214B19CFF40D00430E37 /* SDWebImageDownloaderOperation.m in Sources */,
 				18FA20BA19CFE0CA00430E37 /* ZDPlanViewController.m in Sources */,
 				18FA210919CFF3E700430E37 /* NSObject+MJMember.m in Sources */,
@@ -895,7 +944,9 @@
 				18F891C919CBBD4F0046C022 /* UIImage+ZD.m in Sources */,
 				18F891E219CBD2DF0046C022 /* ZDCommonLabelItem.m in Sources */,
 				18FA214A19CFF40D00430E37 /* SDWebImageDownloader.m in Sources */,
+				1823B0FC19D155620081E5A2 /* ZDSearchBar.m in Sources */,
 				18FA211F19CFF40200430E37 /* MJRefreshHeaderView.m in Sources */,
+				1823B10919D16E490081E5A2 /* ZDRgsViewController.m in Sources */,
 				18FA20DF19CFF3D600430E37 /* AFHTTPRequestOperationManager.m in Sources */,
 				18FA215419CFF40D00430E37 /* UIView+WebCacheOperation.m in Sources */,
 				18F891F219CC189E0046C022 /* ZDNavViewController.m in Sources */,
@@ -903,6 +954,7 @@
 				18FA20FF19CFF3E600430E37 /* MJArgument.m in Sources */,
 				18FA210019CFF3E600430E37 /* MJConst.m in Sources */,
 				18FA20DE19CFF3D600430E37 /* AFHTTPRequestOperation.m in Sources */,
+				1823B10219D1612B0081E5A2 /* ZDAccountTool.m in Sources */,
 				18F891E919CC06880046C022 /* ZDTabBar.m in Sources */,
 				18F891C419CBBD4F0046C022 /* NSString+Extend.m in Sources */,
 				1888B3C419CADBDC0030DB88 /* main.m in Sources */,
@@ -1028,13 +1080,19 @@
 		1888B3E219CADBDD0030DB88 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = /Users/apple/Desktop/Code/FoodBanks/FoodBank/Other/FoodBank.pch;
 				INFOPLIST_FILE = FoodBank/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-fobjc-arc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1042,13 +1100,19 @@
 		1888B3E319CADBDD0030DB88 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = /Users/apple/Desktop/Code/FoodBanks/FoodBank/Other/FoodBank.pch;
 				INFOPLIST_FILE = FoodBank/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-fobjc-arc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
