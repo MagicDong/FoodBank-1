@@ -16,6 +16,7 @@
 #import "UIView+Add.h"
 #import "ZDNavViewController.h"
 #import "ZDRgsViewController.h"
+#import <TencentOpenAPI/TencentOAuth.h>
 
 @interface ZDRegisterViewController () <UIWebViewDelegate,UITextFieldDelegate>
 
@@ -42,6 +43,7 @@
         self.edgesForExtendedLayout = NO;
         self.navigationController.navigationBar.opaque=YES;
     }
+    [self initTencent];
 }
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
     UITextField *textFiel =  [UIView findFistResponder:self.view];
@@ -80,7 +82,7 @@
 }
 
 - (IBAction)qq:(UIButton *)sender {
-    
+    [self QQLogin];
 }
 
 - (IBAction)sina:(UIButton *)sender {
@@ -89,6 +91,7 @@
 
 - (void)QQLogin
 {
+
     // 设置用户需要授权的信息参数
     NSArray *permissions = [NSArray arrayWithObjects:@"get_user_info", @"add_t",@"get_simple_user_info",nil];
     [_tencentOAuth authorize:permissions inSafari:NO];
@@ -99,7 +102,6 @@
     /** 第三方应用在开发过程中设置的URLSchema，用于浏览器登录后后跳到第三方应用 */
     // 1101995550
     NSString *appid = @"1101995550";
-    
     _tencentOAuth = [[TencentOAuth alloc]initWithAppId:appid andDelegate:self];
 }
 
@@ -108,7 +110,7 @@
     _labelTitle.text = @"登录完成";
     if (_tencentOAuth.accessToken && 0 != [_tencentOAuth.accessToken length])
     {
-        //          记录登录用户的OpenID、Token以及过期时间
+        //  记录登录用户的OpenID、Token以及过期时间
         _labelAccessToken.text = _tencentOAuth.accessToken;
         
         /** 获取用户信息 */
@@ -117,7 +119,7 @@
         }else{
             ZDLog(@"获取用户信息失败");
         }
-        //        这里可以保存accessToken以便用户下次访问，具体实现不懂，有三个参数。
+        //  这里可以保存accessToken以便用户下次访问，具体实现不懂，有三个参数。
         [_tencentOAuth setAccessToken:[_tencentOAuth accessToken]] ;
         [_tencentOAuth setOpenId:[_tencentOAuth openId]] ;
         [_tencentOAuth setExpirationDate:[_tencentOAuth expirationDate]] ;
@@ -137,6 +139,7 @@
     UIWindow *windows = app.keyWindow;
     windows.rootViewController = root;
 }
+
 /** 保存用户信息 */
 - (void)saveAccount:(NSDictionary *)respones
 {

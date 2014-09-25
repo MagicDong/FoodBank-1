@@ -23,6 +23,8 @@
 		<dict>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
+			<key>CFBundleURLIconFile</key>
+			<string>qqicon</string>
 			<key>CFBundleURLName</key>
 			<string>tencentopenapi</string>
 			<key>CFBundleURLSchemes</key>

@@ -14,16 +14,24 @@
 		1823B10519D161580081E5A2 /* ZDAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 1823B10419D161580081E5A2 /* ZDAccount.m */; };
 		1823B10919D16E490081E5A2 /* ZDRgsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1823B10719D16E490081E5A2 /* ZDRgsViewController.m */; };
 		1823B10C19D173410081E5A2 /* ZDRgsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1823B10B19D173410081E5A2 /* ZDRgsViewController.xib */; };
+		18247A4E19D2BDBC001B04EA /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 18247A4D19D2BDBC001B04EA /* libiconv.dylib */; };
+		18247A5019D2BE1E001B04EA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18247A4F19D2BE1E001B04EA /* SystemConfiguration.framework */; };
+		18247A5219D2BE29001B04EA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18247A5119D2BE29001B04EA /* CoreGraphics.framework */; };
+		18247A5419D2BE32001B04EA /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 18247A5319D2BE32001B04EA /* libsqlite3.dylib */; };
+		18247A5619D2BE3C001B04EA /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18247A5519D2BE3C001B04EA /* CoreTelephony.framework */; };
+		18247A5819D2BE45001B04EA /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 18247A5719D2BE45001B04EA /* libstdc++.dylib */; };
+		18247A5A19D2BE4D001B04EA /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 18247A5919D2BE4D001B04EA /* libz.dylib */; };
 		183EC3E719D26B3B00C756DE /* ZDDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 183EC3E519D26B3B00C756DE /* ZDDatePickerView.m */; };
 		183EC3E819D26B3B00C756DE /* ZDDatePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183EC3E619D26B3B00C756DE /* ZDDatePickerView.xib */; };
-		183EC3EA19D28A0000C756DE /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 183EC3E919D28A0000C756DE /* TencentOpenAPI.framework */; };
-		183EC3EC19D28A1800C756DE /* TencentOpenApi_IOS_Bundle.bundle in Frameworks */ = {isa = PBXBuildFile; fileRef = 183EC3EB19D28A1800C756DE /* TencentOpenApi_IOS_Bundle.bundle */; };
+		186D174319D29F23003F8A17 /* TencentOpenApi_IOS_Bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 186D174219D29F23003F8A17 /* TencentOpenApi_IOS_Bundle.bundle */; };
+		186D174619D2A47D003F8A17 /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 186D174419D2A14D003F8A17 /* TencentOpenAPI.framework */; };
 		1888B3C419CADBDC0030DB88 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1888B3C319CADBDC0030DB88 /* main.m */; };
 		1888B3C719CADBDC0030DB88 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1888B3C619CADBDC0030DB88 /* AppDelegate.m */; };
 		1888B3CF19CADBDC0030DB88 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1888B3CE19CADBDC0030DB88 /* Images.xcassets */; };
 		1888B3D219CADBDC0030DB88 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1888B3D019CADBDC0030DB88 /* LaunchScreen.xib */; };
 		1888B3DE19CADBDD0030DB88 /* FoodBankTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1888B3DD19CADBDD0030DB88 /* FoodBankTests.m */; };
 		1888B3E919CADCBA0030DB88 /* ZDRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1888B3E819CADCBA0030DB88 /* ZDRegisterViewController.m */; };
+		18932E8619D2ABFF007B8B89 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18932E8519D2ABFF007B8B89 /* Security.framework */; };
 		18F891C119CBBD4F0046C022 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F891B519CBBD4F0046C022 /* NSArray+Log.m */; };
 		18F891C219CBBD4F0046C022 /* NSDate+ZD.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F891B619CBBD4F0046C022 /* NSDate+ZD.m */; };
 		18F891C319CBBD4F0046C022 /* NSDictionary+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F891B719CBBD4F0046C022 /* NSDictionary+Log.m */; };
@@ -125,11 +133,18 @@
 		1823B10619D16E490081E5A2 /* ZDRgsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDRgsViewController.h; sourceTree = "<group>"; };
 		1823B10719D16E490081E5A2 /* ZDRgsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDRgsViewController.m; sourceTree = "<group>"; };
 		1823B10B19D173410081E5A2 /* ZDRgsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDRgsViewController.xib; sourceTree = "<group>"; };
+		18247A4D19D2BDBC001B04EA /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		18247A4F19D2BE1E001B04EA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		18247A5119D2BE29001B04EA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		18247A5319D2BE32001B04EA /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		18247A5519D2BE3C001B04EA /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		18247A5719D2BE45001B04EA /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
+		18247A5919D2BE4D001B04EA /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		183EC3E419D26B3B00C756DE /* ZDDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDDatePickerView.h; sourceTree = "<group>"; };
 		183EC3E519D26B3B00C756DE /* ZDDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDDatePickerView.m; sourceTree = "<group>"; };
 		183EC3E619D26B3B00C756DE /* ZDDatePickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDDatePickerView.xib; sourceTree = "<group>"; };
-		183EC3E919D28A0000C756DE /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
-		183EC3EB19D28A1800C756DE /* TencentOpenApi_IOS_Bundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TencentOpenApi_IOS_Bundle.bundle; path = FoodBank/Main/Lib/TencentOpenApi_IOS_Bundle.bundle; sourceTree = "<group>"; };
+		186D174219D29F23003F8A17 /* TencentOpenApi_IOS_Bundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TencentOpenApi_IOS_Bundle.bundle; path = FoodBank/Main/Lib/TencentOpenApi_IOS_Bundle.bundle; sourceTree = "<group>"; };
+		186D174419D2A14D003F8A17 /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
 		1888B3BE19CADBDC0030DB88 /* FoodBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1888B3C219CADBDC0030DB88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1888B3C319CADBDC0030DB88 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -142,6 +157,7 @@
 		1888B3DD19CADBDD0030DB88 /* FoodBankTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FoodBankTests.m; sourceTree = "<group>"; };
 		1888B3E719CADCBA0030DB88 /* ZDRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZDRegisterViewController.h; path = FoodBank/ZDRegisterViewController.h; sourceTree = SOURCE_ROOT; };
 		1888B3E819CADCBA0030DB88 /* ZDRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZDRegisterViewController.m; path = FoodBank/ZDRegisterViewController.m; sourceTree = SOURCE_ROOT; };
+		18932E8519D2ABFF007B8B89 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		18F891A819CBBD4F0046C022 /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
 		18F891A919CBBD4F0046C022 /* NSDate+ZD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ZD.h"; sourceTree = "<group>"; };
 		18F891AA19CBBD4F0046C022 /* NSDictionary+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Log.h"; sourceTree = "<group>"; };
@@ -305,8 +321,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				183EC3EC19D28A1800C756DE /* TencentOpenApi_IOS_Bundle.bundle in Frameworks */,
-				183EC3EA19D28A0000C756DE /* TencentOpenAPI.framework in Frameworks */,
+				18247A5A19D2BE4D001B04EA /* libz.dylib in Frameworks */,
+				18247A5819D2BE45001B04EA /* libstdc++.dylib in Frameworks */,
+				18247A5619D2BE3C001B04EA /* CoreTelephony.framework in Frameworks */,
+				18247A5419D2BE32001B04EA /* libsqlite3.dylib in Frameworks */,
+				18247A5219D2BE29001B04EA /* CoreGraphics.framework in Frameworks */,
+				18247A5019D2BE1E001B04EA /* SystemConfiguration.framework in Frameworks */,
+				18247A4E19D2BDBC001B04EA /* libiconv.dylib in Frameworks */,
+				18932E8619D2ABFF007B8B89 /* Security.framework in Frameworks */,
+				186D174619D2A47D003F8A17 /* TencentOpenAPI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,8 +346,16 @@
 		1888B3B519CADBDC0030DB88 = {
 			isa = PBXGroup;
 			children = (
-				183EC3EB19D28A1800C756DE /* TencentOpenApi_IOS_Bundle.bundle */,
-				183EC3E919D28A0000C756DE /* TencentOpenAPI.framework */,
+				18247A5919D2BE4D001B04EA /* libz.dylib */,
+				18247A5719D2BE45001B04EA /* libstdc++.dylib */,
+				18247A5519D2BE3C001B04EA /* CoreTelephony.framework */,
+				18247A5319D2BE32001B04EA /* libsqlite3.dylib */,
+				18247A5119D2BE29001B04EA /* CoreGraphics.framework */,
+				18247A4F19D2BE1E001B04EA /* SystemConfiguration.framework */,
+				18247A4D19D2BDBC001B04EA /* libiconv.dylib */,
+				18932E8519D2ABFF007B8B89 /* Security.framework */,
+				186D174419D2A14D003F8A17 /* TencentOpenAPI.framework */,
+				186D174219D29F23003F8A17 /* TencentOpenApi_IOS_Bundle.bundle */,
 				1888B3C019CADBDC0030DB88 /* FoodBank */,
 				1888B3DA19CADBDD0030DB88 /* FoodBankTests */,
 				1888B3BF19CADBDC0030DB88 /* Products */,
@@ -860,6 +891,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				186D174319D29F23003F8A17 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				1823B0F919D146C10081E5A2 /* ZDRegisterViewController.xib in Resources */,
 				1823B10C19D173410081E5A2 /* ZDRgsViewController.xib in Resources */,
 				183EC3E819D26B3B00C756DE /* ZDDatePickerView.xib in Resources */,
@@ -1080,7 +1112,10 @@
 		1888B3E219CADBDD0030DB88 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = (
+					"$(ARCHS_STANDARD_32_BIT)",
+					armv7s,
+				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1088,19 +1123,28 @@
 					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = /Users/apple/Desktop/Code/FoodBanks/FoodBank/Other/FoodBank.pch;
+				GCC_PREFIX_HEADER = /Users/apple/Desktop/Code/FoodBank/FoodBank/Other/FoodBank.pch;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Applications/Xcode\\ 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
+				);
 				INFOPLIST_FILE = FoodBank/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = "-fobjc-arc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
 		1888B3E319CADBDD0030DB88 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = (
+					"$(ARCHS_STANDARD_32_BIT)",
+					armv7s,
+				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1108,12 +1152,18 @@
 					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = /Users/apple/Desktop/Code/FoodBanks/FoodBank/Other/FoodBank.pch;
+				GCC_PREFIX_HEADER = /Users/apple/Desktop/Code/FoodBank/FoodBank/Other/FoodBank.pch;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Applications/Xcode\\ 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
+				);
 				INFOPLIST_FILE = FoodBank/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = "-fobjc-arc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 			};
 			name = Release;
 		};
