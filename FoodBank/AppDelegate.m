@@ -12,6 +12,7 @@
 #import "ZDNewfeatureViewController.h"
 #import "UIImageView+WebCache.h"
 #import "ZDInitViewController.h"
+#import "ZDNavViewController.h"
 
 @interface AppDelegate ()
 
@@ -25,7 +26,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     if(/* DISABLES CODE */ (1)){
-        self.window.rootViewController = [[ZDInitViewController alloc]init];
+        self.window.rootViewController = [[ZDNavViewController alloc]initWithRootViewController:[[ZDInitViewController alloc]init]];
     }else{
         self.window.rootViewController = [[ZDRegisterViewController alloc]init];
     }

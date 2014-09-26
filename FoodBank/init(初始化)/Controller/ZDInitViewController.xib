@@ -6,9 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZDInitViewController">
             <connections>
-                <outlet property="BtnAllergy" destination="WZs-cJ-1C5" id="uM3-l3-api"/>
-                <outlet property="BtnBirthday" destination="bjv-yX-bCQ" id="Cva-zi-ypI"/>
-                <outlet property="BtnNation" destination="IxK-Kr-ibZ" id="6Gq-PQ-IJx"/>
+                <outlet property="userView" destination="3E6-Nw-qQK" id="HFl-10-Kr0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,7 +16,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" id="3E6-Nw-qQK">
-                    <rect key="frame" x="20" y="25" width="280" height="160"/>
+                    <rect key="frame" x="20" y="37" width="280" height="160"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_login_username" id="Tzx-yF-WO7">
@@ -37,48 +35,18 @@
                             <rect key="frame" x="0.0" y="0.0" width="280" height="160"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bjv-yX-bCQ">
-                            <rect key="frame" x="51" y="14" width="221" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="请选择宝宝出生日期">
-                                <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="BtnBirthday:" destination="-1" eventType="touchUpInside" id="Bx7-zN-2Cp"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="WZs-cJ-1C5">
-                            <rect key="frame" x="51" y="117" width="221" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="请选择父母过敏食材">
-                                <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="BtnAllergy:" destination="-1" eventType="touchUpInside" id="76t-Xu-sbG"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="IxK-Kr-ibZ">
-                            <rect key="frame" x="51" y="65" width="221" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="请选择民族">
-                                <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="BtnNation:" destination="-1" eventType="touchUpInside" id="eCo-yo-JSm"/>
-                            </connections>
-                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2Fu-V5-pIp" userLabel="登录">
-                    <rect key="frame" x="99" y="198" width="122" height="40"/>
+                    <rect key="frame" x="99" y="223" width="122" height="40"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" backgroundImage="ipad_story_editOK">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="Finish:" destination="-1" eventType="touchUpInside" id="ROq-Ut-wMv"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

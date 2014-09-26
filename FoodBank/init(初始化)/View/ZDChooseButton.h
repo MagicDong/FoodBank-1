@@ -1,9 +1,8 @@
 //
-//  IWTabBarButton.h
-//  传智微博
+//  ZDChooseButton.m
 //
 //  Created by apple on 14-7-6.
-//  Copyright (c) 2014年 itcast. All rights reserved.
+//  Copyright (c) 2014年 Dong. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

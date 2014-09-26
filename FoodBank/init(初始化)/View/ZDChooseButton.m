@@ -1,9 +1,8 @@
 //
-//  IWTabBarButton.m
-//  传智微博
+//  ZDChooseButton.m
 //
 //  Created by apple on 14-7-6.
-//  Copyright (c) 2014年 itcast. All rights reserved.
+//  Copyright (c) 2014年 Dong. All rights reserved.
 //
 
 #import "ZDChooseButton.h"
@@ -19,22 +18,14 @@
 - (id)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
-//        // 1.设置图片居中
-//        self.imageView.contentMode = UIViewContentModeCenter;
-//        // 2.设置文字居中
-//        self.titleLabel.textAlignment = NSTextAlignmentCenter;
-//        // 3.设置文字大小
-//        self.titleLabel.font = [UIFont systemFontOfSize:11];
-//        
-//        // 设置默认状态按钮的文字颜色
-//        [self setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-//        // 设置选中状态按钮的文字颜色
-//        [self setTitleColor:[UIColor orangeColor] forState:UIControlStateSelected];
-        // 3.设置图片不拉伸
+        self.titleLabel.font = [UIFont systemFontOfSize:15];
         self.imageView.contentMode = UIViewContentModeCenter;
-        self.titleLabel.textAlignment = NSTextAlignmentCenter;
+        self.titleLabel.textAlignment = NSTextAlignmentLeft;
         // 让系统高亮状态不调整图片的样式
         self.adjustsImageWhenHighlighted = NO;
+        [self setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+//        // 设置选中状态按钮的文字颜色
+//        [self setTitleColor:[UIColor orangeColor] forState:UIControlStateSelected];
     }
     return self;
 }
@@ -58,9 +49,23 @@
     CGFloat imageH = self.height;
     return CGRectMake(imageX, imageY, imageW, imageH);
 }
+- (void)setTitle:(NSString *)title forState:(UIControlState)state
+{
+    // 1.调用父类方法设置标题
+    [super setTitle:title forState:state];
+    
+    // 2.根据外界传入的标题计算按钮的宽度
+    // 2.1计算文字的宽度
+//    CGSize titleSize = [title sizeWithFont:self.titleLabel.font];
+    
+//    IWLog(@"setTitle = %.1f", titleSize.width);
+    
+//     2.2计算按钮的宽度
+//    self.width = titleSize.width + 2 * IWTitleButtonImageW;
+    
+}
 
 
-
-- (void)setHighlighted:(BOOL)highlighted{}
+//- (void)setHighlighted:(BOOL)highlighted{}
 
 @end

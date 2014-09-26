@@ -6,6 +6,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZDJudgeViewController">
             <connections>
+                <outlet property="bufuhe" destination="f8O-Ko-eHI" id="D7g-vw-5jU"/>
+                <outlet property="fuhe" destination="f6P-Rd-fk4" id="6KK-QR-wAL"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
