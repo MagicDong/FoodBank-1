@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		181BCFA119D41E6F00EDA508 /* ZDInitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 181BCFA019D41E6F00EDA508 /* ZDInitViewController.m */; };
+		181BCFA319D4204600EDA508 /* ZDInitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 181BCFA219D4204600EDA508 /* ZDInitViewController.xib */; };
+		181BCFA619D4240800EDA508 /* ZDJudgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 181BCFA519D4240800EDA508 /* ZDJudgeViewController.m */; };
+		181BCFA819D4240F00EDA508 /* ZDJudgeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 181BCFA719D4240F00EDA508 /* ZDJudgeViewController.xib */; };
 		1823B0F919D146C10081E5A2 /* ZDRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1823B0F819D146C10081E5A2 /* ZDRegisterViewController.xib */; };
 		1823B0FC19D155620081E5A2 /* ZDSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1823B0FB19D155620081E5A2 /* ZDSearchBar.m */; };
 		1823B0FF19D161220081E5A2 /* ZDHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 1823B0FE19D161220081E5A2 /* ZDHttpTool.m */; };
@@ -32,6 +36,7 @@
 		1888B3DE19CADBDD0030DB88 /* FoodBankTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1888B3DD19CADBDD0030DB88 /* FoodBankTests.m */; };
 		1888B3E919CADCBA0030DB88 /* ZDRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1888B3E819CADCBA0030DB88 /* ZDRegisterViewController.m */; };
 		18932E8619D2ABFF007B8B89 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18932E8519D2ABFF007B8B89 /* Security.framework */; };
+		18A092FC19D4F68800FC74FF /* ZDChooseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A092FB19D4F68800FC74FF /* ZDChooseButton.m */; };
 		18F891C119CBBD4F0046C022 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F891B519CBBD4F0046C022 /* NSArray+Log.m */; };
 		18F891C219CBBD4F0046C022 /* NSDate+ZD.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F891B619CBBD4F0046C022 /* NSDate+ZD.m */; };
 		18F891C319CBBD4F0046C022 /* NSDictionary+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F891B719CBBD4F0046C022 /* NSDictionary+Log.m */; };
@@ -121,6 +126,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		181BCF9F19D41E6F00EDA508 /* ZDInitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDInitViewController.h; sourceTree = "<group>"; };
+		181BCFA019D41E6F00EDA508 /* ZDInitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDInitViewController.m; sourceTree = "<group>"; };
+		181BCFA219D4204600EDA508 /* ZDInitViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDInitViewController.xib; sourceTree = "<group>"; };
+		181BCFA419D4240800EDA508 /* ZDJudgeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDJudgeViewController.h; sourceTree = "<group>"; };
+		181BCFA519D4240800EDA508 /* ZDJudgeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDJudgeViewController.m; sourceTree = "<group>"; };
+		181BCFA719D4240F00EDA508 /* ZDJudgeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDJudgeViewController.xib; sourceTree = "<group>"; };
 		1823B0F819D146C10081E5A2 /* ZDRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDRegisterViewController.xib; sourceTree = "<group>"; };
 		1823B0FA19D155620081E5A2 /* ZDSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDSearchBar.h; sourceTree = "<group>"; };
 		1823B0FB19D155620081E5A2 /* ZDSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDSearchBar.m; sourceTree = "<group>"; };
@@ -158,6 +169,8 @@
 		1888B3E719CADCBA0030DB88 /* ZDRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZDRegisterViewController.h; path = FoodBank/ZDRegisterViewController.h; sourceTree = SOURCE_ROOT; };
 		1888B3E819CADCBA0030DB88 /* ZDRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZDRegisterViewController.m; path = FoodBank/ZDRegisterViewController.m; sourceTree = SOURCE_ROOT; };
 		18932E8519D2ABFF007B8B89 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		18A092FA19D4F68800FC74FF /* ZDChooseButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDChooseButton.h; sourceTree = "<group>"; };
+		18A092FB19D4F68800FC74FF /* ZDChooseButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDChooseButton.m; sourceTree = "<group>"; };
 		18F891A819CBBD4F0046C022 /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
 		18F891A919CBBD4F0046C022 /* NSDate+ZD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ZD.h"; sourceTree = "<group>"; };
 		18F891AA19CBBD4F0046C022 /* NSDictionary+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Log.h"; sourceTree = "<group>"; };
@@ -343,6 +356,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		181BCF9B19D3DC4A00EDA508 /* init(初始化) */ = {
+			isa = PBXGroup;
+			children = (
+				181BCF9C19D3DC4A00EDA508 /* Controller */,
+				181BCF9D19D3DC4A00EDA508 /* Model */,
+				181BCF9E19D3DC4A00EDA508 /* View */,
+			);
+			path = "init(初始化)";
+			sourceTree = "<group>";
+		};
+		181BCF9C19D3DC4A00EDA508 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				181BCF9F19D41E6F00EDA508 /* ZDInitViewController.h */,
+				181BCFA019D41E6F00EDA508 /* ZDInitViewController.m */,
+				181BCFA219D4204600EDA508 /* ZDInitViewController.xib */,
+				181BCFA419D4240800EDA508 /* ZDJudgeViewController.h */,
+				181BCFA519D4240800EDA508 /* ZDJudgeViewController.m */,
+				181BCFA719D4240F00EDA508 /* ZDJudgeViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		181BCF9D19D3DC4A00EDA508 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		181BCF9E19D3DC4A00EDA508 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				18A092FA19D4F68800FC74FF /* ZDChooseButton.h */,
+				18A092FB19D4F68800FC74FF /* ZDChooseButton.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		1888B3B519CADBDC0030DB88 = {
 			isa = PBXGroup;
 			children = (
@@ -374,6 +426,7 @@
 		1888B3C019CADBDC0030DB88 /* FoodBank */ = {
 			isa = PBXGroup;
 			children = (
+				181BCF9B19D3DC4A00EDA508 /* init(初始化) */,
 				18FA20AE19CFB92B00430E37 /* OAuth(授权) */,
 				18FA20AD19CFB90300430E37 /* Newfeature(新特性) */,
 				1888B3FA19CADE1D0030DB88 /* Register(注册) */,
@@ -891,9 +944,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				181BCFA319D4204600EDA508 /* ZDInitViewController.xib in Resources */,
 				186D174319D29F23003F8A17 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				1823B0F919D146C10081E5A2 /* ZDRegisterViewController.xib in Resources */,
 				1823B10C19D173410081E5A2 /* ZDRgsViewController.xib in Resources */,
+				181BCFA819D4240F00EDA508 /* ZDJudgeViewController.xib in Resources */,
 				183EC3E819D26B3B00C756DE /* ZDDatePickerView.xib in Resources */,
 				1888B3D219CADBDC0030DB88 /* LaunchScreen.xib in Resources */,
 				1888B3CF19CADBDC0030DB88 /* Images.xcassets in Resources */,
@@ -926,6 +981,7 @@
 				18FA20B719CFDF2700430E37 /* ZDHelpViewController.m in Sources */,
 				18FA20E419CFF3D600430E37 /* AFURLRequestSerialization.m in Sources */,
 				18FA210319CFF3E600430E37 /* MJMember.m in Sources */,
+				181BCFA619D4240800EDA508 /* ZDJudgeViewController.m in Sources */,
 				1823B0FF19D161220081E5A2 /* ZDHttpTool.m in Sources */,
 				18FA215319CFF40D00430E37 /* UIImageView+WebCache.m in Sources */,
 				18F891EF19CC0F4E0046C022 /* ZDTabBarButton.m in Sources */,
@@ -962,6 +1018,7 @@
 				18FA211C19CFF40200430E37 /* MJRefreshBaseView.m in Sources */,
 				18F891C119CBBD4F0046C022 /* NSArray+Log.m in Sources */,
 				18FA20E219CFF3D600430E37 /* AFSecurityPolicy.m in Sources */,
+				181BCFA119D41E6F00EDA508 /* ZDInitViewController.m in Sources */,
 				18FA20E619CFF3D600430E37 /* AFURLSessionManager.m in Sources */,
 				18F891C819CBBD4F0046C022 /* UIBarButtonItem+ZD.m in Sources */,
 				18FA212019CFF40200430E37 /* UIScrollView+MJExtension.m in Sources */,
@@ -987,6 +1044,7 @@
 				18FA210019CFF3E600430E37 /* MJConst.m in Sources */,
 				18FA20DE19CFF3D600430E37 /* AFHTTPRequestOperation.m in Sources */,
 				1823B10219D1612B0081E5A2 /* ZDAccountTool.m in Sources */,
+				18A092FC19D4F68800FC74FF /* ZDChooseButton.m in Sources */,
 				18F891E919CC06880046C022 /* ZDTabBar.m in Sources */,
 				18F891C419CBBD4F0046C022 /* NSString+Extend.m in Sources */,
 				1888B3C419CADBDC0030DB88 /* main.m in Sources */,
@@ -1112,10 +1170,7 @@
 		1888B3E219CADBDD0030DB88 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					"$(ARCHS_STANDARD_32_BIT)",
-					armv7s,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1141,10 +1196,7 @@
 		1888B3E319CADBDD0030DB88 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					"$(ARCHS_STANDARD_32_BIT)",
-					armv7s,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (

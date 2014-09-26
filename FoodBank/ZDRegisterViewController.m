@@ -101,8 +101,9 @@
 {
     /** 第三方应用在开发过程中设置的URLSchema，用于浏览器登录后后跳到第三方应用 */
     // 1101995550
-    NSString *appid = @"1101995550";
-    _tencentOAuth = [[TencentOAuth alloc]initWithAppId:appid andDelegate:self];
+//    NSString *appid = @"1101995550";
+//    _tencentOAuth = [[TencentOAuth alloc]initWithAppId:@"222222" andDelegate:self];
+    
 }
 
 - (void)tencentDidLogin
@@ -112,14 +113,12 @@
     {
         //  记录登录用户的OpenID、Token以及过期时间
         _labelAccessToken.text = _tencentOAuth.accessToken;
-        
         /** 获取用户信息 */
         if ([_tencentOAuth getUserInfo]) {
             ZDLog(@"获取用户信息成功");
         }else{
             ZDLog(@"获取用户信息失败");
         }
-        //  这里可以保存accessToken以便用户下次访问，具体实现不懂，有三个参数。
         [_tencentOAuth setAccessToken:[_tencentOAuth accessToken]] ;
         [_tencentOAuth setOpenId:[_tencentOAuth openId]] ;
         [_tencentOAuth setExpirationDate:[_tencentOAuth expirationDate]] ;

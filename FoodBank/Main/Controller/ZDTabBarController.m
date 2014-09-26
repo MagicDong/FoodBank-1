@@ -42,7 +42,6 @@
         [self setupChileViewController:home title:@"广场" imageName:@"tab001_1" selectedImageName:@"tab001"];
         self.home = home;
         
-        
         // 2.消息
         ZDPlanViewController *message = [[ZDPlanViewController alloc] init];
         [self setupChileViewController:message title:@"全计划" imageName:@"tab002_2" selectedImageName:@"tab002"];

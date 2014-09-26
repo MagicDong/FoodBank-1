@@ -17,7 +17,6 @@
 
 @class ZDDatePickerView;
 
-// 1.
 @protocol ZDDatePickerViewDelegate <NSObject>
 
 - (void)datePickerView:(ZDDatePickerView *)picker dateStr:(NSString *)dateStr;
@@ -28,7 +27,6 @@
 
 + (instancetype)datePickerView;
 
-// 2.
 @property (nonatomic, weak) id <ZDDatePickerViewDelegate> delegate;
 
 @end
