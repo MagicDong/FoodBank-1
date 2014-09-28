@@ -8,6 +8,7 @@
 
 #import "ZDSupViewController.h"
 #import "ZDTabBarController.h"
+#import "ZDSiKuViewController.h"
 
 @interface ZDSupViewController ()
 
@@ -28,17 +29,18 @@
 }
 /** 已添加按钮 */
 - (IBAction)tianjia:(id)sender {
+    ZDSiKuViewController *siku = [[ZDSiKuViewController alloc]init];
+    [self.navigationController pushViewController:siku animated:YES];
+}
+
+/** 未添加按钮 */
+- (IBAction)weitianjia:(id)sender {
     // 跳转到TabBarController
     ZDTabBarController *tabBarVc = [[ZDTabBarController alloc] init];
     UIApplication *app = [UIApplication sharedApplication];
     UIWindow *window = app.keyWindow;
     app.statusBarHidden = NO;
     window.rootViewController = tabBarVc;
-}
-
-/** 未添加按钮 */
-- (IBAction)weitianjia:(id)sender {
-    
 }
 
 
