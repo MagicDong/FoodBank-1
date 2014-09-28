@@ -45,6 +45,9 @@
 		18A0930B19D551A100FC74FF /* ZDNotifyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A0930A19D551A100FC74FF /* ZDNotifyViewController.xib */; };
 		18A0930E19D56C5500FC74FF /* ZDSupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A0930D19D56C5500FC74FF /* ZDSupViewController.m */; };
 		18A0931019D56C6400FC74FF /* ZDSupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A0930F19D56C6400FC74FF /* ZDSupViewController.xib */; };
+		18F37E7419D7E11A00325A25 /* ZDSiKuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F37E7319D7E11A00325A25 /* ZDSiKuCell.m */; };
+		18F37E7619D7E13C00325A25 /* ZDSiKuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F37E7519D7E13C00325A25 /* ZDSiKuCell.xib */; };
+		18F37E7919D7E45D00325A25 /* ZDSiKuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F37E7819D7E45D00325A25 /* ZDSiKuButton.m */; };
 		18F891C119CBBD4F0046C022 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F891B519CBBD4F0046C022 /* NSArray+Log.m */; };
 		18F891C219CBBD4F0046C022 /* NSDate+ZD.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F891B619CBBD4F0046C022 /* NSDate+ZD.m */; };
 		18F891C319CBBD4F0046C022 /* NSDictionary+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F891B719CBBD4F0046C022 /* NSDictionary+Log.m */; };
@@ -72,7 +75,7 @@
 		18FA20B419CFB99100430E37 /* ZDBadgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FA20B219CFB99100430E37 /* ZDBadgeButton.m */; };
 		18FA20B719CFDF2700430E37 /* ZDHelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FA20B619CFDF2700430E37 /* ZDHelpViewController.m */; };
 		18FA20BA19CFE0CA00430E37 /* ZDPlanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FA20B919CFE0CA00430E37 /* ZDPlanViewController.m */; };
-		18FA20BD19CFE14000430E37 /* ZDSquareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FA20BC19CFE14000430E37 /* ZDSquareViewController.m */; };
+		18FA20BD19CFE14000430E37 /* ZDNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FA20BC19CFE14000430E37 /* ZDNewsViewController.m */; };
 		18FA20C019CFE84800430E37 /* ZDNewfeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FA20BF19CFE84800430E37 /* ZDNewfeatureViewController.m */; };
 		18FA20C719CFF2D200430E37 /* MBProgressHUD+ZD.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FA20C319CFF2D200430E37 /* MBProgressHUD+ZD.m */; };
 		18FA20C819CFF2D200430E37 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 18FA20C419CFF2D200430E37 /* MBProgressHUD.bundle */; };
@@ -191,6 +194,11 @@
 		18A0930C19D56C5500FC74FF /* ZDSupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDSupViewController.h; sourceTree = "<group>"; };
 		18A0930D19D56C5500FC74FF /* ZDSupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDSupViewController.m; sourceTree = "<group>"; };
 		18A0930F19D56C6400FC74FF /* ZDSupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDSupViewController.xib; sourceTree = "<group>"; };
+		18F37E7219D7E11A00325A25 /* ZDSiKuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZDSiKuCell.h; path = ../Model/ZDSiKuCell.h; sourceTree = "<group>"; };
+		18F37E7319D7E11A00325A25 /* ZDSiKuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZDSiKuCell.m; path = ../Model/ZDSiKuCell.m; sourceTree = "<group>"; };
+		18F37E7519D7E13C00325A25 /* ZDSiKuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ZDSiKuCell.xib; path = "FoodBank/init(初始化)/Model/ZDSiKuCell.xib"; sourceTree = SOURCE_ROOT; };
+		18F37E7719D7E45D00325A25 /* ZDSiKuButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDSiKuButton.h; sourceTree = "<group>"; };
+		18F37E7819D7E45D00325A25 /* ZDSiKuButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDSiKuButton.m; sourceTree = "<group>"; };
 		18F891A819CBBD4F0046C022 /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
 		18F891A919CBBD4F0046C022 /* NSDate+ZD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ZD.h"; sourceTree = "<group>"; };
 		18F891AA19CBBD4F0046C022 /* NSDictionary+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Log.h"; sourceTree = "<group>"; };
@@ -247,8 +255,8 @@
 		18FA20B619CFDF2700430E37 /* ZDHelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDHelpViewController.m; sourceTree = "<group>"; };
 		18FA20B819CFE0CA00430E37 /* ZDPlanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDPlanViewController.h; sourceTree = "<group>"; };
 		18FA20B919CFE0CA00430E37 /* ZDPlanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDPlanViewController.m; sourceTree = "<group>"; };
-		18FA20BB19CFE14000430E37 /* ZDSquareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDSquareViewController.h; sourceTree = "<group>"; };
-		18FA20BC19CFE14000430E37 /* ZDSquareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDSquareViewController.m; sourceTree = "<group>"; };
+		18FA20BB19CFE14000430E37 /* ZDNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDNewsViewController.h; sourceTree = "<group>"; };
+		18FA20BC19CFE14000430E37 /* ZDNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDNewsViewController.m; sourceTree = "<group>"; };
 		18FA20BE19CFE84800430E37 /* ZDNewfeatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDNewfeatureViewController.h; sourceTree = "<group>"; };
 		18FA20BF19CFE84800430E37 /* ZDNewfeatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDNewfeatureViewController.m; sourceTree = "<group>"; };
 		18FA20C219CFF2D200430E37 /* MBProgressHUD+ZD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+ZD.h"; sourceTree = "<group>"; };
@@ -426,6 +434,11 @@
 				18A0930519D53A6E00FC74FF /* ZDNationView.h */,
 				18A0930619D53A6E00FC74FF /* ZDNationView.m */,
 				18A0930819D53A7D00FC74FF /* ZDNationView.xib */,
+				18F37E7219D7E11A00325A25 /* ZDSiKuCell.h */,
+				18F37E7319D7E11A00325A25 /* ZDSiKuCell.m */,
+				18F37E7519D7E13C00325A25 /* ZDSiKuCell.xib */,
+				18F37E7719D7E45D00325A25 /* ZDSiKuButton.h */,
+				18F37E7819D7E45D00325A25 /* ZDSiKuButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -592,8 +605,8 @@
 				18FA20B619CFDF2700430E37 /* ZDHelpViewController.m */,
 				18FA20B819CFE0CA00430E37 /* ZDPlanViewController.h */,
 				18FA20B919CFE0CA00430E37 /* ZDPlanViewController.m */,
-				18FA20BB19CFE14000430E37 /* ZDSquareViewController.h */,
-				18FA20BC19CFE14000430E37 /* ZDSquareViewController.m */,
+				18FA20BB19CFE14000430E37 /* ZDNewsViewController.h */,
+				18FA20BC19CFE14000430E37 /* ZDNewsViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -983,6 +996,7 @@
 				1828E97A19D796B5008B328E /* ZDSiKuViewController.xib in Resources */,
 				18A0931019D56C6400FC74FF /* ZDSupViewController.xib in Resources */,
 				18A0930919D53A7D00FC74FF /* ZDNationView.xib in Resources */,
+				18F37E7619D7E13C00325A25 /* ZDSiKuCell.xib in Resources */,
 				181BCFA819D4240F00EDA508 /* ZDJudgeViewController.xib in Resources */,
 				18A0930B19D551A100FC74FF /* ZDNotifyViewController.xib in Resources */,
 				183EC3E819D26B3B00C756DE /* ZDDatePickerView.xib in Resources */,
@@ -1035,7 +1049,7 @@
 				18FA214919CFF40D00430E37 /* SDWebImageDecoder.m in Sources */,
 				18F891CB19CBBD4F0046C022 /* UIView+Add.m in Sources */,
 				18FA214819CFF40D00430E37 /* SDWebImageCompat.m in Sources */,
-				18FA20BD19CFE14000430E37 /* ZDSquareViewController.m in Sources */,
+				18FA20BD19CFE14000430E37 /* ZDNewsViewController.m in Sources */,
 				18F891E619CC06070046C022 /* ZDTabBarController.m in Sources */,
 				18F891C319CBBD4F0046C022 /* NSDictionary+Log.m in Sources */,
 				183EC3E719D26B3B00C756DE /* ZDDatePickerView.m in Sources */,
@@ -1067,8 +1081,10 @@
 				18FA20E119CFF3D600430E37 /* AFNetworkReachabilityManager.m in Sources */,
 				18FA214E19CFF40D00430E37 /* UIButton+WebCache.m in Sources */,
 				18FA215119CFF40D00430E37 /* UIImage+WebP.m in Sources */,
+				18F37E7419D7E11A00325A25 /* ZDSiKuCell.m in Sources */,
 				18A092FF19D524CB00FC74FF /* ZDNotifyViewController.m in Sources */,
 				18F891C919CBBD4F0046C022 /* UIImage+ZD.m in Sources */,
+				18F37E7919D7E45D00325A25 /* ZDSiKuButton.m in Sources */,
 				18F891E219CBD2DF0046C022 /* ZDCommonLabelItem.m in Sources */,
 				18FA214A19CFF40D00430E37 /* SDWebImageDownloader.m in Sources */,
 				1823B0FC19D155620081E5A2 /* ZDSearchBar.m in Sources */,

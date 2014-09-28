@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZDSquareViewController : UIViewController
+@interface ZDNewsViewController : UIViewController
 
 @end

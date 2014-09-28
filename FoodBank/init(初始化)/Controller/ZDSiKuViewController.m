@@ -7,14 +7,18 @@
 //
 
 #import "ZDSiKuViewController.h"
+#import "ZDTabBarController.h"
 
-@interface ZDSiKuViewController ()
+@interface ZDSiKuViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
+
 @property (weak, nonatomic) IBOutlet UIButton *anquan;
 @property (weak, nonatomic) IBOutlet UIButton *guomin;
 @property (weak, nonatomic) IBOutlet UIButton *jujue;
 @property (weak, nonatomic) IBOutlet UIButton *weichangshi;
 @property (weak, nonatomic) IBOutlet UILabel *label1;
+@property (weak, nonatomic) IBOutlet UICollectionView *collection;
 @property (weak, nonatomic) IBOutlet UILabel *label2;
+@property (nonatomic, strong) NSArray *products;
 /**
  *  当前选中食材库
  */
@@ -25,6 +29,45 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self chushihua];
+}
+- (NSArray *)products
+{
+    if (!_products){
+        NSArray *arr1 = @[@"胡萝卜",@"西红柿",@"胡萝卜",@"西红柿",@"胡萝卜",@"西红柿"];
+        NSArray *arr2 = @[@"胡萝卜",@"西红柿",@"胡萝卜",@"西红柿",@"胡萝卜",@"西红柿",@"胡萝卜",@"西红柿",@"胡萝卜",@"西红柿"];
+        _products = @[arr1,arr2];
+    }
+    return _products;
+}
+
+#pragma mark - 数据源方法
+// 返回每个section（分组）中的item（条目，小格子）的数量
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return [self.products[section] count];
+}
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+    return self.products.count;
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
+    UICollectionReusableView *reusable = [[UICollectionReusableView alloc]init];
+    return reusable;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+//    static NSString *ID = @"Cell";
+    // 查询可重用item
+    UICollectionViewCell *cell = [[UICollectionViewCell alloc]init];
+    
+//    cell.product = self.products[indexPath.item];
+    
+    return cell;
+}
+- (void)chushihua{
     self.title = @"添加四库";
     if(iOS7)
     {
@@ -44,30 +87,38 @@
     
     self.weichangshi.layer.cornerRadius = 3;
     self.weichangshi.layer.masksToBounds = YES;
+    
+    self.collection.delegate = self;
+    self.collection.dataSource = self;
 }
 
 - (IBAction)anquan:(UIButton *)sender {
-    self.selectedBtn.selected = NO;
-    sender.selected = YES;
-    self.selectedBtn = sender;
+    [self btnClick:sender];
 }
 
 - (IBAction)guomin:(UIButton *)sender {
-    self.selectedBtn.selected = NO;
-    sender.selected = YES;
-    self.selectedBtn = sender;
+    [self btnClick:sender];
 }
 
 - (IBAction)jujue:(UIButton *)sender {
+    [self btnClick:sender];
+}
+- (IBAction)weichangshi:(UIButton *)sender {
+    [self btnClick:sender];
+}
+
+- (void)btnClick:(UIButton *)sender{
     self.selectedBtn.selected = NO;
     sender.selected = YES;
     self.selectedBtn = sender;
 }
-
-- (IBAction)weichangshi:(UIButton *)sender {
-    self.selectedBtn.selected = NO;
-    sender.selected = YES;
-    self.selectedBtn = sender;
+- (IBAction)queding:(UIButton *)sender {
+    // 跳转到TabBarController
+    ZDTabBarController *tabBarVc = [[ZDTabBarController alloc] init];
+    UIApplication *app = [UIApplication sharedApplication];
+    UIWindow *window = app.keyWindow;
+    app.statusBarHidden = NO;
+    window.rootViewController = tabBarVc;
 }
 
 

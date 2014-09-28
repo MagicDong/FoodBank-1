@@ -6,13 +6,13 @@
 //  Copyright (c) 2014年 Dong. All rights reserved.
 //
 
-#import "ZDSquareViewController.h"
+#import "ZDNewsViewController.h"
 
-@interface ZDSquareViewController ()
+@interface ZDNewsViewController ()
 
 @end
 
-@implementation ZDSquareViewController
+@implementation ZDNewsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

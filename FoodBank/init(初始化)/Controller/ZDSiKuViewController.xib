@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
@@ -7,6 +7,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZDSiKuViewController">
             <connections>
                 <outlet property="anquan" destination="8Vb-jl-4i6" id="Gxv-I4-fdW"/>
+                <outlet property="collection" destination="e4S-gH-0Cs" id="pjK-H8-Czc"/>
                 <outlet property="guomin" destination="qii-b4-fhE" id="IN5-Zk-lPX"/>
                 <outlet property="jujue" destination="6vf-1L-Es2" id="ZEm-K4-NRe"/>
                 <outlet property="label1" destination="1qY-Ok-rkC" id="LQo-KO-jGo"/>
@@ -20,31 +21,26 @@
             <rect key="frame" x="0.0" y="44" width="320" height="436"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" id="uYK-bR-pcj">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uYK-bR-pcj">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="122"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_baobao" id="ymz-Ek-vZo">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="login_baobao" translatesAutoresizingMaskIntoConstraints="NO" id="ymz-Ek-vZo">
                             <rect key="frame" x="8" y="13" width="30" height="31"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="建立宝宝个人四库" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4Cs-Lc-aYi">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="建立宝宝个人四库" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Cs-Lc-aYi">
                             <rect key="frame" x="46" y="17" width="136" height="21"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="15"/>
                             <color key="textColor" red="0.75508283132530118" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="生过敏、拒绝等现象）的食材勾选出来。" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fHC-kD-VU9">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="生过敏、拒绝等现象）的食材勾选出来。" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHC-kD-VU9">
                             <rect key="frame" x="8" y="72" width="403" height="21"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <color key="textColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8Vb-jl-4i6">
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Vb-jl-4i6">
                             <rect key="frame" x="8" y="101" width="68" height="20"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="11"/>
                             <state key="normal" title="安全食材库" backgroundImage="login_btn">
                                 <color key="titleColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -56,9 +52,8 @@
                                 <action selector="anquan:" destination="-1" eventType="touchUpInside" id="doD-WM-W8K"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="qii-b4-fhE">
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qii-b4-fhE">
                             <rect key="frame" x="78" y="101" width="68" height="20"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="11"/>
                             <state key="normal" title="过敏食材库" backgroundImage="login_btn">
                                 <color key="titleColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -70,9 +65,8 @@
                                 <action selector="guomin:" destination="-1" eventType="touchUpInside" id="XNQ-VJ-igw"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="6vf-1L-Es2">
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6vf-1L-Es2">
                             <rect key="frame" x="148" y="101" width="68" height="20"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="11"/>
                             <state key="normal" title="拒绝食材库" backgroundImage="login_btn">
                                 <color key="titleColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -84,9 +78,8 @@
                                 <action selector="jujue:" destination="-1" eventType="touchUpInside" id="izS-mb-vqz"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="PVR-hd-5UW">
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PVR-hd-5UW">
                             <rect key="frame" x="218" y="101" width="73" height="20"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="11"/>
                             <state key="normal" title="未尝试食材库" backgroundImage="login_btn">
                                 <color key="titleColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -98,24 +91,60 @@
                                 <action selector="weichangshi:" destination="-1" eventType="touchUpInside" id="gZd-78-FWx"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请您将宝宝已尝试过（尝试3-7天）且安全(未发" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1qY-Ok-rkC">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="请您将宝宝已尝试过（尝试3-7天）且安全(未发" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1qY-Ok-rkC">
                             <rect key="frame" x="33" y="50" width="403" height="21"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <color key="textColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="122" id="WPb-bu-juC"/>
+                        <constraint firstAttribute="width" constant="320" id="ZCg-C3-Zbo"/>
+                    </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cJt-AW-Yth" userLabel="登录">
-                    <rect key="frame" x="125" y="398" width="70" height="25"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJt-AW-Yth" userLabel="登录">
+                    <rect key="frame" x="125" y="389" width="71" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="32" id="9IF-gl-L0z"/>
+                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="32" id="AXM-GC-ehj"/>
+                        <constraint firstAttribute="width" constant="71" id="dcF-rM-i6j"/>
+                        <constraint firstAttribute="height" constant="32" id="eAW-AB-wPK"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="71" id="i3H-le-43R"/>
+                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="71" id="nia-GD-RUv"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="15"/>
                     <state key="normal" title="确定" backgroundImage="Judge"/>
+                    <connections>
+                        <action selector="queding:" destination="-1" eventType="touchUpInside" id="pEq-z1-N8u"/>
+                    </connections>
                 </button>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="e4S-gH-0Cs">
+                    <rect key="frame" x="8" y="130" width="304" height="251"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aZa-B5-0oh">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="50" height="50"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="e4S-gH-0Cs" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="0PB-gn-2tJ"/>
+                <constraint firstItem="uYK-bR-pcj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="17X-d2-p5w"/>
+                <constraint firstAttribute="trailing" secondItem="uYK-bR-pcj" secondAttribute="trailing" id="1ef-KS-TGT"/>
+                <constraint firstAttribute="trailing" secondItem="e4S-gH-0Cs" secondAttribute="trailing" constant="8" id="2sf-y7-ahB"/>
+                <constraint firstItem="cJt-AW-Yth" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="125" id="6NX-dQ-5rb"/>
+                <constraint firstItem="uYK-bR-pcj" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="8wy-4a-pbA"/>
+                <constraint firstItem="cJt-AW-Yth" firstAttribute="top" secondItem="e4S-gH-0Cs" secondAttribute="bottom" constant="8" id="BV5-gn-uHh"/>
+                <constraint firstAttribute="bottom" secondItem="cJt-AW-Yth" secondAttribute="bottom" constant="15" id="N3e-Fe-F7H"/>
+                <constraint firstItem="cJt-AW-Yth" firstAttribute="top" secondItem="e4S-gH-0Cs" secondAttribute="bottom" constant="8" id="R4p-uy-9iA"/>
+                <constraint firstItem="e4S-gH-0Cs" firstAttribute="top" secondItem="uYK-bR-pcj" secondAttribute="bottom" constant="8" id="j6h-MV-P8E"/>
+                <constraint firstItem="e4S-gH-0Cs" firstAttribute="top" secondItem="uYK-bR-pcj" secondAttribute="bottom" constant="8" id="tAN-DG-hRH"/>
+                <constraint firstAttribute="trailing" secondItem="cJt-AW-Yth" secondAttribute="trailing" constant="124" id="uGS-rB-3nx"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>

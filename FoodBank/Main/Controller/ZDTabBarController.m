@@ -14,7 +14,7 @@
 #import "ZDMyBabyViewController.h"
 #import "ZDHelpViewController.h"
 #import "ZDPlanViewController.h"
-#import "ZDSquareViewController.h"
+#import "ZDNewsViewController.h"
 
 @interface ZDTabBarController () <ZDTabBarDelegate>
 /**
@@ -22,7 +22,7 @@
  */
 @property (nonatomic, weak) ZDTabBar *customTabBar;
 
-@property (nonatomic, strong) ZDSquareViewController *home;
+@property (nonatomic, strong) ZDNewsViewController *home;
 @property (nonatomic, strong) ZDPlanViewController *message;
 @property (nonatomic, strong) ZDHelpViewController *discover;
 @property (nonatomic, strong) ZDMyBabyViewController *baby;
@@ -38,7 +38,7 @@
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
         
         // 1.1创建自定义控制器
-        ZDSquareViewController *home = [[ZDSquareViewController alloc] init];
+        ZDNewsViewController *home = [[ZDNewsViewController alloc] init];
         [self setupChileViewController:home title:@"宝贝咨询" imageName:@"tab001_1" selectedImageName:@"tab001"];
         self.home = home;
         

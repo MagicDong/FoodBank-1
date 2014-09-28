@@ -42,7 +42,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hog-Fa-xuO" userLabel="已经添加">
-                    <rect key="frame" x="46" y="366" width="95" height="40"/>
+                    <rect key="frame" x="46" y="358" width="95" height="40"/>
                     <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="16"/>
                     <state key="normal" title="已经添加" backgroundImage="Judge"/>
                     <connections>
@@ -50,7 +50,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NHt-de-Ln0" userLabel="尚未添加">
-                    <rect key="frame" x="183" y="366" width="105" height="40"/>
+                    <rect key="frame" x="183" y="358" width="105" height="40"/>
                     <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="16"/>
                     <state key="normal" title="尚未添加" backgroundImage="Judge"/>
                     <connections>

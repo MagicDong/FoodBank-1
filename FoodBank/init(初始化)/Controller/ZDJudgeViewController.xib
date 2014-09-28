@@ -80,7 +80,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f6P-Rd-fk4" userLabel="登录">
-                    <rect key="frame" x="56" y="368" width="95" height="40"/>
+                    <rect key="frame" x="51" y="355" width="95" height="40"/>
                     <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="16"/>
                     <state key="normal" title="完全符合" backgroundImage="Judge"/>
                     <connections>
@@ -88,7 +88,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f8O-Ko-eHI" userLabel="登录">
-                    <rect key="frame" x="170" y="368" width="105" height="40"/>
+                    <rect key="frame" x="165" y="355" width="105" height="40"/>
                     <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="16"/>
                     <state key="normal" title="不符合" backgroundImage="Judge"/>
                     <connections>
