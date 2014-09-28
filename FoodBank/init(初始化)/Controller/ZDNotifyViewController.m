@@ -16,11 +16,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"知识库";
     if(iOS7)
     {
         self.edgesForExtendedLayout = NO;
         self.navigationController.navigationBar.opaque=YES;
     }
+}
+
+- (IBAction)Finish:(UIButton *)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

@@ -96,10 +96,10 @@
         
         // 2.覆盖返回按钮
         // 只要覆盖了返回按钮, 系统自带的拖拽返回上一级的功能就会失效
-        viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem itemImage:@"navigationbar_back" highlightedImage:@"navigationbar_back_highlighted" target:self action:@selector(back)];
+        viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem itemImage:@"navigationbar_back_highlighted" highlightedImage:@"navigationbar_back" target:self action:@selector(back)];
         
         // 3.添加更多按钮
-        viewController.navigationItem.rightBarButtonItem = [UIBarButtonItem itemImage:@"navigationbar_more" highlightedImage:@"navigationbar_more_highlighted" target:self action:@selector(more)];
+        viewController.navigationItem.rightBarButtonItem = [UIBarButtonItem itemImage:@"navigationbar_more_highlighted" highlightedImage:@"navigationbar_more" target:self action:@selector(more)];
     }
     // 第一次(根控制器)不需要隐藏工具条
     [super pushViewController:viewController animated:animated];

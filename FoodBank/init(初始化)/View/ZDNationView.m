@@ -30,12 +30,17 @@
     return _nationArray;
 }
 
+- (void)awakeFromNib{
+    self.NationView.delegate = self;
+    self.NationView.dataSource = self;
+}
+
 - (IBAction)Finish:(UIBarButtonItem *)sender
 {
     SEL func = @selector(nationView:dateStr:);
     // 判断代理是否实现方法
     if ([self.delegate respondsToSelector:func]) {
-        [self.delegate nationView:self dateStr:self.result];
+        [self.delegate nationView:self ok:self.result];
     }
 }
 

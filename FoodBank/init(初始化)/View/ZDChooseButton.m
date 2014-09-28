@@ -49,6 +49,7 @@
     CGFloat imageH = self.height;
     return CGRectMake(imageX, imageY, imageW, imageH);
 }
+
 - (void)setTitle:(NSString *)title forState:(UIControlState)state
 {
     // 1.调用父类方法设置标题
@@ -65,7 +66,6 @@
     
 }
 
-
-//- (void)setHighlighted:(BOOL)highlighted{}
+- (void)setHighlighted:(BOOL)highlighted{}
 
 @end

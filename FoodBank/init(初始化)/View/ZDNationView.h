@@ -16,6 +16,7 @@
 
 - (void)nationView:(ZDNationView *)picker dateStr:(NSString *)dateStr;
 
+- (void)nationView:(ZDNationView *)picker ok:(NSString *)dateStr;
 @end
 
 @interface ZDNationView : UIView

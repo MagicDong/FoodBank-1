@@ -39,17 +39,17 @@
         
         // 1.1创建自定义控制器
         ZDSquareViewController *home = [[ZDSquareViewController alloc] init];
-        [self setupChileViewController:home title:@"广场" imageName:@"tab001_1" selectedImageName:@"tab001"];
+        [self setupChileViewController:home title:@"宝贝咨询" imageName:@"tab001_1" selectedImageName:@"tab001"];
         self.home = home;
         
         // 2.消息
         ZDPlanViewController *message = [[ZDPlanViewController alloc] init];
-        [self setupChileViewController:message title:@"全计划" imageName:@"tab002_2" selectedImageName:@"tab002"];
+        [self setupChileViewController:message title:@"尝试周期" imageName:@"tab002_2" selectedImageName:@"tab002"];
         self.message = message;
         
         // 3.广场
         ZDHelpViewController *discover = [[ZDHelpViewController alloc] init];
-        [self setupChileViewController:discover title:@"助手" imageName:@"tab003_3" selectedImageName:@"tab003"];
+        [self setupChileViewController:discover title:@"食材银行" imageName:@"tab003_3" selectedImageName:@"tab003"];
         self.discover = discover;
         
         // 4.我

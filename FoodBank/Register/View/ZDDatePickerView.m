@@ -28,7 +28,6 @@
     formatter.dateFormat = @"yyyy-MM-dd";
     // 取出日期字符串
     NSString *dateStr = [formatter stringFromDate:self.datePicker.date];
-    ZDLog(@"%@", dateStr);
     SEL func = @selector(datePickerView:dateStr:);
     // 判断代理是否实现方法
     if ([self.delegate respondsToSelector:func]) {

@@ -12,10 +12,6 @@
             <subviews>
                 <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="78R-V6-56g">
                     <rect key="frame" x="0.0" y="44" width="320" height="162"/>
-                    <connections>
-                        <outlet property="dataSource" destination="-1" id="GRC-lz-NEq"/>
-                        <outlet property="delegate" destination="-1" id="4qd-x0-dlx"/>
-                    </connections>
                 </pickerView>
                 <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G7K-Ox-AsW">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

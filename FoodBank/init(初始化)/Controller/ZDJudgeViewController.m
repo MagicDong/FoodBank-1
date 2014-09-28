@@ -7,6 +7,8 @@
 //
 
 #import "ZDJudgeViewController.h"
+#import "ZDNotifyViewController.h"
+#import "ZDSupViewController.h"
 
 @interface ZDJudgeViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *fuhe;
@@ -26,6 +28,15 @@
         self.edgesForExtendedLayout = NO;
         self.navigationController.navigationBar.opaque=YES;
     }
+}
+- (IBAction)fuhe:(id)sender {
+    ZDSupViewController *sup = [[ZDSupViewController alloc]init];
+    [self.navigationController pushViewController:sup animated:YES];
+}
+
+- (IBAction)bufuhe:(id)sender {
+    ZDNotifyViewController *not = [[ZDNotifyViewController alloc]init];
+    [self.navigationController pushViewController:not animated:YES];
 }
 
 @end
