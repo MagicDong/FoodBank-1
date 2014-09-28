@@ -58,12 +58,15 @@
 #define ZDTimeFont12 [UIFont systemFontOfSize:12]
 // 来源字体
 #define ZDSourceFont ZDTimeFont
+/** 网易手机新闻 */
+#define ZDIPhoneInfo @"T1348649654285"
 /** 新浪微博AppKey */
 #define ZDAppKey @"1765785377"
 /** 新浪微博AppSecret */
 #define ZDAppSecret @"c4acf51f16852e4d0c18fe41256d6c13"
 /** 新浪微博回调地址 */
 #define ZDAppRedirectUrl @"http://ios.itcast.cn"
-
-
+/** 手机新闻前20条 */
+#define ZDIphoneNew20 @"http://c.3g.163.com/nc/article/headline/T1348649654285/0-20.html"
+#define ZDIphoneNew40 @"http://c.3g.163.com/nc/article/headline/T1348649654285/20-40.html"
 #endif

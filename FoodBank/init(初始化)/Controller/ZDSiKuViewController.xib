@@ -7,7 +7,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZDSiKuViewController">
             <connections>
                 <outlet property="anquan" destination="8Vb-jl-4i6" id="Gxv-I4-fdW"/>
-                <outlet property="collection" destination="e4S-gH-0Cs" id="pjK-H8-Czc"/>
                 <outlet property="guomin" destination="qii-b4-fhE" id="IN5-Zk-lPX"/>
                 <outlet property="jujue" destination="6vf-1L-Es2" id="ZEm-K4-NRe"/>
                 <outlet property="label1" destination="1qY-Ok-rkC" id="LQo-KO-jGo"/>
@@ -34,13 +33,13 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="生过敏、拒绝等现象）的食材勾选出来。" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHC-kD-VU9">
-                            <rect key="frame" x="8" y="72" width="403" height="21"/>
+                            <rect key="frame" x="8" y="69" width="403" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <color key="textColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Vb-jl-4i6">
-                            <rect key="frame" x="8" y="101" width="68" height="20"/>
+                            <rect key="frame" x="8" y="91" width="68" height="30"/>
                             <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="11"/>
                             <state key="normal" title="安全食材库" backgroundImage="login_btn">
                                 <color key="titleColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -53,7 +52,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qii-b4-fhE">
-                            <rect key="frame" x="78" y="101" width="68" height="20"/>
+                            <rect key="frame" x="78" y="92" width="68" height="30"/>
                             <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="11"/>
                             <state key="normal" title="过敏食材库" backgroundImage="login_btn">
                                 <color key="titleColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -66,7 +65,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6vf-1L-Es2">
-                            <rect key="frame" x="148" y="101" width="68" height="20"/>
+                            <rect key="frame" x="148" y="92" width="68" height="30"/>
                             <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="11"/>
                             <state key="normal" title="拒绝食材库" backgroundImage="login_btn">
                                 <color key="titleColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -79,7 +78,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PVR-hd-5UW">
-                            <rect key="frame" x="218" y="101" width="73" height="20"/>
+                            <rect key="frame" x="218" y="92" width="73" height="30"/>
                             <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="11"/>
                             <state key="normal" title="未尝试食材库" backgroundImage="login_btn">
                                 <color key="titleColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -92,7 +91,7 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="请您将宝宝已尝试过（尝试3-7天）且安全(未发" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1qY-Ok-rkC">
-                            <rect key="frame" x="33" y="50" width="403" height="21"/>
+                            <rect key="frame" x="33" y="47" width="403" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <color key="textColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
@@ -120,29 +119,18 @@
                         <action selector="queding:" destination="-1" eventType="touchUpInside" id="pEq-z1-N8u"/>
                     </connections>
                 </button>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="e4S-gH-0Cs">
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VIu-zI-MKS">
                     <rect key="frame" x="8" y="130" width="304" height="251"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aZa-B5-0oh">
-                        <size key="itemSize" width="50" height="50"/>
-                        <size key="headerReferenceSize" width="50" height="50"/>
-                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    </collectionViewFlowLayout>
-                </collectionView>
+                    <color key="backgroundColor" red="0.81020359848484846" green="0.49136619613481203" blue="0.45793612380275084" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="e4S-gH-0Cs" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="0PB-gn-2tJ"/>
                 <constraint firstItem="uYK-bR-pcj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="17X-d2-p5w"/>
                 <constraint firstAttribute="trailing" secondItem="uYK-bR-pcj" secondAttribute="trailing" id="1ef-KS-TGT"/>
-                <constraint firstAttribute="trailing" secondItem="e4S-gH-0Cs" secondAttribute="trailing" constant="8" id="2sf-y7-ahB"/>
                 <constraint firstItem="cJt-AW-Yth" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="125" id="6NX-dQ-5rb"/>
                 <constraint firstItem="uYK-bR-pcj" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="8wy-4a-pbA"/>
-                <constraint firstItem="cJt-AW-Yth" firstAttribute="top" secondItem="e4S-gH-0Cs" secondAttribute="bottom" constant="8" id="BV5-gn-uHh"/>
                 <constraint firstAttribute="bottom" secondItem="cJt-AW-Yth" secondAttribute="bottom" constant="15" id="N3e-Fe-F7H"/>
-                <constraint firstItem="cJt-AW-Yth" firstAttribute="top" secondItem="e4S-gH-0Cs" secondAttribute="bottom" constant="8" id="R4p-uy-9iA"/>
-                <constraint firstItem="e4S-gH-0Cs" firstAttribute="top" secondItem="uYK-bR-pcj" secondAttribute="bottom" constant="8" id="j6h-MV-P8E"/>
-                <constraint firstItem="e4S-gH-0Cs" firstAttribute="top" secondItem="uYK-bR-pcj" secondAttribute="bottom" constant="8" id="tAN-DG-hRH"/>
                 <constraint firstAttribute="trailing" secondItem="cJt-AW-Yth" secondAttribute="trailing" constant="124" id="uGS-rB-3nx"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>

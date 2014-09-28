@@ -9,7 +9,8 @@
 #import "ZDSiKuViewController.h"
 #import "ZDTabBarController.h"
 
-@interface ZDSiKuViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
+@interface ZDSiKuViewController ()
+//<UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UIButton *anquan;
 @property (weak, nonatomic) IBOutlet UIButton *guomin;
@@ -40,35 +41,30 @@
     }
     return _products;
 }
-
 #pragma mark - 数据源方法
 // 返回每个section（分组）中的item（条目，小格子）的数量
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
-{
-    return [self.products[section] count];
-}
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-    return self.products.count;
-}
-
-- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
-{
-    UICollectionReusableView *reusable = [[UICollectionReusableView alloc]init];
-    return reusable;
-}
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-//    static NSString *ID = @"Cell";
-    // 查询可重用item
-    UICollectionViewCell *cell = [[UICollectionViewCell alloc]init];
-    
-//    cell.product = self.products[indexPath.item];
-    
-    return cell;
-}
+//- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+//{
+//    return [self.products[section] count];
+//}
+//- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+//    return self.products.count;
+//}
+//
+//- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+//{
+//    UICollectionReusableView *reusable = [[UICollectionReusableView alloc]init];
+//    return reusable;
+//}
+//
+//- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+//{
+////    static NSString *ID = @"Cell";
+//    UICollectionViewCell *cell = [[UICollectionViewCell alloc]init];
+//    return cell;
+//}
 - (void)chushihua{
-    self.title = @"添加四库";
+    self.title = @"勾选四库";
     if(iOS7)
     {
         self.edgesForExtendedLayout = NO;
@@ -88,8 +84,8 @@
     self.weichangshi.layer.cornerRadius = 3;
     self.weichangshi.layer.masksToBounds = YES;
     
-    self.collection.delegate = self;
-    self.collection.dataSource = self;
+//    self.collection.delegate = self;
+//    self.collection.dataSource = self;
 }
 
 - (IBAction)anquan:(UIButton *)sender {

@@ -83,11 +83,9 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    
     // 1.箭头
     CGFloat arrowX = self.mj_width * 0.5 - 100;
     self.arrowImage.center = CGPointMake(arrowX, self.mj_height * 0.5);
-    
     // 2.指示器
     self.activityView.center = self.arrowImage.center;
 }
@@ -101,7 +99,6 @@
     
     if (newSuperview) { // 新的父控件
         [newSuperview addObserver:self forKeyPath:MJRefreshContentOffset options:NSKeyValueObservingOptionNew context:nil];
-        
         // 设置宽度
         self.mj_width = newSuperview.mj_width;
         // 设置位置

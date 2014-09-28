@@ -48,6 +48,24 @@
 		18F37E7419D7E11A00325A25 /* ZDSiKuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F37E7319D7E11A00325A25 /* ZDSiKuCell.m */; };
 		18F37E7619D7E13C00325A25 /* ZDSiKuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F37E7519D7E13C00325A25 /* ZDSiKuCell.xib */; };
 		18F37E7919D7E45D00325A25 /* ZDSiKuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F37E7819D7E45D00325A25 /* ZDSiKuButton.m */; };
+		18F37E8F19D7F62300325A25 /* CZBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F37E7F19D7F62300325A25 /* CZBaseCell.m */; };
+		18F37E9019D7F62300325A25 /* CZNormalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F37E8119D7F62300325A25 /* CZNormalCell.m */; };
+		18F37E9119D7F62300325A25 /* CZNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F37E8219D7F62300325A25 /* CZNormalCell.xib */; };
+		18F37E9219D7F62300325A25 /* CZTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F37E8419D7F62300325A25 /* CZTitleCell.m */; };
+		18F37E9319D7F62300325A25 /* CZTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F37E8519D7F62300325A25 /* CZTitleCell.xib */; };
+		18F37E9419D7F62300325A25 /* CZPhotosCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F37E8719D7F62300325A25 /* CZPhotosCell.m */; };
+		18F37E9519D7F62300325A25 /* CZPhotosCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F37E8819D7F62300325A25 /* CZPhotosCell.xib */; };
+		18F37E9619D7F62300325A25 /* ZDDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F37E8A19D7F62300325A25 /* ZDDetailViewController.m */; };
+		18F37E9819D7F62300325A25 /* ZDPhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F37E8E19D7F62300325A25 /* ZDPhotosViewController.m */; };
+		18F37EA919D7F66400325A25 /* MJPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F37E9B19D7F66400325A25 /* MJPhoto.m */; };
+		18F37EAA19D7F66400325A25 /* MJPhotoBrowser.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 18F37E9C19D7F66400325A25 /* MJPhotoBrowser.bundle */; };
+		18F37EAB19D7F66400325A25 /* MJPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F37E9E19D7F66400325A25 /* MJPhotoBrowser.m */; };
+		18F37EAC19D7F66400325A25 /* MJPhotoLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F37EA019D7F66400325A25 /* MJPhotoLoadingView.m */; };
+		18F37EAD19D7F66400325A25 /* MJPhotoProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F37EA219D7F66400325A25 /* MJPhotoProgressView.m */; };
+		18F37EAE19D7F66400325A25 /* MJPhotoToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F37EA419D7F66400325A25 /* MJPhotoToolbar.m */; };
+		18F37EAF19D7F66400325A25 /* MJPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F37EA619D7F66400325A25 /* MJPhotoView.m */; };
+		18F37EB019D7F66400325A25 /* SDWebImageManager+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F37EA819D7F66400325A25 /* SDWebImageManager+MJ.m */; };
+		18F37EB219D807CF00325A25 /* ipad_home_left_b@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18F37EB119D807CF00325A25 /* ipad_home_left_b@2x.png */; };
 		18F891C119CBBD4F0046C022 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F891B519CBBD4F0046C022 /* NSArray+Log.m */; };
 		18F891C219CBBD4F0046C022 /* NSDate+ZD.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F891B619CBBD4F0046C022 /* NSDate+ZD.m */; };
 		18F891C319CBBD4F0046C022 /* NSDictionary+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F891B719CBBD4F0046C022 /* NSDictionary+Log.m */; };
@@ -199,6 +217,37 @@
 		18F37E7519D7E13C00325A25 /* ZDSiKuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ZDSiKuCell.xib; path = "FoodBank/init(初始化)/Model/ZDSiKuCell.xib"; sourceTree = SOURCE_ROOT; };
 		18F37E7719D7E45D00325A25 /* ZDSiKuButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDSiKuButton.h; sourceTree = "<group>"; };
 		18F37E7819D7E45D00325A25 /* ZDSiKuButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDSiKuButton.m; sourceTree = "<group>"; };
+		18F37E7E19D7F62300325A25 /* CZBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZBaseCell.h; sourceTree = "<group>"; };
+		18F37E7F19D7F62300325A25 /* CZBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZBaseCell.m; sourceTree = "<group>"; };
+		18F37E8019D7F62300325A25 /* CZNormalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZNormalCell.h; sourceTree = "<group>"; };
+		18F37E8119D7F62300325A25 /* CZNormalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZNormalCell.m; sourceTree = "<group>"; };
+		18F37E8219D7F62300325A25 /* CZNormalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CZNormalCell.xib; sourceTree = "<group>"; };
+		18F37E8319D7F62300325A25 /* CZTitleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZTitleCell.h; sourceTree = "<group>"; };
+		18F37E8419D7F62300325A25 /* CZTitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZTitleCell.m; sourceTree = "<group>"; };
+		18F37E8519D7F62300325A25 /* CZTitleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CZTitleCell.xib; sourceTree = "<group>"; };
+		18F37E8619D7F62300325A25 /* CZPhotosCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZPhotosCell.h; sourceTree = "<group>"; };
+		18F37E8719D7F62300325A25 /* CZPhotosCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZPhotosCell.m; sourceTree = "<group>"; };
+		18F37E8819D7F62300325A25 /* CZPhotosCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CZPhotosCell.xib; sourceTree = "<group>"; };
+		18F37E8919D7F62300325A25 /* ZDDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDDetailViewController.h; sourceTree = "<group>"; };
+		18F37E8A19D7F62300325A25 /* ZDDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZDDetailViewController.m; path = "../../News(宝贝咨询)/View/ZDDetailViewController.m"; sourceTree = "<group>"; };
+		18F37E8D19D7F62300325A25 /* ZDPhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDPhotosViewController.h; sourceTree = "<group>"; };
+		18F37E8E19D7F62300325A25 /* ZDPhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDPhotosViewController.m; sourceTree = "<group>"; };
+		18F37E9A19D7F66400325A25 /* MJPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhoto.h; sourceTree = "<group>"; };
+		18F37E9B19D7F66400325A25 /* MJPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhoto.m; sourceTree = "<group>"; };
+		18F37E9C19D7F66400325A25 /* MJPhotoBrowser.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJPhotoBrowser.bundle; sourceTree = "<group>"; };
+		18F37E9D19D7F66400325A25 /* MJPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhotoBrowser.h; sourceTree = "<group>"; };
+		18F37E9E19D7F66400325A25 /* MJPhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhotoBrowser.m; sourceTree = "<group>"; };
+		18F37E9F19D7F66400325A25 /* MJPhotoLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhotoLoadingView.h; sourceTree = "<group>"; };
+		18F37EA019D7F66400325A25 /* MJPhotoLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhotoLoadingView.m; sourceTree = "<group>"; };
+		18F37EA119D7F66400325A25 /* MJPhotoProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhotoProgressView.h; sourceTree = "<group>"; };
+		18F37EA219D7F66400325A25 /* MJPhotoProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhotoProgressView.m; sourceTree = "<group>"; };
+		18F37EA319D7F66400325A25 /* MJPhotoToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhotoToolbar.h; sourceTree = "<group>"; };
+		18F37EA419D7F66400325A25 /* MJPhotoToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhotoToolbar.m; sourceTree = "<group>"; };
+		18F37EA519D7F66400325A25 /* MJPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhotoView.h; sourceTree = "<group>"; };
+		18F37EA619D7F66400325A25 /* MJPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhotoView.m; sourceTree = "<group>"; };
+		18F37EA719D7F66400325A25 /* SDWebImageManager+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SDWebImageManager+MJ.h"; sourceTree = "<group>"; };
+		18F37EA819D7F66400325A25 /* SDWebImageManager+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SDWebImageManager+MJ.m"; sourceTree = "<group>"; };
+		18F37EB119D807CF00325A25 /* ipad_home_left_b@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ipad_home_left_b@2x.png"; sourceTree = "<group>"; };
 		18F891A819CBBD4F0046C022 /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
 		18F891A919CBBD4F0046C022 /* NSDate+ZD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ZD.h"; sourceTree = "<group>"; };
 		18F891AA19CBBD4F0046C022 /* NSDictionary+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Log.h"; sourceTree = "<group>"; };
@@ -255,8 +304,8 @@
 		18FA20B619CFDF2700430E37 /* ZDHelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDHelpViewController.m; sourceTree = "<group>"; };
 		18FA20B819CFE0CA00430E37 /* ZDPlanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDPlanViewController.h; sourceTree = "<group>"; };
 		18FA20B919CFE0CA00430E37 /* ZDPlanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDPlanViewController.m; sourceTree = "<group>"; };
-		18FA20BB19CFE14000430E37 /* ZDNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDNewsViewController.h; sourceTree = "<group>"; };
-		18FA20BC19CFE14000430E37 /* ZDNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDNewsViewController.m; sourceTree = "<group>"; };
+		18FA20BB19CFE14000430E37 /* ZDNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZDNewsViewController.h; path = ../../Main/Controller/ZDNewsViewController.h; sourceTree = "<group>"; };
+		18FA20BC19CFE14000430E37 /* ZDNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZDNewsViewController.m; path = ../../Main/Controller/ZDNewsViewController.m; sourceTree = "<group>"; };
 		18FA20BE19CFE84800430E37 /* ZDNewfeatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDNewfeatureViewController.h; sourceTree = "<group>"; };
 		18FA20BF19CFE84800430E37 /* ZDNewfeatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDNewfeatureViewController.m; sourceTree = "<group>"; };
 		18FA20C219CFF2D200430E37 /* MBProgressHUD+ZD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+ZD.h"; sourceTree = "<group>"; };
@@ -403,6 +452,7 @@
 				181BCFA419D4240800EDA508 /* ZDJudgeViewController.h */,
 				181BCFA519D4240800EDA508 /* ZDJudgeViewController.m */,
 				181BCFA719D4240F00EDA508 /* ZDJudgeViewController.xib */,
+				18F37E8A19D7F62300325A25 /* ZDDetailViewController.m */,
 				18A092FD19D524CB00FC74FF /* ZDNotifyViewController.h */,
 				18A092FE19D524CB00FC74FF /* ZDNotifyViewController.m */,
 				18A0930A19D551A100FC74FF /* ZDNotifyViewController.xib */,
@@ -474,6 +524,7 @@
 		1888B3C019CADBDC0030DB88 /* FoodBank */ = {
 			isa = PBXGroup;
 			children = (
+				18F37E7A19D7F5E600325A25 /* News(宝贝咨询) */,
 				181BCF9B19D3DC4A00EDA508 /* init(初始化) */,
 				18FA20AE19CFB92B00430E37 /* OAuth(授权) */,
 				18FA20AD19CFB90300430E37 /* Newfeature(新特性) */,
@@ -605,8 +656,6 @@
 				18FA20B619CFDF2700430E37 /* ZDHelpViewController.m */,
 				18FA20B819CFE0CA00430E37 /* ZDPlanViewController.h */,
 				18FA20B919CFE0CA00430E37 /* ZDPlanViewController.m */,
-				18FA20BB19CFE14000430E37 /* ZDNewsViewController.h */,
-				18FA20BC19CFE14000430E37 /* ZDNewsViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -689,6 +738,7 @@
 		1888B3FE19CADE520030DB88 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				18F37E9919D7F66400325A25 /* MJPhotoBrowser */,
 				18FA212319CFF40D00430E37 /* SDWebImage */,
 				18FA210A19CFF40200430E37 /* MJRefresh */,
 				18FA20E719CFF3E600430E37 /* MJExtension */,
@@ -739,6 +789,76 @@
 				18F891C019CBBD4F0046C022 /* UIView+ZD.m */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		18F37E7A19D7F5E600325A25 /* News(宝贝咨询) */ = {
+			isa = PBXGroup;
+			children = (
+				18F37E7B19D7F5E600325A25 /* Controller */,
+				18F37E7C19D7F5E600325A25 /* Model */,
+				18F37E7D19D7F5E600325A25 /* View */,
+			);
+			path = "News(宝贝咨询)";
+			sourceTree = "<group>";
+		};
+		18F37E7B19D7F5E600325A25 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				18FA20BB19CFE14000430E37 /* ZDNewsViewController.h */,
+				18FA20BC19CFE14000430E37 /* ZDNewsViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		18F37E7C19D7F5E600325A25 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		18F37E7D19D7F5E600325A25 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				18F37E7E19D7F62300325A25 /* CZBaseCell.h */,
+				18F37E7F19D7F62300325A25 /* CZBaseCell.m */,
+				18F37E8019D7F62300325A25 /* CZNormalCell.h */,
+				18F37E8119D7F62300325A25 /* CZNormalCell.m */,
+				18F37E8219D7F62300325A25 /* CZNormalCell.xib */,
+				18F37E8319D7F62300325A25 /* CZTitleCell.h */,
+				18F37E8419D7F62300325A25 /* CZTitleCell.m */,
+				18F37E8519D7F62300325A25 /* CZTitleCell.xib */,
+				18F37E8619D7F62300325A25 /* CZPhotosCell.h */,
+				18F37E8719D7F62300325A25 /* CZPhotosCell.m */,
+				18F37E8819D7F62300325A25 /* CZPhotosCell.xib */,
+				18F37E8919D7F62300325A25 /* ZDDetailViewController.h */,
+				18F37E8D19D7F62300325A25 /* ZDPhotosViewController.h */,
+				18F37E8E19D7F62300325A25 /* ZDPhotosViewController.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		18F37E9919D7F66400325A25 /* MJPhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				18F37E9A19D7F66400325A25 /* MJPhoto.h */,
+				18F37E9B19D7F66400325A25 /* MJPhoto.m */,
+				18F37E9C19D7F66400325A25 /* MJPhotoBrowser.bundle */,
+				18F37E9D19D7F66400325A25 /* MJPhotoBrowser.h */,
+				18F37E9E19D7F66400325A25 /* MJPhotoBrowser.m */,
+				18F37E9F19D7F66400325A25 /* MJPhotoLoadingView.h */,
+				18F37EA019D7F66400325A25 /* MJPhotoLoadingView.m */,
+				18F37EA119D7F66400325A25 /* MJPhotoProgressView.h */,
+				18F37EA219D7F66400325A25 /* MJPhotoProgressView.m */,
+				18F37EA319D7F66400325A25 /* MJPhotoToolbar.h */,
+				18F37EA419D7F66400325A25 /* MJPhotoToolbar.m */,
+				18F37EA519D7F66400325A25 /* MJPhotoView.h */,
+				18F37EA619D7F66400325A25 /* MJPhotoView.m */,
+				18F37EA719D7F66400325A25 /* SDWebImageManager+MJ.h */,
+				18F37EA819D7F66400325A25 /* SDWebImageManager+MJ.m */,
+			);
+			name = MJPhotoBrowser;
+			path = "MJPhotoBrowser-master";
 			sourceTree = "<group>";
 		};
 		18F891A719CBBD0E0046C022 /* Setting */ = {
@@ -850,6 +970,7 @@
 			isa = PBXGroup;
 			children = (
 				18FA210B19CFF40200430E37 /* MJRefresh.bundle */,
+				18F37EB119D807CF00325A25 /* ipad_home_left_b@2x.png */,
 				18FA210C19CFF40200430E37 /* MJRefresh.h */,
 				18FA210D19CFF40200430E37 /* MJRefreshBaseView.h */,
 				18FA210E19CFF40200430E37 /* MJRefreshBaseView.m */,
@@ -990,20 +1111,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				181BCFA319D4204600EDA508 /* ZDInitViewController.xib in Resources */,
+				18F37EAA19D7F66400325A25 /* MJPhotoBrowser.bundle in Resources */,
 				186D174319D29F23003F8A17 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
+				18F37E9319D7F62300325A25 /* CZTitleCell.xib in Resources */,
 				1823B0F919D146C10081E5A2 /* ZDRegisterViewController.xib in Resources */,
 				1823B10C19D173410081E5A2 /* ZDRgsViewController.xib in Resources */,
 				1828E97A19D796B5008B328E /* ZDSiKuViewController.xib in Resources */,
 				18A0931019D56C6400FC74FF /* ZDSupViewController.xib in Resources */,
 				18A0930919D53A7D00FC74FF /* ZDNationView.xib in Resources */,
+				18F37E9119D7F62300325A25 /* CZNormalCell.xib in Resources */,
 				18F37E7619D7E13C00325A25 /* ZDSiKuCell.xib in Resources */,
 				181BCFA819D4240F00EDA508 /* ZDJudgeViewController.xib in Resources */,
 				18A0930B19D551A100FC74FF /* ZDNotifyViewController.xib in Resources */,
+				18F37EB219D807CF00325A25 /* ipad_home_left_b@2x.png in Resources */,
 				183EC3E819D26B3B00C756DE /* ZDDatePickerView.xib in Resources */,
 				1888B3D219CADBDC0030DB88 /* LaunchScreen.xib in Resources */,
 				1888B3CF19CADBDC0030DB88 /* Images.xcassets in Resources */,
 				18FA211B19CFF40200430E37 /* MJRefresh.bundle in Resources */,
 				18FA20C819CFF2D200430E37 /* MBProgressHUD.bundle in Resources */,
+				18F37E9519D7F62300325A25 /* CZPhotosCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1023,14 +1149,18 @@
 			files = (
 				18FA214C19CFF40D00430E37 /* SDWebImageManager.m in Sources */,
 				18FA214D19CFF40D00430E37 /* SDWebImagePrefetcher.m in Sources */,
+				18F37EB019D7F66400325A25 /* SDWebImageManager+MJ.m in Sources */,
 				1888B3C719CADBDC0030DB88 /* AppDelegate.m in Sources */,
 				18FA210619CFF3E700430E37 /* MJTypeEncoding.m in Sources */,
 				18A0930E19D56C5500FC74FF /* ZDSupViewController.m in Sources */,
 				18FA210819CFF3E700430E37 /* NSObject+MJKeyValue.m in Sources */,
 				18FA20B419CFB99100430E37 /* ZDBadgeButton.m in Sources */,
 				18FA214619CFF40D00430E37 /* NSData+ImageContentType.m in Sources */,
+				18F37E9819D7F62300325A25 /* ZDPhotosViewController.m in Sources */,
 				18FA20B719CFDF2700430E37 /* ZDHelpViewController.m in Sources */,
 				18FA20E419CFF3D600430E37 /* AFURLRequestSerialization.m in Sources */,
+				18F37E9219D7F62300325A25 /* CZTitleCell.m in Sources */,
+				18F37EAE19D7F66400325A25 /* MJPhotoToolbar.m in Sources */,
 				18FA210319CFF3E600430E37 /* MJMember.m in Sources */,
 				181BCFA619D4240800EDA508 /* ZDJudgeViewController.m in Sources */,
 				1823B0FF19D161220081E5A2 /* ZDHttpTool.m in Sources */,
@@ -1055,6 +1185,7 @@
 				183EC3E719D26B3B00C756DE /* ZDDatePickerView.m in Sources */,
 				18FA210519CFF3E700430E37 /* MJType.m in Sources */,
 				18FA20C019CFE84800430E37 /* ZDNewfeatureViewController.m in Sources */,
+				18F37E9419D7F62300325A25 /* CZPhotosCell.m in Sources */,
 				18FA214519CFF40D00430E37 /* MKAnnotationView+WebCache.m in Sources */,
 				18FA212219CFF40200430E37 /* UIView+MJExtension.m in Sources */,
 				18F891C219CBBD4F0046C022 /* NSDate+ZD.m in Sources */,
@@ -1077,6 +1208,8 @@
 				1823B10519D161580081E5A2 /* ZDAccount.m in Sources */,
 				18FA214B19CFF40D00430E37 /* SDWebImageDownloaderOperation.m in Sources */,
 				18FA20BA19CFE0CA00430E37 /* ZDPlanViewController.m in Sources */,
+				18F37E9619D7F62300325A25 /* ZDDetailViewController.m in Sources */,
+				18F37EAB19D7F66400325A25 /* MJPhotoBrowser.m in Sources */,
 				18FA210919CFF3E700430E37 /* NSObject+MJMember.m in Sources */,
 				18FA20E119CFF3D600430E37 /* AFNetworkReachabilityManager.m in Sources */,
 				18FA214E19CFF40D00430E37 /* UIButton+WebCache.m in Sources */,
@@ -1092,10 +1225,12 @@
 				1823B10919D16E490081E5A2 /* ZDRgsViewController.m in Sources */,
 				18FA20DF19CFF3D600430E37 /* AFHTTPRequestOperationManager.m in Sources */,
 				18FA215419CFF40D00430E37 /* UIView+WebCacheOperation.m in Sources */,
+				18F37E9019D7F62300325A25 /* CZNormalCell.m in Sources */,
 				18F891F219CC189E0046C022 /* ZDNavViewController.m in Sources */,
 				18FA211E19CFF40200430E37 /* MJRefreshFooterView.m in Sources */,
 				18FA20FF19CFF3E600430E37 /* MJArgument.m in Sources */,
 				18FA210019CFF3E600430E37 /* MJConst.m in Sources */,
+				18F37EAD19D7F66400325A25 /* MJPhotoProgressView.m in Sources */,
 				18FA20DE19CFF3D600430E37 /* AFHTTPRequestOperation.m in Sources */,
 				1823B10219D1612B0081E5A2 /* ZDAccountTool.m in Sources */,
 				18A092FC19D4F68800FC74FF /* ZDChooseButton.m in Sources */,
@@ -1105,13 +1240,17 @@
 				18F891C419CBBD4F0046C022 /* NSString+Extend.m in Sources */,
 				1888B3C419CADBDC0030DB88 /* main.m in Sources */,
 				18FA214719CFF40D00430E37 /* SDImageCache.m in Sources */,
+				18F37EAF19D7F66400325A25 /* MJPhotoView.m in Sources */,
 				1888B3E919CADCBA0030DB88 /* ZDRegisterViewController.m in Sources */,
 				18F891DD19CBD2DF0046C022 /* ZDCommonArrowItem.m in Sources */,
 				18FA210219CFF3E600430E37 /* MJIvar.m in Sources */,
 				18F891E019CBD2DF0046C022 /* ZDCommonGroup.m in Sources */,
+				18F37E8F19D7F62300325A25 /* CZBaseCell.m in Sources */,
 				18FA210419CFF3E600430E37 /* MJMethod.m in Sources */,
 				18FA20E019CFF3D600430E37 /* AFHTTPSessionManager.m in Sources */,
+				18F37EAC19D7F66400325A25 /* MJPhotoLoadingView.m in Sources */,
 				18FA20E519CFF3D600430E37 /* AFURLResponseSerialization.m in Sources */,
+				18F37EA919D7F66400325A25 /* MJPhoto.m in Sources */,
 				18F891E319CBD2DF0046C022 /* ZDCommonSwitchItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

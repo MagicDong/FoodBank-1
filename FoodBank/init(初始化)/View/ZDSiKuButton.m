@@ -47,6 +47,7 @@
     CGFloat imageH = self.height;
     return CGRectMake(imageX, imageY, imageW, imageH);
 }
+
 - (void)setLabel:(NSString *)label{
     _label = label;
     

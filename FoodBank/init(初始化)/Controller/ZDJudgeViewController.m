@@ -29,6 +29,7 @@
         self.navigationController.navigationBar.opaque=YES;
     }
 }
+
 - (IBAction)fuhe:(id)sender {
     ZDSupViewController *sup = [[ZDSupViewController alloc]init];
     [self.navigationController pushViewController:sup animated:YES];
