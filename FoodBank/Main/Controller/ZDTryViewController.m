@@ -6,13 +6,13 @@
 //  Copyright (c) 2014年 Dong. All rights reserved.
 //
 
-#import "ZDPlanViewController.h"
+#import "ZDTryViewController.h"
 
-@interface ZDPlanViewController ()
+@interface ZDTryViewController ()
 
 @end
 
-@implementation ZDPlanViewController
+@implementation ZDTryViewController
 
 - (void)viewDidLoad {
     

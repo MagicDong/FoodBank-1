@@ -39,7 +39,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Vb-jl-4i6">
-                            <rect key="frame" x="8" y="91" width="68" height="30"/>
+                            <rect key="frame" x="8" y="92" width="68" height="30"/>
                             <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="11"/>
                             <state key="normal" title="安全食材库" backgroundImage="login_btn">
                                 <color key="titleColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -52,7 +52,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qii-b4-fhE">
-                            <rect key="frame" x="78" y="92" width="68" height="30"/>
+                            <rect key="frame" x="77" y="92" width="68" height="30"/>
                             <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="11"/>
                             <state key="normal" title="过敏食材库" backgroundImage="login_btn">
                                 <color key="titleColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -65,7 +65,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6vf-1L-Es2">
-                            <rect key="frame" x="148" y="92" width="68" height="30"/>
+                            <rect key="frame" x="146" y="92" width="68" height="30"/>
                             <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="11"/>
                             <state key="normal" title="拒绝食材库" backgroundImage="login_btn">
                                 <color key="titleColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -78,7 +78,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PVR-hd-5UW">
-                            <rect key="frame" x="218" y="92" width="73" height="30"/>
+                            <rect key="frame" x="215" y="92" width="73" height="30"/>
                             <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="11"/>
                             <state key="normal" title="未尝试食材库" backgroundImage="login_btn">
                                 <color key="titleColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>

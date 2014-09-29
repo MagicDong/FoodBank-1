@@ -83,9 +83,6 @@
     
     self.weichangshi.layer.cornerRadius = 3;
     self.weichangshi.layer.masksToBounds = YES;
-    
-//    self.collection.delegate = self;
-//    self.collection.dataSource = self;
 }
 
 - (IBAction)anquan:(UIButton *)sender {

@@ -12,8 +12,8 @@
 #import "ZDRegisterViewController.h"
 #import "ZDNavViewController.h"
 #import "ZDMyBabyViewController.h"
-#import "ZDHelpViewController.h"
-#import "ZDPlanViewController.h"
+#import "ZDBankViewController.h"
+#import "ZDTryViewController.h"
 #import "ZDNewsViewController.h"
 
 @interface ZDTabBarController () <ZDTabBarDelegate>
@@ -23,8 +23,8 @@
 @property (nonatomic, weak) ZDTabBar *customTabBar;
 
 @property (nonatomic, strong) ZDNewsViewController *home;
-@property (nonatomic, strong) ZDPlanViewController *message;
-@property (nonatomic, strong) ZDHelpViewController *discover;
+@property (nonatomic, strong) ZDTryViewController *message;
+@property (nonatomic, strong) ZDBankViewController *discover;
 @property (nonatomic, strong) ZDMyBabyViewController *baby;
 @end
 
@@ -43,12 +43,12 @@
         self.home = home;
         
         // 2.消息
-        ZDPlanViewController *message = [[ZDPlanViewController alloc] init];
-        [self setupChileViewController:message title:@"尝试周期" imageName:@"tab002_2" selectedImageName:@"tab002"];
+        ZDTryViewController *message = [[ZDTryViewController alloc] init];
+        [self setupChileViewController:message title:@"新食材尝试" imageName:@"tab002_2" selectedImageName:@"tab002"];
         self.message = message;
         
         // 3.广场
-        ZDHelpViewController *discover = [[ZDHelpViewController alloc] init];
+        ZDBankViewController *discover = [[ZDBankViewController alloc] init];
         [self setupChileViewController:discover title:@"食材银行" imageName:@"tab003_3" selectedImageName:@"tab003"];
         self.discover = discover;
         

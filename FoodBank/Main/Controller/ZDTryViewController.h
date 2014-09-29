@@ -1,5 +1,5 @@
 //
-//  ZDHelpViewController.h
+//  ZDPlanViewController.h
 //  FoodBank
 //
 //  Created by apple-jiexian on 14-9-22.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZDHelpViewController : UIViewController
+@interface ZDTryViewController : UIViewController
 
 @end

@@ -6,13 +6,13 @@
 //  Copyright (c) 2014年 Dong. All rights reserved.
 //
 
-#import "ZDHelpViewController.h"
+#import "ZDBankViewController.h"
 
-@interface ZDHelpViewController ()
+@interface ZDBankViewController ()
 
 @end
 
-@implementation ZDHelpViewController
+@implementation ZDBankViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

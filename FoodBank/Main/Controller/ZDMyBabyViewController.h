@@ -6,8 +6,8 @@
 //  Copyright (c) 2014年 Dong. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "ZDCommonViewController.h"
 
-@interface ZDMyBabyViewController : UIViewController
+@interface ZDMyBabyViewController : ZDCommonViewController
 
 @end
