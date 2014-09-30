@@ -27,6 +27,8 @@
 		18247A5A19D2BE4D001B04EA /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 18247A5919D2BE4D001B04EA /* libz.dylib */; };
 		1828E97819D7963E008B328E /* ZDSiKuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1828E97719D7963E008B328E /* ZDSiKuViewController.m */; };
 		1828E97A19D796B5008B328E /* ZDSiKuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1828E97919D796B5008B328E /* ZDSiKuViewController.xib */; };
+		183E72B119DA4092009CD24F /* SCHCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 183E72AE19DA4092009CD24F /* SCHCircleView.m */; };
+		183E72B219DA4092009CD24F /* SCHCircleViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 183E72B019DA4092009CD24F /* SCHCircleViewCell.m */; };
 		183EC3E719D26B3B00C756DE /* ZDDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 183EC3E519D26B3B00C756DE /* ZDDatePickerView.m */; };
 		183EC3E819D26B3B00C756DE /* ZDDatePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183EC3E619D26B3B00C756DE /* ZDDatePickerView.xib */; };
 		186D174319D29F23003F8A17 /* TencentOpenApi_IOS_Bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 186D174219D29F23003F8A17 /* TencentOpenApi_IOS_Bundle.bundle */; };
@@ -192,6 +194,10 @@
 		1828E97619D7963E008B328E /* ZDSiKuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDSiKuViewController.h; sourceTree = "<group>"; };
 		1828E97719D7963E008B328E /* ZDSiKuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDSiKuViewController.m; sourceTree = "<group>"; };
 		1828E97919D796B5008B328E /* ZDSiKuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDSiKuViewController.xib; sourceTree = "<group>"; };
+		183E72AD19DA4092009CD24F /* SCHCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCHCircleView.h; sourceTree = "<group>"; };
+		183E72AE19DA4092009CD24F /* SCHCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCHCircleView.m; sourceTree = "<group>"; };
+		183E72AF19DA4092009CD24F /* SCHCircleViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCHCircleViewCell.h; sourceTree = "<group>"; };
+		183E72B019DA4092009CD24F /* SCHCircleViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCHCircleViewCell.m; sourceTree = "<group>"; };
 		183EC3E419D26B3B00C756DE /* ZDDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZDDatePickerView.h; path = ../../Register/View/ZDDatePickerView.h; sourceTree = "<group>"; };
 		183EC3E519D26B3B00C756DE /* ZDDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZDDatePickerView.m; path = ../../Register/View/ZDDatePickerView.m; sourceTree = "<group>"; };
 		183EC3E619D26B3B00C756DE /* ZDDatePickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ZDDatePickerView.xib; path = ../../Register/View/ZDDatePickerView.xib; sourceTree = "<group>"; };
@@ -547,6 +553,10 @@
 		18733DAE19D8F44700966A55 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				183E72AD19DA4092009CD24F /* SCHCircleView.h */,
+				183E72AE19DA4092009CD24F /* SCHCircleView.m */,
+				183E72AF19DA4092009CD24F /* SCHCircleViewCell.h */,
+				183E72B019DA4092009CD24F /* SCHCircleViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1317,7 +1327,9 @@
 				18F891F219CC189E0046C022 /* ZDNavViewController.m in Sources */,
 				18FA211E19CFF40200430E37 /* MJRefreshFooterView.m in Sources */,
 				18FA20FF19CFF3E600430E37 /* MJArgument.m in Sources */,
+				183E72B119DA4092009CD24F /* SCHCircleView.m in Sources */,
 				18FA210019CFF3E600430E37 /* MJConst.m in Sources */,
+				183E72B219DA4092009CD24F /* SCHCircleViewCell.m in Sources */,
 				18F37EAD19D7F66400325A25 /* MJPhotoProgressView.m in Sources */,
 				18FA20DE19CFF3D600430E37 /* AFHTTPRequestOperation.m in Sources */,
 				1823B10219D1612B0081E5A2 /* ZDAccountTool.m in Sources */,
