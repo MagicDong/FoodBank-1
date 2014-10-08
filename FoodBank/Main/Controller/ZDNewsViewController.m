@@ -65,6 +65,7 @@ static NSString *PhotosID = @"photosCell";
         self.navigationController.navigationBar.opaque=YES;
     }
 }
+
 /** 加载上拉刷新和下拉刷新 */
 - (void)setupRefresh
 {
@@ -81,13 +82,14 @@ static NSString *PhotosID = @"photosCell";
 - (void)loadIphoneNews{
     NSString *url = [NSString stringWithFormat:ZDIphoneNew20];
     [ZDHttpTool getWithUrl:url params:nil success:^(NSDictionary *dict) {
-        self.dataList = dict[ZDIPhoneInfo];;
+        self.dataList = dict[ZDIPhoneInfo];
         self.isMore = NO;
         [self.tableView headerEndRefreshing];
     } failure:^(NSError *error) {
         [self.tableView headerEndRefreshing];
     }];
 }
+
 - (void)loadMoreIphoneNews{
     if (self.isMore) {
         [self.tableView footerEndRefreshing];
@@ -110,6 +112,7 @@ static NSString *PhotosID = @"photosCell";
         [self.tableView footerEndRefreshing];
     }];
 }
+
 // 为表格注册可重用的cell
 - (void)regCellNibs
 {

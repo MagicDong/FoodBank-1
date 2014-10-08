@@ -51,7 +51,6 @@ static NSString *heardID = @"headerView";
     _bgIcon.layer.anchorPoint = CGPointMake(0.5, 0);
     _bgIcon.layer.position = CGPointMake(160, -95);
     [self.tableView insertSubview:_bgIcon atIndex:0];
-    
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
@@ -79,11 +78,9 @@ static NSString *heardID = @"headerView";
 - (void)setupItems
 {
     /** 0组 */
-//    [self setupGroup0];
     [self setupGroup1];
     [self setupGroup2];
     // 设置footerView
-//    [self setupFooter];
     _headerView = [ZDMoreHeaderView moreHeaderView];
     _headerView.headerDelegate = self;
     self.tableView.tableHeaderView = _headerView;
@@ -94,7 +91,6 @@ static NSString *heardID = @"headerView";
 {
     ZDBabyInfoTableViewController *babyInfo = [[ZDBabyInfoTableViewController alloc]init];
     [self.navigationController pushViewController:babyInfo animated:YES];
-    
 }
 
 - (void)setupFooter
@@ -113,6 +109,7 @@ static NSString *heardID = @"headerView";
     btn.height = 45;
     self.tableView.tableFooterView = btn;
 }
+
 - (void)backAccount
 {
     UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"提示" message:@"确定退出此账号?" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
@@ -132,7 +129,9 @@ static NSString *heardID = @"headerView";
         UIApplication *app = [UIApplication sharedApplication];
         [app.delegate application:app didFinishLaunchingWithOptions:nil];
     }
+
 }
+
 - (void)dealloc
 {
     
@@ -167,6 +166,8 @@ static NSString *heardID = @"headerView";
     clearCache.subtitle = [NSString stringWithFormat:@"%.fMB",fileSize];
     __weak typeof (self) weakSelf = self;
     __weak typeof (clearCache) weakClearCache = clearCache;
+
+    
     clearCache.opertion = ^(){
         // 1.提示用户
         [MBProgressHUD showMessage:@"正在清除缓存ing...."];
@@ -202,8 +203,8 @@ static NSString *heardID = @"headerView";
     about.destVC = [ZDAboutViewController class];
     ZDCommonGroup *group = [self addGroup];
     group.items = @[idea,about];
+    
 }
-
 
 /** 计算路径文件的大小 */
 - (int)sizeAtPath:(NSString *)path
@@ -212,7 +213,5 @@ static NSString *heardID = @"headerView";
     NSDictionary *dict = [manager attributesOfItemAtPath:path error:nil];
     return [dict[NSFileSize] intValue];
 }
-
-
 
 @end

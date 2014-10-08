@@ -7,7 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SCHCircleView.h"
 
-@interface ZDBankViewController : UIViewController
+@interface ZDBankViewController : UIViewController<SCHCircleViewDataSource,SCHCircleViewDelegate>
+{
+    SCHCircleView   *_circle_view;
+    
+    NSMutableArray  *_icon_array;
+    
+    
+}
+
+@property (nonatomic,retain) IBOutlet SCHCircleView *circle_view;
+
+
+- (IBAction)pressed:(id)sender;
 
 @end

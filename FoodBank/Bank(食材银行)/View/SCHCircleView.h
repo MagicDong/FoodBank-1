@@ -14,7 +14,7 @@
 #define RADIUS           90.0f       //半径
 #define DEVIATION_RAIAN  0.0f        //偏移弧度
 #define IS_CAN_EDIT      NO          //是否可以编辑
-#define SCAlE            0.4f        //比例
+#define SCAlE            0.3f        //比例
 #define DRAG_SENSITIVITY 1.0f        //灵敏度
 
 /*弧度偏移的点定义为 👇 为初始点*/
@@ -205,8 +205,8 @@ typedef enum
     
     
     
-    id<SCHCircleViewDataSource> _circle_view_data_source;
-    id<SCHCircleViewDelegate>   _circle_view_delegate;
+    id<SCHCircleViewDataSource> _circle_view_data_sources;
+    id<SCHCircleViewDelegate>   _circle_view_delegates;
     
 }
 @property (nonatomic,assign)   SCHShowCircleStyle          show_circle_style;
@@ -219,7 +219,7 @@ typedef enum
 @property (nonatomic,assign)   id<SCHCircleViewDelegate>   circle_view_delegate;
 
 @property (nonatomic,readonly) BOOL                        is_edit;
-
+@property (nonatomic,readonly) BOOL                        is_single_tap_animation;
 /*重新加载数据*/
 - (void)reloadData;
 @end

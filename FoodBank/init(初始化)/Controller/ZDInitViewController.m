@@ -88,7 +88,6 @@
         self.edgesForExtendedLayout = NO;
         self.navigationController.navigationBar.opaque=YES;
     }
-    
 //    汉族、回族、维吾尔族、哈萨克族、乌兹别克族、塔吉克族、塔塔尔族、柯尔克孜族、撒拉族、东乡族、保安族、阿昌族、白族 、布朗族 、布依族 、朝鲜族、达斡尔族、傣族、德昂族、侗族、独龙族、鄂伦春族 、俄罗斯族、鄂温克族、高山族、仡佬族、哈尼族、赫哲族、基诺族、京族、景颇族、拉祜族、黎族、傈僳族、珞巴族、满族、毛南族、门巴族、蒙古族、苗族、仫佬族、纳西族、怒族、普米族、羌族、畲族、水族、土族、土家族、佤族、锡伯族 、瑶族、彝族、裕固族、藏族、壮族
 }
 
@@ -99,7 +98,6 @@
     // 向上 --> 向下
     [self.BtnBirthday setTitle:dateStr forState:UIControlStateNormal];
     [self.BtnBirthday setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    
     [self.BtnBirthday setImage:self.downImage forState:UIControlStateNormal];
     self.datePickerView.y = self.view.height - self.datePickerView.height;
     [UIView animateWithDuration:0.25 animations:^{
@@ -109,7 +107,8 @@
     }];
 }
 
-/** 生日选择完毕点击确定 */
+
+/** 点击生日 */
 - (void)birthdayBtnOnClick:(ZDChooseButton *)titleBtn
 {
     // 1.取出按钮中的图片判断当前的图片是向上还是向下
@@ -122,8 +121,7 @@
         } completion:^(BOOL finished) {
             
         }];
-    }else
-    {
+    }else{
         // 向上 --> 向下
         [titleBtn setImage:self.downImage forState:UIControlStateNormal];
         self.datePickerView.y = self.view.height - self.datePickerView.height;
@@ -164,7 +162,6 @@
     // 向上 --> 向下
     [self.BtnNation setTitle:dateStr forState:UIControlStateNormal];
     [self.BtnNation setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    
     [self.BtnNation setImage:self.downImage forState:UIControlStateNormal];
     self.datePickerView.y = self.view.height - self.datePickerView.height;
     [UIView animateWithDuration:0.25 animations:^{
@@ -181,7 +178,6 @@
     }
     [self.BtnNation setTitle:dateStr forState:UIControlStateNormal];
     [self.BtnNation setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    
     [self.BtnNation setImage:self.downImage forState:UIControlStateNormal];
     self.datePickerView.y = self.view.height - self.datePickerView.height;
     [UIView animateWithDuration:0.25 animations:^{
@@ -235,7 +231,6 @@
 {
     if (!_datePickerView) {
         _datePickerView = [ZDDatePickerView datePickerView];
-//        _datePickerView.center = self.view.center;
         _datePickerView.y = self.view.height;
         // 设置代理
         _datePickerView.delegate = self;
@@ -248,7 +243,6 @@
 {
     if (!_nationView) {
         _nationView = [ZDNationView nationView];
-//        _nationView.center = self.view.center;
         _nationView.y = self.view.height;
         // 设置代理
         _nationView.delegate = self;

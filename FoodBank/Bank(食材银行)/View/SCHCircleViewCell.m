@@ -26,7 +26,7 @@
 @synthesize current_animation_radian = _current_animation_radian;
 @synthesize current_scale            = _current_scale;
 
-@synthesize delegate                 = _delegate;
+@synthesize delegate                 = _delegates;
 #pragma mark -
 #pragma mark - 初始化
 - (id)initWithFrame:(CGRect)frame
@@ -53,7 +53,6 @@
     /*增加长点击事件*/
     UILongPressGestureRecognizer *long_press = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(pressedLong:)];
     [self addGestureRecognizer:long_press];
-    [long_press release],long_press = nil;
     
     /*增加单击事件*/
     UITapGestureRecognizer *single_tap = [[UITapGestureRecognizer alloc] initWithTarget: self action: @selector(handleSingleTap:)] ;
@@ -62,15 +61,12 @@
     single_tap.numberOfTouchesRequired = 1;
     single_tap.delegate                = self;
     [self addGestureRecognizer: single_tap];
-    [single_tap release], single_tap = nil;
     
     /*增加拖动事件*/
     UIPanGestureRecognizer *single_pan = [[UIPanGestureRecognizer alloc] initWithTarget: self action: @selector(handleSinglePan:)] ;
     single_pan.cancelsTouchesInView    = NO;
     single_pan.delegate                = self;
     [self addGestureRecognizer: single_pan];
-    [single_pan release], single_pan = nil;
-    
 }
 
 
@@ -86,17 +82,14 @@
             point = [gestureRecognizer locationInView:self];
             // [_delegate gridDidEnterMoveMode:self withLocation:point moveGestureRecognizer:gestureRecognizer];
             //放大这个item
-            // NSLog(@"press long began");
             break;
         case UIGestureRecognizerStateEnded:
             point = [gestureRecognizer locationInView:self];
             // [_delegate gridDidEndMoved:self withLocation:point moveGestureRecognizer:gestureRecognizer];
             //变回原来大小
-            //NSLog(@"press long ended");
             
             break;
         case UIGestureRecognizerStateFailed:
-            //NSLog(@"press long failed");
             
             break;
         case UIGestureRecognizerStateCancelled:
@@ -104,19 +97,18 @@
             point = [gestureRecognizer locationInView:self];
             // [_delegate gridDidEndMoved:self withLocation:point moveGestureRecognizer:gestureRecognizer];
             break;
+            
         case UIGestureRecognizerStateChanged:
             //移动
             point = [gestureRecognizer locationInView:self];
             //   [_delegate gridDidMoved:self withLocation:point moveGestureRecognizer:gestureRecognizer];
-            //NSLog(@"press long changed");
             break;
+            
         default:
-            //NSLog(@"press long else");
+
             break;
     }
-    
     //CABasicAnimation *scale = [CABasicAnimation animationWithKeyPath:@"transform"];
-    
 }
 
 #pragma mark -
@@ -128,16 +120,16 @@
     {
         case UIGestureRecognizerStateBegan:
             
-            [_delegate cellTouchBegin:self];
+            [_delegates cellTouchBegin:self];
             break;
         case UIGestureRecognizerStateEnded:
-            [_delegate cellTouchEnd:self];
+            [_delegates cellTouchEnd:self];
             break;
         case UIGestureRecognizerStateFailed:
-            [_delegate cellTouchFailed:self];
+            [_delegates cellTouchFailed:self];
             break;
         case UIGestureRecognizerStateCancelled:
-            [_delegate cellTouchCancelled:self];
+            [_delegates cellTouchCancelled:self];
             break;
         case UIGestureRecognizerStateChanged:
 
@@ -149,7 +141,6 @@
     
 }
 
-#pragma mark - 
 #pragma mark - 拖动
 - (void)handleSinglePan:(UIPanGestureRecognizer *)gestureRecognizer
 {
@@ -159,42 +150,39 @@
     {
         case UIGestureRecognizerStateBegan:
             point = [gestureRecognizer locationInView:self];
-            [_delegate cellDidEnterMoveMode:self withLocation:point moveGestureRecognizer:gestureRecognizer];
-
+            [_delegates cellDidEnterMoveMode:self withLocation:point moveGestureRecognizer:gestureRecognizer];
+            
             break;
         case UIGestureRecognizerStateEnded:
             point = [gestureRecognizer locationInView:self];
-            [_delegate cellDidEndMoved:self withLocation:point moveGestureRecognizer:gestureRecognizer];
+            [_delegates cellDidEndMoved:self withLocation:point moveGestureRecognizer:gestureRecognizer];
             
             break;
         case UIGestureRecognizerStateFailed:
 
             point = [gestureRecognizer locationInView:self];
-            [_delegate cellDidFailMoved:self withLocation:point moveGestureRecognizer:gestureRecognizer];
+            [_delegates cellDidFailMoved:self withLocation:point moveGestureRecognizer:gestureRecognizer];
             break;
         case UIGestureRecognizerStateCancelled:
             point = [gestureRecognizer locationInView:self];
-            [_delegate cellDidCancelMoved:self withLocation:point moveGestureRecognizer:gestureRecognizer];
+            [_delegates cellDidCancelMoved:self withLocation:point moveGestureRecognizer:gestureRecognizer];
             break;
         case UIGestureRecognizerStateChanged:
             //移动
             point = [gestureRecognizer locationInView:self];
-            [_delegate cellDidMoved:self withLocation:point moveGestureRecognizer:gestureRecognizer];
+            [_delegates cellDidMoved:self withLocation:point moveGestureRecognizer:gestureRecognizer];
             break;
         default:
-          
+            
             break;
     }
-    
 }
 
 #pragma mark -
 #pragma mark - dealloc 
 - (void)dealloc
 {
-    [_delete_button release], _delete_button = nil;
     
-    [super dealloc];
 }
 
 #pragma mark -

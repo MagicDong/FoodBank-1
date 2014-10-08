@@ -27,14 +27,6 @@
     return [[NSBundle mainBundle] loadNibNamed:@"ZDMoreHeaderView" owner:nil options:nil][0];
 }
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-    BOOL isLogin = (self.account.nickname !=nil);
-    isLogin = YES;
-    if ([self.headerDelegate respondsToSelector:@selector(didClickHeaderView:)]) {
-        [self.headerDelegate didClickHeaderView:isLogin];
-    }
-}
-
 - (IBAction)xiugai:(id)sender {
     BOOL isLogin = (self.account.nickname !=nil);
     isLogin = YES;
@@ -62,6 +54,18 @@
     self.xiugai.backgroundColor = [UIColor colorWithRed:(0)/255.0 green:(0)/255.0 blue:(0)/255.0 alpha:0.3];
     [self.xiugai.layer setCornerRadius:10];
     [self.xiugai setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    
+    self.userIcon.userInteractionEnabled=YES;
+    UITapGestureRecognizer *singleTap =[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(onClickImage)];
+    [self.userIcon addGestureRecognizer:singleTap];
+}
+
+- (void)onClickImage{
+    BOOL isLogin = (self.account.nickname !=nil);
+    isLogin = YES;
+    if ([self.headerDelegate respondsToSelector:@selector(didClickHeaderView:)]) {
+        [self.headerDelegate didClickHeaderView:isLogin];
+    }
 }
 
 

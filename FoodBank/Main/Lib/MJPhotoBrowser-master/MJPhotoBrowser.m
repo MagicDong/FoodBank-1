@@ -242,6 +242,7 @@
 	return  NO;
 }
 
+
 #pragma mark 循环利用某个view
 - (MJPhotoView *)dequeueReusablePhotoView
 {

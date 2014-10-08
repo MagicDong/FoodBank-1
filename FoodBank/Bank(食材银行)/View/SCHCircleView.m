@@ -70,7 +70,6 @@ static int drag_animation_count        = 0;
 
 - (void)singleTapCircleNoRoll:(NSMutableArray *)array touchCell:(SCHCircleViewCell *)cell touchIndex:(NSInteger)touch_index;
 
-
 /*拖动移动的动画*/
 - (void)dragPoint:(CGPoint)drag_point movePoint:(CGPoint)move_point circleCenterPoint:(CGPoint)circle_center_point;
 
@@ -92,10 +91,9 @@ static int drag_animation_count        = 0;
 @synthesize circle_view_delegate    = _circle_view_delegate;
 
 @synthesize is_edit                 = _is_edit;
+@synthesize is_single_tap_animation = _is_single_tap_animation;
 
-#pragma mark -
 #pragma mark - 点击移动的动画
-
 - (BOOL)oldIndex:(NSInteger)old_index newIndex:(NSInteger)new_index
 {
     NSInteger o_index    = old_index;
@@ -111,7 +109,6 @@ static int drag_animation_count        = 0;
         if((n_index - o_index) <= half_value)
         {
             is_clockwise = YES;
-            
         }
         else
         {
@@ -143,10 +140,7 @@ static int drag_animation_count        = 0;
             }
         }
     }
-    
-    
     return is_clockwise;
-    
 }
 
 - (NSInteger)getNumberOldIndex:(NSInteger)old_index newIndex:(NSInteger)new_index
@@ -346,7 +340,6 @@ static int drag_animation_count        = 0;
     }
 }
 
-#pragma mark - 
 #pragma mark - 拖动动画
 
 - (void)dragPoint:(CGPoint)drag_point movePoint:(CGPoint)move_point circleCenterPoint:(CGPoint)circle_center_point
@@ -354,26 +347,17 @@ static int drag_animation_count        = 0;
     /*转换弧度*/
     
     CGFloat drag_radian   = [self schAtan2f:drag_point.x - circle_center_point.x theB:drag_point.y - circle_center_point.y];
-    
     CGFloat move_radian   = [self schAtan2f:move_point.x - circle_center_point.x theB:move_point.y - circle_center_point.y];
-    
     CGFloat change_radian = (move_radian - drag_radian) * _drag_sensitivity;
-    
     /*改变位置*/
     for (int i = 0; i < _circle_cell_array.count; ++i)
     {
-
         SCHCircleViewCell *cell       = [_circle_cell_array objectAtIndex:i];
         cell.current_radian           = [self getRadinaByRadian:cell.current_radian + change_radian];
-        
-        cell.current_animation_radian = [self getAnimationRadianByRadian:cell.current_radian];;
-        
+        cell.current_animation_radian = [self getAnimationRadianByRadian:cell.current_radian];
         cell.current_scale            = [self getScaleByRadina:cell.current_radian originScale:_scale deviationRadian:_deviation_Radian];
-        
-       
         cell.transform                = CGAffineTransformMakeScale(cell.current_scale, cell.current_scale);
         cell.center                   = [self getPointByRadian:cell.current_radian centreOfCircle:_center_point radiusOfCircle:_radius];
-
     }
     
 }
@@ -381,16 +365,12 @@ static int drag_animation_count        = 0;
 - (void)reviseCirclePoint
 {
     SCHCircleViewCell *cell = [_circle_cell_array objectAtIndex:0];
-    
     CGFloat   temp_value  = [self getRadinaByRadian:(cell.current_radian - _deviation_Radian)] / _average_radina;
     NSInteger temp_number = (NSInteger)(floorf(temp_value));
-    
     temp_value            = temp_value - floorf(temp_value);
-    
       /*顺时针移动*/
     if((temp_value / _average_radina) < 0.5f)
     {
-       
         _is_clockwise  = YES;
         _current_index = _circle_cell_array.count - temp_number;
     }
@@ -401,23 +381,15 @@ static int drag_animation_count        = 0;
         _is_clockwise  = NO;
         _current_index = (_circle_cell_array.count - ++temp_number)% _circle_cell_array.count;
     }
-    
     /*动画*/
     _is_drag_animation = YES;
-
     for (int i = 0; i < _circle_cell_array.count; ++i)
     {
         ++drag_animation_count;
-        
         [self animateWithDuration:0.25f * (temp_value / _average_radina)  animateDelay:0.0f changeIndex:(_current_index + i)%_circle_cell_array.count toIndex:i circleArray:_circle_cell_array clockwise:_is_clockwise];
     }
-    
-    
 }
 
-
-
-#pragma mark -
 #pragma mark - 显示效果
 - (void)showCircleDefault:(NSMutableArray *)array
 {
@@ -440,7 +412,6 @@ static int drag_animation_count        = 0;
                          {
                              cell.center = cell.view_point;
                          }
-        
     } completion:^(BOOL finished) {
         
     }];
@@ -468,8 +439,11 @@ static int drag_animation_count        = 0;
                              
                          } completion:^(BOOL finished) {
                              
+  
+                             
                          }];
     }
+    
 }
 
 #pragma mark -
@@ -662,30 +636,21 @@ static int drag_animation_count        = 0;
         
         for (int i = 0; i < _number_of_circle_cell; ++i)
         {
-            
-            /*cell 的弧度*/
+            /*cell 的弧度   这都神马玩意？？？*/
             CGFloat           cell_radina = [self getRadinaByRadian:(i * _average_radina + _deviation_Radian)];
-            
             /*cell*/
             SCHCircleViewCell *cell       = [_circle_view_data_source circleView:self cellAtIndex:i];
-            
             cell.scale                    = [self getScaleByRadina:cell_radina originScale:_scale deviationRadian:_deviation_Radian];
             cell.view_point               = [self getPointByRadian:cell_radina centreOfCircle:_center_point radiusOfCircle:_radius];
             cell.radian                   = cell_radina;
             cell.animation_radian         = [self getAnimationRadianByRadian:cell_radina];
-            
             cell.current_radian           = cell.radian;
             cell.current_animation_radian = cell.animation_radian;
             cell.current_scale            = cell.scale;
-
             cell.transform                = CGAffineTransformMakeScale(cell.scale, cell.scale);
             cell.center                   = cell.view_point;
-            
             cell.delegate                 = self;
-            
             [_circle_cell_array addObject:cell];
-            
-    
         }
     }    
 }
@@ -764,12 +729,21 @@ static int drag_animation_count        = 0;
     }
 }
 
+
 - (void)cellTouchEnd:(SCHCircleViewCell *)cell
 {
+
     if(_is_single_tap_animation || _is_drag_animation)
         return;
     
     NSInteger index = [_circle_cell_array indexOfObject:cell];
+    
+    if([_circle_view_delegate respondsToSelector:@selector(touchBeginCircleViewCell:indexOfCircleViewCell:)])
+    {
+        [_circle_view_delegate touchBeginCircleViewCell:cell indexOfCircleViewCell:index];
+    }
+    
+
 
     /*旋转的方式*/
     switch (_touch_circle_style)
@@ -890,8 +864,6 @@ static int drag_animation_count        = 0;
 
 - (void)cellDidCancelMoved:(SCHCircleViewCell *)cell withLocation:(CGPoint)point moveGestureRecognizer:(UIPanGestureRecognizer *)gestureRecognizer
 {
-    
-
     if(_is_single_tap_animation || _is_drag_animation)
         return;
     
@@ -900,7 +872,6 @@ static int drag_animation_count        = 0;
     /*拖动*/
     [self dragPoint:_drag_point movePoint:move_point circleCenterPoint:_center_point];
     
-
     /*修正圆*/
     [self reviseCirclePoint];
     
@@ -910,6 +881,7 @@ static int drag_animation_count        = 0;
         
         [_circle_view_delegate dragCancelCircleViewCell:cell indexOfCircleViewCell:index];
     }
+    
 }
 
 - (void)cellDidFailMoved:(SCHCircleViewCell *)cell withLocation:(CGPoint)point moveGestureRecognizer:(UIPanGestureRecognizer *)gestureRecognizer
@@ -1062,9 +1034,9 @@ static int drag_animation_count        = 0;
 
 - (void)dealloc
 {
-    [super dealloc];
+//    [super dealloc];
     
-    [_circle_cell_array release], _circle_cell_array = nil;
+//    [_circle_cell_array release], _circle_cell_array = nil;
 }
 
 @end
