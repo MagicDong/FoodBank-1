@@ -32,6 +32,7 @@
     [super viewDidLoad];
     [self chushihua];
 }
+
 - (NSArray *)products
 {
     if (!_products){
@@ -41,6 +42,7 @@
     }
     return _products;
 }
+
 #pragma mark - 数据源方法
 // 返回每个section（分组）中的item（条目，小格子）的数量
 //- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
@@ -63,6 +65,7 @@
 //    UICollectionViewCell *cell = [[UICollectionViewCell alloc]init];
 //    return cell;
 //}
+
 - (void)chushihua{
     self.title = @"勾选四库";
     if(iOS7)

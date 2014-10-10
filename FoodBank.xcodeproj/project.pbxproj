@@ -27,6 +27,19 @@
 		18247A5619D2BE3C001B04EA /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18247A5519D2BE3C001B04EA /* CoreTelephony.framework */; };
 		18247A5819D2BE45001B04EA /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 18247A5719D2BE45001B04EA /* libstdc++.dylib */; };
 		18247A5A19D2BE4D001B04EA /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 18247A5919D2BE4D001B04EA /* libz.dylib */; };
+		18278C0019E622C900574DD5 /* ZDTuiJianViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18278BFF19E622C900574DD5 /* ZDTuiJianViewController.m */; };
+		18278C0219E6246C00574DD5 /* ZDTuiJianViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18278C0119E6246C00574DD5 /* ZDTuiJianViewController.xib */; };
+		18278C0419E62F1200574DD5 /* ZDZhouViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18278C0319E62F1100574DD5 /* ZDZhouViewController.xib */; };
+		18278C0619E64D4800574DD5 /* ZDAnQuanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18278C0519E64D4800574DD5 /* ZDAnQuanViewController.xib */; };
+		18278C0819E64D5C00574DD5 /* ZDGuoMinViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18278C0719E64D5C00574DD5 /* ZDGuoMinViewController.xib */; };
+		18278C0B19E6610400574DD5 /* ZDBankBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 18278C0A19E6610400574DD5 /* ZDBankBtn.m */; };
+		18278C0D19E6676B00574DD5 /* ZDYueViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18278C0C19E6676B00574DD5 /* ZDYueViewController.xib */; };
+		18278C1A19E686DA00574DD5 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 18278C1019E686DA00574DD5 /* FMDatabase.m */; };
+		18278C1B19E686DA00574DD5 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 18278C1219E686DA00574DD5 /* FMDatabaseAdditions.m */; };
+		18278C1C19E686DA00574DD5 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 18278C1419E686DA00574DD5 /* FMDatabasePool.m */; };
+		18278C1D19E686DA00574DD5 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 18278C1619E686DA00574DD5 /* FMDatabaseQueue.m */; };
+		18278C1E19E686DA00574DD5 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 18278C1919E686DA00574DD5 /* FMResultSet.m */; };
+		18278C2119E68A0F00574DD5 /* YTKKeyValueStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 18278C2019E68A0F00574DD5 /* YTKKeyValueStore.m */; };
 		1828E97819D7963E008B328E /* ZDSiKuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1828E97719D7963E008B328E /* ZDSiKuViewController.m */; };
 		1828E97A19D796B5008B328E /* ZDSiKuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1828E97919D796B5008B328E /* ZDSiKuViewController.xib */; };
 		183E72B119DA4092009CD24F /* SCHCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 183E72AE19DA4092009CD24F /* SCHCircleView.m */; };
@@ -206,6 +219,28 @@
 		18247A5519D2BE3C001B04EA /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		18247A5719D2BE45001B04EA /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
 		18247A5919D2BE4D001B04EA /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		18278BFE19E622C900574DD5 /* ZDTuiJianViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDTuiJianViewController.h; sourceTree = "<group>"; };
+		18278BFF19E622C900574DD5 /* ZDTuiJianViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDTuiJianViewController.m; sourceTree = "<group>"; };
+		18278C0119E6246C00574DD5 /* ZDTuiJianViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDTuiJianViewController.xib; sourceTree = "<group>"; };
+		18278C0319E62F1100574DD5 /* ZDZhouViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDZhouViewController.xib; sourceTree = "<group>"; };
+		18278C0519E64D4800574DD5 /* ZDAnQuanViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDAnQuanViewController.xib; sourceTree = "<group>"; };
+		18278C0719E64D5C00574DD5 /* ZDGuoMinViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDGuoMinViewController.xib; sourceTree = "<group>"; };
+		18278C0919E6610400574DD5 /* ZDBankBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDBankBtn.h; sourceTree = "<group>"; };
+		18278C0A19E6610400574DD5 /* ZDBankBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDBankBtn.m; sourceTree = "<group>"; };
+		18278C0C19E6676B00574DD5 /* ZDYueViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDYueViewController.xib; sourceTree = "<group>"; };
+		18278C0F19E686DA00574DD5 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		18278C1019E686DA00574DD5 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		18278C1119E686DA00574DD5 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		18278C1219E686DA00574DD5 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		18278C1319E686DA00574DD5 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		18278C1419E686DA00574DD5 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		18278C1519E686DA00574DD5 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		18278C1619E686DA00574DD5 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		18278C1719E686DA00574DD5 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		18278C1819E686DA00574DD5 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		18278C1919E686DA00574DD5 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		18278C1F19E68A0F00574DD5 /* YTKKeyValueStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTKKeyValueStore.h; sourceTree = "<group>"; };
+		18278C2019E68A0F00574DD5 /* YTKKeyValueStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTKKeyValueStore.m; sourceTree = "<group>"; };
 		1828E97619D7963E008B328E /* ZDSiKuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDSiKuViewController.h; sourceTree = "<group>"; };
 		1828E97719D7963E008B328E /* ZDSiKuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDSiKuViewController.m; sourceTree = "<group>"; };
 		1828E97919D796B5008B328E /* ZDSiKuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDSiKuViewController.xib; sourceTree = "<group>"; };
@@ -558,6 +593,24 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		18278C0E19E686DA00574DD5 /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				18278C0F19E686DA00574DD5 /* FMDatabase.h */,
+				18278C1019E686DA00574DD5 /* FMDatabase.m */,
+				18278C1119E686DA00574DD5 /* FMDatabaseAdditions.h */,
+				18278C1219E686DA00574DD5 /* FMDatabaseAdditions.m */,
+				18278C1319E686DA00574DD5 /* FMDatabasePool.h */,
+				18278C1419E686DA00574DD5 /* FMDatabasePool.m */,
+				18278C1519E686DA00574DD5 /* FMDatabaseQueue.h */,
+				18278C1619E686DA00574DD5 /* FMDatabaseQueue.m */,
+				18278C1719E686DA00574DD5 /* FMDB.h */,
+				18278C1819E686DA00574DD5 /* FMResultSet.h */,
+				18278C1919E686DA00574DD5 /* FMResultSet.m */,
+			);
+			path = FMDB;
+			sourceTree = "<group>";
+		};
 		183E72B619DA40FA009CD24F /* CAAnimation */ = {
 			isa = PBXGroup;
 			children = (
@@ -586,12 +639,16 @@
 				183E72BC19DA4162009CD24F /* ZDBankViewController.xib */,
 				183E72C019DA60A7009CD24F /* ZDZhouViewController.h */,
 				183E72C119DA60A7009CD24F /* ZDZhouViewController.m */,
+				18278C0319E62F1100574DD5 /* ZDZhouViewController.xib */,
 				183E72C319DA60B3009CD24F /* ZDYueViewController.h */,
 				183E72C419DA60B3009CD24F /* ZDYueViewController.m */,
+				18278C0C19E6676B00574DD5 /* ZDYueViewController.xib */,
 				183E72C619DA60CB009CD24F /* ZDAnQuanViewController.h */,
 				183E72C719DA60CB009CD24F /* ZDAnQuanViewController.m */,
+				18278C0519E64D4800574DD5 /* ZDAnQuanViewController.xib */,
 				183E72C919DA60DB009CD24F /* ZDGuoMinViewController.h */,
 				183E72CA19DA60DB009CD24F /* ZDGuoMinViewController.m */,
+				18278C0719E64D5C00574DD5 /* ZDGuoMinViewController.xib */,
 				183E72CC19DA60E6009CD24F /* ZDJiLuViewController.h */,
 				183E72CD19DA60E6009CD24F /* ZDJiLuViewController.m */,
 			);
@@ -615,6 +672,8 @@
 				183E72AE19DA4092009CD24F /* SCHCircleView.m */,
 				183E72AF19DA4092009CD24F /* SCHCircleViewCell.h */,
 				183E72B019DA4092009CD24F /* SCHCircleViewCell.m */,
+				18278C0919E6610400574DD5 /* ZDBankBtn.h */,
+				18278C0A19E6610400574DD5 /* ZDBankBtn.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -717,6 +776,9 @@
 				18FA20B819CFE0CA00430E37 /* ZDTryViewController.h */,
 				18FA20B919CFE0CA00430E37 /* ZDTryViewController.m */,
 				1824793619E4DD2600CB5BBA /* ZDTryViewController.xib */,
+				18278BFE19E622C900574DD5 /* ZDTuiJianViewController.h */,
+				18278BFF19E622C900574DD5 /* ZDTuiJianViewController.m */,
+				18278C0119E6246C00574DD5 /* ZDTuiJianViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -885,6 +947,9 @@
 		1888B3FE19CADE520030DB88 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				18278C1F19E68A0F00574DD5 /* YTKKeyValueStore.h */,
+				18278C2019E68A0F00574DD5 /* YTKKeyValueStore.m */,
+				18278C0E19E686DA00574DD5 /* FMDB */,
 				18F37E9919D7F66400325A25 /* MJPhotoBrowser */,
 				18FA212319CFF40D00430E37 /* SDWebImage */,
 				18FA210A19CFF40200430E37 /* MJRefresh */,
@@ -1277,9 +1342,14 @@
 				183E72BD19DA4162009CD24F /* ZDBankViewController.xib in Resources */,
 				18F37E7619D7E13C00325A25 /* ZDSiKuCell.xib in Resources */,
 				181BCFA819D4240F00EDA508 /* ZDJudgeViewController.xib in Resources */,
+				18278C0219E6246C00574DD5 /* ZDTuiJianViewController.xib in Resources */,
+				18278C0819E64D5C00574DD5 /* ZDGuoMinViewController.xib in Resources */,
 				18A0930B19D551A100FC74FF /* ZDNotifyViewController.xib in Resources */,
+				18278C0619E64D4800574DD5 /* ZDAnQuanViewController.xib in Resources */,
+				18278C0419E62F1200574DD5 /* ZDZhouViewController.xib in Resources */,
 				18F37EB219D807CF00325A25 /* ipad_home_left_b@2x.png in Resources */,
 				183EC3E819D26B3B00C756DE /* ZDDatePickerView.xib in Resources */,
+				18278C0D19E6676B00574DD5 /* ZDYueViewController.xib in Resources */,
 				1888B3D219CADBDC0030DB88 /* LaunchScreen.xib in Resources */,
 				1888B3CF19CADBDC0030DB88 /* Images.xcassets in Resources */,
 				18FA211B19CFF40200430E37 /* MJRefresh.bundle in Resources */,
@@ -1309,8 +1379,10 @@
 				18F37EB019D7F66400325A25 /* SDWebImageManager+MJ.m in Sources */,
 				1888B3C719CADBDC0030DB88 /* AppDelegate.m in Sources */,
 				18FA210619CFF3E700430E37 /* MJTypeEncoding.m in Sources */,
+				18278C1B19E686DA00574DD5 /* FMDatabaseAdditions.m in Sources */,
 				18A0930E19D56C5500FC74FF /* ZDSupViewController.m in Sources */,
 				18FA210819CFF3E700430E37 /* NSObject+MJKeyValue.m in Sources */,
+				18278C1C19E686DA00574DD5 /* FMDatabasePool.m in Sources */,
 				18FA20B419CFB99100430E37 /* ZDBadgeButton.m in Sources */,
 				18FA214619CFF40D00430E37 /* NSData+ImageContentType.m in Sources */,
 				18733DBD19D8FB2C00966A55 /* ZDMoreHeaderView.m in Sources */,
@@ -1336,6 +1408,7 @@
 				183E72BA19DA413A009CD24F /* viewCell.m in Sources */,
 				18FA215219CFF40D00430E37 /* UIImageView+HighlightedWebCache.m in Sources */,
 				18F891E119CBD2DF0046C022 /* ZDCommonItem.m in Sources */,
+				18278C0B19E6610400574DD5 /* ZDBankBtn.m in Sources */,
 				18FA214F19CFF40D00430E37 /* UIImage+GIF.m in Sources */,
 				18FA214919CFF40D00430E37 /* SDWebImageDecoder.m in Sources */,
 				18F891CB19CBBD4F0046C022 /* UIView+Add.m in Sources */,
@@ -1388,8 +1461,10 @@
 				1823B0FC19D155620081E5A2 /* ZDSearchBar.m in Sources */,
 				18FA211F19CFF40200430E37 /* MJRefreshHeaderView.m in Sources */,
 				1823B10919D16E490081E5A2 /* ZDRgsViewController.m in Sources */,
+				18278C1E19E686DA00574DD5 /* FMResultSet.m in Sources */,
 				1824793A19E4FE3C00CB5BBA /* ZDTryChooseButton.m in Sources */,
 				18733DC219D8FF7E00966A55 /* ZDBabyInfoTableViewController.m in Sources */,
+				18278C1D19E686DA00574DD5 /* FMDatabaseQueue.m in Sources */,
 				18FA20DF19CFF3D600430E37 /* AFHTTPRequestOperationManager.m in Sources */,
 				18FA215419CFF40D00430E37 /* UIView+WebCacheOperation.m in Sources */,
 				183E72C219DA60A7009CD24F /* ZDZhouViewController.m in Sources */,
@@ -1397,6 +1472,7 @@
 				18F891F219CC189E0046C022 /* ZDNavViewController.m in Sources */,
 				18FA211E19CFF40200430E37 /* MJRefreshFooterView.m in Sources */,
 				18FA20FF19CFF3E600430E37 /* MJArgument.m in Sources */,
+				18278C2119E68A0F00574DD5 /* YTKKeyValueStore.m in Sources */,
 				183E72B119DA4092009CD24F /* SCHCircleView.m in Sources */,
 				18FA210019CFF3E600430E37 /* MJConst.m in Sources */,
 				183E72B219DA4092009CD24F /* SCHCircleViewCell.m in Sources */,
@@ -1407,6 +1483,7 @@
 				1828E97819D7963E008B328E /* ZDSiKuViewController.m in Sources */,
 				18A0930719D53A6E00FC74FF /* ZDNationView.m in Sources */,
 				18733DBB19D8FB2C00966A55 /* ZDAboutHeaderView.m in Sources */,
+				18278C0019E622C900574DD5 /* ZDTuiJianViewController.m in Sources */,
 				18F891E919CC06880046C022 /* ZDTabBar.m in Sources */,
 				18F891C419CBBD4F0046C022 /* NSString+Extend.m in Sources */,
 				1888B3C419CADBDC0030DB88 /* main.m in Sources */,
@@ -1415,6 +1492,7 @@
 				1888B3E919CADCBA0030DB88 /* ZDRegisterViewController.m in Sources */,
 				18F891DD19CBD2DF0046C022 /* ZDCommonArrowItem.m in Sources */,
 				18FA210219CFF3E600430E37 /* MJIvar.m in Sources */,
+				18278C1A19E686DA00574DD5 /* FMDatabase.m in Sources */,
 				18F891E019CBD2DF0046C022 /* ZDCommonGroup.m in Sources */,
 				183E72C819DA60CB009CD24F /* ZDAnQuanViewController.m in Sources */,
 				18F37E8F19D7F62300325A25 /* CZBaseCell.m in Sources */,

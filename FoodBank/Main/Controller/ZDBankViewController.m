@@ -15,7 +15,7 @@
 #import "viewCell.h"
 #import <QuartzCore/QuartzCore.h>
 
-@interface ZDBankViewController () <SCHCircleViewDataSource,SCHCircleViewDelegate>
+@interface ZDBankViewController () <SCHCircleViewDataSource,SCHCircleViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 
 @end
 
@@ -38,10 +38,10 @@
     if(self)
     {
         _icon_array = [[NSMutableArray alloc] init];
-        [_icon_array addObject:[UIImage imageNamed:@"more_baobao_icon.png"]];
-        [_icon_array addObject:[UIImage imageNamed:@"more_baobao_icon.png"]];
-        [_icon_array addObject:[UIImage imageNamed:@"more_baobao_icon.png"]];
-        [_icon_array addObject:[UIImage imageNamed:@"more_baobao_icon.png"]];
+        [_icon_array addObject:[UIImage imageNamed:@"login_baobao"]];
+        [_icon_array addObject:[UIImage imageNamed:@"ipad_user_login_sina"]];
+        [_icon_array addObject:[UIImage imageNamed:@"ipad_user_login_qq"]];
+        [_icon_array addObject:[UIImage imageNamed:@"tab004"]];
         [_icon_array addObject:[UIImage imageNamed:@"more_baobao_icon.png"]];
     }
     return self;
@@ -62,6 +62,32 @@
         self.navigationController.navigationBar.opaque=YES;
     }
     
+    UIImagePickerControllerSourceType sourceType = UIImagePickerControllerSourceTypeCamera;
+    if (![UIImagePickerController isSourceTypeAvailable: UIImagePickerControllerSourceTypeCamera]) {
+        sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    }
+//    sourceType = UIImagePickerControllerSourceTypeCamera; //照相机
+//    sourceType = UIImagePickerControllerSourceTypePhotoLibrary; //图片库
+//    sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum; //保存的相片
+//    UIImagePickerController *picker = [[UIImagePickerController alloc] init];//初始化
+//    picker.delegate = self;
+//    picker.allowsEditing = YES;//设置可编辑
+//    picker.sourceType = sourceType;
+//    [self presentViewController:picker animated:YES completion:nil];
+//
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        
+        UIImagePickerController * picker = [[UIImagePickerController alloc]init];
+        picker.delegate = self;
+        picker.allowsEditing = YES;  //是否可编辑
+        //摄像头
+        picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        [self presentViewController:picker animated:YES completion:nil];
+    }else{
+        //如果没有提示用户
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"你没有摄像头" delegate:nil cancelButtonTitle:@"Drat!" otherButtonTitles:nil];
+        [alert show];
+    }
 }
 
 #pragma mark - SCHCircleViewDataSource
@@ -71,6 +97,7 @@
         return CGPointMake(self.view.width / 2, (self.view.width /2) + 20);
     }
     return CGPointMake(self.view.width / 2, (self.view.width /2));
+    
 }
 
 - (NSInteger)numberOfCellInCircleView:(SCHCircleView *)circle_view
