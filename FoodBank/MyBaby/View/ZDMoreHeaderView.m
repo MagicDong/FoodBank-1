@@ -10,6 +10,8 @@
 #import "UIImageView+WebCache.h"
 #import "ZDAccount.h"
 #import "ZDAccountTool.h"
+#import "ZDBabyTool.h"
+#import "ZDBaby.h"
 
 @interface ZDMoreHeaderView()
 
@@ -58,6 +60,17 @@
     self.userIcon.userInteractionEnabled=YES;
     UITapGestureRecognizer *singleTap =[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(onClickImage)];
     [self.userIcon addGestureRecognizer:singleTap];
+    
+    ZDBaby *baby = [ZDBabyTool account];
+    if (baby.userIcon != nil) {
+         self.userIcon.image = baby.userIcon;
+    }
+    if (baby.nickName != nil) {
+       [self.xiugai setTitle:baby.nickName forState:UIControlStateNormal];
+    }
+    if (baby.signature != nil) {
+        self.userSign.text = baby.signature;
+    }
 }
 
 - (void)onClickImage{

@@ -15,6 +15,7 @@
 #import "ZDBankViewController.h"
 #import "ZDTryViewController.h"
 #import "ZDNewsViewController.h"
+#import "ZDRecordViewController.h"
 
 @interface ZDTabBarController () <ZDTabBarDelegate>
 /**
@@ -26,6 +27,7 @@
 @property (nonatomic, strong) ZDTryViewController *message;
 @property (nonatomic, strong) ZDBankViewController *discover;
 @property (nonatomic, strong) ZDMyBabyViewController *baby;
+@property (nonatomic, strong) ZDRecordViewController *record;
 @end
 
 @implementation ZDTabBarController
@@ -47,9 +49,13 @@
         [self setupChileViewController:message title:@"新食材尝试" imageName:@"tab002_2" selectedImageName:@"tab002"];
         self.message = message;
         
+        ZDRecordViewController *record = [[ZDRecordViewController alloc] init];
+        [self setupChileViewController:message title:@"尝试记录" imageName:@"tab002_2" selectedImageName:@"tab002"];
+        self.record = record;
+        
         // 3.广场
         ZDBankViewController *discover = [[ZDBankViewController alloc] init];
-        [self setupChileViewController:discover title:@"食材银行" imageName:@"tab003_3" selectedImageName:@"tab003"];
+        [self setupChileViewController:discover title:@"宝贝食材银行" imageName:@"tab003_3" selectedImageName:@"tab003"];
         self.discover = discover;
         
         // 4.我

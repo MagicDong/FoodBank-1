@@ -59,7 +59,7 @@
 // 来源字体
 #define ZDSourceFont ZDTimeFont
 /** 网易手机新闻 */
-#define ZDIPhoneInfo @"T1348649654285"
+#define ZDIPhoneInfo @"T1397116135282"
 /** 新浪微博AppKey */
 #define ZDAppKey @"1765785377"
 /** 新浪微博AppSecret */
@@ -67,7 +67,7 @@
 /** 新浪微博回调地址 */
 #define ZDAppRedirectUrl @"http://ios.itcast.cn"
 /** 手机新闻前20条 */
-#define ZDIphoneNew20 @"http://c.3g.163.com/nc/article/headline/T1348649654285/0-20.html"
+#define ZDIphoneNew20 @"http://c.3g.163.com/nc/article/headline/T1397116135282/0-20.html"
 /** 手机新闻20-40条 */
-#define ZDIphoneNew40 @"http://c.3g.163.com/nc/article/headline/T1348649654285/20-40.html"
+#define ZDIphoneNew40 @"http://c.3g.163.com/nc/article/headline/T1397116135282/20-40.html"
 #endif

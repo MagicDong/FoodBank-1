@@ -12,11 +12,12 @@
 #import "ZDAnQuanViewController.h"
 #import "ZDGuoMinViewController.h"
 #import "ZDJiLuViewController.h"
+#import "ZDRecordViewController.h"
 #import "viewCell.h"
 #import <QuartzCore/QuartzCore.h>
 
-@interface ZDBankViewController () <SCHCircleViewDataSource,SCHCircleViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
-
+@interface ZDBankViewController () <SCHCircleViewDataSource,SCHCircleViewDelegate>
+//,UIImagePickerControllerDelegate,UINavigationControllerDelegate
 @end
 
 @implementation ZDBankViewController
@@ -28,9 +29,7 @@
     [_circle_view reloadData];
 }
 
-#pragma mark -
 #pragma mark - 初始化
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -41,7 +40,7 @@
         [_icon_array addObject:[UIImage imageNamed:@"login_baobao"]];
         [_icon_array addObject:[UIImage imageNamed:@"ipad_user_login_sina"]];
         [_icon_array addObject:[UIImage imageNamed:@"ipad_user_login_qq"]];
-        [_icon_array addObject:[UIImage imageNamed:@"tab004"]];
+        [_icon_array addObject:[UIImage imageNamed:@"more_baobao_icon.png"]];
         [_icon_array addObject:[UIImage imageNamed:@"more_baobao_icon.png"]];
     }
     return self;
@@ -61,11 +60,11 @@
         self.edgesForExtendedLayout = NO;
         self.navigationController.navigationBar.opaque=YES;
     }
+//    UIImagePickerControllerSourceType sourceType = UIImagePickerControllerSourceTypeCamera;
+//    if (![UIImagePickerController isSourceTypeAvailable: UIImagePickerControllerSourceTypeCamera]) {
+//        sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+//    }
     
-    UIImagePickerControllerSourceType sourceType = UIImagePickerControllerSourceTypeCamera;
-    if (![UIImagePickerController isSourceTypeAvailable: UIImagePickerControllerSourceTypeCamera]) {
-        sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    }
 //    sourceType = UIImagePickerControllerSourceTypeCamera; //照相机
 //    sourceType = UIImagePickerControllerSourceTypePhotoLibrary; //图片库
 //    sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum; //保存的相片
@@ -75,19 +74,20 @@
 //    picker.sourceType = sourceType;
 //    [self presentViewController:picker animated:YES completion:nil];
 //
-    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-        
-        UIImagePickerController * picker = [[UIImagePickerController alloc]init];
-        picker.delegate = self;
-        picker.allowsEditing = YES;  //是否可编辑
-        //摄像头
-        picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-        [self presentViewController:picker animated:YES completion:nil];
-    }else{
-        //如果没有提示用户
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"你没有摄像头" delegate:nil cancelButtonTitle:@"Drat!" otherButtonTitles:nil];
-        [alert show];
-    }
+    
+//    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+//        
+//        UIImagePickerController * picker = [[UIImagePickerController alloc]init];
+//        picker.delegate = self;
+//        picker.allowsEditing = YES;  //是否可编辑
+//        //摄像头
+//        picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+//        [self presentViewController:picker animated:YES completion:nil];
+//    }else{
+//        //如果没有提示用户
+//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"你没有摄像头" delegate:nil cancelButtonTitle:@"Drat!" otherButtonTitles:nil];
+//        [alert show];
+//    }
 }
 
 #pragma mark - SCHCircleViewDataSource
@@ -128,7 +128,7 @@
             ZDJiLuViewController *jilu = [[ZDJiLuViewController alloc]init];
             [self.navigationController pushViewController:jilu animated:YES];
         }else if (index == 3){
-            ZDZhouViewController *zhou = [[ZDZhouViewController alloc]init];
+            ZDRecordViewController *zhou = [[ZDRecordViewController alloc]init];
             [self.navigationController pushViewController:zhou animated:YES];
         }else if (index == 4){
             ZDYueViewController *yue = [[ZDYueViewController alloc]init];

@@ -100,7 +100,7 @@ static NSString *PhotosID = @"photosCell";
         return;
     }
     self.isMore = YES;
-    NSString *url = [NSString stringWithFormat:@"http://c.3g.163.com/nc/article/headline/T1348649654285/20-40.html"];
+    NSString *url = [NSString stringWithFormat:@"http://c.3g.163.com/nc/article/headline/T1397116135282/20-40.html"];
     [ZDHttpTool getWithUrl:url params:nil success:^(NSDictionary *dict) {
         NSMutableArray *array = dict[ZDIPhoneInfo];
         NSMutableArray *temp = [[NSMutableArray alloc]init];

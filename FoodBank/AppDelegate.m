@@ -24,6 +24,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     application.statusBarHidden = NO;
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    // 设置全局状态栏的颜色
+    [application setStatusBarStyle:UIStatusBarStyleLightContent];
     
     if(/* DISABLES CODE */ (1)){
         self.window.rootViewController = [[ZDNavViewController alloc]initWithRootViewController:[[ZDInitViewController alloc]init]];

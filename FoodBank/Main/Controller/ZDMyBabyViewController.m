@@ -113,7 +113,7 @@ static NSString *heardID = @"headerView";
 
 - (void)backAccount
 {
-    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"提示" message:@"确定退出此账号?" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"提示" message:@"确定退出此账号?" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:@"取消", nil];
     [alertView show];
 }
 

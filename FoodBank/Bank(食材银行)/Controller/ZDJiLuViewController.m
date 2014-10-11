@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"我的尝试记录";
     if(iOS7)
     {
         self.edgesForExtendedLayout = NO;

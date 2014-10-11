@@ -53,6 +53,7 @@
     // 读取指定路径的文件
     NSFileManager *manager =  [NSFileManager defaultManager];
     BOOL success = [manager removeItemAtPath:dataPath error:nil];
+    
 //    ZDAccount *account = [NSKeyedUnarchiver unarchiveObjectWithFile:dataPath];
     // 判断当前时间和获取的用户信息中的过期时间比较是否过期
     return success;
