@@ -50,7 +50,7 @@
         self.message = message;
         
         ZDRecordViewController *record = [[ZDRecordViewController alloc] init];
-        [self setupChileViewController:message title:@"尝试记录" imageName:@"tab002_2" selectedImageName:@"tab002"];
+        [self setupChileViewController:record title:@"尝试记录" imageName:@"tab002_2" selectedImageName:@"tab002"];
         self.record = record;
         
         // 3.广场
@@ -62,6 +62,8 @@
         ZDMyBabyViewController *baby = [[ZDMyBabyViewController alloc] init];
         [self setupChileViewController:baby title:@"我的宝贝" imageName:@"tab004_4" selectedImageName:@"tab004"];
         self.baby = baby;
+        
+
     }
     return self;
 }
@@ -121,7 +123,7 @@
  *  @param from   原来选中的位置
  *  @param to     最新选中的位置
  */
-- (void)tabBar:(ZDTabBar *)tabBar didSelectedButtonFrom:(int)from to:(int)to
+- (void)didSelectedButtonFrom:(int)from to:(int)to
 {
     self.selectedIndex = to;
     if (to == from) {

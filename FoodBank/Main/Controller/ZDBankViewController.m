@@ -125,10 +125,11 @@
             ZDGuoMinViewController *guomin = [[ZDGuoMinViewController alloc]init];
             [self.navigationController pushViewController:guomin animated:YES];
         }else if (index == 2){
-            ZDJiLuViewController *jilu = [[ZDJiLuViewController alloc]init];
-            [self.navigationController pushViewController:jilu animated:YES];
+//            ZDJiLuViewController *jilu = [[ZDJiLuViewController alloc]init];
+//            [self.navigationController pushViewController:jilu animated:YES];
+            [[NSNotificationCenter defaultCenter]postNotificationName:@"recordBtnClick" object:nil];
         }else if (index == 3){
-            ZDRecordViewController *zhou = [[ZDRecordViewController alloc]init];
+            ZDZhouViewController *zhou = [[ZDZhouViewController alloc]init];
             [self.navigationController pushViewController:zhou animated:YES];
         }else if (index == 4){
             ZDYueViewController *yue = [[ZDYueViewController alloc]init];

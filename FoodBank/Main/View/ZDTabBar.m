@@ -22,6 +22,10 @@
  *  定义属性保存选中按钮
  */
 @property (nonatomic, weak) ZDTabBarButton  * selectedBtn;
+/**
+ *  保存尝试记录按钮
+ */
+@property (nonatomic, weak) ZDTabBarButton  * recordBtn;
 @end
 
 @implementation ZDTabBar
@@ -32,6 +36,9 @@
     
     // 1.设置选项卡按钮的frame
     [self setupTabBarButtonFrame];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(recordBtnClick) name:@"recordBtnClick" object:nil];
+    
 }
 /**
  *  设置选项卡按钮的frame
@@ -66,7 +73,9 @@
     [btn addTarget:self action:@selector(btnOnClick:) forControlEvents:UIControlEventTouchDown];
     
     btn.tag = self.buttons.count;
-    
+    if(btn.tag == 3){
+        self.recordBtn = btn;
+    }
     [self addSubview:btn];
     
     [self.buttons addObject:btn];
@@ -82,14 +91,20 @@
  */
 - (void)btnOnClick:(ZDTabBarButton *)btn
 {
-    if ([self.delegate respondsToSelector:@selector(tabBar:didSelectedButtonFrom:to:)]) {
-        [self.delegate tabBar:self didSelectedButtonFrom:self.selectedBtn.tag to:btn.tag];
+    if ([self.delegate respondsToSelector:@selector(didSelectedButtonFrom:to:)]) {
+        [self.delegate didSelectedButtonFrom:self.selectedBtn.tag to:btn.tag];
     }
     self.selectedBtn.selected = NO;
     btn.selected = YES;
     self.selectedBtn = btn;
 }
-
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+- (void)recordBtnClick{
+    [self btnOnClick:self.recordBtn];
+}
 #pragma mark - 懒加载
 - (NSMutableArray *)buttons
 {

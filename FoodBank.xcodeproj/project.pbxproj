@@ -56,6 +56,11 @@
 		18247A5A19D2BE4D001B04EA /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 18247A5919D2BE4D001B04EA /* libz.dylib */; };
 		18252A5019E8C795008B4C71 /* ZDRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18252A4F19E8C795008B4C71 /* ZDRecordViewController.m */; };
 		18252A5219E8C7FA008B4C71 /* ZDRecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18252A5119E8C7FA008B4C71 /* ZDRecordViewController.xib */; };
+		18252A8A19E8E0D9008B4C71 /* Globle.m in Sources */ = {isa = PBXBuildFile; fileRef = 18252A8519E8E0D9008B4C71 /* Globle.m */; };
+		18252A8B19E8E0D9008B4C71 /* red_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 18252A8619E8E0D9008B4C71 /* red_background.png */; };
+		18252A8C19E8E0D9008B4C71 /* YGPSegmentedController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18252A8919E8E0D9008B4C71 /* YGPSegmentedController.m */; };
+		18252A8F19E910A6008B4C71 /* ZDEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18252A8E19E910A6008B4C71 /* ZDEditViewController.m */; };
+		18252A9119E910AD008B4C71 /* ZDEditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18252A9019E910AD008B4C71 /* ZDEditViewController.xib */; };
 		18278C0019E622C900574DD5 /* ZDTuiJianViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18278BFF19E622C900574DD5 /* ZDTuiJianViewController.m */; };
 		18278C0219E6246C00574DD5 /* ZDTuiJianViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18278C0119E6246C00574DD5 /* ZDTuiJianViewController.xib */; };
 		18278C0419E62F1200574DD5 /* ZDZhouViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18278C0319E62F1100574DD5 /* ZDZhouViewController.xib */; };
@@ -296,6 +301,15 @@
 		18252A4E19E8C795008B4C71 /* ZDRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDRecordViewController.h; sourceTree = "<group>"; };
 		18252A4F19E8C795008B4C71 /* ZDRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDRecordViewController.m; sourceTree = "<group>"; };
 		18252A5119E8C7FA008B4C71 /* ZDRecordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDRecordViewController.xib; sourceTree = "<group>"; };
+		18252A8419E8E0D9008B4C71 /* Globle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Globle.h; sourceTree = "<group>"; };
+		18252A8519E8E0D9008B4C71 /* Globle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Globle.m; sourceTree = "<group>"; };
+		18252A8619E8E0D9008B4C71 /* red_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red_background.png; sourceTree = "<group>"; };
+		18252A8719E8E0D9008B4C71 /* YGPConstKEY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGPConstKEY.h; sourceTree = "<group>"; };
+		18252A8819E8E0D9008B4C71 /* YGPSegmentedController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGPSegmentedController.h; sourceTree = "<group>"; };
+		18252A8919E8E0D9008B4C71 /* YGPSegmentedController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGPSegmentedController.m; sourceTree = "<group>"; };
+		18252A8D19E910A6008B4C71 /* ZDEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDEditViewController.h; sourceTree = "<group>"; };
+		18252A8E19E910A6008B4C71 /* ZDEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDEditViewController.m; sourceTree = "<group>"; };
+		18252A9019E910AD008B4C71 /* ZDEditViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDEditViewController.xib; sourceTree = "<group>"; };
 		18278BFE19E622C900574DD5 /* ZDTuiJianViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDTuiJianViewController.h; sourceTree = "<group>"; };
 		18278BFF19E622C900574DD5 /* ZDTuiJianViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDTuiJianViewController.m; sourceTree = "<group>"; };
 		18278C0119E6246C00574DD5 /* ZDTuiJianViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDTuiJianViewController.xib; sourceTree = "<group>"; };
@@ -711,6 +725,7 @@
 		18252A4A19E8C772008B4C71 /* Record(我的尝试记录) */ = {
 			isa = PBXGroup;
 			children = (
+				18252A8319E8E0D9008B4C71 /* YGPSemgmented */,
 				18252A4B19E8C772008B4C71 /* Controller */,
 				18252A4C19E8C772008B4C71 /* Model */,
 				18252A4D19E8C772008B4C71 /* View */,
@@ -740,6 +755,20 @@
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		18252A8319E8E0D9008B4C71 /* YGPSemgmented */ = {
+			isa = PBXGroup;
+			children = (
+				18252A8419E8E0D9008B4C71 /* Globle.h */,
+				18252A8519E8E0D9008B4C71 /* Globle.m */,
+				18252A8619E8E0D9008B4C71 /* red_background.png */,
+				18252A8719E8E0D9008B4C71 /* YGPConstKEY.h */,
+				18252A8819E8E0D9008B4C71 /* YGPSegmentedController.h */,
+				18252A8919E8E0D9008B4C71 /* YGPSegmentedController.m */,
+			);
+			name = YGPSemgmented;
+			path = ../YGPSemgmented;
 			sourceTree = "<group>";
 		};
 		18278C0E19E686DA00574DD5 /* FMDB */ = {
@@ -870,7 +899,6 @@
 				18733DAB19D8F44700966A55 /* Bank(食材银行) */,
 				18F37E7A19D7F5E600325A25 /* News(宝贝咨询) */,
 				181BCF9B19D3DC4A00EDA508 /* init(初始化) */,
-				18FA20AE19CFB92B00430E37 /* OAuth(授权) */,
 				18FA20AD19CFB90300430E37 /* Newfeature(新特性) */,
 				1888B3FA19CADE1D0030DB88 /* Register(注册) */,
 				18252A4A19E8C772008B4C71 /* Record(我的尝试记录) */,
@@ -929,6 +957,9 @@
 				18278BFE19E622C900574DD5 /* ZDTuiJianViewController.h */,
 				18278BFF19E622C900574DD5 /* ZDTuiJianViewController.m */,
 				18278C0119E6246C00574DD5 /* ZDTuiJianViewController.xib */,
+				18252A8D19E910A6008B4C71 /* ZDEditViewController.h */,
+				18252A8E19E910A6008B4C71 /* ZDEditViewController.m */,
+				18252A9019E910AD008B4C71 /* ZDEditViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1280,13 +1311,6 @@
 			path = "Newfeature(新特性)";
 			sourceTree = "<group>";
 		};
-		18FA20AE19CFB92B00430E37 /* OAuth(授权) */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "OAuth(授权)";
-			sourceTree = "<group>";
-		};
 		18FA20C119CFF2D200430E37 /* MBProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
@@ -1519,6 +1543,7 @@
 				18F37E7619D7E13C00325A25 /* ZDSiKuCell.xib in Resources */,
 				181BCFA819D4240F00EDA508 /* ZDJudgeViewController.xib in Resources */,
 				18204AA419E7820100EE57B9 /* ZDLoginCitysCell.xib in Resources */,
+				18252A9119E910AD008B4C71 /* ZDEditViewController.xib in Resources */,
 				18278C0219E6246C00574DD5 /* ZDTuiJianViewController.xib in Resources */,
 				18278C0819E64D5C00574DD5 /* ZDGuoMinViewController.xib in Resources */,
 				18A0930B19D551A100FC74FF /* ZDNotifyViewController.xib in Resources */,
@@ -1528,6 +1553,7 @@
 				18278C0419E62F1200574DD5 /* ZDZhouViewController.xib in Resources */,
 				18F37EB219D807CF00325A25 /* ipad_home_left_b@2x.png in Resources */,
 				18204AA219E7820100EE57B9 /* ZDLoginBirthdayCell.xib in Resources */,
+				18252A8B19E8E0D9008B4C71 /* red_background.png in Resources */,
 				183EC3E819D26B3B00C756DE /* ZDDatePickerView.xib in Resources */,
 				18278C0D19E6676B00574DD5 /* ZDYueViewController.xib in Resources */,
 				1888B3D219CADBDC0030DB88 /* LaunchScreen.xib in Resources */,
@@ -1584,6 +1610,7 @@
 				1823B0FF19D161220081E5A2 /* ZDHttpTool.m in Sources */,
 				18FA215319CFF40D00430E37 /* UIImageView+WebCache.m in Sources */,
 				18F891EF19CC0F4E0046C022 /* ZDTabBarButton.m in Sources */,
+				18252A8C19E8E0D9008B4C71 /* YGPSegmentedController.m in Sources */,
 				18FA212119CFF40200430E37 /* UIScrollView+MJRefresh.m in Sources */,
 				18F891C519CBBD4F0046C022 /* NSString+Hash.m in Sources */,
 				18733DC519D931EA00966A55 /* UIColor+ZD.m in Sources */,
@@ -1659,6 +1686,7 @@
 				18FA211F19CFF40200430E37 /* MJRefreshHeaderView.m in Sources */,
 				1823B10919D16E490081E5A2 /* ZDRgsViewController.m in Sources */,
 				18278C1E19E686DA00574DD5 /* FMResultSet.m in Sources */,
+				18252A8A19E8E0D9008B4C71 /* Globle.m in Sources */,
 				1824793A19E4FE3C00CB5BBA /* ZDTryChooseButton.m in Sources */,
 				18733DC219D8FF7E00966A55 /* ZDBabyInfoTableViewController.m in Sources */,
 				18204AB019E7821B00EE57B9 /* CZDatePickerView.m in Sources */,
@@ -1703,6 +1731,7 @@
 				18FA20E519CFF3D600430E37 /* AFURLResponseSerialization.m in Sources */,
 				18204AA319E7820100EE57B9 /* ZDLoginCitysCell.m in Sources */,
 				18F37EA919D7F66400325A25 /* MJPhoto.m in Sources */,
+				18252A8F19E910A6008B4C71 /* ZDEditViewController.m in Sources */,
 				1894FC0B19D961FE00393A6A /* UIBarButtonItem+Badge.m in Sources */,
 				18252A5019E8C795008B4C71 /* ZDRecordViewController.m in Sources */,
 				18F891E319CBD2DF0046C022 /* ZDCommonSwitchItem.m in Sources */,

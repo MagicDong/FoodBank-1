@@ -7,7 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YGPSegmentedController.h"
 
-@interface ZDRecordViewController : UIViewController
+
+@class ZDTabBar;
+
+@protocol ZDRecordDelegate <NSObject>
+
+@optional
+
+- (void)didSelectedButtonTo:(NSInteger)to;
+
+@end
+
+
+@interface ZDRecordViewController : UIViewController<YGPSegmentedControllerDelegate>
+//- (IBAction)xxxxxx:(id)sender;
+@property (nonatomic, weak) id<ZDRecordDelegate> recordDelegate;
 
 @end
