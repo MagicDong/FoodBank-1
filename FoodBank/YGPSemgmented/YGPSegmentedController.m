@@ -10,7 +10,7 @@
 #import "Globle.h"
 #import "YGPConstKEY.h"
 //按钮空隙
-#define BUTTONGAP 5
+#define BUTTONGAP 2
 //按钮长度
 #define BUTTONWIDTH 90                                                 
 //按钮宽度
@@ -62,7 +62,7 @@
           [self addSubview:YGPScrollView];
           TitleArray = Title ;
           [self setFrame:Frame];
-          [YGPScrollView setFrame:Frame];
+          [YGPScrollView setFrame:self.bounds];
           [self setBackgroundColor];
           YGPScrollView.contentSize = CGSizeMake((BUTTONWIDTH+BUTTONGAP)*[self.TitleArray count]+BUTTONGAP, -30);
           TEXTLENGARRAY = [[NSMutableArray alloc]init];
@@ -104,17 +104,25 @@
                              constrainedToSize:CGSizeMake(150, 28)
                                   lineBreakMode:UILineBreakModeClip].width;
           
-          [SegmentedButton setFrame:CGRectMake(xPos, 9, buttonWidth+5, BUTTONHEIGHT)];
+          [SegmentedButton setFrame:CGRectMake(xPos, 9, buttonWidth+8, BUTTONHEIGHT)];
+         
+         SegmentedButton.layer.cornerRadius = 8;
+         SegmentedButton.layer.masksToBounds = YES;
+         
           SegmentedButton.tag=i+100;
                     if (i==0)
           {
                SegmentedButton.selected=NO;
           }
           
-          [SegmentedButton setTitleColor:[Globle colorFromHexRGB:@"868686"] forState:UIControlStateNormal];
-          [SegmentedButton setTitleColor:[Globle colorFromHexRGB:@"bb0b15"] forState:UIControlStateSelected];
-          [SegmentedButton addTarget:self action:@selector(SelectButton:) forControlEvents:UIControlEventTouchUpInside];
-         
+//          [SegmentedButton setTitleColor:[Globle colorFromHexRGB:@"868686"] forState:UIControlStateNormal];
+//          [SegmentedButton setTitleColor:[Globle colorFromHexRGB:@"bb0b15"] forState:UIControlStateSelected];
+         UIColor *color = ZDColor(147, 107, 60);
+         [SegmentedButton setTitleColor:color forState:UIControlStateNormal];
+         [SegmentedButton setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+         [SegmentedButton setBackgroundImage:[UIImage imageNamed:@"btnBG"] forState:UIControlStateNormal];
+         [SegmentedButton setBackgroundImage:[UIImage imageNamed:@"Judge2"] forState:UIControlStateSelected];
+         [SegmentedButton addTarget:self action:@selector(SelectButton:) forControlEvents:UIControlEventTouchUpInside];
          
           xPos += buttonWidth+buttonPadding;
           
@@ -135,9 +143,9 @@
      }
      
      //设置选中背景
-     ButtonbackgroundImage = [[UIImageView alloc] initWithFrame:CGRectMake(5, 0, [[_Buutonimage objectAtIndex:0]floatValue], 40)];
-     [ButtonbackgroundImage setImage:[UIImage imageNamed:@"red_background.png"]];
-     [YGPScrollView addSubview:ButtonbackgroundImage];
+//     ButtonbackgroundImage = [[UIImageView alloc] initWithFrame:CGRectMake(5, 0, [[_Buutonimage objectAtIndex:0]floatValue], 40)];
+//     [ButtonbackgroundImage setImage:[UIImage imageNamed:@"red_background.png"]];
+//     [YGPScrollView addSubview:ButtonbackgroundImage];
 }
 
 //点击button调用方法
@@ -193,7 +201,7 @@
 -(void)setBackgroundColor
 {
      //为了区别Tab和View的颜色
-     self.backgroundColor = [UIColor grayColor];
+     self.backgroundColor = ZDColor(255, 246, 229);
      YGPScrollView.alpha = 0.9;
 
 }

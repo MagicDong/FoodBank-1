@@ -76,6 +76,15 @@
 		18278C2119E68A0F00574DD5 /* YTKKeyValueStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 18278C2019E68A0F00574DD5 /* YTKKeyValueStore.m */; };
 		1828E97819D7963E008B328E /* ZDSiKuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1828E97719D7963E008B328E /* ZDSiKuViewController.m */; };
 		1828E97A19D796B5008B328E /* ZDSiKuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1828E97919D796B5008B328E /* ZDSiKuViewController.xib */; };
+		1829A7B419EB6A1500CD2624 /* LBorderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1829A7B319EB6A1500CD2624 /* LBorderView.m */; };
+		1829A7B719EBB1BC00CD2624 /* ZDAllergyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1829A7B619EBB1BC00CD2624 /* ZDAllergyViewController.m */; };
+		1829A7B919EBB1E800CD2624 /* ZDAllergyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1829A7B819EBB1E800CD2624 /* ZDAllergyViewController.xib */; };
+		1829A7BC19EBB29C00CD2624 /* ZDRejectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1829A7BB19EBB29C00CD2624 /* ZDRejectViewController.m */; };
+		1829A7BE19EBB2A500CD2624 /* ZDRejectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1829A7BD19EBB2A500CD2624 /* ZDRejectViewController.xib */; };
+		1829A7C119EBB3F900CD2624 /* ZDPresentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1829A7C019EBB3F900CD2624 /* ZDPresentViewController.m */; };
+		1829A7C419EBC83A00CD2624 /* ChoiceButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1829A7C319EBC83A00CD2624 /* ChoiceButton.m */; };
+		1834474519ECF168003CCBD0 /* HBVLinkedTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1834474219ECF168003CCBD0 /* HBVLinkedTextView.m */; };
+		1834474619ECF168003CCBD0 /* UIColor+HBVHarmonies.m in Sources */ = {isa = PBXBuildFile; fileRef = 1834474419ECF168003CCBD0 /* UIColor+HBVHarmonies.m */; };
 		183E72B119DA4092009CD24F /* SCHCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 183E72AE19DA4092009CD24F /* SCHCircleView.m */; };
 		183E72B219DA4092009CD24F /* SCHCircleViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 183E72B019DA4092009CD24F /* SCHCircleViewCell.m */; };
 		183E72B519DA40E3009CD24F /* SCHAnimationGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 183E72B419DA40E3009CD24F /* SCHAnimationGroup.m */; };
@@ -335,6 +344,22 @@
 		1828E97619D7963E008B328E /* ZDSiKuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDSiKuViewController.h; sourceTree = "<group>"; };
 		1828E97719D7963E008B328E /* ZDSiKuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDSiKuViewController.m; sourceTree = "<group>"; };
 		1828E97919D796B5008B328E /* ZDSiKuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDSiKuViewController.xib; sourceTree = "<group>"; };
+		1829A7B219EB6A1500CD2624 /* LBorderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBorderView.h; sourceTree = "<group>"; };
+		1829A7B319EB6A1500CD2624 /* LBorderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBorderView.m; sourceTree = "<group>"; };
+		1829A7B519EBB1BC00CD2624 /* ZDAllergyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDAllergyViewController.h; sourceTree = "<group>"; };
+		1829A7B619EBB1BC00CD2624 /* ZDAllergyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDAllergyViewController.m; sourceTree = "<group>"; };
+		1829A7B819EBB1E800CD2624 /* ZDAllergyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDAllergyViewController.xib; sourceTree = "<group>"; };
+		1829A7BA19EBB29C00CD2624 /* ZDRejectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDRejectViewController.h; sourceTree = "<group>"; };
+		1829A7BB19EBB29C00CD2624 /* ZDRejectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDRejectViewController.m; sourceTree = "<group>"; };
+		1829A7BD19EBB2A500CD2624 /* ZDRejectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDRejectViewController.xib; sourceTree = "<group>"; };
+		1829A7BF19EBB3F900CD2624 /* ZDPresentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDPresentViewController.h; sourceTree = "<group>"; };
+		1829A7C019EBB3F900CD2624 /* ZDPresentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDPresentViewController.m; sourceTree = "<group>"; };
+		1829A7C219EBC83A00CD2624 /* ChoiceButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChoiceButton.h; sourceTree = "<group>"; };
+		1829A7C319EBC83A00CD2624 /* ChoiceButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChoiceButton.m; sourceTree = "<group>"; };
+		1834474119ECF168003CCBD0 /* HBVLinkedTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBVLinkedTextView.h; sourceTree = "<group>"; };
+		1834474219ECF168003CCBD0 /* HBVLinkedTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBVLinkedTextView.m; sourceTree = "<group>"; };
+		1834474319ECF168003CCBD0 /* UIColor+HBVHarmonies.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HBVHarmonies.h"; sourceTree = "<group>"; };
+		1834474419ECF168003CCBD0 /* UIColor+HBVHarmonies.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HBVHarmonies.m"; sourceTree = "<group>"; };
 		183E72AD19DA4092009CD24F /* SCHCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCHCircleView.h; sourceTree = "<group>"; };
 		183E72AE19DA4092009CD24F /* SCHCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCHCircleView.m; sourceTree = "<group>"; };
 		183E72AF19DA4092009CD24F /* SCHCircleViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCHCircleViewCell.h; sourceTree = "<group>"; };
@@ -725,10 +750,10 @@
 		18252A4A19E8C772008B4C71 /* Record(我的尝试记录) */ = {
 			isa = PBXGroup;
 			children = (
+				1829A7B119EB69A500CD2624 /* View */,
 				18252A8319E8E0D9008B4C71 /* YGPSemgmented */,
 				18252A4B19E8C772008B4C71 /* Controller */,
 				18252A4C19E8C772008B4C71 /* Model */,
-				18252A4D19E8C772008B4C71 /* View */,
 			);
 			path = "Record(我的尝试记录)";
 			sourceTree = "<group>";
@@ -739,6 +764,14 @@
 				18252A4E19E8C795008B4C71 /* ZDRecordViewController.h */,
 				18252A4F19E8C795008B4C71 /* ZDRecordViewController.m */,
 				18252A5119E8C7FA008B4C71 /* ZDRecordViewController.xib */,
+				1829A7B519EBB1BC00CD2624 /* ZDAllergyViewController.h */,
+				1829A7B619EBB1BC00CD2624 /* ZDAllergyViewController.m */,
+				1829A7B819EBB1E800CD2624 /* ZDAllergyViewController.xib */,
+				1829A7BA19EBB29C00CD2624 /* ZDRejectViewController.h */,
+				1829A7BB19EBB29C00CD2624 /* ZDRejectViewController.m */,
+				1829A7BD19EBB2A500CD2624 /* ZDRejectViewController.xib */,
+				1829A7BF19EBB3F900CD2624 /* ZDPresentViewController.h */,
+				1829A7C019EBB3F900CD2624 /* ZDPresentViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -748,13 +781,6 @@
 			children = (
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		18252A4D19E8C772008B4C71 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		18252A8319E8E0D9008B4C71 /* YGPSemgmented */ = {
@@ -787,6 +813,21 @@
 				18278C1919E686DA00574DD5 /* FMResultSet.m */,
 			);
 			path = FMDB;
+			sourceTree = "<group>";
+		};
+		1829A7B119EB69A500CD2624 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1834474119ECF168003CCBD0 /* HBVLinkedTextView.h */,
+				1834474219ECF168003CCBD0 /* HBVLinkedTextView.m */,
+				1834474319ECF168003CCBD0 /* UIColor+HBVHarmonies.h */,
+				1834474419ECF168003CCBD0 /* UIColor+HBVHarmonies.m */,
+				1829A7C219EBC83A00CD2624 /* ChoiceButton.h */,
+				1829A7C319EBC83A00CD2624 /* ChoiceButton.m */,
+				1829A7B219EB6A1500CD2624 /* LBorderView.h */,
+				1829A7B319EB6A1500CD2624 /* LBorderView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		183E72B619DA40FA009CD24F /* CAAnimation */ = {
@@ -1525,12 +1566,14 @@
 			files = (
 				181BCFA319D4204600EDA508 /* ZDInitViewController.xib in Resources */,
 				18F37EAA19D7F66400325A25 /* MJPhotoBrowser.bundle in Resources */,
+				1829A7B919EBB1E800CD2624 /* ZDAllergyViewController.xib in Resources */,
 				186D174319D29F23003F8A17 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				18F37E9319D7F62300325A25 /* CZTitleCell.xib in Resources */,
 				183E72BF19DA41FD009CD24F /* 1.png in Resources */,
 				1823B0F919D146C10081E5A2 /* ZDRegisterViewController.xib in Resources */,
 				18733DBC19D8FB2C00966A55 /* ZDAboutHeaderView.xib in Resources */,
 				1823B10C19D173410081E5A2 /* ZDRgsViewController.xib in Resources */,
+				1829A7BE19EBB2A500CD2624 /* ZDRejectViewController.xib in Resources */,
 				1824793719E4DD2600CB5BBA /* ZDTryViewController.xib in Resources */,
 				1828E97A19D796B5008B328E /* ZDSiKuViewController.xib in Resources */,
 				18A0931019D56C6400FC74FF /* ZDSupViewController.xib in Resources */,
@@ -1606,6 +1649,7 @@
 				18FA210319CFF3E600430E37 /* MJMember.m in Sources */,
 				18204AC519E7834500EE57B9 /* ZDLoginBasis.m in Sources */,
 				183E72C519DA60B3009CD24F /* ZDYueViewController.m in Sources */,
+				1834474619ECF168003CCBD0 /* UIColor+HBVHarmonies.m in Sources */,
 				181BCFA619D4240800EDA508 /* ZDJudgeViewController.m in Sources */,
 				1823B0FF19D161220081E5A2 /* ZDHttpTool.m in Sources */,
 				18FA215319CFF40D00430E37 /* UIImageView+WebCache.m in Sources */,
@@ -1661,6 +1705,7 @@
 				18FA20E619CFF3D600430E37 /* AFURLSessionManager.m in Sources */,
 				18F891C819CBBD4F0046C022 /* UIBarButtonItem+ZD.m in Sources */,
 				18FA212019CFF40200430E37 /* UIScrollView+MJExtension.m in Sources */,
+				1829A7C119EBB3F900CD2624 /* ZDPresentViewController.m in Sources */,
 				18FA20E319CFF3D600430E37 /* AFURLConnectionOperation.m in Sources */,
 				1823B10519D161580081E5A2 /* ZDAccount.m in Sources */,
 				183E72B519DA40E3009CD24F /* SCHAnimationGroup.m in Sources */,
@@ -1682,6 +1727,7 @@
 				18F891E219CBD2DF0046C022 /* ZDCommonLabelItem.m in Sources */,
 				18FA214A19CFF40D00430E37 /* SDWebImageDownloader.m in Sources */,
 				1823B0FC19D155620081E5A2 /* ZDSearchBar.m in Sources */,
+				1829A7B719EBB1BC00CD2624 /* ZDAllergyViewController.m in Sources */,
 				18204AC819E7834500EE57B9 /* ZDLoginSign.m in Sources */,
 				18FA211F19CFF40200430E37 /* MJRefreshHeaderView.m in Sources */,
 				1823B10919D16E490081E5A2 /* ZDRgsViewController.m in Sources */,
@@ -1696,6 +1742,7 @@
 				183E72C219DA60A7009CD24F /* ZDZhouViewController.m in Sources */,
 				18F37E9019D7F62300325A25 /* CZNormalCell.m in Sources */,
 				18F891F219CC189E0046C022 /* ZDNavViewController.m in Sources */,
+				1834474519ECF168003CCBD0 /* HBVLinkedTextView.m in Sources */,
 				18FA211E19CFF40200430E37 /* MJRefreshFooterView.m in Sources */,
 				18FA20FF19CFF3E600430E37 /* MJArgument.m in Sources */,
 				18278C2119E68A0F00574DD5 /* YTKKeyValueStore.m in Sources */,
@@ -1703,6 +1750,7 @@
 				183E72B119DA4092009CD24F /* SCHCircleView.m in Sources */,
 				18FA210019CFF3E600430E37 /* MJConst.m in Sources */,
 				183E72B219DA4092009CD24F /* SCHCircleViewCell.m in Sources */,
+				1829A7B419EB6A1500CD2624 /* LBorderView.m in Sources */,
 				18F37EAD19D7F66400325A25 /* MJPhotoProgressView.m in Sources */,
 				18FA20DE19CFF3D600430E37 /* AFHTTPRequestOperation.m in Sources */,
 				1823B10219D1612B0081E5A2 /* ZDAccountTool.m in Sources */,
@@ -1728,9 +1776,11 @@
 				18FA210419CFF3E600430E37 /* MJMethod.m in Sources */,
 				18FA20E019CFF3D600430E37 /* AFHTTPSessionManager.m in Sources */,
 				18F37EAC19D7F66400325A25 /* MJPhotoLoadingView.m in Sources */,
+				1829A7BC19EBB29C00CD2624 /* ZDRejectViewController.m in Sources */,
 				18FA20E519CFF3D600430E37 /* AFURLResponseSerialization.m in Sources */,
 				18204AA319E7820100EE57B9 /* ZDLoginCitysCell.m in Sources */,
 				18F37EA919D7F66400325A25 /* MJPhoto.m in Sources */,
+				1829A7C419EBC83A00CD2624 /* ChoiceButton.m in Sources */,
 				18252A8F19E910A6008B4C71 /* ZDEditViewController.m in Sources */,
 				1894FC0B19D961FE00393A6A /* UIBarButtonItem+Badge.m in Sources */,
 				18252A5019E8C795008B4C71 /* ZDRecordViewController.m in Sources */,
