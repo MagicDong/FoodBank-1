@@ -127,7 +127,6 @@
         }else if (index == 2){
 //            ZDJiLuViewController *jilu = [[ZDJiLuViewController alloc]init];
 //            [self.navigationController pushViewController:jilu animated:YES];
-            [[NSNotificationCenter defaultCenter]postNotificationName:@"recordBtnClick" object:nil];
         }else if (index == 3){
             ZDZhouViewController *zhou = [[ZDZhouViewController alloc]init];
             [self.navigationController pushViewController:zhou animated:YES];

@@ -9,6 +9,8 @@
 #import "ZDTryViewController.h"
 #import "ZDTryChooseButton.h"
 #import "ZDTuiJianViewController.h"
+#import "ZDEditViewController.h"
+
 
 @interface ZDTryViewController () <UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *icon;   // 食材图片
@@ -72,6 +74,7 @@
 {
     return 5;
 }
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *ID = @"cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
@@ -141,15 +144,16 @@
         } completion:^(BOOL finished) {
             [self.table removeFromSuperview];
         }];
-        
     }
 }
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 30;
 }
 
 - (IBAction)name:(id)sender {
-    
+    ZDEditViewController *edit = [[ZDEditViewController alloc]init];
+    [self.navigationController  pushViewController:edit animated:YES];
 }
 
 - (IBAction)queding:(id)sender {

@@ -32,7 +32,7 @@
         </view>
     </objects>
     <resources>
-        <image name="logoAbout" width="424" height="120"/>
+        <image name="logoAbout" width="212" height="60"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

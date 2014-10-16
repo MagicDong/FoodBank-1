@@ -18,6 +18,7 @@
 #import "NSDate+ZD.h"
 #import "UIView+ZD.h"
 #import "UIImage+ZD.h"
+#import "ZDKnowTableViewController.h"
 
 static NSString *heardID = @"headerView";
 @interface ZDMyBabyViewController ()<UIAlertViewDelegate,ZDMoreHeaderViewDelegate>
@@ -81,6 +82,7 @@ static NSString *heardID = @"headerView";
     /** 0组 */
     [self setupGroup1];
     [self setupGroup2];
+    [self setupGroup3];
     // 设置footerView
     _headerView = [ZDMoreHeaderView moreHeaderView];
     _headerView.headerDelegate = self;
@@ -140,6 +142,14 @@ static NSString *heardID = @"headerView";
 
 - (void)setupGroup1{
     
+    ZDCommonArrowItem *updata = [ZDCommonArrowItem itemWithTitle:@"宝贝知识库"];
+
+    updata.destVC =  [ZDKnowTableViewController class];
+    ZDCommonGroup *group = [self addGroup];
+    group.items = @[updata];
+}
+- (void)setupGroup2{
+    
     ZDCommonArrowItem *updata = [ZDCommonArrowItem itemWithTitle:@"检测更新"];
     NSString *key =  (__bridge NSString *)kCFBundleVersionKey;
     NSString *versionCode = [[NSBundle mainBundle] objectForInfoDictionaryKey:key];
@@ -167,7 +177,7 @@ static NSString *heardID = @"headerView";
     clearCache.subtitle = [NSString stringWithFormat:@"%.fMB",fileSize];
     __weak typeof (self) weakSelf = self;
     __weak typeof (clearCache) weakClearCache = clearCache;
-
+    
     
     clearCache.opertion = ^(){
         // 1.提示用户
@@ -191,8 +201,7 @@ static NSString *heardID = @"headerView";
     ZDCommonGroup *group = [self addGroup];
     group.items = @[clearCache,updata];
 }
-
-- (void)setupGroup2{
+- (void)setupGroup3{
     ZDCommonArrowItem *idea = [ZDCommonArrowItem itemWithTitle:@"意见反馈"];
     idea.opertion = ^(){
         NSString *appid = @"908308962";

@@ -50,6 +50,8 @@
     self.jianjie.editable = NO;
     self.jianjie.scrollEnabled = YES;
     self.jianjie.scrollsToTop = YES;
+    
+    self.zhishiku.hidden = YES;
 }
 - (IBAction)zhishiku:(UIButton *)sender {
     ZDKnowTableViewController *know = [[ZDKnowTableViewController alloc]init];
@@ -75,7 +77,7 @@
 - (IBAction)choose1:(UIButton *)sender {
     // 取消之前选中按钮的选中状态
     self.selectedButton.selected = NO;
-    
+    self.zhishiku.hidden = NO;
     // 设置点中按钮的selected ＝ YES
     sender.selected = YES;
     
@@ -99,7 +101,7 @@
     
     // 取消之前选中按钮的选中状态
     self.selectedButton.selected = NO;
-    
+    self.zhishiku.hidden = NO;
     // 设置点中按钮的selected ＝ YES
     sender.selected = YES;
     
@@ -121,7 +123,7 @@
 - (IBAction)choose3:(UIButton *)sender {
     // 取消之前选中按钮的选中状态
     self.selectedButton.selected = NO;
-    
+    self.zhishiku.hidden = NO;
     // 设置点中按钮的selected ＝ YES
     sender.selected = YES;
     
@@ -143,7 +145,7 @@
 - (IBAction)choose4:(UIButton *)sender {
     // 取消之前选中按钮的选中状态
     self.selectedButton.selected = NO;
-    
+    self.zhishiku.hidden = NO;
     // 设置点中按钮的selected ＝ YES
     sender.selected = YES;
     
@@ -165,7 +167,7 @@
 - (IBAction)choose5:(UIButton *)sender {
     // 取消之前选中按钮的选中状态
     self.selectedButton.selected = NO;
-    
+    self.zhishiku.hidden = NO;
     // 设置点中按钮的selected ＝ YES
     sender.selected = YES;
     
@@ -187,7 +189,7 @@
 - (IBAction)choose6:(UIButton *)sender {
     // 取消之前选中按钮的选中状态
     self.selectedButton.selected = NO;
-    
+    self.zhishiku.hidden = NO;
     // 设置点中按钮的selected ＝ YES
     sender.selected = YES;
     

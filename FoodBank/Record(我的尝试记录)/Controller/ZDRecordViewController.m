@@ -105,6 +105,7 @@
         self.edgesForExtendedLayout = NO;
         self.navigationController.navigationBar.opaque=YES;
     }
+    
     /*
      第一个参数是存放你需要显示的title
      第二个是设置你需要的size
@@ -127,7 +128,6 @@
     _borderView1.cornerRadius = 10;
     _borderView1.borderColor = [UIColor redColor];
     _borderView1.backgroundColor = ZDColor(255, 246, 229);
-    
 }
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:YES];
