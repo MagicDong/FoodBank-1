@@ -17,7 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *label1;                   // 
 @property (weak, nonatomic) IBOutlet UICollectionView *collection;      //
 @property (weak, nonatomic) IBOutlet UILabel *label2;                   // 
-@property (nonatomic, strong) NSArray *products;                        //
+@property (nonatomic, strong) NSArray *products;                        // 
 @property (nonatomic, weak) UIButton  *selectedBtn;                     // 当前选中的四库
 @end
 
@@ -75,6 +75,7 @@
     sender.selected = YES;
     self.selectedBtn = sender;
 }
+
 - (IBAction)queding:(UIButton *)sender {
     // 跳转到TabBarController
     ZDTabBarController *tabBarVc = [[ZDTabBarController alloc] init];

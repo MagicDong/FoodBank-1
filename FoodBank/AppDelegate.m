@@ -30,7 +30,7 @@
     if(/* DISABLES CODE */ (1)){
         self.window.rootViewController = [[ZDNavViewController alloc]initWithRootViewController:[[ZDInitViewController alloc]init]];
     }else{
-        self.window.rootViewController = [[ZDRegisterViewController alloc]init];
+        self.window.rootViewController = [[ZDNewfeatureViewController alloc]init];
     }
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

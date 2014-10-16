@@ -38,6 +38,7 @@
         self.edgesForExtendedLayout = NO;
         self.navigationController.navigationBar.opaque=YES;
     }
+    
     self.anquan.layer.cornerRadius = 3;
     self.anquan.layer.masksToBounds = YES;
     self.anquan.selected = YES;
@@ -51,7 +52,6 @@
     
     self.weichangshi.layer.cornerRadius = 3;
     self.weichangshi.layer.masksToBounds = YES;
-    
     
 }
 

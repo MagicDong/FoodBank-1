@@ -71,6 +71,7 @@
     if (baby.signature != nil) {
         self.userSign.text = baby.signature;
     }
+    
 }
 
 - (void)onClickImage{

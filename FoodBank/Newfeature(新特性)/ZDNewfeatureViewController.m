@@ -10,6 +10,8 @@
 #import "ZDTabBarController.h"
 #import "ZDRegisterViewController.h"
 #import "ZDNavViewController.h"
+#import "ZDTabBarController.h"
+#import "ZDInitViewController.h"
 
 // 当前新特性页面的个数
 #define ZDNewfeatureImageCount 5
@@ -126,7 +128,6 @@
     shareButton.centerX = self.view.width * 0.5;
     shareButton.centerY = self.view.height * 0.7;
     shareButton.titleEdgeInsets = UIEdgeInsetsMake(0, 20, 0, 0);
-    
 }
 
 - (void)shareButtonClick:(UIButton *)shareBtn
@@ -141,11 +142,9 @@
 {
     // 0.让父控件可以和用户交互
     imageView.userInteractionEnabled = YES;
-    
     // 1.创建按钮
     UIButton *startButton = [[UIButton alloc] init];
     [imageView addSubview:startButton];
-
     // 2.设置背景图片
     [startButton setBackgroundImage:[UIImage imageWithNamed:@"new_feature_finish_button"] forState:UIControlStateNormal];
     [startButton setBackgroundImage:[UIImage imageWithNamed:@"new_feature_finish_button_highlighted"] forState:UIControlStateHighlighted];
@@ -167,15 +166,23 @@
 - (void)start
 {
     // 跳转到TabBarController
-    ZDRegisterViewController *tabBarVc = [[ZDRegisterViewController alloc] init];
-    ZDNavViewController *nav = [[ZDNavViewController alloc]initWithRootViewController:tabBarVc];
-    UIApplication *app = [UIApplication sharedApplication];
-
-    UIWindow *window = app.keyWindow;
-    // 显示状态栏
-    app.statusBarHidden = NO;
-    
-    window.rootViewController = nav;
+    if (self.isNoFirst) {
+        ZDTabBarController *tabBarVc = [[ZDTabBarController alloc] init];
+        UIApplication *app = [UIApplication sharedApplication];
+        UIWindow *window = app.keyWindow;
+        app.statusBarHidden = NO;
+        window.rootViewController = tabBarVc;
+        [window makeKeyAndVisible];
+    }else{
+        ZDTabBarController *tabBarVc = [[ZDTabBarController alloc] init];
+        ZDNavViewController *nav = [[ZDNavViewController alloc]initWithRootViewController:tabBarVc];
+        UIApplication *app = [UIApplication sharedApplication];
+        UIWindow *window = app.keyWindow;
+        // 显示状态栏
+        app.statusBarHidden = NO;
+        window.rootViewController = nav;
+        [window makeKeyAndVisible];
+    }
 }
 
 #pragma mark - UIScrollViewDelegate
@@ -190,6 +197,6 @@
 
 - (void)dealloc
 {
-    ZDLog(@"dealloc");
+//    ZDLog(@"dealloc");
 }
 @end

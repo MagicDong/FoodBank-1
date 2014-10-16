@@ -19,6 +19,7 @@
 #import "UIView+ZD.h"
 #import "UIImage+ZD.h"
 #import "ZDKnowTableViewController.h"
+#import "ZDNewfeatureViewController.h"
 
 static NSString *heardID = @"headerView";
 @interface ZDMyBabyViewController ()<UIAlertViewDelegate,ZDMoreHeaderViewDelegate>
@@ -137,16 +138,35 @@ static NSString *heardID = @"headerView";
 
 - (void)dealloc
 {
-    
+    NSLog(@"baby dealloc");
 }
 
 - (void)setupGroup1{
     
     ZDCommonArrowItem *updata = [ZDCommonArrowItem itemWithTitle:@"宝贝知识库"];
-
     updata.destVC =  [ZDKnowTableViewController class];
+    
+    ZDCommonArrowItem *guide = [ZDCommonArrowItem itemWithTitle:@"新手指南"];
+//    guide.destVC =  [ZDNewfeatureViewController class];
+    guide.opertion = ^{
+        ZDNewfeatureViewController *root = [[ZDNewfeatureViewController alloc]init];
+        root.isNoFirst = YES;
+        for (UIViewController *controller in self.childViewControllers) {
+            // 将子视图控制器的视图从父视图中删除
+            [controller.view removeFromSuperview];
+            // 将视图控制器从父视图控制器中删除
+            [controller removeFromParentViewController];
+        }
+        UIApplication *app = [UIApplication sharedApplication];
+        UIWindow *windows = app.keyWindow;
+        windows.rootViewController = root;
+        [windows makeKeyAndVisible];
+    };
     ZDCommonGroup *group = [self addGroup];
-    group.items = @[updata];
+    group.items = @[updata,guide];
+    
+    
+    
 }
 - (void)setupGroup2{
     

@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ZDNewfeatureViewController : UIViewController
-
+@property (nonatomic, assign) BOOL isNoFirst;
 @end

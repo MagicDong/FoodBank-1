@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
+        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <objects>
@@ -44,15 +45,6 @@
                     <color key="textColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ViV-Hz-dLM" userLabel="登录">
-                    <rect key="frame" x="99" y="387" width="95" height="40"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="40" id="23z-HZ-5Uq"/>
-                        <constraint firstAttribute="width" constant="95" id="O90-aC-ZpO"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="16"/>
-                    <state key="normal" title="确认尝试" backgroundImage="Judge"/>
-                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="黄瓜" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VNa-9a-Vqo">
                     <rect key="frame" x="171" y="52" width="95" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -68,12 +60,21 @@
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ViV-Hz-dLM" userLabel="登录">
+                    <rect key="frame" x="108" y="376" width="105" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="2Sf-cQ-GMA"/>
+                        <constraint firstAttribute="width" constant="105" id="PD3-QI-M4J"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="16"/>
+                    <state key="normal" title="确定" backgroundImage="Judge"/>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="ViV-Hz-dLM" secondAttribute="bottom" constant="15" id="S8P-D9-wM0"/>
-                <constraint firstItem="ViV-Hz-dLM" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="99" id="hUB-uL-aUe"/>
-                <constraint firstAttribute="trailing" secondItem="ViV-Hz-dLM" secondAttribute="trailing" constant="126" id="s0b-hb-AJc"/>
+                <constraint firstAttribute="trailing" secondItem="ViV-Hz-dLM" secondAttribute="trailing" constant="107" id="b2A-89-fKG"/>
+                <constraint firstItem="ViV-Hz-dLM" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="108" id="fVO-U0-RU4"/>
+                <constraint firstAttribute="bottom" secondItem="ViV-Hz-dLM" secondAttribute="bottom" constant="20" id="ztY-Nn-Sr9"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>

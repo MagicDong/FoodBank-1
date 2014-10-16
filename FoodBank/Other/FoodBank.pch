@@ -70,4 +70,6 @@
 #define ZDIphoneNew20 @"http://c.3g.163.com/nc/article/headline/T1397116135282/0-20.html"
 /** 手机新闻20-40条 */
 #define ZDIphoneNew40 @"http://c.3g.163.com/nc/article/headline/T1397116135282/20-40.html"
+
+
 #endif

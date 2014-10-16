@@ -33,15 +33,15 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    
-    if(self)
-    {
+    if(self){
         _icon_array = [[NSMutableArray alloc] init];
         [_icon_array addObject:[UIImage imageNamed:@"login_baobao"]];
         [_icon_array addObject:[UIImage imageNamed:@"ipad_user_login_sina"]];
         [_icon_array addObject:[UIImage imageNamed:@"ipad_user_login_qq"]];
+        [_icon_array addObject:[UIImage imageNamed:@"ipad_user_login_qq"]];
         [_icon_array addObject:[UIImage imageNamed:@"more_baobao_icon.png"]];
         [_icon_array addObject:[UIImage imageNamed:@"more_baobao_icon.png"]];
+        
     }
     return self;
 }
@@ -97,7 +97,6 @@
         return CGPointMake(self.view.width / 2, (self.view.width /2) + 20);
     }
     return CGPointMake(self.view.width / 2, (self.view.width /2));
-    
 }
 
 - (NSInteger)numberOfCellInCircleView:(SCHCircleView *)circle_view
@@ -125,8 +124,7 @@
             ZDGuoMinViewController *guomin = [[ZDGuoMinViewController alloc]init];
             [self.navigationController pushViewController:guomin animated:YES];
         }else if (index == 2){
-//            ZDJiLuViewController *jilu = [[ZDJiLuViewController alloc]init];
-//            [self.navigationController pushViewController:jilu animated:YES];
+            
         }else if (index == 3){
             ZDZhouViewController *zhou = [[ZDZhouViewController alloc]init];
             [self.navigationController pushViewController:zhou animated:YES];
