@@ -41,6 +41,8 @@
 		18204AD119E7840400EE57B9 /* ZDSingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18204ACF19E7840400EE57B9 /* ZDSingView.m */; };
 		18204AD419E7992A00EE57B9 /* ZDBaby.m in Sources */ = {isa = PBXBuildFile; fileRef = 18204AD319E7992A00EE57B9 /* ZDBaby.m */; };
 		18204AD719E7AAB000EE57B9 /* ZDBabyTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 18204AD619E7AAB000EE57B9 /* ZDBabyTool.m */; };
+		18219B1619F0BB64003E9907 /* ZDMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18219B1519F0BB64003E9907 /* ZDMoreView.m */; };
+		18219B1819F0BB74003E9907 /* ZDMoreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18219B1719F0BB74003E9907 /* ZDMoreView.xib */; };
 		1823B0F919D146C10081E5A2 /* ZDRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1823B0F819D146C10081E5A2 /* ZDRegisterViewController.xib */; };
 		1823B0FC19D155620081E5A2 /* ZDSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1823B0FB19D155620081E5A2 /* ZDSearchBar.m */; };
 		1823B0FF19D161220081E5A2 /* ZDHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 1823B0FE19D161220081E5A2 /* ZDHttpTool.m */; };
@@ -299,6 +301,9 @@
 		18204AD319E7992A00EE57B9 /* ZDBaby.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDBaby.m; sourceTree = "<group>"; };
 		18204AD519E7AAB000EE57B9 /* ZDBabyTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDBabyTool.h; sourceTree = "<group>"; };
 		18204AD619E7AAB000EE57B9 /* ZDBabyTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDBabyTool.m; sourceTree = "<group>"; };
+		18219B1419F0BB64003E9907 /* ZDMoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDMoreView.h; sourceTree = "<group>"; };
+		18219B1519F0BB64003E9907 /* ZDMoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDMoreView.m; sourceTree = "<group>"; };
+		18219B1719F0BB74003E9907 /* ZDMoreView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDMoreView.xib; sourceTree = "<group>"; };
 		1823B0F819D146C10081E5A2 /* ZDRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDRegisterViewController.xib; sourceTree = "<group>"; };
 		1823B0FA19D155620081E5A2 /* ZDSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDSearchBar.h; sourceTree = "<group>"; };
 		1823B0FB19D155620081E5A2 /* ZDSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDSearchBar.m; sourceTree = "<group>"; };
@@ -1332,6 +1337,9 @@
 				18F37E8919D7F62300325A25 /* ZDDetailViewController.h */,
 				18F37E8D19D7F62300325A25 /* ZDPhotosViewController.h */,
 				18F37E8E19D7F62300325A25 /* ZDPhotosViewController.m */,
+				18219B1419F0BB64003E9907 /* ZDMoreView.h */,
+				18219B1519F0BB64003E9907 /* ZDMoreView.m */,
+				18219B1719F0BB74003E9907 /* ZDMoreView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1608,6 +1616,7 @@
 				186D174319D29F23003F8A17 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				18D2E62F19EE382B007A1965 /* ZDKnowInfoViewController.xib in Resources */,
 				18F37E9319D7F62300325A25 /* CZTitleCell.xib in Resources */,
+				18219B1819F0BB74003E9907 /* ZDMoreView.xib in Resources */,
 				183E72BF19DA41FD009CD24F /* 1.png in Resources */,
 				1823B0F919D146C10081E5A2 /* ZDRegisterViewController.xib in Resources */,
 				18733DBC19D8FB2C00966A55 /* ZDAboutHeaderView.xib in Resources */,
@@ -1716,6 +1725,7 @@
 				18FA214819CFF40D00430E37 /* SDWebImageCompat.m in Sources */,
 				18FA20BD19CFE14000430E37 /* ZDNewsViewController.m in Sources */,
 				18F891E619CC06070046C022 /* ZDTabBarController.m in Sources */,
+				18219B1619F0BB64003E9907 /* ZDMoreView.m in Sources */,
 				18204AC719E7834500EE57B9 /* ZDLoginInfoModel.m in Sources */,
 				18204AA519E7820100EE57B9 /* ZDLoginIconCell.m in Sources */,
 				18F891C319CBBD4F0046C022 /* NSDictionary+Log.m in Sources */,

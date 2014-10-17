@@ -100,24 +100,19 @@
     self.title = @"尝试记录";
     //初始化数据
     NSArray * TitielArray = [NSArray arrayWithObjects:@"10月12日", @"10月13日", @"10月14日", @"10月15日", @"10月16日", @"10月17日", @"10月18日",nil];
-    
     if(iOS7)
     {
         self.edgesForExtendedLayout = NO;
         self.navigationController.navigationBar.opaque=YES;
     }
-    
     /*
      第一个参数是存放你需要显示的title
      第二个是设置你需要的size
      */
     _ygp = [[YGPSegmentedController alloc]initContentTitle:TitielArray CGRect:CGRectMake(0, 60, self.view.width, 44)];
-    
     [_ygp setDelegate:self];
-
     [self.view addSubview:_ygp];
     [_ygp initselectedSegmentIndex];
-    
     label = [[UILabel alloc]initWithFrame:CGRectMake(100, 150, 200, 200)];
     label.font=[UIFont boldSystemFontOfSize:50.0];
     [self.view addSubview:label];
@@ -128,13 +123,14 @@
     _borderView1.borderWidth = 1;
     _borderView1.cornerRadius = 10;
     _borderView1.borderColor = [UIColor redColor];
-    _borderView1.backgroundColor = ZDColor(255, 246, 229);
+    _borderView1.backgroundColor = ZDColor(255, 246, 229)
+    
 }
+
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:YES];
     [_ygp initselectedSegmentIndex];
 }
-
 
 -(void)segmentedViewController:(YGPSegmentedController *)segmentedControl touchedAtIndex:(NSUInteger)index
 {
@@ -158,7 +154,6 @@
                 break;
         }
     }
-    
     NSString * string = [NSString stringWithFormat:@"%d",index];
     label.text=string;
 }

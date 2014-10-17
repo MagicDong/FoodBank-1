@@ -22,6 +22,7 @@
 #import "UIImageView+WebCache.h"
 #import "Reachability.h"
 #import "UIImage+ZD.h"
+#import "ZDMoreView.h"
 
 static NSString *TitleCellID = @"TitleCell";
 static NSString *NormalCellID = @"NormalCell";
@@ -39,7 +40,14 @@ static NSString *PhotosID = @"photosCell";
 @property (nonatomic,assign) BOOL settingEdge;
 @property (nonatomic,assign) BOOL huancun;
 @property (nonatomic, assign) UITouch *touch;
-
+/**
+ *  蒙板
+ */
+@property (nonatomic, strong)UIButton *cover;
+/**
+ *  时间选择
+ */
+@property (nonatomic ,weak) ZDMoreView *moreView;
 @end
 
 @implementation ZDNewsViewController
@@ -64,6 +72,49 @@ static NSString *PhotosID = @"photosCell";
         self.edgesForExtendedLayout = NO;
         self.navigationController.navigationBar.opaque=YES;
     }
+    // 3.添加更多按钮
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemImage:@"navigationbar_more" highlightedImage:@"navigationbar_more_highlighted" target:self action:@selector(more)];
+    
+}
+#pragma mark - 懒加载
+- (ZDMoreView *)moreView{
+    if (!_moreView) {
+        _moreView = [ZDMoreView moreView];
+        // 设置代理
+        [self.view  addSubview:_moreView];
+    }
+    return _moreView;
+}
+
+- (void)more{
+    // 1.添加按钮蒙板
+    UIButton *cover = [[UIButton alloc] init];
+    cover.frame = self.view.frame;
+    cover.backgroundColor = [UIColor blackColor];
+    // 控制UIButton的透明度
+    [cover setAlpha: 0.0];
+    // 监听蒙板点击事件
+//    [cover addTarget:self action:@selector(smallImage) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:cover];
+    self.cover = cover;
+    
+//    CGRect rect = self.moreView.frame;
+//    self.moreView.x = 0;
+//    self.moreView.y = 100;
+//    self.moreView.width = 0;
+//    self.moreView.height = 0;
+    // 2.交换图片和蒙板的位置
+    // 把控制器View中的iconView带到控制器View的最前面
+    [self.view bringSubviewToFront:self.moreView];
+    self.moreView.y = self.moreView.y - self.moreView.height;
+    self.moreView.contentScaleFactor = 0;
+    [UIView animateWithDuration:0.5 animations:^{
+        // 3.放大图片
+        self.moreView.y = 0;
+        cover.alpha = 0.7;
+    } completion:^(BOOL finished) {
+//        [self.moreView removeFromSuperview];
+    }];
 }
 
 /** 加载上拉刷新和下拉刷新 */

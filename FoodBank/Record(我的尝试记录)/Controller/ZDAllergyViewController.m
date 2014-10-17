@@ -78,10 +78,10 @@ __weak IBOutlet LBorderView *_borderView1;
                                   };
     self.jianjie.attributedText = [[NSAttributedString alloc]initWithString:@"    请您立即停止食用该食材，观察宝宝的排便情况，若腹泻减轻，待正常后，间隔一段时间，适当减量再次添加，如没有问题，可按程序更换新食材。如仍有腹泻，此食物短期内不宜食用。若腹泻严重请到医院就医。建议您就医前将孩子的大便标本置于干净容器内同带往医院，以方便及时得到诊断。" attributes:attributes];
 }
+
 - (IBAction)fuzhang:(UIButton *)sender {
     // 取消之前选中按钮的选中状态
     self.selectedButton.selected = NO;
-    
     // 设置点中按钮的selected ＝ YES
     sender.selected = YES;
     
@@ -158,6 +158,7 @@ __weak IBOutlet LBorderView *_borderView1;
     NSDictionary *attributes = @{ NSFontAttributeName:[UIFont systemFontOfSize:15], NSParagraphStyleAttributeName:paragraphStyle, NSForegroundColorAttributeName:[UIColor colorWithRed:202/255. green:57/255. blue:21/255. alpha:1]
                                   };
     self.jianjie.attributedText = [[NSAttributedString alloc]initWithString:@"    请您立即停止食用该食材，观察宝宝的睡眠情况，如睡眠较快恢复安稳，间隔一段时间，可适当减量再次尝试，若睡眠很好，可更换尝试添加其它食材。若再次出现睡眠不好的症状，证明宝宝对这种食材不适，短时期可以停止该食材的尝试。如宝宝睡眠仍不安稳，请及时就医确诊。" attributes:attributes];
+    
 }
 - (IBAction)outu:(UIButton *)sender {
     // 取消之前选中按钮的选中状态
@@ -203,10 +204,8 @@ __weak IBOutlet LBorderView *_borderView1;
 - (IBAction)qita:(UIButton *)sender {
     // 取消之前选中按钮的选中状态
     self.selectedButton.selected = NO;
-    
     // 设置点中按钮的selected ＝ YES
     sender.selected = YES;
-    
     // 将当前按钮作为选中按钮
     self.selectedButton = sender;
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc]init];
@@ -215,11 +214,12 @@ __weak IBOutlet LBorderView *_borderView1;
     paragraphStyle.minimumLineHeight = 15.f;
     paragraphStyle.firstLineHeadIndent = 20.f;
     paragraphStyle.alignment = NSTextAlignmentJustified;
-    
     NSDictionary *attributes = @{ NSFontAttributeName:[UIFont systemFontOfSize:15], NSParagraphStyleAttributeName:paragraphStyle, NSForegroundColorAttributeName:[UIColor colorWithRed:202/255. green:57/255. blue:21/255. alpha:1]
                                   };
     self.jianjie.attributedText = [[NSAttributedString alloc]initWithString:@"    请您立即停止给孩子继续食用该食材，观察宝宝的情况，注意宝宝的过敏症状的发展并酌情带宝宝就医确诊。" attributes:attributes];
+    
 }
+
 - (IBAction)qitaTextField:(UITextField *)sender {
     
     
