@@ -102,6 +102,7 @@
     self.datePickerView.y = self.view.height - self.datePickerView.height;
     [UIView animateWithDuration:0.25 animations:^{
         self.datePickerView.y = self.view.height;
+        
     } completion:^(BOOL finished) {
         [self.datePickerView removeFromSuperview];
     }];

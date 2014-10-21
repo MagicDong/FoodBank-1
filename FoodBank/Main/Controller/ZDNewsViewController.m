@@ -28,7 +28,7 @@ static NSString *TitleCellID = @"TitleCell";
 static NSString *NormalCellID = @"NormalCell";
 static NSString *PhotosID = @"photosCell";
 
-@interface ZDNewsViewController ()<CZTitleCellDelegate,UIGestureRecognizerDelegate>
+@interface ZDNewsViewController ()<CZTitleCellDelegate,UIGestureRecognizerDelegate,ZDMoreViewDelegate>
 /** 数据列表 */
 @property (nonatomic, strong) NSMutableArray *dataList;
 
@@ -48,6 +48,7 @@ static NSString *PhotosID = @"photosCell";
  *  时间选择
  */
 @property (nonatomic ,weak) ZDMoreView *moreView;
+@property (nonatomic,assign) BOOL xiala;
 @end
 
 @implementation ZDNewsViewController
@@ -57,6 +58,14 @@ static NSString *PhotosID = @"photosCell";
     _dataList = dataList;
     
     [self.tableView reloadData];
+}
+- (void)dealloc{
+    [self.moreView removeFromSuperview];
+}
+
+- (void)viewDidDisappear:(BOOL)animated{
+    [self.moreView removeFromSuperview];
+    [self.cover removeFromSuperview];
 }
 
 - (void)viewDidLoad
@@ -75,46 +84,82 @@ static NSString *PhotosID = @"photosCell";
     // 3.添加更多按钮
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemImage:@"navigationbar_more" highlightedImage:@"navigationbar_more_highlighted" target:self action:@selector(more)];
     
+    
+
 }
+
 #pragma mark - 懒加载
 - (ZDMoreView *)moreView{
     if (!_moreView) {
         _moreView = [ZDMoreView moreView];
-        // 设置代理
-        [self.view  addSubview:_moreView];
+        self.moreView.y = self.moreView.y - self.moreView.height;
+        self.moreView.center = self.view.center;
+        self.moreView.borderType = BorderTypeDashed;
+        self.moreView.dashPattern = 2;
+        //    self.moreView.spacePattern = 2;
+        self.moreView.borderWidth = 1;
+        self.moreView.cornerRadius = 10;
+        self.moreView.borderColor = [UIColor redColor];
+        self.moreView.backgroundColor = ZDColor(255, 246, 229)
+        self.moreView.delegate = self;
+        [self.view.window  addSubview:_moreView];
     }
     return _moreView;
 }
+- (void)moreViewDidOK:(ZDMoreView *)moreView{
+    [UIView animateWithDuration:0.5 animations:^{
+        [self.cover setAlpha:0];
+        [self.moreView setAlpha:0];
+    } completion:^(BOOL finished) {
+        [self.moreView removeFromSuperview];
+        [self.cover removeFromSuperview];
+        self.xiala = NO;
+    }];
+}
+- (void)moreViewDidWWW:(ZDMoreView *)moreView{
+    
+}
 
 - (void)more{
-    // 1.添加按钮蒙板
-    UIButton *cover = [[UIButton alloc] init];
-    cover.frame = self.view.frame;
-    cover.backgroundColor = [UIColor blackColor];
-    // 控制UIButton的透明度
-    [cover setAlpha: 0.0];
-    // 监听蒙板点击事件
-//    [cover addTarget:self action:@selector(smallImage) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:cover];
-    self.cover = cover;
-    
-//    CGRect rect = self.moreView.frame;
-//    self.moreView.x = 0;
-//    self.moreView.y = 100;
-//    self.moreView.width = 0;
-//    self.moreView.height = 0;
     // 2.交换图片和蒙板的位置
     // 把控制器View中的iconView带到控制器View的最前面
-    [self.view bringSubviewToFront:self.moreView];
-    self.moreView.y = self.moreView.y - self.moreView.height;
-    self.moreView.contentScaleFactor = 0;
-    [UIView animateWithDuration:0.5 animations:^{
-        // 3.放大图片
-        self.moreView.y = 0;
-        cover.alpha = 0.7;
-    } completion:^(BOOL finished) {
-//        [self.moreView removeFromSuperview];
-    }];
+    [self.view.window bringSubviewToFront:self.moreView];
+    if (self.xiala) {
+        [UIView animateWithDuration:0.5 animations:^{
+//            self.moreView.y = self.moreView.y - self.moreView.height;
+            [self.cover setAlpha:0];
+            [self.moreView setAlpha:0];
+        } completion:^(BOOL finished) {
+            [self.moreView removeFromSuperview];
+            [self.cover removeFromSuperview];
+            self.xiala = NO;
+        }];
+        return;
+    }else{
+        // 1.添加按钮蒙板
+        UIButton *cover = [[UIButton alloc] init];
+        cover.frame = self.view.window.frame;
+        cover.backgroundColor = [UIColor blackColor];
+        [cover addTarget:self action:@selector(smallImage) forControlEvents:UIControlEventTouchUpInside];
+        cover.userInteractionEnabled = YES;
+        // 控制UIButton的透明度
+        [cover setAlpha: 0.0];
+        [self.moreView setAlpha:0];
+        self.cover = cover;
+        [self.view.window addSubview:cover];
+        [self.view.window bringSubviewToFront:self.moreView];
+        [UIView animateWithDuration:0.5 animations:^{
+            [self.moreView setAlpha:1];
+            [self.cover setAlpha: 0.65];
+            // 监听蒙板点击事件
+        } completion:^(BOOL finished) {
+            self.xiala = YES;
+        }];
+        return;
+    }
+}
+- (void)smallImage{
+    
 }
 
 /** 加载上拉刷新和下拉刷新 */
@@ -122,6 +167,7 @@ static NSString *PhotosID = @"photosCell";
 {
     // 添加Header上拉刷新
     [self.tableView addHeaderWithTarget:self action:@selector(loadIphoneNews)];
+    
     // 添加Footer上拉刷新
     [self.tableView addFooterWithTarget:self action:@selector(loadMoreIphoneNews)];
     // 首次登陆转菊花

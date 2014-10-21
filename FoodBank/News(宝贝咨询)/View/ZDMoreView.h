@@ -7,9 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LBorderView.h"
+@class ZDMoreView;
 
-@interface ZDMoreView : UIView
+
+@protocol ZDMoreViewDelegate <NSObject>
+
+- (void)moreViewDidOK:(ZDMoreView *)moreView;
+/**
+ *  加号按钮被点击时通知代理的方法
+ */
+- (void)moreViewDidWWW:(ZDMoreView *)moreView;
+
+@end
+
+@interface ZDMoreView : LBorderView
 
 + (instancetype)moreView;
+
+@property (nonatomic, weak) id<ZDMoreViewDelegate>  delegate;
 
 @end

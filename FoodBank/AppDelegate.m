@@ -31,6 +31,7 @@
         self.window.rootViewController = [[ZDNavViewController alloc]initWithRootViewController:[[ZDInitViewController alloc]init]];
     }else{
         self.window.rootViewController = [[ZDNewfeatureViewController alloc]init];
+        
     }
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

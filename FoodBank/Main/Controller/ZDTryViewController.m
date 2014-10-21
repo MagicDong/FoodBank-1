@@ -10,9 +10,9 @@
 #import "ZDTryChooseButton.h"
 #import "ZDTuiJianViewController.h"
 #import "ZDEditViewController.h"
+#import "ZDMoreView.h"
 
-
-@interface ZDTryViewController () <UITableViewDataSource,UITableViewDelegate>
+@interface ZDTryViewController () <UITableViewDataSource,UITableViewDelegate,ZDMoreViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *icon;   // 食材图片
 @property (weak, nonatomic) IBOutlet UIButton *nameEdit;  // 换食材
 @property (weak, nonatomic) IBOutlet UITextView *jieshao; // 食材介绍
@@ -21,6 +21,15 @@
 @property (nonatomic, strong) UIImage *upImage;           // 向上的图片
 @property (nonatomic, strong) UITableView *table;         // 点击按钮出来天数
 @property (nonatomic, strong) UIButton *tianBtn;
+/**
+ *  蒙板
+ */
+@property (nonatomic, strong)UIButton *cover;
+/**
+ *  时间选择
+ */
+@property (nonatomic ,weak) ZDMoreView *moreView;
+@property (nonatomic,assign) BOOL xiala;
 @end
 
 @implementation ZDTryViewController
@@ -38,7 +47,84 @@
     [tianBtn addTarget:self action:@selector(tianBtnOnClick:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:tianBtn];
     self.tianBtn = tianBtn;
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemImage:@"navigationbar_more" highlightedImage:@"navigationbar_more_highlighted" target:self action:@selector(more)];
+    
 }
+
+- (void)more{
+    // 2.交换图片和蒙板的位置
+    // 把控制器View中的iconView带到控制器View的最前面
+    [self.view.window bringSubviewToFront:self.moreView];
+    if (self.xiala) {
+        [UIView animateWithDuration:0.5 animations:^{
+            //            self.moreView.y = self.moreView.y - self.moreView.height;
+            [self.cover setAlpha:0];
+            [self.moreView setAlpha:0];
+        } completion:^(BOOL finished) {
+            [self.moreView removeFromSuperview];
+            [self.cover removeFromSuperview];
+            self.xiala = NO;
+        }];
+        return;
+    }else{
+        // 1.添加按钮蒙板
+        UIButton *cover = [[UIButton alloc] init];
+        cover.frame = self.view.window.frame;
+        cover.backgroundColor = [UIColor blackColor];
+        [cover addTarget:self action:@selector(smallImage) forControlEvents:UIControlEventTouchUpInside];
+        cover.userInteractionEnabled = YES;
+        // 控制UIButton的透明度
+        [cover setAlpha: 0.0];
+        [self.moreView setAlpha:0];
+        self.cover = cover;
+        [self.view.window addSubview:cover];
+        [self.view.window bringSubviewToFront:self.moreView];
+        [UIView animateWithDuration:0.5 animations:^{
+            [self.moreView setAlpha:1];
+            [self.cover setAlpha: 0.65];
+            // 监听蒙板点击事件
+        } completion:^(BOOL finished) {
+            self.xiala = YES;
+        }];
+        return;
+    }
+}
+- (void)smallImage{
+    
+}
+
+#pragma mark - 懒加载
+- (ZDMoreView *)moreView{
+    if (!_moreView) {
+        _moreView = [ZDMoreView moreView];
+        self.moreView.y = self.moreView.y - self.moreView.height;
+        self.moreView.center = self.view.center;
+        self.moreView.borderType = BorderTypeDashed;
+        self.moreView.dashPattern = 2;
+        //    self.moreView.spacePattern = 2;
+        self.moreView.borderWidth = 1;
+        self.moreView.cornerRadius = 10;
+        self.moreView.borderColor = [UIColor redColor];
+        self.moreView.backgroundColor = ZDColor(255, 246, 229)
+        self.moreView.delegate = self;
+        [self.view.window  addSubview:_moreView];
+    }
+    return _moreView;
+}
+- (void)moreViewDidOK:(ZDMoreView *)moreView{
+    [UIView animateWithDuration:0.5 animations:^{
+        [self.cover setAlpha:0];
+        [self.moreView setAlpha:0];
+    } completion:^(BOOL finished) {
+        [self.moreView removeFromSuperview];
+        [self.cover removeFromSuperview];
+        self.xiala = NO;
+    }];
+}
+- (void)moreViewDidWWW:(ZDMoreView *)moreView{
+    
+}
+
 
 // 修改尝试周期按钮
 - (void)tianBtnOnClick:(ZDTryChooseButton *)try{

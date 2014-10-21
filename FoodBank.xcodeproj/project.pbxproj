@@ -409,6 +409,7 @@
 		183EC3E619D26B3B00C756DE /* ZDDatePickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ZDDatePickerView.xib; path = ../../Register/View/ZDDatePickerView.xib; sourceTree = "<group>"; };
 		186D174219D29F23003F8A17 /* TencentOpenApi_IOS_Bundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TencentOpenApi_IOS_Bundle.bundle; path = FoodBank/Main/Lib/TencentOpenApi_IOS_Bundle.bundle; sourceTree = "<group>"; };
 		186D174419D2A14D003F8A17 /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
+		186F60AB19F5027900697FFF /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
 		18733DAF19D8FB1900966A55 /* ZDCommonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDCommonViewController.h; sourceTree = "<group>"; };
 		18733DB019D8FB1900966A55 /* ZDCommonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDCommonViewController.m; sourceTree = "<group>"; };
 		18733DB219D8FB2200966A55 /* ZDAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDAboutViewController.h; sourceTree = "<group>"; };
@@ -1246,6 +1247,7 @@
 		1888B3FF19CADE5A0030DB88 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				186F60AB19F5027900697FFF /* Singleton.h */,
 				1823B0FD19D161220081E5A2 /* ZDHttpTool.h */,
 				1823B0FE19D161220081E5A2 /* ZDHttpTool.m */,
 				1823B10319D161580081E5A2 /* ZDAccount.h */,
