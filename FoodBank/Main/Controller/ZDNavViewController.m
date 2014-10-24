@@ -5,32 +5,23 @@
 //  Created by apple-jiexian on 14-9-19.
 //  Copyright (c) 2014年 Dong. All rights reserved.
 //
-
 #import "ZDNavViewController.h"
-#import "ZDTabBar.h"
-#import "ZDTabBarButton.h"
-#import "ZDRegisterViewController.h"
-#import "ZDNavViewController.h"
-#import "ZDMyBabyViewController.h"
-#import "ZDBankViewController.h"
-#import "ZDTryViewController.h"
-#import "ZDNewsViewController.h"
-#import "ZDRecordViewController.h"
+#import "ZDTryChooseButton.h"
+#import "ZDTuiJianViewController.h"
+#import "ZDEditViewController.h"
+#import "ZDMoreView.h"
 
-@interface ZDNavViewController ()<ZDTabBarDelegate>
-
-
+@interface ZDNavViewController ()
 /**
- *  自定义TabBar
+ *  蒙板
  */
-@property (nonatomic, weak) ZDTabBar *customTabBar;
-
-@property (nonatomic, strong) ZDNewsViewController *home;
-@property (nonatomic, strong) ZDTryViewController *message;
-@property (nonatomic, strong) ZDBankViewController *discover;
-@property (nonatomic, strong) ZDMyBabyViewController *baby;
-@property (nonatomic, strong) ZDRecordViewController *record;
-
+@property (nonatomic, strong)UIButton *cover;
+/**
+ *  时间选择
+ */
+@property (nonatomic ,weak) ZDMoreView *moreView;
+@property (nonatomic,assign) BOOL xiala;
+@property (nonatomic,strong) UIWebView *webView;
 @end
 
 @implementation ZDNavViewController
@@ -45,6 +36,92 @@
     [self setupButtonTheme];
     
 }
+- (void)more{
+    // 2.交换图片和蒙板的位置
+    // 把控制器View中的iconView带到控制器View的最前面
+    [self.view.window bringSubviewToFront:self.moreView];
+    if (self.xiala) {
+        [UIView animateWithDuration:0.5 animations:^{
+            //            self.moreView.y = self.moreView.y - self.moreView.height;
+            [self.cover setAlpha:0];
+            [self.moreView setAlpha:0];
+        } completion:^(BOOL finished) {
+            [self.moreView removeFromSuperview];
+            [self.cover removeFromSuperview];
+            self.xiala = NO;
+        }];
+        return;
+    }else{
+        // 1.添加按钮蒙板
+        UIButton *cover = [[UIButton alloc] init];
+        cover.frame = self.view.window.frame;
+        cover.backgroundColor = [UIColor blackColor];
+        [cover addTarget:self action:@selector(smallImage) forControlEvents:UIControlEventTouchUpInside];
+        cover.userInteractionEnabled = YES;
+        // 控制UIButton的透明度
+        [cover setAlpha: 0.0];
+        [self.moreView setAlpha:0];
+        self.cover = cover;
+        [self.view.window addSubview:cover];
+        [self.view.window bringSubviewToFront:self.moreView];
+        [UIView animateWithDuration:0.5 animations:^{
+            [self.moreView setAlpha:1];
+            [self.cover setAlpha: 0.65];
+            // 监听蒙板点击事件
+        } completion:^(BOOL finished) {
+            self.xiala = YES;
+        }];
+        return;
+    }
+}
+- (void)smallImage{
+    
+}
+
+#pragma mark - 懒加载
+- (ZDMoreView *)moreView{
+    if (!_moreView) {
+        _moreView = [ZDMoreView moreView];
+        self.moreView.y = self.moreView.y - self.moreView.height;
+        self.moreView.center = self.view.center;
+        self.moreView.borderType = BorderTypeDashed;
+        self.moreView.dashPattern = 2;
+        //    self.moreView.spacePattern = 2;
+        self.moreView.borderWidth = 1;
+        self.moreView.cornerRadius = 10;
+        self.moreView.borderColor = [UIColor redColor];
+        self.moreView.backgroundColor = ZDColor(255, 246, 229)
+        self.moreView.delegate = self;
+        [self.view.window  addSubview:_moreView];
+    }
+    return _moreView;
+}
+- (void)moreViewDidOK:(ZDMoreView *)moreView{
+    [UIView animateWithDuration:0.5 animations:^{
+        [self.cover setAlpha:0];
+        [self.moreView setAlpha:0];
+    } completion:^(BOOL finished) {
+        [self.moreView removeFromSuperview];
+        [self.cover removeFromSuperview];
+        self.xiala = NO;
+    }];
+}
+
+- (UIWebView *)webView{
+    if (!_webView) {
+        _webView = [[UIWebView alloc]init];
+    }
+    return _webView;
+}
+
+- (void)moreViewDidWWW:(ZDMoreView *)moreView{
+    NSURL *url = [NSURL URLWithString:@"http://www.mamabaodian.com"];
+    [[UIApplication sharedApplication] openURL:url];
+    
+//    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+//    [self.webView loadRequest:request];
+}
+
 /**
  *  设置按钮的主题
  */
@@ -86,6 +163,8 @@
     UINavigationBar *navBar = [UINavigationBar appearance];
     // 1.2设置主题
     if (!iOS7) {
+        
+        
         // 1.设置导航条背景图片
         [navBar setBackgroundImage:[UIImage imageWithNamed:@"Judge2"] forBarMetrics:UIBarMetricsDefault];
         
@@ -126,11 +205,9 @@
     if (self.viewControllers.count > 0) {
         // 1.只有栈中有控制器的情况才需要隐藏工具条
         viewController.hidesBottomBarWhenPushed = YES;
-        
         // 2.覆盖返回按钮
         // 只要覆盖了返回按钮, 系统自带的拖拽返回上一级的功能就会失效
         viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem itemImage:@"navigationbar_back" highlightedImage:@"navigationbar_back_highlighted" target:self action:@selector(back)];
-        
         // 3.添加更多按钮
         viewController.navigationItem.rightBarButtonItem = [UIBarButtonItem itemImage:@"navigationbar_more" highlightedImage:@"navigationbar_more_highlighted" target:self action:@selector(more)];
     }
@@ -144,110 +221,5 @@
     [self popViewControllerAnimated:YES];
 }
 
-- (void)more
-{
-    [self popToRootViewControllerAnimated:NO];
-}
-- (ZDTabBar *)customTabBar
-{
-//    if (_customTabBar == nil) {
-        // 1.创建自定义TabBar
-        ZDTabBar *customTabBar = [[ZDTabBar alloc] init];
-        customTabBar.frame = self.tabBarController.tabBar.bounds;
-        customTabBar.delegate = self;
-        [self.tabBarController.tabBar addSubview:customTabBar];
-        self.tabBarController.tabBar.backgroundColor = [UIColor clearColor];
-        self.customTabBar = customTabBar;
-//    }
-    return _customTabBar;
-}
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    if(iOS7)
-    {
-        self.edgesForExtendedLayout = NO;
-        self.navigationController.navigationBar.opaque=YES;
-    }
-    // 1.1创建自定义控制器
-    ZDNewsViewController *home = [[ZDNewsViewController alloc] init];
-    [self setupChileViewController:home title:@"宝贝咨询" imageName:@"tab001_1" selectedImageName:@"tab001"];
-    self.home = home;
-    
-    
-    // 2.消息
-    ZDTryViewController *message = [[ZDTryViewController alloc] init];
-    [self setupChileViewController:message title:@"新食材尝试" imageName:@"tab002_2" selectedImageName:@"tab002"];
-    self.message = message;
-    
-    ZDRecordViewController *record = [[ZDRecordViewController alloc] init];
-    [self setupChileViewController:record title:@"尝试记录" imageName:@"tab002_2" selectedImageName:@"tab002"];
-    self.record = record;
-    
-    // 3.广场
-    ZDBankViewController *discover = [[ZDBankViewController alloc] init];
-    [self setupChileViewController:discover title:@"宝贝食材银行" imageName:@"tab003_3" selectedImageName:@"tab003"];
-    self.discover = discover;
-    
-    // 4.我
-    ZDMyBabyViewController *baby = [[ZDMyBabyViewController alloc] init];
-    [self setupChileViewController:baby title:@"我的宝贝" imageName:@"tab004_4" selectedImageName:@"tab004"];
-    self.baby = baby;
-    
-    // 删除系统自动生成的UITabBarButton
-    for (UIView *child in self.tabBarController.tabBar.subviews) {
-        if ([child isKindOfClass:[UIControl class]]) {
-            [child removeFromSuperview];
-        }
-    }
-    [self.customTabBar bringSubviewToFront:self.view];
-}
-
-- (void)viewWillDisappear:(BOOL)animated{
-    // 删除系统自动生成的UITabBarButton
-    for (UIView *child in self.tabBarController.tabBar.subviews) {
-        if ([child isKindOfClass:[UIControl class]]) {
-            [child removeFromSuperview];
-        }
-    }
-}
-
-
-
-/**
- *  初始化子控制器
- *
- *  @param child             需要初始化的子控制器
- *  @param title             需要设置的标题
- *  @param imageName         需要设置的默认状态的图片
- *  @param selectedImageName 需要设置的选中状态的图片
- */
-- (void)setupChileViewController:(UIViewController *)child title:(NSString *)title imageName:(NSString *)imageName selectedImageName:(NSString *)selectedImageName
-{
-    child.title = title;
-    child.tabBarItem.image = [UIImage imageWithNamed:imageName];
-    // 如果是iOS7 就告诉系统不要渲染图片
-    UIImage *selectedImage = [UIImage imageWithNamed:selectedImageName];
-    if (iOS7) { //只有iOS7才需要设置原样显示
-        selectedImage = [selectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    }
-    child.tabBarItem.selectedImage = selectedImage;
-    ZDNavViewController *nav = [[ZDNavViewController alloc] initWithRootViewController:child];
-    [self addChildViewController:nav];
-    // 2.根据对应的子控制器创建子控制器对应的按钮
-    [self.customTabBar addTabBarButton:child.tabBarItem];
-}
-
-
-- (NSArray *)popToRootViewControllerAnimated:(BOOL)animated{
-
-    for (UIView *child in self.tabBarController.tabBar.subviews) {
-        if ([child isKindOfClass:[UIControl class]]) {
-            [child removeFromSuperview];
-        }
-    }
-    [super popToRootViewControllerAnimated:YES];
-    return nil;
-}
 
 @end

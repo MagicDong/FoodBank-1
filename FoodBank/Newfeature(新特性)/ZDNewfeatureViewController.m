@@ -54,6 +54,7 @@
     [self.view addSubview:pageControl];
     self.pageControl  = pageControl;
 }
+
 /**
  *  添加scrollerView
  */
@@ -64,7 +65,6 @@
     scrollerView.frame = self.view.bounds;
     scrollerView.delegate = self;
     [self.view addSubview:scrollerView];
-    
     // 2.添加图片
     CGFloat width = scrollerView.width;
     CGFloat height = scrollerView.height;
@@ -79,7 +79,6 @@
              */
             imageName = [NSString stringWithFormat:@"boot_new_%d_1136", i+ 1];
         }
-        
         UIImage *image = [UIImage imageWithNamed:imageName];
         // 2.创建UIImageView
         UIImageView *iv = [[UIImageView alloc] initWithImage:image];

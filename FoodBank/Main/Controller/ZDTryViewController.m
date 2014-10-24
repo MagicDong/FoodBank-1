@@ -30,6 +30,7 @@
  */
 @property (nonatomic ,weak) ZDMoreView *moreView;
 @property (nonatomic,assign) BOOL xiala;
+
 @end
 
 @implementation ZDTryViewController
@@ -41,6 +42,7 @@
         self.edgesForExtendedLayout = NO;
         self.navigationController.navigationBar.opaque=YES;
     }
+    
     ZDTryChooseButton *tianBtn = [[ZDTryChooseButton alloc]initWithFrame:CGRectMake(241, 76, 71, 40)];
     [tianBtn setImage:[UIImage imageNamed:@"navigationbar_arrow_down"] forState:UIControlStateNormal];
     [tianBtn setTitle:@"3天" forState:UIControlStateNormal];
@@ -48,7 +50,6 @@
     [self.view addSubview:tianBtn];
     self.tianBtn = tianBtn;
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemImage:@"navigationbar_more" highlightedImage:@"navigationbar_more_highlighted" target:self action:@selector(more)];
-    
 }
 
 - (void)more{
@@ -89,6 +90,7 @@
         return;
     }
 }
+
 - (void)smallImage{
     
 }
@@ -101,7 +103,6 @@
         self.moreView.center = self.view.center;
         self.moreView.borderType = BorderTypeDashed;
         self.moreView.dashPattern = 2;
-        //    self.moreView.spacePattern = 2;
         self.moreView.borderWidth = 1;
         self.moreView.cornerRadius = 10;
         self.moreView.borderColor = [UIColor redColor];
@@ -111,6 +112,7 @@
     }
     return _moreView;
 }
+
 - (void)moreViewDidOK:(ZDMoreView *)moreView{
     [UIView animateWithDuration:0.5 animations:^{
         [self.cover setAlpha:0];
@@ -121,8 +123,10 @@
         self.xiala = NO;
     }];
 }
+
 - (void)moreViewDidWWW:(ZDMoreView *)moreView{
-    
+    NSURL *url = [NSURL URLWithString:@"http://www.mamabaodian.com"];
+    [[UIApplication sharedApplication] openURL:url];
 }
 
 

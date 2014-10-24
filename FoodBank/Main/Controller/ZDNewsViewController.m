@@ -117,7 +117,8 @@ static NSString *PhotosID = @"photosCell";
     }];
 }
 - (void)moreViewDidWWW:(ZDMoreView *)moreView{
-    
+    NSURL *url = [NSURL URLWithString:@"http://www.mamabaodian.com"];
+    [[UIApplication sharedApplication] openURL:url];
 }
 
 - (void)more{

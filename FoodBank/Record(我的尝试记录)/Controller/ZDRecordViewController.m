@@ -43,9 +43,11 @@
 @end
 
 @implementation ZDRecordViewController
+
 - (IBAction)queren:(UIButton *)sender {
     if ([self.selectedButton.titleLabel.text isEqualToString:@"安全"]) {
-
+        UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"提示" message:@"已将次食材添加到宝贝安全食材库。" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alertView show];
     }else if ([self.selectedButton.titleLabel.text isEqualToString:@"过敏"]){
         ZDAllergyViewController *allergy = [[ZDAllergyViewController alloc]init];
         [self.navigationController pushViewController:allergy animated:YES];
@@ -55,16 +57,14 @@
     }else if([self.selectedButton.titleLabel.text isEqualToString:@"未尝试"]){
         
     }
-    
     if (self.selectedButton == nil) {
         [MBProgressHUD showError:@"您还没有选择尝试情况"];
     }
-    
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.1* NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [MBProgressHUD hideHUD];
     });
-    
 }
+
 
 - (IBAction)present:(UIButton *)sender {
     
@@ -77,8 +77,8 @@
     sender.selected = YES;
     // 将当前按钮作为选中按钮
     self.selectedButton = sender;
-    
 }
+
 - (IBAction)guomin:(UIButton *)sender {
     // 取消之前选中按钮的选中状态
     self.selectedButton.selected = NO;
@@ -87,6 +87,7 @@
     // 将当前按钮作为选中按钮
     self.selectedButton = sender;
 }
+
 - (IBAction)jujue:(UIButton *)sender {
     // 取消之前选中按钮的选中状态
     self.selectedButton.selected = NO;
@@ -135,18 +136,15 @@
     _borderView1.cornerRadius = 10;
     _borderView1.borderColor = [UIColor redColor];
     _borderView1.backgroundColor = ZDColor(255, 246, 229)
-    
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemImage:@"navigationbar_more" highlightedImage:@"navigationbar_more_highlighted" target:self action:@selector(more)];
     
 }
 
 - (void)more{
-    // 2.交换图片和蒙板的位置
     // 把控制器View中的iconView带到控制器View的最前面
     [self.view.window bringSubviewToFront:self.moreView];
     if (self.xiala) {
         [UIView animateWithDuration:0.5 animations:^{
-            //            self.moreView.y = self.moreView.y - self.moreView.height;
             [self.cover setAlpha:0];
             [self.moreView setAlpha:0];
         } completion:^(BOOL finished) {
@@ -178,6 +176,7 @@
         return;
     }
 }
+
 - (void)smallImage{
     
 }
@@ -190,16 +189,18 @@
         self.moreView.center = self.view.center;
         self.moreView.borderType = BorderTypeDashed;
         self.moreView.dashPattern = 2;
-        //    self.moreView.spacePattern = 2;
+//    self.moreView.spacePattern = 2;
         self.moreView.borderWidth = 1;
         self.moreView.cornerRadius = 10;
         self.moreView.borderColor = [UIColor redColor];
         self.moreView.backgroundColor = ZDColor(255, 246, 229)
         self.moreView.delegate = self;
         [self.view.window  addSubview:_moreView];
+        
     }
     return _moreView;
 }
+
 - (void)moreViewDidOK:(ZDMoreView *)moreView{
     [UIView animateWithDuration:0.5 animations:^{
         [self.cover setAlpha:0];
@@ -210,13 +211,16 @@
         self.xiala = NO;
     }];
 }
+
 - (void)moreViewDidWWW:(ZDMoreView *)moreView{
-    
+    NSURL *url = [NSURL URLWithString:@"http://www.mamabaodian.com"];
+    [[UIApplication sharedApplication] openURL:url];
 }
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:YES];
     [_ygp initselectedSegmentIndex];
+    
 }
 
 -(void)segmentedViewController:(YGPSegmentedController *)segmentedControl touchedAtIndex:(NSUInteger)index

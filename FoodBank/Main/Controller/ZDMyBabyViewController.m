@@ -131,6 +131,7 @@ static NSString *heardID = @"headerView";
     }
     return _moreView;
 }
+
 - (void)moreViewDidOK:(ZDMoreView *)moreView{
     [UIView animateWithDuration:0.5 animations:^{
         [self.cover setAlpha:0];
@@ -142,7 +143,8 @@ static NSString *heardID = @"headerView";
     }];
 }
 - (void)moreViewDidWWW:(ZDMoreView *)moreView{
-    
+    NSURL *url = [NSURL URLWithString:@"http://www.mamabaodian.com"];
+    [[UIApplication sharedApplication] openURL:url];
 }
 
 

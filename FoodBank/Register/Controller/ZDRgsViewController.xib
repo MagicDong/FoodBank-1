@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZDRgsViewController">
@@ -48,40 +48,11 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LdU-xe-8d0" userLabel="注册">
-                    <rect key="frame" x="91" y="280" width="123" height="40"/>
+                    <rect key="frame" x="99" y="418" width="123" height="40"/>
                     <state key="normal" backgroundImage="ipad_user_signup">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TOw-Le-Jtd" userLabel="普通登录View">
-                    <rect key="frame" x="20" y="178" width="280" height="94"/>
-                    <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user_login_username" translatesAutoresizingMaskIntoConstraints="NO" id="V2p-lw-wkJ">
-                            <rect key="frame" x="8" y="8" width="30" height="30"/>
-                        </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user_login_password" translatesAutoresizingMaskIntoConstraints="NO" id="YxO-0I-HfZ">
-                            <rect key="frame" x="8" y="55" width="30" height="30"/>
-                        </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user_login_back" translatesAutoresizingMaskIntoConstraints="NO" id="Wnq-Fs-OD7">
-                            <rect key="frame" x="0.0" y="0.0" width="280" height="94"/>
-                        </imageView>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v8c-y2-1eq">
-                            <rect key="frame" x="46" y="8" width="221" height="30"/>
-                            <state key="normal" title="请选择宝宝出生日期">
-                                <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oyP-Od-lgr">
-                            <rect key="frame" x="46" y="56" width="221" height="30"/>
-                            <state key="normal" title="请选择民族">
-                                <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                        </button>
-                    </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
@@ -90,7 +61,6 @@
     </objects>
     <resources>
         <image name="ipad_user_signup" width="222" height="66"/>
-        <image name="user_login_back" width="284" height="89"/>
         <image name="user_login_password" width="30" height="30"/>
         <image name="user_login_username" width="30" height="30"/>
         <image name="user_register_back" width="284" height="134"/>

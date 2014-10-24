@@ -42,21 +42,18 @@ __weak IBOutlet LBorderView *_borderView1;
     _borderView1.borderWidth = 0.3;
 //    _borderView1.cornerRadius = 10;
     _borderView1.borderColor = [UIColor redColor];
-    
     self.jianjie.textColor = ZDColor(202, 57, 21);
-    
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc]init];
     paragraphStyle.lineHeightMultiple = 20.f;
     paragraphStyle.maximumLineHeight = 25.f;
     paragraphStyle.minimumLineHeight = 15.f;
     paragraphStyle.firstLineHeadIndent = 20.f;
     paragraphStyle.alignment = NSTextAlignmentJustified;
-    
     NSDictionary *attributes = @{ NSFontAttributeName:[UIFont systemFontOfSize:15], NSParagraphStyleAttributeName:paragraphStyle, NSForegroundColorAttributeName:[UIColor colorWithRed:202/255. green:57/255. blue:21/255. alpha:1]
                                   };
     self.jianjie.attributedText = [[NSAttributedString alloc]initWithString:@"    当孩子在新食材尝试中对某食材出现过敏现象后，请您带孩子去医院就医并遵医嘱自行安排对该食材的再次尝试时间。过敏食材的再次尝试应注意事项与方法，您可以去知识库进行查询；\n    当您准备好了给孩子再次尝试曾经过敏的食材，请对个人信息中的过敏食材库进行更新。并且该过敏食材再次尝试安全后，根据您的意见，我们可以将该食材从过敏食材库中移出并加入到安全食材库。" attributes:attributes];
-    
 }
+
 - (IBAction)fuxie:(UIButton *)sender {
     // 取消之前选中按钮的选中状态
     self.selectedButton.selected = NO;
@@ -118,6 +115,7 @@ __weak IBOutlet LBorderView *_borderView1;
                                   };
     self.jianjie.attributedText = [[NSAttributedString alloc]initWithString:@"    请您立即停止食用该食材，观察宝宝的腹痛情况，若腹痛情况较轻，待宝宝腹痛完全消失后，间隔一段时间，适当减量再次添加，如仍有腹痛症状，此食物短期内不宜食用。若腹痛情况加重请及时就医确诊。" attributes:attributes];
 }
+
 - (IBAction)pizhen:(UIButton *)sender {
     // 取消之前选中按钮的选中状态
     self.selectedButton.selected = NO;
@@ -138,6 +136,7 @@ __weak IBOutlet LBorderView *_borderView1;
                                   };
     self.jianjie.attributedText = [[NSAttributedString alloc]initWithString:@"    请您立即停止食用该食材，观察宝宝皮疹的部位、面积及持续时间等情况，如皮疹状况逐步好转，待症状消失后，间隔一段时间，适当减量再次尝试，若皮疹不再出现，可更换尝试添加其它食材。若再次出现，此食物短期内不宜食用。若皮疹严重，面积逐步扩大，或持续不消失要及时就医确诊。" attributes:attributes];
 }
+
 - (IBAction)xiangbi:(UIButton *)sender {
     // 取消之前选中按钮的选中状态
     self.selectedButton.selected = NO;

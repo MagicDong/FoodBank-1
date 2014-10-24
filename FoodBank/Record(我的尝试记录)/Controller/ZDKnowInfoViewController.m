@@ -39,6 +39,7 @@
                                           }mutableCopy];
     self.textView.attributedText = [[NSAttributedString alloc]initWithString:self.dict[@"detail"] attributes:attributes];
     self.textView.backgroundColor = ZDColor(255, 246, 229);
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated{

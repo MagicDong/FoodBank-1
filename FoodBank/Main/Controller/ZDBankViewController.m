@@ -22,12 +22,12 @@
 /**
  *  时间选择
  */
-@property (nonatomic ,weak) ZDMoreView *moreView;
-@property (nonatomic,assign) BOOL xiala;
+@property (nonatomic , weak) ZDMoreView *moreView;
+@property (nonatomic , assign) BOOL xiala;
 /**
  *  蒙板
  */
-@property (nonatomic, strong)UIButton *cover;
+@property (nonatomic , strong)UIButton *cover;
 @end
 
 @implementation ZDBankViewController
@@ -70,6 +70,8 @@
         self.edgesForExtendedLayout = NO;
         self.navigationController.navigationBar.opaque=YES;
     }
+    
+    
 //    UIImagePickerControllerSourceType sourceType = UIImagePickerControllerSourceTypeCamera;
 //    if (![UIImagePickerController isSourceTypeAvailable: UIImagePickerControllerSourceTypeCamera]) {
 //        sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
@@ -80,7 +82,7 @@
 //    sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum; //保存的相片
 //    UIImagePickerController *picker = [[UIImagePickerController alloc] init];//初始化
 //    picker.delegate = self;
-//    picker.allowsEditing = YES;//设置可编辑
+//    picker.allows Editing = YES;//设置可编辑
 //    picker.sourceType = sourceType;
 //    [self presentViewController:picker animated:YES completion:nil];
 //
@@ -141,10 +143,10 @@
         return;
     }
 }
+
 - (void)smallImage{
     
 }
-
 
 #pragma mark - 懒加载
 - (ZDMoreView *)moreView{
@@ -154,7 +156,6 @@
         self.moreView.center = self.view.center;
         self.moreView.borderType = BorderTypeDashed;
         self.moreView.dashPattern = 2;
-        //    self.moreView.spacePattern = 2;
         self.moreView.borderWidth = 1;
         self.moreView.cornerRadius = 10;
         self.moreView.borderColor = [UIColor redColor];
@@ -164,6 +165,7 @@
     }
     return _moreView;
 }
+
 - (void)moreViewDidOK:(ZDMoreView *)moreView{
     [UIView animateWithDuration:0.5 animations:^{
         [self.cover setAlpha:0];
@@ -174,8 +176,10 @@
         self.xiala = NO;
     }];
 }
+
 - (void)moreViewDidWWW:(ZDMoreView *)moreView{
-    
+    NSURL *url = [NSURL URLWithString:@"http://www.mamabaodian.com"];
+    [[UIApplication sharedApplication] openURL:url];
 }
 
 #pragma mark - SCHCircleViewDataSource
@@ -184,12 +188,31 @@
     if(Inch4){
         return CGPointMake(self.view.width / 2, (self.view.width /2) + 20);
     }
+    
     return CGPointMake(self.view.width / 2, (self.view.width /2));
 }
 
 - (NSInteger)numberOfCellInCircleView:(SCHCircleView *)circle_view
 {
     return _icon_array.count;
+//    新浪科技讯 北京时间10月23日上午消息，由于市场预计阿里巴巴最新的季报有望超出分析师预期，推动该股周三上涨0.8%，报收于91.63美元，创一个月新高。
+//    
+//    　　自从上个月以250亿美元的融资额创下IPO(首次公开招股)领域的历史记录以来，阿里巴巴股价已经累计上涨35%。在阿里巴巴的带动下，电子商务板块的中概股集体上攻，京东商城上涨0.2%，唯品会也连续第7天上涨。彭博中国-UNS股票指数当天下跌0.4%，至106.95点。
+//    
+//    　　分析师平均预计，在截至9月30日的财季内，阿里巴巴的营收将同比增长42%，至25.4亿美元。唯品会营收预计可同比增加125%。彭博社汇总的数据显示，第二季度的中国电子商务零售额同比增长47%，第三季度增长44%。
+//    
+//http://d0.sina.com.cn/pfpghc/50ea27161f6142f3a6c20d75f46f8a76.jpg
+//    　　“人们预计阿里巴巴将实现不俗盈利，可能高于市场预期。”罗森布拉特证券公司(Rosenblatt Securities)中国股票研究主管张军(Jun Zhang，音译)说，“由于网络购物持续火爆，中国电子商务公司第三季度业绩整体向好。”
+//    
+//    　　阿里巴巴将于11月4日发布其上市后的首份财报。在截至6月的财季内，该公司净利润增长2倍，至19.9亿美元，营收增长46%，达到25.4亿美元。
+//    
+//    　　“阿里巴巴在中国仍有很大的机会。”美国券商韦德布什证券(Wedbush Securities)科技分析师吉尔·鲁里亚(Gil Luria)说，“淘宝和天猫仍将继续推动未来几年的业务发展。他们可能还会在其他领域展开全球扩张。”
+//    
+//    　　阿里巴巴提供了一个方便买卖双方达成交易的平台，个人和小企业可以通过淘宝销售商品，零售商和生产商则使用天猫。
+//    
+//    　　京东商城是中国第二大电子商务公司，该公司股价周三报收于25.44美元。唯品会则上涨2.5%，至205美元。
+//    
+//    　　iShare中国大市值ETF基金周三结束了连续三天的上涨，当天微跌0.4%，报收于38.26美元。(鼎宏)
 }
 
 - (SCHCircleViewCell *)circleView:(SCHCircleView *)circle_view cellAtIndex:(NSInteger)index_circle_cell

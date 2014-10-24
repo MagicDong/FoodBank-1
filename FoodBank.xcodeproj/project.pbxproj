@@ -106,6 +106,8 @@
 		183E72CE19DA60E6009CD24F /* ZDJiLuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 183E72CD19DA60E6009CD24F /* ZDJiLuViewController.m */; };
 		183EC3E719D26B3B00C756DE /* ZDDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 183EC3E519D26B3B00C756DE /* ZDDatePickerView.m */; };
 		183EC3E819D26B3B00C756DE /* ZDDatePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183EC3E619D26B3B00C756DE /* ZDDatePickerView.xib */; };
+		1863EB7A19F75250006BFF21 /* ZDTiShiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1863EB7919F75250006BFF21 /* ZDTiShiViewController.m */; };
+		1863EB7C19F752A0006BFF21 /* ZDTiShiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1863EB7B19F752A0006BFF21 /* ZDTiShiViewController.xib */; };
 		186D174319D29F23003F8A17 /* TencentOpenApi_IOS_Bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 186D174219D29F23003F8A17 /* TencentOpenApi_IOS_Bundle.bundle */; };
 		186D174619D2A47D003F8A17 /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 186D174419D2A14D003F8A17 /* TencentOpenAPI.framework */; };
 		18733DB119D8FB1900966A55 /* ZDCommonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18733DB019D8FB1900966A55 /* ZDCommonViewController.m */; };
@@ -407,6 +409,9 @@
 		183EC3E419D26B3B00C756DE /* ZDDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZDDatePickerView.h; path = ../../Register/View/ZDDatePickerView.h; sourceTree = "<group>"; };
 		183EC3E519D26B3B00C756DE /* ZDDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZDDatePickerView.m; path = ../../Register/View/ZDDatePickerView.m; sourceTree = "<group>"; };
 		183EC3E619D26B3B00C756DE /* ZDDatePickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ZDDatePickerView.xib; path = ../../Register/View/ZDDatePickerView.xib; sourceTree = "<group>"; };
+		1863EB7819F75250006BFF21 /* ZDTiShiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDTiShiViewController.h; sourceTree = "<group>"; };
+		1863EB7919F75250006BFF21 /* ZDTiShiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDTiShiViewController.m; sourceTree = "<group>"; };
+		1863EB7B19F752A0006BFF21 /* ZDTiShiViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDTiShiViewController.xib; sourceTree = "<group>"; };
 		186D174219D29F23003F8A17 /* TencentOpenApi_IOS_Bundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TencentOpenApi_IOS_Bundle.bundle; path = FoodBank/Main/Lib/TencentOpenApi_IOS_Bundle.bundle; sourceTree = "<group>"; };
 		186D174419D2A14D003F8A17 /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
 		186F60AB19F5027900697FFF /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
@@ -472,7 +477,7 @@
 		18F37E8719D7F62300325A25 /* CZPhotosCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZPhotosCell.m; sourceTree = "<group>"; };
 		18F37E8819D7F62300325A25 /* CZPhotosCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CZPhotosCell.xib; sourceTree = "<group>"; };
 		18F37E8919D7F62300325A25 /* ZDDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDDetailViewController.h; sourceTree = "<group>"; };
-		18F37E8A19D7F62300325A25 /* ZDDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZDDetailViewController.m; path = "../../News(宝贝咨询)/View/ZDDetailViewController.m"; sourceTree = "<group>"; };
+		18F37E8A19D7F62300325A25 /* ZDDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDDetailViewController.m; sourceTree = "<group>"; };
 		18F37E8D19D7F62300325A25 /* ZDPhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDPhotosViewController.h; sourceTree = "<group>"; };
 		18F37E8E19D7F62300325A25 /* ZDPhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDPhotosViewController.m; sourceTree = "<group>"; };
 		18F37E9A19D7F66400325A25 /* MJPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhoto.h; sourceTree = "<group>"; };
@@ -695,7 +700,6 @@
 				181BCFA419D4240800EDA508 /* ZDJudgeViewController.h */,
 				181BCFA519D4240800EDA508 /* ZDJudgeViewController.m */,
 				181BCFA719D4240F00EDA508 /* ZDJudgeViewController.xib */,
-				18F37E8A19D7F62300325A25 /* ZDDetailViewController.m */,
 				18A092FD19D524CB00FC74FF /* ZDNotifyViewController.h */,
 				18A092FE19D524CB00FC74FF /* ZDNotifyViewController.m */,
 				18A0930A19D551A100FC74FF /* ZDNotifyViewController.xib */,
@@ -1044,6 +1048,9 @@
 				18252A8D19E910A6008B4C71 /* ZDEditViewController.h */,
 				18252A8E19E910A6008B4C71 /* ZDEditViewController.m */,
 				18252A9019E910AD008B4C71 /* ZDEditViewController.xib */,
+				1863EB7819F75250006BFF21 /* ZDTiShiViewController.h */,
+				1863EB7919F75250006BFF21 /* ZDTiShiViewController.m */,
+				1863EB7B19F752A0006BFF21 /* ZDTiShiViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1337,6 +1344,7 @@
 				18F37E8719D7F62300325A25 /* CZPhotosCell.m */,
 				18F37E8819D7F62300325A25 /* CZPhotosCell.xib */,
 				18F37E8919D7F62300325A25 /* ZDDetailViewController.h */,
+				18F37E8A19D7F62300325A25 /* ZDDetailViewController.m */,
 				18F37E8D19D7F62300325A25 /* ZDPhotosViewController.h */,
 				18F37E8E19D7F62300325A25 /* ZDPhotosViewController.m */,
 				18219B1419F0BB64003E9907 /* ZDMoreView.h */,
@@ -1650,6 +1658,7 @@
 				18252A8B19E8E0D9008B4C71 /* red_background.png in Resources */,
 				183EC3E819D26B3B00C756DE /* ZDDatePickerView.xib in Resources */,
 				18278C0D19E6676B00574DD5 /* ZDYueViewController.xib in Resources */,
+				1863EB7C19F752A0006BFF21 /* ZDTiShiViewController.xib in Resources */,
 				1888B3D219CADBDC0030DB88 /* LaunchScreen.xib in Resources */,
 				18D6D2AD19EF7EE40095650B /* ZDWeiChangShiViewController.xib in Resources */,
 				1888B3CF19CADBDC0030DB88 /* Images.xcassets in Resources */,
@@ -1730,6 +1739,7 @@
 				18219B1619F0BB64003E9907 /* ZDMoreView.m in Sources */,
 				18204AC719E7834500EE57B9 /* ZDLoginInfoModel.m in Sources */,
 				18204AA519E7820100EE57B9 /* ZDLoginIconCell.m in Sources */,
+				1863EB7A19F75250006BFF21 /* ZDTiShiViewController.m in Sources */,
 				18F891C319CBBD4F0046C022 /* NSDictionary+Log.m in Sources */,
 				18204AAB19E7820100EE57B9 /* ZDLoginSignCell.m in Sources */,
 				18204AC619E7834500EE57B9 /* ZDLoginIcon.m in Sources */,
@@ -1959,6 +1969,7 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Paul Longstaff (3RNDJUHFNY)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1970,7 +1981,7 @@
 					"/Applications/Xcode\\ 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
 				);
 				INFOPLIST_FILE = FoodBank/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = "-fobjc-arc";
@@ -1985,6 +1996,7 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Paul Longstaff (3RNDJUHFNY)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1996,7 +2008,7 @@
 					"/Applications/Xcode\\ 2.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
 				);
 				INFOPLIST_FILE = FoodBank/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = "-fobjc-arc";

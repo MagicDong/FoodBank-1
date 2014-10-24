@@ -23,13 +23,13 @@
 /**
  *  自定义TabBar
  */
-@property (nonatomic, weak) ZDTabBar *customTabBar;
-
+@property (nonatomic, strong) ZDTabBar *customTabBar;
 @property (nonatomic, strong) ZDNewsViewController *home;
 @property (nonatomic, strong) ZDTryViewController *message;
 @property (nonatomic, strong) ZDBankViewController *discover;
 @property (nonatomic, strong) ZDMyBabyViewController *baby;
 @property (nonatomic, strong) ZDRecordViewController *record;
+
 @end
 
 @implementation ZDTabBarController
@@ -42,7 +42,30 @@
 {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
         
-
+        // 1.1创建自定义控制器
+        ZDNewsViewController *home = [[ZDNewsViewController alloc] init];
+        [self setupChileViewController:home title:@"宝贝咨询" imageName:@"tab001_1" selectedImageName:@"tab001"];
+        self.home = home;
+        
+        // 2.消息
+        ZDTryViewController *message = [[ZDTryViewController alloc] init];
+        [self setupChileViewController:message title:@"新食材尝试" imageName:@"tab002_2" selectedImageName:@"tab002"];
+        self.message = message;
+        
+        ZDRecordViewController *record = [[ZDRecordViewController alloc] init];
+        [self setupChileViewController:record title:@"尝试记录" imageName:@"tab002_2" selectedImageName:@"tab002"];
+        self.record = record;
+        
+        // 3.广场
+        ZDBankViewController *discover = [[ZDBankViewController alloc] init];
+        [self setupChileViewController:discover title:@"宝贝食材银行" imageName:@"tab003_3" selectedImageName:@"tab003"];
+        self.discover = discover;
+        
+        // 4.我
+        ZDMyBabyViewController *baby = [[ZDMyBabyViewController alloc] init];
+        [self setupChileViewController:baby title:@"我的宝贝" imageName:@"tab004_4" selectedImageName:@"tab004"];
+        self.baby = baby;
+        
     }
     return self;
 }
@@ -55,6 +78,7 @@
         customTabBar.frame = self.tabBar.bounds;
         customTabBar.delegate = self;
         [self.tabBar addSubview:customTabBar];
+        
         self.tabBar.backgroundColor = [UIColor clearColor];
         self.customTabBar = customTabBar;
     }
@@ -69,30 +93,7 @@
         self.edgesForExtendedLayout = NO;
         self.navigationController.navigationBar.opaque=YES;
     }
-    // 1.1创建自定义控制器
-    ZDNewsViewController *home = [[ZDNewsViewController alloc] init];
-    [self setupChileViewController:home title:@"宝贝咨询" imageName:@"tab001_1" selectedImageName:@"tab001"];
-    self.home = home;
-    
 
-    // 2.消息
-    ZDTryViewController *message = [[ZDTryViewController alloc] init];
-    [self setupChileViewController:message title:@"新食材尝试" imageName:@"tab002_2" selectedImageName:@"tab002"];
-    self.message = message;
-    
-    ZDRecordViewController *record = [[ZDRecordViewController alloc] init];
-    [self setupChileViewController:record title:@"尝试记录" imageName:@"tab002_2" selectedImageName:@"tab002"];
-    self.record = record;
-    
-    // 3.广场
-    ZDBankViewController *discover = [[ZDBankViewController alloc] init];
-    [self setupChileViewController:discover title:@"宝贝食材银行" imageName:@"tab003_3" selectedImageName:@"tab003"];
-    self.discover = discover;
-    
-    // 4.我
-    ZDMyBabyViewController *baby = [[ZDMyBabyViewController alloc] init];
-    [self setupChileViewController:baby title:@"我的宝贝" imageName:@"tab004_4" selectedImageName:@"tab004"];
-    self.baby = baby;
     
     // 删除系统自动生成的UITabBarButton
     for (UIView *child in self.tabBar.subviews) {

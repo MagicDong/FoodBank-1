@@ -9,7 +9,7 @@
 	<key>CFBundleIdentifier</key>
 	<string>cn.jcxj.$(PRODUCT_NAME:rfc1034identifier)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
-	<string>6.0</string>
+	<string>8.1</string>
 	<key>CFBundleName</key>
 	<string>宝贝食材银行</string>
 	<key>CFBundlePackageType</key>
