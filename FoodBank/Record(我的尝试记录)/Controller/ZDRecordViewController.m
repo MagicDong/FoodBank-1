@@ -17,6 +17,9 @@
 #import "ChoiceButton.h"
 #import "MBProgressHUD+ZD.h"
 #import "ZDMoreView.h"
+#import "ZDTuiJianViewController.h"
+
+
 @interface ZDRecordViewController ()<ZDMoreViewDelegate>
 {
     YGPSegmentedController * _ygp;
@@ -30,6 +33,12 @@
 @property (weak, nonatomic) IBOutlet ChoiceButton *guomin;
 @property (weak, nonatomic) IBOutlet ChoiceButton *jujue;
 @property (weak, nonatomic) IBOutlet ChoiceButton *weichangshi;
+@property (weak, nonatomic) IBOutlet UILabel *foodName;
+@property (weak, nonatomic) IBOutlet UILabel *babyName;
+@property (weak, nonatomic) IBOutlet UILabel *babyYue;
+@property (weak, nonatomic) IBOutlet UILabel *toDay;
+@property (weak, nonatomic) IBOutlet UILabel *zhouqi;
+
 @property (nonatomic, assign) BOOL isIng;
 /**
  *  蒙板
@@ -67,7 +76,10 @@
 
 
 - (IBAction)present:(UIButton *)sender {
-    
+    NSDictionary *foodInfo = @{@"foodName":self.foodName.text,@"zhouqi":self.zhouqi.text,@"toDay":self.toDay.text};
+    ZDTuiJianViewController *present = [[ZDTuiJianViewController alloc]init];
+    present.foodInfo = foodInfo;
+    [self.navigationController pushViewController:present animated:YES];
 }
 
 - (IBAction)anquan:(UIButton *)sender {
@@ -88,8 +100,9 @@
     self.selectedButton = sender;
 }
 
+
 - (IBAction)jujue:(UIButton *)sender {
-    // 取消之前选中按钮的选中状态
+    // 取消之前选中按钮的选中状态 
     self.selectedButton.selected = NO;
     // 设置点中按钮的selected ＝ YES
     sender.selected = YES;
@@ -135,7 +148,7 @@
     _borderView1.borderWidth = 1;
     _borderView1.cornerRadius = 10;
     _borderView1.borderColor = [UIColor redColor];
-    _borderView1.backgroundColor = ZDColor(255, 246, 229)
+    _borderView1.backgroundColor = ZDColor(255, 246, 229);
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemImage:@"navigationbar_more" highlightedImage:@"navigationbar_more_highlighted" target:self action:@selector(more)];
     
 }

@@ -180,7 +180,6 @@
     }
     // 1.设置导航条背景图片
     [navBar setBackgroundImage:[UIImage imageWithNamed:@"Judge2"] forBarMetrics:UIBarMetricsDefault];
-    
     // 2.设置导航条标题的属性
     NSMutableDictionary *md = [NSMutableDictionary dictionary];
     // 文字颜色

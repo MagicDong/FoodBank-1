@@ -10,4 +10,6 @@
 
 @interface ZDTuiJianViewController : UIViewController
 
+@property (nonatomic,copy)NSDictionary *foodInfo;
+
 @end

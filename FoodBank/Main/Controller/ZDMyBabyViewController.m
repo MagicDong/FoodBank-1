@@ -21,6 +21,8 @@
 #import "ZDKnowTableViewController.h"
 #import "ZDNewfeatureViewController.h"
 #import "ZDMoreView.h"
+#import "ZDProductViewController.h"
+
 
 static NSString *heardID = @"headerView";
 @interface ZDMyBabyViewController ()<UIAlertViewDelegate,ZDMoreHeaderViewDelegate,ZDMoreViewDelegate>
@@ -176,6 +178,7 @@ static NSString *heardID = @"headerView";
     [self setupGroup1];
     [self setupGroup2];
     [self setupGroup3];
+    [self setupFooter];
     // 设置footerView
     _headerView = [ZDMoreHeaderView moreHeaderView];
     _headerView.headerDelegate = self;
@@ -230,7 +233,7 @@ static NSString *heardID = @"headerView";
 
 - (void)dealloc
 {
-    NSLog(@"baby dealloc");
+//    NSLog(@"baby dealloc");
 }
 
 - (void)setupGroup1{
@@ -239,25 +242,28 @@ static NSString *heardID = @"headerView";
     updata.destVC =  [ZDKnowTableViewController class];
     
     ZDCommonArrowItem *guide = [ZDCommonArrowItem itemWithTitle:@"新手指南"];
-//    guide.destVC =  [ZDNewfeatureViewController class];
+//    __weak typeof(self) weakSelf = self;
     guide.opertion = ^{
-        ZDNewfeatureViewController *root = [[ZDNewfeatureViewController alloc]init];
-        root.isNoFirst = YES;
+        
+//        ZDNewfeatureViewController *root = [[ZDNewfeatureViewController alloc]init];
+//        root.isNoFirst = YES;
+//            [weakSelf.navigationController pushViewController:root animated:YES];
         for (UIViewController *controller in self.childViewControllers) {
             // 将子视图控制器的视图从父视图中删除
             [controller.view removeFromSuperview];
             // 将视图控制器从父视图控制器中删除
             [controller removeFromParentViewController];
         }
+        NSDictionary *dict = @{@"news":@"news"};
         UIApplication *app = [UIApplication sharedApplication];
-        UIWindow *windows = app.keyWindow;
-        windows.rootViewController = root;
-        [windows makeKeyAndVisible];
+        [app.delegate application:app didFinishLaunchingWithOptions:dict];
     };
+    
+    ZDCommonArrowItem *tuijian = [ZDCommonArrowItem itemWithTitle:@"产品推荐"];
+    tuijian.destVC = [ZDProductViewController class];
+    
     ZDCommonGroup *group = [self addGroup];
-    group.items = @[updata,guide];
-    
-    
+    group.items = @[updata,guide,tuijian];
     
 }
 - (void)setupGroup2{

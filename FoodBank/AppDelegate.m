@@ -27,11 +27,10 @@
     // 设置全局状态栏的颜色
     [application setStatusBarStyle:UIStatusBarStyleLightContent];
     
-    if(/* DISABLES CODE */ (1)){
-        self.window.rootViewController = [[ZDNavViewController alloc]initWithRootViewController:[[ZDInitViewController alloc]init]];
-    }else{
+    if([launchOptions[@"news"] isEqualToString:@"news"]){
         self.window.rootViewController = [[ZDNewfeatureViewController alloc]init];
-        
+    }else{
+        self.window.rootViewController = [[ZDNavViewController alloc]initWithRootViewController:[[ZDInitViewController alloc]init]];
     }
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

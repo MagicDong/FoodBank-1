@@ -39,6 +39,10 @@
     [self setupScrollerView];
     // 2.添加PageControl
     [self setupPageControl];
+//    if (self.isNoFirst) {
+//    self.navigationController.navigationBarHidden = YES;
+    
+//    }
 }
 /**
  *  添加PageControl
@@ -174,12 +178,10 @@
         [window makeKeyAndVisible];
     }else{
         ZDTabBarController *tabBarVc = [[ZDTabBarController alloc] init];
-        ZDNavViewController *nav = [[ZDNavViewController alloc]initWithRootViewController:tabBarVc];
         UIApplication *app = [UIApplication sharedApplication];
         UIWindow *window = app.keyWindow;
-        // 显示状态栏
         app.statusBarHidden = NO;
-        window.rootViewController = nav;
+        window.rootViewController = tabBarVc;
         [window makeKeyAndVisible];
     }
 }

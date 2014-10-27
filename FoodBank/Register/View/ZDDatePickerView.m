@@ -8,7 +8,7 @@
 
 #import "ZDDatePickerView.h"
 
-@interface ZDDatePickerView()
+@interface ZDDatePickerView()<UIPickerViewDataSource>
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 @end
 

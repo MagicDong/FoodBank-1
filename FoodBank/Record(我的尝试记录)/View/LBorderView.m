@@ -63,22 +63,17 @@
 - (void)drawDashedBorder
 {
     if (_shapeLayer) [_shapeLayer removeFromSuperlayer];
-    
     //border definitions
 	CGFloat cornerRadius = _cornerRadius;
 	CGFloat borderWidth = _borderWidth;
 	NSInteger dashPattern1 = _dashPattern;
 	NSInteger dashPattern2 = _spacePattern;
 	UIColor *lineColor = _borderColor ? _borderColor : [UIColor blackColor];
-    
     //drawing
 	CGRect frame = self.bounds;
-    
 	_shapeLayer = [CAShapeLayer layer];
-    
     //creating a path
 	CGMutablePathRef path = CGPathCreateMutable();
-    
     //drawing a border around a view
 	CGPathMoveToPoint(path, NULL, 0, frame.size.height - cornerRadius);
 	CGPathAddLineToPoint(path, NULL, 0, cornerRadius);
@@ -89,11 +84,9 @@
 	CGPathAddArc(path, NULL, frame.size.width - cornerRadius, frame.size.height - cornerRadius, cornerRadius, 0, M_PI_2, NO);
 	CGPathAddLineToPoint(path, NULL, cornerRadius, frame.size.height);
 	CGPathAddArc(path, NULL, cornerRadius, frame.size.height - cornerRadius, cornerRadius, M_PI_2, M_PI, NO);
-    
     //path is set as the _shapeLayer object's path
 	_shapeLayer.path = path;
 	CGPathRelease(path);
-    
 	_shapeLayer.backgroundColor = [[UIColor clearColor] CGColor];
 	_shapeLayer.frame = frame;
 	_shapeLayer.masksToBounds = NO;
@@ -103,7 +96,6 @@
 	_shapeLayer.lineWidth = borderWidth;
 	_shapeLayer.lineDashPattern = _borderType == BorderTypeDashed ? [NSArray arrayWithObjects:[NSNumber numberWithInt:dashPattern1], [NSNumber numberWithInt:dashPattern2], nil] : nil;
 	_shapeLayer.lineCap = kCALineCapRound;
-    
     //_shapeLayer is added as a sublayer of the view
 	[self.layer addSublayer:_shapeLayer];
 	self.layer.cornerRadius = cornerRadius;

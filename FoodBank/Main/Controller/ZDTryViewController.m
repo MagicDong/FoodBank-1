@@ -40,9 +40,8 @@
     if(iOS7)
     {
         self.edgesForExtendedLayout = NO;
-        self.navigationController.navigationBar.opaque=YES;
+        self.navigationController.navigationBar.opaque = YES;
     }
-    
     ZDTryChooseButton *tianBtn = [[ZDTryChooseButton alloc]initWithFrame:CGRectMake(241, 76, 71, 40)];
     [tianBtn setImage:[UIImage imageNamed:@"navigationbar_arrow_down"] forState:UIControlStateNormal];
     [tianBtn setTitle:@"3天" forState:UIControlStateNormal];
@@ -109,6 +108,7 @@
         self.moreView.backgroundColor = ZDColor(255, 246, 229)
         self.moreView.delegate = self;
         [self.view.window  addSubview:_moreView];
+        
     }
     return _moreView;
 }
@@ -229,6 +229,7 @@
         [self.tianBtn setTitle:@"3天" forState:UIControlStateNormal];
         [self.tianBtn setImage:self.downImage forState:UIControlStateNormal];
         self.table.alpha = 1;
+
         [UIView animateWithDuration:0.5f animations:^{
             self.table.alpha = 0;
         } completion:^(BOOL finished) {

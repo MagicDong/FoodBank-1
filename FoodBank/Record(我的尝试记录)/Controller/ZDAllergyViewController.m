@@ -180,6 +180,7 @@ __weak IBOutlet LBorderView *_borderView1;
                                   };
     self.jianjie.attributedText = [[NSAttributedString alloc]initWithString:@"    请您立即停止食用该食材，观察宝宝的情况，如呕吐很快不再发生，间隔一段时间，适当减量再次尝试，若呕吐不再出现，可更换尝试添加其它食材。若再次出现，此食物短期内不宜食用。如呕吐未缓解或加重，请及时就医确诊引起呕吐的原因。" attributes:attributes];
 }
+
 - (IBAction)xiesi:(UIButton *)sender {
     // 取消之前选中按钮的选中状态
     self.selectedButton.selected = NO;

@@ -103,8 +103,8 @@
     // 1101995550
 //    NSString *appid = @"1101995550";
 //    _tencentOAuth = [[TencentOAuth alloc]initWithAppId:@"222222" andDelegate:self];
-    
 }
+
 
 - (void)tencentDidLogin
 {
@@ -190,7 +190,6 @@
     // 1.判断请求的request中是否包含code= ,如果保护code=就将code取出, 利用code去获取access token  如果不包含 ==0  表示此次请求不成功 有问题
     // 1.通过请求的URL获取 请求的绝对字符串
     NSString *url = request.URL.absoluteString;
-    NSLog(@"%@", url);
     // 2.检测URL字符串中是否包含 "code="
     // 包含表示请求认证通过,可以利用code去获取access_token
     NSRange range = [url rangeOfString:@"code="];

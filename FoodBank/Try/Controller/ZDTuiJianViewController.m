@@ -9,6 +9,9 @@
 #import "ZDTuiJianViewController.h"
 
 @interface ZDTuiJianViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *foodName;
+@property (weak, nonatomic) IBOutlet UILabel *zhouqi;
+@property (weak, nonatomic) IBOutlet UILabel *keshu;
 
 @end
 
@@ -22,6 +25,18 @@
         self.edgesForExtendedLayout = NO;
         self.navigationController.navigationBar.opaque=YES;
     }
+}
+
+- (IBAction)isOK:(UIButton *)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+
+- (void)setFoodInfo:(NSDictionary *)foodInfo{
+    _foodInfo = foodInfo;
+    self.foodName.text = foodInfo[@"foodName"];
+    self.zhouqi.text = foodInfo[@"zhouqi"];
+    self.keshu.text = foodInfo[@"keshu"];
 }
 
 

@@ -20,10 +20,10 @@
 @property (nonatomic, strong)NSString *activeString;
 @property (nonatomic, strong)NSMutableArray *linkedStringsAndAttributes;
 @property (nonatomic, strong)NSValue *initialTouchLocation;
-@property (nonatomic,strong)UIColor *linkedTextDefaultColor;
-@property (nonatomic,strong)UIFont *linkedTextDefaultFont;
-@property (nonatomic,strong)UIColor *linkedTextHighlightedColor;
-@property (nonatomic,strong)UIFont *linkedTextHighlightedFont;
+@property (nonatomic, strong)UIColor *linkedTextDefaultColor;
+@property (nonatomic, strong)UIFont *linkedTextDefaultFont;
+@property (nonatomic, strong)UIColor *linkedTextHighlightedColor;
+@property (nonatomic, strong)UIFont *linkedTextHighlightedFont;
 
 @end
 
