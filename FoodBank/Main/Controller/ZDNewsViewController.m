@@ -60,7 +60,7 @@ static NSString *PhotosID = @"photosCell";
     [self.tableView reloadData];
 }
 - (void)dealloc{
-    [self.moreView removeFromSuperview];
+//    [self.moreView removeFromSuperview];
 }
 
 - (void)viewDidDisappear:(BOOL)animated{

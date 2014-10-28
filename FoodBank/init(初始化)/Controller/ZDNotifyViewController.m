@@ -7,6 +7,7 @@
 //
 
 #import "ZDNotifyViewController.h"
+#import "ZDKnowTableViewController.h"
 
 @interface ZDNotifyViewController ()
 
@@ -26,6 +27,12 @@
 
 - (IBAction)Finish:(UIButton *)sender {
     [self.navigationController popViewControllerAnimated:YES];
+}
+- (IBAction)zhishi:(UIButton *)sender {
+    ZDKnowTableViewController *know = [[ZDKnowTableViewController alloc]init];
+    [self.navigationController  pushViewController:know
+                                          animated:YES];
+    
 }
 
 @end

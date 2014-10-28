@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZDAnQuanViewController">
             <connections>
+                <outlet property="collection" destination="vJd-cx-6mm" id="oIx-Aw-qz8"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,7 +15,7 @@
             <rect key="frame" x="0.0" y="44" width="320" height="436"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uYK-bR-pcj">
+                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uYK-bR-pcj">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="51"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="baby" translatesAutoresizingMaskIntoConstraints="NO" id="ymz-Ek-vZo">
@@ -29,20 +30,38 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJt-AW-Yth" userLabel="登录">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJt-AW-Yth" userLabel="登录">
                     <rect key="frame" x="125" y="389" width="71" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="71" id="R2P-oV-sL2"/>
+                        <constraint firstAttribute="height" constant="32" id="qYf-jb-nRk"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="15"/>
                     <state key="normal" title="确定" backgroundImage="Judge"/>
                     <connections>
                         <action selector="queding:" destination="-1" eventType="touchUpInside" id="pEq-z1-N8u"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VIu-zI-MKS">
-                    <rect key="frame" x="8" y="53" width="304" height="328"/>
-                    <color key="backgroundColor" red="0.81020359848484846" green="0.49136619613481203" blue="0.45793612380275084" alpha="1" colorSpace="calibratedRGB"/>
-                </view>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="vJd-cx-6mm">
+                    <rect key="frame" x="8" y="52" width="298" height="329"/>
+                    <collectionViewLayout key="collectionViewLayout" id="FIA-XW-dgN"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="7vA-xb-XiI"/>
+                        <outlet property="delegate" destination="-1" id="0vz-aX-KEp"/>
+                    </connections>
+                </collectionView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="cJt-AW-Yth" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="125" id="CEs-JB-3go"/>
+                <constraint firstAttribute="bottom" secondItem="cJt-AW-Yth" secondAttribute="bottom" constant="15" id="CHb-Qa-BdJ"/>
+                <constraint firstAttribute="centerX" secondItem="cJt-AW-Yth" secondAttribute="centerX" id="N2O-Y1-QSf"/>
+                <constraint firstItem="vJd-cx-6mm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="QwA-lk-CCH"/>
+                <constraint firstItem="cJt-AW-Yth" firstAttribute="top" secondItem="vJd-cx-6mm" secondAttribute="bottom" constant="8" id="UQp-ld-eD7"/>
+                <constraint firstAttribute="trailing" secondItem="vJd-cx-6mm" secondAttribute="trailing" constant="8" id="UUb-WX-Gv5"/>
+                <constraint firstAttribute="trailing" secondItem="cJt-AW-Yth" secondAttribute="trailing" constant="124" id="VZW-Re-yDg"/>
+                <constraint firstItem="vJd-cx-6mm" firstAttribute="top" secondItem="uYK-bR-pcj" secondAttribute="bottom" constant="1" id="p6e-RX-NIF"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>

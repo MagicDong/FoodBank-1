@@ -40,8 +40,10 @@
     // 2.添加PageControl
     [self setupPageControl];
 //    if (self.isNoFirst) {
-//    self.navigationController.navigationBarHidden = YES;
-    
+    self.navigationController.navigationBarHidden = YES;
+    self.navigationController.navigationBar.hidden = YES;
+    self.navigationController.navigationBar.backgroundColor = [UIColor clearColor];
+    self.view.centerY = self.view.centerY - 44;
 //    }
 }
 /**

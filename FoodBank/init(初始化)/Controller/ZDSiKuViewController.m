@@ -8,9 +8,12 @@
 
 #import "ZDSiKuViewController.h"
 #import "ZDTabBarController.h"
+#import "CZProductCell.h"
+#import "CZProduct.h"
 
-@interface ZDSiKuViewController ()
-//<UICollectionViewDelegate, UICollectionViewDataSource>
+static NSString *ProductCellID = @"ProductCell";
+static NSString *reusableViewID = @"SectionHeader";
+@interface ZDSiKuViewController () <UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
 @property (weak, nonatomic) IBOutlet UIButton *anquan;
 @property (weak, nonatomic) IBOutlet UIButton *guomin;
@@ -24,6 +27,7 @@
  *  当前选中食材库
  */
 @property (nonatomic, weak) UIButton  *selectedBtn;
+@property (nonatomic, strong) NSArray *dataList;
 @end
 
 @implementation ZDSiKuViewController
@@ -31,17 +35,77 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self chushihua];
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    layout.itemSize = CGSizeMake(60, 60);
+    layout.minimumLineSpacing = 10.0f;
+    layout.minimumInteritemSpacing = 10.0f;
+    layout.sectionInset = UIEdgeInsetsMake(5, 10, 5, 10);
+    layout.headerReferenceSize = CGSizeMake(self.collection.bounds.size.width, 30);
+    self.collection.backgroundColor = [UIColor whiteColor];
+    self.collection.collectionViewLayout = layout;
+    // 为CollectionView注册可重用单元格
+    UINib *nib = [UINib nibWithNibName:@"CZProductCell" bundle:nil];
+    [self.collection registerNib:nib forCellWithReuseIdentifier:ProductCellID];
+    [self.collection registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:reusableViewID];
 }
 
-- (NSArray *)products
+- (NSArray *)dataList
 {
-    if (!_products){
-        NSArray *arr1 = @[@"胡萝卜",@"西红柿",@"胡萝卜",@"西红柿",@"胡萝卜",@"西红柿"];
-        NSArray *arr2 = @[@"胡萝卜",@"西红柿",@"胡萝卜",@"西红柿",@"胡萝卜",@"西红柿",@"胡萝卜",@"西红柿",@"胡萝卜",@"西红柿"];
-        _products = @[arr1,arr2];
-    }
-    return _products;
+    if (!_dataList) _dataList = [CZProduct products];
+    return _dataList;
 }
+
+#pragma mark - 数据源方法
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+    return 6;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return self.dataList.count;
+} 
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    // forIndexPath －》强行要求程序员必须注册表格的可重用单元格
+    CZProductCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:ProductCellID forIndexPath:indexPath];
+    
+    // 以下判断不会工作
+    //    if (cell == nil) {
+    //        //
+    //    }
+    
+    // 用模型设置cell
+    cell.product = self.dataList[indexPath.item];
+    
+    return cell;
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+    
+    UICollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:
+                                            UICollectionElementKindSectionHeader withReuseIdentifier:@"SectionHeader" forIndexPath:indexPath];
+    UILabel *label = (UILabel *)[headerView viewWithTag:1];
+    if (!label) {
+        label = [[UILabel alloc] initWithFrame:CGRectInset(headerView.bounds, 5, 5)];
+        label.tag = 1;
+        label.font = [UIFont boldSystemFontOfSize:14];
+        label.textColor = [UIColor redColor];
+        [headerView addSubview:label];
+    }
+    label.text = [NSString stringWithFormat:@"  蔬菜类%d", indexPath.section+1];
+    return headerView;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+//    CZProduct *product = self.dataList[indexPath.item];
+    UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
+    CZProductCell *celll = (CZProductCell *)cell;
+    celll.selectBtn.selected = !celll.selectBtn.selected;
+    
+}
+
 
 #pragma mark - 数据源方法
 // 返回每个section（分组）中的item（条目，小格子）的数量

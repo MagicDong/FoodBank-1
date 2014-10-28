@@ -247,6 +247,7 @@ static NSString *heardID = @"headerView";
         
 //        ZDNewfeatureViewController *root = [[ZDNewfeatureViewController alloc]init];
 //        root.isNoFirst = YES;
+//        weakSelf.view.window.rootViewController = root;
 //            [weakSelf.navigationController pushViewController:root animated:YES];
         for (UIViewController *controller in self.childViewControllers) {
             // 将子视图控制器的视图从父视图中删除
@@ -266,6 +267,7 @@ static NSString *heardID = @"headerView";
     group.items = @[updata,guide,tuijian];
     
 }
+
 - (void)setupGroup2{
     
     ZDCommonArrowItem *updata = [ZDCommonArrowItem itemWithTitle:@"检测更新"];

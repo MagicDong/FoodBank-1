@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZDSiKuViewController">
             <connections>
                 <outlet property="anquan" destination="8Vb-jl-4i6" id="Gxv-I4-fdW"/>
+                <outlet property="collection" destination="NNy-uG-kpc" id="qd7-kl-4tY"/>
                 <outlet property="guomin" destination="qii-b4-fhE" id="IN5-Zk-lPX"/>
                 <outlet property="jujue" destination="6vf-1L-Es2" id="ZEm-K4-NRe"/>
                 <outlet property="label1" destination="1qY-Ok-rkC" id="LQo-KO-jGo"/>
@@ -20,7 +21,7 @@
             <rect key="frame" x="0.0" y="44" width="320" height="436"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uYK-bR-pcj">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uYK-bR-pcj">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="122"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="login_baobao" translatesAutoresizingMaskIntoConstraints="NO" id="ymz-Ek-vZo">
@@ -30,6 +31,12 @@
                             <rect key="frame" x="46" y="17" width="136" height="21"/>
                             <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="15"/>
                             <color key="textColor" red="0.75508283132530118" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="请您将宝宝已尝试过（尝试3-7天）且安全(未发" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1qY-Ok-rkC">
+                            <rect key="frame" x="33" y="47" width="403" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <color key="textColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="生过敏、拒绝等现象）的食材勾选出来。" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHC-kD-VU9">
@@ -90,40 +97,47 @@
                                 <action selector="weichangshi:" destination="-1" eventType="touchUpInside" id="gZd-78-FWx"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="请您将宝宝已尝试过（尝试3-7天）且安全(未发" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1qY-Ok-rkC">
-                            <rect key="frame" x="33" y="47" width="403" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                            <color key="textColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="122" id="J5R-o3-5YM"/>
+                        <constraint firstAttribute="width" constant="320" id="oYf-Kc-sAl"/>
+                    </constraints>
                 </view>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VIu-zI-MKS">
-                    <rect key="frame" x="8" y="130" width="304" height="251"/>
-                    <subviews>
-                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="CBh-gt-uJV">
-                            <rect key="frame" x="0.0" y="0.0" width="304" height="251"/>
-                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Bh7-Yc-oCv">
-                                <size key="itemSize" width="50" height="50"/>
-                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                            </collectionViewFlowLayout>
-                        </collectionView>
-                    </subviews>
-                    <color key="backgroundColor" red="0.81020359848484846" green="0.49136619613481203" blue="0.45793612380275084" alpha="1" colorSpace="calibratedRGB"/>
-                </view>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJt-AW-Yth" userLabel="登录">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJt-AW-Yth" userLabel="登录">
                     <rect key="frame" x="115" y="389" width="90" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="90" id="akf-up-rui"/>
+                        <constraint firstAttribute="height" constant="35" id="pU3-Ol-2pS"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="15"/>
                     <state key="normal" title="确定" backgroundImage="Judge"/>
                     <connections>
                         <action selector="queding:" destination="-1" eventType="touchUpInside" id="pEq-z1-N8u"/>
                     </connections>
                 </button>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="NNy-uG-kpc">
+                    <rect key="frame" x="0.0" y="130" width="320" height="251"/>
+                    <collectionViewLayout key="collectionViewLayout" id="9gk-xM-a8p"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="dhX-eL-MeC"/>
+                        <outlet property="delegate" destination="-1" id="ZDG-fi-QBr"/>
+                    </connections>
+                </collectionView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="NNy-uG-kpc" secondAttribute="trailing" id="3u3-ji-oYb"/>
+                <constraint firstItem="NNy-uG-kpc" firstAttribute="top" secondItem="uYK-bR-pcj" secondAttribute="bottom" constant="8" id="FTp-sM-LLa"/>
+                <constraint firstItem="uYK-bR-pcj" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="JAS-23-hTf"/>
+                <constraint firstAttribute="centerX" secondItem="cJt-AW-Yth" secondAttribute="centerX" id="JPR-mw-FfY"/>
+                <constraint firstAttribute="trailing" secondItem="uYK-bR-pcj" secondAttribute="trailing" id="LzP-sb-UJb"/>
+                <constraint firstAttribute="bottom" secondItem="cJt-AW-Yth" secondAttribute="bottom" constant="12" id="R85-xc-U9g"/>
+                <constraint firstItem="cJt-AW-Yth" firstAttribute="top" secondItem="NNy-uG-kpc" secondAttribute="bottom" constant="8" id="hX6-yv-nnj"/>
+                <constraint firstItem="cJt-AW-Yth" firstAttribute="top" secondItem="NNy-uG-kpc" secondAttribute="bottom" constant="8" id="vUZ-kX-etG"/>
+                <constraint firstItem="uYK-bR-pcj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="yTN-6k-27h"/>
+                <constraint firstItem="NNy-uG-kpc" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="zoF-kH-hWD"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
