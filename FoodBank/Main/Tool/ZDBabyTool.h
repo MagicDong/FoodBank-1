@@ -7,8 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Singleton.h"
 @class ZDBaby;
 @interface ZDBabyTool : NSObject
+singleton_interface(ZDBabyTool)
 /**
  *  存储一个数据
  *
@@ -16,10 +18,10 @@
  *
  *  @return 是否存储成功
  */
-+ (BOOL)saveAccount:(ZDBaby *)account;
+- (BOOL)saveAccount:(ZDBaby *)account;
 
 /**
  *  获取一个存储账号的对象
  */
-+ (ZDBaby *)account;
+- (ZDBaby *)account;
 @end

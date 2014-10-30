@@ -57,10 +57,9 @@ static NSString *heardID = @"headerView";
     }
     self.tableView.scrollEnabled= YES;
     self.tableView.backgroundColor = ZDColor(219, 219, 219);
-    _bgIcon = [[UIImageView alloc] init];
     NSString *imageName =[NSString stringWithFormat:@"more_baobao_bg"];
-    
-    _bgIcon.image = [UIImage imageNamed:imageName];
+    _bgIcon = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]];
+//    _bgIcon.image = [UIImage imageNamed:imageName];
     _bgIcon.bounds = CGRectMake(0, 0, 320, 300);
     _bgIcon.layer.anchorPoint = CGPointMake(0.5, 0);
     _bgIcon.layer.position = CGPointMake(160, -95);
@@ -69,7 +68,6 @@ static NSString *heardID = @"headerView";
     
     // 3.添加更多按钮
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemImage:@"navigationbar_more" highlightedImage:@"navigationbar_more_highlighted" target:self action:@selector(more)];
-    
 }
 
 - (void)more{
@@ -78,7 +76,6 @@ static NSString *heardID = @"headerView";
     [self.view.window bringSubviewToFront:self.moreView];
     if (self.xiala) {
         [UIView animateWithDuration:0.5 animations:^{
-            //            self.moreView.y = self.moreView.y - self.moreView.height;
             [self.cover setAlpha:0];
             [self.moreView setAlpha:0];
         } completion:^(BOOL finished) {
@@ -147,6 +144,7 @@ static NSString *heardID = @"headerView";
 - (void)moreViewDidWWW:(ZDMoreView *)moreView{
     NSURL *url = [NSURL URLWithString:@"http://www.mamabaodian.com"];
     [[UIApplication sharedApplication] openURL:url];
+    
 }
 
 
@@ -228,7 +226,6 @@ static NSString *heardID = @"headerView";
         UIApplication *app = [UIApplication sharedApplication];
         [app.delegate application:app didFinishLaunchingWithOptions:nil];
     }
-
 }
 
 - (void)dealloc
@@ -244,11 +241,6 @@ static NSString *heardID = @"headerView";
     ZDCommonArrowItem *guide = [ZDCommonArrowItem itemWithTitle:@"新手指南"];
 //    __weak typeof(self) weakSelf = self;
     guide.opertion = ^{
-        
-//        ZDNewfeatureViewController *root = [[ZDNewfeatureViewController alloc]init];
-//        root.isNoFirst = YES;
-//        weakSelf.view.window.rootViewController = root;
-//            [weakSelf.navigationController pushViewController:root animated:YES];
         for (UIViewController *controller in self.childViewControllers) {
             // 将子视图控制器的视图从父视图中删除
             [controller.view removeFromSuperview];
@@ -259,7 +251,6 @@ static NSString *heardID = @"headerView";
         UIApplication *app = [UIApplication sharedApplication];
         [app.delegate application:app didFinishLaunchingWithOptions:dict];
     };
-    
     ZDCommonArrowItem *tuijian = [ZDCommonArrowItem itemWithTitle:@"产品推荐"];
     tuijian.destVC = [ZDProductViewController class];
     

@@ -46,7 +46,7 @@
         // 根据数据字典内容，创建HTML字符串，创建之后，用WebView加载
         [self htmlTextWithDict:dict[self.docid]];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"%@", error);
+//        NSLog(@"%@", error);
     }];
     
 }

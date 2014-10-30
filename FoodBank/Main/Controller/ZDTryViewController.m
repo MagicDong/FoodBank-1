@@ -11,6 +11,7 @@
 #import "ZDTuiJianViewController.h"
 #import "ZDEditViewController.h"
 #import "ZDMoreView.h"
+#import "MBProgressHUD+ZD.h"
 
 @interface ZDTryViewController () <UITableViewDataSource,UITableViewDelegate,ZDMoreViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *icon;   // 食材图片
@@ -20,6 +21,8 @@
 @property (nonatomic, strong) UIImage *downImage;         // 向下图片
 @property (nonatomic, strong) UIImage *upImage;           // 向上的图片
 @property (nonatomic, strong) UITableView *table;         // 点击按钮出来天数
+@property (weak, nonatomic) IBOutlet UITextView *jieshaoTextView;
+@property (weak, nonatomic) IBOutlet UITextView *tuijianTextView;
 @property (nonatomic, strong) UIButton *tianBtn;
 /**
  *  蒙板
@@ -49,7 +52,26 @@
     [self.view addSubview:tianBtn];
     self.tianBtn = tianBtn;
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemImage:@"navigationbar_more" highlightedImage:@"navigationbar_more_highlighted" target:self action:@selector(more)];
+    
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc]init];
+    paragraphStyle.lineHeightMultiple = 20.f;
+    paragraphStyle.maximumLineHeight = 25.f;
+    paragraphStyle.minimumLineHeight = 10.f;
+    paragraphStyle.firstLineHeadIndent = 20.f;
+    paragraphStyle.alignment = NSTextAlignmentJustified;
+    NSDictionary *attributes = @{ NSFontAttributeName:[UIFont systemFontOfSize:15], NSParagraphStyleAttributeName:paragraphStyle, NSForegroundColorAttributeName:[UIColor blackColor]
+                                  };
+    
+    self.jieshaoTextView.attributedText = [[NSAttributedString alloc]initWithString:@"这是一根好黄瓜！这是一根好黄瓜！这是一根好黄瓜！这是一根好黄瓜！这是一根好黄瓜！这是一根好黄瓜！这是一根好黄瓜！这是一根好黄瓜！这是一根好黄瓜！这是一根好黄瓜！这是一根好黄瓜！这是一根好黄瓜！这是一根好黄瓜！这是一根好黄瓜！这是一根好黄瓜！这是一根好黄瓜！这是一根好黄瓜！" attributes:attributes];
+    self.jieshaoTextView.editable = NO;
+    self.jieshaoTextView.backgroundColor = [UIColor clearColor];
+    
+    self.tuijianTextView.attributedText = [[NSAttributedString alloc]initWithString:@"直接吃就行！" attributes:attributes];
+    self.tuijianTextView.editable = NO;
+    self.tuijianTextView.backgroundColor = [UIColor clearColor];
 }
+
+
 
 - (void)more{
     // 2.交换图片和蒙板的位置
@@ -248,8 +270,11 @@
 }
 
 - (IBAction)queding:(id)sender {
-    ZDTuiJianViewController *tuijian = [[ZDTuiJianViewController alloc]init];
-    [self.navigationController pushViewController:tuijian animated:YES];
+    [MBProgressHUD showError:@"该食材正在尝试中.."];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.62 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [MBProgressHUD hideHUD];
+    });
+  
 }
 
 - (UIImage *)downImage

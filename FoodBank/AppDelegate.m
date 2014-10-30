@@ -13,6 +13,9 @@
 #import "UIImageView+WebCache.h"
 #import "ZDInitViewController.h"
 #import "ZDNavViewController.h"
+#import "ZDRegisterViewController.h"
+#import "ZDBaby.h"
+#import "ZDBabyTool.h"
 
 @interface AppDelegate ()
 
@@ -26,14 +29,42 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // 设置全局状态栏的颜色
     [application setStatusBarStyle:UIStatusBarStyleLightContent];
+    // 判断显示新特性还是tabbarcontroller
+    // 1.获取沙盒中的版本号
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *key = (__bridge_transfer NSString *)kCFBundleVersionKey;
+    NSString *sandBoxVersion = [defaults valueForKey:key];
+    // 2.获取当前软件的版本号
+    NSDictionary *md =[NSBundle mainBundle].infoDictionary;
+    NSString *currentVersion = md[key];
     
-    if([launchOptions[@"news"] isEqualToString:@"news"]){
-        self.window.rootViewController = [[ZDNewfeatureViewController alloc]init];
-    }else{
-        self.window.rootViewController = [[ZDNavViewController alloc]initWithRootViewController:[[ZDInitViewController alloc]init]];
-    }
+    UIApplication *app = [UIApplication sharedApplication];
+    UIWindow *window = app.keyWindow;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    //3.设置根控制器
+//    [currentVersion compare:sandBoxVersion] ==  NSOrderedDescending
+    if ((0))
+    {
+        // 存储当前版本号
+        [defaults setObject:currentVersion forKey:key];
+        [defaults synchronize];
+        
+        // 第一次使用当前版本  --> 显示新特性界面
+        ZDNewfeatureViewController *newfeature = [[ZDNewfeatureViewController alloc] init];
+        window.rootViewController = newfeature;
+        
+    }else
+    {
+        app.statusBarHidden = YES;
+        ZDBaby *baby = [ZDBabyTool sharedZDBabyTool].account;
+        if (baby.userName == nil) {
+            self.window.rootViewController = [[ZDRegisterViewController alloc]init];
+        }
+        app.statusBarHidden = NO;
+        ZDTabBarController *tabBarVc =  [[ZDTabBarController alloc] init];
+        window.rootViewController = tabBarVc;
+    }
     return YES;
 }
 

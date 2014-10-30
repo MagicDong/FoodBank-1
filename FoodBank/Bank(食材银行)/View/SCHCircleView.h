@@ -11,7 +11,7 @@
 
 
 #define CENTER_POINT     self.center //中心点
-#define RADIUS           90.0f       //半径
+#define RADIUS           95.0f       //半径
 #define DEVIATION_RAIAN  0.0f        //偏移弧度
 #define IS_CAN_EDIT      NO          //是否可以编辑
 #define SCAlE            0.3f        //比例

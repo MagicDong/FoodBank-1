@@ -26,9 +26,6 @@
     
     self.title = @"详细";
     self.label.text = self.dict[@"title"];
-    
-
-    
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc]init];
     paragraphStyle.lineHeightMultiple = 20.f;
     paragraphStyle.maximumLineHeight = 25.f;

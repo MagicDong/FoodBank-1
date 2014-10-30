@@ -9,6 +9,7 @@
 #import "ZDBabyTool.h"
 
 @implementation ZDBabyTool
+singleton_implementation(ZDBabyTool)
 /**
  *  存储一个数据
  *
@@ -16,7 +17,7 @@
  *
  *  @return 是否存储成功
  */
-+ (BOOL)saveAccount:(ZDBaby *)account
+- (BOOL)saveAccount:(ZDBaby *)account
 {
     // 获取Doc目录
     NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
@@ -26,12 +27,13 @@
     return [NSKeyedArchiver archiveRootObject:account toFile:dataPath];
 }
 
+
 /**
  *  从Doc路径中取出指定保存用户信息的文件
  *
  *  @return 返回一个从Doc中取出的文件
  */
-+ (ZDBaby *)account
+- (ZDBaby *)account
 {
     // 获取Doc目录
     NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
@@ -42,8 +44,5 @@
     // 判断当前时间和获取的用户信息中的过期时间比较是否过期
     return account;
 }
-
-
-
 
 @end

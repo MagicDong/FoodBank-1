@@ -1,9 +1,8 @@
 //
 //  CZDatePickerView.m
-//  01-网易彩票
 //
-//  Created by LNJ on 14-6-21.
-//  Copyright (c) 2014年 itcast. All rights reserved.
+//  Created by zd on 14-6-21.
+//  Copyright (c) 2014年 Dong. All rights reserved.
 //
 
 #import "CZDatePickerView.h"

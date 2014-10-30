@@ -26,8 +26,9 @@
     if(iOS7)
     {
         self.edgesForExtendedLayout = NO;
-        self.navigationController.navigationBar.opaque=YES;
+        self.navigationController.navigationBar.opaque = YES;
     }
+    
 }
 
 - (IBAction)fuhe:(id)sender {

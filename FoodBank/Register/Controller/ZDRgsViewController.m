@@ -7,41 +7,104 @@
 //
 
 #import "ZDRgsViewController.h"
-#import "ZDDatePickerView.h"
+#import "UIView+Add.h"
+#import "MBProgressHUD+ZD.h"
+#import "ZDChooseButton.h"
 
-@interface ZDRgsViewController () <ZDDatePickerViewDelegate>
+@interface ZDRgsViewController ()
 
 /**
  *  时间选择
  */
-@property (nonatomic ,weak) ZDDatePickerView *datePickerView;
 
+@property (weak, nonatomic) IBOutlet UITextField *yanzheng;
+@property (weak, nonatomic) IBOutlet UIButton *huoquyanzheng;
+@property (strong, nonatomic) NSTimer *timer;
 @end
 
 @implementation ZDRgsViewController
-
+int timerCount = 99;
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"注册";
+    self.title = @"新用户注册";
     if(iOS7)
     {
         self.edgesForExtendedLayout = NO;
         self.navigationController.navigationBar.opaque=YES;
     }
-    
+        self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemImage:@"navigationbar_back" highlightedImage:@"navigationbar_back_highlighted" target:self action:@selector(back)];
 }
 
-#pragma mark - 懒加载
-- (ZDDatePickerView *)datePickerView
+- (void)back{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (NSTimer *)timer
 {
-    if (!_datePickerView) {
-        _datePickerView = [ZDDatePickerView datePickerView];
-        _datePickerView.center = self.view.center;
-        // 设置代理
-        _datePickerView.delegate = self;
-        [self.view addSubview:_datePickerView];
+    if (!_timer) {
+        _timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerFire) userInfo:nil repeats:YES];
     }
-    return _datePickerView;
+    return _timer;
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    UITextField *textFiel =  [UIView findFistResponder:self.view];
+    [textFiel resignFirstResponder];
+    return YES;
+}
+
+- (void)timerFire
+{
+    timerCount--;
+    [self.huoquyanzheng setTitle:[NSString stringWithFormat:@"%d",timerCount] forState:UIControlStateNormal];
+//    self.huoquyanzheng.titleLabel.text = [NSString stringWithFormat:@"%d",timerCount];
+//    self.huoquyanzheng.titleLabel.font = [UIFont systemFontOfSize:15];
+    
+    if (timerCount == 0) {
+        [self timerColsed];
+    }
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self.timer invalidate];
+    self.timer = nil;
+    timerCount = 99;
+    
+}
+- (void)timerColsed
+{
+    [self.timer invalidate];
+    self.timer = nil;
+    timerCount = 99;
+     [self.huoquyanzheng setTitle:@"获取验证码" forState:UIControlStateNormal];
+//    self.huoquyanzheng.titleLabel.font = [UIFont systemFontOfSize:15];
+    self.huoquyanzheng.enabled = YES;
+}
+
+- (IBAction)huoquyanzheng:(UIButton *)sender {
+    self.huoquyanzheng.enabled = NO;
+    [MBProgressHUD showSuccess:@"获取验证码成功"];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.68 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [MBProgressHUD hideHUD];
+        [self.timer fire];
+    });
+}
+
+- (IBAction)zhuce:(UIButton *)sender {
+     [MBProgressHUD showSuccess:@"注册成功"];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.68 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [MBProgressHUD hideHUD];
+        [self dismissViewControllerAnimated:YES completion:nil];
+    });
+   
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [self.view endEditing:YES];
+//    UITextField *textField =  [UIView findFistResponder:self.view];
+//    [textField resignFirstResponder];
 }
 
 @end

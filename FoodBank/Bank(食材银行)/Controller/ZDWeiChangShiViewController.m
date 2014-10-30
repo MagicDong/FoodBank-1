@@ -63,7 +63,6 @@ static NSString *reusableViewID = @"SectionHeader";
     //    }
     // 用模型设置cell
     cell.product = self.dataList[indexPath.item];
-    
     return cell;
 }
 
@@ -79,6 +78,7 @@ static NSString *reusableViewID = @"SectionHeader";
         label.textColor = [UIColor redColor];
         [headerView addSubview:label];
     }
+    
     label.text = [NSString stringWithFormat:@"  蔬菜类%d", indexPath.section+1];
     return headerView;
 }

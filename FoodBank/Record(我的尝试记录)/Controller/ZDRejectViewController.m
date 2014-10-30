@@ -50,7 +50,6 @@
     self.jianjie.editable = NO;
     self.jianjie.scrollEnabled = YES;
     self.jianjie.scrollsToTop = YES;
-    
     self.zhishiku.hidden = YES;
 }
 - (IBAction)zhishiku:(UIButton *)sender {

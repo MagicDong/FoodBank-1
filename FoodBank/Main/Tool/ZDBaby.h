@@ -10,9 +10,18 @@
 
 @interface ZDBaby : NSObject
 /**
+ *  用户名
+ */
+@property (nonatomic,strong) NSString *userName;
+/**
+ *  密码
+ */
+@property (nonatomic,strong) NSString *password;
+/**
  *  头像
  */
 @property (nonatomic,strong) UIImage *userIcon;
+
 /**
  *  个性签名
  */
@@ -37,6 +46,5 @@
  *  民族
  */
 @property (nonatomic,copy) NSString *nation;
-
 
 @end

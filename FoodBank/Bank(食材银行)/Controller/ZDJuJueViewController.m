@@ -62,7 +62,7 @@ static NSString *reusableViewID = @"SectionHeader";
     // 以下判断不会工作
     //    if (cell == nil) {
     //        //
-    //    }
+    //    }·
     
     // 用模型设置cell
     cell.product = self.dataList[indexPath.item];

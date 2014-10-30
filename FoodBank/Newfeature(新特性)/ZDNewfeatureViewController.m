@@ -39,12 +39,6 @@
     [self setupScrollerView];
     // 2.添加PageControl
     [self setupPageControl];
-//    if (self.isNoFirst) {
-    self.navigationController.navigationBarHidden = YES;
-    self.navigationController.navigationBar.hidden = YES;
-    self.navigationController.navigationBar.backgroundColor = [UIColor clearColor];
-    self.view.centerY = self.view.centerY - 44;
-//    }
 }
 /**
  *  添加PageControl
@@ -170,8 +164,8 @@
  */
 - (void)start
 {
-    // 跳转到TabBarController
-    if (self.isNoFirst) {
+    // 判断当前是否已经有登陆过的账号存在
+    if ((0)) {
         ZDTabBarController *tabBarVc = [[ZDTabBarController alloc] init];
         UIApplication *app = [UIApplication sharedApplication];
         UIWindow *window = app.keyWindow;
@@ -179,7 +173,8 @@
         window.rootViewController = tabBarVc;
         [window makeKeyAndVisible];
     }else{
-        ZDTabBarController *tabBarVc = [[ZDTabBarController alloc] init];
+        
+        ZDInitViewController *tabBarVc = [[ZDInitViewController alloc] init];
         UIApplication *app = [UIApplication sharedApplication];
         UIWindow *window = app.keyWindow;
         app.statusBarHidden = NO;

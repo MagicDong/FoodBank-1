@@ -28,7 +28,6 @@
 {
     NSString *path = [[NSBundle mainBundle] pathForResource:@"products.plist" ofType:nil];
     NSArray *array = [NSArray arrayWithContentsOfFile:path];
-    
     // 循环建立产品数组
     NSMutableArray *arrayM = [NSMutableArray array];
     for (NSDictionary *dict in array) {

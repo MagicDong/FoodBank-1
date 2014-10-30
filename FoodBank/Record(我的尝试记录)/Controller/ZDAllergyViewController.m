@@ -119,10 +119,8 @@ __weak IBOutlet LBorderView *_borderView1;
 - (IBAction)pizhen:(UIButton *)sender {
     // 取消之前选中按钮的选中状态
     self.selectedButton.selected = NO;
-    
     // 设置点中按钮的selected ＝ YES
     sender.selected = YES;
-    
     // 将当前按钮作为选中按钮
     self.selectedButton = sender;
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc]init];

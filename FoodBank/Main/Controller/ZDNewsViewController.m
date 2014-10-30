@@ -83,8 +83,6 @@ static NSString *PhotosID = @"photosCell";
     }
     // 3.添加更多按钮
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemImage:@"navigationbar_more" highlightedImage:@"navigationbar_more_highlighted" target:self action:@selector(more)];
-    
-    
 
 }
 

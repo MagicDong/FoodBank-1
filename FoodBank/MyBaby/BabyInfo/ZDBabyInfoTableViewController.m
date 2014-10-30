@@ -85,23 +85,24 @@ static NSString *birthdayCellID = @"birthdayCell";
         }
     }else if (alertView.tag == 3){
         if (buttonIndex == 0) {// 保存按钮点击确定
-            ZDBaby *baby = [ZDBabyTool account];
+            ZDBaby *baby = [ZDBabyTool sharedZDBabyTool].account;
+            ZDBabyTool *babyTool = [ZDBabyTool sharedZDBabyTool];
             baby.userIcon = self.iconCell.userIcon.image;
             baby.signature = self.signCell.sign.text;
             baby.nickName = self.nickCell.nickName.text;
             baby.city = self.citysCell.citys.text;
             baby.birthday = self.birthdayCell.birthday.text;
             baby.sex = self.sexCell.isNan;
-            BOOL isOK = [ZDBabyTool saveAccount:baby];
-            ZDBaby *baby2 = [ZDBabyTool account];
-            NSLog(@"%@",baby.nickName);
-            NSLog(@"%@",baby2.nickName);
+            BOOL isOK = [babyTool saveAccount:baby];
+            ZDBaby *baby2 = [babyTool account];
+            ZDLog(@"%@",baby.nickName);
+            ZDLog(@"%@",baby2.nickName);
             if (isOK) {
                 [self.navigationController popViewControllerAnimated:YES];
             }
-//            baby.sex = self.sexCell;
-            //            @property (nonatomic ,strong) ZDLoginIconCell *iconCell;
-            //            @property (nonatomic ,strong) ZDLoginBirthdayCell *birthdayCell;
+            //  baby.sex = self.sexCell;
+            //  @property (nonatomic ,strong) ZDLoginIconCell *iconCell;
+            //  @property (nonatomic ,strong) ZDLoginBirthdayCell *birthdayCell;
             //            @property (nonatomic ,strong) ZDLoginCitysCell *citysCell;
             //            @property (nonatomic ,strong) ZDLoginNickCell *nickCell;
             //            @property (nonatomic ,strong) ZDLoginSexCell *sexCell;

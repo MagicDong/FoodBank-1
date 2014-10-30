@@ -1,10 +1,9 @@
 //
 //  ZDFindViewController.m
-//  新浪微博
 //
 //  Created by Dong on 14-7-6.
-//  Copyright (c) 2014年 itbast. All rights reserved.
-//
+//  Copyright (c) 2014年 Dong. All rights reserved.
+
 
 #import "ZDCommonViewController.h"
 #import "ZDCommonGroup.h"

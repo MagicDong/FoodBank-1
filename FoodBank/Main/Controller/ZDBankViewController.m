@@ -53,7 +53,6 @@
         [_icon_array addObject:[UIImage imageNamed:@"ipad_user_login_qq"]];
         [_icon_array addObject:[UIImage imageNamed:@"more_baobao_icon.png"]];
         [_icon_array addObject:[UIImage imageNamed:@"more_baobao_icon.png"]];
-        
     }
     return self;
 }
@@ -72,13 +71,11 @@
         self.edgesForExtendedLayout = NO;
         self.navigationController.navigationBar.opaque=YES;
     }
-    
-    
+
 //    UIImagePickerControllerSourceType sourceType = UIImagePickerControllerSourceTypeCamera;
 //    if (![UIImagePickerController isSourceTypeAvailable: UIImagePickerControllerSourceTypeCamera]) {
 //        sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
 //    }
-    
 //    sourceType = UIImagePickerControllerSourceTypeCamera; //照相机
 //    sourceType = UIImagePickerControllerSourceTypePhotoLibrary; //图片库
 //    sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum; //保存的相片

@@ -1,9 +1,8 @@
 //
 //  ZDSingView.m
-//  06视图抽屉框架
 //
 //  Created by wuzhe on 14-8-6.
-//  Copyright (c) 2014年 itbast. All rights reserved.
+//  Copyright (c) 2014年 Dong. All rights reserved.
 //
 
 #import "ZDSingView.h"

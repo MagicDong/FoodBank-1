@@ -96,10 +96,10 @@ static NSString *reusableViewID = @"SectionHeader";
         label.textColor = [UIColor redColor];
         [headerView addSubview:label];
     }
+    
     label.text = [NSString stringWithFormat:@"  蔬菜类%d", indexPath.section+1];
     return headerView;
 }
-
 
 - (void)chushihua{
     self.title = @"安全食材库";
@@ -108,7 +108,6 @@ static NSString *reusableViewID = @"SectionHeader";
         self.edgesForExtendedLayout = NO;
         self.navigationController.navigationBar.opaque=YES;
     }
-    
     self.anquan.layer.cornerRadius = 3;
     self.anquan.layer.masksToBounds = YES;
     self.anquan.selected = YES;

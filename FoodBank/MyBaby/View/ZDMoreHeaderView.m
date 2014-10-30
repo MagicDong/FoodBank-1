@@ -1,9 +1,8 @@
 //
 //  ZDHeaderView.m
-//  06视图抽屉框架
 //
 //  Created by Dong on 14-7-24.
-//  Copyright (c) 2014年 itbast. All rights reserved.
+//  Copyright (c) 2014年 Dong. All rights reserved.
 //
 
 #import "ZDMoreHeaderView.h"
@@ -52,26 +51,25 @@
     CGColorRef color = (__bridge CGColorRef)(id)CFBridgingRelease(CGColorCreate(colorSpace, components));
     CGColorSpaceRelease(colorSpace);
     [self.userIcon.layer setBorderColor:color];
-    
+//
     self.xiugai.backgroundColor = [UIColor colorWithRed:(0)/255.0 green:(0)/255.0 blue:(0)/255.0 alpha:0.3];
     [self.xiugai.layer setCornerRadius:10];
     [self.xiugai setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    
+//
     self.userIcon.userInteractionEnabled=YES;
     UITapGestureRecognizer *singleTap =[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(onClickImage)];
     [self.userIcon addGestureRecognizer:singleTap];
     
-    ZDBaby *baby = [ZDBabyTool account];
-    if (baby.userIcon != nil) {
-         self.userIcon.image = baby.userIcon;
-    }
-    if (baby.nickName != nil) {
-       [self.xiugai setTitle:baby.nickName forState:UIControlStateNormal];
-    }
-    if (baby.signature != nil) {
-        self.userSign.text = baby.signature;
-    }
-    
+//    ZDBaby *baby = [ZDBabyTool account];
+//    if (baby.userIcon != nil) {
+//         self.userIcon.image = baby.userIcon;
+//    }
+//    if (baby.nickName != nil) {
+//       [self.xiugai setTitle:baby.nickName forState:UIControlStateNormal];
+//    }
+//    if (baby.signature != nil) {
+//        self.userSign.text = baby.signature;
+//    }
 }
 
 - (void)onClickImage{

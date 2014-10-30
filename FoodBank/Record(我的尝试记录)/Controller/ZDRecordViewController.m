@@ -64,7 +64,7 @@
         ZDRejectViewController *reject = [[ZDRejectViewController alloc]init];
         [self.navigationController pushViewController:reject animated:YES];
     }else if([self.selectedButton.titleLabel.text isEqualToString:@"未尝试"]){
-        
+          
     }
     if (self.selectedButton == nil) {
         [MBProgressHUD showError:@"您还没有选择尝试情况"];
@@ -72,6 +72,7 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.1* NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [MBProgressHUD hideHUD];
     });
+    
 }
 
 
@@ -138,9 +139,10 @@
     [_ygp setDelegate:self];
     [self.view addSubview:_ygp];
     [_ygp initselectedSegmentIndex];
-    label = [[UILabel alloc]initWithFrame:CGRectMake(100, 150, 200, 200)];
-    label.font=[UIFont boldSystemFontOfSize:50.0];
-    [self.view addSubview:label];
+    
+//    label = [[UILabel alloc]initWithFrame:CGRectMake(100, 150, 200, 200)];
+//    label.font=[UIFont boldSystemFontOfSize:50.0];
+//    [self.view addSubview:label];
     
     _borderView1.borderType = BorderTypeDashed;
     _borderView1.dashPattern = 2;
@@ -202,7 +204,6 @@
         self.moreView.center = self.view.center;
         self.moreView.borderType = BorderTypeDashed;
         self.moreView.dashPattern = 2;
-//    self.moreView.spacePattern = 2;
         self.moreView.borderWidth = 1;
         self.moreView.cornerRadius = 10;
         self.moreView.borderColor = [UIColor redColor];

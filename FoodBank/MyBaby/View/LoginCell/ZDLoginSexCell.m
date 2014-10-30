@@ -29,7 +29,7 @@
 
 - (void)awakeFromNib
 {
-    ZDBaby *baby = [ZDBabyTool account];
+    ZDBaby *baby = [ZDBabyTool sharedZDBabyTool].account;
     self.isNan = baby.sex;
     if (self.isNan) {
         self.nan.selected = YES;
