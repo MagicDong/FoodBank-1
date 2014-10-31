@@ -44,6 +44,7 @@
     [self.window makeKeyAndVisible];
     //3.设置根控制器
 //    [currentVersion compare:sandBoxVersion] ==  NSOrderedDescending
+    [UIApplication sharedApplication].statusBarHidden = YES;
     if ((0))
     {
         // 存储当前版本号
@@ -56,12 +57,12 @@
         
     }else
     {
-        app.statusBarHidden = YES;
+//        app.statusBarHidden = YES;
         ZDBaby *baby = [ZDBabyTool sharedZDBabyTool].account;
         if (baby.userName == nil) {
             self.window.rootViewController = [[ZDRegisterViewController alloc]init];
         }
-        app.statusBarHidden = NO;
+//        app.statusBarHidden = NO;
         ZDTabBarController *tabBarVc =  [[ZDTabBarController alloc] init];
         window.rootViewController = tabBarVc;
     }

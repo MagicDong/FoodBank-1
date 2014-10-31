@@ -42,26 +42,27 @@
 {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
         
-        // 1.1创建自定义控制器
+        // 1.宝贝咨询
         ZDNewsViewController *home = [[ZDNewsViewController alloc] init];
         [self setupChileViewController:home title:@"宝贝咨询" imageName:@"tab001_1" selectedImageName:@"tab001"];
         self.home = home;
         
-        // 2.消息
+        // 2.新食材尝试
         ZDTryViewController *message = [[ZDTryViewController alloc] init];
         [self setupChileViewController:message title:@"新食材尝试" imageName:@"tab002_2" selectedImageName:@"tab002"];
         self.message = message;
         
+        // 3.尝试记录
         ZDRecordViewController *record = [[ZDRecordViewController alloc] init];
         [self setupChileViewController:record title:@"尝试记录" imageName:@"tab002_2" selectedImageName:@"tab002"];
         self.record = record;
         
-        // 3.广场
+        // 4.宝贝食材银行
         ZDBankViewController *discover = [[ZDBankViewController alloc] init];
         [self setupChileViewController:discover title:@"宝贝食材银行" imageName:@"tab003_3" selectedImageName:@"tab003"];
         self.discover = discover;
         
-        // 4.我
+        // 4.我的宝贝
         ZDMyBabyViewController *baby = [[ZDMyBabyViewController alloc] init];
         [self setupChileViewController:baby title:@"我的宝贝" imageName:@"tab004_4" selectedImageName:@"tab004"];
         self.baby = baby;

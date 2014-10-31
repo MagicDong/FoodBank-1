@@ -16,6 +16,9 @@
 /**
  *  时间选择
  */
+@property (weak, nonatomic) IBOutlet UITextField *userName;
+@property (weak, nonatomic) IBOutlet UITextField *password;
+@property (weak, nonatomic) IBOutlet UITextField *password2;
 
 @property (weak, nonatomic) IBOutlet UITextField *yanzheng;
 @property (weak, nonatomic) IBOutlet UIButton *huoquyanzheng;
@@ -33,6 +36,10 @@ int timerCount = 99;
         self.navigationController.navigationBar.opaque=YES;
     }
         self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemImage:@"navigationbar_back" highlightedImage:@"navigationbar_back_highlighted" target:self action:@selector(back)];
+    self.yanzheng.layer.borderWidth = 1;
+    UIColor *color = ZDColor(114, 208, 96);
+    self.yanzheng.layer.borderColor = [color CGColor];
+    [UIApplication sharedApplication].statusBarHidden = NO;
 }
 
 - (void)back{
@@ -97,6 +104,7 @@ int timerCount = 99;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.68 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [MBProgressHUD hideHUD];
         [self dismissViewControllerAnimated:YES completion:nil];
+        
     });
    
 }

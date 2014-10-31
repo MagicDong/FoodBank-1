@@ -173,7 +173,6 @@
         window.rootViewController = tabBarVc;
         [window makeKeyAndVisible];
     }else{
-        
         ZDInitViewController *tabBarVc = [[ZDInitViewController alloc] init];
         UIApplication *app = [UIApplication sharedApplication];
         UIWindow *window = app.keyWindow;

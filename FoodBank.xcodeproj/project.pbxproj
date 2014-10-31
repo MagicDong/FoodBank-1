@@ -106,6 +106,7 @@
 		183E72CE19DA60E6009CD24F /* ZDJiLuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 183E72CD19DA60E6009CD24F /* ZDJiLuViewController.m */; };
 		183EC3E719D26B3B00C756DE /* ZDDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 183EC3E519D26B3B00C756DE /* ZDDatePickerView.m */; };
 		183EC3E819D26B3B00C756DE /* ZDDatePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183EC3E619D26B3B00C756DE /* ZDDatePickerView.xib */; };
+		1853103A1A03290300497871 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 185310391A03290300497871 /* Default-568h@2x.png */; };
 		185BABE71A01EE1700248EBC /* login_bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 185BABE61A01EE1700248EBC /* login_bg.jpg */; };
 		185BABEA1A0201DF00248EBC /* ZDControllerTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 185BABE91A0201DF00248EBC /* ZDControllerTool.m */; };
 		1863EB7A19F75250006BFF21 /* ZDTiShiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1863EB7919F75250006BFF21 /* ZDTiShiViewController.m */; };
@@ -419,6 +420,7 @@
 		183EC3E419D26B3B00C756DE /* ZDDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZDDatePickerView.h; path = ../../Register/View/ZDDatePickerView.h; sourceTree = "<group>"; };
 		183EC3E519D26B3B00C756DE /* ZDDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZDDatePickerView.m; path = ../../Register/View/ZDDatePickerView.m; sourceTree = "<group>"; };
 		183EC3E619D26B3B00C756DE /* ZDDatePickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ZDDatePickerView.xib; path = ../../Register/View/ZDDatePickerView.xib; sourceTree = "<group>"; };
+		185310391A03290300497871 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		185BABE61A01EE1700248EBC /* login_bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = login_bg.jpg; sourceTree = "<group>"; };
 		185BABE81A0201DF00248EBC /* ZDControllerTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDControllerTool.h; sourceTree = "<group>"; };
 		185BABE91A0201DF00248EBC /* ZDControllerTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDControllerTool.m; sourceTree = "<group>"; };
@@ -1221,6 +1223,7 @@
 		1888B3F619CADE0C0030DB88 /* Other(其他) */ = {
 			isa = PBXGroup;
 			children = (
+				185310391A03290300497871 /* Default-568h@2x.png */,
 				185BABE61A01EE1700248EBC /* login_bg.jpg */,
 				183E72BE19DA41FD009CD24F /* 1.png */,
 				18F891CD19CBC2650046C022 /* FoodBank.pch */,
@@ -1693,6 +1696,7 @@
 				18A0930B19D551A100FC74FF /* ZDNotifyViewController.xib in Resources */,
 				187B399219FE2FB40054D7E8 /* ZDProductViewController.xib in Resources */,
 				18278C0619E64D4800574DD5 /* ZDAnQuanViewController.xib in Resources */,
+				1853103A1A03290300497871 /* Default-568h@2x.png in Resources */,
 				18204AB919E7824100EE57B9 /* ProvincesAndCities.plist in Resources */,
 				18204AB119E7821B00EE57B9 /* CZDatePickerView.xib in Resources */,
 				18278C0419E62F1200574DD5 /* ZDZhouViewController.xib in Resources */,

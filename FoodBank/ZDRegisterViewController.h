@@ -7,15 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <TencentOpenAPI/TencentOAuth.h>
 
-@interface ZDRegisterViewController : UIViewController<TencentSessionDelegate>
-{
-    TencentOAuth * _tencentOAuth;
-    NSMutableArray* _permissions;
-    UILabel                *_labelTitle;
-    UILabel                *_labelAccessToken;
-}
+
+@interface ZDRegisterViewController : UIViewController
 
 @end
 

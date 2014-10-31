@@ -7,6 +7,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZDRgsViewController">
             <connections>
                 <outlet property="huoquyanzheng" destination="j9v-1u-ZKi" id="J9e-mM-vBV"/>
+                <outlet property="password" destination="gyZ-qS-AYR" id="6wa-Dw-YKq"/>
+                <outlet property="password2" destination="HsB-i4-jzq" id="nCN-ff-Owp"/>
+                <outlet property="userName" destination="ans-bK-rF8" id="1Z2-Q2-09b"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="yanzheng" destination="1lr-i4-61i" id="B0U-pb-fPQ"/>
             </connections>
@@ -58,7 +61,7 @@
                         <action selector="zhuce:" destination="-1" eventType="touchUpInside" id="fRZ-Kf-mNg"/>
                     </connections>
                 </button>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入验证码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1lr-i4-61i">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="请输入验证码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1lr-i4-61i">
                     <rect key="frame" x="78" y="207" width="116" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="light" secureTextEntry="YES"/>

@@ -29,9 +29,6 @@
 @property (weak, nonatomic) IBOutlet ZDSearchBar *pwd;
 @property (weak, nonatomic) IBOutlet UIButton *login;
 @property (weak, nonatomic) IBOutlet UIButton *rgs;
-@property (weak, nonatomic) IBOutlet UIView *other;
-@property (weak, nonatomic) IBOutlet UIButton *qq;
-@property (weak, nonatomic) IBOutlet UIButton *sina;
 @property (weak, nonatomic) IBOutlet UIView *loginView;
 
 @end
@@ -41,24 +38,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"登录";
-    UIImage *image = [UIImage imageWithNamed:@"ipad_user_three_login"];
-    self.other.backgroundColor = [UIColor colorWithPatternImage:image];
     if(iOS7)
     {
         self.edgesForExtendedLayout = NO;
-        self.navigationController.navigationBar.opaque=YES;
+        self.navigationController.navigationBar.opaque = YES;
     }
-
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"login_bg.jpg"]];
     [UIApplication sharedApplication].statusBarHidden = YES;
 }
 
-
-
 /** 登录按钮 */
 - (IBAction)login:(UIButton *)sender {
+    
     if(self.user.text.length == 0){
         UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"温馨提示" message:@"用户名不能为空" delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
+        [alert show];
+        return;
+    }
+    if(self.user.text.length != 11){
+        UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"温馨提示" message:@"用户名错误" delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
         [alert show];
         return;
     }
@@ -77,7 +75,6 @@
         [alert show];
         return;
     }
-    
     // 发送网络请求判断是否需要初始化
     if((1)){
         ZDInitViewController *chushihua = [[ZDInitViewController alloc] init];
@@ -102,17 +99,6 @@
         
     }];
 //    [self.navigationController pushViewController:tabBarVc animated:YES];
-}
-
-
-/** 代理自动调用，获取用户信息 */
-- (void)getUserInfoResponse:(APIResponse *)response
-{
-    [self saveAccount:response.jsonResponse];
-    ZDTabBarController *root = [[ZDTabBarController alloc]init];
-    UIApplication *app = [UIApplication sharedApplication];
-    UIWindow *windows = app.keyWindow;
-    windows.rootViewController = root;
 }
 
 /** 保存用户信息 */
