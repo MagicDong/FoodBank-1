@@ -47,6 +47,7 @@ static NSString *reusableViewID = @"SectionHeader";
     UINib *nib = [UINib nibWithNibName:@"CZProductCell" bundle:nil];
     [self.collection registerNib:nib forCellWithReuseIdentifier:ProductCellID];
     [self.collection registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:reusableViewID];
+    
 }
 
 - (NSArray *)dataList
@@ -69,11 +70,6 @@ static NSString *reusableViewID = @"SectionHeader";
 {
     // forIndexPath －》强行要求程序员必须注册表格的可重用单元格
     CZProductCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:ProductCellID forIndexPath:indexPath];
-    
-    // 以下判断不会工作
-    //    if (cell == nil) {
-    //        //
-    //    }
     
     // 用模型设置cell
     cell.product = self.dataList[indexPath.item];
@@ -174,11 +170,22 @@ static NSString *reusableViewID = @"SectionHeader";
 }
 - (IBAction)queding:(UIButton *)sender {
     // 跳转到TabBarController
+    for (UIViewController *controller in self.childViewControllers) {
+        // 将子视图控制器的视图从父视图中删除
+        [controller.view removeFromSuperview];
+        // 将视图控制器从父视图控制器中删除
+        [controller removeFromParentViewController];
+    }
+    [self.view removeFromSuperview];
+    
     ZDTabBarController *tabBarVc = [[ZDTabBarController alloc] init];
     UIApplication *app = [UIApplication sharedApplication];
     UIWindow *window = app.keyWindow;
     app.statusBarHidden = NO;
     window.rootViewController = tabBarVc;
+}
+- (void)dealloc{
+    ZDLog(@"四库界面销毁");
 }
 
 

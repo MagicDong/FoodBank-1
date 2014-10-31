@@ -83,6 +83,7 @@
     [self.userView addSubview:BtnAllergy];
     self.BtnAllergy = BtnAllergy;
     
+    self.navigationItem.leftBarButtonItem = nil;
     if(iOS7)
     {
         self.edgesForExtendedLayout = NO;
@@ -177,6 +178,7 @@
     if(dateStr == nil){
         dateStr = @"汉族";
     }
+    
     [self.BtnNation setTitle:dateStr forState:UIControlStateNormal];
     [self.BtnNation setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [self.BtnNation setImage:self.downImage forState:UIControlStateNormal];

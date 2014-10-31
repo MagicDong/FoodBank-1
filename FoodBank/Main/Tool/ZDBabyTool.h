@@ -24,4 +24,6 @@ singleton_interface(ZDBabyTool)
  *  获取一个存储账号的对象
  */
 - (ZDBaby *)account;
+/* 删除当前账号*/
+- (BOOL)removeAccount;
 @end

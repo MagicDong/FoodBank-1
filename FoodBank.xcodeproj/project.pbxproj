@@ -106,7 +106,7 @@
 		183E72CE19DA60E6009CD24F /* ZDJiLuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 183E72CD19DA60E6009CD24F /* ZDJiLuViewController.m */; };
 		183EC3E719D26B3B00C756DE /* ZDDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 183EC3E519D26B3B00C756DE /* ZDDatePickerView.m */; };
 		183EC3E819D26B3B00C756DE /* ZDDatePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183EC3E619D26B3B00C756DE /* ZDDatePickerView.xib */; };
-		1853103A1A03290300497871 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 185310391A03290300497871 /* Default-568h@2x.png */; };
+		1853103C1A03296600497871 /* loginIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1853103B1A03296600497871 /* loginIcon.png */; };
 		185BABE71A01EE1700248EBC /* login_bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 185BABE61A01EE1700248EBC /* login_bg.jpg */; };
 		185BABEA1A0201DF00248EBC /* ZDControllerTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 185BABE91A0201DF00248EBC /* ZDControllerTool.m */; };
 		1863EB7A19F75250006BFF21 /* ZDTiShiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1863EB7919F75250006BFF21 /* ZDTiShiViewController.m */; };
@@ -395,7 +395,7 @@
 		18347AB419EF781800EDD75E /* ZDJuJueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDJuJueViewController.h; sourceTree = "<group>"; };
 		18347AB519EF781800EDD75E /* ZDJuJueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDJuJueViewController.m; sourceTree = "<group>"; };
 		18347AB719EF783300EDD75E /* ZDWeiChangShiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDWeiChangShiViewController.h; sourceTree = "<group>"; };
-		18347AB819EF783300EDD75E /* ZDWeiChangShiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDWeiChangShiViewController.m; sourceTree = "<group>"; };
+		18347AB819EF783300EDD75E /* ZDWeiChangShiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDWeiChangShiViewController.m; sourceTree = "<group>"; wrapsLines = 0; };
 		183E72AD19DA4092009CD24F /* SCHCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCHCircleView.h; sourceTree = "<group>"; };
 		183E72AE19DA4092009CD24F /* SCHCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCHCircleView.m; sourceTree = "<group>"; };
 		183E72AF19DA4092009CD24F /* SCHCircleViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCHCircleViewCell.h; sourceTree = "<group>"; };
@@ -420,7 +420,7 @@
 		183EC3E419D26B3B00C756DE /* ZDDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZDDatePickerView.h; path = ../../Register/View/ZDDatePickerView.h; sourceTree = "<group>"; };
 		183EC3E519D26B3B00C756DE /* ZDDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZDDatePickerView.m; path = ../../Register/View/ZDDatePickerView.m; sourceTree = "<group>"; };
 		183EC3E619D26B3B00C756DE /* ZDDatePickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ZDDatePickerView.xib; path = ../../Register/View/ZDDatePickerView.xib; sourceTree = "<group>"; };
-		185310391A03290300497871 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		1853103B1A03296600497871 /* loginIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginIcon.png; sourceTree = "<group>"; };
 		185BABE61A01EE1700248EBC /* login_bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = login_bg.jpg; sourceTree = "<group>"; };
 		185BABE81A0201DF00248EBC /* ZDControllerTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDControllerTool.h; sourceTree = "<group>"; };
 		185BABE91A0201DF00248EBC /* ZDControllerTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDControllerTool.m; sourceTree = "<group>"; };
@@ -570,7 +570,7 @@
 		18F891F019CC189E0046C022 /* ZDNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDNavViewController.h; sourceTree = "<group>"; };
 		18F891F119CC189E0046C022 /* ZDNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDNavViewController.m; sourceTree = "<group>"; };
 		18FA20AA19CFB8C700430E37 /* ZDMyBabyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZDMyBabyViewController.h; path = ../../Main/Controller/ZDMyBabyViewController.h; sourceTree = "<group>"; };
-		18FA20AB19CFB8C700430E37 /* ZDMyBabyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZDMyBabyViewController.m; path = ../../Main/Controller/ZDMyBabyViewController.m; sourceTree = "<group>"; };
+		18FA20AB19CFB8C700430E37 /* ZDMyBabyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZDMyBabyViewController.m; path = ../../Main/Controller/ZDMyBabyViewController.m; sourceTree = "<group>"; wrapsLines = 0; };
 		18FA20AF19CFB99100430E37 /* ZDCommonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDCommonCell.h; sourceTree = "<group>"; };
 		18FA20B019CFB99100430E37 /* ZDCommonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDCommonCell.m; sourceTree = "<group>"; };
 		18FA20B119CFB99100430E37 /* ZDBadgeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDBadgeButton.h; sourceTree = "<group>"; };
@@ -1223,13 +1223,13 @@
 		1888B3F619CADE0C0030DB88 /* Other(其他) */ = {
 			isa = PBXGroup;
 			children = (
-				185310391A03290300497871 /* Default-568h@2x.png */,
 				185BABE61A01EE1700248EBC /* login_bg.jpg */,
 				183E72BE19DA41FD009CD24F /* 1.png */,
 				18F891CD19CBC2650046C022 /* FoodBank.pch */,
 				1888B3C519CADBDC0030DB88 /* AppDelegate.h */,
 				1888B3C619CADBDC0030DB88 /* AppDelegate.m */,
 				1888B3CE19CADBDC0030DB88 /* Images.xcassets */,
+				1853103B1A03296600497871 /* loginIcon.png */,
 				1888B3D019CADBDC0030DB88 /* LaunchScreen.xib */,
 			);
 			name = "Other(其他)";
@@ -1696,7 +1696,6 @@
 				18A0930B19D551A100FC74FF /* ZDNotifyViewController.xib in Resources */,
 				187B399219FE2FB40054D7E8 /* ZDProductViewController.xib in Resources */,
 				18278C0619E64D4800574DD5 /* ZDAnQuanViewController.xib in Resources */,
-				1853103A1A03290300497871 /* Default-568h@2x.png in Resources */,
 				18204AB919E7824100EE57B9 /* ProvincesAndCities.plist in Resources */,
 				18204AB119E7821B00EE57B9 /* CZDatePickerView.xib in Resources */,
 				18278C0419E62F1200574DD5 /* ZDZhouViewController.xib in Resources */,
@@ -1713,6 +1712,7 @@
 				1888B3CF19CADBDC0030DB88 /* Images.xcassets in Resources */,
 				18204AA819E7820100EE57B9 /* ZDLoginNickCell.xib in Resources */,
 				18FA211B19CFF40200430E37 /* MJRefresh.bundle in Resources */,
+				1853103C1A03296600497871 /* loginIcon.png in Resources */,
 				18FA20C819CFF2D200430E37 /* MBProgressHUD.bundle in Resources */,
 				18204ABB19E7824100EE57B9 /* TSLocateView.xib in Resources */,
 				183E72BB19DA413A009CD24F /* viewCell.xib in Resources */,

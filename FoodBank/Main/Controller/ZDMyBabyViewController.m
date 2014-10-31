@@ -59,15 +59,18 @@ static NSString *heardID = @"headerView";
     self.tableView.backgroundColor = ZDColor(219, 219, 219);
     NSString *imageName =[NSString stringWithFormat:@"more_baobao_bg"];
     _bgIcon = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]];
-//    _bgIcon.image = [UIImage imageNamed:imageName];
     _bgIcon.bounds = CGRectMake(0, 0, 320, 300);
     _bgIcon.layer.anchorPoint = CGPointMake(0.5, 0);
     _bgIcon.layer.position = CGPointMake(160, -95);
     [self.tableView insertSubview:_bgIcon atIndex:0];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    
     // 3.添加更多按钮
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemImage:@"navigationbar_more" highlightedImage:@"navigationbar_more_highlighted" target:self action:@selector(more)];
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:YES];
 }
 
 - (void)more{
@@ -97,6 +100,7 @@ static NSString *heardID = @"headerView";
         self.cover = cover;
         [self.view.window addSubview:cover];
         [self.view.window bringSubviewToFront:self.moreView];
+        
         [UIView animateWithDuration:0.5 animations:^{
             [self.moreView setAlpha:1];
             [self.cover setAlpha: 0.65];

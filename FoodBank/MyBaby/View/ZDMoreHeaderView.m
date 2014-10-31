@@ -60,16 +60,18 @@
     UITapGestureRecognizer *singleTap =[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(onClickImage)];
     [self.userIcon addGestureRecognizer:singleTap];
     
-//    ZDBaby *baby = [ZDBabyTool account];
-//    if (baby.userIcon != nil) {
-//         self.userIcon.image = baby.userIcon;
-//    }
-//    if (baby.nickName != nil) {
-//       [self.xiugai setTitle:baby.nickName forState:UIControlStateNormal];
-//    }
-//    if (baby.signature != nil) {
-//        self.userSign.text = baby.signature;
-//    }
+    ZDBaby *baby = [ZDBabyTool sharedZDBabyTool].account;
+    if (baby.userIcon != nil) {
+         self.userIcon.image = baby.userIcon;
+    }
+    if ([baby.nickName isEqualToString:@"请输入昵称"]) {
+        [self.xiugai setTitle:baby.nickName forState:UIControlStateNormal];
+    }else{
+        
+    }
+    if ([baby.signature isEqualToString:@"""这个宝宝很聪明什么也没留下..."""]) {
+        self.userSign.text = baby.signature;
+    }
 }
 
 - (void)onClickImage{

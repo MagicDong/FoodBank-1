@@ -10,6 +10,9 @@
 #import "UIView+Add.h"
 #import "MBProgressHUD+ZD.h"
 #import "ZDChooseButton.h"
+#import "ZDInitViewController.h"
+#import "ZDBaby.h"
+#import "ZDBabyTool.h"
 
 @interface ZDRgsViewController ()
 
@@ -50,6 +53,7 @@ int timerCount = 99;
 {
     if (!_timer) {
         _timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerFire) userInfo:nil repeats:YES];
+        
     }
     return _timer;
 }
@@ -64,9 +68,6 @@ int timerCount = 99;
 {
     timerCount--;
     [self.huoquyanzheng setTitle:[NSString stringWithFormat:@"%d",timerCount] forState:UIControlStateNormal];
-//    self.huoquyanzheng.titleLabel.text = [NSString stringWithFormat:@"%d",timerCount];
-//    self.huoquyanzheng.titleLabel.font = [UIFont systemFontOfSize:15];
-    
     if (timerCount == 0) {
         [self timerColsed];
     }
@@ -101,18 +102,23 @@ int timerCount = 99;
 
 - (IBAction)zhuce:(UIButton *)sender {
      [MBProgressHUD showSuccess:@"注册成功"];
+    // 注册成功后！
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.68 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [MBProgressHUD hideHUD];
-        [self dismissViewControllerAnimated:YES completion:nil];
-        
+//        [self dismissViewControllerAnimated:YES completion:nil];
+        ZDBabyTool *babyTool = [ZDBabyTool sharedZDBabyTool];
+        ZDBaby *baby = [[ZDBaby alloc]init];
+        baby.userName = self.userName.text;
+        baby.password = self.password.text;
+        [babyTool saveAccount:baby];
+        // 进入初始化界面
+        ZDInitViewController *initView = [[ZDInitViewController alloc]init];
+        [self.navigationController pushViewController:initView animated:YES];
     });
-   
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     [self.view endEditing:YES];
-//    UITextField *textField =  [UIView findFistResponder:self.view];
-//    [textField resignFirstResponder];
 }
 
 @end

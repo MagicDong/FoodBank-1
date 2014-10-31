@@ -71,7 +71,7 @@
         self.edgesForExtendedLayout = NO;
         self.navigationController.navigationBar.opaque=YES;
     }
-
+    
 //    UIImagePickerControllerSourceType sourceType = UIImagePickerControllerSourceTypeCamera;
 //    if (![UIImagePickerController isSourceTypeAvailable: UIImagePickerControllerSourceTypeCamera]) {
 //        sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
@@ -85,6 +85,7 @@
 //    picker.sourceType = sourceType;
 //    [self presentViewController:picker animated:YES completion:nil];
 //
+        
     
 //    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
 //        

@@ -112,6 +112,7 @@
     account.figureurl_qq_2 = dict[@"figureurl_qq_2"];
     account.gender = dict[@"gender"];
     [ZDAccountTool saveAccount:account];
+    
 }
 
 /**

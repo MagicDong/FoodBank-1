@@ -59,14 +59,8 @@ static NSString *reusableViewID = @"SectionHeader";
     // forIndexPath －》强行要求程序员必须注册表格的可重用单元格
     ZDProductCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:ProductCellID forIndexPath:indexPath];
     
-    // 以下判断不会工作
-    //    if (cell == nil) {
-    //        //
-    //    }·
-    
     // 用模型设置cell
     cell.product = self.dataList[indexPath.item];
-    
     return cell;
 }
 
@@ -75,6 +69,7 @@ static NSString *reusableViewID = @"SectionHeader";
     UICollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:
                                             UICollectionElementKindSectionHeader withReuseIdentifier:@"SectionHeader" forIndexPath:indexPath];
     UILabel *label = (UILabel *)[headerView viewWithTag:1];
+    
     if (!label) {
         label = [[UILabel alloc] initWithFrame:CGRectInset(headerView.bounds, 5, 5)];
         label.tag = 1;
@@ -83,6 +78,7 @@ static NSString *reusableViewID = @"SectionHeader";
         [headerView addSubview:label];
     }
     label.text = [NSString stringWithFormat:@"  蔬菜类%d", indexPath.section+1];
+
     return headerView;
 }
 

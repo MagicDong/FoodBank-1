@@ -94,7 +94,7 @@
         self.edgesForExtendedLayout = NO;
         self.navigationController.navigationBar.opaque=YES;
     }
-
+    
     
     // 删除系统自动生成的UITabBarButton
     for (UIView *child in self.tabBar.subviews) {

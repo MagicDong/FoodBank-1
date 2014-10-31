@@ -12,6 +12,8 @@
 #import "ZDNavViewController.h"
 #import "ZDTabBarController.h"
 #import "ZDInitViewController.h"
+#import "ZDBaby.h"
+#import "ZDBabyTool.h"
 
 // 当前新特性页面的个数
 #define ZDNewfeatureImageCount 5
@@ -165,7 +167,9 @@
 - (void)start
 {
     // 判断当前是否已经有登陆过的账号存在
-    if ((0)) {
+    ZDBaby *baby = [ZDBabyTool sharedZDBabyTool].account;
+    
+    if (baby.userName != nil) {
         ZDTabBarController *tabBarVc = [[ZDTabBarController alloc] init];
         UIApplication *app = [UIApplication sharedApplication];
         UIWindow *window = app.keyWindow;
@@ -173,7 +177,7 @@
         window.rootViewController = tabBarVc;
         [window makeKeyAndVisible];
     }else{
-        ZDInitViewController *tabBarVc = [[ZDInitViewController alloc] init];
+        ZDRegisterViewController *tabBarVc = [[ZDRegisterViewController alloc] init];
         UIApplication *app = [UIApplication sharedApplication];
         UIWindow *window = app.keyWindow;
         app.statusBarHidden = NO;

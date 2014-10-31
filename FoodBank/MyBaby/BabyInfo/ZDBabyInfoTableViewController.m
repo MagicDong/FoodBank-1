@@ -67,7 +67,8 @@ static NSString *birthdayCellID = @"birthdayCell";
     
     if (buttonIndex == 0) {
         if (alertView.tag == 0 ) {
-            ZDLog(@"签名%@",alertView.textField.text);
+//            self.signCell.sign.text = alertView.textField.text;
+//            ZDLog(@"签名%@",alertView.textField.text);
         }else if(alertView.tag == 1){
             ZDLog(@"昵称%@",alertView.textField.text);
         }else if (alertView.tag == 3){
@@ -94,9 +95,7 @@ static NSString *birthdayCellID = @"birthdayCell";
             baby.birthday = self.birthdayCell.birthday.text;
             baby.sex = self.sexCell.isNan;
             BOOL isOK = [babyTool saveAccount:baby];
-            ZDBaby *baby2 = [babyTool account];
-            ZDLog(@"%@",baby.nickName);
-            ZDLog(@"%@",baby2.nickName);
+            ZDLog(@"%@",baby.signature);
             if (isOK) {
                 [self.navigationController popViewControllerAnimated:YES];
             }
@@ -128,9 +127,11 @@ static NSString *birthdayCellID = @"birthdayCell";
 //        self.navigationController.navigationBar.opaque=YES;
 //    }
 //
-    UIBarButtonItem *btn = [UIBarButtonItem alloc];
-    [btn setTintColor:[UIColor orangeColor]];
-    self.navigationItem.rightBarButtonItem = [btn initWithTitle:@"保存" style:UIBarButtonItemStylePlain target:self action:@selector(btnSave:)];
+    UIBarButtonItem *btn = [[UIBarButtonItem alloc]initWithTitle:@"保存" style:UIBarButtonItemStyleDone target:self action:@selector(btnSave:)];
+    [btn setTintColor:[UIColor whiteColor]];
+    [btn setTitle:@"保存"];
+    self.navigationItem.rightBarButtonItem = btn;
+//    [btn initWithTitle:@"保存" style:UIBarButtonItemStylePlain target:self action:@selector(btnSave:)];
 }
 
 - (void)btnSave:(UIBarButtonItem *)button{

@@ -37,15 +37,18 @@
     // 2.获取当前软件的版本号
     NSDictionary *md =[NSBundle mainBundle].infoDictionary;
     NSString *currentVersion = md[key];
-    
-    UIApplication *app = [UIApplication sharedApplication];
-    UIWindow *window = app.keyWindow;
+
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     //3.设置根控制器
-//    [currentVersion compare:sandBoxVersion] ==  NSOrderedDescending
+//
+     ZDBaby *baby = [ZDBabyTool sharedZDBabyTool].account;
+    BOOL tool = [ZDBabyTool sharedZDBabyTool].removeAccount;
     [UIApplication sharedApplication].statusBarHidden = YES;
-    if ((0))
+    
+    
+//    if ([currentVersion compare:sandBoxVersion] ==  NSOrderedDescending)
+    if (tool)
     {
         // 存储当前版本号
         [defaults setObject:currentVersion forKey:key];
@@ -53,54 +56,31 @@
         
         // 第一次使用当前版本  --> 显示新特性界面
         ZDNewfeatureViewController *newfeature = [[ZDNewfeatureViewController alloc] init];
-        window.rootViewController = newfeature;
+        self.window.rootViewController = newfeature;
         
     }else
     {
-//        app.statusBarHidden = YES;
-        ZDBaby *baby = [ZDBabyTool sharedZDBabyTool].account;
+        ZDLog(@"%@",baby.userName);
         if (baby.userName == nil) {
-            self.window.rootViewController = [[ZDRegisterViewController alloc]init];
+            ZDRegisterViewController *reg = [[ZDRegisterViewController alloc]init];
+            self.window.rootViewController = reg;
+        }else{
+            [UIApplication sharedApplication].statusBarHidden = NO;
+            ZDTabBarController *tabBarVc =  [[ZDTabBarController alloc] init];
+            self.window.rootViewController = tabBarVc;
         }
-//        app.statusBarHidden = NO;
-        ZDTabBarController *tabBarVc =  [[ZDTabBarController alloc] init];
-        window.rootViewController = tabBarVc;
     }
     return YES;
 }
-
-
-- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
-    return [TencentOAuth HandleOpenURL:url];
-}
-
-- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url{
-    return [TencentOAuth HandleOpenURL:url];
-}
-
-- (void)applicationWillResignActive:(UIApplication *)application {
-    
-}
-
-- (void)applicationDidEnterBackground:(UIApplication *)application {
-
-}
-
-- (void)applicationWillEnterForeground:(UIApplication *)application {
-
-}
-
-- (void)applicationDidBecomeActive:(UIApplication *)application {
-
-}
-
-- (void)applicationWillTerminate:(UIApplication *)application {
-
-}
-
-- (void)applicationDidReceiveMemoryWarning:(UIApplication *)application{
+// 当应用程序接收到内存警告的时候就会调用
+- (void)applicationDidReceiveMemoryWarning:(UIApplication *)application
+{
     // 应该在该方法中释放掉不需要的内存
+    // 1.停止所有的子线程下载
     [[SDWebImageManager sharedManager] cancelAll];
+    
+    // 2.清空SDWebImage保存的所有内存缓存
     [[SDWebImageManager sharedManager].imageCache clearMemory];
 }
+
 @end

@@ -45,4 +45,16 @@ singleton_implementation(ZDBabyTool)
     return account;
 }
 
+- (BOOL)removeAccount
+{
+    // 获取Doc目录
+    NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    // 拼接完整路径 将从此文件中取数据
+    NSString *dataPath = [docPath stringByAppendingPathComponent:@"baby.data"];
+    // 读取指定路径的文件
+    NSFileManager *manager =  [NSFileManager defaultManager];
+    BOOL success = [manager removeItemAtPath:dataPath error:nil];
+    
+    return success;
+}
 @end

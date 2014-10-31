@@ -9,10 +9,24 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="fWb-Cz-tQo">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                </imageView>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="fWb-Cz-tQo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="KXy-qt-YjW"/>
+                <constraint firstAttribute="bottom" secondItem="fWb-Cz-tQo" secondAttribute="bottom" id="TKV-XT-7DF"/>
+                <constraint firstAttribute="trailing" secondItem="fWb-Cz-tQo" secondAttribute="trailing" id="lmd-0T-6Ge"/>
+                <constraint firstItem="fWb-Cz-tQo" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="zxy-e0-Lhh"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <point key="canvasLocation" x="245" y="288"/>
         </view>
     </objects>
+    <resources>
+        <image name="loginIcon.png" width="640" height="1136"/>
+    </resources>
 </document>
