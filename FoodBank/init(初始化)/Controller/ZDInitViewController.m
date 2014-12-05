@@ -43,11 +43,11 @@
 /**
  *  时间选择
  */
-@property (nonatomic ,weak) ZDDatePickerView *datePickerView;
+@property (nonatomic ,strong) ZDDatePickerView *datePickerView;
 /**
  *  时间选择
  */
-@property (nonatomic ,weak) ZDNationView *nationView;
+@property (nonatomic ,strong) ZDNationView *nationView;
 
 @end
 
@@ -150,6 +150,12 @@
     // 1.取出按钮中的图片判断当前的图片是向上还是向下
     if (titleBtn.currentImage == self.downImage ) {
         // 向下 --> 向上
+        _datePickerView = [ZDDatePickerView datePickerView];
+        _datePickerView.y = self.view.height;
+        // 设置代理
+        _datePickerView.delegate = self;
+        [self.view addSubview:_datePickerView];
+        
         [titleBtn setImage:self.upImage forState:UIControlStateNormal];
         self.datePickerView.y = self.view.height;
         [UIView animateWithDuration:0.25 animations:^{
@@ -174,6 +180,13 @@
     // 1.取出按钮中的图片判断当前的图片是向上还是向下
     if (titleBtn.currentImage == self.downImage) {
         // 向下 --> 向上
+        
+        _nationView = [ZDNationView nationView];
+        _nationView.y = self.view.height;
+        // 设置代理
+        _nationView.delegate = self;
+        [self.view addSubview:_nationView];
+        
         [titleBtn setImage:self.upImage forState:UIControlStateNormal];
         self.nationView.y = self.view.height;
         [UIView animateWithDuration:0.25 animations:^{
@@ -203,7 +216,7 @@
     [UIView animateWithDuration:0.25 animations:^{
         self.datePickerView.y = self.view.height;
     } completion:^(BOOL finished) {
-        
+        [self.datePickerView removeFromSuperview];
     }];
 }
 

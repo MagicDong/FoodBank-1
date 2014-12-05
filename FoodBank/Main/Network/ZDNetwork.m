@@ -14,6 +14,8 @@
 #import "MJExtension.h"
 #import "ZDFoodCategory.h"
 #import "ZDNewFood.h"
+#import "ZDBabyTool.h"
+#import "ZDBaby.h"
 
 #define kBaseURL @"http://192.168.1.200/mobile"
 #define kTimeout  10
@@ -95,7 +97,7 @@
               Callback:(void (^)(RspState *,NSString *))callback
 {
     NSString *urlStr = [NSString stringWithFormat:@"%@%@", kBaseURL, @"/auth/login.do"];
-    
+//    /auth/login.do
     NSData *data=[password dataUsingEncoding:NSUTF16LittleEndianStringEncoding];
     
     unsigned char result[16];
@@ -123,11 +125,13 @@
         NSString *str = @"";
         if(rsp.rspCode == 0)
         {
-            str = rspDict[@""];
+            str = rspDict[@"jsessionid"];
 //            LoginAccount *account=[[LoginAccount alloc]initWithPhone:phone Md5Password:md5Password];
 //            [LoginAccountTool sharedLoginAccountTool].currentAccount=account;
 //            [LoginAccountTool sharedLoginAccountTool].loginState=YES;
         }
+        
+        
         callback(rsp,str);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         RspState *rsp = [RspState rspStateNetError];
@@ -188,6 +192,8 @@
 + (void)postBabyInfoWithBirthday:(NSString *)birthday nation:(NSString *)nation allergy:(NSString *)allergy CallBack:(void (^)(RspState *))callback
 {
 //birthday=2011/05/05&nation=1&allergy=1,2,3
+    ZDBabyTool *babyTool = [ZDBabyTool sharedZDBabyTool];
+    ZDBaby *baby = [babyTool account];
     
     NSString *urlStr = [NSString stringWithFormat:@"%@/mobile/postBabyInfo.do;jsessionid=%@", kBaseURL,@""];
     
@@ -201,7 +207,6 @@
     manager.requestSerializer.timeoutInterval = kTimeout;
     [manager POST:urlStr parameters:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
         [self _operationLog:operation];
-        
         NSDictionary *rspDict = responseObject;
         RspState *rsp = [[RspState alloc]initWithDict:rspDict];
         if(rsp.rspCode == 0)
@@ -221,7 +226,6 @@
 {
 //    /mobile/getUserTryingMaterial2.do;jsessionid=
     NSString *urlStr = [NSString stringWithFormat:@"%@/mobile/getUserTryingMaterial2.do;jsessionid=%@", kBaseURL, kRequestPath];
-    
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.requestSerializer.timeoutInterval = kTimeout;
@@ -252,6 +256,7 @@
         [self _operationLog:operation];
         
         RspState *rsp = [RspState rspStateNetError];
+        
         callback(rsp,nil);
     }];
 }
@@ -357,6 +362,7 @@
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         RspState *rsp = [RspState rspStateNetError];
         callback(rsp);
+        
     }];
 }
 

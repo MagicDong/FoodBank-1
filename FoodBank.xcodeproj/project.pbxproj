@@ -107,6 +107,8 @@
 		183EC3E719D26B3B00C756DE /* ZDDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 183EC3E519D26B3B00C756DE /* ZDDatePickerView.m */; };
 		183EC3E819D26B3B00C756DE /* ZDDatePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183EC3E619D26B3B00C756DE /* ZDDatePickerView.xib */; };
 		1853103C1A03296600497871 /* loginIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1853103B1A03296600497871 /* loginIcon.png */; };
+		185900B31A31AEB50056C096 /* ZDYueZongJie.m in Sources */ = {isa = PBXBuildFile; fileRef = 185900B21A31AEB50056C096 /* ZDYueZongJie.m */; };
+		185900B61A31AEC30056C096 /* ZDZhouZongJie.m in Sources */ = {isa = PBXBuildFile; fileRef = 185900B51A31AEC30056C096 /* ZDZhouZongJie.m */; };
 		185BABE71A01EE1700248EBC /* login_bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 185BABE61A01EE1700248EBC /* login_bg.jpg */; };
 		185BABEA1A0201DF00248EBC /* ZDControllerTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 185BABE91A0201DF00248EBC /* ZDControllerTool.m */; };
 		1863EB7A19F75250006BFF21 /* ZDTiShiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1863EB7919F75250006BFF21 /* ZDTiShiViewController.m */; };
@@ -434,6 +436,10 @@
 		183EC3E519D26B3B00C756DE /* ZDDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZDDatePickerView.m; path = ../../Register/View/ZDDatePickerView.m; sourceTree = "<group>"; };
 		183EC3E619D26B3B00C756DE /* ZDDatePickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ZDDatePickerView.xib; path = ../../Register/View/ZDDatePickerView.xib; sourceTree = "<group>"; };
 		1853103B1A03296600497871 /* loginIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginIcon.png; sourceTree = "<group>"; };
+		185900B11A31AEB50056C096 /* ZDYueZongJie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDYueZongJie.h; sourceTree = "<group>"; };
+		185900B21A31AEB50056C096 /* ZDYueZongJie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDYueZongJie.m; sourceTree = "<group>"; };
+		185900B41A31AEC30056C096 /* ZDZhouZongJie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDZhouZongJie.h; sourceTree = "<group>"; };
+		185900B51A31AEC30056C096 /* ZDZhouZongJie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDZhouZongJie.m; sourceTree = "<group>"; };
 		185BABE61A01EE1700248EBC /* login_bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = login_bg.jpg; sourceTree = "<group>"; };
 		185BABE81A0201DF00248EBC /* ZDControllerTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDControllerTool.h; sourceTree = "<group>"; };
 		185BABE91A0201DF00248EBC /* ZDControllerTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDControllerTool.m; sourceTree = "<group>"; };
@@ -1269,6 +1275,10 @@
 				18DFAA041A305A9D00F6651F /* ZDNewFood.m */,
 				18DFAA061A30652900F6651F /* ZDTryRecord.h */,
 				18DFAA071A30652900F6651F /* ZDTryRecord.m */,
+				185900B11A31AEB50056C096 /* ZDYueZongJie.h */,
+				185900B21A31AEB50056C096 /* ZDYueZongJie.m */,
+				185900B41A31AEC30056C096 /* ZDZhouZongJie.h */,
+				185900B51A31AEC30056C096 /* ZDZhouZongJie.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1812,6 +1822,7 @@
 				1888B3C719CADBDC0030DB88 /* AppDelegate.m in Sources */,
 				18FA210619CFF3E700430E37 /* MJTypeEncoding.m in Sources */,
 				1894F7D519FF37A10009662E /* CZProductCell.m in Sources */,
+				185900B61A31AEC30056C096 /* ZDZhouZongJie.m in Sources */,
 				18204AD119E7840400EE57B9 /* ZDSingView.m in Sources */,
 				18278C1B19E686DA00574DD5 /* FMDatabaseAdditions.m in Sources */,
 				18A0930E19D56C5500FC74FF /* ZDSupViewController.m in Sources */,
@@ -1977,6 +1988,7 @@
 				18204AA319E7820100EE57B9 /* ZDLoginCitysCell.m in Sources */,
 				18F37EA919D7F66400325A25 /* MJPhoto.m in Sources */,
 				18202B6919EE0890005D9481 /* ZDKnowTableViewController.m in Sources */,
+				185900B31A31AEB50056C096 /* ZDYueZongJie.m in Sources */,
 				1829A7C419EBC83A00CD2624 /* ChoiceButton.m in Sources */,
 				18252A8F19E910A6008B4C71 /* ZDEditViewController.m in Sources */,
 				1894FC0B19D961FE00393A6A /* UIBarButtonItem+Badge.m in Sources */,

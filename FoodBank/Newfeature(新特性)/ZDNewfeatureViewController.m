@@ -183,6 +183,7 @@
         app.statusBarHidden = NO;
         window.rootViewController = tabBarVc;
         [window makeKeyAndVisible];
+        
     }
 }
 

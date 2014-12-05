@@ -138,13 +138,15 @@ int timerCount = 99;
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.68 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [MBProgressHUD hideHUD];
                 //        [self dismissViewControllerAnimated:YES completion:nil];
-                ZDBabyTool *babyTool = [ZDBabyTool sharedZDBabyTool];
-                ZDBaby *baby = [[ZDBaby alloc]init];
-                baby.userName = self.userName.text;
-                baby.password = self.password.text;
-                [babyTool saveAccount:baby];
-                [ZDNetwork LoginWithPhone:baby.userName Password:baby.password Callback:^(RspState *rsp) {
+
+                [ZDNetwork LoginWithPhone:self.userName.text Password:self.password.text Callback:^(RspState *rsp,NSString *jsessionid) {
                     if (rsp.rspCode == 0) {
+                        ZDBabyTool *babyTool = [ZDBabyTool sharedZDBabyTool];
+                        ZDBaby *baby = [[ZDBaby alloc]init];
+                        baby.userName = self.userName.text;
+                        baby.password = self.password.text;
+                        baby.jsessionid = jsessionid;
+                        [babyTool saveAccount:baby];
                         // 进入初始化界面
                         ZDInitViewController *initView = [[ZDInitViewController alloc]init];
                         [self.navigationController pushViewController:initView animated:YES];

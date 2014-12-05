@@ -18,6 +18,10 @@
  */
 @property (nonatomic,strong) NSString *password;
 /**
+ *  jsessionid
+ */
+@property (nonatomic,strong) NSString *jsessionid;
+/**
  *  头像
  */
 @property (nonatomic,strong) UIImage *userIcon;

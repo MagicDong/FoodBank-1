@@ -74,13 +74,14 @@
         return;
     }
     
-    [ZDNetwork LoginWithPhone:self.user.text Password:self.pwd.text Callback:^(RspState *rsp) {
+    [ZDNetwork LoginWithPhone:self.user.text Password:self.pwd.text Callback:^(RspState *rsp,NSString *jsessionid) {
         if (rsp.rspCode == 0) {
             
             ZDBabyTool *babyTool = [ZDBabyTool sharedZDBabyTool];
             ZDBaby *baby = [[ZDBaby alloc]init];
             baby.userName = self.user.text;
             baby.password = self.pwd.text;
+            baby.jsessionid = jsessionid;
             [babyTool saveAccount:baby];
             
             ZDTabBarController *tabbar = [[ZDTabBarController alloc] init];
@@ -88,6 +89,7 @@
             UIWindow *window = app.keyWindow;
             app.statusBarHidden = NO;
             window.rootViewController = tabbar;
+            
         }else{
             UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"温馨提示" message:@"密码错误" delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
             [alert show];
