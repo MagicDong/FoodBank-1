@@ -46,7 +46,7 @@
         // 根据数据字典内容，创建HTML字符串，创建之后，用WebView加载
         [self htmlTextWithDict:dict[self.docid]];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//        NSLog(@"%@", error);
+        
     }];
     
 }
@@ -57,9 +57,10 @@
     // 建立一个可变字符串
     NSMutableString *html = [NSMutableString string];
 
+    
     // 0. CSS
     [html appendString:@"<style type='text/css'>h1{font-size:18px;} img{width:300px;}</style>"];
-
+    
     // 1. 标题
     [html appendFormat:@"<h1>%@</h1>", dict[@"title"]];
     
@@ -68,7 +69,8 @@
     
     // 3. 正文
     [html appendFormat:@"%@", [self bodyTextWithDict:dict]];
-//    NSLog(@"%@",html);
+    
+    // 4. 加载html语言
     [self.webView loadHTMLString:html baseURL:nil];
 }
 

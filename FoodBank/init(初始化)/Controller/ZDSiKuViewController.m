@@ -48,6 +48,8 @@ static NSString *reusableViewID = @"SectionHeader";
     [self.collection registerNib:nib forCellWithReuseIdentifier:ProductCellID];
     [self.collection registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:reusableViewID];
     
+    self.anquan.selected = YES;
+    
 }
 
 - (NSArray *)dataList
@@ -146,6 +148,7 @@ static NSString *reusableViewID = @"SectionHeader";
     
     self.weichangshi.layer.cornerRadius = 3;
     self.weichangshi.layer.masksToBounds = YES;
+    
 }
 
 - (IBAction)anquan:(UIButton *)sender {

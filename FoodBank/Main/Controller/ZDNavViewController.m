@@ -22,6 +22,7 @@
 @property (nonatomic ,weak) ZDMoreView *moreView;
 @property (nonatomic,assign) BOOL xiala;
 @property (nonatomic,strong) UIWebView *webView;
+
 @end
 
 @implementation ZDNavViewController
@@ -171,12 +172,14 @@
         // 2.设置导航条标题的属性
         NSMutableDictionary *md = [NSMutableDictionary dictionary];
         // 文字颜色
-        md[UITextAttributeTextColor] = [UIColor blackColor];
+        md[UITextAttributeTextColor] = [UIColor whiteColor];
         // 文字偏移位
         md[UITextAttributeTextShadowOffset] = [NSValue valueWithUIOffset:UIOffsetMake(0, 0)];
         // 文字字体大小
         md[UITextAttributeFont] = [UIFont systemFontOfSize:20];
+        
         [navBar setTitleTextAttributes:md];
+        
     }
     // 1.设置导航条背景图片
     [navBar setBackgroundImage:[UIImage imageWithNamed:@"Judge2"] forBarMetrics:UIBarMetricsDefault];
@@ -205,6 +208,7 @@
         // 1.只有栈中有控制器的情况才需要隐藏工具条
         viewController.hidesBottomBarWhenPushed = YES;
         // 2.覆盖返回按钮
+        
         // 只要覆盖了返回按钮, 系统自带的拖拽返回上一级的功能就会失效
         viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem itemImage:@"navigationbar_back" highlightedImage:@"navigationbar_back_highlighted" target:self action:@selector(back)];
         // 3.添加更多按钮

@@ -175,6 +175,7 @@ NSString const *badgeValueKey = @"badgeValueKey";
     if (self.badge) {
         [self refreshBadge];
     }
+    
 }
 
 // Badge text color
@@ -187,6 +188,7 @@ NSString const *badgeValueKey = @"badgeValueKey";
     if (self.badge) {
         [self refreshBadge];
     }
+    
 }
 
 // Badge font

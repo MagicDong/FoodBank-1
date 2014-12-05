@@ -73,7 +73,6 @@ static NSString *reusableViewID = @"SectionHeader";
         [headerView addSubview:label];
     }
     label.text = [NSString stringWithFormat:@"  蔬菜类%d", indexPath.section+1];
-    
     return headerView;
 }
 

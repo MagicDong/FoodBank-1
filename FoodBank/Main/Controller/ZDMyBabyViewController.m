@@ -22,7 +22,7 @@
 #import "ZDNewfeatureViewController.h"
 #import "ZDMoreView.h"
 #import "ZDProductViewController.h"
-
+#import "ZDRspViewController.h"
 
 static NSString *heardID = @"headerView";
 @interface ZDMyBabyViewController ()<UIAlertViewDelegate,ZDMoreHeaderViewDelegate,ZDMoreViewDelegate>
@@ -238,6 +238,8 @@ static NSString *heardID = @"headerView";
 }
 
 - (void)setupGroup1{
+    ZDCommonArrowItem *rsp = [ZDCommonArrowItem itemWithTitle:@"接口测试"];
+    rsp.destVC =  [ZDRspViewController class];
     
     ZDCommonArrowItem *updata = [ZDCommonArrowItem itemWithTitle:@"宝贝知识库"];
     updata.destVC =  [ZDKnowTableViewController class];
@@ -259,7 +261,7 @@ static NSString *heardID = @"headerView";
     tuijian.destVC = [ZDProductViewController class];
     
     ZDCommonGroup *group = [self addGroup];
-    group.items = @[updata,guide,tuijian];
+    group.items = @[rsp,updata,guide,tuijian];
     
 }
 

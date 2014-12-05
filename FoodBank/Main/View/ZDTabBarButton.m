@@ -37,7 +37,6 @@
 //        if (!iOS7) { // 非iOS7下,设置按钮选中时的背景
 //            [self setBackgroundImage:[UIImage imageWithNamed:@"tabbar_slider"] forState:UIControlStateSelected];
 //        }
-
     }
     return self;
 }

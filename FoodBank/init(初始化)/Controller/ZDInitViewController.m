@@ -12,6 +12,8 @@
 #import "ZDJudgeViewController.h"
 #import "ZDNavViewController.h"
 #import "ZDNationView.h"
+#import "ZDNetwork.h"
+#import "MBProgressHUD+ZD.h"
 
 @interface ZDInitViewController () <ZDDatePickerViewDelegate,ZDNationViewDelegate>
 
@@ -53,8 +55,40 @@
 
 
 - (IBAction)Finish:(UIButton *)sender {
-    ZDJudgeViewController *judge = [[ZDJudgeViewController alloc]init];
-    [self.navigationController pushViewController:judge animated:YES];
+    NSString *nation = @"1";
+    if([self.BtnNation.titleLabel.text isEqualToString:@"汉族"]){
+        nation = @"1";
+    }else if ([self.BtnNation.titleLabel.text isEqualToString:@"回族"]){
+        nation = @"3";
+    }else if ([self.BtnNation.titleLabel.text isEqualToString:@"回族"]){
+        nation = @"11";
+    }else if ([self.BtnNation.titleLabel.text isEqualToString:@"请选择宝宝民族"]){
+        [MBProgressHUD showError:@"请选择宝宝民族"];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.68 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [MBProgressHUD hideHUD];
+        });
+        return;
+    }else{
+        nation = @"0";
+    }
+    
+    if ([self.BtnNation.titleLabel.text isEqualToString:@"请选择宝宝出生日期"]){
+        [MBProgressHUD showError:@"请选择宝宝出生日期"];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.68 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [MBProgressHUD hideHUD];
+        });
+        return;
+    }else{
+        [ZDNetwork  postBabyInfoWithBirthday:self.BtnBirthday.titleLabel.text nation:nation allergy:@"1,2,3" CallBack:^(RspState * rsp) {
+            if (rsp.rspCode == 0) {
+                NSLog(@"%d",rsp.rspCode);
+            }
+        }];
+        ZDJudgeViewController *judge = [[ZDJudgeViewController alloc]init];
+        [self.navigationController pushViewController:judge animated:YES];
+    }
+    
+
 }
 
 - (void)viewDidLoad {

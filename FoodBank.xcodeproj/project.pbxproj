@@ -111,8 +111,15 @@
 		185BABEA1A0201DF00248EBC /* ZDControllerTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 185BABE91A0201DF00248EBC /* ZDControllerTool.m */; };
 		1863EB7A19F75250006BFF21 /* ZDTiShiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1863EB7919F75250006BFF21 /* ZDTiShiViewController.m */; };
 		1863EB7C19F752A0006BFF21 /* ZDTiShiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1863EB7B19F752A0006BFF21 /* ZDTiShiViewController.xib */; };
+		186B6F0D1A2EDDA800874168 /* ZDFoodCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 186B6F0C1A2EDDA800874168 /* ZDFoodCategory.m */; };
 		186D174319D29F23003F8A17 /* TencentOpenApi_IOS_Bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 186D174219D29F23003F8A17 /* TencentOpenApi_IOS_Bundle.bundle */; };
-		186D174619D2A47D003F8A17 /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 186D174419D2A14D003F8A17 /* TencentOpenAPI.framework */; };
+		187277A61A2D98D200518C9E /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187277A51A2D98D200518C9E /* SMS_SDK.framework */; };
+		187277A81A2D9C7600518C9E /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187277A71A2D9C7600518C9E /* MessageUI.framework */; };
+		187277AA1A2D9C7D00518C9E /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187277A91A2D9C7D00518C9E /* AddressBook.framework */; };
+		187277AC1A2D9C8600518C9E /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187277AB1A2D9C8600518C9E /* AddressBookUI.framework */; };
+		187277AE1A2D9C9600518C9E /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 187277AD1A2D9C9600518C9E /* libicucore.dylib */; };
+		187277B01A2DA08A00518C9E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187277AF1A2DA08A00518C9E /* UIKit.framework */; };
+		187277B21A2DA09700518C9E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187277B11A2DA09700518C9E /* Foundation.framework */; };
 		18733DB119D8FB1900966A55 /* ZDCommonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18733DB019D8FB1900966A55 /* ZDCommonViewController.m */; };
 		18733DB419D8FB2200966A55 /* ZDAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18733DB319D8FB2200966A55 /* ZDAboutViewController.m */; };
 		18733DBB19D8FB2C00966A55 /* ZDAboutHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18733DB619D8FB2C00966A55 /* ZDAboutHeaderView.m */; };
@@ -121,6 +128,10 @@
 		18733DBE19D8FB2C00966A55 /* ZDMoreHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18733DBA19D8FB2C00966A55 /* ZDMoreHeaderView.xib */; };
 		18733DC219D8FF7E00966A55 /* ZDBabyInfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18733DC119D8FF7E00966A55 /* ZDBabyInfoTableViewController.m */; };
 		18733DC519D931EA00966A55 /* UIColor+ZD.m in Sources */ = {isa = PBXBuildFile; fileRef = 18733DC419D931EA00966A55 /* UIColor+ZD.m */; };
+		1875BB771A2C1B61004BA5C1 /* ZDNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 1875BB761A2C1B61004BA5C1 /* ZDNetwork.m */; };
+		1875BB7A1A2C358A004BA5C1 /* RspState.m in Sources */ = {isa = PBXBuildFile; fileRef = 1875BB781A2C358A004BA5C1 /* RspState.m */; };
+		1875BB7D1A2C35E8004BA5C1 /* ZDRspViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1875BB7C1A2C35E8004BA5C1 /* ZDRspViewController.m */; };
+		1875BB7F1A2C363D004BA5C1 /* ZDRspViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1875BB7E1A2C363D004BA5C1 /* ZDRspViewController.xib */; };
 		187B399019FE2E870054D7E8 /* ZDProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187B398F19FE2E870054D7E8 /* ZDProductViewController.m */; };
 		187B399219FE2FB40054D7E8 /* ZDProductViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187B399119FE2FB40054D7E8 /* ZDProductViewController.xib */; };
 		1888B3C419CADBDC0030DB88 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1888B3C319CADBDC0030DB88 /* main.m */; };
@@ -148,6 +159,8 @@
 		18D2E62F19EE382B007A1965 /* ZDKnowInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D2E62E19EE382B007A1965 /* ZDKnowInfoViewController.xib */; };
 		18D6D2AB19EF7E8A0095650B /* ZDJuJueViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D6D2AA19EF7E8A0095650B /* ZDJuJueViewController.xib */; };
 		18D6D2AD19EF7EE40095650B /* ZDWeiChangShiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D6D2AC19EF7EE40095650B /* ZDWeiChangShiViewController.xib */; };
+		18DFAA051A305A9D00F6651F /* ZDNewFood.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DFAA041A305A9D00F6651F /* ZDNewFood.m */; };
+		18DFAA081A30652900F6651F /* ZDTryRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DFAA071A30652900F6651F /* ZDTryRecord.m */; };
 		18F37E7419D7E11A00325A25 /* ZDSiKuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F37E7319D7E11A00325A25 /* ZDSiKuCell.m */; };
 		18F37E7619D7E13C00325A25 /* ZDSiKuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F37E7519D7E13C00325A25 /* ZDSiKuCell.xib */; };
 		18F37E7919D7E45D00325A25 /* ZDSiKuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F37E7819D7E45D00325A25 /* ZDSiKuButton.m */; };
@@ -427,9 +440,18 @@
 		1863EB7819F75250006BFF21 /* ZDTiShiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDTiShiViewController.h; sourceTree = "<group>"; };
 		1863EB7919F75250006BFF21 /* ZDTiShiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDTiShiViewController.m; sourceTree = "<group>"; };
 		1863EB7B19F752A0006BFF21 /* ZDTiShiViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDTiShiViewController.xib; sourceTree = "<group>"; };
+		186B6F0B1A2EDDA800874168 /* ZDFoodCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDFoodCategory.h; sourceTree = "<group>"; };
+		186B6F0C1A2EDDA800874168 /* ZDFoodCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDFoodCategory.m; sourceTree = "<group>"; };
 		186D174219D29F23003F8A17 /* TencentOpenApi_IOS_Bundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TencentOpenApi_IOS_Bundle.bundle; path = FoodBank/Main/Lib/TencentOpenApi_IOS_Bundle.bundle; sourceTree = "<group>"; };
 		186D174419D2A14D003F8A17 /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
 		186F60AB19F5027900697FFF /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
+		187277A51A2D98D200518C9E /* SMS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SMS_SDK.framework; sourceTree = "<group>"; };
+		187277A71A2D9C7600518C9E /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		187277A91A2D9C7D00518C9E /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		187277AB1A2D9C8600518C9E /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		187277AD1A2D9C9600518C9E /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		187277AF1A2DA08A00518C9E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		187277B11A2DA09700518C9E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		18733DAF19D8FB1900966A55 /* ZDCommonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDCommonViewController.h; sourceTree = "<group>"; };
 		18733DB019D8FB1900966A55 /* ZDCommonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDCommonViewController.m; sourceTree = "<group>"; };
 		18733DB219D8FB2200966A55 /* ZDAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDAboutViewController.h; sourceTree = "<group>"; };
@@ -444,6 +466,13 @@
 		18733DC119D8FF7E00966A55 /* ZDBabyInfoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDBabyInfoTableViewController.m; sourceTree = "<group>"; };
 		18733DC319D931EA00966A55 /* UIColor+ZD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ZD.h"; sourceTree = "<group>"; };
 		18733DC419D931EA00966A55 /* UIColor+ZD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ZD.m"; sourceTree = "<group>"; };
+		1875BB751A2C1B61004BA5C1 /* ZDNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDNetwork.h; sourceTree = "<group>"; };
+		1875BB761A2C1B61004BA5C1 /* ZDNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDNetwork.m; sourceTree = "<group>"; };
+		1875BB781A2C358A004BA5C1 /* RspState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RspState.m; sourceTree = "<group>"; };
+		1875BB791A2C358A004BA5C1 /* RspState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RspState.h; sourceTree = "<group>"; };
+		1875BB7B1A2C35E8004BA5C1 /* ZDRspViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDRspViewController.h; sourceTree = "<group>"; };
+		1875BB7C1A2C35E8004BA5C1 /* ZDRspViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDRspViewController.m; sourceTree = "<group>"; };
+		1875BB7E1A2C363D004BA5C1 /* ZDRspViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDRspViewController.xib; sourceTree = "<group>"; };
 		187B398E19FE2E870054D7E8 /* ZDProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDProductViewController.h; sourceTree = "<group>"; };
 		187B398F19FE2E870054D7E8 /* ZDProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDProductViewController.m; sourceTree = "<group>"; };
 		187B399119FE2FB40054D7E8 /* ZDProductViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDProductViewController.xib; sourceTree = "<group>"; };
@@ -487,6 +516,10 @@
 		18D2E62E19EE382B007A1965 /* ZDKnowInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDKnowInfoViewController.xib; sourceTree = "<group>"; };
 		18D6D2AA19EF7E8A0095650B /* ZDJuJueViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDJuJueViewController.xib; sourceTree = "<group>"; };
 		18D6D2AC19EF7EE40095650B /* ZDWeiChangShiViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDWeiChangShiViewController.xib; sourceTree = "<group>"; };
+		18DFAA031A305A9D00F6651F /* ZDNewFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDNewFood.h; sourceTree = "<group>"; };
+		18DFAA041A305A9D00F6651F /* ZDNewFood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDNewFood.m; sourceTree = "<group>"; };
+		18DFAA061A30652900F6651F /* ZDTryRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDTryRecord.h; sourceTree = "<group>"; };
+		18DFAA071A30652900F6651F /* ZDTryRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDTryRecord.m; sourceTree = "<group>"; };
 		18F37E7219D7E11A00325A25 /* ZDSiKuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZDSiKuCell.h; path = ../Model/ZDSiKuCell.h; sourceTree = "<group>"; };
 		18F37E7319D7E11A00325A25 /* ZDSiKuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZDSiKuCell.m; path = ../Model/ZDSiKuCell.m; sourceTree = "<group>"; };
 		18F37E7519D7E13C00325A25 /* ZDSiKuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ZDSiKuCell.xib; path = "FoodBank/init(初始化)/Model/ZDSiKuCell.xib"; sourceTree = SOURCE_ROOT; };
@@ -686,6 +719,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				187277B21A2DA09700518C9E /* Foundation.framework in Frameworks */,
+				187277B01A2DA08A00518C9E /* UIKit.framework in Frameworks */,
+				187277A61A2D98D200518C9E /* SMS_SDK.framework in Frameworks */,
+				187277AE1A2D9C9600518C9E /* libicucore.dylib in Frameworks */,
+				187277AC1A2D9C8600518C9E /* AddressBookUI.framework in Frameworks */,
+				187277AA1A2D9C7D00518C9E /* AddressBook.framework in Frameworks */,
+				187277A81A2D9C7600518C9E /* MessageUI.framework in Frameworks */,
 				18247A5A19D2BE4D001B04EA /* libz.dylib in Frameworks */,
 				18247A5819D2BE45001B04EA /* libstdc++.dylib in Frameworks */,
 				18247A5619D2BE3C001B04EA /* CoreTelephony.framework in Frameworks */,
@@ -694,7 +734,6 @@
 				18247A5019D2BE1E001B04EA /* SystemConfiguration.framework in Frameworks */,
 				18247A4E19D2BDBC001B04EA /* libiconv.dylib in Frameworks */,
 				18932E8619D2ABFF007B8B89 /* Security.framework in Frameworks */,
-				186D174619D2A47D003F8A17 /* TencentOpenAPI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -708,13 +747,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		181BCF9B19D3DC4A00EDA508 /* init(初始化) */ = {
+		181BCF9B19D3DC4A00EDA508 /* Init(初始化) */ = {
 			isa = PBXGroup;
 			children = (
 				181BCF9C19D3DC4A00EDA508 /* Controller */,
 				181BCF9D19D3DC4A00EDA508 /* Model */,
 				181BCF9E19D3DC4A00EDA508 /* View */,
 			);
+			name = "Init(初始化)";
 			path = "init(初始化)";
 			sourceTree = "<group>";
 		};
@@ -992,9 +1032,27 @@
 			path = BabyInfo;
 			sourceTree = "<group>";
 		};
+		1875BB741A2C1AF9004BA5C1 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				1875BB751A2C1B61004BA5C1 /* ZDNetwork.h */,
+				1875BB761A2C1B61004BA5C1 /* ZDNetwork.m */,
+				1875BB791A2C358A004BA5C1 /* RspState.h */,
+				1875BB781A2C358A004BA5C1 /* RspState.m */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		1888B3B519CADBDC0030DB88 = {
 			isa = PBXGroup;
 			children = (
+				187277B11A2DA09700518C9E /* Foundation.framework */,
+				187277AF1A2DA08A00518C9E /* UIKit.framework */,
+				187277AD1A2D9C9600518C9E /* libicucore.dylib */,
+				187277AB1A2D9C8600518C9E /* AddressBookUI.framework */,
+				187277A91A2D9C7D00518C9E /* AddressBook.framework */,
+				187277A71A2D9C7600518C9E /* MessageUI.framework */,
+				187277A51A2D98D200518C9E /* SMS_SDK.framework */,
 				18247A5919D2BE4D001B04EA /* libz.dylib */,
 				18247A5719D2BE45001B04EA /* libstdc++.dylib */,
 				18247A5519D2BE3C001B04EA /* CoreTelephony.framework */,
@@ -1025,12 +1083,12 @@
 			children = (
 				18733DAB19D8F44700966A55 /* Bank(食材银行) */,
 				18F37E7A19D7F5E600325A25 /* News(宝贝咨询) */,
-				181BCF9B19D3DC4A00EDA508 /* init(初始化) */,
+				181BCF9B19D3DC4A00EDA508 /* Init(初始化) */,
 				18FA20AD19CFB90300430E37 /* Newfeature(新特性) */,
 				1888B3FA19CADE1D0030DB88 /* Register(注册) */,
 				18252A4A19E8C772008B4C71 /* Record(我的尝试记录) */,
 				1888B3EE19CADDF50030DB88 /* MyBaby(我的宝贝) */,
-				1888B3EA19CADDE40030DB88 /* Try(尝试周期) */,
+				1888B3EA19CADDE40030DB88 /* Try(新食材尝试) */,
 				1888B3F219CADE000030DB88 /* Main(主要) */,
 				1888B3F619CADE0C0030DB88 /* Other(其他) */,
 				1888B3C119CADBDC0030DB88 /* Supporting Files */,
@@ -1064,14 +1122,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		1888B3EA19CADDE40030DB88 /* Try(尝试周期) */ = {
+		1888B3EA19CADDE40030DB88 /* Try(新食材尝试) */ = {
 			isa = PBXGroup;
 			children = (
 				1888B3EB19CADDE40030DB88 /* Controller */,
 				1888B3EC19CADDE40030DB88 /* Model */,
 				1888B3ED19CADDE40030DB88 /* View */,
 			);
-			name = "Try(尝试周期)";
+			name = "Try(新食材尝试)";
 			path = Try;
 			sourceTree = "<group>";
 		};
@@ -1129,6 +1187,9 @@
 				187B398E19FE2E870054D7E8 /* ZDProductViewController.h */,
 				187B398F19FE2E870054D7E8 /* ZDProductViewController.m */,
 				187B399119FE2FB40054D7E8 /* ZDProductViewController.xib */,
+				1875BB7B1A2C35E8004BA5C1 /* ZDRspViewController.h */,
+				1875BB7C1A2C35E8004BA5C1 /* ZDRspViewController.m */,
+				1875BB7E1A2C363D004BA5C1 /* ZDRspViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1175,6 +1236,7 @@
 		1888B3F219CADE000030DB88 /* Main(主要) */ = {
 			isa = PBXGroup;
 			children = (
+				1875BB741A2C1AF9004BA5C1 /* Network */,
 				18F891A719CBBD0E0046C022 /* Setting */,
 				1888B40019CADE750030DB88 /* Category */,
 				1888B3FF19CADE5A0030DB88 /* Tool */,
@@ -1201,6 +1263,12 @@
 		1888B3F419CADE000030DB88 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				186B6F0B1A2EDDA800874168 /* ZDFoodCategory.h */,
+				186B6F0C1A2EDDA800874168 /* ZDFoodCategory.m */,
+				18DFAA031A305A9D00F6651F /* ZDNewFood.h */,
+				18DFAA041A305A9D00F6651F /* ZDNewFood.m */,
+				18DFAA061A30652900F6651F /* ZDTryRecord.h */,
+				18DFAA071A30652900F6651F /* ZDTryRecord.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1680,6 +1748,7 @@
 				1828E97A19D796B5008B328E /* ZDSiKuViewController.xib in Resources */,
 				18A0931019D56C6400FC74FF /* ZDSupViewController.xib in Resources */,
 				18252A5219E8C7FA008B4C71 /* ZDRecordViewController.xib in Resources */,
+				1875BB7F1A2C363D004BA5C1 /* ZDRspViewController.xib in Resources */,
 				18A0930919D53A7D00FC74FF /* ZDNationView.xib in Resources */,
 				18F37E9119D7F62300325A25 /* CZNormalCell.xib in Resources */,
 				18D6D2AB19EF7E8A0095650B /* ZDJuJueViewController.xib in Resources */,
@@ -1748,6 +1817,7 @@
 				18A0930E19D56C5500FC74FF /* ZDSupViewController.m in Sources */,
 				18FA210819CFF3E700430E37 /* NSObject+MJKeyValue.m in Sources */,
 				18278C1C19E686DA00574DD5 /* FMDatabasePool.m in Sources */,
+				1875BB7D1A2C35E8004BA5C1 /* ZDRspViewController.m in Sources */,
 				18FA20B419CFB99100430E37 /* ZDBadgeButton.m in Sources */,
 				18FA214619CFF40D00430E37 /* NSData+ImageContentType.m in Sources */,
 				18733DBD19D8FB2C00966A55 /* ZDMoreHeaderView.m in Sources */,
@@ -1844,8 +1914,10 @@
 				18A092FF19D524CB00FC74FF /* ZDNotifyViewController.m in Sources */,
 				18F891C919CBBD4F0046C022 /* UIImage+ZD.m in Sources */,
 				18F37E7919D7E45D00325A25 /* ZDSiKuButton.m in Sources */,
+				1875BB7A1A2C358A004BA5C1 /* RspState.m in Sources */,
 				18F891E219CBD2DF0046C022 /* ZDCommonLabelItem.m in Sources */,
 				18FA214A19CFF40D00430E37 /* SDWebImageDownloader.m in Sources */,
+				18DFAA081A30652900F6651F /* ZDTryRecord.m in Sources */,
 				18347AB919EF783300EDD75E /* ZDWeiChangShiViewController.m in Sources */,
 				1823B0FC19D155620081E5A2 /* ZDSearchBar.m in Sources */,
 				1829A7B719EBB1BC00CD2624 /* ZDAllergyViewController.m in Sources */,
@@ -1868,8 +1940,10 @@
 				18FA20FF19CFF3E600430E37 /* MJArgument.m in Sources */,
 				18278C2119E68A0F00574DD5 /* YTKKeyValueStore.m in Sources */,
 				18204ABA19E7824100EE57B9 /* TSLocateView.m in Sources */,
+				18DFAA051A305A9D00F6651F /* ZDNewFood.m in Sources */,
 				183E72B119DA4092009CD24F /* SCHCircleView.m in Sources */,
 				18FA210019CFF3E600430E37 /* MJConst.m in Sources */,
+				1875BB771A2C1B61004BA5C1 /* ZDNetwork.m in Sources */,
 				183E72B219DA4092009CD24F /* SCHCircleViewCell.m in Sources */,
 				1829A7B419EB6A1500CD2624 /* LBorderView.m in Sources */,
 				18F37EAD19D7F66400325A25 /* MJPhotoProgressView.m in Sources */,
@@ -1877,6 +1951,7 @@
 				1823B10219D1612B0081E5A2 /* ZDAccountTool.m in Sources */,
 				18A092FC19D4F68800FC74FF /* ZDChooseButton.m in Sources */,
 				1828E97819D7963E008B328E /* ZDSiKuViewController.m in Sources */,
+				186B6F0D1A2EDDA800874168 /* ZDFoodCategory.m in Sources */,
 				18A0930719D53A6E00FC74FF /* ZDNationView.m in Sources */,
 				18733DBB19D8FB2C00966A55 /* ZDAboutHeaderView.m in Sources */,
 				18278C0019E622C900574DD5 /* ZDTuiJianViewController.m in Sources */,
@@ -2023,6 +2098,7 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_WARNINGS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Paul Longstaff (3RNDJUHFNY)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2041,6 +2117,7 @@
 				OTHER_LDFLAGS = "-fobjc-arc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -2050,6 +2127,7 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_WARNINGS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Paul Longstaff (3RNDJUHFNY)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2068,6 +2146,7 @@
 				OTHER_LDFLAGS = "-fobjc-arc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Release;
 		};

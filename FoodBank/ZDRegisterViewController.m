@@ -20,6 +20,9 @@
 #import "ZDInitViewController.h"
 #import "ZDNavViewController.h"
 #import "ZDChooseButton.h"
+#import "ZDNetwork.h"
+#import "ZDBaby.h"
+#import "ZDBabyTool.h"
 
 @interface ZDRegisterViewController () <UIWebViewDelegate,UITextFieldDelegate>
 
@@ -70,26 +73,39 @@
         [alert show];
         return;
     }
-    if(self.user.text.length < 3){
-        UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"温馨提示" message:@"用户名不正确" delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
-        [alert show];
-        return;
-    }
-    // 发送网络请求判断是否需要初始化
-    if((1)){
-        ZDInitViewController *chushihua = [[ZDInitViewController alloc] init];
-        ZDNavViewController *nav = [[ZDNavViewController alloc]initWithRootViewController:chushihua];
-        UIApplication *app = [UIApplication sharedApplication];
-        UIWindow *window = app.keyWindow;
-        app.statusBarHidden = NO;
-        window.rootViewController = nav;
-    }else{
-        ZDTabBarController *tabbar = [[ZDTabBarController alloc] init];
-        UIApplication *app = [UIApplication sharedApplication];
-        UIWindow *window = app.keyWindow;
-        app.statusBarHidden = NO;
-        window.rootViewController = tabbar;
-    }
+    
+    [ZDNetwork LoginWithPhone:self.user.text Password:self.pwd.text Callback:^(RspState *rsp) {
+        if (rsp.rspCode == 0) {
+            
+            ZDBabyTool *babyTool = [ZDBabyTool sharedZDBabyTool];
+            ZDBaby *baby = [[ZDBaby alloc]init];
+            baby.userName = self.user.text;
+            baby.password = self.pwd.text;
+            [babyTool saveAccount:baby];
+            
+            ZDTabBarController *tabbar = [[ZDTabBarController alloc] init];
+            UIApplication *app = [UIApplication sharedApplication];
+            UIWindow *window = app.keyWindow;
+            app.statusBarHidden = NO;
+            window.rootViewController = tabbar;
+        }else{
+            UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"温馨提示" message:@"密码错误" delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
+            [alert show];
+        }
+    }];
+    
+//    // 发送网络请求判断是否需要初始化
+//    if((0)){
+//        ZDInitViewController *chushihua = [[ZDInitViewController alloc] init];
+//        ZDNavViewController *nav = [[ZDNavViewController alloc]initWithRootViewController:chushihua];
+//        UIApplication *app = [UIApplication sharedApplication];
+//        UIWindow *window = app.keyWindow;
+//        app.statusBarHidden = NO;
+//        window.rootViewController = nav;
+//    }else{
+//
+//    }
+    
 }
 
 - (IBAction)rgs:(UIButton *)sender {
@@ -112,7 +128,6 @@
     account.figureurl_qq_2 = dict[@"figureurl_qq_2"];
     account.gender = dict[@"gender"];
     [ZDAccountTool saveAccount:account];
-    
 }
 
 /**
@@ -145,6 +160,7 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     UITextField *textField =  [UIView findFistResponder:self.view];
     [textField resignFirstResponder];
+    
 }
 
 ///**

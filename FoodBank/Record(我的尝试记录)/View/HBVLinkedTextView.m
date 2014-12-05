@@ -45,7 +45,6 @@
 {
     self = [super initWithCoder:aDecoder];
     if (self) {
-        // Initialization code
         [self commonInit];
     }
     return self;
@@ -94,7 +93,6 @@
     NSArray *matches = [regex matchesInString:text options:0 range:NSMakeRange(0, text.length)];
     
     if (error) {
-        NSLog(@"\nHBVLinkedTextView Regex Error: %@",error.debugDescription);
         return;
     }
     
@@ -194,9 +192,10 @@
     NSMutableDictionary *attributesBlue = [@{ NSFontAttributeName:[UIFont systemFontOfSize:15], NSParagraphStyleAttributeName:paragraphStyle, NSForegroundColorAttributeName:[UIColor blueColor]
                                               }mutableCopy];
     self.attributedText = [[NSAttributedString alloc]initWithString:mutableAttributedString attributes:attributesBlue];
-//    self.attributedText = mutableAttributedString;
+    self.alwaysBounceHorizontal = YES;
+    self.alwaysBounceVertical = YES;
     self.scrollEnabled = NO;
-    
+
 }
 
 - (void)setLinkedStringsAndAttributes:(NSMutableArray *)linkedStringsAndAttributes
@@ -213,7 +212,7 @@
     if (!attributedString) {
         attributedString = [[NSAttributedString alloc]initWithString:text];
     }
-    
+
     NSRange allTextRange;
     allTextRange.location = 0;
     allTextRange.length = text.length;

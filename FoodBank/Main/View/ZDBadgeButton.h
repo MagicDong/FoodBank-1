@@ -1,9 +1,8 @@
 //
-//  IWBadgeButton.h
-//  传智微博
+//  ZDBadgeButton.h
 //
 //  Created by apple on 14-7-16.
-//  Copyright (c) 2014年 itcast. All rights reserved.
+//  Copyright (c) 2014年 Dong. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

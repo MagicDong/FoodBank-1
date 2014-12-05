@@ -104,6 +104,7 @@ static NSString *PhotosID = @"photosCell";
     }
     return _moreView;
 }
+
 - (void)moreViewDidOK:(ZDMoreView *)moreView{
     [UIView animateWithDuration:0.5 animations:^{
         [self.cover setAlpha:0];
@@ -114,6 +115,7 @@ static NSString *PhotosID = @"photosCell";
         self.xiala = NO;
     }];
 }
+
 - (void)moreViewDidWWW:(ZDMoreView *)moreView{
     NSURL *url = [NSURL URLWithString:@"http://www.mamabaodian.com"];
     [[UIApplication sharedApplication] openURL:url];
@@ -125,7 +127,6 @@ static NSString *PhotosID = @"photosCell";
     [self.view.window bringSubviewToFront:self.moreView];
     if (self.xiala) {
         [UIView animateWithDuration:0.5 animations:^{
-//            self.moreView.y = self.moreView.y - self.moreView.height;
             [self.cover setAlpha:0];
             [self.moreView setAlpha:0];
         } completion:^(BOOL finished) {
@@ -291,6 +292,8 @@ static NSString *PhotosID = @"photosCell";
         [imageView3 sd_setImageWithURL:url3];
         MJPhotoBrowser *photoBrowser = [[MJPhotoBrowser alloc]init];
         
+        
+        
         MJPhoto *photo1 = [[MJPhoto alloc]init];
         photo1.url = [NSURL URLWithString:image1];
         photo1.srcImageView = imageView1;
@@ -325,6 +328,7 @@ static NSString *PhotosID = @"photosCell";
             // 将视图控制器从父视图控制器中删除
             [controller removeFromParentViewController];
         }
+        
         // 新建文档视图控制器
         ZDDetailViewController *vc = [[ZDDetailViewController alloc] init];
         //    vc.articleURLStr = articleURLStr;

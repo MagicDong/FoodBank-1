@@ -32,14 +32,14 @@
         self.backgroundColor = ZDColor(255, 246, 229);
         self.textLabel.font = [UIFont boldSystemFontOfSize:15];
         self.textLabel.textColor = ZDColor(153, 102, 51);
+        
     }
     return self;
 }
 
 - (void)setDict:(NSDictionary *)dict{
     _dict = dict;
-    
     self.textLabel.text = dict[@"title"];
-    
 }
+
 @end

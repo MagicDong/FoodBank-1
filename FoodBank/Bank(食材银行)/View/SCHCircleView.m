@@ -23,25 +23,18 @@ static int drag_animation_count        = 0;
 /*弧度计算公式*/
 /*获取自定义弧度*/
 - (CGFloat)getRadinaByRadian:(CGFloat)radian;
-
 /*动画弧度计算公式*/
 /*通过 自己定义坐标弧度 获取动画坐标弧度*/
 - (CGFloat)getAnimationRadianByRadian:(CGFloat)radian;
-
 /*点 计算公式*/
 /*通过弧度来计算 (弧度,圆心,半径)*/
 - (CGPoint)getPointByRadian:(CGFloat)radian centreOfCircle:(CGPoint)circle_point radiusOfCircle:(CGFloat)circle_radius;
-
-/*比例 计算公式*/
 /*通过弧度来计算 (弧度,最小scale,偏移弧度)*/
 - (CGFloat)getScaleByRadina:(CGFloat)radian originScale:(CGFloat)origin_scale deviationRadian:(CGFloat)d_radina;
-
 /*自己定义坐标的 计算 atan2f 返回弧度*/
 - (CGFloat)schAtan2f:(CGFloat)a theB:(CGFloat)b;
-
 /*初始化属性*/
 - (void)initAttribute;
-
 /*reload*/
 /*清除*/
 - (void)clean;
@@ -53,10 +46,10 @@ static int drag_animation_count        = 0;
 
 /*显示的效果 SCHShowCircleStyle*/
 - (void)showCircleDefault:(NSMutableArray *)array;
+/*比例 计算公式*/
 - (void)showCircleDiffuse:(NSMutableArray *)array;
-- (void)showCircleWinding:(NSMutableArray *)array;
-
 /*单击的移动动画*/
+- (void)showCircleWinding:(NSMutableArray *)array;
 /*是否顺时针转动*/
 - (BOOL)oldIndex:(NSInteger)old_index newIndex:(NSInteger)new_index;
 /*判断移动的跨度*/

@@ -217,18 +217,19 @@
             ZDGuoMinViewController *guomin = [[ZDGuoMinViewController alloc]init];
             [self.navigationController pushViewController:guomin animated:YES];
         }else if (index == 2){
-            ZDZhouViewController *zhou = [[ZDZhouViewController alloc]init];
-            [self.navigationController pushViewController:zhou animated:YES];
-        }else if (index == 3){
-            ZDYueViewController *yue = [[ZDYueViewController alloc]init];
-            [self.navigationController pushViewController:yue animated:YES];
-        }else if (index == 4){
             ZDJuJueViewController *jujue = [[ZDJuJueViewController alloc]init];
             [self.navigationController pushViewController:jujue animated:YES];
-        }else if (index == 5){
+        }else if (index == 3){
             ZDWeiChangShiViewController *weichangshi = [[ZDWeiChangShiViewController alloc]init];
             [self.navigationController pushViewController:weichangshi animated:YES];
+        }else if (index == 4){
+            ZDZhouViewController *zhou = [[ZDZhouViewController alloc]init];
+            [self.navigationController pushViewController:zhou animated:YES];
+        }else if (index == 5){
+            ZDYueViewController *yue = [[ZDYueViewController alloc]init];
+            [self.navigationController pushViewController:yue animated:YES];
         }
+        
     });
 }
 

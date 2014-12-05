@@ -1,9 +1,9 @@
 //
 //  IWBadgeButton.m
-//  传智微博
+
 //
 //  Created by apple on 14-7-16.
-//  Copyright (c) 2014年 itcast. All rights reserved.
+//  Copyright (c) 2014年 Dong. All rights reserved.
 //
 
 #import "ZDBadgeButton.h"
@@ -36,7 +36,6 @@
             value = badgeValue;
         }
         [self setTitle:value forState:UIControlStateNormal];
-        
     }else
     {
         self.hidden = YES;

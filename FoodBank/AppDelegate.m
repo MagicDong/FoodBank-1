@@ -26,6 +26,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     application.statusBarHidden = NO;
+//    APPKEY:  47f01de13458        AppSecret：   ec44a5b1ff4cb948cb16c1a0b1655b23
+    NSString *appKey = @"47f01de13458";
+    NSString *appSecret = @"ec44a5b1ff4cb948cb16c1a0b1655b23";
+    [SMS_SDK    registerApp:appKey withSecret:appSecret];
+
+     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // 设置全局状态栏的颜色
     [application setStatusBarStyle:UIStatusBarStyleLightContent];

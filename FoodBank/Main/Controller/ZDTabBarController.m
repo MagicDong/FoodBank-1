@@ -29,7 +29,6 @@
 @property (nonatomic, strong) ZDBankViewController *discover;
 @property (nonatomic, strong) ZDMyBabyViewController *baby;
 @property (nonatomic, strong) ZDRecordViewController *record;
-
 @end
 
 @implementation ZDTabBarController
@@ -95,13 +94,13 @@
         self.navigationController.navigationBar.opaque=YES;
     }
     
-    
     // 删除系统自动生成的UITabBarButton
     for (UIView *child in self.tabBar.subviews) {
         if ([child isKindOfClass:[UIControl class]]) {
             [child removeFromSuperview];
         }
     }
+    
     [self.customTabBar bringSubviewToFront:self.view];
 }
 
