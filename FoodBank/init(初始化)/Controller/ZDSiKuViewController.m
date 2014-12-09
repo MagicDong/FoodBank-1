@@ -10,15 +10,15 @@
 #import "ZDTabBarController.h"
 #import "CZProductCell.h"
 #import "CZProduct.h"
+#import "ZDFoodCategory.h"
+#import "ZDNetwork.h"
+#import "MBProgressHUD+ZD.h"
+#import "ZDNetwork.h"
 
 static NSString *ProductCellID = @"ProductCell";
 static NSString *reusableViewID = @"SectionHeader";
 @interface ZDSiKuViewController () <UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
-@property (weak, nonatomic) IBOutlet UIButton *anquan;
-@property (weak, nonatomic) IBOutlet UIButton *guomin;
-@property (weak, nonatomic) IBOutlet UIButton *jujue;
-@property (weak, nonatomic) IBOutlet UIButton *weichangshi;
 @property (weak, nonatomic) IBOutlet UILabel *label1;
 @property (weak, nonatomic) IBOutlet UICollectionView *collection;
 @property (weak, nonatomic) IBOutlet UILabel *label2;
@@ -28,6 +28,7 @@ static NSString *reusableViewID = @"SectionHeader";
  */
 @property (nonatomic, weak) UIButton  *selectedBtn;
 @property (nonatomic, strong) NSArray *dataList;
+@property (nonatomic, strong) NSMutableArray *selectArray;
 @end
 
 @implementation ZDSiKuViewController
@@ -36,10 +37,10 @@ static NSString *reusableViewID = @"SectionHeader";
     [super viewDidLoad];
     [self chushihua];
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-    layout.itemSize = CGSizeMake(60, 60);
-    layout.minimumLineSpacing = 10.0f;
-    layout.minimumInteritemSpacing = 10.0f;
-    layout.sectionInset = UIEdgeInsetsMake(5, 10, 5, 10);
+    layout.itemSize = CGSizeMake(76, 86);
+    layout.minimumLineSpacing = 5.0f;
+    layout.minimumInteritemSpacing = 5.0f;
+    layout.sectionInset = UIEdgeInsetsMake(0, 3, 3, 5);
     layout.headerReferenceSize = CGSizeMake(self.collection.bounds.size.width, 30);
     self.collection.backgroundColor = [UIColor whiteColor];
     self.collection.collectionViewLayout = layout;
@@ -47,35 +48,43 @@ static NSString *reusableViewID = @"SectionHeader";
     UINib *nib = [UINib nibWithNibName:@"CZProductCell" bundle:nil];
     [self.collection registerNib:nib forCellWithReuseIdentifier:ProductCellID];
     [self.collection registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:reusableViewID];
-    
-    self.anquan.selected = YES;
-    
 }
 
-- (NSArray *)dataList
-{
-    if (!_dataList) _dataList = [CZProduct products];
+- (NSArray *)dataList{
+    if (!_dataList) {
+        
+        [ZDNetwork getSiKuInfoCallback:^(RspState *rsp, NSArray *array) {
+            self.dataList = array;
+            ZDLog(@"23232%d",array.count);
+            [self.collection reloadData];
+        }];
+    }
     return _dataList;
 }
 
 #pragma mark - 数据源方法
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-    return 6;
+    
+    NSInteger count = self.dataList.count;
+//    ZDLog(@"11%d",count);
+    return count;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return self.dataList.count;
+    ZDFoodCategory *foodCategory = self.dataList[section];
+//    ZDLog(@"22%d",foodCategory.foodGenreList.count); 
+    return foodCategory.foodGenreList.count;
 } 
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     // forIndexPath －》强行要求程序员必须注册表格的可重用单元格
     CZProductCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:ProductCellID forIndexPath:indexPath];
-    
-    // 用模型设置cell
-    cell.product = self.dataList[indexPath.item];
-    
+    ZDFoodCategory *foodCategory = self.dataList[indexPath.section];
+    NSDictionary *dict = foodCategory.foodGenreList[indexPath.row];
+    cell.foodDict = dict;
+    cell.selectArray = self.selectArray;
     return cell;
 }
 
@@ -91,7 +100,8 @@ static NSString *reusableViewID = @"SectionHeader";
         label.textColor = [UIColor redColor];
         [headerView addSubview:label];
     }
-    label.text = [NSString stringWithFormat:@"  蔬菜类%d", indexPath.section+1];
+    ZDFoodCategory *foodCategory = self.dataList[indexPath.section];
+    label.text = [NSString stringWithFormat:@"  %@",foodCategory.foodGenre];
     return headerView;
 }
 
@@ -99,9 +109,45 @@ static NSString *reusableViewID = @"SectionHeader";
 {
 //    CZProduct *product = self.dataList[indexPath.item];
     UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
-    CZProductCell *celll = (CZProductCell *)cell;
-    celll.selectBtn.selected = !celll.selectBtn.selected;
+    CZProductCell *product = (CZProductCell *)cell;
+    product.selectBtn.selected = !product.selectBtn.selected;
     
+    if (product.selectBtn.selected) {
+        
+        if ([self.selectArray containsObject:product.mid]) {
+            [self.selectArray removeObject:product.mid];
+        }else{
+            [self.selectArray addObject:product.mid];
+        }
+        
+    }else{
+        NSMutableArray *filteredArray = [[NSMutableArray alloc]initWithObjects:product.mid, nil];
+        
+        /*
+         方法一：利用NSPredicate
+         注：NSPredicate所属Cocoa框架，在密码、用户名等正则判断中经常用到。
+         类似于SQL语句
+         NOT 不是
+         SELF 代表字符串本身
+         IN 范围运算符
+         那么NOT (SELF IN %@) 意思就是：不是这里所指定的字符串的值
+         */
+        NSPredicate * filterPredicate = [NSPredicate predicateWithFormat:@"NOT (SELF IN %@)",filteredArray];
+        //过滤数组
+        NSArray * reslutFilteredArray = [self.selectArray filteredArrayUsingPredicate:filterPredicate];
+        self.selectArray = [reslutFilteredArray mutableCopy];
+    }
+    NSLog(@",,,,,%@",self.selectArray);
+    
+
+    NSLog(@"======%@",self.selectArray);
+}
+
+- (NSMutableArray *)selectArray{
+    if (!_selectArray) {
+        _selectArray = [[NSMutableArray alloc]init];
+    }
+    return _selectArray;
 }
 
 
@@ -135,35 +181,6 @@ static NSString *reusableViewID = @"SectionHeader";
         self.edgesForExtendedLayout = NO;
         self.navigationController.navigationBar.opaque=YES;
     }
-    self.anquan.layer.cornerRadius = 3;
-    self.anquan.layer.masksToBounds = YES;
-    self.anquan.selected = YES;
-    self.selectedBtn = self.anquan;
-    
-    self.guomin.layer.cornerRadius = 3;
-    self.guomin.layer.masksToBounds = YES;
-    
-    self.jujue.layer.cornerRadius = 3;
-    self.jujue.layer.masksToBounds = YES;
-    
-    self.weichangshi.layer.cornerRadius = 3;
-    self.weichangshi.layer.masksToBounds = YES;
-    
-}
-
-- (IBAction)anquan:(UIButton *)sender {
-    [self btnClick:sender];
-}
-
-- (IBAction)guomin:(UIButton *)sender {
-    [self btnClick:sender];
-}
-
-- (IBAction)jujue:(UIButton *)sender {
-    [self btnClick:sender];
-}
-- (IBAction)weichangshi:(UIButton *)sender {
-    [self btnClick:sender];
 }
 
 - (void)btnClick:(UIButton *)sender{
@@ -178,15 +195,28 @@ static NSString *reusableViewID = @"SectionHeader";
         [controller.view removeFromSuperview];
         // 将视图控制器从父视图控制器中删除
         [controller removeFromParentViewController];
+        
     }
     [self.view removeFromSuperview];
-    
-    ZDTabBarController *tabBarVc = [[ZDTabBarController alloc] init];
-    UIApplication *app = [UIApplication sharedApplication];
-    UIWindow *window = app.keyWindow;
-    app.statusBarHidden = NO;
-    window.rootViewController = tabBarVc;
+    //
+    [MBProgressHUD showMessage:@"初始化中"];
+    ZDLog(@".s,,,,,%d",self.selectArray.count);
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.35 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [ZDNetwork postBabySiKuInfoWithMids:self.selectArray CallBack:^(RspState *rsp) {
+            if (rsp.rspCode == 0) {
+                [MBProgressHUD hideHUD];
+            }else{
+                [MBProgressHUD hideHUD];
+            }
+        }];
+        ZDTabBarController *tabBarVc = [[ZDTabBarController alloc] init];
+        UIApplication *app = [UIApplication sharedApplication];
+        UIWindow *window = app.keyWindow;
+        app.statusBarHidden = NO;
+        window.rootViewController = tabBarVc;
+    });
 }
+
 - (void)dealloc{
     ZDLog(@"四库界面销毁");
 }

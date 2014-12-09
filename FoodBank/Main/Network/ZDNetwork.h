@@ -37,7 +37,7 @@
 + (void)getSiKuInfoCallback:(void(^)(RspState *,NSArray *))callback;
 
 /* 8、提交宝宝勾选个人四库信息 */
-+ (void)postBabySiKuInfoWithTP:(NSString *)tp mids:(NSString *)mids CallBack:(void (^)(RspState *))callBack;
++ (void)postBabySiKuInfoWithMids:(NSArray *)mids CallBack:(void (^)(RspState *))callBack;
 
 /* 9、获取今日尝试新食材信息 */
 + (void)getTodayTryInfoCallback:(void(^)(RspState *,NSArray *))callback;

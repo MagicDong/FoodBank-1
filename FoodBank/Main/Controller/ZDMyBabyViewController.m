@@ -59,7 +59,7 @@ static NSString *heardID = @"headerView";
     self.tableView.backgroundColor = ZDColor(219, 219, 219);
     NSString *imageName =[NSString stringWithFormat:@"more_baobao_bg"];
     _bgIcon = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]];
-    _bgIcon.bounds = CGRectMake(0, 0, 320, 300);
+    _bgIcon.bounds = CGRectMake(0, 0, self.view.width, 300);
     _bgIcon.layer.anchorPoint = CGPointMake(0.5, 0);
     _bgIcon.layer.position = CGPointMake(160, -95);
     [self.tableView insertSubview:_bgIcon atIndex:0];

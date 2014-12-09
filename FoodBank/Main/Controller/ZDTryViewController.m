@@ -270,7 +270,7 @@
 }
 
 - (IBAction)queding:(id)sender {
-    [MBProgressHUD showError:@"该食材正在尝试中.."];
+    [MBProgressHUD showError:@"提交尝试信息中"];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.62 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [MBProgressHUD hideHUD];
     });

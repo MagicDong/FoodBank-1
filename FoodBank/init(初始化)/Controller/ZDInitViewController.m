@@ -14,6 +14,7 @@
 #import "ZDNationView.h"
 #import "ZDNetwork.h"
 #import "MBProgressHUD+ZD.h"
+#import "NSDate+ZD.h"
 
 @interface ZDInitViewController () <ZDDatePickerViewDelegate,ZDNationViewDelegate>
 
@@ -72,6 +73,9 @@
         nation = @"0";
     }
     
+
+    
+    
     if ([self.BtnNation.titleLabel.text isEqualToString:@"请选择宝宝出生日期"]){
         [MBProgressHUD showError:@"请选择宝宝出生日期"];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.68 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -79,16 +83,31 @@
         });
         return;
     }else{
-        [ZDNetwork  postBabyInfoWithBirthday:self.BtnBirthday.titleLabel.text nation:nation allergy:@"1,2,3" CallBack:^(RspState * rsp) {
-            if (rsp.rspCode == 0) {
-                NSLog(@"%d",rsp.rspCode);
-            }
-        }];
-        ZDJudgeViewController *judge = [[ZDJudgeViewController alloc]init];
-        [self.navigationController pushViewController:judge animated:YES];
-    }
-    
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
 
+        [dateFormatter setDateFormat:@"YYYY-MM-dd"]; //设置日期格式
+        NSDate *today = [NSDate date]; //当前日期
+        NSDate *newDate = [dateFormatter dateFromString:self.BtnBirthday.titleLabel.text];  //开始日期，将NSString转为NSDate
+        
+        NSCalendar *calendar = [NSCalendar currentCalendar];
+        NSDateComponents *cmps = [calendar components:NSCalendarUnitDay fromDate:newDate toDate:today options:0];
+        ZDLog(@"日期===%d",cmps.day);
+        if (cmps.day >= 120) {
+            [ZDNetwork  postBabyInfoWithBirthday:self.BtnBirthday.titleLabel.text nation:nation allergy:@"" CallBack:^(RspState * rsp) {
+                if (rsp.rspCode == 0) {
+                    ZDLog(@"%d",rsp.rspCode);
+                }
+            }];
+            ZDJudgeViewController *judge = [[ZDJudgeViewController alloc]init];
+            [self.navigationController pushViewController:judge animated:YES];
+        }else{
+            [MBProgressHUD showError:@"宝宝月龄未达到标准"];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.68 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [MBProgressHUD hideHUD];
+            });
+            return;
+        }
+    }
 }
 
 - (void)viewDidLoad {

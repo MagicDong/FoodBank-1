@@ -23,10 +23,10 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="8" firstAttribute="top" secondItem="6" secondAttribute="top" id="29"/>
-                <constraint firstAttribute="trailing" secondItem="8" secondAttribute="trailing" id="30"/>
-                <constraint firstItem="8" firstAttribute="leading" secondItem="6" secondAttribute="leading" id="31"/>
-                <constraint firstAttribute="bottom" secondItem="8" secondAttribute="bottom" id="32"/>
+                <constraint firstAttribute="bottom" secondItem="8" secondAttribute="bottom" id="SR0-a9-p1w"/>
+                <constraint firstItem="8" firstAttribute="leading" secondItem="6" secondAttribute="leading" id="WKx-Z9-pX4"/>
+                <constraint firstAttribute="trailing" secondItem="8" secondAttribute="trailing" id="WtB-4z-hJQ"/>
+                <constraint firstItem="8" firstAttribute="top" secondItem="6" secondAttribute="top" id="huG-MM-3sa"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>

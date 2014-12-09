@@ -6,14 +6,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZDSiKuViewController">
             <connections>
-                <outlet property="anquan" destination="8Vb-jl-4i6" id="Gxv-I4-fdW"/>
                 <outlet property="collection" destination="NNy-uG-kpc" id="qd7-kl-4tY"/>
-                <outlet property="guomin" destination="qii-b4-fhE" id="IN5-Zk-lPX"/>
-                <outlet property="jujue" destination="6vf-1L-Es2" id="ZEm-K4-NRe"/>
                 <outlet property="label1" destination="1qY-Ok-rkC" id="LQo-KO-jGo"/>
                 <outlet property="label2" destination="fHC-kD-VU9" id="mk2-6w-uZW"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
-                <outlet property="weichangshi" destination="PVR-hd-5UW" id="rTj-He-dRd"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -24,11 +20,19 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uYK-bR-pcj">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="122"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="login_baobao" translatesAutoresizingMaskIntoConstraints="NO" id="ymz-Ek-vZo">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_baobao" translatesAutoresizingMaskIntoConstraints="NO" id="ymz-Ek-vZo">
                             <rect key="frame" x="8" y="13" width="30" height="31"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="31" id="hab-3X-xCX"/>
+                                <constraint firstAttribute="width" constant="30" id="yWU-ga-vkI"/>
+                            </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="初始化宝宝个人食材库" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Cs-Lc-aYi">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="初始化宝宝个人食材库" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Cs-Lc-aYi">
                             <rect key="frame" x="46" y="17" width="150" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="150" id="OJu-u8-WUO"/>
+                                <constraint firstAttribute="height" constant="25" id="jaQ-D2-ohH"/>
+                            </constraints>
                             <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="15"/>
                             <color key="textColor" red="0.75508283132530118" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
@@ -45,70 +49,21 @@
                             <color key="textColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Vb-jl-4i6">
-                            <rect key="frame" x="8" y="92" width="83" height="30"/>
-                            <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="13"/>
-                            <state key="normal" title="安全食材库" backgroundImage="login_btn">
-                                <color key="titleColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
-                            </state>
-                            <state key="selected" backgroundImage="Judge">
-                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </state>
-                            <connections>
-                                <action selector="anquan:" destination="-1" eventType="touchUpInside" id="doD-WM-W8K"/>
-                            </connections>
-                        </button>
-                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qii-b4-fhE">
-                            <rect key="frame" x="109" y="92" width="68" height="30"/>
-                            <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="11"/>
-                            <state key="normal" title="过敏食材库" backgroundImage="login_btn">
-                                <color key="titleColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
-                            </state>
-                            <state key="selected" backgroundImage="Judge">
-                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </state>
-                            <connections>
-                                <action selector="guomin:" destination="-1" eventType="touchUpInside" id="XNQ-VJ-igw"/>
-                            </connections>
-                        </button>
-                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6vf-1L-Es2">
-                            <rect key="frame" x="178" y="92" width="68" height="30"/>
-                            <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="11"/>
-                            <state key="normal" title="拒绝食材库" backgroundImage="login_btn">
-                                <color key="titleColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
-                            </state>
-                            <state key="selected" backgroundImage="Judge">
-                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </state>
-                            <connections>
-                                <action selector="jujue:" destination="-1" eventType="touchUpInside" id="izS-mb-vqz"/>
-                            </connections>
-                        </button>
-                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PVR-hd-5UW">
-                            <rect key="frame" x="247" y="92" width="73" height="30"/>
-                            <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="11"/>
-                            <state key="normal" title="未尝试食材库" backgroundImage="login_btn">
-                                <color key="titleColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
-                            </state>
-                            <state key="selected" backgroundImage="Judge">
-                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </state>
-                            <connections>
-                                <action selector="weichangshi:" destination="-1" eventType="touchUpInside" id="gZd-78-FWx"/>
-                            </connections>
-                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="122" id="J5R-o3-5YM"/>
-                        <constraint firstAttribute="width" constant="320" id="oYf-Kc-sAl"/>
+                        <constraint firstItem="4Cs-Lc-aYi" firstAttribute="leading" secondItem="ymz-Ek-vZo" secondAttribute="trailing" constant="8" id="0Mv-Wz-xVp"/>
+                        <constraint firstAttribute="height" constant="122" id="3UA-ko-YTH"/>
+                        <constraint firstItem="4Cs-Lc-aYi" firstAttribute="top" secondItem="uYK-bR-pcj" secondAttribute="top" constant="17" id="CQ5-ey-jRw"/>
+                        <constraint firstItem="ymz-Ek-vZo" firstAttribute="leading" secondItem="uYK-bR-pcj" secondAttribute="leading" constant="8" id="Rly-0r-2YJ"/>
+                        <constraint firstItem="ymz-Ek-vZo" firstAttribute="top" secondItem="uYK-bR-pcj" secondAttribute="top" constant="13" id="ixH-F5-3ke"/>
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJt-AW-Yth" userLabel="登录">
                     <rect key="frame" x="115" y="389" width="90" height="35"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="90" id="akf-up-rui"/>
-                        <constraint firstAttribute="height" constant="35" id="pU3-Ol-2pS"/>
+                        <constraint firstAttribute="height" constant="35" id="RiI-II-Jdw"/>
+                        <constraint firstAttribute="width" constant="90" id="SVr-28-Gpq"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="15"/>
                     <state key="normal" title="确定" backgroundImage="Judge"/>
@@ -116,7 +71,7 @@
                         <action selector="queding:" destination="-1" eventType="touchUpInside" id="pEq-z1-N8u"/>
                     </connections>
                 </button>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="NNy-uG-kpc">
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="NNy-uG-kpc">
                     <rect key="frame" x="0.0" y="94" width="320" height="287"/>
                     <collectionViewLayout key="collectionViewLayout" id="9gk-xM-a8p"/>
                     <connections>
@@ -127,16 +82,15 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="NNy-uG-kpc" secondAttribute="trailing" id="3u3-ji-oYb"/>
-                <constraint firstItem="NNy-uG-kpc" firstAttribute="top" secondItem="uYK-bR-pcj" secondAttribute="bottom" constant="8" id="FTp-sM-LLa"/>
-                <constraint firstItem="uYK-bR-pcj" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="JAS-23-hTf"/>
-                <constraint firstAttribute="centerX" secondItem="cJt-AW-Yth" secondAttribute="centerX" id="JPR-mw-FfY"/>
-                <constraint firstAttribute="trailing" secondItem="uYK-bR-pcj" secondAttribute="trailing" id="LzP-sb-UJb"/>
-                <constraint firstAttribute="bottom" secondItem="cJt-AW-Yth" secondAttribute="bottom" constant="12" id="R85-xc-U9g"/>
-                <constraint firstItem="cJt-AW-Yth" firstAttribute="top" secondItem="NNy-uG-kpc" secondAttribute="bottom" constant="8" id="hX6-yv-nnj"/>
-                <constraint firstItem="cJt-AW-Yth" firstAttribute="top" secondItem="NNy-uG-kpc" secondAttribute="bottom" constant="8" id="vUZ-kX-etG"/>
-                <constraint firstItem="uYK-bR-pcj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="yTN-6k-27h"/>
-                <constraint firstItem="NNy-uG-kpc" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="zoF-kH-hWD"/>
+                <constraint firstItem="NNy-uG-kpc" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="2m2-Uy-Z5b"/>
+                <constraint firstAttribute="trailing" secondItem="uYK-bR-pcj" secondAttribute="trailing" id="4Se-6u-0dG"/>
+                <constraint firstItem="cJt-AW-Yth" firstAttribute="top" secondItem="NNy-uG-kpc" secondAttribute="bottom" constant="8" id="Hd5-Ha-Ter"/>
+                <constraint firstItem="uYK-bR-pcj" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Q3T-Pm-u35"/>
+                <constraint firstAttribute="trailing" secondItem="NNy-uG-kpc" secondAttribute="trailing" id="STu-dx-j1z"/>
+                <constraint firstItem="uYK-bR-pcj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="SUf-N4-G9G"/>
+                <constraint firstItem="NNy-uG-kpc" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="94" id="bjE-4g-YUV"/>
+                <constraint firstAttribute="centerX" secondItem="cJt-AW-Yth" secondAttribute="centerX" id="gIK-6r-cXR"/>
+                <constraint firstAttribute="bottom" secondItem="cJt-AW-Yth" secondAttribute="bottom" constant="12" id="qp3-ZC-zpx"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
@@ -147,7 +101,6 @@
     <resources>
         <image name="Judge" width="105" height="36"/>
         <image name="login_baobao" width="88" height="74"/>
-        <image name="login_btn" width="11" height="19"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

@@ -46,9 +46,6 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ipad_user_login_sina" translatesAutoresizingMaskIntoConstraints="NO" id="gnB-ja-zkU">
-                    <rect key="frame" x="110" y="56" width="100" height="100"/>
-                </imageView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5JN-xm-EMk" userLabel="登录">
                     <rect key="frame" x="24" y="356" width="122" height="40"/>
                     <state key="normal" backgroundImage="ipad_user_login">
@@ -85,6 +82,9 @@
                     </state>
                     <state key="selected" image="radiobox-green-checked"/>
                 </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ipad_user_login_qq" translatesAutoresizingMaskIntoConstraints="NO" id="gnB-ja-zkU">
+                    <rect key="frame" x="110" y="56" width="100" height="100"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <nil key="simulatedTopBarMetrics"/>
@@ -94,7 +94,7 @@
     </objects>
     <resources>
         <image name="ipad_user_login" width="222" height="66"/>
-        <image name="ipad_user_login_sina" width="92" height="92"/>
+        <image name="ipad_user_login_qq" width="92" height="92"/>
         <image name="ipad_user_signup" width="222" height="66"/>
         <image name="radiobox-green-checked" width="20" height="20"/>
         <image name="user_checkbox_seleted" width="44" height="44"/>

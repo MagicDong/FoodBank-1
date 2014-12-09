@@ -146,6 +146,7 @@ int timerCount = 99;
                         baby.userName = self.userName.text;
                         baby.password = self.password.text;
                         baby.jsessionid = jsessionid;
+                        ZDLog(@"......%@",jsessionid);
                         [babyTool saveAccount:baby];
                         // 进入初始化界面
                         ZDInitViewController *initView = [[ZDInitViewController alloc]init];

@@ -270,10 +270,10 @@ static NSString *PhotosID = @"photosCell";
 // 表格行选中
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {    // imgextra
-    NSString *isPhotos = self.dataList[indexPath.row][@"docid"];
-    NSRange range = [isPhotos rangeOfString:@"_" options:NSBackwardsSearch];
-    
-    if (range.length != 0 ) {
+//    NSString *isPhotos = self.dataList[indexPath.row][@"docid"];
+//    NSRange range = [isPhotos rangeOfString:@"_" options:NSBackwardsSearch];
+     NSArray *array = self.dataList[indexPath.row][@"imgextra"];
+    if (array.count != 0 ) {
         NSMutableArray *array = [NSMutableArray array];
         
         UIImageView *imageView1 = [[UIImageView alloc]init];

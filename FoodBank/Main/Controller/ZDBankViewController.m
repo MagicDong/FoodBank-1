@@ -229,7 +229,6 @@
             ZDYueViewController *yue = [[ZDYueViewController alloc]init];
             [self.navigationController pushViewController:yue animated:YES];
         }
-        
     });
 }
 

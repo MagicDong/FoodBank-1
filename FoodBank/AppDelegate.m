@@ -40,6 +40,7 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *key = (__bridge_transfer NSString *)kCFBundleVersionKey;
     NSString *sandBoxVersion = [defaults valueForKey:key];
+    
     // 2.获取当前软件的版本号
     NSDictionary *md =[NSBundle mainBundle].infoDictionary;
     NSString *currentVersion = md[key];
@@ -49,12 +50,12 @@
     //3.设置根控制器
 //
      ZDBaby *baby = [ZDBabyTool sharedZDBabyTool].account;
-    BOOL tool = [ZDBabyTool sharedZDBabyTool].removeAccount;
+//    BOOL tool = [ZDBabyTool sharedZDBabyTool].removeAccount;
     [UIApplication sharedApplication].statusBarHidden = YES;
     
     
-//    if ([currentVersion compare:sandBoxVersion] ==  NSOrderedDescending)
-    if (tool)
+    if ([currentVersion compare:sandBoxVersion] ==  NSOrderedDescending)
+//    if (baby.userName)
     {
         // 存储当前版本号
         [defaults setObject:currentVersion forKey:key];
@@ -67,7 +68,7 @@
     }else
     {
         ZDLog(@"%@",baby.userName);
-        if (baby.userName == nil) {
+        if (baby.userName != nil) {
             ZDRegisterViewController *reg = [[ZDRegisterViewController alloc]init];
             self.window.rootViewController = reg;
         }else{

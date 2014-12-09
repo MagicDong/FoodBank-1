@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -13,20 +14,38 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="189"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xPV-s8-Ooc">
-                        <rect key="frame" x="0.0" y="-1" width="320" height="177"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xPV-s8-Ooc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="176"/>
                     </imageView>
-                    <view alpha="0.40000000000000002" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8gY-TA-NvN">
-                        <rect key="frame" x="0.0" y="146" width="320" height="30"/>
+                    <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8gY-TA-NvN">
+                        <rect key="frame" x="0.0" y="145" width="320" height="30"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="ow9-va-bNC"/>
+                        </constraints>
                     </view>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&quot;毛泽东号&quot;机车结束货运投入客运" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KCG-Qs-ubL">
-                        <rect key="frame" x="20" y="142" width="272" height="40"/>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&quot;毛泽东号&quot;机车结束货运投入客运" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KCG-Qs-ubL">
+                        <rect key="frame" x="10" y="150" width="272" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="272" id="7b7-qd-STd"/>
+                            <constraint firstAttribute="height" constant="20" id="ilm-k1-mLp"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottomMargin" secondItem="8gY-TA-NvN" secondAttribute="bottom" constant="-7" id="1RU-PT-Cw3"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="KCG-Qs-ubL" secondAttribute="bottom" constant="-2" id="6bq-mP-Nm7"/>
+                    <constraint firstItem="KCG-Qs-ubL" firstAttribute="leading" secondItem="pBZ-y1-PZ8" secondAttribute="leadingMargin" constant="2" id="AOO-Pt-HLu"/>
+                    <constraint firstItem="xPV-s8-Ooc" firstAttribute="top" secondItem="pBZ-y1-PZ8" secondAttribute="topMargin" constant="-8" id="UoH-ad-0ud"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="xPV-s8-Ooc" secondAttribute="bottom" constant="-8" id="ZjL-cB-Cum"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="xPV-s8-Ooc" secondAttribute="trailing" constant="-8" id="dSN-aZ-0DL"/>
+                    <constraint firstItem="8gY-TA-NvN" firstAttribute="leading" secondItem="pBZ-y1-PZ8" secondAttribute="leadingMargin" constant="-8" id="fjG-3q-84o"/>
+                    <constraint firstItem="xPV-s8-Ooc" firstAttribute="leading" secondItem="pBZ-y1-PZ8" secondAttribute="leadingMargin" constant="-8" id="krx-oO-8AH"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="8gY-TA-NvN" secondAttribute="trailing" constant="-8" id="wBZ-bH-M4D"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="icon" destination="xPV-s8-Ooc" id="jNn-Rw-GhA"/>

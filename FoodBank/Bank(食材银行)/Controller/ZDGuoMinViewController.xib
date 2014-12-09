@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="44" width="320" height="436"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uYK-bR-pcj">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uYK-bR-pcj">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="57"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="baby" translatesAutoresizingMaskIntoConstraints="NO" id="ymz-Ek-vZo">
@@ -29,12 +29,15 @@
                         </label>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="57" id="61w-Kc-brs"/>
+                    </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJt-AW-Yth" userLabel="登录">
                     <rect key="frame" x="125" y="389" width="71" height="32"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="32" id="2Kg-a6-uSC"/>
-                        <constraint firstAttribute="width" constant="71" id="Q8S-cU-alv"/>
+                        <constraint firstAttribute="width" constant="71" id="4To-UE-F4b"/>
+                        <constraint firstAttribute="height" constant="32" id="R1D-3Z-WWT"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="15"/>
                     <state key="normal" title="确定" backgroundImage="Judge"/>
@@ -58,13 +61,15 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="uP2-5C-6J6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="1ql-7K-wGv"/>
-                <constraint firstItem="cJt-AW-Yth" firstAttribute="top" secondItem="uP2-5C-6J6" secondAttribute="bottom" constant="8" id="QzO-g7-zIh"/>
-                <constraint firstItem="cJt-AW-Yth" firstAttribute="top" secondItem="uP2-5C-6J6" secondAttribute="bottom" constant="8" id="gf9-ej-NW3"/>
-                <constraint firstAttribute="bottom" secondItem="cJt-AW-Yth" secondAttribute="bottom" constant="15" id="slz-ln-UlY"/>
-                <constraint firstItem="uP2-5C-6J6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="49" id="ul0-9T-36A"/>
-                <constraint firstAttribute="trailing" secondItem="uP2-5C-6J6" secondAttribute="trailing" constant="8" id="zXa-5K-VlM"/>
-                <constraint firstAttribute="centerX" secondItem="cJt-AW-Yth" secondAttribute="centerX" id="zlG-NQ-gcW"/>
+                <constraint firstItem="cJt-AW-Yth" firstAttribute="top" secondItem="uP2-5C-6J6" secondAttribute="bottom" constant="8" id="2T9-22-Q9F"/>
+                <constraint firstItem="uP2-5C-6J6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="4IM-6s-ORe"/>
+                <constraint firstAttribute="centerX" secondItem="cJt-AW-Yth" secondAttribute="centerX" id="A6S-Er-eug"/>
+                <constraint firstItem="uYK-bR-pcj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="BYh-Py-qTd"/>
+                <constraint firstAttribute="trailing" secondItem="uYK-bR-pcj" secondAttribute="trailing" id="K6e-VZ-Xb6"/>
+                <constraint firstItem="uP2-5C-6J6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="49" id="WkJ-s1-si8"/>
+                <constraint firstItem="uYK-bR-pcj" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="bSh-KQ-q0K"/>
+                <constraint firstAttribute="bottom" secondItem="cJt-AW-Yth" secondAttribute="bottom" constant="15" id="cQ1-hb-zyB"/>
+                <constraint firstAttribute="trailing" secondItem="uP2-5C-6J6" secondAttribute="trailing" constant="8" id="kjc-S0-Lw4"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>

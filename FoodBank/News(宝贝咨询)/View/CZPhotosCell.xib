@@ -2,38 +2,71 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="photosCell" rowHeight="90" id="KGk-i7-Jjw" customClass="CZPhotosCell">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="photosCell" rowHeight="100" id="KGk-i7-Jjw" customClass="CZPhotosCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ffw-tw-ZrE">
-                        <rect key="frame" x="12" y="29" width="80" height="60"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rJr-xC-hUD">
+                        <rect key="frame" x="120" y="32" width="80" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="6tj-pI-WiT"/>
+                            <constraint firstAttribute="height" constant="60" id="rEq-an-YBA"/>
+                        </constraints>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rJr-xC-hUD">
-                        <rect key="frame" x="125" y="29" width="80" height="60"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="N5r-6k-SYm">
+                        <rect key="frame" x="232" y="32" width="80" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="Mhq-Vd-Xbz"/>
+                            <constraint firstAttribute="height" constant="60" id="cLW-NF-3P1"/>
+                        </constraints>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N5r-6k-SYm">
-                        <rect key="frame" x="235" y="29" width="80" height="60"/>
-                    </imageView>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="奥巴马支持日解禁集体自卫权" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cIz-sF-dCz">
-                        <rect key="frame" x="12" y="4" width="245" height="21"/>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="奥巴马支持日解禁集体自卫权" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cIz-sF-dCz">
+                        <rect key="frame" x="8" y="8" width="245" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="5a3-QD-xA1"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="20000跟帖" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6UY-uy-NXj">
-                        <rect key="frame" x="253" y="4" width="62" height="21"/>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20000跟帖" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6UY-uy-NXj">
+                        <rect key="frame" x="250" y="8" width="62" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="0Yd-WX-Fj6"/>
+                            <constraint firstAttribute="width" constant="62" id="feV-q8-Y6O"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ffw-tw-ZrE">
+                        <rect key="frame" x="8" y="32" width="80" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="60" id="hMl-mh-eiS"/>
+                            <constraint firstAttribute="width" constant="80" id="pnC-2b-ETk"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="6UY-uy-NXj" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="1Fx-FU-O5H"/>
+                    <constraint firstItem="ffw-tw-ZrE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="34p-fj-NR9"/>
+                    <constraint firstItem="cIz-sF-dCz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="AL1-ks-Tbe"/>
+                    <constraint firstAttribute="centerX" secondItem="rJr-xC-hUD" secondAttribute="centerX" id="CBz-oJ-byo"/>
+                    <constraint firstItem="N5r-6k-SYm" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="GIi-nn-q4k"/>
+                    <constraint firstItem="6UY-uy-NXj" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="aJM-QJ-K5c"/>
+                    <constraint firstItem="cIz-sF-dCz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="hDr-b8-W90"/>
+                    <constraint firstItem="rJr-xC-hUD" firstAttribute="top" secondItem="cIz-sF-dCz" secondAttribute="bottom" constant="3" id="kN6-70-6sm"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="N5r-6k-SYm" secondAttribute="bottom" constant="-1" id="rNU-gs-TBm"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="ffw-tw-ZrE" secondAttribute="bottom" constant="-1" id="tbd-mU-gxY"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="cIz-sF-dCz" secondAttribute="trailing" constant="59" id="y8Z-a6-pcV"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="image1" destination="ffw-tw-ZrE" id="Mdg-EY-iu3"/>

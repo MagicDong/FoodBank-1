@@ -47,14 +47,22 @@
             <rect key="frame" x="0.0" y="44" width="320" height="524"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="新食材尝试周总结" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rUF-lU-vjy">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新食材尝试周总结" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rUF-lU-vjy">
                     <rect key="frame" x="8" y="15" width="128" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="128" id="WFm-o1-A8U"/>
+                        <constraint firstAttribute="height" constant="21" id="yTN-nA-oc6"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                     <color key="textColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CFh-Dz-X4q">
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CFh-Dz-X4q">
                     <rect key="frame" x="8" y="44" width="100" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="lpW-aP-JPz"/>
+                        <constraint firstAttribute="width" constant="100" id="rf5-2c-xgH"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="13"/>
                     <state key="normal" title="食材种类" backgroundImage="BGTou">
                         <color key="titleColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -63,8 +71,11 @@
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
-                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ozX-uR-VyO">
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ozX-uR-VyO">
                     <rect key="frame" x="108" y="44" width="95" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="rLr-Mh-sed"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="13"/>
                     <state key="normal" title="本周新增(个)" backgroundImage="BGTou">
                         <color key="titleColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -73,8 +84,12 @@
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
-                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WCx-b6-eQg">
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WCx-b6-eQg">
                     <rect key="frame" x="203" y="44" width="109" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="Czg-og-orz"/>
+                        <constraint firstAttribute="width" constant="109" id="eTC-pr-EJo"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="13"/>
                     <state key="normal" title="食材银行储备(个)" backgroundImage="BGTou">
                         <color key="titleColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -83,8 +98,12 @@
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
-                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5vZ-SW-Uy7">
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5vZ-SW-Uy7">
                     <rect key="frame" x="8" y="74" width="100" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="M6C-lg-BOh"/>
+                        <constraint firstAttribute="height" constant="30" id="qUc-b4-60m"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="13"/>
                     <state key="normal" title="谷类、薯类">
                         <color key="titleColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -93,8 +112,11 @@
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
-                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fWZ-2i-fLS">
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fWZ-2i-fLS">
                     <rect key="frame" x="108" y="74" width="95" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="biu-XY-im1"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="13"/>
                     <state key="normal">
                         <color key="titleColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -103,8 +125,12 @@
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
-                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Mo-0n-780">
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Mo-0n-780">
                     <rect key="frame" x="203" y="74" width="109" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="i8O-za-OyH"/>
+                        <constraint firstAttribute="width" constant="109" id="zCS-qo-4Ah"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="13"/>
                     <state key="normal">
                         <color key="titleColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -113,8 +139,12 @@
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
-                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sIk-81-bEO">
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sIk-81-bEO">
                     <rect key="frame" x="8" y="104" width="100" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="1tt-mw-xAN"/>
+                        <constraint firstAttribute="height" constant="30" id="2Zj-hq-WOy"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="13"/>
                     <state key="normal" title="蔬菜类" backgroundImage="BGZhong">
                         <color key="titleColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -123,8 +153,11 @@
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
-                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RcQ-L3-xBx">
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RcQ-L3-xBx">
                     <rect key="frame" x="108" y="104" width="95" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="wd4-k8-IHf"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="13"/>
                     <state key="normal" backgroundImage="BGZhong">
                         <color key="titleColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -133,18 +166,12 @@
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
-                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="43C-Ff-3HN">
-                    <rect key="frame" x="203" y="104" width="109" height="30"/>
-                    <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="13"/>
-                    <state key="normal" backgroundImage="BGZhong">
-                        <color key="titleColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                    <state key="selected" backgroundImage="Judge">
-                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                </button>
-                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iwi-wL-a7o">
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iwi-wL-a7o">
                     <rect key="frame" x="8" y="134" width="100" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="1Q8-GS-xrA"/>
+                        <constraint firstAttribute="width" constant="100" id="yit-01-Tew"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="13"/>
                     <state key="normal" title="水果类">
                         <color key="titleColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -153,8 +180,11 @@
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
-                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ulJ-gI-tML">
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ulJ-gI-tML">
                     <rect key="frame" x="108" y="134" width="95" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="mJj-1W-uDu"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="13"/>
                     <state key="normal">
                         <color key="titleColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -163,18 +193,12 @@
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
-                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tms-a6-RNB">
-                    <rect key="frame" x="203" y="134" width="109" height="30"/>
-                    <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="13"/>
-                    <state key="normal">
-                        <color key="titleColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                    <state key="selected" backgroundImage="Judge">
-                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                </button>
-                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9S6-sP-Z40">
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9S6-sP-Z40">
                     <rect key="frame" x="8" y="164" width="100" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="f3U-gz-e55"/>
+                        <constraint firstAttribute="height" constant="30" id="snU-A8-eFx"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="13"/>
                     <state key="normal" title="禽畜肉类" backgroundImage="BGZhong">
                         <color key="titleColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -183,8 +207,11 @@
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
-                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3v1-SU-50j">
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3v1-SU-50j">
                     <rect key="frame" x="108" y="164" width="95" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="oPn-XZ-cEB"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="13"/>
                     <state key="normal" backgroundImage="BGZhong">
                         <color key="titleColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -193,18 +220,12 @@
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
-                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="grK-Ti-E1x">
-                    <rect key="frame" x="203" y="164" width="109" height="30"/>
-                    <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="13"/>
-                    <state key="normal" backgroundImage="BGZhong">
-                        <color key="titleColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                    <state key="selected" backgroundImage="Judge">
-                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                </button>
-                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xuz-X4-wdp">
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xuz-X4-wdp">
                     <rect key="frame" x="8" y="194" width="100" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="N0N-iB-d2u"/>
+                        <constraint firstAttribute="width" constant="100" id="gQO-x5-U8c"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="13"/>
                     <state key="normal" title="水产类">
                         <color key="titleColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -213,8 +234,11 @@
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
-                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SrU-fy-Jvd">
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SrU-fy-Jvd">
                     <rect key="frame" x="108" y="194" width="95" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="oPM-p3-ezR"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="13"/>
                     <state key="normal">
                         <color key="titleColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -223,18 +247,12 @@
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
-                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gjB-Ur-big">
-                    <rect key="frame" x="203" y="194" width="109" height="30"/>
-                    <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="13"/>
-                    <state key="normal">
-                        <color key="titleColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                    <state key="selected" backgroundImage="Judge">
-                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                </button>
-                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uhZ-It-IB4">
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uhZ-It-IB4">
                     <rect key="frame" x="8" y="224" width="100" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="GI0-nt-3Z5"/>
+                        <constraint firstAttribute="height" constant="30" id="WCO-4c-i1K"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="13"/>
                     <state key="normal" title="蛋类" backgroundImage="BGZhong">
                         <color key="titleColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -243,8 +261,11 @@
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
-                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9B6-Ii-W9m">
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9B6-Ii-W9m">
                     <rect key="frame" x="108" y="224" width="95" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="YqG-PY-dlq"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="13"/>
                     <state key="normal" backgroundImage="BGZhong">
                         <color key="titleColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -253,8 +274,12 @@
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
-                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UXK-jK-dMd">
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UXK-jK-dMd">
                     <rect key="frame" x="203" y="224" width="109" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="Xha-uj-1eV"/>
+                        <constraint firstAttribute="width" constant="109" id="Xpk-Aw-1IS"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="13"/>
                     <state key="normal" backgroundImage="BGZhong">
                         <color key="titleColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -263,8 +288,12 @@
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
-                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fU2-R2-lwq">
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fU2-R2-lwq">
                     <rect key="frame" x="8" y="254" width="100" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="LbU-8q-mGL"/>
+                        <constraint firstAttribute="width" constant="100" id="zGz-25-VuC"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="13"/>
                     <state key="normal" title="奶类及豆制品">
                         <color key="titleColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -273,8 +302,11 @@
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
-                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XhV-ac-mxz">
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XhV-ac-mxz">
                     <rect key="frame" x="108" y="254" width="95" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="eYC-JA-L36"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="13"/>
                     <state key="normal">
                         <color key="titleColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -283,18 +315,12 @@
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
-                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M0y-ZJ-Wdh">
-                    <rect key="frame" x="203" y="254" width="109" height="30"/>
-                    <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="13"/>
-                    <state key="normal">
-                        <color key="titleColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                    <state key="selected" backgroundImage="Judge">
-                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                </button>
-                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eoI-3J-8g5">
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eoI-3J-8g5">
                     <rect key="frame" x="8" y="284" width="100" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="8qt-5w-vrm"/>
+                        <constraint firstAttribute="width" constant="100" id="rkA-jq-Alz"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="13"/>
                     <state key="normal" title="大豆及制品类" backgroundImage="BGZhong">
                         <color key="titleColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -303,8 +329,11 @@
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
-                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xXN-I3-ynr">
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xXN-I3-ynr">
                     <rect key="frame" x="108" y="284" width="95" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="w1U-v2-84V"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="13"/>
                     <state key="normal" backgroundImage="BGZhong">
                         <color key="titleColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -313,8 +342,12 @@
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
-                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YVE-L2-Gkb">
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YVE-L2-Gkb">
                     <rect key="frame" x="203" y="284" width="109" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="109" id="NWd-C9-7Cv"/>
+                        <constraint firstAttribute="height" constant="30" id="tir-II-aqR"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="13"/>
                     <state key="normal" backgroundImage="BGZhong">
                         <color key="titleColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -323,8 +356,12 @@
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
-                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AUU-8Y-X9w">
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AUU-8Y-X9w">
                     <rect key="frame" x="8" y="314" width="100" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="9Fc-Nu-63s"/>
+                        <constraint firstAttribute="height" constant="30" id="Rga-75-Db5"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="13"/>
                     <state key="normal" title="坚果类">
                         <color key="titleColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -333,8 +370,11 @@
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
-                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kln-kv-zEx">
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kln-kv-zEx">
                     <rect key="frame" x="108" y="314" width="95" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="mFi-n0-Tep"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="13"/>
                     <state key="normal">
                         <color key="titleColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -343,8 +383,12 @@
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
-                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ppm-Ml-6Fb">
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ppm-Ml-6Fb">
                     <rect key="frame" x="203" y="314" width="109" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="jI5-8g-Ewp"/>
+                        <constraint firstAttribute="width" constant="109" id="red-4n-Aod"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="13"/>
                     <state key="normal">
                         <color key="titleColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -353,8 +397,12 @@
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
-                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zES-h0-60x">
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zES-h0-60x">
                     <rect key="frame" x="8" y="344" width="100" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="Lfu-LF-PpK"/>
+                        <constraint firstAttribute="width" constant="100" id="gYx-h7-p3m"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="13"/>
                     <state key="normal" title="油脂类" backgroundImage="BGZhong">
                         <color key="titleColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -363,8 +411,11 @@
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
-                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UfD-EH-Xjo">
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UfD-EH-Xjo">
                     <rect key="frame" x="108" y="344" width="95" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="EJl-Ae-fwZ"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="13"/>
                     <state key="normal" backgroundImage="BGZhong">
                         <color key="titleColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -373,8 +424,12 @@
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
-                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JKO-of-FZQ">
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JKO-of-FZQ">
                     <rect key="frame" x="203" y="344" width="109" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="109" id="5Gt-Ly-CzI"/>
+                        <constraint firstAttribute="height" constant="30" id="IiK-dS-YeS"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="13"/>
                     <state key="normal" backgroundImage="BGZhong">
                         <color key="titleColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -383,29 +438,45 @@
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kyW-fP-eqP">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kyW-fP-eqP">
                     <rect key="frame" x="8" y="374" width="304" height="135"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="本周您给宝宝尝试了      个新食材。" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cct-kp-Efl">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="本周您给宝宝尝试了      个新食材。" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cct-kp-Efl">
                             <rect key="frame" x="0.0" y="8" width="304" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="304" id="OHc-ek-rkM"/>
+                                <constraint firstAttribute="height" constant="21" id="hNL-5E-3q0"/>
+                            </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <color key="textColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="恭喜您！宝宝的食材银行又多了      个安全食材；" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ycy-lB-GFk">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="恭喜您！宝宝的食材银行又多了      个安全食材；" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ycy-lB-GFk">
                             <rect key="frame" x="0.0" y="37" width="304" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="OWm-RV-LSz"/>
+                                <constraint firstAttribute="width" constant="304" id="ctH-15-YUe"/>
+                            </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <color key="textColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="      个新食材被拒绝，未进入食材银行；" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H7s-sG-YrV">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="      个新食材被拒绝，未进入食材银行；" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H7s-sG-YrV">
                             <rect key="frame" x="0.0" y="94" width="304" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="7Ky-pi-6X7"/>
+                                <constraint firstAttribute="width" constant="304" id="7b2-V4-7Kb"/>
+                            </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <color key="textColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bMZ-Nw-NeN">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bMZ-Nw-NeN">
                             <rect key="frame" x="0.0" y="65" width="304" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="304" id="jIT-5r-Azz"/>
+                                <constraint firstAttribute="height" constant="21" id="rXi-Hx-33w"/>
+                            </constraints>
                             <string key="text">      个新食材出现了过敏症状，
 </string>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -414,9 +485,181 @@
                         </label>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="H7s-sG-YrV" firstAttribute="leading" secondItem="kyW-fP-eqP" secondAttribute="leading" id="2Oz-38-all"/>
+                        <constraint firstAttribute="trailing" secondItem="cct-kp-Efl" secondAttribute="trailing" id="DuC-5S-qlH"/>
+                        <constraint firstItem="bMZ-Nw-NeN" firstAttribute="leading" secondItem="kyW-fP-eqP" secondAttribute="leading" id="FFC-Vy-kGi"/>
+                        <constraint firstItem="ycy-lB-GFk" firstAttribute="leading" secondItem="kyW-fP-eqP" secondAttribute="leading" id="HAV-2h-dPe"/>
+                        <constraint firstItem="bMZ-Nw-NeN" firstAttribute="top" secondItem="ycy-lB-GFk" secondAttribute="bottom" constant="7" id="JbY-cS-K9q"/>
+                        <constraint firstItem="ycy-lB-GFk" firstAttribute="top" secondItem="cct-kp-Efl" secondAttribute="bottom" constant="8" id="LPD-5s-EDv"/>
+                        <constraint firstAttribute="trailing" secondItem="H7s-sG-YrV" secondAttribute="trailing" id="QQt-6B-pBH"/>
+                        <constraint firstAttribute="trailing" secondItem="ycy-lB-GFk" secondAttribute="trailing" id="b4o-d6-n9a"/>
+                        <constraint firstAttribute="trailing" secondItem="bMZ-Nw-NeN" secondAttribute="trailing" id="bdb-YU-Roj"/>
+                        <constraint firstAttribute="height" constant="135" id="jQm-is-mQp"/>
+                        <constraint firstAttribute="width" constant="304" id="kqH-bG-cgY"/>
+                        <constraint firstItem="cct-kp-Efl" firstAttribute="leading" secondItem="kyW-fP-eqP" secondAttribute="leading" id="lzT-R2-5xC"/>
+                        <constraint firstItem="cct-kp-Efl" firstAttribute="top" secondItem="kyW-fP-eqP" secondAttribute="top" constant="8" id="waY-dp-Gk8"/>
+                        <constraint firstItem="H7s-sG-YrV" firstAttribute="top" secondItem="bMZ-Nw-NeN" secondAttribute="bottom" constant="8" id="xeU-eK-1sJ"/>
+                    </constraints>
                 </view>
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="43C-Ff-3HN">
+                    <rect key="frame" x="203" y="104" width="109" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="109" id="Ve7-bT-auE"/>
+                        <constraint firstAttribute="height" constant="30" id="hIt-zL-2Qy"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="13"/>
+                    <state key="normal" backgroundImage="BGZhong">
+                        <color key="titleColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <state key="selected" backgroundImage="Judge">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tms-a6-RNB">
+                    <rect key="frame" x="203" y="134" width="109" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="109" id="H1p-ze-Uc7"/>
+                        <constraint firstAttribute="height" constant="30" id="cGW-fY-jbZ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="13"/>
+                    <state key="normal">
+                        <color key="titleColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <state key="selected" backgroundImage="Judge">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="grK-Ti-E1x">
+                    <rect key="frame" x="203" y="164" width="109" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="109" id="RCJ-e0-6IO"/>
+                        <constraint firstAttribute="height" constant="30" id="ZkX-fZ-eIL"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="13"/>
+                    <state key="normal" backgroundImage="BGZhong">
+                        <color key="titleColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <state key="selected" backgroundImage="Judge">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gjB-Ur-big">
+                    <rect key="frame" x="203" y="194" width="109" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="109" id="PQ5-qU-EgC"/>
+                        <constraint firstAttribute="height" constant="30" id="WEE-Lr-mUF"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="13"/>
+                    <state key="normal">
+                        <color key="titleColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <state key="selected" backgroundImage="Judge">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M0y-ZJ-Wdh">
+                    <rect key="frame" x="203" y="254" width="109" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="109" id="9cP-3A-KBQ"/>
+                        <constraint firstAttribute="height" constant="30" id="OSH-Z5-UDm"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="13"/>
+                    <state key="normal">
+                        <color key="titleColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <state key="selected" backgroundImage="Judge">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="UXK-jK-dMd" firstAttribute="top" secondItem="gjB-Ur-big" secondAttribute="bottom" id="0rf-Hw-mMh"/>
+                <constraint firstAttribute="trailing" secondItem="JKO-of-FZQ" secondAttribute="trailing" constant="8" id="272-9f-God"/>
+                <constraint firstItem="grK-Ti-E1x" firstAttribute="top" secondItem="tms-a6-RNB" secondAttribute="bottom" id="2FQ-8b-gbh"/>
+                <constraint firstItem="fWZ-2i-fLS" firstAttribute="top" secondItem="ozX-uR-VyO" secondAttribute="bottom" id="2zf-Po-tO2"/>
+                <constraint firstItem="ulJ-gI-tML" firstAttribute="top" secondItem="RcQ-L3-xBx" secondAttribute="bottom" id="3ju-Q4-8sL"/>
+                <constraint firstItem="tms-a6-RNB" firstAttribute="top" secondItem="43C-Ff-3HN" secondAttribute="bottom" id="5oi-Qh-6gz"/>
+                <constraint firstItem="9S6-sP-Z40" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="6JQ-Vp-0Fo"/>
+                <constraint firstItem="xXN-I3-ynr" firstAttribute="top" secondItem="XhV-ac-mxz" secondAttribute="bottom" id="6Oz-QT-tUV"/>
+                <constraint firstAttribute="bottom" secondItem="kyW-fP-eqP" secondAttribute="bottom" constant="15" id="7sw-VE-klb"/>
+                <constraint firstAttribute="trailing" secondItem="4Mo-0n-780" secondAttribute="trailing" constant="8" id="8fU-SZ-TcV"/>
+                <constraint firstItem="SrU-fy-Jvd" firstAttribute="top" secondItem="3v1-SU-50j" secondAttribute="bottom" id="8kC-aD-czQ"/>
+                <constraint firstItem="iwi-wL-a7o" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="9T5-2y-jiz"/>
+                <constraint firstItem="gjB-Ur-big" firstAttribute="top" secondItem="grK-Ti-E1x" secondAttribute="bottom" id="9pk-oa-7Jj"/>
+                <constraint firstItem="YVE-L2-Gkb" firstAttribute="leading" secondItem="xXN-I3-ynr" secondAttribute="trailing" id="A37-wR-r7B"/>
+                <constraint firstItem="3v1-SU-50j" firstAttribute="leading" secondItem="9S6-sP-Z40" secondAttribute="trailing" id="B7k-fp-stI"/>
+                <constraint firstItem="uhZ-It-IB4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="B9Y-8J-e3U"/>
+                <constraint firstItem="UfD-EH-Xjo" firstAttribute="leading" secondItem="zES-h0-60x" secondAttribute="trailing" id="BLR-on-0Wd"/>
+                <constraint firstItem="rUF-lU-vjy" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="15" id="BX6-6s-qFJ"/>
+                <constraint firstAttribute="trailing" secondItem="WCx-b6-eQg" secondAttribute="trailing" constant="8" id="DCh-qh-Nne"/>
+                <constraint firstItem="9S6-sP-Z40" firstAttribute="top" secondItem="iwi-wL-a7o" secondAttribute="bottom" id="DdT-EA-koN"/>
+                <constraint firstItem="5vZ-SW-Uy7" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="Dls-is-qaU"/>
+                <constraint firstItem="SrU-fy-Jvd" firstAttribute="leading" secondItem="xuz-X4-wdp" secondAttribute="trailing" id="EXD-Jt-bm3"/>
+                <constraint firstAttribute="trailing" secondItem="gjB-Ur-big" secondAttribute="trailing" constant="8" id="F5W-RO-m59"/>
+                <constraint firstItem="ulJ-gI-tML" firstAttribute="leading" secondItem="iwi-wL-a7o" secondAttribute="trailing" id="FWv-hk-ioL"/>
+                <constraint firstItem="sIk-81-bEO" firstAttribute="top" secondItem="5vZ-SW-Uy7" secondAttribute="bottom" id="FZM-vR-swT"/>
+                <constraint firstItem="Ppm-Ml-6Fb" firstAttribute="top" secondItem="YVE-L2-Gkb" secondAttribute="bottom" id="GUt-eI-MoH"/>
+                <constraint firstItem="43C-Ff-3HN" firstAttribute="leading" secondItem="RcQ-L3-xBx" secondAttribute="trailing" id="JFd-VT-omR"/>
+                <constraint firstItem="gjB-Ur-big" firstAttribute="leading" secondItem="SrU-fy-Jvd" secondAttribute="trailing" id="JaG-HK-o1i"/>
+                <constraint firstItem="YVE-L2-Gkb" firstAttribute="top" secondItem="M0y-ZJ-Wdh" secondAttribute="bottom" id="JtU-JG-ptx"/>
+                <constraint firstItem="eoI-3J-8g5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="Juu-vB-RX8"/>
+                <constraint firstItem="AUU-8Y-X9w" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="Lue-Kj-Brr"/>
+                <constraint firstAttribute="trailing" secondItem="tms-a6-RNB" secondAttribute="trailing" constant="8" id="MM1-rb-KE2"/>
+                <constraint firstItem="xuz-X4-wdp" firstAttribute="top" secondItem="9S6-sP-Z40" secondAttribute="bottom" id="MSQ-x7-sQD"/>
+                <constraint firstItem="UfD-EH-Xjo" firstAttribute="top" secondItem="kln-kv-zEx" secondAttribute="bottom" id="Mdi-YF-rRn"/>
+                <constraint firstItem="eoI-3J-8g5" firstAttribute="top" secondItem="fU2-R2-lwq" secondAttribute="bottom" id="NDK-M8-UhS"/>
+                <constraint firstItem="grK-Ti-E1x" firstAttribute="leading" secondItem="3v1-SU-50j" secondAttribute="trailing" id="T1Y-I6-3fg"/>
+                <constraint firstItem="iwi-wL-a7o" firstAttribute="top" secondItem="sIk-81-bEO" secondAttribute="bottom" id="VPk-MG-d7f"/>
+                <constraint firstItem="WCx-b6-eQg" firstAttribute="leading" secondItem="ozX-uR-VyO" secondAttribute="trailing" id="VSY-me-g3l"/>
+                <constraint firstItem="4Mo-0n-780" firstAttribute="leading" secondItem="fWZ-2i-fLS" secondAttribute="trailing" id="Vmn-HP-SUs"/>
+                <constraint firstItem="4Mo-0n-780" firstAttribute="top" secondItem="WCx-b6-eQg" secondAttribute="bottom" id="XdC-NA-lMT"/>
+                <constraint firstItem="9B6-Ii-W9m" firstAttribute="top" secondItem="SrU-fy-Jvd" secondAttribute="bottom" id="Xt5-7p-gQI"/>
+                <constraint firstItem="M0y-ZJ-Wdh" firstAttribute="top" secondItem="UXK-jK-dMd" secondAttribute="bottom" id="Y7f-7L-79o"/>
+                <constraint firstAttribute="trailing" secondItem="rUF-lU-vjy" secondAttribute="trailing" constant="184" id="YeM-4S-oPm"/>
+                <constraint firstItem="fU2-R2-lwq" firstAttribute="top" secondItem="uhZ-It-IB4" secondAttribute="bottom" id="Yhh-6D-dL8"/>
+                <constraint firstAttribute="trailing" secondItem="kyW-fP-eqP" secondAttribute="trailing" constant="8" id="Zam-Mi-EBa"/>
+                <constraint firstItem="RcQ-L3-xBx" firstAttribute="leading" secondItem="sIk-81-bEO" secondAttribute="trailing" id="ao1-uh-QZv"/>
+                <constraint firstItem="ozX-uR-VyO" firstAttribute="top" secondItem="rUF-lU-vjy" secondAttribute="bottom" constant="8" id="bla-Hk-c3r"/>
+                <constraint firstItem="tms-a6-RNB" firstAttribute="leading" secondItem="ulJ-gI-tML" secondAttribute="trailing" id="cVT-yU-cvT"/>
+                <constraint firstItem="kyW-fP-eqP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="ct1-bd-ZkY"/>
+                <constraint firstAttribute="trailing" secondItem="grK-Ti-E1x" secondAttribute="trailing" constant="8" id="cyz-z8-nXX"/>
+                <constraint firstItem="9B6-Ii-W9m" firstAttribute="leading" secondItem="uhZ-It-IB4" secondAttribute="trailing" id="dIo-q2-3Sm"/>
+                <constraint firstAttribute="trailing" secondItem="UXK-jK-dMd" secondAttribute="trailing" constant="8" id="dvE-ro-juw"/>
+                <constraint firstItem="kyW-fP-eqP" firstAttribute="top" secondItem="JKO-of-FZQ" secondAttribute="bottom" id="e2j-Mx-QHy"/>
+                <constraint firstItem="JKO-of-FZQ" firstAttribute="top" secondItem="Ppm-Ml-6Fb" secondAttribute="bottom" id="e7C-AT-OYI"/>
+                <constraint firstItem="43C-Ff-3HN" firstAttribute="top" secondItem="4Mo-0n-780" secondAttribute="bottom" id="eqd-Ik-piY"/>
+                <constraint firstItem="M0y-ZJ-Wdh" firstAttribute="leading" secondItem="XhV-ac-mxz" secondAttribute="trailing" id="fON-Sy-6zB"/>
+                <constraint firstItem="WCx-b6-eQg" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="44" id="fYQ-jT-Tlm"/>
+                <constraint firstItem="xuz-X4-wdp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="fqQ-dj-sXa"/>
+                <constraint firstItem="ozX-uR-VyO" firstAttribute="leading" secondItem="CFh-Dz-X4q" secondAttribute="trailing" id="glA-2P-dUw"/>
+                <constraint firstItem="fWZ-2i-fLS" firstAttribute="leading" secondItem="5vZ-SW-Uy7" secondAttribute="trailing" id="iDl-IB-AX3"/>
+                <constraint firstItem="UXK-jK-dMd" firstAttribute="leading" secondItem="9B6-Ii-W9m" secondAttribute="trailing" id="iJD-1Q-STd"/>
+                <constraint firstItem="zES-h0-60x" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="izR-6N-e32"/>
+                <constraint firstItem="CFh-Dz-X4q" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="knq-cp-6fC"/>
+                <constraint firstItem="XhV-ac-mxz" firstAttribute="leading" secondItem="fU2-R2-lwq" secondAttribute="trailing" id="kuS-Ry-uVG"/>
+                <constraint firstItem="XhV-ac-mxz" firstAttribute="top" secondItem="9B6-Ii-W9m" secondAttribute="bottom" id="l2l-Zl-7WX"/>
+                <constraint firstItem="JKO-of-FZQ" firstAttribute="leading" secondItem="UfD-EH-Xjo" secondAttribute="trailing" id="lJ8-9s-4m9"/>
+                <constraint firstItem="CFh-Dz-X4q" firstAttribute="top" secondItem="rUF-lU-vjy" secondAttribute="bottom" constant="8" id="mKz-Ts-FQx"/>
+                <constraint firstItem="uhZ-It-IB4" firstAttribute="top" secondItem="xuz-X4-wdp" secondAttribute="bottom" id="mbi-eS-qsG"/>
+                <constraint firstItem="zES-h0-60x" firstAttribute="top" secondItem="AUU-8Y-X9w" secondAttribute="bottom" id="mqx-2I-cnt"/>
+                <constraint firstItem="sIk-81-bEO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="p7p-vs-IbQ"/>
+                <constraint firstItem="AUU-8Y-X9w" firstAttribute="top" secondItem="eoI-3J-8g5" secondAttribute="bottom" id="pWP-g2-cau"/>
+                <constraint firstAttribute="trailing" secondItem="43C-Ff-3HN" secondAttribute="trailing" constant="8" id="pgD-rl-hxA"/>
+                <constraint firstItem="kln-kv-zEx" firstAttribute="leading" secondItem="AUU-8Y-X9w" secondAttribute="trailing" id="sp7-Hy-6dn"/>
+                <constraint firstAttribute="trailing" secondItem="Ppm-Ml-6Fb" secondAttribute="trailing" constant="8" id="sqr-lo-LEW"/>
+                <constraint firstItem="kln-kv-zEx" firstAttribute="top" secondItem="xXN-I3-ynr" secondAttribute="bottom" id="tX9-MS-BUH"/>
+                <constraint firstItem="Ppm-Ml-6Fb" firstAttribute="leading" secondItem="kln-kv-zEx" secondAttribute="trailing" id="tmJ-VC-t5w"/>
+                <constraint firstItem="rUF-lU-vjy" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="ufG-r6-LOa"/>
+                <constraint firstItem="fU2-R2-lwq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="umh-M7-KuM"/>
+                <constraint firstItem="5vZ-SW-Uy7" firstAttribute="top" secondItem="CFh-Dz-X4q" secondAttribute="bottom" id="uxc-r0-B4v"/>
+                <constraint firstAttribute="trailing" secondItem="YVE-L2-Gkb" secondAttribute="trailing" constant="8" id="vit-RW-ua3"/>
+                <constraint firstAttribute="trailing" secondItem="M0y-ZJ-Wdh" secondAttribute="trailing" constant="8" id="vuC-tS-g1V"/>
+                <constraint firstItem="xXN-I3-ynr" firstAttribute="leading" secondItem="eoI-3J-8g5" secondAttribute="trailing" id="x8z-8e-N6Q"/>
+                <constraint firstItem="3v1-SU-50j" firstAttribute="top" secondItem="ulJ-gI-tML" secondAttribute="bottom" id="z1z-gX-r3I"/>
+                <constraint firstItem="RcQ-L3-xBx" firstAttribute="top" secondItem="fWZ-2i-fLS" secondAttribute="bottom" id="zgH-qu-iCi"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
