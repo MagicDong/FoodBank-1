@@ -6,10 +6,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZDTryViewController">
             <connections>
+                <outlet property="foodName" destination="VNa-9a-Vqo" id="J3C-5C-VwQ"/>
                 <outlet property="icon" destination="G0h-8y-aA9" id="hfd-5c-EGZ"/>
                 <outlet property="jieshaoTextView" destination="B8X-i4-0Si" id="khj-Kx-Amr"/>
                 <outlet property="ke" destination="wMx-hu-pQt" id="yVH-hy-7ku"/>
                 <outlet property="nameEdit" destination="z65-AB-7bW" id="UDt-QY-TMy"/>
+                <outlet property="queren" destination="ViV-Hz-dLM" id="k8g-qC-oqM"/>
                 <outlet property="tuijianTextView" destination="5rw-FN-ddN" id="UZ3-eX-wrn"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -55,8 +57,8 @@
                     <color key="textColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ViV-Hz-dLM" userLabel="登录">
-                    <rect key="frame" x="99" y="387" width="105" height="40"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ViV-Hz-dLM" userLabel="登录">
+                    <rect key="frame" x="108" y="387" width="105" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="5dB-fp-L6g"/>
                         <constraint firstAttribute="width" constant="105" id="8du-Bh-dSK"/>

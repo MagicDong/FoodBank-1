@@ -28,6 +28,7 @@ static NSString *reusableViewID = @"SectionHeader";
  */
 @property (nonatomic, weak) UIButton  *selectedBtn;
 @property (nonatomic, strong) NSArray *dataList;
+@property (weak, nonatomic) IBOutlet UIButton *queding;
 @property (nonatomic, strong) NSMutableArray *selectArray;
 @end
 
@@ -37,10 +38,10 @@ static NSString *reusableViewID = @"SectionHeader";
     [super viewDidLoad];
     [self chushihua];
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-    layout.itemSize = CGSizeMake(76, 86);
+    layout.itemSize = CGSizeMake(75, 86);
     layout.minimumLineSpacing = 5.0f;
     layout.minimumInteritemSpacing = 5.0f;
-    layout.sectionInset = UIEdgeInsetsMake(0, 3, 3, 5);
+    layout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
     layout.headerReferenceSize = CGSizeMake(self.collection.bounds.size.width, 30);
     self.collection.backgroundColor = [UIColor whiteColor];
     self.collection.collectionViewLayout = layout;
@@ -48,6 +49,8 @@ static NSString *reusableViewID = @"SectionHeader";
     UINib *nib = [UINib nibWithNibName:@"CZProductCell" bundle:nil];
     [self.collection registerNib:nib forCellWithReuseIdentifier:ProductCellID];
     [self.collection registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:reusableViewID];
+    self.queding.layer.cornerRadius = 8;
+    self.queding.layer.masksToBounds = YES;
 }
 
 - (NSArray *)dataList{
@@ -101,7 +104,7 @@ static NSString *reusableViewID = @"SectionHeader";
         [headerView addSubview:label];
     }
     ZDFoodCategory *foodCategory = self.dataList[indexPath.section];
-    label.text = [NSString stringWithFormat:@"  %@",foodCategory.foodGenre];
+    label.text = [NSString stringWithFormat:@" %@",foodCategory.foodGenre];
     return headerView;
 }
 
@@ -137,10 +140,10 @@ static NSString *reusableViewID = @"SectionHeader";
         NSArray * reslutFilteredArray = [self.selectArray filteredArrayUsingPredicate:filterPredicate];
         self.selectArray = [reslutFilteredArray mutableCopy];
     }
-    NSLog(@",,,,,%@",self.selectArray);
-    
-
-    NSLog(@"======%@",self.selectArray);
+//    NSLog(@",,,,,%@",self.selectArray);
+//    
+//
+//    NSLog(@"======%@",self.selectArray);
 }
 
 - (NSMutableArray *)selectArray{
@@ -175,7 +178,7 @@ static NSString *reusableViewID = @"SectionHeader";
 //}
 
 - (void)chushihua{
-    self.title = @"勾选四库";
+    self.title = @"初始化食材库";
     if(iOS7)
     {
         self.edgesForExtendedLayout = NO;
@@ -188,6 +191,7 @@ static NSString *reusableViewID = @"SectionHeader";
     sender.selected = YES;
     self.selectedBtn = sender;
 }
+
 - (IBAction)queding:(UIButton *)sender {
     // 跳转到TabBarController
     for (UIViewController *controller in self.childViewControllers) {
@@ -195,12 +199,10 @@ static NSString *reusableViewID = @"SectionHeader";
         [controller.view removeFromSuperview];
         // 将视图控制器从父视图控制器中删除
         [controller removeFromParentViewController];
-        
     }
     [self.view removeFromSuperview];
-    //
     [MBProgressHUD showMessage:@"初始化中"];
-    ZDLog(@".s,,,,,%d",self.selectArray.count);
+//    ZDLog(@".s,,,,,%d",self.selectArray.count);
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.35 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [ZDNetwork postBabySiKuInfoWithMids:self.selectArray CallBack:^(RspState *rsp) {
             if (rsp.rspCode == 0) {

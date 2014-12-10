@@ -30,7 +30,7 @@
     [self.icon sd_setImageWithURL:dict[ZDImgSrcKey]];
     self.title.text = dict[ZDTitleKey];
     self.digest.text = dict[ZDDigestKey];
-    self.replyCount.text = [NSString stringWithFormat:@"阅读数:%@", dict[ZDReplyCountKey]];
+    self.replyCount.text = [NSString stringWithFormat:@"评论数:%@", dict[ZDReplyCountKey]];
 }
 
 + (CGFloat)rowHeight

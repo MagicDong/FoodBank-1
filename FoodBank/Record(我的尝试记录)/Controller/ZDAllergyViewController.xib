@@ -153,42 +153,24 @@
                     <rect key="frame" x="3" y="231" width="320" height="1"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hft-Au-Dj6">
-                    <rect key="frame" x="8" y="233" width="304" height="151"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="304" id="Bal-So-8dm"/>
-                        <constraint firstAttribute="height" constant="151" id="s7E-x8-vGN"/>
-                    </constraints>
-                    <string key="text">      当孩子在新食材尝试中对某食材出现过敏现象后，请您带孩子去医院就医并遵医嘱自行安排对该食材的再次尝试时间。过敏食材的再次尝试应注意事项与方法，您可以去知识库进行查询；
-      当您准备好了给孩子再次尝试曾经过敏的食材，请对个人信息中的过敏食材库进行更新。并且该过敏食材再次尝试安全后，根据您的意见，我们可以将该食材从过敏食材库中移出并加入到安全食材库。</string>
-                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                </textView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gib-HG-CVw" userLabel="登录">
-                    <rect key="frame" x="99" y="392" width="105" height="36"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="105" id="O2S-fA-zMV"/>
-                        <constraint firstAttribute="height" constant="36" id="fwO-98-mI7"/>
-                    </constraints>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gib-HG-CVw">
+                    <rect key="frame" x="99" y="384" width="105" height="36"/>
                     <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="15"/>
                     <state key="normal" title="确定" backgroundImage="Judge"/>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="baby" translatesAutoresizingMaskIntoConstraints="NO" id="WoR-1U-2IJ">
                     <rect key="frame" x="16" y="8" width="40" height="40"/>
                 </imageView>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hft-Au-Dj6">
+                    <rect key="frame" x="8" y="233" width="304" height="151"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <string key="text">      当孩子在新食材尝试中对某食材出现过敏现象后，请您带孩子去医院就医并遵医嘱自行安排对该食材的再次尝试时间。过敏食材的再次尝试应注意事项与方法，您可以去知识库进行查询；
+      当您准备好了给孩子再次尝试曾经过敏的食材，请对个人信息中的过敏食材库进行更新。并且该过敏食材再次尝试安全后，根据您的意见，我们可以将该食材从过敏食材库中移出并加入到安全食材库。</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstAttribute="trailing" secondItem="Hft-Au-Dj6" secondAttribute="trailing" constant="8" id="5SZ-jc-A67"/>
-                <constraint firstItem="Hft-Au-Dj6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="233" id="6D9-Ja-6L0"/>
-                <constraint firstItem="Hft-Au-Dj6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="Ahg-EH-Nqw"/>
-                <constraint firstItem="gib-HG-CVw" firstAttribute="top" secondItem="Hft-Au-Dj6" secondAttribute="bottom" constant="8" id="Ikx-HN-afl"/>
-                <constraint firstAttribute="bottom" secondItem="gib-HG-CVw" secondAttribute="bottom" constant="8" id="Oc6-nx-UFS"/>
-                <constraint firstAttribute="trailing" secondItem="gib-HG-CVw" secondAttribute="trailing" constant="116" id="ajz-64-fbu"/>
-                <constraint firstItem="gib-HG-CVw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="99" id="ieC-ay-UTc"/>
-                <constraint firstItem="gib-HG-CVw" firstAttribute="top" secondItem="Hft-Au-Dj6" secondAttribute="bottom" constant="8" id="pBJ-iD-orR"/>
-            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>

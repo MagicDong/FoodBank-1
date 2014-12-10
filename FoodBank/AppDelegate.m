@@ -54,8 +54,8 @@
     [UIApplication sharedApplication].statusBarHidden = YES;
     
     
-    if ([currentVersion compare:sandBoxVersion] ==  NSOrderedDescending)
-//    if (baby.userName)
+//    if ([currentVersion compare:sandBoxVersion] ==  NSOrderedDescending)
+    if ((1))
     {
         // 存储当前版本号
         [defaults setObject:currentVersion forKey:key];
@@ -64,9 +64,7 @@
         // 第一次使用当前版本  --> 显示新特性界面
         ZDNewfeatureViewController *newfeature = [[ZDNewfeatureViewController alloc] init];
         self.window.rootViewController = newfeature;
-        
-    }else
-    {
+    }else{
         ZDLog(@"%@",baby.userName);
         if (baby.userName != nil) {
             ZDRegisterViewController *reg = [[ZDRegisterViewController alloc]init];

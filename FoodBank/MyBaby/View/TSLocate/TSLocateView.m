@@ -51,8 +51,8 @@
     [self.layer addAnimation:animation forKey:@"DDLocateView"];
     
 //    self.frame = CGRectMake(0, view.height - self.height, self.width, self.height);
-    self.center = view.center;
-    
+//    self.center = view.center;
+
     [view addSubview:self];
 }
 

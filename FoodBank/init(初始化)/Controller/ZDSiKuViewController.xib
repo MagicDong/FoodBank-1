@@ -9,6 +9,7 @@
                 <outlet property="collection" destination="NNy-uG-kpc" id="qd7-kl-4tY"/>
                 <outlet property="label1" destination="1qY-Ok-rkC" id="LQo-KO-jGo"/>
                 <outlet property="label2" destination="fHC-kD-VU9" id="mk2-6w-uZW"/>
+                <outlet property="queding" destination="cJt-AW-Yth" id="PqH-0c-W9E"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

@@ -12,27 +12,27 @@
 #import "ZDEditViewController.h"
 #import "ZDMoreView.h"
 #import "MBProgressHUD+ZD.h"
+#import "ZDNetwork.h"
+#import "UIImageView+WebCache.h"
+#import "ZDNewFood.h"
 
 @interface ZDTryViewController () <UITableViewDataSource,UITableViewDelegate,ZDMoreViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *icon;   // 食材图片
 @property (weak, nonatomic) IBOutlet UIButton *nameEdit;  // 换食材
-@property (weak, nonatomic) IBOutlet UITextView *jieshao; // 食材介绍
 @property (weak, nonatomic) IBOutlet UILabel *ke;         // 克数
 @property (nonatomic, strong) UIImage *downImage;         // 向下图片
 @property (nonatomic, strong) UIImage *upImage;           // 向上的图片
 @property (nonatomic, strong) UITableView *table;         // 点击按钮出来天数
 @property (weak, nonatomic) IBOutlet UITextView *jieshaoTextView;
 @property (weak, nonatomic) IBOutlet UITextView *tuijianTextView;
+@property (weak, nonatomic) IBOutlet UILabel *foodName;
 @property (nonatomic, strong) UIButton *tianBtn;
-/**
- *  蒙板
- */
 @property (nonatomic, strong)UIButton *cover;
-/**
- *  时间选择
- */
+@property (weak, nonatomic) IBOutlet UIButton *queren;
 @property (nonatomic ,weak) ZDMoreView *moreView;
 @property (nonatomic,assign) BOOL xiala;
+@property (nonatomic,copy) NSString *cornerID;
+@property (nonatomic,copy) NSString *cornerT;
 
 @end
 
@@ -69,6 +69,49 @@
     self.tuijianTextView.attributedText = [[NSAttributedString alloc]initWithString:@"直接吃就行！" attributes:attributes];
     self.tuijianTextView.editable = NO;
     self.tuijianTextView.backgroundColor = [UIColor clearColor];
+    
+//    [{"mname":"芒果","practice":"","pgtpid":42,"introduce":"","mid":558},{"mname":"干裙带菜(泡发)","practice":"","pgtpid":25,"introduce":"","mid":459}];
+//    @property (weak, nonatomic) IBOutlet UIImageView *icon;   // 食材图片
+//    @property (weak, nonatomic) IBOutlet UIButton *nameEdit;  // 换食材
+//    @property (weak, nonatomic) IBOutlet UITextView *jieshao; // 食材介绍
+//    @property (weak, nonatomic) IBOutlet UILabel *ke;         // 克数
+//    @property (nonatomic, strong) UIImage *downImage;         // 向下图片
+//    @property (nonatomic, strong) UIImage *upImage;           // 向上的图片
+//    @property (nonatomic, strong) UITableView *table;         // 点击按钮出来天数
+//    @property (weak, nonatomic) IBOutlet UITextView *jieshaoTextView;
+//    @property (weak, nonatomic) IBOutlet UITextView *tuijianTextView;
+
+}
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
+    [MBProgressHUD showError:@"获取尝试信息中..."];
+    [ZDNetwork getTodayTryInfoCallback:^(RspState *rsp, NSArray *array) {
+        [MBProgressHUD hideHUD];
+        if (rsp.rspCode == 0) {
+            ZDNewFood *food = array[0];
+            NSString *iconStr = [NSString stringWithFormat:@"http://192.168.1.250/mimag/%@.png",food.mid];
+            NSURL *url = [NSURL URLWithString:iconStr];
+            [self.icon sd_setImageWithURL:url];
+            self.foodName.text = food.mname;
+            NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc]init];
+            paragraphStyle.lineHeightMultiple = 20.f;
+            paragraphStyle.maximumLineHeight = 25.f;
+            paragraphStyle.minimumLineHeight = 10.f;
+            paragraphStyle.firstLineHeadIndent = 20.f;
+            paragraphStyle.alignment = NSTextAlignmentJustified;
+            NSDictionary *attributes = @{ NSFontAttributeName:[UIFont systemFontOfSize:15], NSParagraphStyleAttributeName:paragraphStyle, NSForegroundColorAttributeName:[UIColor blackColor]};
+            self.jieshaoTextView.attributedText = [[NSAttributedString alloc]initWithString:food.introduce attributes:attributes];
+            self.tuijianTextView.attributedText = [[NSAttributedString alloc]initWithString:food.practice attributes:attributes];
+            
+            self.cornerID = food.mid;
+        }else{
+            [MBProgressHUD showError:@"网络错误"];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.68 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [MBProgressHUD hideHUD];
+            });
+            return;
+        }
+    }];
 }
 
 
@@ -85,6 +128,7 @@
         } completion:^(BOOL finished) {
             [self.moreView removeFromSuperview];
             [self.cover removeFromSuperview];
+            
             self.xiala = NO;
         }];
         return;
@@ -130,7 +174,6 @@
         self.moreView.backgroundColor = ZDColor(255, 246, 229)
         self.moreView.delegate = self;
         [self.view.window  addSubview:_moreView];
-        
     }
     return _moreView;
 }
@@ -270,11 +313,25 @@
 }
 
 - (IBAction)queding:(id)sender {
-    [MBProgressHUD showError:@"提交尝试信息中"];
+    
+    [MBProgressHUD showMessage:@"获取尝试信息中..."];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.62 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [MBProgressHUD hideHUD];
+#pragma 提交尝试食材
+        if (self.cornerID) {
+            [ZDNetwork postToDayTryFoodSta:@"1" mid:@"1" cycle:@"3" grams:@"5" Callback:^(RspState *rsp) {
+                if (rsp.rspCode == 0) {
+                    [MBProgressHUD hideHUD];
+                }else{
+                    [MBProgressHUD showError:@"网络错误"];
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.68 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                        [MBProgressHUD hideHUD];
+                    });
+                    return;
+                }
+            }];
+        }
     });
-  
 }
 
 - (UIImage *)downImage

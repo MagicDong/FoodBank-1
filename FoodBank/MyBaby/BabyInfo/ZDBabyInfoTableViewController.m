@@ -312,6 +312,7 @@ static NSString *birthdayCellID = @"birthdayCell";
     // 2.弹出相册
     [self presentViewController:picker animated:YES completion:nil];
 }
+
 #pragma mark - UIImagePickerControllerDelegate
 /**
  *  用户选中相片之后调用
@@ -409,10 +410,7 @@ static NSString *birthdayCellID = @"birthdayCell";
 - (void)datePickerView:(CZDatePickerView *)picker dateStr:(NSString *)dateStr
 {
     picker.hidden = YES;
-#warning 得到时间
     ZDLog(@"%@",dateStr);
-    
-    
 }
 
 #pragma mark - 懒加载
@@ -420,7 +418,7 @@ static NSString *birthdayCellID = @"birthdayCell";
 {
     if (!_datePickerView) {
         _datePickerView = [CZDatePickerView datePickerView];
-        _datePickerView.center = self.view.center;
+        _datePickerView.y = self.view.height - _datePickerView.height;
         // 设置代理
         _datePickerView.delegate = self;
         [self.view addSubview:_datePickerView];
@@ -432,7 +430,8 @@ static NSString *birthdayCellID = @"birthdayCell";
 {
     if (!_locateView) {
         _locateView = [[TSLocateView alloc]initWithTitle:@"选择你所在城市" delegate:self];
-        //        _locateView.center = self.view.center;
+        _locateView.y = self.view.height - _locateView.height;
+//        _locateView.center = self.view.center;
         
     }
     return _locateView;

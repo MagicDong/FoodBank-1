@@ -169,7 +169,7 @@
     // 判断当前是否已经有登陆过的账号存在
     ZDBaby *baby = [ZDBabyTool sharedZDBabyTool].account;
     
-    if (baby.userName != nil) {
+    if (baby.userName == nil) {
         ZDTabBarController *tabBarVc = [[ZDTabBarController alloc] init];
         UIApplication *app = [UIApplication sharedApplication];
         UIWindow *window = app.keyWindow;

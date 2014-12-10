@@ -294,16 +294,26 @@
     if (jessionid == nil) {
         return;
     }else{
-        NSMutableString *midsStr = [[NSMutableString alloc]init];
-        for (NSString *str in mids) {
-            [midsStr stringByAppendingString:str];
-            [midsStr stringByAppendingString:@","];
-        }
-        NSLog(@"%@",midsStr);
+//        NSCharacterSet 这是个字符集合类
+//        [NSCharacterSet characterSetWithCharactersInString", "]//把字符串转化为字符集合
+//        -------拼接
+        NSString * str = [mids componentsJoinedByString:@","];
+        NSLog(@"str ==  %@",str);
+//        NSString *str = @"";
+//        NSMutableString *midsStr = [[NSMutableString alloc]initWithString:@""];
+//        for (int i = 0; i < mids.count; i++ ) {
+////            NSLog(@"===============%@",mids[i]);
+//            str = [midsStr stringByAppendingString:mids[i]];
+//            if (i < mids.count-1) {
+//                str =[midsStr stringByAppendingString:@","];
+//            }
+//            NSLog(@"caocaoacoacocaocao%@",str);
+//        }
+//        NSLog(@"%@ ,  %@",midsStr, mids);
         
         NSString *urlStr = [NSString stringWithFormat:@"%@/mobile/iniUserFourLib.do;jsessionid=%@", kBaseURL,jessionid];
         
-        NSDictionary *para =@{@"mids":@"1,2",
+        NSDictionary *para =@{@"mids":str,
                               @"tp":@"1"};
         
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
@@ -329,38 +339,44 @@
 + (void)getTodayTryInfoCallback:(void(^)(RspState *,NSArray *))callback
 {
 ///mobile/getUserTryingMaterial.do;jsessionid=
-    NSString *urlStr = [NSString stringWithFormat:@"%@%@", kBaseURL, kRequestPath];
-    
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.requestSerializer.timeoutInterval = kTimeout;
-    [manager GET:urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        [self _operationLog:operation];
+    ZDBaby *baby =  [ZDBabyTool sharedZDBabyTool].account;
+    NSString *jessionid = baby.jsessionid;
+    if (jessionid == nil) {
+        return;
+    }else{
+        NSString *urlStr = [NSString stringWithFormat:@"%@/mobile/getUserTryingMaterial.do;jsessionid=%@", kBaseURL, jessionid];
         
-        NSDictionary *rspDict = responseObject;
-        
-        RspState *rsp = [[RspState alloc]initWithDict:rspDict];
-        
-        NSMutableArray *departmentList = [NSMutableArray array];
-        if(rsp.rspCode == 0)
-        {
+        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+        manager.requestSerializer.timeoutInterval = kTimeout;
+
+        [manager GET:urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            [self _operationLog:operation];
             
-            NSArray *rspList = rspDict[@"dataList"];
-            for(NSDictionary *dict in rspList)
+            NSDictionary *rspDict = responseObject;
+            
+            RspState *rsp = [[RspState alloc]initWithDict:rspDict];
+            
+            NSMutableArray *departmentList = [NSMutableArray array];
+            if(rsp.rspCode == 0)
             {
-                ZDNewFood *newfood = [ZDNewFood initWithDict:dict];
-                [departmentList addObject:newfood];
+                
+                NSArray *rspList = rspDict[@"dataList"];
+                for(NSDictionary *dict in rspList)
+                {
+                    ZDNewFood *newfood = [ZDNewFood initWithDict:dict];
+                    [departmentList addObject:newfood];
+                }
             }
-        }
-        
-        [self _netRspProcess:rsp];
-        callback(rsp,departmentList);
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        [self _operationLog:operation];
-        
-        RspState *rsp = [RspState rspStateNetError];
-        callback(rsp,nil);
-    }];
+            
+            callback(rsp,departmentList);
+            
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            [self _operationLog:operation];
+            
+            RspState *rsp = [RspState rspStateNetError];
+            callback(rsp,nil);
+        }];
+    }
 }
 
 /* 10、获取可选择的今日尝试新食材列表 */
@@ -374,31 +390,37 @@
 + (void)postToDayTryFoodSta:(NSString *)sta mid:(NSString *)mid cycle:(NSString *)cycle grams:(NSString *)grams Callback:(void (^)(RspState *))callback
 {
 //   /mobile/postTryMaterial.do;jsessionid=      sta=1&mid=1&cycle=3&grams=10
-    NSString *urlStr = [NSString stringWithFormat:@"%@/mobile/postTryMaterial.do;jsessionid=%@", kBaseURL,@""];
-    
-    NSDictionary *para =@{@"sta":sta,
-                          @"mid":mid,
-                          @"cycle":cycle,
-                          @"grams":grams
-                          };
-    
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.requestSerializer.timeoutInterval = kTimeout;
-    [manager POST:urlStr parameters:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        [self _operationLog:operation];
+    ZDBaby *baby =  [ZDBabyTool sharedZDBabyTool].account;
+    NSString *jessionid = baby.jsessionid;
+    if (jessionid == nil) {
+        return;
+    }else{
+        NSString *urlStr = [NSString stringWithFormat:@"%@/mobile/postTryMaterial.do;jsessionid=%@", kBaseURL,jessionid];
         
-        NSDictionary *rspDict = responseObject;
-        RspState *rsp = [[RspState alloc]initWithDict:rspDict];
-        if(rsp.rspCode == 0)
-        {
+        NSDictionary *para =@{@"sta":sta,
+                              @"mid":mid,
+                              @"cycle":cycle,
+                              @"grams":grams
+                              };
+        
+        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+        manager.requestSerializer.timeoutInterval = kTimeout;
+        [manager POST:urlStr parameters:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            [self _operationLog:operation];
             
-        }
-        callback(rsp);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        RspState *rsp = [RspState rspStateNetError];
-        callback(rsp);
-        
-    }];
+            NSDictionary *rspDict = responseObject;
+            RspState *rsp = [[RspState alloc]initWithDict:rspDict];
+            if(rsp.rspCode == 0)
+            {
+                
+            }
+            callback(rsp);
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            RspState *rsp = [RspState rspStateNetError];
+            callback(rsp);
+            
+        }];
+    }
 }
 
 
@@ -409,37 +431,44 @@
     
 //    dataList=[{"mname":"面粉","cycle":3,"practice":"","tryDate":"2014-12-01","introduce":"","isTrying":2,"grams":10,"micon":""},{"mname":"面粉","cycle":3,"practice":"","tryDate":"2014-12-02","introduce":"","isTrying":1,"grams":10,"micon":""}]
 //    {"mname":"面粉","cycle":3,"practice":"","tryDate":"2014-12-02","introduce":"","isTrying":1,"grams":10,"micon":""}
-    NSString *urlStr = [NSString stringWithFormat:@"%@/mobile/getUserMaterialTryList.do;jsessionid=%@", kBaseURL,@""];
     
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.requestSerializer.timeoutInterval = kTimeout;
-    [manager GET:urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        [self _operationLog:operation];
+    ZDBaby *baby =  [ZDBabyTool sharedZDBabyTool].account;
+    NSString *jessionid = baby.jsessionid;
+    if (jessionid == nil) {
+        return;
+    }else{
         
-        NSDictionary *rspDict = responseObject;
-        RspState *rsp = [[RspState alloc]initWithDict:rspDict];
-        NSMutableArray *departmentList = [NSMutableArray array];
-        if(rsp.rspCode == 0)
-        {
+        NSString *urlStr = [NSString stringWithFormat:@"%@/mobile/getUserMaterialTryList.do;jsessionid=%@", kBaseURL,jessionid];
+        
+        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+        manager.requestSerializer.timeoutInterval = kTimeout;
+        [manager GET:urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            [self _operationLog:operation];
             
-            NSArray *rspList = rspDict[@"dataList"];
-            for(NSDictionary *dict in rspList)
+            NSDictionary *rspDict = responseObject;
+            RspState *rsp = [[RspState alloc]initWithDict:rspDict];
+            NSMutableArray *departmentList = [NSMutableArray array];
+            if(rsp.rspCode == 0)
             {
-                ZDNewFood *newfood = [ZDNewFood initWithDict:dict];
-                [departmentList addObject:newfood];
                 
+                NSArray *rspList = rspDict[@"dataList"];
+                for(NSDictionary *dict in rspList)
+                {
+                    ZDTryRecord *tryRecord = [ZDTryRecord initWithDict:dict];
+                    [departmentList addObject:tryRecord];
+                }
             }
-        }
-        
-//        getTryRecordInfoCallback
-        [self _netRspProcess:rsp];
-        callback(rsp,departmentList);
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        [self _operationLog:operation];
-        RspState *rsp = [RspState rspStateNetError];
-        callback(rsp,nil);
-    }];
+            
+            //        getTryRecordInfoCallback
+            [self _netRspProcess:rsp];
+            callback(rsp,departmentList);
+            
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            [self _operationLog:operation];
+            RspState *rsp = [RspState rspStateNetError];
+            callback(rsp,nil);
+        }];
+    }
 }
 
 /* 13、提交尝试结果 */

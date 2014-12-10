@@ -119,45 +119,6 @@
 //    [self.navigationController pushViewController:tabBarVc animated:YES];
 }
 
-/** 保存用户信息 */
-- (void)saveAccount:(NSDictionary *)respones
-{
-    NSDictionary *dict = respones;
-    ZDAccount *account = [[ZDAccount alloc]init];
-    account.nickname = dict[@"nickname"];
-    account.city = dict[@"city"];
-    account.figureurl_qq_1 = dict[@"figureurl_qq_1"];
-    account.figureurl_qq_2 = dict[@"figureurl_qq_2"];
-    account.gender = dict[@"gender"];
-    [ZDAccountTool saveAccount:account];
-}
-
-/**
- *  根据已经授权的标记code  换取访问标记
- *
- *  @param code 已经授权的标记
- */
-- (void)accessTokenWithCode:(NSString *)code
-{
-    NSMutableDictionary *parmas = [[NSMutableDictionary alloc]init];
-    parmas[@"client_id"] = ZDAppKey;
-    parmas[@"client_secret"] = ZDAppSecret;
-    parmas[@"grant_type"] = @"authorization_code";
-    parmas[@"code"] = code;
-    parmas[@"redirect_uri"] = ZDAppRedirectUrl;
-    NSString *url = @"https://api.weibo.com/oauth2/access_token";
-    // .keyValues第三方框架 模型转字典
-    [ZDHttpTool postWithUrl:url params:parmas success:^(id json) {
-        ZDAccount *account = [ZDAccount accountWithDict:json];
-        [ZDAccountTool saveAccount:account];
-        ZDTabBarController *root = [[ZDTabBarController alloc]init];
-        UIApplication *app = [UIApplication sharedApplication];
-        UIWindow *windows = app.keyWindow;
-        windows.rootViewController = root;
-    } failure:^(NSError *error) {
-        
-    }];
-}
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     UITextField *textField =  [UIView findFistResponder:self.view];

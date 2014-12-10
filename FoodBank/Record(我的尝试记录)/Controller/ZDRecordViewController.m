@@ -72,8 +72,8 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.1* NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
         [MBProgressHUD hideHUD];
+        
     });
-    
 }
 
 
@@ -82,6 +82,7 @@
     ZDTuiJianViewController *present = [[ZDTuiJianViewController alloc]init];
     present.foodInfo = foodInfo;
     [self.navigationController pushViewController:present animated:YES];
+    
 }
 
 - (IBAction)anquan:(UIButton *)sender {
