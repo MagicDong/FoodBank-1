@@ -12,11 +12,11 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="44" width="320" height="524"/>
+            <rect key="frame" x="0.0" y="44" width="320" height="436"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IT3-Dy-Qso">
-                    <rect key="frame" x="67" y="198" width="60" height="60"/>
+                    <rect key="frame" x="67" y="169" width="60" height="60"/>
                     <state key="normal" image="ipad_user_login_qq">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -25,7 +25,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LTE-oj-e9J">
-                    <rect key="frame" x="190" y="198" width="60" height="60"/>
+                    <rect key="frame" x="190" y="169" width="60" height="60"/>
                     <state key="normal" image="ipad_user_login_qq">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -34,19 +34,19 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="优膳有方iPad版" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sTF-po-2LC">
-                    <rect key="frame" x="51" y="266" width="99" height="21"/>
+                    <rect key="frame" x="51" y="237" width="99" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <color key="textColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="宝贝营养秤" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hoh-44-E1c">
-                    <rect key="frame" x="190" y="266" width="70" height="21"/>
+                    <rect key="frame" x="190" y="237" width="70" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <color key="textColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vmM-2a-nRZ">
-                    <rect key="frame" x="67" y="311" width="60" height="60"/>
+                    <rect key="frame" x="67" y="266" width="60" height="60"/>
                     <state key="normal" image="ipad_user_login_qq">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -56,31 +56,28 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="饮食记录" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pez-pq-g3r">
-                    <rect key="frame" x="74" y="379" width="52" height="21"/>
+                    <rect key="frame" x="74" y="334" width="52" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <color key="textColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="网址：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kT2-Y9-jXT">
-                    <rect key="frame" x="8" y="155" width="51" height="21"/>
+                    <rect key="frame" x="8" y="140" width="51" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoAbout" translatesAutoresizingMaskIntoConstraints="NO" id="2Hh-qk-9FG">
-                    <rect key="frame" x="39" y="426" width="243" height="72"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="243" id="43l-mu-nvz"/>
-                        <constraint firstAttribute="height" constant="72" id="w0N-6Y-WAT"/>
-                    </constraints>
-                </imageView>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TMs-WT-Q9E">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TMs-WT-Q9E">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="131"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="131" id="aJg-m8-eNA"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GXR-lQ-r7d">
-                    <rect key="frame" x="56" y="146" width="256" height="39"/>
+                    <rect key="frame" x="56" y="131" width="256" height="39"/>
                     <state key="normal" title="www.mamabaodian.com">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -89,13 +86,13 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="宝贝吃中学" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zlC-OS-Ufg">
-                    <rect key="frame" x="190" y="379" width="70" height="21"/>
+                    <rect key="frame" x="190" y="334" width="70" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <color key="textColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tQu-Y6-Qye">
-                    <rect key="frame" x="190" y="311" width="60" height="60"/>
+                    <rect key="frame" x="190" y="266" width="60" height="60"/>
                     <state key="normal" image="ipad_user_login_qq">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -104,15 +101,19 @@
                         <action selector="yingyangcheng:" destination="-1" eventType="touchUpInside" id="AuM-kq-5Uh"/>
                     </connections>
                 </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logoAbout" translatesAutoresizingMaskIntoConstraints="NO" id="2Hh-qk-9FG">
+                    <rect key="frame" x="39" y="358" width="243" height="72"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="centerX" secondItem="2Hh-qk-9FG" secondAttribute="centerX" id="1Jo-Vt-HO0"/>
-                <constraint firstAttribute="bottom" secondItem="2Hh-qk-9FG" secondAttribute="bottom" constant="26" id="dgv-xC-uxO"/>
+                <constraint firstItem="TMs-WT-Q9E" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="PmZ-yy-ecx"/>
+                <constraint firstAttribute="trailing" secondItem="TMs-WT-Q9E" secondAttribute="trailing" id="SCm-bR-Kcq"/>
+                <constraint firstItem="TMs-WT-Q9E" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="lrY-bs-5RE"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
         </view>
     </objects>
     <resources>

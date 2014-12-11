@@ -37,6 +37,11 @@ static NSString *reusableViewID = @"SectionHeader";
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self chushihua];
+    if(iOS7)
+    {
+        self.edgesForExtendedLayout = NO;
+        self.navigationController.navigationBar.opaque = YES;
+    }
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     layout.itemSize = CGSizeMake(75, 86);
     layout.minimumLineSpacing = 5.0f;
@@ -49,6 +54,7 @@ static NSString *reusableViewID = @"SectionHeader";
     UINib *nib = [UINib nibWithNibName:@"CZProductCell" bundle:nil];
     [self.collection registerNib:nib forCellWithReuseIdentifier:ProductCellID];
     [self.collection registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:reusableViewID];
+    
     self.queding.layer.cornerRadius = 8;
     self.queding.layer.masksToBounds = YES;
 }
@@ -58,7 +64,7 @@ static NSString *reusableViewID = @"SectionHeader";
         
         [ZDNetwork getSiKuInfoCallback:^(RspState *rsp, NSArray *array) {
             self.dataList = array;
-            ZDLog(@"23232%d",array.count);
+//            ZDLog(@"23232%d",array.count);
             [self.collection reloadData];
         }];
     }
@@ -67,9 +73,7 @@ static NSString *reusableViewID = @"SectionHeader";
 
 #pragma mark - 数据源方法
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-    
     NSInteger count = self.dataList.count;
-//    ZDLog(@"11%d",count);
     return count;
 }
 
@@ -111,21 +115,18 @@ static NSString *reusableViewID = @"SectionHeader";
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
 //    CZProduct *product = self.dataList[indexPath.item];
+    
     UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
     CZProductCell *product = (CZProductCell *)cell;
     product.selectBtn.selected = !product.selectBtn.selected;
-    
     if (product.selectBtn.selected) {
-        
         if ([self.selectArray containsObject:product.mid]) {
             [self.selectArray removeObject:product.mid];
         }else{
             [self.selectArray addObject:product.mid];
         }
-        
     }else{
         NSMutableArray *filteredArray = [[NSMutableArray alloc]initWithObjects:product.mid, nil];
-        
         /*
          方法一：利用NSPredicate
          注：NSPredicate所属Cocoa框架，在密码、用户名等正则判断中经常用到。
@@ -139,6 +140,7 @@ static NSString *reusableViewID = @"SectionHeader";
         //过滤数组
         NSArray * reslutFilteredArray = [self.selectArray filteredArrayUsingPredicate:filterPredicate];
         self.selectArray = [reslutFilteredArray mutableCopy];
+        
     }
 //    NSLog(@",,,,,%@",self.selectArray);
 //    

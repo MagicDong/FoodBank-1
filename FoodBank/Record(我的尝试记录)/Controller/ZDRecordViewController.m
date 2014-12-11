@@ -142,10 +142,6 @@
     [self.view addSubview:_ygp];
     [_ygp initselectedSegmentIndex];
     
-//    label = [[UILabel alloc]initWithFrame:CGRectMake(100, 150, 200, 200)];
-//    label.font=[UIFont boldSystemFontOfSize:50.0];
-//    [self.view addSubview:label];
-    
     _borderView1.borderType = BorderTypeDashed;
     _borderView1.dashPattern = 2;
     _borderView1.spacePattern = 2;

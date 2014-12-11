@@ -14,6 +14,8 @@
 #import "ZDInitViewController.h"
 #import "ZDBaby.h"
 #import "ZDBabyTool.h"
+#import "ZDNetwork.h"
+#import "MBProgressHUD+ZD.h"
 
 // 当前新特性页面的个数
 #define ZDNewfeatureImageCount 5
@@ -169,7 +171,22 @@
     // 判断当前是否已经有登陆过的账号存在
     ZDBaby *baby = [ZDBabyTool sharedZDBabyTool].account;
     
-    if (baby.userName == nil) {
+    if (baby.userName != nil) {
+        [ZDNetwork LoginWithPhone:baby.userName Password:baby.password Callback:^(RspState *rsp, NSString *jsessionid) {
+            if (rsp.rspCode == 0) {
+                ZDBabyTool *babyTool = [ZDBabyTool sharedZDBabyTool];
+                ZDBaby *baby = [[ZDBaby alloc]init];
+                baby.jsessionid = jsessionid;
+                [babyTool saveAccount:baby];
+            }else{
+                [MBProgressHUD showError:@"网络错误"];
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.68 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [MBProgressHUD hideHUD];
+                });
+                
+            }
+        }];
+        
         ZDTabBarController *tabBarVc = [[ZDTabBarController alloc] init];
         UIApplication *app = [UIApplication sharedApplication];
         UIWindow *window = app.keyWindow;

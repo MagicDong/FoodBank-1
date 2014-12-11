@@ -40,14 +40,17 @@
     NSURL *url = [NSURL URLWithString:@"http://www.mamabaodian.com"];
     [[UIApplication sharedApplication] openURL:url];
 }
+
 - (IBAction)iPad:(UIButton *)sender {
     UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"提示" message:@"iPad版优膳有方正在开发中,请问您是否期待？" delegate:self cancelButtonTitle:@"非常期待！" otherButtonTitles:@"期待！", nil];
     [alertView show];
 }
+
 - (IBAction)yingyangcheng:(UIButton *)sender {
     UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"提示" message:@"宝贝营养秤正在开发中,请问您是否期待？" delegate:self cancelButtonTitle:@"非常期待！" otherButtonTitles:@"期待！", nil];
     [alertView show];
 }
+
 - (IBAction)baobeichizhongxue:(UIButton *)sender {
     NSString *appid = @"725296055";
     NSString *str = [NSString stringWithFormat:@"itms-apps://itunes.apple.com/cn/app/id%@?mt=8", appid];

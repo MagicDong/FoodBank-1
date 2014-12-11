@@ -33,7 +33,7 @@
 @property (nonatomic,assign) BOOL xiala;
 @property (nonatomic,copy) NSString *cornerID;
 @property (nonatomic,copy) NSString *cornerT;
-
+@property (nonatomic,copy) NSString *cornerTian;
 @end
 
 @implementation ZDTryViewController
@@ -113,7 +113,6 @@
         }
     }];
 }
-
 
 
 - (void)more{
@@ -257,6 +256,7 @@
     if (indexPath.row ==0) {
         [self.tianBtn setTitle:@"7天" forState:UIControlStateNormal];
         [self.tianBtn setImage:self.downImage forState:UIControlStateNormal];
+        self.cornerTian = @"7";
         self.table.alpha = 1;
         [UIView animateWithDuration:0.5f animations:^{
             self.table.alpha = 0;
@@ -266,6 +266,7 @@
     }else if (indexPath.row ==1) {
         [self.tianBtn setTitle:@"6天" forState:UIControlStateNormal];
         [self.tianBtn setImage:self.downImage forState:UIControlStateNormal];
+        self.cornerTian = @"6";
         self.table.alpha = 1;
         [UIView animateWithDuration:0.5f animations:^{
             self.table.alpha = 0;
@@ -275,6 +276,7 @@
     }else if (indexPath.row ==2) {
         [self.tianBtn setTitle:@"5天" forState:UIControlStateNormal];
         [self.tianBtn setImage:self.downImage forState:UIControlStateNormal];
+        self.cornerTian = @"5";
         self.table.alpha = 1;
         [UIView animateWithDuration:0.5f animations:^{
             self.table.alpha = 0;
@@ -284,6 +286,7 @@
     }else if (indexPath.row ==3) {
         [self.tianBtn setTitle:@"4天" forState:UIControlStateNormal];
         [self.tianBtn setImage:self.downImage forState:UIControlStateNormal];
+        self.cornerTian = @"4";
         self.table.alpha = 1;
         [UIView animateWithDuration:0.5f animations:^{
             self.table.alpha = 0;
@@ -293,6 +296,7 @@
     }else if (indexPath.row ==4) {
         [self.tianBtn setTitle:@"3天" forState:UIControlStateNormal];
         [self.tianBtn setImage:self.downImage forState:UIControlStateNormal];
+        self.cornerTian = @"3";
         self.table.alpha = 1;
 
         [UIView animateWithDuration:0.5f animations:^{
@@ -314,12 +318,15 @@
 
 - (IBAction)queding:(id)sender {
     
+    if (self.cornerTian == nil) {
+        self.cornerTian = @"3";
+    }
     [MBProgressHUD showMessage:@"获取尝试信息中..."];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.62 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [MBProgressHUD hideHUD];
 #pragma 提交尝试食材
         if (self.cornerID) {
-            [ZDNetwork postToDayTryFoodSta:@"1" mid:@"1" cycle:@"3" grams:@"5" Callback:^(RspState *rsp) {
+            [ZDNetwork postToDayTryFoodSta:@"1" mid:@"1" cycle:self.cornerTian grams:@"5" Callback:^(RspState *rsp) {
                 if (rsp.rspCode == 0) {
                     [MBProgressHUD hideHUD];
                 }else{

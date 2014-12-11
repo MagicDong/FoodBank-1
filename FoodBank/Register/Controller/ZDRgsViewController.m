@@ -131,14 +131,13 @@ int timerCount = 99;
 - (IBAction)zhuce:(UIButton *)sender {
     
     [ZDNetwork registerWithPhone:self.userName.text Password:self.password.text Callback:^(RspState *rsp) {
-        NSLog(@"%d",rsp.rspCode);
+//        NSLog(@"%d",rsp.rspCode);
         if (rsp.rspCode == 0) {
             [MBProgressHUD showSuccess:@"注册成功"];
             //     注册成功后
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.68 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [MBProgressHUD hideHUD];
-                //        [self dismissViewControllerAnimated:YES completion:nil];
-
+//                [self dismissViewControllerAnimated:YES completion:nil];
                 [ZDNetwork LoginWithPhone:self.userName.text Password:self.password.text Callback:^(RspState *rsp,NSString *jsessionid) {
                     if (rsp.rspCode == 0) {
                         ZDBabyTool *babyTool = [ZDBabyTool sharedZDBabyTool];
@@ -146,7 +145,7 @@ int timerCount = 99;
                         baby.userName = self.userName.text;
                         baby.password = self.password.text;
                         baby.jsessionid = jsessionid;
-                        ZDLog(@"......%@",jsessionid);
+//                        ZDLog(@"......%@",jsessionid);
                         [babyTool saveAccount:baby];
                         // 进入初始化界面
                         ZDInitViewController *initView = [[ZDInitViewController alloc]init];
@@ -192,6 +191,7 @@ int timerCount = 99;
 //            [MBProgressHUD hideHUD];
 //        });
 //    }
+    
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{

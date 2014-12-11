@@ -76,7 +76,7 @@
                     <rect key="frame" x="0.0" y="94" width="320" height="287"/>
                     <collectionViewLayout key="collectionViewLayout" id="9gk-xM-a8p"/>
                     <connections>
-                        <outlet property="dataSource" destination="-1" id="dhX-eL-MeC"/>
+                        <outlet property="dataSource" destination="-1" id="lfD-RB-Y5X"/>
                         <outlet property="delegate" destination="-1" id="ZDG-fi-QBr"/>
                     </connections>
                 </collectionView>
