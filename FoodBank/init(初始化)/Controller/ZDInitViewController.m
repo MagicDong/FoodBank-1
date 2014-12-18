@@ -13,10 +13,12 @@
 #import "ZDNavViewController.h"
 #import "ZDNationView.h"
 #import "ZDNetwork.h"
+#import "ZDFoodPickerView.h"
 #import "MBProgressHUD+ZD.h"
 #import "NSDate+ZD.h"
+#import "ZDSiKuViewController.h"
 
-@interface ZDInitViewController () <ZDDatePickerViewDelegate,ZDNationViewDelegate>
+@interface ZDInitViewController () <ZDDatePickerViewDelegate,ZDNationViewDelegate,ZDMoreViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *userView;
 
@@ -46,9 +48,13 @@
  */
 @property (nonatomic ,strong) ZDDatePickerView *datePickerView;
 /**
- *  时间选择
+ *  民族选择
  */
 @property (nonatomic ,strong) ZDNationView *nationView;
+/**
+ *  过敏食材选择
+ */
+@property (nonatomic ,strong) ZDFoodPickerView *foodPickerView;
 
 @end
 
@@ -99,6 +105,14 @@
             }];
             ZDJudgeViewController *judge = [[ZDJudgeViewController alloc]init];
             [self.navigationController pushViewController:judge animated:YES];
+        }else if(cmps.day >= 180){
+            [ZDNetwork  postBabyInfoWithBirthday:self.BtnBirthday.titleLabel.text nation:nation allergy:@"" CallBack:^(RspState * rsp) {
+                if (rsp.rspCode == 0) {
+                    
+                }
+            }];
+            ZDSiKuViewController *siku = [[ZDSiKuViewController alloc]init];
+            [self.navigationController pushViewController:siku animated:YES];
         }else{
             [MBProgressHUD showError:@"宝宝月龄未达到标准"];
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.68 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -235,6 +249,7 @@
         self.datePickerView.y = self.view.height;
     } completion:^(BOOL finished) {
         [self.datePickerView removeFromSuperview];
+        
     }];
 }
 
@@ -259,23 +274,61 @@
 {
     // 1.取出按钮中的图片判断当前的图片是向上还是向下
     if (titleBtn.currentImage == self.downImage) {
+        
         // 向下 --> 向上
+        _foodPickerView = [ZDFoodPickerView foodPickerView];
+        _foodPickerView.y = self.view.height;
+        // 设置代理
+        _foodPickerView.delegate = self;
+        [self.view addSubview:_foodPickerView];
+        
         [titleBtn setImage:self.upImage forState:UIControlStateNormal];
-            
+        self.foodPickerView.y = self.view.height;
         [UIView animateWithDuration:0.25 animations:^{
+            self.foodPickerView.y = self.view.height - self.foodPickerView.height;
+        } completion:^(BOOL finished) {
             
         }];
     }else
     {
         // 向上 --> 向下
         [titleBtn setImage:self.downImage forState:UIControlStateNormal];
-            
+        self.foodPickerView.y = self.view.height - self.foodPickerView.height;
         [UIView animateWithDuration:0.25 animations:^{
-            
+            self.foodPickerView.y = self.view.height;
         } completion:^(BOOL finished) {
-            
+            [self.foodPickerView removeFromSuperview];
         }];
     }
+}
+
+- (void)foodPicker:(NSDictionary *)moreView{
+    // 向上 --> 向下
+    [self.BtnAllergy setImage:self.downImage forState:UIControlStateNormal];
+    self.foodPickerView.y = self.view.height - self.foodPickerView.height;
+    [UIView animateWithDuration:0.35 animations:^{
+        if([moreView[@"food_name"] isEqualToString:nil]){
+//            self.textField.text = nil;
+        }else{
+//            self.textField.text = moreView[@"food_name"];
+            [self.BtnAllergy setTitle:moreView[@"food_name"] forState:UIControlStateNormal];
+        }
+        self.foodPickerView.y = self.view.height;
+    } completion:^(BOOL finished) {
+        [self.foodPickerView removeFromSuperview];
+    }];
+//    
+//    [UIView animateWithDuration:0.5 animations:^{
+//        self.foodPickerView
+//        if([moreView[@"food_name"] isEqualToString:nil]){
+//            self.textField.text = nil;
+//        }else{
+//            self.textField.text = moreView[@"food_name"];
+//        }
+//    } completion:^(BOOL finished) {
+//        [self.moreView removeFromSuperview];
+//        [self.cover removeFromSuperview];
+//    }];
 }
 
 - (UIImage *)downImage
@@ -319,5 +372,14 @@
     }
     return _nationView;
 }
-
+- (ZDFoodPickerView *)foodPickerView{
+    if (!_foodPickerView) {
+        _foodPickerView = [ZDFoodPickerView foodPickerView];
+        _foodPickerView.y = self.view.height;
+        // 设置代理
+        _foodPickerView.delegate = self;
+        [self.view addSubview:_foodPickerView];
+    }
+    return _foodPickerView;
+}
 @end

@@ -175,9 +175,11 @@
         [ZDNetwork LoginWithPhone:baby.userName Password:baby.password Callback:^(RspState *rsp, NSString *jsessionid) {
             if (rsp.rspCode == 0) {
                 ZDBabyTool *babyTool = [ZDBabyTool sharedZDBabyTool];
-                ZDBaby *baby = [[ZDBaby alloc]init];
-                baby.jsessionid = jsessionid;
-                [babyTool saveAccount:baby];
+                ZDBaby *bb = [[ZDBaby alloc]init];
+                bb.userName = baby.userName;
+                bb.password = baby.password;
+                bb.jsessionid = jsessionid;
+                [babyTool saveAccount:bb];
             }else{
                 [MBProgressHUD showError:@"网络错误"];
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.68 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{

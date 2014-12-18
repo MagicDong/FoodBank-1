@@ -219,8 +219,8 @@ static NSString *heardID = @"headerView";
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if (buttonIndex == 1) {
-        [ZDAccountTool removeAccount];
+    if (buttonIndex == 0) {
+        BOOL boo = [ZDAccountTool removeAccount];
         for (UIViewController *controller in self.childViewControllers) {
             // 将子视图控制器的视图从父视图中删除
             [controller.view removeFromSuperview];

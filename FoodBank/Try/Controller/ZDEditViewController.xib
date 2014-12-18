@@ -16,34 +16,25 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ghZ-FD-deV">
-                    <rect key="frame" x="0.0" y="53" width="320" height="317"/>
+                    <rect key="frame" x="0.0" y="53" width="320" height="383"/>
                     <collectionViewLayout key="collectionViewLayout" id="DAb-aQ-Jje"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="0Vl-BP-ppm"/>
                         <outlet property="delegate" destination="-1" id="pSp-G5-Wci"/>
                     </connections>
                 </collectionView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZgX-eS-mdv" userLabel="登录">
-                    <rect key="frame" x="115" y="385" width="90" height="35"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="35" id="Kcr-2i-Grm"/>
-                        <constraint firstAttribute="width" constant="90" id="cLH-D6-D9l"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="15"/>
-                    <state key="normal" title="确定" backgroundImage="Judge"/>
-                </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_baobao" translatesAutoresizingMaskIntoConstraints="NO" id="kXH-ux-kRb">
                     <rect key="frame" x="8" y="14" width="30" height="31"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="31" id="7K6-kf-Kpg"/>
-                        <constraint firstAttribute="width" constant="30" id="dmD-ik-obv"/>
+                        <constraint firstAttribute="height" constant="31" id="1VX-xt-gJd"/>
+                        <constraint firstAttribute="width" constant="30" id="Ftb-Vg-thD"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="修改尝试食材" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YTt-CE-5l5">
                     <rect key="frame" x="46" y="18" width="90" height="25"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="25" id="lQP-jE-2fK"/>
-                        <constraint firstAttribute="width" constant="90" id="xZl-wx-pZW"/>
+                        <constraint firstAttribute="width" constant="90" id="Mxe-C9-Vaw"/>
+                        <constraint firstAttribute="height" constant="25" id="kYI-gq-mks"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="15"/>
                     <color key="textColor" red="0.75508283129999998" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -52,16 +43,14 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="YTt-CE-5l5" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="18" id="2kS-qI-SF0"/>
-                <constraint firstAttribute="trailing" secondItem="ghZ-FD-deV" secondAttribute="trailing" id="9v9-Ym-2Mm"/>
-                <constraint firstItem="YTt-CE-5l5" firstAttribute="leading" secondItem="kXH-ux-kRb" secondAttribute="trailing" constant="8" id="CMV-Ik-Y5A"/>
-                <constraint firstItem="ZgX-eS-mdv" firstAttribute="top" secondItem="ghZ-FD-deV" secondAttribute="bottom" constant="15" id="S9A-MQ-cBs"/>
-                <constraint firstItem="kXH-ux-kRb" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="14" id="ZDO-7S-dWJ"/>
-                <constraint firstItem="kXH-ux-kRb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="Zl8-Up-Lk8"/>
-                <constraint firstItem="ghZ-FD-deV" firstAttribute="top" secondItem="kXH-ux-kRb" secondAttribute="bottom" constant="8" id="qeE-gh-eZH"/>
-                <constraint firstAttribute="centerX" secondItem="ZgX-eS-mdv" secondAttribute="centerX" id="tCS-qh-cBb"/>
-                <constraint firstItem="ghZ-FD-deV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="uLb-Fs-pW1"/>
-                <constraint firstAttribute="bottom" secondItem="ZgX-eS-mdv" secondAttribute="bottom" constant="16" id="wwb-cH-3rx"/>
+                <constraint firstItem="kXH-ux-kRb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="1vD-Rb-qfw"/>
+                <constraint firstAttribute="bottom" secondItem="ghZ-FD-deV" secondAttribute="bottom" id="6K5-Sq-Ltm"/>
+                <constraint firstAttribute="trailing" secondItem="ghZ-FD-deV" secondAttribute="trailing" id="7Zx-f3-dGL"/>
+                <constraint firstItem="YTt-CE-5l5" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="18" id="EcB-c7-nAH"/>
+                <constraint firstItem="YTt-CE-5l5" firstAttribute="leading" secondItem="kXH-ux-kRb" secondAttribute="trailing" constant="8" id="YaW-Bv-rxT"/>
+                <constraint firstItem="kXH-ux-kRb" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="14" id="cBC-BM-r6m"/>
+                <constraint firstItem="ghZ-FD-deV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hzM-4e-21z"/>
+                <constraint firstItem="ghZ-FD-deV" firstAttribute="top" secondItem="kXH-ux-kRb" secondAttribute="bottom" constant="8" id="qHY-RA-ZYw"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
@@ -70,7 +59,6 @@
         </view>
     </objects>
     <resources>
-        <image name="Judge" width="105" height="36"/>
         <image name="login_baobao" width="88" height="74"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

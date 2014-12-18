@@ -8,7 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface ZDKnowCell : UITableViewCell
-@property (nonatomic, strong) NSDictionary *dict;
+
+@property (nonatomic, strong) NSString *dict;
+@property (nonatomic, assign) NSInteger row;
 + (instancetype)cellWithTableview:(UITableView *)tableView;
+
+
 @end

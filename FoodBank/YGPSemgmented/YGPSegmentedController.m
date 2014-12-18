@@ -22,7 +22,7 @@
 #define Off 200
 //选择显示区域（view）
 #define SelectVisible (sender.tag-100)
-#define initselectedIndex 5
+#define initselectedIndex 0
 
 @implementation YGPSegmentedController
 {
@@ -45,10 +45,10 @@
          
          self.frame =CGRectZero;
          YGPScrollView = [[UIScrollView alloc]initWithFrame:CGRectZero];
-         SelectedTagChang = 1;
+         SelectedTagChang = 100;
        
          [self SetScrollview];     //setup
-         [self setSelectedIndex:5];
+         [self setSelectedIndex:1];
          
     }
     return self;
@@ -112,7 +112,7 @@
           SegmentedButton.tag=i+100;
                     if (i==0)
           {
-               SegmentedButton.selected=NO;
+               SegmentedButton.selected=YES;
           }
           
 //          [SegmentedButton setTitleColor:[Globle colorFromHexRGB:@"868686"] forState:UIControlStateNormal];
@@ -151,6 +151,7 @@
 //点击button调用方法
 -(void)SelectButton:(UIButton*)sender
 {
+    
      //取消当前选择
      if (sender.tag!=SelectedTagChang)
      {
@@ -173,15 +174,12 @@
 //      [YGPScrollView setContentOffset:CGPointMake(sender.frame.origin.x, 0)];
      float x = YGPScrollView.contentOffset.x;
      [YGPScrollView setContentOffset:CGPointMake(x, 0)];
-     
-     
+    
      //设置居中
      if (sender.frame.origin.x>Off)
      {
-          [YGPScrollView setContentOffset:CGPointMake(sender.frame.origin.x-130, 0) animated:YES];
-         
+        [YGPScrollView setContentOffset:CGPointMake(sender.frame.origin.x-130, 0) animated:YES];
      }
-
 }
 
 //选择index
@@ -194,6 +192,7 @@
 
 -(NSInteger)initselectedSegmentIndex
 {
+//     self.TitleArray[0];
      //初始化为（0）
      return initselectedIndex;
 }

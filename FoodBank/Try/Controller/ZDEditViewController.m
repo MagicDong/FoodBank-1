@@ -58,7 +58,7 @@ static NSString *reusableViewID = @"SectionHeader";
         
         [ZDNetwork getSiKuInfoCallback:^(RspState *rsp, NSArray *array) {
             self.dataList = array;
-            ZDLog(@"23232%d",array.count);
+
             [self.collection reloadData];
         }];
     }
@@ -104,41 +104,53 @@ static NSString *reusableViewID = @"SectionHeader";
     }
     ZDFoodCategory *foodCategory = self.dataList[indexPath.section];
     label.text = [NSString stringWithFormat:@" %@",foodCategory.foodGenre];
+    
     return headerView;
     
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSArray *array = self.dataList[indexPath.section];
-    NSDictionary *dcit = array[indexPath.row];
-    //    CZProduct *product = self.dataList[indexPath.item];
-    UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
-    CZProductCell *product = (CZProductCell *)cell;
-    product.selectBtn.selected = !product.selectBtn.selected;
-    if (product.selectBtn.selected) {
-        if ([self.selectArray containsObject:product.mid]) {
-            [self.selectArray removeObject:product.mid];
-        }else{
-            [self.selectArray addObject:product.mid];
-        }
-    }else{
-        NSMutableArray *filteredArray = [[NSMutableArray alloc]initWithObjects:product.mid, nil];
-        /*
-         方法一：利用NSPredicate
-         注：NSPredicate所属Cocoa框架，在密码、用户名等正则判断中经常用到。
-         类似于SQL语句
-         NOT 不是
-         SELF 代表字符串本身
-         IN 范围运算符
-         那么NOT (SELF IN %@) 意思就是：不是这里所指定的字符串的值
-         */
-        NSPredicate * filterPredicate = [NSPredicate predicateWithFormat:@"NOT (SELF IN %@)",filteredArray];
-        //过滤数组
-        NSArray * reslutFilteredArray = [self.selectArray filteredArrayUsingPredicate:filterPredicate];
-        self.selectArray = [reslutFilteredArray mutableCopy];
-        
+    
+    ZDFoodCategory *genreList = self.dataList[indexPath.section];
+    NSArray *array = genreList.foodGenreList;
+    NSString *mid = array[indexPath.row];
+//    NSLog(@"===%@",mid);
+    
+    if ([self.delegate respondsToSelector:@selector(didSelectedMid:)]) {
+        [self.delegate didSelectedMid:mid];
+        [self.navigationController popViewControllerAnimated:YES];
     }
+    
+    
+//    [self.navigationController popToRootViewControllerAnimated:YES];
+//    CZProduct *product = self.dataList[indexPath.item];
+//    UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
+//    CZProductCell *product = (CZProductCell *)cell;
+//    product.selectBtn.selected = !product.selectBtn.selected;
+//    if (product.selectBtn.selected) {
+//        if ([self.selectArray containsObject:product.mid]) {
+//            [self.selectArray removeObject:product.mid];
+//        }else{
+//            [self.selectArray addObject:product.mid];
+//        }
+//    }else{
+//        NSMutableArray *filteredArray = [[NSMutableArray alloc]initWithObjects:product.mid, nil];
+//        /*
+//         方法一：利用NSPredicate
+//         注：NSPredicate所属Cocoa框架，在密码、用户名等正则判断中经常用到。
+//         类似于SQL语句
+//         NOT 不是
+//         SELF 代表字符串本身
+//         IN 范围运算符
+//         那么NOT (SELF IN %@) 意思就是：不是这里所指定的字符串的值
+//         */
+//        NSPredicate * filterPredicate = [NSPredicate predicateWithFormat:@"NOT (SELF IN %@)",filteredArray];
+//        //过滤数组
+//        NSArray * reslutFilteredArray = [self.selectArray filteredArrayUsingPredicate:filterPredicate];
+//        self.selectArray = [reslutFilteredArray mutableCopy];
+//        
+//    }
     //    NSLog(@",,,,,%@",self.selectArray);
     //
     //

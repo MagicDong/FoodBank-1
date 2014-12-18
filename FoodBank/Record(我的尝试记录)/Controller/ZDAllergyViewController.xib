@@ -25,20 +25,32 @@
             <rect key="frame" x="0.0" y="44" width="320" height="436"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="过敏反馈" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nqY-7f-X4A">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="过敏反馈" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nqY-7f-X4A">
                     <rect key="frame" x="64" y="27" width="215" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="215" id="1ys-ZS-B3V"/>
+                        <constraint firstAttribute="height" constant="21" id="fHJ-qz-YSd"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                     <color key="textColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="请您停止给宝宝添加该新食材并勾选宝宝的过敏症状：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oeg-Z0-a4x">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请您停止给宝宝添加该新食材并勾选宝宝的过敏症状：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oeg-Z0-a4x">
                     <rect key="frame" x="8" y="56" width="376" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="376" id="3o1-Km-oBb"/>
+                        <constraint firstAttribute="height" constant="21" id="j2C-Jg-8Lj"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <color key="textColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RY6-Ya-Cc4">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RY6-Ya-Cc4">
                     <rect key="frame" x="8" y="73" width="74" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="6JR-hB-yk6"/>
+                        <constraint firstAttribute="width" constant="74" id="cig-i2-MT5"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <inset key="titleEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
                     <state key="normal" title="腹泻" image="radiobox-green-unchecked">
@@ -50,8 +62,12 @@
                         <action selector="fuxie:" destination="-1" eventType="touchUpInside" id="qWo-o8-2H5"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pbW-GE-cO3">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pbW-GE-cO3">
                     <rect key="frame" x="85" y="73" width="74" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="74" id="PQf-45-Iln"/>
+                        <constraint firstAttribute="height" constant="44" id="Uwa-Js-sSK"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <inset key="titleEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
                     <state key="normal" title="腹胀" image="radiobox-green-unchecked">
@@ -63,8 +79,12 @@
                         <action selector="fuzhang:" destination="-1" eventType="touchUpInside" id="lo3-Wf-WtU"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wex-xN-f7j">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wex-xN-f7j">
                     <rect key="frame" x="159" y="73" width="74" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="KCJ-5k-FMx"/>
+                        <constraint firstAttribute="width" constant="74" id="W8s-Bu-SMk"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <inset key="titleEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
                     <state key="normal" title="腹痛" image="radiobox-green-unchecked">
@@ -76,8 +96,12 @@
                         <action selector="futong:" destination="-1" eventType="touchUpInside" id="YW8-J9-CLj"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Okf-Vp-vmi">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Okf-Vp-vmi">
                     <rect key="frame" x="230" y="73" width="74" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="74" id="clG-bZ-Bqg"/>
+                        <constraint firstAttribute="height" constant="44" id="pjR-Jw-TCr"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <inset key="titleEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
                     <state key="normal" title="皮疹" image="radiobox-green-unchecked">
@@ -89,8 +113,12 @@
                         <action selector="pizhen:" destination="-1" eventType="touchUpInside" id="VoI-6n-S1N"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bxs-IF-Os2">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bxs-IF-Os2">
                     <rect key="frame" x="8" y="110" width="239" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="239" id="UcH-U1-e7h"/>
+                        <constraint firstAttribute="height" constant="44" id="fwQ-Gc-tCn"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <inset key="titleEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
                     <state key="normal" title="与平时相比，宝宝睡觉不安稳" image="radiobox-green-unchecked">
@@ -102,8 +130,12 @@
                         <action selector="xiangbi:" destination="-1" eventType="touchUpInside" id="8ca-jJ-LQv"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="amE-r3-Ecy">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="amE-r3-Ecy">
                     <rect key="frame" x="8" y="149" width="74" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="74" id="NdV-aw-JN6"/>
+                        <constraint firstAttribute="height" constant="44" id="uYO-pI-ffs"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <inset key="titleEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
                     <state key="normal" title="呕吐" image="radiobox-green-unchecked">
@@ -115,8 +147,12 @@
                         <action selector="outu:" destination="-1" eventType="touchUpInside" id="jil-0e-dgS"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nVh-4g-vMa">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nVh-4g-vMa">
                     <rect key="frame" x="85" y="149" width="119" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="qaZ-EM-Tq1"/>
+                        <constraint firstAttribute="width" constant="119" id="x6J-2v-NmM"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <inset key="titleEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
                     <state key="normal" title="便中带血丝" image="radiobox-green-unchecked">
@@ -128,8 +164,12 @@
                         <action selector="xiesi:" destination="-1" eventType="touchUpInside" id="Jdz-3F-SDm"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nTA-r8-Xhw">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nTA-r8-Xhw">
                     <rect key="frame" x="8" y="188" width="119" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="119" id="PKa-ls-fLp"/>
+                        <constraint firstAttribute="height" constant="44" id="RwP-mC-Hdv"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <inset key="titleEdgeInsets" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
                     <state key="normal" title="其他症状：" image="radiobox-green-unchecked">
@@ -141,8 +181,12 @@
                         <action selector="qita:" destination="-1" eventType="touchUpInside" id="Kgz-kU-jsk"/>
                     </connections>
                 </button>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IV9-zG-zR6">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IV9-zG-zR6">
                     <rect key="frame" x="108" y="195" width="111" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="111" id="Msy-Ng-2TU"/>
+                        <constraint firstAttribute="height" constant="30" id="cDb-Wa-iU9"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                     <connections>
@@ -150,18 +194,16 @@
                     </connections>
                 </textField>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oTd-au-voO" customClass="LBorderView">
-                    <rect key="frame" x="3" y="231" width="320" height="1"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gib-HG-CVw">
-                    <rect key="frame" x="99" y="384" width="105" height="36"/>
-                    <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="15"/>
-                    <state key="normal" title="确定" backgroundImage="Judge"/>
-                </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="baby" translatesAutoresizingMaskIntoConstraints="NO" id="WoR-1U-2IJ">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baby" translatesAutoresizingMaskIntoConstraints="NO" id="WoR-1U-2IJ">
                     <rect key="frame" x="16" y="8" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="8KQ-wd-tpf"/>
+                        <constraint firstAttribute="width" constant="40" id="gZ5-ad-5JV"/>
+                    </constraints>
                 </imageView>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hft-Au-Dj6">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hft-Au-Dj6">
                     <rect key="frame" x="8" y="233" width="304" height="151"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <string key="text">      当孩子在新食材尝试中对某食材出现过敏现象后，请您带孩子去医院就医并遵医嘱自行安排对该食材的再次尝试时间。过敏食材的再次尝试应注意事项与方法，您可以去知识库进行查询；
@@ -169,8 +211,52 @@
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gib-HG-CVw">
+                    <rect key="frame" x="108" y="384" width="105" height="36"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="105" id="CPk-in-u7K"/>
+                        <constraint firstAttribute="height" constant="36" id="rJZ-Qa-Pvm"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="15"/>
+                    <state key="normal" title="确定" backgroundImage="Judge"/>
+                    <connections>
+                        <action selector="queding:" destination="-1" eventType="touchUpInside" id="ffa-Ec-V9P"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Wex-xN-f7j" firstAttribute="top" secondItem="nqY-7f-X4A" secondAttribute="bottom" constant="25" id="14T-qg-nf6"/>
+                <constraint firstItem="nqY-7f-X4A" firstAttribute="leading" secondItem="WoR-1U-2IJ" secondAttribute="trailing" constant="8" id="1Yx-jZ-pjC"/>
+                <constraint firstItem="RY6-Ya-Cc4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="3MO-XT-wF6"/>
+                <constraint firstItem="nVh-4g-vMa" firstAttribute="top" secondItem="Wex-xN-f7j" secondAttribute="bottom" constant="32" id="3z9-wz-dcc"/>
+                <constraint firstItem="pbW-GE-cO3" firstAttribute="leading" secondItem="RY6-Ya-Cc4" secondAttribute="trailing" constant="3" id="4h5-Jw-jRU"/>
+                <constraint firstAttribute="trailing" secondItem="Hft-Au-Dj6" secondAttribute="trailing" constant="8" id="Apn-v7-DBB"/>
+                <constraint firstAttribute="centerX" secondItem="gib-HG-CVw" secondAttribute="centerX" id="Blh-sV-HTa"/>
+                <constraint firstItem="Hft-Au-Dj6" firstAttribute="top" secondItem="nTA-r8-Xhw" secondAttribute="bottom" constant="1" id="BzM-PE-lDd"/>
+                <constraint firstItem="Okf-Vp-vmi" firstAttribute="leading" secondItem="pbW-GE-cO3" secondAttribute="trailing" constant="71" id="CUH-Qi-xRR"/>
+                <constraint firstItem="pbW-GE-cO3" firstAttribute="top" secondItem="nqY-7f-X4A" secondAttribute="bottom" constant="25" id="Eue-Na-TTK"/>
+                <constraint firstItem="IV9-zG-zR6" firstAttribute="top" secondItem="nVh-4g-vMa" secondAttribute="bottom" constant="2" id="F96-6I-mB9"/>
+                <constraint firstItem="nVh-4g-vMa" firstAttribute="leading" secondItem="amE-r3-Ecy" secondAttribute="trailing" constant="3" id="GsK-dv-Lko"/>
+                <constraint firstItem="Bxs-IF-Os2" firstAttribute="top" secondItem="oeg-Z0-a4x" secondAttribute="bottom" constant="33" id="ITF-fK-0MF"/>
+                <constraint firstAttribute="bottom" secondItem="gib-HG-CVw" secondAttribute="bottom" constant="16" id="LtZ-Rd-2I7"/>
+                <constraint firstItem="Bxs-IF-Os2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="SzA-rq-RQt"/>
+                <constraint firstItem="IV9-zG-zR6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="108" id="TN8-Dw-uRG"/>
+                <constraint firstItem="oeg-Z0-a4x" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="VGB-Um-UPd"/>
+                <constraint firstItem="Hft-Au-Dj6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="ZF4-4b-BJe"/>
+                <constraint firstItem="oeg-Z0-a4x" firstAttribute="top" secondItem="WoR-1U-2IJ" secondAttribute="bottom" constant="8" id="bMN-kn-unP"/>
+                <constraint firstItem="RY6-Ya-Cc4" firstAttribute="top" secondItem="WoR-1U-2IJ" secondAttribute="bottom" constant="25" id="bnu-aE-zzu"/>
+                <constraint firstItem="WoR-1U-2IJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="eTG-PU-FGk"/>
+                <constraint firstItem="nTA-r8-Xhw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="hR7-Lo-UhA"/>
+                <constraint firstItem="WoR-1U-2IJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="hqO-nf-ur9"/>
+                <constraint firstItem="nqY-7f-X4A" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="27" id="iIG-UZ-Bsc"/>
+                <constraint firstItem="Okf-Vp-vmi" firstAttribute="top" secondItem="nqY-7f-X4A" secondAttribute="bottom" constant="25" id="kzP-gF-6er"/>
+                <constraint firstItem="nTA-r8-Xhw" firstAttribute="top" secondItem="Bxs-IF-Os2" secondAttribute="bottom" constant="34" id="nOY-qb-2iI"/>
+                <constraint firstItem="amE-r3-Ecy" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="oVJ-gR-Ost"/>
+                <constraint firstItem="amE-r3-Ecy" firstAttribute="top" secondItem="RY6-Ya-Cc4" secondAttribute="bottom" constant="32" id="oZf-lO-Pqp"/>
+                <constraint firstItem="gib-HG-CVw" firstAttribute="top" secondItem="Hft-Au-Dj6" secondAttribute="bottom" id="tr7-u1-TKt"/>
+                <constraint firstItem="Wex-xN-f7j" firstAttribute="leading" secondItem="pbW-GE-cO3" secondAttribute="trailing" id="wpv-P3-tMH"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>

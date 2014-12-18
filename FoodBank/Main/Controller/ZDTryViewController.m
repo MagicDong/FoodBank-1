@@ -16,7 +16,7 @@
 #import "UIImageView+WebCache.h"
 #import "ZDNewFood.h"
 
-@interface ZDTryViewController () <UITableViewDataSource,UITableViewDelegate,ZDMoreViewDelegate>
+@interface ZDTryViewController () <UITableViewDataSource,UITableViewDelegate,ZDMoreViewDelegate,ZDEditDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *icon;   // 食材图片
 @property (weak, nonatomic) IBOutlet UIButton *nameEdit;  // 换食材
 @property (weak, nonatomic) IBOutlet UILabel *ke;         // 克数
@@ -45,6 +45,8 @@
         self.edgesForExtendedLayout = NO;
         self.navigationController.navigationBar.opaque = YES;
     }
+    
+    
     ZDTryChooseButton *tianBtn = [[ZDTryChooseButton alloc]initWithFrame:CGRectMake(241, 76, 71, 40)];
     [tianBtn setImage:[UIImage imageNamed:@"navigationbar_arrow_down"] forState:UIControlStateNormal];
     [tianBtn setTitle:@"3天" forState:UIControlStateNormal];
@@ -105,10 +107,11 @@
             
             self.cornerID = food.mid;
         }else{
-            [MBProgressHUD showError:@"网络错误"];
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.68 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                [MBProgressHUD hideHUD];
-            });
+            
+//            [MBProgressHUD showError:@"网络错误"];
+//            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.68 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//                [MBProgressHUD hideHUD];
+//            });
             return;
         }
     }];
@@ -211,7 +214,6 @@
         } completion:^(BOOL finished) {
             
         }];
-        
     }else{
         // 向上 --> 向下
         [try setImage:self.downImage forState:UIControlStateNormal];

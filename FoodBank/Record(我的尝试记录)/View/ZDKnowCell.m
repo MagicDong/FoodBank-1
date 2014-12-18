@@ -7,6 +7,7 @@
 //
 
 #import "ZDKnowCell.h"
+#import "ZDKnowModel.h"
 
 @implementation ZDKnowCell
 
@@ -30,16 +31,23 @@
         self.contentView.userInteractionEnabled = YES;
         self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         self.backgroundColor = ZDColor(255, 246, 229);
-        self.textLabel.font = [UIFont boldSystemFontOfSize:15];
+        self.textLabel.font = [UIFont boldSystemFontOfSize:14];
         self.textLabel.textColor = ZDColor(153, 102, 51);
         
     }
     return self;
 }
 
-- (void)setDict:(NSDictionary *)dict{
+- (void)setDict:(NSString *)dict{
     _dict = dict;
-    self.textLabel.text = dict[@"title"];
+    self.textLabel.text = dict;
 }
+
+- (void)setRow:(NSInteger)row{
+    _row = row;
+    self.textLabel.text =  [NSString stringWithFormat:@"%d、%@",row,self.textLabel.text];
+}
+
+
 
 @end

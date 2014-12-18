@@ -7,8 +7,8 @@
 //
 
 #import "ZDJudgeViewController.h"
+#import "ZDSiKuViewController.h"
 #import "ZDNotifyViewController.h"
-#import "ZDSupViewController.h"
 
 @interface ZDJudgeViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *fuhe;
@@ -31,8 +31,8 @@
 }
 
 - (IBAction)fuhe:(id)sender {
-    ZDSupViewController *sup = [[ZDSupViewController alloc]init];
-    [self.navigationController pushViewController:sup animated:YES];
+    ZDSiKuViewController *siku = [[ZDSiKuViewController alloc]init];
+    [self.navigationController pushViewController:siku animated:YES];
 }
 
 - (IBAction)bufuhe:(id)sender {

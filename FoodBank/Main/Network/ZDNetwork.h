@@ -63,6 +63,9 @@
 /* 16、获取个人四库信息列表 */
 + (void)getSikuInfoWeiChangshiCallback:(void (^)(RspState *))callback;
 
+/* 17、获取正在尝试食材 */
++ (void)getTryingFoodCallback:(void (^)(RspState *))callback;
+
 
 
 @end

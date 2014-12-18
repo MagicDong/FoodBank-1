@@ -16,6 +16,8 @@
 #import "ZDRegisterViewController.h"
 #import "ZDBaby.h"
 #import "ZDBabyTool.h"
+#import "ZDNetwork.h"
+#import "MBProgressHUD+ZD.h"
 
 @interface AppDelegate ()
 
@@ -29,6 +31,7 @@
 //    APPKEY:  47f01de13458        AppSecret：   ec44a5b1ff4cb948cb16c1a0b1655b23
     NSString *appKey = @"47f01de13458";
     NSString *appSecret = @"ec44a5b1ff4cb948cb16c1a0b1655b23";
+    
     [SMS_SDK    registerApp:appKey withSecret:appSecret];
     
      
@@ -44,7 +47,7 @@
     // 2.获取当前软件的版本号
     NSDictionary *md =[NSBundle mainBundle].infoDictionary;
     NSString *currentVersion = md[key];
-
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     //3.设置根控制器
@@ -55,7 +58,7 @@
     
     
 //    if ([currentVersion compare:sandBoxVersion] ==  NSOrderedDescending)
-    if ((1))
+    if ((0))
     {
         // 存储当前版本号
         [defaults setObject:currentVersion forKey:key];
@@ -65,14 +68,47 @@
         ZDNewfeatureViewController *newfeature = [[ZDNewfeatureViewController alloc] init];
         self.window.rootViewController = newfeature;
     }else{
-        ZDLog(@"%@",baby.userName);
-        if (baby.userName != nil) {
+//        ZDLog(@"%@",baby.userName);
+        if (baby.userName == nil) {
             ZDRegisterViewController *reg = [[ZDRegisterViewController alloc]init];
             self.window.rootViewController = reg;
         }else{
-            [UIApplication sharedApplication].statusBarHidden = NO;
-            ZDTabBarController *tabBarVc =  [[ZDTabBarController alloc] init];
-            self.window.rootViewController = tabBarVc;
+            // 判断当前是否已经有登陆过的账号存在
+            ZDBaby *baby = [ZDBabyTool sharedZDBabyTool].account;
+            [ZDNetwork LoginWithPhone:baby.userName Password:baby.password Callback:^(RspState *rsp, NSString *jsessionid) {
+                if (rsp.rspCode == 0) {
+                    ZDBabyTool *babyTool = [ZDBabyTool sharedZDBabyTool];
+                    ZDBaby *bb = [[ZDBaby alloc]init];
+                    bb.userName =  baby.userName;
+                    bb.password =  baby.password;
+                    bb.jsessionid = jsessionid;
+                    [babyTool saveAccount:bb];
+                    
+//                    ZDTabBarController *tabBarVc = [[ZDTabBarController alloc] init];
+//                    UIApplication *app = [UIApplication sharedApplication];
+//                    UIWindow *window = app.keyWindow;
+//                    app.statusBarHidden = NO;
+//                    window.rootViewController = tabBarVc;
+//                    [window makeKeyAndVisible];
+                }else{
+                    [MBProgressHUD showError:@"网络错误"];
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.68 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                        [MBProgressHUD hideHUD];
+                    });
+//                    ZDTabBarController *tabBarVc = [[ZDTabBarController alloc] init];
+//                    UIApplication *app = [UIApplication sharedApplication];
+//                    UIWindow *window = app.keyWindow;
+//                    app.statusBarHidden = NO;
+//                    window.rootViewController = tabBarVc;
+//                    [window makeKeyAndVisible];
+                }
+            }];
+            ZDTabBarController *tabBarVc = [[ZDTabBarController alloc] init];
+            UIApplication *app = [UIApplication sharedApplication];
+            UIWindow *window = app.keyWindow;
+            app.statusBarHidden = NO;
+            window.rootViewController = tabBarVc;
+            [window makeKeyAndVisible];
         }
     }
     return YES;

@@ -11,6 +11,7 @@
 #import "HBVLinkedTextView.h"
 #import "UIColor+HBVHarmonies.h"
 #import "ZDKnowTableViewController.h"
+#import "ZDNetwork.h"
 
 @interface ZDRejectViewController (){
     __weak IBOutlet LBorderView *_borderView1;
@@ -207,8 +208,17 @@
     self.jianjie.attributedText = [[NSAttributedString alloc]initWithString:@"    宝宝的情绪不好只是个临时原因。您不要着急，待宝宝经过一个月的忘却期后，您可以选择一个宝宝身体健康、情绪愉快的时机再次给宝宝尝试。放心吧！到时“营养管家”会提醒您的。" attributes:attributes];
     self.jianjie.scrollsToTop = YES;
 }
+
 - (IBAction)isOK:(UIButton *)sender {
-    
+    [ZDNetwork postTryResultTryState:@"3" CallBack:^(RspState *rsp) {
+        if (rsp.rspCode == 0) {
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"提交尝试结果成功！" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+            [alert show];
+        }else{
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"错误！" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+            [alert show];
+        }
+    }];
 }
 
 

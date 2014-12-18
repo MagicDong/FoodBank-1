@@ -11,11 +11,11 @@
 @interface ZDTryRecord : NSObject
 
 @property (nonatomic , copy  ) NSString *mname;
-@property (nonatomic , copy  ) NSString *cycle;
+@property (nonatomic , strong  ) NSNumber *cycle;
 @property (nonatomic , copy  ) NSString *practice;
 @property (nonatomic , copy  ) NSString *tryDate;
 @property (nonatomic , copy  ) NSString *introduce;
-@property (nonatomic , copy  ) NSString *isTrying;
+@property (nonatomic , strong) NSNumber *isTrying;
 @property (nonatomic , copy  ) NSString *grams;
 @property (nonatomic , copy  ) NSString *micon;
 

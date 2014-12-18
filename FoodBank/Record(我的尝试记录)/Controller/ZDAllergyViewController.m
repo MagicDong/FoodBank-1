@@ -8,6 +8,8 @@
 
 #import "ZDAllergyViewController.h"
 #import "LBorderView.h"
+#import "ZDNetwork.h"
+#import "MBProgressHUD+ZD.h"
 
 @interface ZDAllergyViewController ()<UITextFieldDelegate>{
 __weak IBOutlet LBorderView *_borderView1;
@@ -220,8 +222,17 @@ __weak IBOutlet LBorderView *_borderView1;
 
 - (IBAction)qitaTextField:(UITextField *)sender {
     
-    
-    
+}
+- (IBAction)queding:(UIButton *)sender {
+    [ZDNetwork postTryResultTryState:@"2" CallBack:^(RspState *rsp) {
+        if (rsp.rspCode == 0) {
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"提交尝试结果成功！" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+            [alert show];
+        }else{
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"错误！" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+            [alert show];
+        }
+    }];
 }
 
 

@@ -8,6 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+
+@protocol ZDEditDelegate <NSObject>
+
+@optional
+
+- (void)didSelectedMid:(NSString *)mid;
+
+@end
+
+
 @interface ZDEditViewController : UIViewController
+
+@property (nonatomic,weak) id<ZDEditDelegate> delegate;
 
 @end

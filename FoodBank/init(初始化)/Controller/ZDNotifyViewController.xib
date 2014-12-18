@@ -95,18 +95,10 @@
                     <color key="textColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="apc-0z-DAB" userLabel="登录">
-                    <rect key="frame" x="115" y="373" width="91" height="33"/>
-                    <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="15"/>
-                    <state key="normal" title="关闭" backgroundImage="Judge"/>
-                    <connections>
-                        <action selector="Finish:" destination="-1" eventType="touchUpInside" id="e4n-2k-S2M"/>
-                    </connections>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zBQ-zV-PDp">
-                    <rect key="frame" x="14" y="344" width="278" height="21"/>
+                    <rect key="frame" x="27" y="389" width="278" height="29"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <state key="normal" title="更多内容请点击知识库查看">
+                    <state key="normal" title="点击查看更多">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -122,7 +114,6 @@
         </view>
     </objects>
     <resources>
-        <image name="Judge" width="105" height="36"/>
         <image name="user_login_password" width="30" height="30"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

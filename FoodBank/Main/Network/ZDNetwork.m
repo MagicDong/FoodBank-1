@@ -437,6 +437,7 @@
     if (jessionid == nil) {
         return;
     }else{
+//        NSString *urlStr = [NSString stringWithFormat:@"%@/mobile/getUserTryingMaterial.do;jsessionid=%@", kBaseURL, jessionid];
         
         NSString *urlStr = [NSString stringWithFormat:@"%@/mobile/getUserMaterialTryList.do;jsessionid=%@", kBaseURL,jessionid];
         
@@ -460,7 +461,7 @@
             }
             
             //        getTryRecordInfoCallback
-            [self _netRspProcess:rsp];
+//            [self _netRspProcess:rsp];
             callback(rsp,departmentList);
             
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -475,106 +476,159 @@
 + (void)postTryResultTryState:(NSString *)tryState callBack:(void (^)(RspState *))callback
 {
 ///mobile/postTryResult.do;jsessionid=      tryState=
-    NSString *urlStr = [NSString stringWithFormat:@"%@/mobile/postTryResult.do;jsessionid=%@", kBaseURL,@""];
-    
-    NSDictionary *para =@{@"tryState":tryState};
-    
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.requestSerializer.timeoutInterval = kTimeout;
-    [manager POST:urlStr parameters:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        [self _operationLog:operation];
+    ZDBaby *baby =  [ZDBabyTool sharedZDBabyTool].account;
+    NSString *jessionid = baby.jsessionid;
+    if (jessionid == nil) {
+        return;
+    }else{
+        NSString *urlStr = [NSString stringWithFormat:@"%@/mobile/postTryResult.do;jsessionid=%@", kBaseURL,jessionid];
         
-        NSDictionary *rspDict = responseObject;
-        RspState *rsp = [[RspState alloc]initWithDict:rspDict];
-        if(rsp.rspCode == 0)
-        {
+        NSDictionary *para =@{@"tryState":tryState};
+        
+        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+        manager.requestSerializer.timeoutInterval = kTimeout;
+        [manager POST:urlStr parameters:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            [self _operationLog:operation];
             
-        }
-        callback(rsp);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        RspState *rsp = [RspState rspStateNetError];
-        callback(rsp);
-    }];
+            NSDictionary *rspDict = responseObject;
+            RspState *rsp = [[RspState alloc]initWithDict:rspDict];
+            if(rsp.rspCode == 0)
+            {
+                
+            }
+            callback(rsp);
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            RspState *rsp = [RspState rspStateNetError];
+            callback(rsp);
+        }];
+    }
 }
 
 /* 14、获取周总结 */
 + (void)getZhouCallback:(void (^)(RspState *))callback
 {
 //    /mobile/getWeekUserLibStat.do;jsessionid=
-    NSString *urlStr = [NSString stringWithFormat:@"%@/mobile/getWeekUserLibStat.do;jsessionid=%@", kBaseURL,@""];
-    
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.requestSerializer.timeoutInterval = kTimeout;
-    [manager GET:urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        [self _operationLog:operation];
+    ZDBaby *baby =  [ZDBabyTool sharedZDBabyTool].account;
+    NSString *jessionid = baby.jsessionid;
+    if (jessionid == nil) {
+        return;
+    }else{
+        NSString *urlStr = [NSString stringWithFormat:@"%@/mobile/getWeekUserLibStat.do;jsessionid=%@", kBaseURL,jessionid];
         
-        NSDictionary *rspDict = responseObject;
-        RspState *rsp = [[RspState alloc]initWithDict:rspDict];
-        if(rsp.rspCode == 0)
-        {
+        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+        manager.requestSerializer.timeoutInterval = kTimeout;
+        [manager GET:urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            [self _operationLog:operation];
             
-        }
-        callback(rsp);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        RspState *rsp = [RspState rspStateNetError];
-        callback(rsp);
-    }];
+            NSDictionary *rspDict = responseObject;
+            RspState *rsp = [[RspState alloc]initWithDict:rspDict];
+            if(rsp.rspCode == 0)
+            {
+                
+            }
+            callback(rsp);
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            RspState *rsp = [RspState rspStateNetError];
+            callback(rsp);
+        }];
+    }
 }
 
 /* 15、获取月总结 */
 + (void)getYueCallback:(void (^)(RspState *))callback
 {
-//    /mobile/getMonthUserLibStat.do;jsessionid=
-    NSString *urlStr = [NSString stringWithFormat:@"%@/mobile/getMonthUserLibStat.do;jsessionid=%@", kBaseURL,@""];
     
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.requestSerializer.timeoutInterval = kTimeout;
-    [manager GET:urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        [self _operationLog:operation];
+//    /mobile/getMonthUserLibStat.do;jsessionid=
+    ZDBaby *baby =  [ZDBabyTool sharedZDBabyTool].account;
+    NSString *jessionid = baby.jsessionid;
+    if (jessionid == nil) {
+        return;
+    }else{
+        NSString *urlStr = [NSString stringWithFormat:@"%@/mobile/getMonthUserLibStat.do;jsessionid=%@", kBaseURL,jessionid];
         
-        NSDictionary *rspDict = responseObject;
-        RspState *rsp = [[RspState alloc]initWithDict:rspDict];
-        if(rsp.rspCode == 0)
-        {
+        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+        manager.requestSerializer.timeoutInterval = kTimeout;
+        [manager GET:urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            [self _operationLog:operation];
             
-        }
-        callback(rsp);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        RspState *rsp = [RspState rspStateNetError];
-        callback(rsp);
-    }];
+            NSDictionary *rspDict = responseObject;
+            RspState *rsp = [[RspState alloc]initWithDict:rspDict];
+            if(rsp.rspCode == 0)
+            {
+                
+            }
+            callback(rsp);
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            RspState *rsp = [RspState rspStateNetError];
+            callback(rsp);
+        }];
+    }
 }
 
 /* 16、获取个人四库信息列表 */
 + (void)getSikuInfoWeiChangshiCallback:(void (^)(RspState *))callback
 {
 //    /mobile/getUserTryingMaterial2.do;jsessionid=
-    NSString *urlStr = [NSString stringWithFormat:@"%@/mobile/getMonthUserLibStat.do;jsessionid=%@", kBaseURL,@""];
-    
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.requestSerializer.timeoutInterval = kTimeout;
-    [manager GET:urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        [self _operationLog:operation];
+    ZDBaby *baby =  [ZDBabyTool sharedZDBabyTool].account;
+    NSString *jessionid = baby.jsessionid;
+    if (jessionid == nil) {
+        return;
+    }else{
+        NSString *urlStr = [NSString stringWithFormat:@"%@/mobile/getMonthUserLibStat.do;jsessionid=%@", kBaseURL,jessionid];
         
-        NSDictionary *rspDict = responseObject;
-        RspState *rsp = [[RspState alloc]initWithDict:rspDict];
-        if(rsp.rspCode == 0)
-        {
+        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+        manager.requestSerializer.timeoutInterval = kTimeout;
+        [manager GET:urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            [self _operationLog:operation];
             
-        }
-        callback(rsp);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        RspState *rsp = [RspState rspStateNetError];
-        callback(rsp);
-    }];
+            NSDictionary *rspDict = responseObject;
+            RspState *rsp = [[RspState alloc]initWithDict:rspDict];
+            if(rsp.rspCode == 0)
+            {
+                
+            }
+            callback(rsp);
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            RspState *rsp = [RspState rspStateNetError];
+            callback(rsp);
+        }];
+    }
 }
 
++ (void)getTryingFoodCallback:(void (^)(RspState *))callback{
+    ZDBaby *baby =  [ZDBabyTool sharedZDBabyTool].account;
+    NSString *jessionid = baby.jsessionid;
+    if (jessionid == nil) {
+        return;
+    }else{
+        NSString *urlStr = [NSString stringWithFormat:@"%@/mobile/getTryingMaterial.do;jsessionid=%@", kBaseURL,jessionid];
+        
+        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+        manager.requestSerializer.timeoutInterval = kTimeout;
+        [manager GET:urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            [self _operationLog:operation];
+            
+            NSDictionary *rspDict = responseObject;
+            RspState *rsp = [[RspState alloc]initWithDict:rspDict];
+            if(rsp.rspCode == 0)
+            {
+                
+            }
+            callback(rsp);
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            RspState *rsp = [RspState rspStateNetError];
+            callback(rsp);
+        }];
+    }
+}
+///mobile/getTryingMaterial.do;jsessionid=
 
 #pragma mark ------ private function
 + (void) netRspProcess:(RspState *)rsp
 {
     if(rsp.rspCode==101){ //用户名或密码错误
 //      [LoginAccountTool sharedLoginAccountTool].loginState = NO;
+        
     }
 }
 
