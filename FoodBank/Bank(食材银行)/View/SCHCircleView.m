@@ -198,14 +198,11 @@ static int drag_animation_count        = 0;
     return rd;
 }
 
-#pragma mark -
 #pragma mark - 动画
 - (void)animateWithDuration:(CGFloat)time animateDelay:(CGFloat)delay changeIndex:(NSInteger)change_index toIndex:(NSInteger)to_index circleArray:(NSMutableArray *)array clockwise:(BOOL)is_clockwise
 {
-   
     SCHCircleViewCell *change_cell = [array objectAtIndex:change_index];
     SCHCircleViewCell *to_cell     = [array objectAtIndex:to_index];
-    
     /*圆*/
     CAKeyframeAnimation * animation = [CAKeyframeAnimation animationWithKeyPath:[NSString stringWithFormat:@"position"]];
 	CGMutablePathRef path = CGPathCreateMutable();
@@ -229,7 +226,7 @@ static int drag_animation_count        = 0;
 
     
    /*缩放*/
-
+    
     CABasicAnimation *scale_anim   = [CABasicAnimation animationWithKeyPath:@"transform"];
     scale_anim.fromValue           = [NSValue valueWithCATransform3D:CATransform3DMakeScale(change_cell.current_scale, change_cell.current_scale,1.0f)];
 
@@ -245,13 +242,11 @@ static int drag_animation_count        = 0;
     anim_group.delegate            = self;
     anim_group.fillMode            = kCAFillModeForwards;
     anim_group.removedOnCompletion = NO;
-    
     anim_group.animation_tag       = change_index;
-
+    
     
     [change_cell.layer addAnimation:anim_group forKey:[NSString stringWithFormat:@"anim_group_%d",change_index]];
-
-
+    
     /*改变属性*/
     change_cell.current_animation_radian = to_cell.animation_radian;
     change_cell.current_scale            = to_cell.scale;
@@ -277,8 +272,7 @@ static int drag_animation_count        = 0;
     _is_clockwise               = [self oldIndex:_current_index newIndex:touch_index];
     /*跨度*/
     NSInteger number            = [self getNumberOldIndex:_current_index newIndex:touch_index];
- 
-   
+    
     /*动画循环的次数*/
     repeat_animation_count      = number;
     repeat_animation_count_base = number;

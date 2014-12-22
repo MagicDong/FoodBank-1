@@ -152,6 +152,7 @@
     self.navigationItem.leftBarButtonItem = nil;
     if(iOS7)
     {
+        
         self.edgesForExtendedLayout = NO;
         self.navigationController.navigationBar.opaque = YES;
     }

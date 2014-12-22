@@ -69,7 +69,6 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
     // 取出点击一行的模型
     ZDKnowModel *model = _menus[indexPath.row];
     
@@ -80,13 +79,21 @@
         NSIndexPath *indexP = [NSIndexPath indexPathForRow:indexPath.row + 1 inSection:0];
         [tableView deleteRowsAtIndexPaths:@[indexP] withRowAnimation:UITableViewRowAnimationFade];
         model.open = NO;
+        if ([self.knowDelegate respondsToSelector:@selector(didClickCell:)]) {
+            [self.knowDelegate didClickCell:0];
+        }
     }else{ // 新增一行
         model.open = YES;
         NSIndexPath *indexP = [NSIndexPath indexPathForRow:indexPath.row + 1 inSection:0];
         ZDKnowModel *m = [ZDKnowModel model:indexPath.row detail:model.detail];
-        NSLog(@"========%@",model.detail);
+//        NSLog(@"========%@",model.detail);
         [_menus insertObject:m atIndex:indexPath.row +1];
         [tableView insertRowsAtIndexPaths:@[indexP] withRowAnimation:UITableViewRowAnimationFade];
+        
+        if ([self.knowDelegate respondsToSelector:@selector(didClickCell:)]) {
+            [self.knowDelegate didClickCell:1];
+        }
+//        didClickCell();
     }
     
 //     NSDictionary *dict = self.menus[indexPath.row];

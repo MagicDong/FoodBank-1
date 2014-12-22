@@ -119,6 +119,7 @@
 		185BABE71A01EE1700248EBC /* login_bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 185BABE61A01EE1700248EBC /* login_bg.jpg */; };
 		185BABEA1A0201DF00248EBC /* ZDControllerTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 185BABE91A0201DF00248EBC /* ZDControllerTool.m */; };
 		185F98D11A35373D00EFF646 /* ZDChooseFood.m in Sources */ = {isa = PBXBuildFile; fileRef = 185F98D01A35373D00EFF646 /* ZDChooseFood.m */; };
+		18634B781A47A7FC00CC1790 /* ZDSpecialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18634B771A47A7FC00CC1790 /* ZDSpecialViewController.m */; };
 		1863EB7A19F75250006BFF21 /* ZDTiShiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1863EB7919F75250006BFF21 /* ZDTiShiViewController.m */; };
 		1863EB7C19F752A0006BFF21 /* ZDTiShiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1863EB7B19F752A0006BFF21 /* ZDTiShiViewController.xib */; };
 		186B6F0D1A2EDDA800874168 /* ZDFoodCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 186B6F0C1A2EDDA800874168 /* ZDFoodCategory.m */; };
@@ -465,6 +466,8 @@
 		185BABE91A0201DF00248EBC /* ZDControllerTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDControllerTool.m; sourceTree = "<group>"; };
 		185F98CF1A35373D00EFF646 /* ZDChooseFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDChooseFood.h; sourceTree = "<group>"; };
 		185F98D01A35373D00EFF646 /* ZDChooseFood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDChooseFood.m; sourceTree = "<group>"; };
+		18634B761A47A7FC00CC1790 /* ZDSpecialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDSpecialViewController.h; sourceTree = "<group>"; };
+		18634B771A47A7FC00CC1790 /* ZDSpecialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDSpecialViewController.m; sourceTree = "<group>"; };
 		1863EB7819F75250006BFF21 /* ZDTiShiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDTiShiViewController.h; sourceTree = "<group>"; };
 		1863EB7919F75250006BFF21 /* ZDTiShiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDTiShiViewController.m; sourceTree = "<group>"; };
 		1863EB7B19F752A0006BFF21 /* ZDTiShiViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDTiShiViewController.xib; sourceTree = "<group>"; };
@@ -1296,6 +1299,8 @@
 				18F891E519CC06070046C022 /* ZDTabBarController.m */,
 				18F891F019CC189E0046C022 /* ZDNavViewController.h */,
 				18F891F119CC189E0046C022 /* ZDNavViewController.m */,
+				18634B761A47A7FC00CC1790 /* ZDSpecialViewController.h */,
+				18634B771A47A7FC00CC1790 /* ZDSpecialViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1999,6 +2004,7 @@
 				1875BB771A2C1B61004BA5C1 /* ZDNetwork.m in Sources */,
 				183E72B219DA4092009CD24F /* SCHCircleViewCell.m in Sources */,
 				1829A7B419EB6A1500CD2624 /* LBorderView.m in Sources */,
+				18634B781A47A7FC00CC1790 /* ZDSpecialViewController.m in Sources */,
 				18F37EAD19D7F66400325A25 /* MJPhotoProgressView.m in Sources */,
 				18FA20DE19CFF3D600430E37 /* AFHTTPRequestOperation.m in Sources */,
 				1823B10219D1612B0081E5A2 /* ZDAccountTool.m in Sources */,

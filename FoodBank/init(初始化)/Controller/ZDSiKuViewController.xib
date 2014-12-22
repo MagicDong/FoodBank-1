@@ -7,9 +7,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZDSiKuViewController">
             <connections>
                 <outlet property="collection" destination="NNy-uG-kpc" id="qd7-kl-4tY"/>
-                <outlet property="label1" destination="1qY-Ok-rkC" id="LQo-KO-jGo"/>
-                <outlet property="label2" destination="fHC-kD-VU9" id="mk2-6w-uZW"/>
                 <outlet property="queding" destination="cJt-AW-Yth" id="PqH-0c-W9E"/>
+                <outlet property="tableView" destination="hRD-e7-2VW" id="UiX-HR-ZM7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,81 +17,47 @@
             <rect key="frame" x="0.0" y="44" width="320" height="436"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uYK-bR-pcj">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="122"/>
-                    <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_baobao" translatesAutoresizingMaskIntoConstraints="NO" id="ymz-Ek-vZo">
-                            <rect key="frame" x="8" y="13" width="30" height="31"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="31" id="hab-3X-xCX"/>
-                                <constraint firstAttribute="width" constant="30" id="yWU-ga-vkI"/>
-                            </constraints>
-                        </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="初始化宝宝个人食材库" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Cs-Lc-aYi">
-                            <rect key="frame" x="46" y="17" width="150" height="25"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="150" id="OJu-u8-WUO"/>
-                                <constraint firstAttribute="height" constant="25" id="jaQ-D2-ohH"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="15"/>
-                            <color key="textColor" red="0.75508283132530118" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="请您将宝宝已尝试过（尝试3-7天）且安全(未发" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1qY-Ok-rkC">
-                            <rect key="frame" x="33" y="47" width="403" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                            <color key="textColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="生过敏、拒绝等现象）的食材勾选出来。" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHC-kD-VU9">
-                            <rect key="frame" x="8" y="69" width="403" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                            <color key="textColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstItem="4Cs-Lc-aYi" firstAttribute="leading" secondItem="ymz-Ek-vZo" secondAttribute="trailing" constant="8" id="0Mv-Wz-xVp"/>
-                        <constraint firstAttribute="height" constant="122" id="3UA-ko-YTH"/>
-                        <constraint firstItem="4Cs-Lc-aYi" firstAttribute="top" secondItem="uYK-bR-pcj" secondAttribute="top" constant="17" id="CQ5-ey-jRw"/>
-                        <constraint firstItem="ymz-Ek-vZo" firstAttribute="leading" secondItem="uYK-bR-pcj" secondAttribute="leading" constant="8" id="Rly-0r-2YJ"/>
-                        <constraint firstItem="ymz-Ek-vZo" firstAttribute="top" secondItem="uYK-bR-pcj" secondAttribute="top" constant="13" id="ixH-F5-3ke"/>
-                    </constraints>
-                </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJt-AW-Yth" userLabel="登录">
-                    <rect key="frame" x="115" y="389" width="90" height="35"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="35" id="RiI-II-Jdw"/>
-                        <constraint firstAttribute="width" constant="90" id="SVr-28-Gpq"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="15"/>
-                    <state key="normal" title="确定" backgroundImage="Judge"/>
-                    <connections>
-                        <action selector="queding:" destination="-1" eventType="touchUpInside" id="pEq-z1-N8u"/>
-                    </connections>
-                </button>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="NNy-uG-kpc">
-                    <rect key="frame" x="0.0" y="94" width="320" height="287"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="login_baobao" translatesAutoresizingMaskIntoConstraints="NO" id="ymz-Ek-vZo">
+                    <rect key="frame" x="90" y="13" width="30" height="31"/>
+                </imageView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="NNy-uG-kpc">
+                    <rect key="frame" x="90" y="99" width="230" height="280"/>
                     <collectionViewLayout key="collectionViewLayout" id="9gk-xM-a8p"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="lfD-RB-Y5X"/>
                         <outlet property="delegate" destination="-1" id="ZDG-fi-QBr"/>
                     </connections>
                 </collectionView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="初始化宝宝个人食材库" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Cs-Lc-aYi">
+                    <rect key="frame" x="128" y="19" width="150" height="25"/>
+                    <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="15"/>
+                    <color key="textColor" red="0.75508283132530118" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="请您将宝宝已尝试过（尝试3-7天）且未发生过敏、拒绝等现象）的食材勾选出来。" translatesAutoresizingMaskIntoConstraints="NO" id="S18-5c-VUW">
+                    <rect key="frame" x="90" y="44" width="230" height="51"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hRD-e7-2VW">
+                    <rect key="frame" x="0.0" y="0.0" width="90" height="436"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="bKP-aq-DNR"/>
+                        <outlet property="delegate" destination="-1" id="6Ht-NX-vPi"/>
+                    </connections>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJt-AW-Yth" userLabel="登录">
+                    <rect key="frame" x="160" y="391" width="90" height="35"/>
+                    <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="15"/>
+                    <state key="normal" title="确定" backgroundImage="Judge"/>
+                    <connections>
+                        <action selector="queding:" destination="-1" eventType="touchUpInside" id="pEq-z1-N8u"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstItem="NNy-uG-kpc" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="2m2-Uy-Z5b"/>
-                <constraint firstAttribute="trailing" secondItem="uYK-bR-pcj" secondAttribute="trailing" id="4Se-6u-0dG"/>
-                <constraint firstItem="cJt-AW-Yth" firstAttribute="top" secondItem="NNy-uG-kpc" secondAttribute="bottom" constant="8" id="Hd5-Ha-Ter"/>
-                <constraint firstItem="uYK-bR-pcj" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Q3T-Pm-u35"/>
-                <constraint firstAttribute="trailing" secondItem="NNy-uG-kpc" secondAttribute="trailing" id="STu-dx-j1z"/>
-                <constraint firstItem="uYK-bR-pcj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="SUf-N4-G9G"/>
-                <constraint firstItem="NNy-uG-kpc" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="94" id="bjE-4g-YUV"/>
-                <constraint firstAttribute="centerX" secondItem="cJt-AW-Yth" secondAttribute="centerX" id="gIK-6r-cXR"/>
-                <constraint firstAttribute="bottom" secondItem="cJt-AW-Yth" secondAttribute="bottom" constant="12" id="qp3-ZC-zpx"/>
-            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>

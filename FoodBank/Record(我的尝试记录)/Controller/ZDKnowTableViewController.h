@@ -8,6 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol ZDKnowDelegate <NSObject>
+
+@optional
+
+- (void)didClickCell:(NSInteger)to;
+
+@end
+typedef void (^didClickCell)(NSInteger resultType);
+
 @interface ZDKnowTableViewController : UITableViewController
+
+@property (nonatomic,weak) id<ZDKnowDelegate> knowDelegate;
 
 @end

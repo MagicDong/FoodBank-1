@@ -171,7 +171,7 @@
     // 判断当前是否已经有登陆过的账号存在
     ZDBaby *baby = [ZDBabyTool sharedZDBabyTool].account;
     
-    if (baby.userName != nil) {
+    if (baby.userName == nil) {
         [ZDNetwork LoginWithPhone:baby.userName Password:baby.password Callback:^(RspState *rsp, NSString *jsessionid) {
             if (rsp.rspCode == 0) {
                 ZDBabyTool *babyTool = [ZDBabyTool sharedZDBabyTool];

@@ -8,7 +8,19 @@
 
 #import "ZDKnowCell.h"
 #import "ZDKnowModel.h"
+#import "ZDKnowTableViewController.h"
 
+@interface ZDKnowCell () <ZDKnowDelegate>
+/**
+ *  向下的图片
+ */
+@property (nonatomic, strong) UIImage *downImage;
+/**
+ *  向上的图片
+ */
+@property (nonatomic, strong) UIImage *upImage;
+
+@end
 @implementation ZDKnowCell
 
 - (void)awakeFromNib {
@@ -29,13 +41,64 @@
     if (self) {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         self.contentView.userInteractionEnabled = YES;
+        self.accessoryView = [[UIImageView alloc] initWithImage:self.downImage];
         self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         self.backgroundColor = ZDColor(255, 246, 229);
         self.textLabel.font = [UIFont boldSystemFontOfSize:14];
         self.textLabel.textColor = ZDColor(153, 102, 51);
         
+        
     }
     return self;
+}
+
+- (void)cellClick:(UIImageView *)imageView
+{
+    // 1.取出按钮中的图片判断当前的图片是向上还是向下
+    if (imageView.image == self.downImage) {
+        
+//        // 向下 --> 向上
+//        _foodPickerView = [ZDFoodPickerView foodPickerView];
+//        _foodPickerView.y = self.view.height;
+//        // 设置代理
+//        _foodPickerView.delegate = self;
+//        [self.view addSubview:_foodPickerView];
+//        
+//        [titleBtn setImage:self.upImage forState:UIControlStateNormal];
+//        self.foodPickerView.y = self.view.height;
+//        [UIView animateWithDuration:0.25 animations:^{
+//            self.foodPickerView.y = self.view.height - self.foodPickerView.height;
+//        } completion:^(BOOL finished) {
+//            
+//        }];
+        
+    }else
+    {
+//        // 向上 --> 向下
+//        [titleBtn setImage:self.downImage forState:UIControlStateNormal];
+//        self.foodPickerView.y = self.view.height - self.foodPickerView.height;
+//        [UIView animateWithDuration:0.25 animations:^{
+//            self.foodPickerView.y = self.view.height;
+//        } completion:^(BOOL finished) {
+//            [self.foodPickerView removeFromSuperview];
+//        }];
+    }
+}
+
+- (UIImage *)downImage
+{
+    if (!_downImage) {
+        _downImage = [UIImage imageWithNamed:@"navigationbar_arrow_down"];
+    }
+    return _downImage;
+}
+
+- (UIImage *)upImage
+{
+    if (!_upImage) {
+        _upImage = [UIImage imageWithNamed:@"navigationbar_arrow_up"];
+    }
+    return _upImage;
 }
 
 - (void)setDict:(NSString *)dict{

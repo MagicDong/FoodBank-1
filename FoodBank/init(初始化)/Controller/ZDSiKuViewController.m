@@ -17,8 +17,9 @@
 
 static NSString *ProductCellID = @"ProductCell";
 static NSString *reusableViewID = @"SectionHeader";
-@interface ZDSiKuViewController () <UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+@interface ZDSiKuViewController () <UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UITableViewDataSource,UITableViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UILabel *label1;
 @property (weak, nonatomic) IBOutlet UICollectionView *collection;
 @property (weak, nonatomic) IBOutlet UILabel *label2;
@@ -30,6 +31,8 @@ static NSString *reusableViewID = @"SectionHeader";
 @property (nonatomic, strong) NSArray *dataList;
 @property (weak, nonatomic) IBOutlet UIButton *queding;
 @property (nonatomic, strong) NSMutableArray *selectArray;
+@property (nonatomic, strong) NSIndexPath *path;
+
 @end
 
 @implementation ZDSiKuViewController
@@ -57,11 +60,53 @@ static NSString *reusableViewID = @"SectionHeader";
     
     self.queding.layer.cornerRadius = 8;
     self.queding.layer.masksToBounds = YES;
+    
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc]init];
+    paragraphStyle.lineHeightMultiple = 20.f;
+    paragraphStyle.maximumLineHeight = 25.f;
+    paragraphStyle.minimumLineHeight = 15.f;
+    paragraphStyle.firstLineHeadIndent = 20.f;
+    paragraphStyle.alignment = NSTextAlignmentJustified;
+    NSMutableDictionary *attributes = [@{ NSFontAttributeName:[UIFont systemFontOfSize:15], NSParagraphStyleAttributeName:paragraphStyle, NSForegroundColorAttributeName:[UIColor colorWithRed:153/255. green:102/255. blue:51/255. alpha:1]
+                                          }mutableCopy];
+//    self.textView.attributedText = [[NSAttributedString alloc]initWithString:self.dict[@"detail"] attributes:attributes];
 }
+#pragma mark - Table view data source
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return self.dataList.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *ID = @"share";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+    }
+    ZDFoodCategory *category = self.dataList[indexPath.section];
+    cell.textLabel.text = category.foodGenre;
+    [cell.textLabel setTintColor:[UIColor blackColor]];
+    cell.backgroundColor = [UIColor colorWithRed:240 green:241 blue:244 alpha:1];
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    if (self.path != nil) {
+        UITableViewCell *cell = [tableView cellForRowAtIndexPath:self.path];
+        [cell.textLabel setTintColor:[UIColor blackColor]];
+        cell.backgroundColor = [UIColor colorWithRed:240 green:241 blue:244 alpha:1];
+    }
+    
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    [cell.textLabel setTintColor:[UIColor redColor]];
+    cell.backgroundColor = [UIColor whiteColor];
+    self.path = indexPath;
+}
+
 
 - (NSArray *)dataList{
     if (!_dataList) {
-        
         [ZDNetwork getSiKuInfoCallback:^(RspState *rsp, NSArray *array) {
             self.dataList = array;
 //            ZDLog(@"23232%d",array.count);
@@ -109,6 +154,7 @@ static NSString *reusableViewID = @"SectionHeader";
     }
     ZDFoodCategory *foodCategory = self.dataList[indexPath.section];
     label.text = [NSString stringWithFormat:@" %@",foodCategory.foodGenre];
+    
     return headerView;
 }
 
@@ -124,8 +170,10 @@ static NSString *reusableViewID = @"SectionHeader";
             [self.selectArray removeObject:product.mid];
         }else{
             [self.selectArray addObject:product.mid];
+            
         }
     }else{
+        
         NSMutableArray *filteredArray = [[NSMutableArray alloc]initWithObjects:product.mid, nil];
         /*
          方法一：利用NSPredicate
@@ -154,7 +202,6 @@ static NSString *reusableViewID = @"SectionHeader";
     }
     return _selectArray;
 }
-
 
 #pragma mark - 数据源方法
 // 返回每个section（分组）中的item（条目，小格子）的数量
@@ -192,6 +239,7 @@ static NSString *reusableViewID = @"SectionHeader";
     self.selectedBtn.selected = NO;
     sender.selected = YES;
     self.selectedBtn = sender;
+    
 }
 
 - (IBAction)queding:(UIButton *)sender {
@@ -204,6 +252,7 @@ static NSString *reusableViewID = @"SectionHeader";
     }
     [self.view removeFromSuperview];
     [MBProgressHUD showMessage:@"初始化中"];
+    [MBProgressHUD hideHUD];
 //    ZDLog(@".s,,,,,%d",self.selectArray.count);
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.35 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [ZDNetwork postBabySiKuInfoWithMids:self.selectArray CallBack:^(RspState *rsp) {

@@ -23,6 +23,7 @@
 #import "Reachability.h"
 #import "UIImage+ZD.h"
 #import "ZDMoreView.h"
+#import "ZDSpecialViewController.h"
 
 static NSString *TitleCellID = @"TitleCell";
 static NSString *NormalCellID = @"NormalCell";
@@ -49,6 +50,8 @@ static NSString *PhotosID = @"photosCell";
  */
 @property (nonatomic ,weak) ZDMoreView *moreView;
 @property (nonatomic,assign) BOOL xiala;
+@property (nonatomic, weak) ZDSpecialViewController *specialVIew;
+@property (nonatomic, strong) UIImageView *imageView;
 @end
 
 @implementation ZDNewsViewController
@@ -67,6 +70,20 @@ static NSString *PhotosID = @"photosCell";
     [self.moreView removeFromSuperview];
     [self.cover removeFromSuperview];
 }
+- (void)viewDidAppear:(BOOL)animated{
+    // 1.添加按钮蒙板
+//    UIImageView *cover = [[UIImageView alloc] initWithFrame:self.view.window.bounds];
+//    cover.backgroundColor = [UIColor blackColor];
+//    cover.image = [UIImage imageNamed:@"loginIcon.png"];
+//    self.imageView = cover;
+//    [self.view.window addSubview:cover];
+//    [UIView animateWithDuration:2.0f animations:^{
+//        [self.imageView setAlpha:0];
+//        self.imageView.transform = CGAffineTransformMakeScale(1.5, 1.5);
+//    } completion:^(BOOL finished) {
+//        
+//    }];
+}
 
 - (void)viewDidLoad
 {
@@ -83,8 +100,50 @@ static NSString *PhotosID = @"photosCell";
     }
     // 3.添加更多按钮
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemImage:@"navigationbar_more" highlightedImage:@"navigationbar_more_highlighted" target:self action:@selector(more)];
+    
+//    UIImageView *imaegView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"loginIcon.png"]];
+//    imaegView.frame = self.view.window.frame;
+//    [self.view.window addSubview:imaegView];
+//    
+//    [UIView animateWithDuration:1.5f animations:^{
+//        imaegView.alpha = 0;
+//        imaegView.transform = CGAffineTransformMakeScale(1.6, 1.6);
+//    } completion:^(BOOL finished) {
+//        [imaegView  removeFromSuperview];
+//    }];
+    
+
+//    [self.view.window bringSubviewToFront:self]
+//} completion:^(BOOL finished) {
+//    [self.moreView removeFromSuperview];
+//    [self.cover removeFromSuperview];
+//    self.xiala = NO;
+//}];
+//return;
+//}else{
+//    // 1.添加按钮蒙板
+//    UIButton *cover = [[UIButton alloc] init];
+//    cover.frame = self.view.window.frame;
+//    cover.backgroundColor = [UIColor blackColor];
+//    [cover addTarget:self action:@selector(smallImage) forControlEvents:UIControlEventTouchUpInside];
+//    cover.userInteractionEnabled = YES;
+//    // 控制UIButton的透明度
+//    [cover setAlpha: 0.0];
+//    [self.moreView setAlpha:0];
+//    self.cover = cover;
+//    [self.view.window addSubview:cover];
+//    [self.view.window bringSubviewToFront:self.moreView];
+    
+
+//    [self setupSpecialView];
+}
+/**
+ *  设置登录特效
+ */
+- (void)setupSpecialView{
 
 }
+
 
 #pragma mark - 懒加载
 - (ZDMoreView *)moreView{
