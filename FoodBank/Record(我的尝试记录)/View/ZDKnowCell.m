@@ -26,6 +26,7 @@
 - (void)awakeFromNib {
     // Initialization code
 }
+
 + (instancetype)cellWithTableview:(UITableView *)tableView{
     static NSString *ID = @"share";
     ZDKnowCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
@@ -46,8 +47,6 @@
         self.backgroundColor = ZDColor(255, 246, 229);
         self.textLabel.font = [UIFont boldSystemFontOfSize:14];
         self.textLabel.textColor = ZDColor(153, 102, 51);
-        
-        
     }
     return self;
 }

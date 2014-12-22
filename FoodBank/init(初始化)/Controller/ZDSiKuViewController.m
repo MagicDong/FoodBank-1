@@ -14,9 +14,12 @@
 #import "ZDNetwork.h"
 #import "MBProgressHUD+ZD.h"
 #import "ZDNetwork.h"
+#import "ZDCategoryCell.h"
 
 static NSString *ProductCellID = @"ProductCell";
 static NSString *reusableViewID = @"SectionHeader";
+static NSString *categoryCellID = @"categoryCell";
+
 @interface ZDSiKuViewController () <UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UITableViewDataSource,UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -32,6 +35,7 @@ static NSString *reusableViewID = @"SectionHeader";
 @property (weak, nonatomic) IBOutlet UIButton *queding;
 @property (nonatomic, strong) NSMutableArray *selectArray;
 @property (nonatomic, strong) NSIndexPath *path;
+@property (nonatomic, assign) NSInteger integer;
 
 @end
 
@@ -67,43 +71,53 @@ static NSString *reusableViewID = @"SectionHeader";
     paragraphStyle.minimumLineHeight = 15.f;
     paragraphStyle.firstLineHeadIndent = 20.f;
     paragraphStyle.alignment = NSTextAlignmentJustified;
-    NSMutableDictionary *attributes = [@{ NSFontAttributeName:[UIFont systemFontOfSize:15], NSParagraphStyleAttributeName:paragraphStyle, NSForegroundColorAttributeName:[UIColor colorWithRed:153/255. green:102/255. blue:51/255. alpha:1]
+    NSMutableDictionary *attributes = [@{ NSFontAttributeName:[UIFont systemFontOfSize:13], NSParagraphStyleAttributeName:paragraphStyle, NSForegroundColorAttributeName:[UIColor colorWithRed:153/255. green:102/255. blue:51/255. alpha:1]
                                           }mutableCopy];
 //    self.textView.attributedText = [[NSAttributedString alloc]initWithString:self.dict[@"detail"] attributes:attributes];
+    self.tableView.backgroundColor = [UIColor colorWithRed:240 green:241 blue:244 alpha:1];
+    UINib *categoryNib = [UINib nibWithNibName:@"ZDCategoryCell" bundle:nil];
+    [self.tableView registerNib:categoryNib forCellReuseIdentifier:categoryCellID];
+    
 }
 #pragma mark - Table view data source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
     return self.dataList.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *ID = @"share";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+//    static NSString *ID = @"share";
+    ZDCategoryCell *cell = [tableView dequeueReusableCellWithIdentifier:categoryCellID];
+    ZDFoodCategory *category = self.dataList[indexPath.row];
+    cell.title = category.foodGenre;
+    
+//    cell.contentView.backgroundColor =[UIColor colorWithRed:240 green:241 blue:244 alpha:1];
+//    cell.selectedBackgroundView.backgroundColor=[UIColor whiteColor];
+//    cell.selectionStyle = UITableViewCellSelectionStyleGray;
+//    tableView.backgroundColor = [UIColor colorWithRed:240 green:241 blue:244 alpha:1];
+    if (indexPath.row == 0) {
+        cell.selected = YES;
     }
-    ZDFoodCategory *category = self.dataList[indexPath.section];
-    cell.textLabel.text = category.foodGenre;
-    [cell.textLabel setTintColor:[UIColor blackColor]];
-    cell.backgroundColor = [UIColor colorWithRed:240 green:241 blue:244 alpha:1];
+    
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+//- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    cell.backgroundColor = [UIColor redColor];
+//}
 
-    if (self.path != nil) {
-        UITableViewCell *cell = [tableView cellForRowAtIndexPath:self.path];
-        [cell.textLabel setTintColor:[UIColor blackColor]];
-        cell.backgroundColor = [UIColor colorWithRed:240 green:241 blue:244 alpha:1];
-    }
-    
-    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    [cell.textLabel setTintColor:[UIColor redColor]];
-    cell.backgroundColor = [UIColor whiteColor];
-    self.path = indexPath;
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    ZDCategoryCell *cell =  (ZDCategoryCell *)[tableView cellForRowAtIndexPath:indexPath];
+    cell.zhuangtai = 1;
+    self.integer = indexPath.row;
+    [self.tableView reloadData];
 }
 
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    ZDCategoryCell *cell = (ZDCategoryCell *)[tableView cellForRowAtIndexPath:indexPath];
+    cell.zhuangtai = 0;
+}
 
 - (NSArray *)dataList{
     if (!_dataList) {
@@ -111,32 +125,40 @@ static NSString *reusableViewID = @"SectionHeader";
             self.dataList = array;
 //            ZDLog(@"23232%d",array.count);
             [self.collection reloadData];
+            [self.tableView reloadData];
         }];
     }
     return _dataList;
 }
 
 #pragma mark - 数据源方法
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-    NSInteger count = self.dataList.count;
-    return count;
-}
+//- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+//    NSInteger count = self.dataList.count;
+//    return count;
+//}
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    ZDFoodCategory *foodCategory = self.dataList[section];
-//    ZDLog(@"22%d",foodCategory.foodGenreList.count); 
-    return foodCategory.foodGenreList.count;
+    if ((self.integer)) {
+        ZDFoodCategory *foodCategory = self.dataList[self.integer];
+        return foodCategory.foodGenreList.count;
+    }else{
+        ZDFoodCategory *foodCategory = self.dataList[0];
+        return foodCategory.foodGenreList.count;
+    }
 } 
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     // forIndexPath －》强行要求程序员必须注册表格的可重用单元格
     CZProductCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:ProductCellID forIndexPath:indexPath];
+    
     ZDFoodCategory *foodCategory = self.dataList[indexPath.section];
     NSDictionary *dict = foodCategory.foodGenreList[indexPath.row];
     cell.foodDict = dict;
     cell.selectArray = self.selectArray;
+    
     return cell;
 }
 
@@ -161,7 +183,6 @@ static NSString *reusableViewID = @"SectionHeader";
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
 //    CZProduct *product = self.dataList[indexPath.item];
-    
     UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
     CZProductCell *product = (CZProductCell *)cell;
     product.selectBtn.selected = !product.selectBtn.selected;
@@ -170,7 +191,6 @@ static NSString *reusableViewID = @"SectionHeader";
             [self.selectArray removeObject:product.mid];
         }else{
             [self.selectArray addObject:product.mid];
-            
         }
     }else{
         
@@ -188,13 +208,11 @@ static NSString *reusableViewID = @"SectionHeader";
         //过滤数组
         NSArray * reslutFilteredArray = [self.selectArray filteredArrayUsingPredicate:filterPredicate];
         self.selectArray = [reslutFilteredArray mutableCopy];
-        
     }
 //    NSLog(@",,,,,%@",self.selectArray);
-//    
-//
 //    NSLog(@"======%@",self.selectArray);
 }
+
 
 - (NSMutableArray *)selectArray{
     if (!_selectArray) {
@@ -239,7 +257,6 @@ static NSString *reusableViewID = @"SectionHeader";
     self.selectedBtn.selected = NO;
     sender.selected = YES;
     self.selectedBtn = sender;
-    
 }
 
 - (IBAction)queding:(UIButton *)sender {
@@ -253,7 +270,7 @@ static NSString *reusableViewID = @"SectionHeader";
     [self.view removeFromSuperview];
     [MBProgressHUD showMessage:@"初始化中"];
     [MBProgressHUD hideHUD];
-//    ZDLog(@".s,,,,,%d",self.selectArray.count);
+    
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.35 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [ZDNetwork postBabySiKuInfoWithMids:self.selectArray CallBack:^(RspState *rsp) {
             if (rsp.rspCode == 0) {
@@ -271,7 +288,7 @@ static NSString *reusableViewID = @"SectionHeader";
 }
 
 - (void)dealloc{
-    ZDLog(@"四库界面销毁");
+//    ZDLog(@"四库界面销毁");
 }
 
 

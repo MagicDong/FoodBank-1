@@ -25,64 +25,47 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="新食材尝试反馈" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Sw-BH-4pw">
-                    <rect key="frame" x="8" y="107" width="215" height="21"/>
+                    <rect key="frame" x="80" y="71" width="215" height="21"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                     <color key="textColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baby" translatesAutoresizingMaskIntoConstraints="NO" id="Tp7-5a-0xv">
-                    <rect key="frame" x="8" y="8" width="50" height="50"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="50" id="YEi-BK-3BG"/>
-                        <constraint firstAttribute="height" constant="50" id="qZX-j0-AXG"/>
-                    </constraints>
-                </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="宝宝" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T0G-n7-KOU">
-                    <rect key="frame" x="78" y="36" width="115" height="21"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="21" id="K5r-yG-0Ay"/>
-                        <constraint firstAttribute="width" constant="115" id="YVL-RU-YCr"/>
-                    </constraints>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="宝宝" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T0G-n7-KOU">
+                    <rect key="frame" x="138" y="37" width="115" height="21"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                     <color key="textColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="月龄：      个月" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8qz-qw-eIS">
-                    <rect key="frame" x="169" y="37" width="215" height="21"/>
+                    <rect key="frame" x="201" y="37" width="215" height="21"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                     <color key="textColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="icD-fK-2Ga" customClass="LBorderView">
-                    <rect key="frame" x="8" y="136" width="304" height="222"/>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="icD-fK-2Ga" customClass="LBorderView">
+                    <rect key="frame" x="80" y="100" width="240" height="336"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="尝试食材：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Be2-nO-UuG">
-                            <rect key="frame" x="8" y="14" width="80" height="21"/>
+                            <rect key="frame" x="6" y="14" width="80" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <color key="textColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="尝试周期： " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ObU-t9-S6d">
-                            <rect key="frame" x="8" y="46" width="80" height="21"/>
+                            <rect key="frame" x="6" y="46" width="80" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <color key="textColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="今日尝试第      天" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ENi-SR-rK9">
-                            <rect key="frame" x="8" y="78" width="288" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                            <color key="textColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="请您根据完成的尝试情况进行填号" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDN-Qu-BLn">
-                            <rect key="frame" x="8" y="109" width="288" height="21"/>
+                            <rect key="frame" x="6" y="78" width="288" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <color key="textColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AOj-6k-ygg">
-                            <rect key="frame" x="80" y="138" width="74" height="44"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <rect key="frame" x="59" y="137" width="74" height="44"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <state key="normal" title="过敏" image="radiobox-green-unchecked">
                                 <color key="titleColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -93,8 +76,8 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eSa-N6-GcT">
-                            <rect key="frame" x="153" y="138" width="74" height="44"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <rect key="frame" x="115" y="137" width="74" height="44"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
                             <state key="normal" title="拒绝" image="radiobox-green-unchecked">
                                 <color key="titleColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -106,8 +89,8 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4iG-g7-Xx2">
-                            <rect key="frame" x="222" y="138" width="89" height="44"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <rect key="frame" x="169" y="137" width="89" height="44"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <state key="normal" title="未尝试" image="radiobox-green-unchecked">
                                 <color key="titleColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -118,26 +101,26 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6d-2j-49x">
-                            <rect key="frame" x="97" y="46" width="17" height="21"/>
+                            <rect key="frame" x="95" y="46" width="17" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="天" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vg2-8x-ogQ">
-                            <rect key="frame" x="116" y="46" width="17" height="21"/>
+                            <rect key="frame" x="114" y="46" width="17" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <color key="textColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3RM-4z-dv5">
-                            <rect key="frame" x="97" y="78" width="17" height="21"/>
+                            <rect key="frame" x="95" y="78" width="17" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GWC-Jg-Drm">
-                            <rect key="frame" x="8" y="138" width="69" height="43"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <rect key="frame" x="6" y="138" width="69" height="43"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <state key="normal" title="安全" image="radiobox-green-unchecked">
                                 <color key="titleColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -148,69 +131,38 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="黄瓜" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JJo-O5-Huv">
-                            <rect key="frame" x="90" y="14" width="200" height="21"/>
+                            <rect key="frame" x="88" y="14" width="200" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="请您勾选尝试完成情况" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDN-Qu-BLn">
+                            <rect key="frame" x="6" y="114" width="288" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="textColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
                     <color key="backgroundColor" red="0.97254908084869385" green="0.91372555494308472" blue="0.89803928136825562" alpha="1" colorSpace="deviceRGB"/>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xdl-KP-sKG" userLabel="登录">
-                    <rect key="frame" x="46" y="377" width="105" height="36"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="36" id="eJQ-Hn-GLA"/>
-                        <constraint firstAttribute="width" constant="105" id="iM2-Cb-lc5"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="15"/>
-                    <state key="normal" title="确定" backgroundImage="Judge"/>
-                    <connections>
-                        <action selector="queren:" destination="-1" eventType="touchUpInside" id="VkY-sf-Jqb"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kkh-uR-G3g" userLabel="登录">
-                    <rect key="frame" x="170" y="377" width="105" height="36"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="36" id="IaJ-Xa-rVP"/>
-                        <constraint firstAttribute="width" constant="105" id="yrh-E8-wQh"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="15"/>
-                    <state key="normal" title="查看食材介绍" backgroundImage="Judge"/>
-                    <connections>
-                        <action selector="present:" destination="-1" eventType="touchUpInside" id="zsw-ST-G5x"/>
-                    </connections>
-                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q46-H7-Mgu">
-                    <rect key="frame" x="220" y="37" width="20" height="21"/>
+                    <rect key="frame" x="252" y="37" width="20" height="21"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                     <color key="textColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="baby" translatesAutoresizingMaskIntoConstraints="NO" id="Tp7-5a-0xv">
+                    <rect key="frame" x="80" y="8" width="50" height="50"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstItem="T0G-n7-KOU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="36" id="4PA-zX-VrI"/>
-                <constraint firstAttribute="bottom" secondItem="Kkh-uR-G3g" secondAttribute="bottom" constant="23" id="8PW-pY-7CU"/>
-                <constraint firstItem="Tp7-5a-0xv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="Chs-Lh-aej"/>
-                <constraint firstItem="icD-fK-2Ga" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="HNS-Cf-aOp"/>
-                <constraint firstItem="icD-fK-2Ga" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="136" id="INO-RV-crp"/>
-                <constraint firstAttribute="trailing" secondItem="icD-fK-2Ga" secondAttribute="trailing" constant="8" id="KrX-Jt-ma1"/>
-                <constraint firstItem="Kkh-uR-G3g" firstAttribute="top" secondItem="icD-fK-2Ga" secondAttribute="bottom" constant="19" id="NP2-cE-5wl"/>
-                <constraint firstItem="T0G-n7-KOU" firstAttribute="leading" secondItem="Tp7-5a-0xv" secondAttribute="trailing" constant="20" id="Q91-8v-1i8"/>
-                <constraint firstItem="Tp7-5a-0xv" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="TFB-Eh-6kX"/>
-                <constraint firstAttribute="trailing" secondItem="Kkh-uR-G3g" secondAttribute="trailing" constant="45" id="TYi-YP-0ae"/>
-                <constraint firstItem="Xdl-KP-sKG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="46" id="Tlt-gh-NuM"/>
-                <constraint firstItem="Kkh-uR-G3g" firstAttribute="leading" secondItem="Xdl-KP-sKG" secondAttribute="trailing" constant="19" id="ZoK-Ld-6hT"/>
-                <constraint firstItem="Kkh-uR-G3g" firstAttribute="leading" secondItem="Xdl-KP-sKG" secondAttribute="trailing" constant="19" id="bNt-3R-e60"/>
-                <constraint firstAttribute="bottom" secondItem="Xdl-KP-sKG" secondAttribute="bottom" constant="23" id="ufe-Kh-Q9u"/>
-            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="426" y="312"/>
         </view>
     </objects>
     <resources>
-        <image name="Judge" width="105" height="36"/>
         <image name="baby" width="139" height="164"/>
         <image name="radiobox-green-checked" width="20" height="20"/>
         <image name="radiobox-green-unchecked" width="20" height="20"/>

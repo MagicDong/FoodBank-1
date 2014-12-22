@@ -72,7 +72,7 @@
         }];
     } completion:^(BOOL finished) {
         //    if ([currentVersion compare:sandBoxVersion] ==  NSOrderedDescending)
-        if ((1))
+        if ((0))
         {
             // 存储当前版本号
             [defaults setObject:currentVersion forKey:key];
@@ -83,7 +83,7 @@
             self.window.rootViewController = newfeature;
         }else{
             //        ZDLog(@"%@",baby.userName);
-            if (baby.userName == nil) {
+            if (baby.userName != nil) {
                 ZDRegisterViewController *reg = [[ZDRegisterViewController alloc]init];
                 self.window.rootViewController = reg;
             }else{

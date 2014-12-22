@@ -21,7 +21,7 @@
 #import "ZDNetwork.h"
 #import "ZDTryRecord.h"
 
-@interface ZDRecordViewController ()<ZDMoreViewDelegate>
+@interface ZDRecordViewController ()<ZDMoreViewDelegate,UITableViewDataSource,UITableViewDelegate>
 {
     YGPSegmentedController * _ygp;
     UILabel * label;
@@ -50,6 +50,8 @@
  */
 @property (nonatomic ,weak) ZDMoreView *moreView;
 @property (nonatomic,assign) BOOL xiala;
+@property (nonatomic,retain) UITableView *tableView;
+@property (nonatomic,strong) NSArray *titleArray;
 @end
 
 @implementation ZDRecordViewController
@@ -148,6 +150,7 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
     [self anquan:nil];
+    [self setupTableView];
     self.title = @"尝试记录";
     
 //    unsigned units=NSMonthCalendarUnit|NSDayCalendarUnit|NSYearCalendarUnit|NSWeekdayCalendarUnit;
@@ -187,8 +190,8 @@
         NSCalendar *gregorian = [NSCalendar currentCalendar];
         NSDateComponents *dateComps = [gregorian components:NSWeekdayCalendarUnit fromDate:now];
         int daycount = [dateComps weekday] - i;
-        NSDate *weekdaybegin=[now addTimeInterval:-daycount*60*60*24];
-        NSDate *weekdayend  =[now  addTimeInterval:(6-daycount)*60*60*24];
+        NSDate *weekdaybegin = [now addTimeInterval:-daycount*60*60*24];
+        NSDate *weekdayend   = [now  addTimeInterval:(6-daycount)*60*60*24];
         NSDateFormatter *df1=[[NSDateFormatter alloc]init];
         NSLocale *mylocal=[[NSLocale alloc]initWithLocaleIdentifier:@"zh_CN"];
         [df1 setLocale:mylocal];
@@ -201,7 +204,6 @@
         day=[comp day];
         NSString *date1=[[NSString alloc]initWithFormat:@"%02d月%02d日",month,day];//所要求的周一的日期
         [arrayM addObject:date1];
-//         NSLog(@"===%@",date1);
     }
     
     //初始化数据
@@ -211,30 +213,52 @@
         self.edgesForExtendedLayout = NO;
         self.navigationController.navigationBar.opaque=YES;
     }
+    self.titleArray = TitielArray;
     
     /*
      第一个参数是存放你需要显示的title
      第二个是设置你需要的size
      */
-    _ygp = [[YGPSegmentedController alloc]initContentTitle:TitielArray CGRect:CGRectMake(0, 60, self.view.width, 44)];
-    [_ygp setDelegate:self];
-    [self.view addSubview:_ygp];
+//    _ygp = [[YGPSegmentedController alloc]initContentTitle:TitielArray CGRect:CGRectMake(0, 60, self.view.width, 44)];
+//    [_ygp setDelegate:self];
+//    [self.view addSubview:_ygp];
 //    [_ygp initselectedSegmentIndex];
-    
-    _borderView1.borderType = BorderTypeDashed;
-    _borderView1.dashPattern = 2;
-    _borderView1.spacePattern = 2;
-    _borderView1.borderWidth = 1;
-    _borderView1.cornerRadius = 10;
-    _borderView1.borderColor = [UIColor redColor];
-    _borderView1.backgroundColor = ZDColor(255, 246, 229);
+//
+//    _borderView1.borderType = BorderTypeDashed;
+//    _borderView1.dashPattern = 2;
+//    _borderView1.spacePattern = 2;
+//    _borderView1.borderWidth = 1;
+//    _borderView1.cornerRadius = 10;
+//    _borderView1.borderColor = [UIColor redColor];
+//    _borderView1.backgroundColor = ZDColor(255, 246, 229);
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemImage:@"navigationbar_more" highlightedImage:@"navigationbar_more_highlighted" target:self action:@selector(more)];
+}
+
+- (void)setupTableView{
     
+    UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, 90, self.view.height)];
+    tableView.delegate = self;
+    tableView.dataSource = self;
+    self.tableView = tableView;
+    
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 1;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *str = @"cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:str];
+    if (cell ==nil) {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:str];
+    }
+    cell.textLabel.text = @"";
+
+    
+    return nil;
 }
 
 - (void)setDataList:(NSArray *)dataList{
     _dataList = dataList;
-    
     ZDTryRecord *dict = _dataList[0];
     [self.foodName setText:dict.mname];
     [self.toDay setText:[NSString stringWithFormat:@"%@",dict.isTrying]];
@@ -364,6 +388,7 @@
         self.moreView.backgroundColor = ZDColor(255, 246, 229)
         self.moreView.delegate = self;
         [self.view.window  addSubview:_moreView];
+        
     }
     return _moreView;
 }

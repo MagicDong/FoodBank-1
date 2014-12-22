@@ -108,6 +108,8 @@
 		183EC3E819D26B3B00C756DE /* ZDDatePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183EC3E619D26B3B00C756DE /* ZDDatePickerView.xib */; };
 		1846C5581A4281E400370047 /* ZDKnowModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1846C5571A4281E300370047 /* ZDKnowModel.m */; };
 		1846C55B1A42B67A00370047 /* ZDKnowDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1846C55A1A42B67A00370047 /* ZDKnowDetailCell.m */; };
+		184CB8821A47FFFD00D0E7D4 /* ZDCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 184CB8801A47FFFD00D0E7D4 /* ZDCategoryCell.m */; };
+		184CB8831A47FFFD00D0E7D4 /* ZDCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184CB8811A47FFFD00D0E7D4 /* ZDCategoryCell.xib */; };
 		185005A31A3E6F4900952CB2 /* LFCityPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1850059F1A3E6F4900952CB2 /* LFCityPickerView.m */; };
 		185005A41A3E6F4900952CB2 /* ZDDataTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 185005A01A3E6F4900952CB2 /* ZDDataTool.m */; };
 		185005A51A3E6F4900952CB2 /* ZDFoodPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 185005A11A3E6F4900952CB2 /* ZDFoodPickerView.m */; };
@@ -448,6 +450,9 @@
 		1846C5571A4281E300370047 /* ZDKnowModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDKnowModel.m; sourceTree = "<group>"; };
 		1846C5591A42B67A00370047 /* ZDKnowDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDKnowDetailCell.h; sourceTree = "<group>"; };
 		1846C55A1A42B67A00370047 /* ZDKnowDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDKnowDetailCell.m; sourceTree = "<group>"; };
+		184CB87F1A47FFFD00D0E7D4 /* ZDCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDCategoryCell.h; sourceTree = "<group>"; };
+		184CB8801A47FFFD00D0E7D4 /* ZDCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDCategoryCell.m; sourceTree = "<group>"; };
+		184CB8811A47FFFD00D0E7D4 /* ZDCategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDCategoryCell.xib; sourceTree = "<group>"; };
 		1850059C1A3E6F4900952CB2 /* LFCityPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFCityPickerView.h; sourceTree = "<group>"; };
 		1850059D1A3E6F4900952CB2 /* ZDDataTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDDataTool.h; sourceTree = "<group>"; };
 		1850059E1A3E6F4900952CB2 /* ZDFoodPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDFoodPickerView.h; sourceTree = "<group>"; };
@@ -853,6 +858,9 @@
 				1850059E1A3E6F4900952CB2 /* ZDFoodPickerView.h */,
 				185005A11A3E6F4900952CB2 /* ZDFoodPickerView.m */,
 				185005A21A3E6F4900952CB2 /* ZDFoodPickerView.xib */,
+				184CB87F1A47FFFD00D0E7D4 /* ZDCategoryCell.h */,
+				184CB8801A47FFFD00D0E7D4 /* ZDCategoryCell.m */,
+				184CB8811A47FFFD00D0E7D4 /* ZDCategoryCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1781,6 +1789,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				184CB8831A47FFFD00D0E7D4 /* ZDCategoryCell.xib in Resources */,
 				181BCFA319D4204600EDA508 /* ZDInitViewController.xib in Resources */,
 				1894F7E219FF84800009662E /* ZDProductCell.xib in Resources */,
 				18F37EAA19D7F66400325A25 /* MJPhotoBrowser.bundle in Resources */,
@@ -1961,6 +1970,7 @@
 				18F37E9619D7F62300325A25 /* ZDDetailViewController.m in Sources */,
 				18F37EAB19D7F66400325A25 /* MJPhotoBrowser.m in Sources */,
 				18FA210919CFF3E700430E37 /* NSObject+MJMember.m in Sources */,
+				184CB8821A47FFFD00D0E7D4 /* ZDCategoryCell.m in Sources */,
 				18FA20E119CFF3D600430E37 /* AFNetworkReachabilityManager.m in Sources */,
 				18733DB119D8FB1900966A55 /* ZDCommonViewController.m in Sources */,
 				183E72CB19DA60DB009CD24F /* ZDGuoMinViewController.m in Sources */,
