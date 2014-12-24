@@ -214,6 +214,7 @@
         self.navigationController.navigationBar.opaque=YES;
     }
     self.titleArray = TitielArray;
+    [self.tableView reloadData];
     
     /*
      第一个参数是存放你需要显示的title
@@ -242,20 +243,24 @@
     self.tableView = tableView;
     
 }
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 1;
+    return self.titleArray.count;
 }
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *str = @"cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:str];
     if (cell ==nil) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:str];
     }
-    cell.textLabel.text = @"";
-
+    cell.textLabel.text = self.titleArray[indexPath.row];
+    
     
     return nil;
 }
+
+
 
 - (void)setDataList:(NSArray *)dataList{
     _dataList = dataList;

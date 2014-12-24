@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -18,17 +19,35 @@
                         <constraints>
                             <constraint firstAttribute="width" constant="80" id="Cbc-Z6-GnC"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kUD-Sf-SyQ">
+                        <rect key="frame" x="12" y="43" width="78" height="1"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="78" id="0bg-Jd-8XY"/>
+                            <constraint firstAttribute="height" constant="1" id="COP-TX-Hr8"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="kUD-Sf-SyQ" secondAttribute="trailing" id="6Tp-CX-3yM"/>
                     <constraint firstItem="pTj-Gy-7sQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="GcC-gq-FFr"/>
                     <constraint firstAttribute="bottom" secondItem="pTj-Gy-7sQ" secondAttribute="bottom" id="Mxg-Ho-wIP"/>
                     <constraint firstAttribute="trailing" secondItem="pTj-Gy-7sQ" secondAttribute="trailing" id="PI1-ZK-AKY"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="kUD-Sf-SyQ" secondAttribute="trailing" constant="-8" id="bDD-Vn-oCB"/>
+                    <constraint firstAttribute="bottom" secondItem="kUD-Sf-SyQ" secondAttribute="bottom" constant="1" id="e88-hp-gMz"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="kUD-Sf-SyQ" secondAttribute="bottom" constant="-9" id="iW5-uq-n3C"/>
                     <constraint firstItem="pTj-Gy-7sQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="zrs-NM-GRy"/>
                 </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="6Tp-CX-3yM"/>
+                        <exclude reference="e88-hp-gMz"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.94117647058823528" green="0.94509803921568625" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
             <connections>

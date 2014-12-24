@@ -13,6 +13,7 @@
 
 @property (nonatomic, strong) NSString *dict;
 @property (nonatomic, assign) NSInteger row;
+@property (nonatomic, assign) NSInteger isOpen;
 + (instancetype)cellWithTableview:(UITableView *)tableView;
 
 

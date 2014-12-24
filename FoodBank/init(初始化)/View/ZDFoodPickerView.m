@@ -31,17 +31,16 @@
 }
 
 - (IBAction)isOK:(UIButton *)sender {
-    if ([self.delegate respondsToSelector:@selector(moreViewDidOK:)]) {
-        // 传递上一次选中的按钮的tag, 和当前选中按钮的tag
-//        [self.delegate moreViewDidOK:self.dict];
+    if ([self.delegate respondsToSelector:@selector(foodPicker:)]) {
         [self.delegate foodPicker:self.dict];
     }
+    //    NSLog(@"%@",self.dict);
 }
 
 - (void)cityPickerViewDidSelectedCityName:(NSDictionary *)name{
     self.dict = name;
     self.selectFood.text = name[@"food_name"];
-    
+//    self.selectFood.text = name[@"ids"];
 }
 
 

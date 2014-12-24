@@ -1,12 +1,12 @@
 //
-//  ZDSiKuViewController.m
+//  ZDSelectViewController.m
 //  FoodBank
 //
-//  Created by apple-jiexian on 14-9-28.
+//  Created by apple-jiexian on 14/12/24.
 //  Copyright (c) 2014年 Dong. All rights reserved.
 //
 
-#import "ZDSiKuViewController.h"
+#import "ZDSelectViewController.h"
 #import "ZDTabBarController.h"
 #import "CZProductCell.h"
 #import "CZProduct.h"
@@ -18,18 +18,12 @@
 static NSString *ProductCellID = @"ProductCell";
 static NSString *reusableViewID = @"SectionHeader";
 static NSString *categoryCellID = @"categoryCell";
-
-@interface ZDSiKuViewController () <UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UITableViewDataSource,UITableViewDelegate>
+@interface ZDSelectViewController ()<UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UITableViewDataSource,UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UILabel *label1;
 @property (weak, nonatomic) IBOutlet UICollectionView *collection;
-@property (weak, nonatomic) IBOutlet UILabel *label2;
 @property (nonatomic, strong) NSArray *products;
-/**
- *  当前选中食材库
- */
 @property (nonatomic, weak) UIButton  *selectedBtn;
 @property (nonatomic, strong) NSArray *dataList;
 @property (weak, nonatomic) IBOutlet UIButton *queding;
@@ -39,7 +33,7 @@ static NSString *categoryCellID = @"categoryCell";
 
 @end
 
-@implementation ZDSiKuViewController
+@implementation ZDSelectViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -73,17 +67,15 @@ static NSString *categoryCellID = @"categoryCell";
     paragraphStyle.alignment = NSTextAlignmentJustified;
     NSMutableDictionary *attributes = [@{ NSFontAttributeName:[UIFont systemFontOfSize:15], NSParagraphStyleAttributeName:paragraphStyle, NSForegroundColorAttributeName:[UIColor colorWithRed:153/255. green:102/255. blue:51/255. alpha:1]
                                           }mutableCopy];
-    self.textView.attributedText = [[NSAttributedString alloc]initWithString:@"请您将宝宝已尝试过（尝试3-7天）且未发生过敏、拒绝等现象）的食材勾选出来。" attributes:attributes];
-
+    self.textView.attributedText = [[NSAttributedString alloc]initWithString:@"请您将宝宝父母已过敏（发生过敏、拒绝等现象）的食材勾选出来。" attributes:attributes];
+    
     UINib *categoryNib = [UINib nibWithNibName:@"ZDCategoryCell" bundle:nil];
     [self.tableView registerNib:categoryNib forCellReuseIdentifier:categoryCellID];
-    
-    self.tableView.bounces = YES;
 }
 - (void)viewDidAppear:(BOOL)animated{
     NSIndexPath *selectedIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     [self.tableView selectRowAtIndexPath:selectedIndexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
-
+    
 }
 
 #pragma mark - Table view data source
@@ -92,7 +84,7 @@ static NSString *categoryCellID = @"categoryCell";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    static NSString *ID = @"share";
+    //    static NSString *ID = @"share";
     ZDCategoryCell *cell = [tableView dequeueReusableCellWithIdentifier:categoryCellID];
     ZDFoodCategory *category = self.dataList[indexPath.row];
     if ([category.foodGenre isEqualToString:@"大豆及制品类"]) {
@@ -104,10 +96,10 @@ static NSString *categoryCellID = @"categoryCell";
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
     
-//    cell.contentView.backgroundColor =[UIColor colorWithRed:240 green:241 blue:244 alpha:1];
-//    cell.selectedBackgroundView.backgroundColor=[UIColor whiteColor];
-//    cell.selectionStyle = UITableViewCellSelectionStyleGray;
-//    tableView.backgroundColor = [UIColor colorWithRed:240 green:241 blue:244 alpha:1];
+    //    cell.contentView.backgroundColor =[UIColor colorWithRed:240 green:241 blue:244 alpha:1];
+    //    cell.selectedBackgroundView.backgroundColor=[UIColor whiteColor];
+    //    cell.selectionStyle = UITableViewCellSelectionStyleGray;
+    //    tableView.backgroundColor = [UIColor colorWithRed:240 green:241 blue:244 alpha:1];
     return cell;
 }
 
@@ -139,7 +131,7 @@ static NSString *categoryCellID = @"categoryCell";
     if (!_dataList) {
         [ZDNetwork getSiKuInfoCallback:^(RspState *rsp, NSArray *array) {
             self.dataList = array;
-//            ZDLog(@"23232%d",array.count);
+            //            ZDLog(@"23232%d",array.count);
             [self.collection reloadData];
             [self.tableView reloadData];
         }];
@@ -162,7 +154,7 @@ static NSString *categoryCellID = @"categoryCell";
         ZDFoodCategory *foodCategory = self.dataList[0];
         return foodCategory.foodGenreList.count;
     }
-} 
+}
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -198,7 +190,7 @@ static NSString *categoryCellID = @"categoryCell";
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-//    CZProduct *product = self.dataList[indexPath.item];
+    //    CZProduct *product = self.dataList[indexPath.item];
     UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
     CZProductCell *product = (CZProductCell *)cell;
     product.selectBtn.selected = !product.selectBtn.selected;
@@ -225,8 +217,8 @@ static NSString *categoryCellID = @"categoryCell";
         NSArray * reslutFilteredArray = [self.selectArray filteredArrayUsingPredicate:filterPredicate];
         self.selectArray = [reslutFilteredArray mutableCopy];
     }
-//    NSLog(@",,,,,%@",self.selectArray);
-//    NSLog(@"======%@",self.selectArray);
+    //    NSLog(@",,,,,%@",self.selectArray);
+    //    NSLog(@"======%@",self.selectArray);
 }
 
 
@@ -261,12 +253,13 @@ static NSString *categoryCellID = @"categoryCell";
 //}
 
 - (void)chushihua{
-    self.title = @"初始化食材库";
+    self.title = @"父母过敏食材选择";
     if(iOS7)
     {
         self.edgesForExtendedLayout = NO;
         self.navigationController.navigationBar.opaque=YES;
     }
+    
 }
 
 - (void)btnClick:(UIButton *)sender{
@@ -276,38 +269,36 @@ static NSString *categoryCellID = @"categoryCell";
 }
 
 - (IBAction)queding:(UIButton *)sender {
-    // 跳转到TabBarController
-    for (UIViewController *controller in self.childViewControllers) {
-        // 将子视图控制器的视图从父视图中删除
-        [controller.view removeFromSuperview];
-        // 将视图控制器从父视图控制器中删除
-        [controller removeFromParentViewController];
-    }
-    [self.view removeFromSuperview];
-    [MBProgressHUD showMessage:@"初始化中"];
-    [MBProgressHUD hideHUD];
+
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.35 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [ZDNetwork postBabySiKuInfoWithMids:self.selectArray CallBack:^(RspState *rsp) {
-            if (rsp.rspCode == 0) {
-                [MBProgressHUD hideHUD];
-            }else{
-                [MBProgressHUD hideHUD];
-            }
-        }];
-        
-        ZDTabBarController *tabBarVc = [[ZDTabBarController alloc] init];
-        UIApplication *app = [UIApplication sharedApplication];
-        UIWindow *window = app.keyWindow;
-        app.statusBarHidden = NO;
-        window.rootViewController = tabBarVc;
-    });
+//    // 跳转到TabBarController
+//    for (UIViewController *controller in self.childViewControllers) {
+//        // 将子视图控制器的视图从父视图中删除
+//        [controller.view removeFromSuperview];
+//        // 将视图控制器从父视图控制器中删除
+//        [controller removeFromParentViewController];
+//    }
+//    [self.view removeFromSuperview];
+//    
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.35 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [ZDNetwork postBabySiKuInfoWithMids:self.selectArray CallBack:^(RspState *rsp) {
+//            if (rsp.rspCode == 0) {
+//                [MBProgressHUD hideHUD];
+//            }else{
+//                [MBProgressHUD hideHUD];
+//            }
+//        }];
+//        ZDTabBarController *tabBarVc = [[ZDTabBarController alloc] init];
+//        UIApplication *app = [UIApplication sharedApplication];
+//        UIWindow *window = app.keyWindow;
+//        app.statusBarHidden = NO;
+//        window.rootViewController = tabBarVc;
+//    });
 }
 
 - (void)dealloc{
-//    ZDLog(@"四库界面销毁");
+    //    ZDLog(@"四库界面销毁");
 }
-
 
 
 

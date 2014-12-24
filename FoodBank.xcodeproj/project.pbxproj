@@ -126,6 +126,8 @@
 		1863EB7C19F752A0006BFF21 /* ZDTiShiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1863EB7B19F752A0006BFF21 /* ZDTiShiViewController.xib */; };
 		186B6F0D1A2EDDA800874168 /* ZDFoodCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 186B6F0C1A2EDDA800874168 /* ZDFoodCategory.m */; };
 		186D174319D29F23003F8A17 /* TencentOpenApi_IOS_Bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 186D174219D29F23003F8A17 /* TencentOpenApi_IOS_Bundle.bundle */; };
+		186F10C41A4A5D95006D791A /* ZDSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 186F10C21A4A5D95006D791A /* ZDSelectViewController.m */; };
+		186F10C51A4A5D95006D791A /* ZDSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186F10C31A4A5D95006D791A /* ZDSelectViewController.xib */; };
 		187277A61A2D98D200518C9E /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187277A51A2D98D200518C9E /* SMS_SDK.framework */; };
 		187277A81A2D9C7600518C9E /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187277A71A2D9C7600518C9E /* MessageUI.framework */; };
 		187277AA1A2D9C7D00518C9E /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187277A91A2D9C7D00518C9E /* AddressBook.framework */; };
@@ -480,6 +482,9 @@
 		186B6F0C1A2EDDA800874168 /* ZDFoodCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDFoodCategory.m; sourceTree = "<group>"; };
 		186D174219D29F23003F8A17 /* TencentOpenApi_IOS_Bundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TencentOpenApi_IOS_Bundle.bundle; path = FoodBank/Main/Lib/TencentOpenApi_IOS_Bundle.bundle; sourceTree = "<group>"; };
 		186D174419D2A14D003F8A17 /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
+		186F10C11A4A5D95006D791A /* ZDSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDSelectViewController.h; sourceTree = "<group>"; };
+		186F10C21A4A5D95006D791A /* ZDSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDSelectViewController.m; sourceTree = "<group>"; };
+		186F10C31A4A5D95006D791A /* ZDSelectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDSelectViewController.xib; sourceTree = "<group>"; };
 		186F60AB19F5027900697FFF /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
 		187277A51A2D98D200518C9E /* SMS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SMS_SDK.framework; sourceTree = "<group>"; };
 		187277A71A2D9C7600518C9E /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -812,6 +817,9 @@
 				1828E97619D7963E008B328E /* ZDSiKuViewController.h */,
 				1828E97719D7963E008B328E /* ZDSiKuViewController.m */,
 				1828E97919D796B5008B328E /* ZDSiKuViewController.xib */,
+				186F10C11A4A5D95006D791A /* ZDSelectViewController.h */,
+				186F10C21A4A5D95006D791A /* ZDSelectViewController.m */,
+				186F10C31A4A5D95006D791A /* ZDSelectViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1793,6 +1801,7 @@
 				181BCFA319D4204600EDA508 /* ZDInitViewController.xib in Resources */,
 				1894F7E219FF84800009662E /* ZDProductCell.xib in Resources */,
 				18F37EAA19D7F66400325A25 /* MJPhotoBrowser.bundle in Resources */,
+				186F10C51A4A5D95006D791A /* ZDSelectViewController.xib in Resources */,
 				1829A7B919EBB1E800CD2624 /* ZDAllergyViewController.xib in Resources */,
 				18202B6B19EE09FC005D9481 /* navmenu.plist in Resources */,
 				186D174319D29F23003F8A17 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
@@ -1895,6 +1904,7 @@
 				1894F7E119FF84800009662E /* ZDProductCell.m in Sources */,
 				18204AC519E7834500EE57B9 /* ZDLoginBasis.m in Sources */,
 				183E72C519DA60B3009CD24F /* ZDYueViewController.m in Sources */,
+				186F10C41A4A5D95006D791A /* ZDSelectViewController.m in Sources */,
 				1834474619ECF168003CCBD0 /* UIColor+HBVHarmonies.m in Sources */,
 				181BCFA619D4240800EDA508 /* ZDJudgeViewController.m in Sources */,
 				1823B0FF19D161220081E5A2 /* ZDHttpTool.m in Sources */,

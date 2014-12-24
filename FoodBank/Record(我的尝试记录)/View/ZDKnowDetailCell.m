@@ -63,7 +63,8 @@
                                           }mutableCopy];
     self.textView.attributedText = [[NSAttributedString alloc]initWithString:self.model.detail attributes:attributes];
     self.textView.backgroundColor = ZDColor(255, 246, 229);
-//    if (model.notClick) {
+    
+//    if (model.open) {
 //        self.userInteractionEnabled = NO;
 //
 //    }else{

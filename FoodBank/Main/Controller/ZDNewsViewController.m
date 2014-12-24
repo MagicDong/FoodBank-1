@@ -351,8 +351,6 @@ static NSString *PhotosID = @"photosCell";
         [imageView3 sd_setImageWithURL:url3];
         MJPhotoBrowser *photoBrowser = [[MJPhotoBrowser alloc]init];
         
-        
-        
         MJPhoto *photo1 = [[MJPhoto alloc]init];
         photo1.url = [NSURL URLWithString:image1];
         photo1.srcImageView = imageView1;

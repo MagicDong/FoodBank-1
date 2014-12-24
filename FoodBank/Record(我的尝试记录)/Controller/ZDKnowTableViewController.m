@@ -62,6 +62,7 @@
         ZDKnowCell *cell = [ZDKnowCell cellWithTableview:tableView];
         cell.dict = dict.title;
         cell.row = indexPath.row+1;
+        cell.isOpen = dict.open;
         return cell;
     }
 }
@@ -79,21 +80,16 @@
         NSIndexPath *indexP = [NSIndexPath indexPathForRow:indexPath.row + 1 inSection:0];
         [tableView deleteRowsAtIndexPaths:@[indexP] withRowAnimation:UITableViewRowAnimationFade];
         model.open = NO;
-        if ([self.knowDelegate respondsToSelector:@selector(didClickCell:)]) {
-            [self.knowDelegate didClickCell:0];
-        }
+        ZDKnowCell *cell = (ZDKnowCell *)[tableView cellForRowAtIndexPath:indexPath];
+        cell.isOpen = NO;
     }else{ // 新增一行
         model.open = YES;
         NSIndexPath *indexP = [NSIndexPath indexPathForRow:indexPath.row + 1 inSection:0];
         ZDKnowModel *m = [ZDKnowModel model:indexPath.row detail:model.detail];
-//        NSLog(@"========%@",model.detail);
         [_menus insertObject:m atIndex:indexPath.row +1];
         [tableView insertRowsAtIndexPaths:@[indexP] withRowAnimation:UITableViewRowAnimationFade];
-        
-        if ([self.knowDelegate respondsToSelector:@selector(didClickCell:)]) {
-            [self.knowDelegate didClickCell:1];
-        }
-//        didClickCell();
+        ZDKnowCell *cell = (ZDKnowCell *)[tableView cellForRowAtIndexPath:indexPath];
+        cell.isOpen = YES;
     }
     
 //     NSDictionary *dict = self.menus[indexPath.row];

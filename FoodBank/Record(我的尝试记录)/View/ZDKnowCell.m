@@ -42,7 +42,7 @@
     if (self) {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         self.contentView.userInteractionEnabled = YES;
-        self.accessoryView = [[UIImageView alloc] initWithImage:self.downImage];
+        self.accessoryView = [[UIImageView alloc] initWithImage:self.upImage];
         self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         self.backgroundColor = ZDColor(255, 246, 229);
         self.textLabel.font = [UIFont boldSystemFontOfSize:14];
@@ -84,6 +84,20 @@
     }
 }
 
+- (void)setIsOpen:(NSInteger)isOpen{
+    _isOpen = isOpen;
+//    if ((self.accessoryView = [[UIImageView alloc] initWithImage:self.upImage])) {
+//        self.accessoryView = [[UIImageView alloc] initWithImage:self.downImage];
+//    }else{
+//        self.accessoryView = [[UIImageView alloc] initWithImage:self.upImage];
+//    }
+    if (isOpen) {
+        self.accessoryView = [[UIImageView alloc] initWithImage:self.upImage];
+    }else{
+        self.accessoryView = [[UIImageView alloc] initWithImage:self.downImage];
+    }
+}
+
 - (UIImage *)downImage
 {
     if (!_downImage) {
@@ -109,7 +123,5 @@
     _row = row;
     self.textLabel.text =  [NSString stringWithFormat:@"%d、%@",row,self.textLabel.text];
 }
-
-
 
 @end

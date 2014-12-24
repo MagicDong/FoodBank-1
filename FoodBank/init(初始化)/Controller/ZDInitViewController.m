@@ -55,6 +55,10 @@
  *  过敏食材选择
  */
 @property (nonatomic ,strong) ZDFoodPickerView *foodPickerView;
+/**
+ *  过敏食材数组
+ */
+@property (nonatomic ,strong) NSMutableArray *foodArray;
 
 @end
 
@@ -97,15 +101,7 @@
         NSDate *newDate = [dateFormatter dateFromString:self.BtnBirthday.titleLabel.text];  //开始日期，将NSString转为NSDate
         NSCalendar *calendar = [NSCalendar currentCalendar];
         NSDateComponents *cmps = [calendar components:NSCalendarUnitDay fromDate:newDate toDate:today options:0];
-        if (cmps.day >= 120) {
-            [ZDNetwork  postBabyInfoWithBirthday:self.BtnBirthday.titleLabel.text nation:nation allergy:@"" CallBack:^(RspState * rsp) {
-                if (rsp.rspCode == 0) {
-                    
-                }
-            }];
-            ZDJudgeViewController *judge = [[ZDJudgeViewController alloc]init];
-            [self.navigationController pushViewController:judge animated:YES];
-        }else if(cmps.day >= 180){
+        if (cmps.day >= 180) {
             [ZDNetwork  postBabyInfoWithBirthday:self.BtnBirthday.titleLabel.text nation:nation allergy:@"" CallBack:^(RspState * rsp) {
                 if (rsp.rspCode == 0) {
                     
@@ -113,6 +109,14 @@
             }];
             ZDSiKuViewController *siku = [[ZDSiKuViewController alloc]init];
             [self.navigationController pushViewController:siku animated:YES];
+        }else if(cmps.day >= 120){
+            [ZDNetwork  postBabyInfoWithBirthday:self.BtnBirthday.titleLabel.text nation:nation allergy:@"" CallBack:^(RspState * rsp) {
+                if (rsp.rspCode == 0) {
+                    
+                }
+            }];
+            ZDJudgeViewController *judge = [[ZDJudgeViewController alloc]init];
+            [self.navigationController pushViewController:judge animated:YES];
         }else{
             [MBProgressHUD showError:@"宝宝月龄未达到标准"];
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.68 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -149,7 +153,7 @@
     [self.userView addSubview:BtnAllergy];
     self.BtnAllergy = BtnAllergy;
     
-    self.navigationItem.leftBarButtonItem = nil;
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]init];
     if(iOS7)
     {
         
@@ -279,6 +283,7 @@
         // 向下 --> 向上
         _foodPickerView = [ZDFoodPickerView foodPickerView];
         _foodPickerView.y = self.view.height;
+        _foodPickerView.width = self.view.width;
         // 设置代理
         _foodPickerView.delegate = self;
         [self.view addSubview:_foodPickerView];
@@ -305,6 +310,9 @@
 
 - (void)foodPicker:(NSDictionary *)moreView{
     // 向上 --> 向下
+//    [self.BtnAllergy setImage:self.downImage forState:UIControlStateNormal];
+    [self.BtnAllergy setTitle:moreView[@"food_name"] forState:UIControlStateNormal];
+    [self.BtnAllergy setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [self.BtnAllergy setImage:self.downImage forState:UIControlStateNormal];
     self.foodPickerView.y = self.view.height - self.foodPickerView.height;
     [UIView animateWithDuration:0.35 animations:^{
@@ -314,10 +322,12 @@
 //            self.textField.text = moreView[@"food_name"];
             [self.BtnAllergy setTitle:moreView[@"food_name"] forState:UIControlStateNormal];
         }
+        
         self.foodPickerView.y = self.view.height;
     } completion:^(BOOL finished) {
         [self.foodPickerView removeFromSuperview];
     }];
+    
 //    
 //    [UIView animateWithDuration:0.5 animations:^{
 //        self.foodPickerView
@@ -373,14 +383,15 @@
     }
     return _nationView;
 }
-- (ZDFoodPickerView *)foodPickerView{
-    if (!_foodPickerView) {
-        _foodPickerView = [ZDFoodPickerView foodPickerView];
-        _foodPickerView.y = self.view.height;
-        // 设置代理
-        _foodPickerView.delegate = self;
-        [self.view addSubview:_foodPickerView];
-    }
-    return _foodPickerView;
-}
+//- (ZDFoodPickerView *)foodPickerView{
+//    if (!_foodPickerView) {
+//        _foodPickerView = [ZDFoodPickerView foodPickerView];
+//        _foodPickerView.y = self.view.height;
+//        _foodPickerView.width = self.view.width;
+//        // 设置代理
+//        _foodPickerView.delegate = self;
+//        [self.view addSubview:_foodPickerView];
+//    }
+//    return _foodPickerView;
+//}
 @end

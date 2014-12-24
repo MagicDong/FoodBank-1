@@ -23,7 +23,7 @@
                         <outlet property="delegate" destination="-1" id="pSp-G5-Wci"/>
                     </connections>
                 </collectionView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_baobao" translatesAutoresizingMaskIntoConstraints="NO" id="kXH-ux-kRb">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baby" translatesAutoresizingMaskIntoConstraints="NO" id="kXH-ux-kRb">
                     <rect key="frame" x="8" y="14" width="30" height="31"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="31" id="1VX-xt-gJd"/>
@@ -59,7 +59,7 @@
         </view>
     </objects>
     <resources>
-        <image name="login_baobao" width="88" height="74"/>
+        <image name="baby" width="139" height="164"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

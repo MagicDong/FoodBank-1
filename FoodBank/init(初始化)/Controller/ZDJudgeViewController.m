@@ -28,6 +28,14 @@
         self.edgesForExtendedLayout = NO;
         self.navigationController.navigationBar.opaque = YES;
     }
+    
+    self.fuhe.layer.cornerRadius = 8;
+    self.fuhe.layer.masksToBounds = YES;
+    
+    
+    self.bufuhe.layer.cornerRadius = 8;
+    self.bufuhe.layer.masksToBounds = YES;
+    
 }
 
 - (IBAction)fuhe:(id)sender {

@@ -30,7 +30,7 @@
     if (self) {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         self.backgroundColor = ZDColor(240, 241, 244);
-        self.category.font = [UIFont boldSystemFontOfSize:14];
+        self.category.font = [UIFont boldSystemFontOfSize:13];
     }
     return self;
 }
