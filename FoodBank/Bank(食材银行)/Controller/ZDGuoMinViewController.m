@@ -21,9 +21,9 @@ static NSString *reusableViewID = @"SectionHeader";
 //@property (weak, nonatomic) IBOutlet UIButton *jujue;                   // 拒绝库按钮
 //@property (weak, nonatomic) IBOutlet UIButton *weichangshi;             // 未尝试库按钮
 //@property (weak, nonatomic) IBOutlet UILabel *label1;                   // 
-@property (weak, nonatomic) IBOutlet UICollectionView *collection;      //
-//@property (weak, nonatomic) IBOutlet UILabel *label2;                   // 
-@property (nonatomic, strong) NSArray *products;                        //
+@property (weak, nonatomic) IBOutlet UICollectionView *collection;
+//@property (weak, nonatomic) IBOutlet UILabel *label2;
+@property (nonatomic, strong) NSArray *products;
 @property (nonatomic, weak) UIButton  *selectedBtn;                     // 当前选中的四库
 
 @end

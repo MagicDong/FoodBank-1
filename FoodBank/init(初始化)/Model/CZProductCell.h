@@ -14,6 +14,7 @@
 @property (nonatomic, strong) CZProduct *product;
 @property (nonatomic, copy) NSString *mid;
 @property (nonatomic, strong) NSDictionary *foodDict;
+@property (nonatomic, strong) NSArray *guominArray;
 @property (weak, nonatomic) IBOutlet UIButton *selectBtn;
 @property (nonatomic, strong) NSArray *selectArray;
 

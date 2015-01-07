@@ -44,6 +44,15 @@
     self.mid = foodDict[@"mid"];
 //    self.selectBtn.selected = NO;
 }
+- (void)setGuominArray:(NSArray *)guominArray{
+    _guominArray = guominArray;
+    NSString *iconStr = [NSString stringWithFormat:@"http://192.168.1.250/mimag/%@.png",guominArray[0]];
+    NSURL *url = [NSURL URLWithString:iconStr];
+    [self.iconView sd_setImageWithURL:url];
+    self.title.text = guominArray[1];
+    self.mid = guominArray[0];
+}
+
 - (void)setSelectArray:(NSArray *)selectArray{
     _selectArray = selectArray;
     
@@ -68,5 +77,7 @@
         self.selectBtn.selected = YES;
     }
 }
+
+
 
 @end

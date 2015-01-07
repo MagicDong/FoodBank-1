@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+@protocol ZDSelectDelegate <NSObject>
+
+- (void)selectFoodArray:(NSArray *)array;
+
+@end
 
 @interface ZDSelectViewController : UIViewController
+
+@property (nonatomic,weak) id<ZDSelectDelegate> delegate;
 
 @end

@@ -6,61 +6,64 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZDEditViewController">
             <connections>
-                <outlet property="collection" destination="ghZ-FD-deV" id="yzn-tB-St2"/>
-                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="collection" destination="rIT-sb-7rt" id="Ndc-og-TMc"/>
+                <outlet property="tableView" destination="dg0-US-Q3X" id="2FY-Vd-mPJ"/>
+                <outlet property="textView" destination="6gs-yU-L52" id="zyl-Zw-5Mg"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="44" width="320" height="436"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="wgL-CN-cqO">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="436"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ghZ-FD-deV">
-                    <rect key="frame" x="0.0" y="53" width="320" height="383"/>
-                    <collectionViewLayout key="collectionViewLayout" id="DAb-aQ-Jje"/>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="rIT-sb-7rt">
+                    <rect key="frame" x="90" y="52" width="230" height="384"/>
+                    <collectionViewLayout key="collectionViewLayout" id="mY3-ds-Gdq"/>
                     <connections>
-                        <outlet property="dataSource" destination="-1" id="0Vl-BP-ppm"/>
-                        <outlet property="delegate" destination="-1" id="pSp-G5-Wci"/>
+                        <outlet property="dataSource" destination="-1" id="xYA-F5-tC3"/>
+                        <outlet property="delegate" destination="-1" id="iGj-MW-b6L"/>
                     </connections>
                 </collectionView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baby" translatesAutoresizingMaskIntoConstraints="NO" id="kXH-ux-kRb">
-                    <rect key="frame" x="8" y="14" width="30" height="31"/>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6gs-yU-L52">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="52"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="31" id="1VX-xt-gJd"/>
-                        <constraint firstAttribute="width" constant="30" id="Ftb-Vg-thD"/>
+                        <constraint firstAttribute="height" constant="52" id="pJe-C9-VC5"/>
                     </constraints>
-                </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="修改尝试食材" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YTt-CE-5l5">
-                    <rect key="frame" x="46" y="18" width="90" height="25"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="dg0-US-Q3X">
+                    <rect key="frame" x="0.0" y="52" width="90" height="384"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="90" id="Mxe-C9-Vaw"/>
-                        <constraint firstAttribute="height" constant="25" id="kYI-gq-mks"/>
+                        <constraint firstAttribute="width" constant="90" id="VWz-Pa-QEG"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="AppleColorEmoji" family="Apple Color Emoji" pointSize="15"/>
-                    <color key="textColor" red="0.75508283129999998" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="LU0-wF-cMs"/>
+                        <outlet property="delegate" destination="-1" id="dsF-vu-fwK"/>
+                    </connections>
+                </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="kXH-ux-kRb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="1vD-Rb-qfw"/>
-                <constraint firstAttribute="bottom" secondItem="ghZ-FD-deV" secondAttribute="bottom" id="6K5-Sq-Ltm"/>
-                <constraint firstAttribute="trailing" secondItem="ghZ-FD-deV" secondAttribute="trailing" id="7Zx-f3-dGL"/>
-                <constraint firstItem="YTt-CE-5l5" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="18" id="EcB-c7-nAH"/>
-                <constraint firstItem="YTt-CE-5l5" firstAttribute="leading" secondItem="kXH-ux-kRb" secondAttribute="trailing" constant="8" id="YaW-Bv-rxT"/>
-                <constraint firstItem="kXH-ux-kRb" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="14" id="cBC-BM-r6m"/>
-                <constraint firstItem="ghZ-FD-deV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hzM-4e-21z"/>
-                <constraint firstItem="ghZ-FD-deV" firstAttribute="top" secondItem="kXH-ux-kRb" secondAttribute="bottom" constant="8" id="qHY-RA-ZYw"/>
+                <constraint firstItem="rIT-sb-7rt" firstAttribute="top" secondItem="6gs-yU-L52" secondAttribute="bottom" id="37s-mP-YOS"/>
+                <constraint firstAttribute="bottom" secondItem="rIT-sb-7rt" secondAttribute="bottom" id="6Qm-LB-cUM"/>
+                <constraint firstItem="dg0-US-Q3X" firstAttribute="leading" secondItem="wgL-CN-cqO" secondAttribute="leading" id="NtS-fk-E5I"/>
+                <constraint firstItem="dg0-US-Q3X" firstAttribute="top" secondItem="6gs-yU-L52" secondAttribute="bottom" id="RWd-qV-jET"/>
+                <constraint firstAttribute="trailing" secondItem="6gs-yU-L52" secondAttribute="trailing" id="VGp-cU-q1j"/>
+                <constraint firstAttribute="trailing" secondItem="rIT-sb-7rt" secondAttribute="trailing" id="XD5-We-kjU"/>
+                <constraint firstItem="6gs-yU-L52" firstAttribute="top" secondItem="wgL-CN-cqO" secondAttribute="top" id="b8c-us-Dah"/>
+                <constraint firstAttribute="bottom" secondItem="dg0-US-Q3X" secondAttribute="bottom" id="cj4-ei-SsX"/>
+                <constraint firstItem="6gs-yU-L52" firstAttribute="leading" secondItem="wgL-CN-cqO" secondAttribute="leading" id="eMH-Ec-5aV"/>
+                <constraint firstItem="rIT-sb-7rt" firstAttribute="leading" secondItem="dg0-US-Q3X" secondAttribute="trailing" id="p2U-GC-m7n"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="473" y="328"/>
+            <point key="canvasLocation" x="287" y="151"/>
         </view>
     </objects>
-    <resources>
-        <image name="baby" width="139" height="164"/>
-    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

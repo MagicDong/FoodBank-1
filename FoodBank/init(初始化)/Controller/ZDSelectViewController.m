@@ -28,6 +28,7 @@ static NSString *categoryCellID = @"categoryCell";
 @property (nonatomic, strong) NSArray *dataList;
 @property (weak, nonatomic) IBOutlet UIButton *queding;
 @property (nonatomic, strong) NSMutableArray *selectArray;
+@property (nonatomic, strong) NSMutableArray *selectFoodArray;
 @property (nonatomic, strong) NSIndexPath *path;
 @property (nonatomic, assign) NSInteger integer;
 
@@ -55,7 +56,7 @@ static NSString *categoryCellID = @"categoryCell";
     UINib *nib = [UINib nibWithNibName:@"CZProductCell" bundle:nil];
     [self.collection registerNib:nib forCellWithReuseIdentifier:ProductCellID];
     [self.collection registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:reusableViewID];
-    
+    self.integer = 0;
     self.queding.layer.cornerRadius = 8;
     self.queding.layer.masksToBounds = YES;
     
@@ -64,6 +65,8 @@ static NSString *categoryCellID = @"categoryCell";
     paragraphStyle.maximumLineHeight = 20.f;
     paragraphStyle.minimumLineHeight = 20.f;
     paragraphStyle.firstLineHeadIndent = 25.f;
+    
+    
     paragraphStyle.alignment = NSTextAlignmentJustified;
     NSMutableDictionary *attributes = [@{ NSFontAttributeName:[UIFont systemFontOfSize:15], NSParagraphStyleAttributeName:paragraphStyle, NSForegroundColorAttributeName:[UIColor colorWithRed:153/255. green:102/255. blue:51/255. alpha:1]
                                           }mutableCopy];
@@ -71,10 +74,12 @@ static NSString *categoryCellID = @"categoryCell";
     
     UINib *categoryNib = [UINib nibWithNibName:@"ZDCategoryCell" bundle:nil];
     [self.tableView registerNib:categoryNib forCellReuseIdentifier:categoryCellID];
-}
-- (void)viewDidAppear:(BOOL)animated{
+    
     NSIndexPath *selectedIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     [self.tableView selectRowAtIndexPath:selectedIndexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
+}
+
+- (void)viewDidAppear:(BOOL)animated{
     
 }
 
@@ -87,6 +92,13 @@ static NSString *categoryCellID = @"categoryCell";
     //    static NSString *ID = @"share";
     ZDCategoryCell *cell = [tableView dequeueReusableCellWithIdentifier:categoryCellID];
     ZDFoodCategory *category = self.dataList[indexPath.row];
+    if (indexPath.row == self.integer) {
+        cell.zhuangtai = 1;
+        cell.selected = YES;
+    }else{
+        cell.zhuangtai = 0;
+        cell.selected = NO;
+    }
     if ([category.foodGenre isEqualToString:@"大豆及制品类"]) {
         cell.title = @"大豆及制品";
     }else{
@@ -129,16 +141,24 @@ static NSString *categoryCellID = @"categoryCell";
 
 - (NSArray *)dataList{
     if (!_dataList) {
-        [ZDNetwork getSiKuInfoCallback:^(RspState *rsp, NSArray *array) {
-            self.dataList = array;
-            //            ZDLog(@"23232%d",array.count);
-            [self.collection reloadData];
-            [self.tableView reloadData];
+        [ZDNetwork getGuoMinCallback:^(RspState *rsp, NSArray *array) {
+            if(rsp.rspCode == 0){
+                _dataList = array;
+                //            ZDLog(@"23232%d",array.count);
+                [self.collection reloadData];
+                [self.tableView reloadData];
+            }else{
+//                [MBProgressHUD showMessage:@"网络错误"];
+//                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//                    [MBProgressHUD hideHUD];
+//                });
+            }
         }];
     }
     return _dataList;
 }
-
+//[{"foodGenre":"谷类","foodGenreList":[{"mname":"大米","mtpid":17,"msame":"大米","mid":24},{"mname":"糯米","mtpid":17,"msame":"糯米"}}；
+// {"foodGenre":"谷类","foodGenreList":[["1","面粉","面粉","谷类"],["8","婴幼儿面","面粉","谷类"]
 #pragma mark - 数据源方法
 //- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
 //    NSInteger count = self.dataList.count;
@@ -163,8 +183,8 @@ static NSString *categoryCellID = @"categoryCell";
     CZProductCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:ProductCellID forIndexPath:indexPath];
     
     ZDFoodCategory *foodCategory = self.dataList[self.integer];
-    NSDictionary *dict = foodCategory.foodGenreList[indexPath.row];
-    cell.foodDict = dict;
+    NSArray *dict = foodCategory.foodGenreList[indexPath.row];
+    cell.guominArray = dict;
     cell.selectArray = self.selectArray;
     
     return cell;
@@ -193,30 +213,33 @@ static NSString *categoryCellID = @"categoryCell";
     //    CZProduct *product = self.dataList[indexPath.item];
     UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
     CZProductCell *product = (CZProductCell *)cell;
+    
     product.selectBtn.selected = !product.selectBtn.selected;
     if (product.selectBtn.selected) {
-        if ([self.selectArray containsObject:product.mid]) {
-            [self.selectArray removeObject:product.mid];
+        if ([self.selectArray containsObject:product.guominArray[0]]) {
+            [self.selectFoodArray removeObject:product.guominArray[1]];
+            [self.selectArray removeObject:product.guominArray[0]];
         }else{
-            [self.selectArray addObject:product.mid];
+            [self.selectArray addObject:product.guominArray[0]];
+            [self.selectFoodArray addObject:product.guominArray[1]];
         }
     }else{
         
-        NSMutableArray *filteredArray = [[NSMutableArray alloc]initWithObjects:product.mid, nil];
-        /*
-         方法一：利用NSPredicate
-         注：NSPredicate所属Cocoa框架，在密码、用户名等正则判断中经常用到。
-         类似于SQL语句
-         NOT 不是
-         SELF 代表字符串本身
-         IN 范围运算符
-         那么NOT (SELF IN %@) 意思就是：不是这里所指定的字符串的值
-         */
+        NSMutableArray *filteredArray = [[NSMutableArray alloc]initWithObjects:product.guominArray[0], nil];
         NSPredicate * filterPredicate = [NSPredicate predicateWithFormat:@"NOT (SELF IN %@)",filteredArray];
         //过滤数组
         NSArray * reslutFilteredArray = [self.selectArray filteredArrayUsingPredicate:filterPredicate];
         self.selectArray = [reslutFilteredArray mutableCopy];
+        
+        NSMutableArray *filteredArray1 = [[NSMutableArray alloc]initWithObjects:product.guominArray[1], nil];
+        NSPredicate * filterPredicate1 = [NSPredicate predicateWithFormat:@"NOT (SELF IN %@)",filteredArray1];
+        //过滤数组
+        NSArray * reslutFilteredArray1 = [self.selectFoodArray filteredArrayUsingPredicate:filterPredicate1];
+        self.selectFoodArray = [reslutFilteredArray1 mutableCopy];
+        
+        
     }
+    
     //    NSLog(@",,,,,%@",self.selectArray);
     //    NSLog(@"======%@",self.selectArray);
 }
@@ -227,6 +250,12 @@ static NSString *categoryCellID = @"categoryCell";
         _selectArray = [[NSMutableArray alloc]init];
     }
     return _selectArray;
+}
+- (NSMutableArray *)selectFoodArray{
+    if (!_selectFoodArray) {
+        _selectFoodArray = [[NSMutableArray alloc]init];
+    }
+    return _selectFoodArray;
 }
 
 #pragma mark - 数据源方法
@@ -270,7 +299,10 @@ static NSString *categoryCellID = @"categoryCell";
 
 - (IBAction)queding:(UIButton *)sender {
 
-    
+    if ([self.delegate respondsToSelector:@selector(selectFoodArray:)]) {
+        [self.delegate selectFoodArray:self.selectFoodArray];
+    }
+    [self.navigationController popViewControllerAnimated:YES];
 //    // 跳转到TabBarController
 //    for (UIViewController *controller in self.childViewControllers) {
 //        // 将子视图控制器的视图从父视图中删除

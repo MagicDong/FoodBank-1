@@ -155,43 +155,49 @@
 + (void)getGuoMinCallback:(void(^)(RspState *,NSArray *))callback
 {
 //    /mobile/getAllMaterial.do;jsessionid=
-    NSString *urlStr = [NSString stringWithFormat:@"%@/mobile/getAllMaterial.do;jsessionid=%@", kBaseURL, kRequestPath];
     
-    NSDictionary *para =@{@"mnames=":@""};
-    
-    
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.requestSerializer.timeoutInterval = kTimeout;
-    [manager GET:urlStr parameters:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        [self _operationLog:operation];
+    ZDBaby *baby =  [ZDBabyTool sharedZDBabyTool].account;
+    NSString *jessionid = baby.jsessionid;
+    if (jessionid == nil) {
+        return;
+    }else{
+        NSString *urlStr = [NSString stringWithFormat:@"%@/mobile/getAllMaterial.do;jsessionid=%@", kBaseURL, kRequestPath];
         
-        NSDictionary *rspDict = responseObject;
+        NSDictionary *para =@{@"mnames=":@""};
         
-        RspState *rsp = [[RspState alloc]initWithDict:rspDict];
-//        {"foodGenre":"谷类","foodGenreList":[["1","面粉","面粉","谷类"],["8","婴幼儿面","面粉","谷类"]
-        NSMutableArray *foodGenreArray = nil;
-        if(rsp.rspCode == 0)
-        {
-//            "foodGenre":"谷类","foodGenreList"
-            NSArray *rspList = rspDict[@"dataList"];
-            foodGenreArray = [NSMutableArray array];
-            for(NSDictionary *foodGenre in rspList)
+        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+        manager.requestSerializer.timeoutInterval = kTimeout;
+        [manager GET:urlStr parameters:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            [self _operationLog:operation];
+            
+            NSDictionary *rspDict = responseObject;
+            
+            RspState *rsp = [[RspState alloc]initWithDict:rspDict];
+            //        {"foodGenre":"谷类","foodGenreList":[["1","面粉","面粉","谷类"],["8","婴幼儿面","面粉","谷类"]
+            NSMutableArray *foodGenreArray = nil;
+            if(rsp.rspCode == 0)
             {
-                ZDFoodCategory *foodCategory = [ZDFoodCategory initWithDict:foodGenre];
-                [foodGenreArray addObject:foodCategory];
+                //            "foodGenre":"谷类","foodGenreList"
+                NSArray *rspList = rspDict[@"dataList"];
+                foodGenreArray = [NSMutableArray array];
+                for(NSDictionary *foodGenre in rspList)
+                {
+                    ZDFoodCategory *foodCategory = [ZDFoodCategory initWithDict:foodGenre];
+                    [foodGenreArray addObject:foodCategory];
+                }
             }
-        }
+            
+//            [self _netRspProcess:rsp];
+            callback(rsp,foodGenreArray);
+            
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            [self _operationLog:operation];
+            
+            RspState *rsp = [RspState rspStateNetError];
+            callback(rsp,nil);
+        }];
         
-        [self _netRspProcess:rsp];
-        callback(rsp,foodGenreArray);
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        [self _operationLog:operation];
-        
-        RspState *rsp = [RspState rspStateNetError];
-        callback(rsp,nil);
-    }];
-    
+    }
 }
 
 /* 6、提交宝宝基本信息 */
@@ -271,7 +277,7 @@
                     [foodGenreArray addObject:foodCategory];
                 }
             }
-            ZDLog(@"..,.,.,.,.%d,",foodGenreArray.count);
+//            ZDLog(@"..,.,.,.,.%d,",foodGenreArray.count);
 //            [self _netRspProcess:rsp];
             callback(rsp,foodGenreArray);
             
@@ -473,7 +479,7 @@
 }
 
 /* 13、提交尝试结果 */
-+ (void)postTryResultTryState:(NSString *)tryState callBack:(void (^)(RspState *))callback
++ (void)postTryResultTryState:(NSString *)tryState CallBack:(void (^)(RspState *))callback
 {
 ///mobile/postTryResult.do;jsessionid=      tryState=
     ZDBaby *baby =  [ZDBabyTool sharedZDBabyTool].account;

@@ -21,8 +21,12 @@
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="VGz-hu-irV">
                     <rect key="frame" x="90" y="52" width="230" height="330"/>
                     <collectionViewLayout key="collectionViewLayout" id="H7Y-et-NM8"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="juC-G0-4z5"/>
+                        <outlet property="delegate" destination="-1" id="UAO-7U-mYe"/>
+                    </connections>
                 </collectionView>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="请您将宝宝已尝试过（尝试3-7天）且未发生过敏、拒绝等现象）的食材勾选出来。" translatesAutoresizingMaskIntoConstraints="NO" id="ho5-6k-TK6">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="请您将宝宝已尝试过（尝试3-7天）且未发生过敏、拒绝等现象）的食材勾选出来。" translatesAutoresizingMaskIntoConstraints="NO" id="ho5-6k-TK6">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="52"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
@@ -37,6 +41,10 @@
                     <constraints>
                         <constraint firstAttribute="width" constant="90" id="tIQ-PM-iua"/>
                     </constraints>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="Wha-YX-VwW"/>
+                        <outlet property="delegate" destination="-1" id="2zR-jd-J7c"/>
+                    </connections>
                 </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZJY-eW-SoZ" userLabel="登录">
                     <rect key="frame" x="113" y="390" width="95" height="36"/>
@@ -50,9 +58,12 @@
                         <action selector="queding:" destination="-1" eventType="touchUpInside" id="7i9-jZ-P08"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Igr-1U-XYx">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Igr-1U-XYx">
                     <rect key="frame" x="0.0" y="382" width="320" height="1"/>
                     <color key="backgroundColor" red="0.98823529409999999" green="0.38823529410000002" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="iPV-ys-rSg"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -63,10 +74,13 @@
                 <constraint firstItem="ho5-6k-TK6" firstAttribute="leading" secondItem="baS-Ze-Osg" secondAttribute="leading" id="FOF-D9-IVi"/>
                 <constraint firstItem="qvG-7Z-l3D" firstAttribute="top" secondItem="ho5-6k-TK6" secondAttribute="bottom" id="Gmf-d7-BJE"/>
                 <constraint firstAttribute="centerX" secondItem="ZJY-eW-SoZ" secondAttribute="centerX" id="Ij9-C2-x5D"/>
+                <constraint firstAttribute="trailing" secondItem="Igr-1U-XYx" secondAttribute="trailing" id="NTP-JT-AEJ"/>
                 <constraint firstItem="qvG-7Z-l3D" firstAttribute="leading" secondItem="baS-Ze-Osg" secondAttribute="leading" id="PmG-Rx-peH"/>
                 <constraint firstAttribute="trailing" secondItem="VGz-hu-irV" secondAttribute="trailing" id="Pro-C4-usV"/>
+                <constraint firstItem="ZJY-eW-SoZ" firstAttribute="top" secondItem="Igr-1U-XYx" secondAttribute="bottom" constant="7" id="UhD-qF-wJT"/>
                 <constraint firstAttribute="bottom" secondItem="qvG-7Z-l3D" secondAttribute="bottom" constant="54" id="W0r-t4-U9u"/>
                 <constraint firstItem="VGz-hu-irV" firstAttribute="leading" secondItem="qvG-7Z-l3D" secondAttribute="trailing" id="aO6-Cd-eDV"/>
+                <constraint firstItem="Igr-1U-XYx" firstAttribute="leading" secondItem="baS-Ze-Osg" secondAttribute="leading" id="iY4-90-kEB"/>
                 <constraint firstAttribute="trailing" secondItem="ho5-6k-TK6" secondAttribute="trailing" id="lAj-ll-5Vo"/>
                 <constraint firstItem="ZJY-eW-SoZ" firstAttribute="top" secondItem="VGz-hu-irV" secondAttribute="bottom" constant="8" id="lTQ-ct-KYi"/>
             </constraints>

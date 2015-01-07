@@ -10,8 +10,8 @@
 #import "ZDTuiJianViewController.h"
 #import "ZDEditViewController.h"
 #import "ZDMoreView.h"
-
-@interface ZDNavViewController ()
+#import "UMSocial.h"
+@interface ZDNavViewController ()<UMSocialUIDelegate>
 /**
  *  蒙板
  */
@@ -38,75 +38,87 @@
     
 }
 - (void)more{
+    //注意：分享到微信好友、微信朋友圈、微信收藏、QQ空间、QQ好友、来往好友、来往朋友圈、易信好友、易信朋友圈、Facebook、Twitter、Instagram等平台需要参考各自的集成方法
+    [UMSocialSnsService presentSnsIconSheetView:self
+                                         appKey:@"5417d98ffd98c5661607aed9"
+                                      shareText:@"你要分享的文字"
+                                     shareImage:[UIImage imageNamed:@"icon.png"]
+                                shareToSnsNames:[NSArray arrayWithObjects:UMShareToQQ,UMShareToQzone,UMShareToSina,UMShareToTencent,UMShareToRenren,UMShareToWechatTimeline,UMShareToDouban,UMShareToSms,nil]
+                                       delegate:self];
+    
     // 2.交换图片和蒙板的位置
     // 把控制器View中的iconView带到控制器View的最前面
-    [self.view.window bringSubviewToFront:self.moreView];
-    if (self.xiala) {
-        [UIView animateWithDuration:0.5 animations:^{
-            //            self.moreView.y = self.moreView.y - self.moreView.height;
-            [self.cover setAlpha:0];
-            [self.moreView setAlpha:0];
-        } completion:^(BOOL finished) {
-            [self.moreView removeFromSuperview];
-            [self.cover removeFromSuperview];
-            self.xiala = NO;
-        }];
-        return;
-    }else{
-        // 1.添加按钮蒙板
-        UIButton *cover = [[UIButton alloc] init];
-        cover.frame = self.view.window.frame;
-        cover.backgroundColor = [UIColor blackColor];
-        [cover addTarget:self action:@selector(smallImage) forControlEvents:UIControlEventTouchUpInside];
-        cover.userInteractionEnabled = YES;
-        // 控制UIButton的透明度
-        [cover setAlpha: 0.0];
-        [self.moreView setAlpha:0];
-        self.cover = cover;
-        [self.view.window addSubview:cover];
-        [self.view.window bringSubviewToFront:self.moreView];
-        [UIView animateWithDuration:0.5 animations:^{
-            [self.moreView setAlpha:1];
-            [self.cover setAlpha: 0.65];
-            // 监听蒙板点击事件
-        } completion:^(BOOL finished) {
-            self.xiala = YES;
-        }];
-        return;
-    }
+//    [self.view.window bringSubviewToFront:self.moreView];
+//    if (self.xiala) {
+//        [UIView animateWithDuration:0.5 animations:^{
+//            //            self.moreView.y = self.moreView.y - self.moreView.height;
+//            [self.cover setAlpha:0];
+//            [self.moreView setAlpha:0];
+//        } completion:^(BOOL finished) {
+//            [self.moreView removeFromSuperview];
+//            [self.cover removeFromSuperview];
+//            self.xiala = NO;
+//        }];
+//        return;
+//    }else{
+//        // 1.添加按钮蒙板
+//        UIButton *cover = [[UIButton alloc] init];
+//        cover.frame = self.view.window.frame;
+//        cover.backgroundColor = [UIColor blackColor];
+//        [cover addTarget:self action:@selector(smallImage) forControlEvents:UIControlEventTouchUpInside];
+//        cover.userInteractionEnabled = YES;
+//        // 控制UIButton的透明度
+//        [cover setAlpha: 0.0];
+//        [self.moreView setAlpha:0];
+//        self.cover = cover;
+//        [self.view.window addSubview:cover];
+//        [self.view.window bringSubviewToFront:self.moreView];
+//        [UIView animateWithDuration:0.5 animations:^{
+//            [self.moreView setAlpha:1];
+//            [self.cover setAlpha: 0.65];
+//            // 监听蒙板点击事件
+//        } completion:^(BOOL finished) {
+//            self.xiala = YES;
+//        }];
+//        return;
+//    }
+
+    
+    
 }
+
 - (void)smallImage{
     
 }
 
 #pragma mark - 懒加载
-- (ZDMoreView *)moreView{
-    if (!_moreView) {
-        _moreView = [ZDMoreView moreView];
-        self.moreView.y = self.moreView.y - self.moreView.height;
-        self.moreView.center = self.view.center;
-        self.moreView.borderType = BorderTypeDashed;
-        self.moreView.dashPattern = 2;
-        //    self.moreView.spacePattern = 2;
-        self.moreView.borderWidth = 1;
-        self.moreView.cornerRadius = 10;
-        self.moreView.borderColor = [UIColor redColor];
-        self.moreView.backgroundColor = ZDColor(255, 246, 229)
-        self.moreView.delegate = self;
-        [self.view.window  addSubview:_moreView];
-    }
-    return _moreView;
-}
-- (void)moreViewDidOK:(ZDMoreView *)moreView{
-    [UIView animateWithDuration:0.5 animations:^{
-        [self.cover setAlpha:0];
-        [self.moreView setAlpha:0];
-    } completion:^(BOOL finished) {
-        [self.moreView removeFromSuperview];
-        [self.cover removeFromSuperview];
-        self.xiala = NO;
-    }];
-}
+//- (ZDMoreView *)moreView{
+//    if (!_moreView) {
+//        _moreView = [ZDMoreView moreView];
+//        self.moreView.y = self.moreView.y - self.moreView.height;
+//        self.moreView.center = self.view.center;
+//        self.moreView.borderType = BorderTypeDashed;
+//        self.moreView.dashPattern = 2;
+//        //    self.moreView.spacePattern = 2;
+//        self.moreView.borderWidth = 1;
+//        self.moreView.cornerRadius = 10;
+//        self.moreView.borderColor = [UIColor redColor];
+//        self.moreView.backgroundColor = ZDColor(255, 246, 229)
+//        self.moreView.delegate = self;
+//        [self.view.window  addSubview:_moreView];
+//    }
+//    return _moreView;
+//}
+//- (void)moreViewDidOK:(ZDMoreView *)moreView{
+//    [UIView animateWithDuration:0.5 animations:^{
+//        [self.cover setAlpha:0];
+//        [self.moreView setAlpha:0];
+//    } completion:^(BOOL finished) {
+//        [self.moreView removeFromSuperview];
+//        [self.cover removeFromSuperview];
+//        self.xiala = NO;
+//    }];
+//}
 
 - (UIWebView *)webView{
     if (!_webView) {
@@ -154,7 +166,10 @@
     NSMutableDictionary *mddisabled = [NSMutableDictionary dictionaryWithDictionary:md];
     mddisabled[UITextAttributeTextColor] = [UIColor lightGrayColor];
     [item setTitleTextAttributes:mddisabled forState:UIControlStateDisabled];
+    
+    
 }
+
 /**
  *  设置导航条的主题
  */
@@ -164,11 +179,8 @@
     UINavigationBar *navBar = [UINavigationBar appearance];
     // 1.2设置主题
     if (!iOS7) {
-        
-        
         // 1.设置导航条背景图片
         [navBar setBackgroundImage:[UIImage imageWithNamed:@"Judge2"] forBarMetrics:UIBarMetricsDefault];
-        
         // 2.设置导航条标题的属性
         NSMutableDictionary *md = [NSMutableDictionary dictionary];
         // 文字颜色
@@ -192,6 +204,8 @@
     // 文字字体大小
     md[UITextAttributeFont] = [UIFont systemFontOfSize:20];
     [navBar setTitleTextAttributes:md];
+    
+    
 }
 
 - (void)viewDidLoad

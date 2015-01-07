@@ -18,7 +18,8 @@
 #import "ZDBabyTool.h"
 #import "ZDNetwork.h"
 #import "MBProgressHUD+ZD.h"
-
+#import "UMSocial.h"
+#import "ZDSpecialViewController.h"
 @interface AppDelegate ()
 @property (nonatomic , strong) UIImageView *imageView;
 @end
@@ -27,14 +28,22 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
+    
     application.statusBarHidden = NO;
     
     // 短信注册KEY
 //    APPKEY:  47f01de13458        AppSecret：   ec44a5b1ff4cb948cb16c1a0b1655b23
     NSString *appKey = @"47f01de13458";
     NSString *appSecret = @"ec44a5b1ff4cb948cb16c1a0b1655b23";
-    
     [SMS_SDK  registerApp:appKey withSecret:appSecret];
+    
+    // 设置友盟app key
+    [UMSocialData setAppKey:@"5417d98ffd98c5661607aed9"];
+    
+    // 设置JPush推送
+    
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // 设置全局状态栏的颜色
@@ -57,79 +66,110 @@
 //    BOOL tool = [ZDBabyTool sharedZDBabyTool].removeAccount;
     [UIApplication sharedApplication].statusBarHidden = YES;
     
-    UIImageView *cover = [[UIImageView alloc] initWithFrame:self.window.bounds];
-    cover.backgroundColor = [UIColor blackColor];
-    cover.image = [UIImage imageNamed:@"loginIcon.png"];
-    self.imageView = cover;
-    [self.window addSubview:cover];
-    [UIView animateWithDuration:2.5f animations:^{
 
-        [UIView animateWithDuration:2.5f animations:^{
-            [self.imageView setAlpha:0];
-            self.imageView.transform = CGAffineTransformMakeScale(1.5, 1.5);
-        } completion:^(BOOL finished) {
-            [self.imageView removeFromSuperview];
-        }];
-    } completion:^(BOOL finished) {
-        //    if ([currentVersion compare:sandBoxVersion] ==  NSOrderedDescending)
-        if ((0))
-        {
-            // 存储当前版本号
-            [defaults setObject:currentVersion forKey:key];
-            [defaults synchronize];
-            
-            // 第一次使用当前版本  --> 显示新特性界面
-            ZDNewfeatureViewController *newfeature = [[ZDNewfeatureViewController alloc] init];
-            self.window.rootViewController = newfeature;
-        }else{
-            //        ZDLog(@"%@",baby.userName);
-            if (baby.userName != nil) {
-                ZDRegisterViewController *reg = [[ZDRegisterViewController alloc]init];
-                self.window.rootViewController = reg;
-            }else{
-                // 判断当前是否已经有登陆过的账号存在
-                ZDBaby *baby = [ZDBabyTool sharedZDBabyTool].account;
-                [ZDNetwork LoginWithPhone:baby.userName Password:baby.password Callback:^(RspState *rsp, NSString *jsessionid) {
-                    if (rsp.rspCode == 0) {
-                        ZDBabyTool *babyTool = [ZDBabyTool sharedZDBabyTool];
-                        ZDBaby *bb = [[ZDBaby alloc]init];
-                        bb.userName =  baby.userName;
-                        bb.password =  baby.password;
-                        bb.jsessionid = jsessionid;
-                        [babyTool saveAccount:bb];
-                        
-                        //                    ZDTabBarController *tabBarVc = [[ZDTabBarController alloc] init];
-                        //                    UIApplication *app = [UIApplication sharedApplication];
-                        //                    UIWindow *window = app.keyWindow;
-                        //                    app.statusBarHidden = NO;
-                        //                    window.rootViewController = tabBarVc;
-                        //                    [window makeKeyAndVisible];
-                    }else{
-                        [MBProgressHUD showError:@"网络错误"];
-                        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.68 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                            [MBProgressHUD hideHUD];
-                        });
-                        //                    ZDTabBarController *tabBarVc = [[ZDTabBarController alloc] init];
-                        //                    UIApplication *app = [UIApplication sharedApplication];
-                        //                    UIWindow *window = app.keyWindow;
-                        //                    app.statusBarHidden = NO;
-                        //                    window.rootViewController = tabBarVc;
-                        //                    [window makeKeyAndVisible];
-                    }
-                }];
-                ZDTabBarController *tabBarVc = [[ZDTabBarController alloc] init];
-                UIApplication *app = [UIApplication sharedApplication];
-                UIWindow *window = app.keyWindow;
-                app.statusBarHidden = NO;
-                window.rootViewController = tabBarVc;
-                [window makeKeyAndVisible];
-            }
-        }
-    }];
+
     
+    if ((0))
+    {
+        // 存储当前版本号
+        [defaults setObject:currentVersion forKey:key];
+        [defaults synchronize];
+        
+        // 第一次使用当前版本  --> 显示新特性界面
+        ZDNewfeatureViewController *newfeature = [[ZDNewfeatureViewController alloc] init];
+        self.window.rootViewController = newfeature;
+        
+        UIImageView *splashScreen = [[UIImageView alloc] initWithFrame:self.window.bounds];
+        splashScreen.image = [UIImage imageNamed:@"loginIcon.png"];
+        [self.window addSubview:splashScreen];
+        
+        [UIView animateWithDuration:1.6 animations:^{
+            CATransform3D transform = CATransform3DMakeScale(1.6, 1.6, 1.0);
+            splashScreen.layer.transform = transform;
+            splashScreen.alpha = 0.0;
+        } completion:^(BOOL finished) {
+            [splashScreen removeFromSuperview];
+        }];
+    }else{
+        //        ZDLog(@"%@",baby.userName);
+        if (baby.userName != nil) {
+    
+            ZDRegisterViewController *reg = [[ZDRegisterViewController alloc]init];
+            self.window.rootViewController = reg;
+            UIImageView *splashScreen = [[UIImageView alloc] initWithFrame:self.window.bounds];
+            splashScreen.image = [UIImage imageNamed:@"loginIcon.png"];
+            [self.window addSubview:splashScreen];
+            
+            [UIView animateWithDuration:2.2 animations:^{
+                CATransform3D transform = CATransform3DMakeScale(1.4, 1.4, 1.0);
+                splashScreen.layer.transform = transform;
+                splashScreen.alpha = 0.0;
+            } completion:^(BOOL finished) {
+                [splashScreen removeFromSuperview];
+            }];
+        }else{
+            // 判断当前是否已经有登陆过的账号存在
+            ZDBaby *baby = [ZDBabyTool sharedZDBabyTool].account;
+            [ZDNetwork LoginWithPhone:baby.userName Password:baby.password Callback:^(RspState *rsp, NSString *jsessionid) {
+                if (rsp.rspCode == 0) {
+                    ZDBabyTool *babyTool = [ZDBabyTool sharedZDBabyTool];
+                    ZDBaby *bb = [[ZDBaby alloc]init];
+                    bb.userName =  baby.userName;
+                    bb.password =  baby.password;
+                    bb.jsessionid = jsessionid;
+                    [babyTool saveAccount:bb];
+                    
+                    //                    ZDTabBarController *tabBarVc = [[ZDTabBarController alloc] init];
+                    //                    UIApplication *app = [UIApplication sharedApplication];
+                    //                    UIWindow *window = app.keyWindow;
+                    //                    app.statusBarHidden = NO;
+                    //                    window.rootViewController = tabBarVc;
+                    //                    [window makeKeyAndVisible];
+                }else{
+                    [MBProgressHUD showError:@"网络错误"];
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.68 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                        [MBProgressHUD hideHUD];
+                    });
+                    
+                    //                    ZDTabBarController *tabBarVc = [[ZDTabBarController alloc] init];
+                    //                    UIApplication *app = [UIApplication sharedApplication];
+                    //                    UIWindow *window = app.keyWindow;
+                    //                    app.statusBarHidden = NO;
+                    //                    window.rootViewController = tabBarVc;
+                    //                    [window makeKeyAndVisible];
+                }
+            }];
+            ZDTabBarController *tabBarVc = [[ZDTabBarController alloc] init];
+            UIApplication *app = [UIApplication sharedApplication];
+            UIWindow *window = app.keyWindow;
+            app.statusBarHidden = NO;
+            window.rootViewController = tabBarVc;
+            [window makeKeyAndVisible];
+            
+            UIImageView *splashScreen = [[UIImageView alloc] initWithFrame:self.window.bounds];
+            splashScreen.image = [UIImage imageNamed:@"loginIcon.png"];
+            [self.window addSubview:splashScreen];
+            
+            [UIView animateWithDuration:1.6 animations:^{
+                CATransform3D transform = CATransform3DMakeScale(1.6, 1.6, 1.0);
+                splashScreen.layer.transform = transform;
+                splashScreen.alpha = 0.0;
+            } completion:^(BOOL finished) {
+                [splashScreen removeFromSuperview];
+            }];
+        }
+    }
 
     return YES;
 }
+
+//   异常处理
+void uncaughtExceptionHandler(NSException *exception) {
+    NSLog(@"CRASH: %@", exception);
+    NSLog(@"Stack Trace: %@", [exception callStackSymbols]);
+    // Internal error reporting
+}
+
 // 当应用程序接收到内存警告的时候就会调用
 - (void)applicationDidReceiveMemoryWarning:(UIApplication *)application
 {

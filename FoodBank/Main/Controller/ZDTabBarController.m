@@ -18,11 +18,6 @@
 #import "ZDRecordViewController.h"
 
 @interface ZDTabBarController () <ZDTabBarDelegate>
-
-
-/**
- *  自定义TabBar
- */
 @property (nonatomic, strong) ZDTabBar *customTabBar;
 @property (nonatomic, strong) ZDNewsViewController *home;
 @property (nonatomic, strong) ZDTryViewController *message;
@@ -65,6 +60,8 @@
         ZDMyBabyViewController *baby = [[ZDMyBabyViewController alloc] init];
         [self setupChileViewController:baby title:@"我的宝贝" imageName:@"tab004_4" selectedImageName:@"tab004"];
         self.baby = baby;
+        
+        
         
     }
     return self;
@@ -114,7 +111,6 @@
 }
 
 
-
 /**
  *  初始化子控制器
  *
@@ -125,7 +121,9 @@
  */
 - (void)setupChileViewController:(UIViewController *)child title:(NSString *)title imageName:(NSString *)imageName selectedImageName:(NSString *)selectedImageName
 {
+    
     child.title = title;
+    
     child.tabBarItem.image = [UIImage imageWithNamed:imageName];
     // 如果是iOS7 就告诉系统不要渲染图片
     UIImage *selectedImage = [UIImage imageWithNamed:selectedImageName];
@@ -151,6 +149,7 @@
 //        两次点击相同
         
     }
+    
 }
 
 

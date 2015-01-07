@@ -17,10 +17,12 @@
 #import "MBProgressHUD+ZD.h"
 #import "NSDate+ZD.h"
 #import "ZDSiKuViewController.h"
+#import "ZDSelectViewController.h"
 
-@interface ZDInitViewController () <ZDDatePickerViewDelegate,ZDNationViewDelegate,ZDMoreViewDelegate>
+@interface ZDInitViewController () <ZDDatePickerViewDelegate,ZDNationViewDelegate,ZDMoreViewDelegate,ZDSelectDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *userView;
+
 
 /**
  *  向下的图片
@@ -278,35 +280,47 @@
 - (void)allergyBtnOnClick:(ZDChooseButton *)titleBtn
 {
     // 1.取出按钮中的图片判断当前的图片是向上还是向下
-    if (titleBtn.currentImage == self.downImage) {
-        
-        // 向下 --> 向上
-        _foodPickerView = [ZDFoodPickerView foodPickerView];
-        _foodPickerView.y = self.view.height;
-        _foodPickerView.width = self.view.width;
-        // 设置代理
-        _foodPickerView.delegate = self;
-        [self.view addSubview:_foodPickerView];
-        
-        [titleBtn setImage:self.upImage forState:UIControlStateNormal];
-        self.foodPickerView.y = self.view.height;
-        [UIView animateWithDuration:0.25 animations:^{
-            self.foodPickerView.y = self.view.height - self.foodPickerView.height;
-        } completion:^(BOOL finished) {
-            
-        }];
-    }else
-    {
-        // 向上 --> 向下
-        [titleBtn setImage:self.downImage forState:UIControlStateNormal];
-        self.foodPickerView.y = self.view.height - self.foodPickerView.height;
-        [UIView animateWithDuration:0.25 animations:^{
-            self.foodPickerView.y = self.view.height;
-        } completion:^(BOOL finished) {
-            [self.foodPickerView removeFromSuperview];
-        }];
-    }
+//    if (titleBtn.currentImage == self.downImage) {
+    
+    ZDSelectViewController *select = [[ZDSelectViewController alloc]init];
+    select.delegate = self;
+    [titleBtn setImage:self.upImage forState:UIControlStateNormal];
+    [self.navigationController pushViewController:select animated:YES];
+
+//        // 向下 --> 向上
+//        _foodPickerView = [ZDFoodPickerView foodPickerView];
+//        _foodPickerView.y = self.view.height;
+//        _foodPickerView.width = self.view.width;
+//        // 设置代理
+//        _foodPickerView.delegate = self;
+//        [self.view addSubview:_foodPickerView];
+//        
+//        [titleBtn setImage:self.upImage forState:UIControlStateNormal];
+//        self.foodPickerView.y = self.view.height;
+//        [UIView animateWithDuration:0.25 animations:^{
+//            self.foodPickerView.y = self.view.height - self.foodPickerView.height;
+//        } completion:^(BOOL finished) {
+//            
+//        }];
+//    }else{
+//        // 向上 --> 向下
+//        [titleBtn setImage:self.downImage forState:UIControlStateNormal];
+//        self.foodPickerView.y = self.view.height - self.foodPickerView.height;
+//        [UIView animateWithDuration:0.25 animations:^{
+//            self.foodPickerView.y = self.view.height;
+//        } completion:^(BOOL finished) {
+//            [self.foodPickerView removeFromSuperview];
+//        }];
+//    }
 }
+- (void)selectFoodArray:(NSArray *)array{
+    NSString * str = [array componentsJoinedByString:@","];
+    [self.BtnAllergy setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [self.BtnAllergy setImage:self.downImage forState:UIControlStateNormal];
+    [self.BtnAllergy setTitle:str forState:UIControlStateNormal];
+    
+}
+
 
 - (void)foodPicker:(NSDictionary *)moreView{
     // 向上 --> 向下
@@ -315,14 +329,13 @@
     [self.BtnAllergy setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [self.BtnAllergy setImage:self.downImage forState:UIControlStateNormal];
     self.foodPickerView.y = self.view.height - self.foodPickerView.height;
+    
     [UIView animateWithDuration:0.35 animations:^{
         if([moreView[@"food_name"] isEqualToString:nil]){
-//            self.textField.text = nil;
+            
         }else{
-//            self.textField.text = moreView[@"food_name"];
             [self.BtnAllergy setTitle:moreView[@"food_name"] forState:UIControlStateNormal];
         }
-        
         self.foodPickerView.y = self.view.height;
     } completion:^(BOOL finished) {
         [self.foodPickerView removeFromSuperview];
@@ -341,6 +354,7 @@
 //        [self.cover removeFromSuperview];
 //    }];
 }
+
 
 - (UIImage *)downImage
 {

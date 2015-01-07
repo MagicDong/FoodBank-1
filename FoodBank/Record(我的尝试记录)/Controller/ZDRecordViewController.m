@@ -20,6 +20,7 @@
 #import "ZDTuiJianViewController.h"
 #import "ZDNetwork.h"
 #import "ZDTryRecord.h"
+#import "ZDCategoryCell.h"
 
 @interface ZDRecordViewController ()<ZDMoreViewDelegate,UITableViewDataSource,UITableViewDelegate>
 {
@@ -41,61 +42,16 @@
 @property (weak, nonatomic) IBOutlet UILabel *zhouqi;
 @property (nonatomic, strong) NSArray *dataList;
 @property (nonatomic, assign) BOOL isIng;
-/**
- *  蒙板
- */
 @property (nonatomic, strong)UIButton *cover;
-/**
- *  时间选择
- */
 @property (nonatomic ,weak) ZDMoreView *moreView;
 @property (nonatomic,assign) BOOL xiala;
-@property (nonatomic,retain) UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic,strong) NSArray *titleArray;
+@property (nonatomic, assign) NSInteger integer;
 @end
 
+static NSString *categoryCellID = @"categoryCell";
 @implementation ZDRecordViewController
-
-- (IBAction)queren:(UIButton *)sender {
-    
-    if ([self.selectedButton.titleLabel.text isEqualToString:@"安全"]) {
-        [ZDNetwork postTryResultTryState:@"1" CallBack:^(RspState *rsp) {
-            if (rsp.rspCode == 0) {
-                UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"提交尝试结果成功！" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-                [alert show];
-            }else{
-                UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"错误！" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-                [alert show];
-            }
-        }];
-    }else if ([self.selectedButton.titleLabel.text isEqualToString:@"过敏"]){
-        ZDAllergyViewController *allergy = [[ZDAllergyViewController alloc]init];
-        [self.navigationController pushViewController:allergy animated:YES];
-    }else if ([self.selectedButton.titleLabel.text isEqualToString:@"拒绝"]){
-        ZDRejectViewController *reject = [[ZDRejectViewController alloc]init];
-        [self.navigationController pushViewController:reject animated:YES];
-    }else if([self.selectedButton.titleLabel.text isEqualToString:@"未尝试"]){
-        [ZDNetwork postTryResultTryState:@"4" CallBack:^(RspState *rsp) {
-            if (rsp.rspCode == 0) {
-                UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"提交尝试结果成功！" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-                [alert show];
-            }else{
-                UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"错误！" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-                [alert show];
-            }
-        }];
-    }
-    
-    if (self.selectedButton == nil) {
-        [MBProgressHUD showError:@"您还没有选择尝试情况"];
-    }
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.1* NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        
-        [MBProgressHUD hideHUD];
-        
-    });
-}
-
 
 - (IBAction)present:(UIButton *)sender {
     NSDictionary *foodInfo = @{@"foodName":self.foodName.text,@"zhouqi":self.zhouqi.text,@"toDay":self.toDay.text};
@@ -112,6 +68,15 @@
     sender.selected = YES;
     // 将当前按钮作为选中按钮
     self.selectedButton = sender;
+    [ZDNetwork postTryResultTryState:@"1" CallBack:^(RspState *rsp) {
+        if (rsp.rspCode == 0) {
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"提交尝试结果成功！" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+            [alert show];
+        }else{
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"错误！" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+            [alert show];
+        }
+    }];
 }
 
 - (IBAction)guomin:(UIButton *)sender {
@@ -145,14 +110,26 @@
     sender.selected = YES;
     // 将当前按钮作为选中按钮
     self.selectedButton = sender;
+    
+    
+    
+    [ZDNetwork postTryResultTryState:@"4" CallBack:^(RspState *rsp) {
+        if (rsp.rspCode == 0) {
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"提交尝试结果成功！" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+            [alert show];
+        }else{
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"错误！" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+            [alert show];
+        }
+    }];
 }
-
+int i =0;
 - (void)viewDidLoad{
     [super viewDidLoad];
-    [self anquan:nil];
     [self setupTableView];
     self.title = @"尝试记录";
     
+//    self.integer = 0;
 //    unsigned units=NSMonthCalendarUnit|NSDayCalendarUnit|NSYearCalendarUnit|NSWeekdayCalendarUnit;
 //    NSCalendar *mycal=[[NSCalendar alloc]initWithCalendarIdentifier:NSGregorianCalendar];
 //    NSDate *now=[NSDate date];
@@ -213,6 +190,13 @@
         self.edgesForExtendedLayout = NO;
         self.navigationController.navigationBar.opaque=YES;
     }
+
+    UINib *categoryNib = [UINib nibWithNibName:@"ZDCategoryCell" bundle:nil];
+    [self.tableView registerNib:categoryNib forCellReuseIdentifier:categoryCellID];
+    
+    NSIndexPath *selectedIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    [self.tableView selectRowAtIndexPath:selectedIndexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
+    
     self.titleArray = TitielArray;
     [self.tableView reloadData];
     
@@ -237,10 +221,7 @@
 
 - (void)setupTableView{
     
-    UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, 90, self.view.height)];
-    tableView.delegate = self;
-    tableView.dataSource = self;
-    self.tableView = tableView;
+    
     
 }
 
@@ -248,19 +229,64 @@
     return self.titleArray.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *str = @"cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:str];
-    if (cell ==nil) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:str];
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+//    static NSString *str = @"cell";
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:str];
+//    if (cell ==nil) {
+//        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:str];
+//    }
+//    cell.textLabel.text = self.titleArray[indexPath.row];
+//
+//    
+//    return nil;
+//}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    //    static NSString *ID = @"share";
+    ZDCategoryCell *cell = [tableView dequeueReusableCellWithIdentifier:categoryCellID];
+    cell.title = self.titleArray[indexPath.row];
+    if (indexPath.row == i) {
+        cell.zhuangtai = 1;
+        cell.selected = YES;
+    }else{
+        cell.zhuangtai = 0;
+        cell.selected = NO;
     }
-    cell.textLabel.text = self.titleArray[indexPath.row];
-    
-    
-    return nil;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
+    return cell;
 }
 
+//- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    cell.backgroundColor = [UIColor redColor];
+//}
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSIndexPath *p = [NSIndexPath indexPathForItem:i inSection:0];
+    
+    ZDCategoryCell *deCell =  (ZDCategoryCell *)[tableView cellForRowAtIndexPath:p];
+    deCell.selected = NO;
+    deCell.zhuangtai = 0;
+    
+    ZDCategoryCell *cell =  (ZDCategoryCell *)[tableView cellForRowAtIndexPath:indexPath];
+    cell.zhuangtai = 1;
+    cell.selected = YES;
+    i = indexPath.row;
+    // 更新表
+}
+
+//- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    ZDCategoryCell *cell = (ZDCategoryCell *)[tableView cellForRowAtIndexPath:indexPath];
+//    cell.zhuangtai = 0;
+//}
+
+// 设置行高
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 53;
+}
 
 - (void)setDataList:(NSArray *)dataList{
     _dataList = dataList;
@@ -268,8 +294,6 @@
     [self.foodName setText:dict.mname];
     [self.toDay setText:[NSString stringWithFormat:@"%@",dict.isTrying]];
     [self.zhouqi setText:[NSString stringWithFormat:@"%@",dict.cycle]];
-    
-    
 //    NSLog(@"%d",self.dataList.count);
 //    if (_dataList) {
 //
@@ -281,7 +305,6 @@
 //        ZDLog(@"%@",self.toDay.text);
 //        ZDLog(@"%@",self.zhouqi.text);
 //    }
-    
 }
 
 //@property (weak, nonatomic) IBOutlet UILabel *foodName;
@@ -296,7 +319,6 @@
     [ZDNetwork getTryRecordInfoCallback:^(RspState *rsp, NSArray *array) {
         if (rsp.rspCode == 0) {
             self.dataList = array;
-            
 //            NSLog(@"%d",self.dataList.count);
 //            ZDTryRecord *tryRecord = _dataList[0];
 //            [self.foodName setText:tryRecord.mname];
@@ -318,7 +340,6 @@
 //            self.jieshaoTextView.attributedText = [[NSAttributedString alloc]initWithString:food.introduce attributes:attributes];
 //            self.tuijianTextView.attributedText = [[NSAttributedString alloc]initWithString:food.practice attributes:attributes];
 //            self.cornerID = food.mid;
-            
         }else{
 //            [MBProgressHUD showError:@"网络错误"];
 //            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.58 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -349,6 +370,7 @@
             [self.moreView removeFromSuperview];
             [self.cover removeFromSuperview];
             self.xiala = NO;
+            
         }];
         return;
     }else{
@@ -364,6 +386,7 @@
         self.cover = cover;
         [self.view.window addSubview:cover];
         [self.view.window bringSubviewToFront:self.moreView];
+        
         [UIView animateWithDuration:0.5 animations:^{
             // 监听蒙板点击事件
             [self.moreView setAlpha:1];
@@ -393,7 +416,6 @@
         self.moreView.backgroundColor = ZDColor(255, 246, 229)
         self.moreView.delegate = self;
         [self.view.window  addSubview:_moreView];
-        
     }
     return _moreView;
 }
@@ -416,8 +438,7 @@
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:YES];
-//    [_ygp initselectedSegmentIndex];
-//    [self segmentedViewController:_ygp touchedAtIndex:0];
+
 }
 
 -(void)segmentedViewController:(YGPSegmentedController *)segmentedControl touchedAtIndex:(NSUInteger)index
@@ -430,7 +451,6 @@
 //                    self.foodName.text = dict.mname;
 //                    self.toDay.text = [[NSString alloc]initWithFormat:@"%d",dict.isTrying];
 //                }
-                
                 break;
             case 1:
 //                if (_dataList) {
@@ -438,6 +458,7 @@
 //                    self.foodName.text = dict.mname;
 //                    self.toDay.text = [[NSString alloc]initWithFormat:@"%d",dict.isTrying];
 //                }
+                
                 break;
             case 2:
 //                if (_dataList) {
@@ -469,16 +490,52 @@
 //                }
                 break;
             case 6:
-//                if (_dataList) {
-//                    ZDTryRecord *dict = _dataList[6];
-//                    self.foodName.text = dict.mname;
-//                    self.toDay.text = [[NSString alloc]initWithFormat:@"%d",dict.isTrying];
-//                }
+                
                 break;
             default:
                 break;
         }
     }
 }
+
+//- (IBAction)queren:(UIButton *)sender {
+//
+//    if ([self.selectedButton.titleLabel.text isEqualToString:@"安全"]) {
+//        [ZDNetwork postTryResultTryState:@"1" CallBack:^(RspState *rsp) {
+//            if (rsp.rspCode == 0) {
+//                UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"提交尝试结果成功！" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+//                [alert show];
+//            }else{
+//                UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"错误！" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+//                [alert show];
+//            }
+//        }];
+//    }else if ([self.selectedButton.titleLabel.text isEqualToString:@"过敏"]){
+//        ZDAllergyViewController *allergy = [[ZDAllergyViewController alloc]init];
+//        [self.navigationController pushViewController:allergy animated:YES];
+//    }else if ([self.selectedButton.titleLabel.text isEqualToString:@"拒绝"]){
+//        ZDRejectViewController *reject = [[ZDRejectViewController alloc]init];
+//        [self.navigationController pushViewController:reject animated:YES];
+//    }else if([self.selectedButton.titleLabel.text isEqualToString:@"未尝试"]){
+//        [ZDNetwork postTryResultTryState:@"4" CallBack:^(RspState *rsp) {
+//            if (rsp.rspCode == 0) {
+//                UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"提交尝试结果成功！" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+//                [alert show];
+//            }else{
+//                UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"错误！" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+//                [alert show];
+//            }
+//        }];
+//    }
+//
+//    if (self.selectedButton == nil) {
+//        [MBProgressHUD showError:@"您还没有选择尝试情况"];
+//    }
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.1* NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//
+//        [MBProgressHUD hideHUD];
+//
+//    });
+//}
 
 @end

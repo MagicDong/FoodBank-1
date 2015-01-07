@@ -52,6 +52,7 @@ static NSString *PhotosID = @"photosCell";
 @property (nonatomic,assign) BOOL xiala;
 @property (nonatomic, weak) ZDSpecialViewController *specialVIew;
 @property (nonatomic, strong) UIImageView *imageView;
+@property (nonatomic, strong) UIView *spView;
 @end
 
 @implementation ZDNewsViewController
@@ -83,7 +84,19 @@ static NSString *PhotosID = @"photosCell";
 //    } completion:^(BOOL finished) {
 //        
 //    }];
+//    UIImageView *imaegView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"loginIcon.png"]];
+//    imaegView.frame = self.view.window.frame;
+//    [self.view.window addSubview:imaegView];
+//    
+//    [UIView animateWithDuration:1.5f animations:^{
+//        imaegView.alpha = 0;
+//        imaegView.transform = CGAffineTransformMakeScale(1.6, 1.6);
+//    } completion:^(BOOL finished) {
+//        [imaegView  removeFromSuperview];
+//    }];
+
 }
+
 
 - (void)viewDidLoad
 {
@@ -98,8 +111,31 @@ static NSString *PhotosID = @"photosCell";
         self.edgesForExtendedLayout = NO;
         self.navigationController.navigationBar.opaque=YES;
     }
+    
     // 3.添加更多按钮
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemImage:@"navigationbar_more" highlightedImage:@"navigationbar_more_highlighted" target:self action:@selector(more)];
+    
+//    ZDSpecialViewController *specialView = [[ZDSpecialViewController alloc] init];
+//    self.spView = specialView.view;
+//    [self.view.window addSubview:self.spView];
+////    loginIcon.png
+//    UIButton *cover = [[UIButton alloc] init];
+//    cover.frame = self.view.window.frame;
+//    cover.backgroundColor = [UIColor blackColor];
+//    cover.imageView.image = [UIImage imageNamed:@"loginIcon.png"];
+////    [cover addTarget:self action:@selector(smallImage) forControlEvents:UIControlEventTouchUpInside];
+//    cover.userInteractionEnabled = YES;
+//    self.cover = cover;
+//    [self.view.window addSubview:cover];
+    
+//    
+//    [UIView animateWithDuration:1.5f animations:^{
+//        self.cover.alpha = 0;
+//        self.cover.transform = CGAffineTransformMakeScale(1.6, 1.6);
+//    } completion:^(BOOL finished) {
+//        [self.cover removeFromSuperview];
+//    }];
+    
     
 //    UIImageView *imaegView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"loginIcon.png"]];
 //    imaegView.frame = self.view.window.frame;
@@ -112,7 +148,6 @@ static NSString *PhotosID = @"photosCell";
 //        [imaegView  removeFromSuperview];
 //    }];
     
-
 //    [self.view.window bringSubviewToFront:self]
 //} completion:^(BOOL finished) {
 //    [self.moreView removeFromSuperview];
@@ -137,6 +172,7 @@ static NSString *PhotosID = @"photosCell";
 
 //    [self setupSpecialView];
 }
+
 /**
  *  设置登录特效
  */
@@ -217,6 +253,7 @@ static NSString *PhotosID = @"photosCell";
         return;
     }
 }
+
 - (void)smallImage{
     
 }

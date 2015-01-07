@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+
 #import <SMS_SDK/SMS_SDK.h>
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;

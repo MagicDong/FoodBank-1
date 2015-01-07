@@ -15,8 +15,14 @@
 #import "ZDNetwork.h"
 #import "UIImageView+WebCache.h"
 #import "ZDNewFood.h"
+#import "UMSocial.h"
+#import "UIBarButtonItem+ZD.h"
+#import "UIImage+ZD.h"
 
-@interface ZDTryViewController () <UITableViewDataSource,UITableViewDelegate,ZDMoreViewDelegate,ZDEditDelegate>
+/** 是否是IOS7以上 */
+#define iOS7 ([[UIDevice currentDevice].systemVersion floatValue] >= 7.0)
+
+@interface ZDTryViewController () <UITableViewDataSource,UITableViewDelegate,ZDEditDelegate,UMSocialUIDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *icon;   // 食材图片
 @property (weak, nonatomic) IBOutlet UIButton *nameEdit;  // 换食材
 @property (weak, nonatomic) IBOutlet UILabel *ke;         // 克数
@@ -52,6 +58,7 @@
     [tianBtn addTarget:self action:@selector(tianBtnOnClick:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:tianBtn];
     self.tianBtn = tianBtn;
+    
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemImage:@"navigationbar_more" highlightedImage:@"navigationbar_more_highlighted" target:self action:@selector(more)];
     
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc]init];
@@ -81,13 +88,13 @@
 //    @property (nonatomic, strong) UITableView *table;         // 点击按钮出来天数
 //    @property (weak, nonatomic) IBOutlet UITextView *jieshaoTextView;
 //    @property (weak, nonatomic) IBOutlet UITextView *tuijianTextView;
-
 }
+
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
-    [MBProgressHUD showError:@"获取尝试信息中..."];
+//    [MBProgressHUD showError:@"获取尝试信息中..."];
     [ZDNetwork getTodayTryInfoCallback:^(RspState *rsp, NSArray *array) {
-        [MBProgressHUD hideHUD];
+//        [MBProgressHUD hideHUD];
         if (rsp.rspCode == 0) {
             ZDNewFood *food = array[0];
             NSString *iconStr = [NSString stringWithFormat:@"http://192.168.1.250/mimag/%@.png",food.mid];
@@ -103,7 +110,6 @@
             NSDictionary *attributes = @{ NSFontAttributeName:[UIFont systemFontOfSize:15], NSParagraphStyleAttributeName:paragraphStyle, NSForegroundColorAttributeName:[UIColor blackColor]};
             self.jieshaoTextView.attributedText = [[NSAttributedString alloc]initWithString:food.introduce attributes:attributes];
             self.tuijianTextView.attributedText = [[NSAttributedString alloc]initWithString:food.practice attributes:attributes];
-            
             self.cornerID = food.mid;
         }else{
             
@@ -111,6 +117,7 @@
 //            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.68 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 //                [MBProgressHUD hideHUD];
 //            });
+            
             return;
         }
     }];
@@ -118,82 +125,92 @@
 
 
 - (void)more{
+    //注意：分享到微信好友、微信朋友圈、微信收藏、QQ空间、QQ好友、来往好友、来往朋友圈、易信好友、易信朋友圈、Facebook、Twitter、Instagram等平台需要参考各自的集成方法
+    [UMSocialSnsService presentSnsIconSheetView:self
+                                         appKey:@"5417d98ffd98c5661607aed9"
+                                      shareText:@"你要分享的文字"
+                                     shareImage:[UIImage imageNamed:@"icon.png"]
+                                shareToSnsNames:[NSArray arrayWithObjects:UMShareToQQ,UMShareToQzone,UMShareToSina,UMShareToTencent,UMShareToRenren,UMShareToWechatTimeline,UMShareToDouban,UMShareToSms,nil]
+                                       delegate:self];
+    
+//    610185387
     // 2.交换图片和蒙板的位置
     // 把控制器View中的iconView带到控制器View的最前面
-    [self.view.window bringSubviewToFront:self.moreView];
-    if (self.xiala) {
-        [UIView animateWithDuration:0.5 animations:^{
-            //            self.moreView.y = self.moreView.y - self.moreView.height;
-            [self.cover setAlpha:0];
-            [self.moreView setAlpha:0];
-        } completion:^(BOOL finished) {
-            [self.moreView removeFromSuperview];
-            [self.cover removeFromSuperview];
-            
-            self.xiala = NO;
-        }];
-        return;
-    }else{
-        // 1.添加按钮蒙板
-        UIButton *cover = [[UIButton alloc] init];
-        cover.frame = self.view.window.frame;
-        cover.backgroundColor = [UIColor blackColor];
-        [cover addTarget:self action:@selector(smallImage) forControlEvents:UIControlEventTouchUpInside];
-        cover.userInteractionEnabled = YES;
-        // 控制UIButton的透明度
-        [cover setAlpha: 0.0];
-        [self.moreView setAlpha:0];
-        self.cover = cover;
-        [self.view.window addSubview:cover];
-        [self.view.window bringSubviewToFront:self.moreView];
-        [UIView animateWithDuration:0.5 animations:^{
-            [self.moreView setAlpha:1];
-            [self.cover setAlpha: 0.65];
-            // 监听蒙板点击事件
-        } completion:^(BOOL finished) {
-            self.xiala = YES;
-        }];
-        return;
-    }
+//    [self.view.window bringSubviewToFront:self.moreView];
+//    if (self.xiala) {
+//        [UIView animateWithDuration:0.5 animations:^{
+//            //            self.moreView.y = self.moreView.y - self.moreView.height;
+//            [self.cover setAlpha:0];
+//            [self.moreView setAlpha:0];
+//        } completion:^(BOOL finished) {
+//            [self.moreView removeFromSuperview];
+//            [self.cover removeFromSuperview];
+//            
+//            self.xiala = NO;
+//        }];
+//        return;
+//    }else{
+//        // 1.添加按钮蒙板
+//        UIButton *cover = [[UIButton alloc] init];
+//        cover.frame = self.view.window.frame;
+//        cover.backgroundColor = [UIColor blackColor];
+//        [cover addTarget:self action:@selector(smallImage) forControlEvents:UIControlEventTouchUpInside];
+//        cover.userInteractionEnabled = YES;
+//        // 控制UIButton的透明度
+//        [cover setAlpha: 0.0];
+//        [self.moreView setAlpha:0];
+//        self.cover = cover;
+//        [self.view.window addSubview:cover];
+//        [self.view.window bringSubviewToFront:self.moreView];
+//        [UIView animateWithDuration:0.5 animations:^{
+//            [self.moreView setAlpha:1];
+//            [self.cover setAlpha: 0.65];
+//            // 监听蒙板点击事件
+//        } completion:^(BOOL finished) {
+//            self.xiala = YES;
+//        }];
+//        return;
+//    }
+    
 }
 
 - (void)smallImage{
     
 }
 
-#pragma mark - 懒加载
-- (ZDMoreView *)moreView{
-    if (!_moreView) {
-        _moreView = [ZDMoreView moreView];
-        self.moreView.y = self.moreView.y - self.moreView.height;
-        self.moreView.center = self.view.center;
-        self.moreView.borderType = BorderTypeDashed;
-        self.moreView.dashPattern = 2;
-        self.moreView.borderWidth = 1;
-        self.moreView.cornerRadius = 10;
-        self.moreView.borderColor = [UIColor redColor];
-        self.moreView.backgroundColor = ZDColor(255, 246, 229)
-        self.moreView.delegate = self;
-        [self.view.window  addSubview:_moreView];
-    }
-    return _moreView;
-}
-
-- (void)moreViewDidOK:(ZDMoreView *)moreView{
-    [UIView animateWithDuration:0.5 animations:^{
-        [self.cover setAlpha:0];
-        [self.moreView setAlpha:0];
-    } completion:^(BOOL finished) {
-        [self.moreView removeFromSuperview];
-        [self.cover removeFromSuperview];
-        self.xiala = NO;
-    }];
-}
-
-- (void)moreViewDidWWW:(ZDMoreView *)moreView{
-    NSURL *url = [NSURL URLWithString:@"http://www.mamabaodian.com"];
-    [[UIApplication sharedApplication] openURL:url];
-}
+//#pragma mark - 懒加载
+//- (ZDMoreView *)moreView{
+//    if (!_moreView) {
+//        _moreView = [ZDMoreView moreView];
+//        self.moreView.y = self.moreView.y - self.moreView.height;
+//        self.moreView.center = self.view.center;
+//        self.moreView.borderType = BorderTypeDashed;
+//        self.moreView.dashPattern = 2;
+//        self.moreView.borderWidth = 1;
+//        self.moreView.cornerRadius = 10;
+//        self.moreView.borderColor = [UIColor redColor];
+//        self.moreView.backgroundColor = ZDColor(255, 246, 229)
+//        self.moreView.delegate = self;
+//        [self.view.window  addSubview:_moreView];
+//    }
+//    return _moreView;
+//}
+//
+//- (void)moreViewDidOK:(ZDMoreView *)moreView{
+//    [UIView animateWithDuration:0.5 animations:^{
+//        [self.cover setAlpha:0];
+//        [self.moreView setAlpha:0];
+//    } completion:^(BOOL finished) {
+//        [self.moreView removeFromSuperview];
+//        [self.cover removeFromSuperview];
+//        self.xiala = NO;
+//    }];
+//}
+//
+//- (void)moreViewDidWWW:(ZDMoreView *)moreView{
+//    NSURL *url = [NSURL URLWithString:@"http://www.mamabaodian.com"];
+//    [[UIApplication sharedApplication] openURL:url];
+//}
 
 
 // 修改尝试周期按钮

@@ -28,7 +28,7 @@
 - (IBAction)zhishi:(UIButton *)sender {
     ZDKnowTableViewController *know = [[ZDKnowTableViewController alloc]init];
     [self.navigationController  pushViewController:know
-                                          animated:YES]; 
+                                          animated:YES];
     
 }
 

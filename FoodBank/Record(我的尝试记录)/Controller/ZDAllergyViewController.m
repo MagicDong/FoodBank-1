@@ -59,13 +59,10 @@ __weak IBOutlet LBorderView *_borderView1;
 - (IBAction)fuxie:(UIButton *)sender {
     // 取消之前选中按钮的选中状态
     self.selectedButton.selected = NO;
-    
     // 设置点中按钮的selected ＝ YES
     sender.selected = YES;
-    
     // 将当前按钮作为选中按钮
     self.selectedButton = sender;
-    
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc]init];
     paragraphStyle.lineHeightMultiple = 20.f;
     paragraphStyle.maximumLineHeight = 25.f;
@@ -76,11 +73,13 @@ __weak IBOutlet LBorderView *_borderView1;
     NSDictionary *attributes = @{ NSFontAttributeName:[UIFont systemFontOfSize:15], NSParagraphStyleAttributeName:paragraphStyle, NSForegroundColorAttributeName:[UIColor colorWithRed:202/255. green:57/255. blue:21/255. alpha:1]
                                   };
     self.jianjie.attributedText = [[NSAttributedString alloc]initWithString:@"    请您立即停止食用该食材，观察宝宝的排便情况，若腹泻减轻，待正常后，间隔一段时间，适当减量再次添加，如没有问题，可按程序更换新食材。如仍有腹泻，此食物短期内不宜食用。若腹泻严重请到医院就医。建议您就医前将孩子的大便标本置于干净容器内同带往医院，以方便及时得到诊断。" attributes:attributes];
+    
 }
 
 - (IBAction)fuzhang:(UIButton *)sender {
     // 取消之前选中按钮的选中状态
     self.selectedButton.selected = NO;
+    
     // 设置点中按钮的selected ＝ YES
     sender.selected = YES;
     
@@ -92,7 +91,6 @@ __weak IBOutlet LBorderView *_borderView1;
     paragraphStyle.minimumLineHeight = 15.f;
     paragraphStyle.firstLineHeadIndent = 20.f;
     paragraphStyle.alignment = NSTextAlignmentJustified;
-    
     NSDictionary *attributes = @{ NSFontAttributeName:[UIFont systemFontOfSize:15], NSParagraphStyleAttributeName:paragraphStyle, NSForegroundColorAttributeName:[UIColor colorWithRed:202/255. green:57/255. blue:21/255. alpha:1]
                                   };
     self.jianjie.attributedText = [[NSAttributedString alloc]initWithString:@"    请您立即停止食用该食材，观察宝宝的腹胀情况，若腹胀情况较轻，待宝宝腹胀完全消失后，间隔一段时间，适当减量再次添加，如仍有腹胀症状，此食物短期内不宜食用。若不再出现腹胀，可更换尝试添加其它食材。腹胀严重请及时就医确诊。" attributes:attributes];
@@ -115,6 +113,7 @@ __weak IBOutlet LBorderView *_borderView1;
     
     NSDictionary *attributes = @{ NSFontAttributeName:[UIFont systemFontOfSize:15], NSParagraphStyleAttributeName:paragraphStyle, NSForegroundColorAttributeName:[UIColor colorWithRed:202/255. green:57/255. blue:21/255. alpha:1]
                                   };
+    
     self.jianjie.attributedText = [[NSAttributedString alloc]initWithString:@"    请您立即停止食用该食材，观察宝宝的腹痛情况，若腹痛情况较轻，待宝宝腹痛完全消失后，间隔一段时间，适当减量再次添加，如仍有腹痛症状，此食物短期内不宜食用。若腹痛情况加重请及时就医确诊。" attributes:attributes];
 }
 

@@ -61,7 +61,7 @@ static NSString *categoryCellID = @"categoryCell";
     UINib *nib = [UINib nibWithNibName:@"CZProductCell" bundle:nil];
     [self.collection registerNib:nib forCellWithReuseIdentifier:ProductCellID];
     [self.collection registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:reusableViewID];
-    
+    self.integer = 0;
     self.queding.layer.cornerRadius = 8;
     self.queding.layer.masksToBounds = YES;
     
@@ -77,8 +77,8 @@ static NSString *categoryCellID = @"categoryCell";
 
     UINib *categoryNib = [UINib nibWithNibName:@"ZDCategoryCell" bundle:nil];
     [self.tableView registerNib:categoryNib forCellReuseIdentifier:categoryCellID];
-    
     self.tableView.bounces = YES;
+    
 }
 - (void)viewDidAppear:(BOOL)animated{
     NSIndexPath *selectedIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
@@ -100,7 +100,13 @@ static NSString *categoryCellID = @"categoryCell";
     }else{
         cell.title = category.foodGenre;
     }
-    
+    if (indexPath.row == self.integer) {
+        cell.zhuangtai = 1;
+        cell.selected = YES;
+    }else{
+        cell.zhuangtai = 0;
+        cell.selected = NO;
+    }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
     
@@ -138,8 +144,7 @@ static NSString *categoryCellID = @"categoryCell";
 - (NSArray *)dataList{
     if (!_dataList) {
         [ZDNetwork getSiKuInfoCallback:^(RspState *rsp, NSArray *array) {
-            self.dataList = array;
-//            ZDLog(@"23232%d",array.count);
+            _dataList = array;
             [self.collection reloadData];
             [self.tableView reloadData];
         }];
@@ -166,7 +171,6 @@ static NSString *categoryCellID = @"categoryCell";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    
     // forIndexPath －》强行要求程序员必须注册表格的可重用单元格
     CZProductCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:ProductCellID forIndexPath:indexPath];
     

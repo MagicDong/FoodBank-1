@@ -36,6 +36,7 @@
                                           }mutableCopy];
     self.textView.attributedText = [[NSAttributedString alloc]initWithString:self.dict[@"detail"] attributes:attributes];
     self.textView.backgroundColor = ZDColor(255, 246, 229);
+    
 }
 
 
@@ -47,6 +48,12 @@
     self.borderView.cornerRadius = 10;
     self.borderView.borderColor = [UIColor redColor];
     self.borderView.backgroundColor = ZDColor(255, 246, 229);
+//        轻微
+//        景天
+//    飞蓬     天妖皇
+//    夕瑶      太武
+//剑圣              徐长卿
+//重楼               一贫
 }
 
 - (IBAction)isOK:(UIButton *)sender {

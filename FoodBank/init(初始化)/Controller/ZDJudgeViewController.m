@@ -13,6 +13,7 @@
 @interface ZDJudgeViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *fuhe;
 @property (weak, nonatomic) IBOutlet UIButton *bufuhe;
+@property (weak, nonatomic) IBOutlet UITextView *textView;
 
 @end
 
@@ -32,9 +33,10 @@
     self.fuhe.layer.cornerRadius = 8;
     self.fuhe.layer.masksToBounds = YES;
     
-    
     self.bufuhe.layer.cornerRadius = 8;
     self.bufuhe.layer.masksToBounds = YES;
+    
+    
     
 }
 
