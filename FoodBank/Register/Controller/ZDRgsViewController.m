@@ -13,7 +13,7 @@
 #import "ZDInitViewController.h"
 #import "ZDBaby.h"
 #import "ZDBabyTool.h"
-#import <SMS_SDK/SMS_SDK.h>
+//#import <SMS_SDK/SMS_SDK.h>
 #import "ZDNetwork.h"
 
 @interface ZDRgsViewController ()
@@ -99,9 +99,9 @@ int timerCount = 99;
     if ((1)) {
         self.huoquyanzheng.enabled = NO;
         [MBProgressHUD showSuccess:@"获取验证码成功"];
-        [SMS_SDK getVerifyCodeByPhoneNumber:self.userName.text AndZone:@"86" result:^(enum SMS_GetVerifyCodeResponseState state) {
-            
-        }];
+//        [SMS_SDK getVerifyCodeByPhoneNumber:self.userName.text AndZone:@"86" result:^(enum SMS_GetVerifyCodeResponseState state) {
+//            
+//        }];
 
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.68 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [MBProgressHUD hideHUD];
