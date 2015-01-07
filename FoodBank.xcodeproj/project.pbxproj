@@ -129,7 +129,6 @@
 		185005A61A3E6F4900952CB2 /* ZDFoodPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185005A21A3E6F4900952CB2 /* ZDFoodPickerView.xib */; };
 		185005A81A3E709300952CB2 /* food.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 185005A71A3E709300952CB2 /* food.sqlite */; };
 		1853103C1A03296600497871 /* loginIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1853103B1A03296600497871 /* loginIcon.png */; };
-		1854691D1A5B725F00F5436F /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187277A51A2D98D200518C9E /* SMS_SDK.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		185900B31A31AEB50056C096 /* ZDYueZongJie.m in Sources */ = {isa = PBXBuildFile; fileRef = 185900B21A31AEB50056C096 /* ZDYueZongJie.m */; };
 		185900B61A31AEC30056C096 /* ZDZhouZongJie.m in Sources */ = {isa = PBXBuildFile; fileRef = 185900B51A31AEC30056C096 /* ZDZhouZongJie.m */; };
 		185BABE71A01EE1700248EBC /* login_bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 185BABE61A01EE1700248EBC /* login_bg.jpg */; };
@@ -184,6 +183,7 @@
 		18A0930B19D551A100FC74FF /* ZDNotifyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A0930A19D551A100FC74FF /* ZDNotifyViewController.xib */; };
 		18A0930E19D56C5500FC74FF /* ZDSupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A0930D19D56C5500FC74FF /* ZDSupViewController.m */; };
 		18A0931019D56C6400FC74FF /* ZDSupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A0930F19D56C6400FC74FF /* ZDSupViewController.xib */; };
+		18B2EE571A5CF5DC00097B55 /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18B2EE561A5CF5DC00097B55 /* SMS_SDK.framework */; };
 		18D2E62D19EE381B007A1965 /* ZDKnowInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D2E62C19EE381B007A1965 /* ZDKnowInfoViewController.m */; };
 		18D2E62F19EE382B007A1965 /* ZDKnowInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D2E62E19EE382B007A1965 /* ZDKnowInfoViewController.xib */; };
 		18D6D2AB19EF7E8A0095650B /* ZDJuJueViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D6D2AA19EF7E8A0095650B /* ZDJuJueViewController.xib */; };
@@ -525,7 +525,6 @@
 		186F10C61A4AA8DB006D791A /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		186F10C71A4AA8DB006D791A /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		186F60AB19F5027900697FFF /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
-		187277A51A2D98D200518C9E /* SMS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SMS_SDK.framework; sourceTree = "<group>"; };
 		187277A71A2D9C7600518C9E /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		187277A91A2D9C7D00518C9E /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		187277AB1A2D9C8600518C9E /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
@@ -591,6 +590,7 @@
 		18A0930C19D56C5500FC74FF /* ZDSupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDSupViewController.h; sourceTree = "<group>"; };
 		18A0930D19D56C5500FC74FF /* ZDSupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDSupViewController.m; sourceTree = "<group>"; };
 		18A0930F19D56C6400FC74FF /* ZDSupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDSupViewController.xib; sourceTree = "<group>"; };
+		18B2EE561A5CF5DC00097B55 /* SMS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SMS_SDK.framework; sourceTree = "<group>"; };
 		18D2E62B19EE381B007A1965 /* ZDKnowInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDKnowInfoViewController.h; sourceTree = "<group>"; };
 		18D2E62C19EE381B007A1965 /* ZDKnowInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDKnowInfoViewController.m; sourceTree = "<group>"; };
 		18D2E62E19EE382B007A1965 /* ZDKnowInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDKnowInfoViewController.xib; sourceTree = "<group>"; };
@@ -799,7 +799,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1854691D1A5B725F00F5436F /* SMS_SDK.framework in Frameworks */,
+				18B2EE571A5CF5DC00097B55 /* SMS_SDK.framework in Frameworks */,
 				187277B21A2DA09700518C9E /* Foundation.framework in Frameworks */,
 				187277B01A2DA08A00518C9E /* UIKit.framework in Frameworks */,
 				187277AE1A2D9C9600518C9E /* libicucore.dylib in Frameworks */,
@@ -1192,13 +1192,13 @@
 		1888B3B519CADBDC0030DB88 = {
 			isa = PBXGroup;
 			children = (
+				18B2EE561A5CF5DC00097B55 /* SMS_SDK.framework */,
 				187277B11A2DA09700518C9E /* Foundation.framework */,
 				187277AF1A2DA08A00518C9E /* UIKit.framework */,
 				187277AD1A2D9C9600518C9E /* libicucore.dylib */,
 				187277AB1A2D9C8600518C9E /* AddressBookUI.framework */,
 				187277A91A2D9C7D00518C9E /* AddressBook.framework */,
 				187277A71A2D9C7600518C9E /* MessageUI.framework */,
-				187277A51A2D98D200518C9E /* SMS_SDK.framework */,
 				18247A5919D2BE4D001B04EA /* libz.dylib */,
 				18247A5719D2BE45001B04EA /* libstdc++.dylib */,
 				18247A5519D2BE3C001B04EA /* CoreTelephony.framework */,

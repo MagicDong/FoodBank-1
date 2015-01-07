@@ -20,6 +20,8 @@
 #import "MBProgressHUD+ZD.h"
 #import "UMSocial.h"
 #import "ZDSpecialViewController.h"
+#import <SMS_SDK/SMS_SDK.h>
+
 @interface AppDelegate ()
 @property (nonatomic , strong) UIImageView *imageView;
 @end
