@@ -24,6 +24,8 @@
 #import "UIImage+ZD.h"
 #import "ZDMoreView.h"
 #import "ZDSpecialViewController.h"
+#import <SMS_SDK/SMS_SDK.h>
+
 
 static NSString *TitleCellID = @"TitleCell";
 static NSString *NormalCellID = @"NormalCell";
@@ -101,6 +103,7 @@ static NSString *PhotosID = @"photosCell";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.navigationController.navigationBar.tintColor = [UIColor clearColor];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage resizableImageNamed:@"viewBG"]];
     self.title = @"宝贝资讯";
     [self setupRefresh];

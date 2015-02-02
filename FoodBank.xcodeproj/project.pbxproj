@@ -129,6 +129,10 @@
 		185005A51A3E6F4900952CB2 /* ZDFoodPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 185005A11A3E6F4900952CB2 /* ZDFoodPickerView.m */; };
 		185005A61A3E6F4900952CB2 /* ZDFoodPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185005A21A3E6F4900952CB2 /* ZDFoodPickerView.xib */; };
 		185005A81A3E709300952CB2 /* food.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 185005A71A3E709300952CB2 /* food.sqlite */; };
+		1850C9DD1A788E3C004FC8A1 /* ZDFind1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1850C9DB1A788E3C004FC8A1 /* ZDFind1ViewController.m */; };
+		1850C9DE1A788E3C004FC8A1 /* ZDFind1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1850C9DC1A788E3C004FC8A1 /* ZDFind1ViewController.xib */; };
+		1850C9E21A78950D004FC8A1 /* ZDFind2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1850C9E01A78950D004FC8A1 /* ZDFind2ViewController.m */; };
+		1850C9E31A78950D004FC8A1 /* ZDFind2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1850C9E11A78950D004FC8A1 /* ZDFind2ViewController.xib */; };
 		1853103C1A03296600497871 /* loginIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1853103B1A03296600497871 /* loginIcon.png */; };
 		185900B31A31AEB50056C096 /* ZDYueZongJie.m in Sources */ = {isa = PBXBuildFile; fileRef = 185900B21A31AEB50056C096 /* ZDYueZongJie.m */; };
 		185900B61A31AEC30056C096 /* ZDZhouZongJie.m in Sources */ = {isa = PBXBuildFile; fileRef = 185900B51A31AEC30056C096 /* ZDZhouZongJie.m */; };
@@ -501,6 +505,12 @@
 		185005A11A3E6F4900952CB2 /* ZDFoodPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDFoodPickerView.m; sourceTree = "<group>"; };
 		185005A21A3E6F4900952CB2 /* ZDFoodPickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDFoodPickerView.xib; sourceTree = "<group>"; };
 		185005A71A3E709300952CB2 /* food.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = food.sqlite; sourceTree = "<group>"; };
+		1850C9DA1A788E3C004FC8A1 /* ZDFind1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDFind1ViewController.h; sourceTree = "<group>"; };
+		1850C9DB1A788E3C004FC8A1 /* ZDFind1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDFind1ViewController.m; sourceTree = "<group>"; };
+		1850C9DC1A788E3C004FC8A1 /* ZDFind1ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDFind1ViewController.xib; sourceTree = "<group>"; };
+		1850C9DF1A78950D004FC8A1 /* ZDFind2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDFind2ViewController.h; sourceTree = "<group>"; };
+		1850C9E01A78950D004FC8A1 /* ZDFind2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDFind2ViewController.m; sourceTree = "<group>"; };
+		1850C9E11A78950D004FC8A1 /* ZDFind2ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDFind2ViewController.xib; sourceTree = "<group>"; };
 		1853103B1A03296600497871 /* loginIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginIcon.png; sourceTree = "<group>"; };
 		185900B11A31AEB50056C096 /* ZDYueZongJie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDYueZongJie.h; sourceTree = "<group>"; };
 		185900B21A31AEB50056C096 /* ZDYueZongJie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDYueZongJie.m; sourceTree = "<group>"; };
@@ -1231,7 +1241,7 @@
 				18F37E7A19D7F5E600325A25 /* News(宝贝咨询) */,
 				181BCF9B19D3DC4A00EDA508 /* Init(初始化) */,
 				18FA20AD19CFB90300430E37 /* Newfeature(新特性) */,
-				1888B3FA19CADE1D0030DB88 /* Register(注册) */,
+				1888B3FA19CADE1D0030DB88 /* Login(登录注册) */,
 				18252A4A19E8C772008B4C71 /* Record(我的尝试记录) */,
 				1888B3EE19CADDF50030DB88 /* MyBaby(我的宝贝) */,
 				1888B3EA19CADDE40030DB88 /* Try(新食材尝试) */,
@@ -1458,14 +1468,14 @@
 			path = Other;
 			sourceTree = "<group>";
 		};
-		1888B3FA19CADE1D0030DB88 /* Register(注册) */ = {
+		1888B3FA19CADE1D0030DB88 /* Login(登录注册) */ = {
 			isa = PBXGroup;
 			children = (
 				1888B3FB19CADE1E0030DB88 /* Controller */,
 				1888B3FC19CADE1E0030DB88 /* Model */,
 				1888B3FD19CADE1E0030DB88 /* View */,
 			);
-			name = "Register(注册)";
+			name = "Login(登录注册)";
 			path = Register;
 			sourceTree = "<group>";
 		};
@@ -1478,6 +1488,12 @@
 				1823B10619D16E490081E5A2 /* ZDRgsViewController.h */,
 				1823B10719D16E490081E5A2 /* ZDRgsViewController.m */,
 				1823B10B19D173410081E5A2 /* ZDRgsViewController.xib */,
+				1850C9DA1A788E3C004FC8A1 /* ZDFind1ViewController.h */,
+				1850C9DB1A788E3C004FC8A1 /* ZDFind1ViewController.m */,
+				1850C9DC1A788E3C004FC8A1 /* ZDFind1ViewController.xib */,
+				1850C9DF1A78950D004FC8A1 /* ZDFind2ViewController.h */,
+				1850C9E01A78950D004FC8A1 /* ZDFind2ViewController.m */,
+				1850C9E11A78950D004FC8A1 /* ZDFind2ViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1916,7 +1932,9 @@
 				18204AAC19E7820100EE57B9 /* ZDLoginSignCell.xib in Resources */,
 				18204AAA19E7820100EE57B9 /* ZDLoginSexCell.xib in Resources */,
 				18F37E7619D7E13C00325A25 /* ZDSiKuCell.xib in Resources */,
+				1850C9E31A78950D004FC8A1 /* ZDFind2ViewController.xib in Resources */,
 				184B3D8A1A50F5C5004FC987 /* UMShareEditViewControlleriPad.xib in Resources */,
+				1850C9DE1A788E3C004FC8A1 /* ZDFind1ViewController.xib in Resources */,
 				1894F7D819FF3D430009662E /* products.plist in Resources */,
 				185005A81A3E709300952CB2 /* food.sqlite in Resources */,
 				181BCFA819D4240F00EDA508 /* ZDJudgeViewController.xib in Resources */,
@@ -2086,6 +2104,7 @@
 				18FA214E19CFF40D00430E37 /* UIButton+WebCache.m in Sources */,
 				185F98D11A35373D00EFF646 /* ZDChooseFood.m in Sources */,
 				18FA215119CFF40D00430E37 /* UIImage+WebP.m in Sources */,
+				1850C9DD1A788E3C004FC8A1 /* ZDFind1ViewController.m in Sources */,
 				18733DB419D8FB2200966A55 /* ZDAboutViewController.m in Sources */,
 				18F37E7419D7E11A00325A25 /* ZDSiKuCell.m in Sources */,
 				18A092FF19D524CB00FC74FF /* ZDNotifyViewController.m in Sources */,
@@ -2109,6 +2128,7 @@
 				18278C1D19E686DA00574DD5 /* FMDatabaseQueue.m in Sources */,
 				18FA20DF19CFF3D600430E37 /* AFHTTPRequestOperationManager.m in Sources */,
 				18FA215419CFF40D00430E37 /* UIView+WebCacheOperation.m in Sources */,
+				1850C9E21A78950D004FC8A1 /* ZDFind2ViewController.m in Sources */,
 				183E72C219DA60A7009CD24F /* ZDZhouViewController.m in Sources */,
 				18F37E9019D7F62300325A25 /* CZNormalCell.m in Sources */,
 				18F891F219CC189E0046C022 /* ZDNavViewController.m in Sources */,
@@ -2292,7 +2312,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				ASSETCATALOG_WARNINGS = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Paul Longstaff (3RNDJUHFNY)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -2309,7 +2329,9 @@
 				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/FoodBank/Main/Lib/UMSocial_Sdk_4.2.1";
 				OTHER_LDFLAGS = "-fobjc-arc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "17E35F3F-E3E3-4185-A981-319787B84333";
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Debug;
@@ -2321,7 +2343,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				ASSETCATALOG_WARNINGS = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Paul Longstaff (3RNDJUHFNY)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -2338,7 +2360,9 @@
 				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/FoodBank/Main/Lib/UMSocial_Sdk_4.2.1";
 				OTHER_LDFLAGS = "-fobjc-arc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "17E35F3F-E3E3-4185-A981-319787B84333";
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Release;

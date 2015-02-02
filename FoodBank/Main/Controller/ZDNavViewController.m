@@ -184,7 +184,7 @@
         // 2.设置导航条标题的属性
         NSMutableDictionary *md = [NSMutableDictionary dictionary];
         // 文字颜色
-        md[UITextAttributeTextColor] = [UIColor whiteColor];
+        md[UITextAttributeTextColor] = [UIColor colorWithRed:53 green:148 blue:57 alpha:1];
         // 文字偏移位
         md[UITextAttributeTextShadowOffset] = [NSValue valueWithUIOffset:UIOffsetMake(0, 0)];
         // 文字字体大小
@@ -198,7 +198,7 @@
     // 2.设置导航条标题的属性
     NSMutableDictionary *md = [NSMutableDictionary dictionary];
     // 文字颜色
-    md[UITextAttributeTextColor] = [UIColor whiteColor];
+    md[UITextAttributeTextColor] = [UIColor colorWithRed:53 green:148 blue:57 alpha:1];
     // 文字偏移位
     md[UITextAttributeTextShadowOffset] = [NSValue valueWithUIOffset:UIOffsetMake(0, 0)];
     // 文字字体大小

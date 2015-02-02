@@ -2,7 +2,8 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x"
+      "scale" : "1x",
+      "filename" : "ipad_setting_arrow.png"
     },
     {
       "idiom" : "universal",
@@ -11,7 +12,8 @@
     },
     {
       "idiom" : "universal",
-      "scale" : "3x"
+      "scale" : "3x",
+      "filename" : "ipad_setting_arrow@3x.png"
     }
   ],
   "info" : {

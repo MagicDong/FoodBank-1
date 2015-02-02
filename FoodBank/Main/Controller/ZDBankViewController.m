@@ -65,7 +65,7 @@
     _circle_view.circle_view_delegate    = self;
     _circle_view.show_circle_style       = SChShowCircleWinding;
     [_circle_view reloadData];
-    
+
     if(iOS7)
     {
         self.edgesForExtendedLayout = NO;

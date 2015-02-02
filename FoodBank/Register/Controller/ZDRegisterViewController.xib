@@ -21,43 +21,39 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VqW-4M-J51" userLabel="普通登录View">
-                    <rect key="frame" x="24" y="192" width="272" height="94"/>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VqW-4M-J51" userLabel="账号View">
+                    <rect key="frame" x="20" y="189" width="280" height="46"/>
                     <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="denglu-shurukuang" translatesAutoresizingMaskIntoConstraints="NO" id="kLZ-ek-oFe">
+                            <rect key="frame" x="0.0" y="0.0" width="280" height="46"/>
+                            <rect key="contentStretch" x="0.10000000000000001" y="0.10000000000000001" width="0.5" height="1"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="denglu-shouji" translatesAutoresizingMaskIntoConstraints="NO" id="9j6-aX-L2m">
+                            <rect key="frame" x="5" y="3" width="30" height="36"/>
+                        </imageView>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入手机号码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QKa-l0-TPa" userLabel="账号" customClass="ZDSearchBar">
-                            <rect key="frame" x="46" y="8" width="218" height="30"/>
+                            <rect key="frame" x="42" y="6" width="218" height="30"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" spellCheckingType="no" keyboardType="numberPad" returnKeyType="next"/>
                         </textField>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Ie-dM-IpY" userLabel="密码" customClass="ZDSearchBar">
-                            <rect key="frame" x="46" y="55" width="218" height="30"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" returnKeyType="join" secureTextEntry="YES"/>
-                        </textField>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user_login_username" translatesAutoresizingMaskIntoConstraints="NO" id="9j6-aX-L2m">
-                            <rect key="frame" x="8" y="8" width="30" height="30"/>
-                        </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user_login_password" translatesAutoresizingMaskIntoConstraints="NO" id="s9o-hq-qu9">
-                            <rect key="frame" x="8" y="55" width="30" height="30"/>
-                        </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user_login_back" translatesAutoresizingMaskIntoConstraints="NO" id="F9g-gA-GE3">
-                            <rect key="frame" x="0.0" y="0.0" width="272" height="94"/>
-                        </imageView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5JN-xm-EMk" userLabel="登录">
-                    <rect key="frame" x="24" y="356" width="122" height="40"/>
-                    <state key="normal" backgroundImage="ipad_user_login">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5JN-xm-EMk" userLabel="登录">
+                    <rect key="frame" x="24" y="340" width="272" height="40"/>
+                    <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                    <state key="normal" title="登录" backgroundImage="denglu-denglu">
+                        <color key="titleShadowColor" red="0.49803921568627452" green="0.49803921568627452" blue="0.49803921568627452" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
                         <action selector="login:" destination="-1" eventType="touchUpInside" id="ZPe-yz-oc0"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BGv-5p-TiS" userLabel="注册">
-                    <rect key="frame" x="173" y="356" width="123" height="40"/>
-                    <state key="normal" backgroundImage="ipad_user_signup">
+                    <rect key="frame" x="24" y="388" width="272" height="40"/>
+                    <rect key="contentStretch" x="0.5" y="0.5" width="0.5" height="0.5"/>
+                    <state key="normal" title="注册" backgroundImage="denglu-zhuce">
+                        <color key="titleColor" red="0.21176470589999999" green="0.58823529409999997" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -65,42 +61,79 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cua-Bf-tum">
-                    <rect key="frame" x="16" y="294" width="108" height="44"/>
+                    <rect key="frame" x="20" y="288" width="95" height="44"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <state key="normal" title="自动登录" image="user_checkbox_seleted">
-                        <color key="titleColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <inset key="titleEdgeInsets" minX="7" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="自动登录" image="denglu-xuanzekuang">
+                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <state key="selected" image="radiobox-green-checked"/>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ipad_user_login_qq" translatesAutoresizingMaskIntoConstraints="NO" id="gnB-ja-zkU">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="denglu-logo" translatesAutoresizingMaskIntoConstraints="NO" id="gnB-ja-zkU">
                     <rect key="frame" x="110" y="56" width="100" height="100"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qy7-z4-exs">
-                    <rect key="frame" x="208" y="298" width="78" height="40"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qy7-z4-exs">
+                    <rect key="frame" x="233" y="440" width="87" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="87" id="5sj-w1-E22"/>
+                        <constraint firstAttribute="height" constant="40" id="nAq-GA-s4Q"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <state key="normal" title="找回密码">
+                    <state key="normal" title="找回密码?">
                         <color key="titleColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected" image="radiobox-green-checked"/>
+                </button>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b6K-gv-BQl" userLabel="账号View">
+                    <rect key="frame" x="20" y="242" width="280" height="45"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="denglu-shurukuang" translatesAutoresizingMaskIntoConstraints="NO" id="7LV-Zu-kkX">
+                            <rect key="frame" x="0.0" y="0.0" width="280" height="45"/>
+                            <rect key="contentStretch" x="0.10000000000000001" y="0.10000000000000001" width="0.5" height="1"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="denglu-mimatupian" translatesAutoresizingMaskIntoConstraints="NO" id="s9o-hq-qu9">
+                            <rect key="frame" x="5" y="3" width="30" height="36"/>
+                        </imageView>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Ie-dM-IpY" userLabel="密码" customClass="ZDSearchBar">
+                            <rect key="frame" x="42" y="6" width="218" height="30"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="join" secureTextEntry="YES"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GJ9-8E-64p">
+                    <rect key="frame" x="203" y="288" width="97" height="44"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <inset key="titleEdgeInsets" minX="7" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="自动登录" image="denglu-xuanzekuang">
+                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <state key="selected" image="radiobox-green-checked"/>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="qy7-z4-exs" secondAttribute="trailing" id="SUX-gs-VpM"/>
+                <constraint firstAttribute="bottom" secondItem="qy7-z4-exs" secondAttribute="bottom" id="etm-b2-KvF"/>
+            </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="420" y="330"/>
         </view>
     </objects>
     <resources>
-        <image name="ipad_user_login" width="222" height="66"/>
-        <image name="ipad_user_login_qq" width="92" height="92"/>
-        <image name="ipad_user_signup" width="222" height="66"/>
+        <image name="denglu-denglu" width="50" height="48"/>
+        <image name="denglu-logo" width="122" height="122"/>
+        <image name="denglu-mimatupian" width="32" height="42"/>
+        <image name="denglu-shouji" width="32" height="42"/>
+        <image name="denglu-shurukuang" width="48" height="48"/>
+        <image name="denglu-xuanzekuang" width="16" height="17"/>
+        <image name="denglu-zhuce" width="50" height="48"/>
         <image name="radiobox-green-checked" width="20" height="20"/>
-        <image name="user_checkbox_seleted" width="44" height="44"/>
-        <image name="user_login_back" width="284" height="89"/>
-        <image name="user_login_password" width="30" height="30"/>
-        <image name="user_login_username" width="30" height="30"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

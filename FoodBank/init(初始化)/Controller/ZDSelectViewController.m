@@ -56,6 +56,7 @@ static NSString *categoryCellID = @"categoryCell";
     UINib *nib = [UINib nibWithNibName:@"CZProductCell" bundle:nil];
     [self.collection registerNib:nib forCellWithReuseIdentifier:ProductCellID];
     [self.collection registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:reusableViewID];
+    
     self.integer = 0;
     self.queding.layer.cornerRadius = 8;
     self.queding.layer.masksToBounds = YES;
@@ -66,17 +67,18 @@ static NSString *categoryCellID = @"categoryCell";
     paragraphStyle.minimumLineHeight = 20.f;
     paragraphStyle.firstLineHeadIndent = 25.f;
     
-    
     paragraphStyle.alignment = NSTextAlignmentJustified;
     NSMutableDictionary *attributes = [@{ NSFontAttributeName:[UIFont systemFontOfSize:15], NSParagraphStyleAttributeName:paragraphStyle, NSForegroundColorAttributeName:[UIColor colorWithRed:153/255. green:102/255. blue:51/255. alpha:1]
                                           }mutableCopy];
     self.textView.attributedText = [[NSAttributedString alloc]initWithString:@"请您将宝宝父母已过敏（发生过敏、拒绝等现象）的食材勾选出来。" attributes:attributes];
+    
     
     UINib *categoryNib = [UINib nibWithNibName:@"ZDCategoryCell" bundle:nil];
     [self.tableView registerNib:categoryNib forCellReuseIdentifier:categoryCellID];
     
     NSIndexPath *selectedIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     [self.tableView selectRowAtIndexPath:selectedIndexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated{

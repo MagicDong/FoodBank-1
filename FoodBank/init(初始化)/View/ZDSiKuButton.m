@@ -35,6 +35,7 @@
     // 整个按钮的宽度 - 图片的宽度
     CGFloat titleW = self.width *0.6;
     CGFloat titleH = self.height;
+    
     return CGRectMake(titleX, titleY, titleW, titleH);
 }
 

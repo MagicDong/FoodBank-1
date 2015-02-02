@@ -32,7 +32,7 @@ static NSString *categoryCellID = @"categoryCell";
  */
 @property (nonatomic, weak) UIButton  *selectedBtn;
 @property (nonatomic, strong) NSArray *dataList;
-@property (weak, nonatomic) IBOutlet UIButton *queding;
+@property (weak, nonatomic) IBOutlet UIButton *quanxuan;
 @property (nonatomic, strong) NSMutableArray *selectArray;
 @property (nonatomic, strong) NSIndexPath *path;
 @property (nonatomic, assign) NSInteger integer;
@@ -60,10 +60,10 @@ static NSString *categoryCellID = @"categoryCell";
     // 为CollectionView注册可重用单元格
     UINib *nib = [UINib nibWithNibName:@"CZProductCell" bundle:nil];
     [self.collection registerNib:nib forCellWithReuseIdentifier:ProductCellID];
-    [self.collection registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:reusableViewID];
+//    [self.collection registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:reusableViewID];
     self.integer = 0;
-    self.queding.layer.cornerRadius = 8;
-    self.queding.layer.masksToBounds = YES;
+    self.quanxuan.layer.cornerRadius = 8;
+    self.quanxuan.layer.masksToBounds = YES;
     
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc]init];
     paragraphStyle.lineHeightMultiple = 10.f;
@@ -79,12 +79,59 @@ static NSString *categoryCellID = @"categoryCell";
     [self.tableView registerNib:categoryNib forCellReuseIdentifier:categoryCellID];
     self.tableView.bounces = YES;
     
+    // 3.添加更多按钮
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"确定" style:UIBarButtonItemStylePlain target:self action:@selector(queding)];
+
 }
+
+- (void)queding{
+    // 跳转到TabBarController
+    for (UIViewController *controller in self.childViewControllers) {
+        // 将子视图控制器的视图从父视图中删除
+        [controller.view removeFromSuperview];
+        // 将视图控制器从父视图控制器中删除
+        [controller removeFromParentViewController];
+    }
+    [self.view removeFromSuperview];
+    [MBProgressHUD showMessage:@"初始化中"];
+    [MBProgressHUD hideHUD];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.35 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [ZDNetwork postBabySiKuInfoWithMids:self.selectArray CallBack:^(RspState *rsp) {
+            if (rsp.rspCode == 0) {
+                [MBProgressHUD hideHUD];
+            }else{
+                [MBProgressHUD hideHUD];
+            }
+        }];
+        
+        ZDTabBarController *tabBarVc = [[ZDTabBarController alloc] init];
+        UIApplication *app = [UIApplication sharedApplication];
+        UIWindow *window = app.keyWindow;
+        app.statusBarHidden = NO;
+        window.rootViewController = tabBarVc;
+    });
+    
+}
+
+- (IBAction)quanxuan:(UIButton *)sender {
+//    [self.collection cellForItemAtIndexPath:];
+    for (int row=0; row<[self.dataList[self.integer] count]; row++) {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:0];
+        [self.collection selectItemAtIndexPath:indexPath animated:NO scrollPosition:UICollectionViewScrollPositionNone];
+    }
+}
+
+////只返回可见的cell
+//- (UITableViewCell *)cellForRowAtIndexPath:(NSIndexPath *)indexPath
+////只返回当前不可见的cell
+//- (UITableViewCell *)dequeueReusableCellWithIdentifier:(NSString *)identifier
+
 - (void)viewDidAppear:(BOOL)animated{
     NSIndexPath *selectedIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     [self.tableView selectRowAtIndexPath:selectedIndexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
-
 }
+
 
 #pragma mark - Table view data source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -109,11 +156,11 @@ static NSString *categoryCellID = @"categoryCell";
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
-    
 //    cell.contentView.backgroundColor =[UIColor colorWithRed:240 green:241 blue:244 alpha:1];
 //    cell.selectedBackgroundView.backgroundColor=[UIColor whiteColor];
 //    cell.selectionStyle = UITableViewCellSelectionStyleGray;
 //    tableView.backgroundColor = [UIColor colorWithRed:240 green:241 blue:244 alpha:1];
+    
     return cell;
 }
 
@@ -167,6 +214,7 @@ static NSString *categoryCellID = @"categoryCell";
         ZDFoodCategory *foodCategory = self.dataList[0];
         return foodCategory.foodGenreList.count;
     }
+    
 } 
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -182,23 +230,23 @@ static NSString *categoryCellID = @"categoryCell";
     return cell;
 }
 
-- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
-    
-    UICollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:
-                                            UICollectionElementKindSectionHeader withReuseIdentifier:@"SectionHeader" forIndexPath:indexPath];
-    UILabel *label = (UILabel *)[headerView viewWithTag:1];
-    if (!label) {
-        label = [[UILabel alloc] initWithFrame:CGRectInset(headerView.bounds, 5, 5)];
-        label.tag = 1;
-        label.font = [UIFont boldSystemFontOfSize:14];
-        label.textColor = [UIColor redColor];
-        [headerView addSubview:label];
-    }
-    ZDFoodCategory *foodCategory = self.dataList[self.integer];
-    label.text = [NSString stringWithFormat:@" %@",foodCategory.foodGenre];
-    
-    return headerView;
-}
+//- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+//    
+//    UICollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:
+//                                            UICollectionElementKindSectionHeader withReuseIdentifier:@"SectionHeader" forIndexPath:indexPath];
+//    UILabel *label = (UILabel *)[headerView viewWithTag:1];
+//    if (!label) {
+//        label = [[UILabel alloc] initWithFrame:CGRectInset(headerView.bounds, 5, 5)];
+//        label.tag = 1;
+//        label.font = [UIFont boldSystemFontOfSize:14];
+//        label.textColor = [UIColor redColor];
+//        [headerView addSubview:label];
+//    }
+//    ZDFoodCategory *foodCategory = self.dataList[self.integer];
+//    label.text = [NSString stringWithFormat:@" %@",foodCategory.foodGenre];
+//    
+//    return headerView;
+//}
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -229,10 +277,12 @@ static NSString *categoryCellID = @"categoryCell";
         NSArray * reslutFilteredArray = [self.selectArray filteredArrayUsingPredicate:filterPredicate];
         self.selectArray = [reslutFilteredArray mutableCopy];
     }
+    
+    
 //    NSLog(@",,,,,%@",self.selectArray);
 //    NSLog(@"======%@",self.selectArray);
+    
 }
-
 
 - (NSMutableArray *)selectArray{
     if (!_selectArray) {
@@ -279,34 +329,9 @@ static NSString *categoryCellID = @"categoryCell";
     self.selectedBtn = sender;
 }
 
-- (IBAction)queding:(UIButton *)sender {
-    // 跳转到TabBarController
-    for (UIViewController *controller in self.childViewControllers) {
-        // 将子视图控制器的视图从父视图中删除
-        [controller.view removeFromSuperview];
-        // 将视图控制器从父视图控制器中删除
-        [controller removeFromParentViewController];
-    }
-    [self.view removeFromSuperview];
-    [MBProgressHUD showMessage:@"初始化中"];
-    [MBProgressHUD hideHUD];
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.35 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [ZDNetwork postBabySiKuInfoWithMids:self.selectArray CallBack:^(RspState *rsp) {
-            if (rsp.rspCode == 0) {
-                [MBProgressHUD hideHUD];
-            }else{
-                [MBProgressHUD hideHUD];
-            }
-        }];
-        
-        ZDTabBarController *tabBarVc = [[ZDTabBarController alloc] init];
-        UIApplication *app = [UIApplication sharedApplication];
-        UIWindow *window = app.keyWindow;
-        app.statusBarHidden = NO;
-        window.rootViewController = tabBarVc;
-    });
-}
+//- (IBAction)queding:(UIButton *)sender {
+//
+//}
 
 - (void)dealloc{
 //    ZDLog(@"四库界面销毁");

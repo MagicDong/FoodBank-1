@@ -23,6 +23,7 @@
 #import "ZDNetwork.h"
 #import "ZDBaby.h"
 #import "ZDBabyTool.h"
+#import <SMS_SDK/SMS_SDK.h>
 
 @interface ZDRegisterViewController () <UIWebViewDelegate,UITextFieldDelegate>
 
@@ -40,14 +41,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"登录";
+//    self.title = @"登录";
     if(iOS7)
     {
         self.edgesForExtendedLayout = NO;
         self.navigationController.navigationBar.opaque = YES;
     }
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"login_bg.jpg"]];
+//    self.login.backgroundColor = [UIColor colorWithRed:54 green:150 blue:60 alpha:1.0f];
+    self.rgs.backgroundColor = [UIColor colorWithPatternImage:[UIImage resizableImageNamed:@"denglu-zhuce"]];
+    self.login.backgroundColor = [UIColor colorWithPatternImage:[UIImage resizableImageNamed:@"denglu-denglu"]];
+//    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"login_bg.jpg"]];
     [UIApplication sharedApplication].statusBarHidden = YES;
+    
+    //    APPKEY:  47f01de13458        AppSecret：   ec44a5b1ff4cb948cb16c1a0b1655b23
+    NSString *appKey = @"47f01de13458";
+    NSString *appSecret = @"ec44a5b1ff4cb948cb16c1a0b1655b23";
+    [SMS_SDK  registerApp:appKey withSecret:appSecret];
 }
 
 /** 登录按钮 */
@@ -76,7 +85,6 @@
     
     [ZDNetwork LoginWithPhone:self.user.text Password:self.pwd.text Callback:^(RspState *rsp,NSString *jsessionid) {
         if (rsp.rspCode == 0) {
-            
             ZDBabyTool *babyTool = [ZDBabyTool sharedZDBabyTool];
             ZDBaby *baby = [[ZDBaby alloc]init];
             baby.userName = self.user.text;
@@ -95,7 +103,6 @@
             [alert show];
         }
     }];
-    
 //    // 发送网络请求判断是否需要初始化
 //    if((0)){
 //        ZDInitViewController *chushihua = [[ZDInitViewController alloc] init];

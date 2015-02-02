@@ -56,7 +56,6 @@
 {
     // 建立一个可变字符串
     NSMutableString *html = [NSMutableString string];
-
     
     // 0. CSS
     [html appendString:@"<style type='text/css'>h1{font-size:18px;} img{width:300px;}</style>"];

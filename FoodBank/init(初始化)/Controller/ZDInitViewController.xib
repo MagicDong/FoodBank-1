@@ -6,7 +6,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZDInitViewController">
             <connections>
-                <outlet property="userView" destination="3E6-Nw-qQK" id="HFl-10-Kr0"/>
+                <outlet property="birthdayView" destination="cT7-aJ-tgg" id="Mgy-6H-mhq"/>
+                <outlet property="nameView" destination="3E6-Nw-qQK" id="mqi-09-Z6e"/>
+                <outlet property="nation" destination="PEw-0P-igN" id="hMc-ae-3mC"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -15,39 +17,41 @@
             <rect key="frame" x="0.0" y="44" width="320" height="436"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3E6-Nw-qQK">
-                    <rect key="frame" x="20" y="37" width="280" height="160"/>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PEw-0P-igN">
+                    <rect key="frame" x="20" y="141" width="280" height="44"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user_login_username" translatesAutoresizingMaskIntoConstraints="NO" id="Tzx-yF-WO7">
-                            <rect key="frame" x="8" y="14" width="30" height="30"/>
-                        </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user_login_username" translatesAutoresizingMaskIntoConstraints="NO" id="NOt-eq-XL8">
-                            <rect key="frame" x="8" y="65" width="30" height="30"/>
-                        </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user_login_username" translatesAutoresizingMaskIntoConstraints="NO" id="x3M-rR-hlq">
-                            <rect key="frame" x="8" y="117" width="30" height="30"/>
-                        </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_register_back" translatesAutoresizingMaskIntoConstraints="NO" id="MPG-Ua-1fr">
-                            <rect key="frame" x="0.0" y="0.0" width="280" height="160"/>
+                            <rect key="frame" x="5" y="7" width="30" height="30"/>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="trailing" secondItem="MPG-Ua-1fr" secondAttribute="trailing" id="0pZ-Mt-B28"/>
-                        <constraint firstItem="MPG-Ua-1fr" firstAttribute="top" secondItem="3E6-Nw-qQK" secondAttribute="top" id="2Ir-bh-ruM"/>
-                        <constraint firstAttribute="bottom" secondItem="MPG-Ua-1fr" secondAttribute="bottom" id="6A7-ig-h1y"/>
-                        <constraint firstItem="MPG-Ua-1fr" firstAttribute="leading" secondItem="3E6-Nw-qQK" secondAttribute="leading" id="DyM-HQ-dCY"/>
-                        <constraint firstAttribute="width" constant="280" id="ZJ1-Nd-cGH"/>
-                        <constraint firstAttribute="height" constant="160" id="iTZ-Gu-6ku"/>
-                    </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Fu-V5-pIp" userLabel="登录">
-                    <rect key="frame" x="99" y="228" width="122" height="40"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="40" id="hF6-EM-SU7"/>
-                        <constraint firstAttribute="width" constant="122" id="nym-9b-UmZ"/>
-                    </constraints>
-                    <state key="normal" backgroundImage="ipad_story_editOK">
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cT7-aJ-tgg">
+                    <rect key="frame" x="20" y="90" width="280" height="43"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user_login_username" translatesAutoresizingMaskIntoConstraints="NO" id="NOt-eq-XL8">
+                            <rect key="frame" x="5" y="5" width="30" height="30"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3E6-Nw-qQK">
+                    <rect key="frame" x="20" y="38" width="280" height="44"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user_login_username" translatesAutoresizingMaskIntoConstraints="NO" id="Tzx-yF-WO7">
+                            <rect key="frame" x="5" y="7" width="30" height="30"/>
+                        </imageView>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入宝宝学名" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vnz-N8-bDU" userLabel="账号" customClass="ZDSearchBar">
+                            <rect key="frame" x="55" y="7" width="224" height="30"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="next"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Fu-V5-pIp" userLabel="登录">
+                    <rect key="frame" x="20" y="193" width="280" height="40"/>
+                    <state key="normal" title="完成">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -56,21 +60,13 @@
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstItem="3E6-Nw-qQK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="37" id="3ZC-tA-SvJ"/>
-                <constraint firstAttribute="centerX" secondItem="3E6-Nw-qQK" secondAttribute="centerX" id="haz-sE-xoS"/>
-                <constraint firstItem="2Fu-V5-pIp" firstAttribute="top" secondItem="3E6-Nw-qQK" secondAttribute="bottom" constant="31" id="sxl-iV-9F4"/>
-                <constraint firstAttribute="centerX" secondItem="2Fu-V5-pIp" secondAttribute="centerX" id="upB-3g-yIA"/>
-            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
         </view>
     </objects>
     <resources>
-        <image name="ipad_story_editOK" width="148" height="44"/>
         <image name="user_login_username" width="30" height="30"/>
-        <image name="user_register_back" width="284" height="134"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

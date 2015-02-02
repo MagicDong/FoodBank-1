@@ -7,7 +7,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZDSiKuViewController">
             <connections>
                 <outlet property="collection" destination="NNy-uG-kpc" id="qd7-kl-4tY"/>
-                <outlet property="queding" destination="cJt-AW-Yth" id="PqH-0c-W9E"/>
+                <outlet property="quanxuan" destination="EBx-Nt-uET" id="AQG-M5-1fO"/>
                 <outlet property="tableView" destination="hRD-e7-2VW" id="UiX-HR-ZM7"/>
                 <outlet property="textView" destination="S18-5c-VUW" id="MyU-cM-F0z"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -18,72 +18,38 @@
             <rect key="frame" x="0.0" y="44" width="320" height="436"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="NNy-uG-kpc">
-                    <rect key="frame" x="90" y="52" width="230" height="330"/>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="NNy-uG-kpc">
+                    <rect key="frame" x="90" y="94" width="230" height="342"/>
                     <collectionViewLayout key="collectionViewLayout" id="9gk-xM-a8p"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="lfD-RB-Y5X"/>
                         <outlet property="delegate" destination="-1" id="ZDG-fi-QBr"/>
                     </connections>
                 </collectionView>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="请您将宝宝已尝试过（尝试3-7天）且未发生过敏、拒绝等现象）的食材勾选出来。" translatesAutoresizingMaskIntoConstraints="NO" id="S18-5c-VUW">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="52"/>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="      请您将宝宝已尝试过（尝试3-7天）且未发生过敏、拒绝等现象）的食材勾选出来。" translatesAutoresizingMaskIntoConstraints="NO" id="S18-5c-VUW">
+                    <rect key="frame" x="90" y="0.0" width="230" height="60"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="52" id="t5I-gF-hOD"/>
-                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hRD-e7-2VW">
-                    <rect key="frame" x="0.0" y="52" width="90" height="330"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hRD-e7-2VW">
+                    <rect key="frame" x="0.0" y="0.0" width="90" height="436"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="90" id="WdM-NN-1pP"/>
-                    </constraints>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="bKP-aq-DNR"/>
                         <outlet property="delegate" destination="-1" id="6Ht-NX-vPi"/>
                     </connections>
                 </tableView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJt-AW-Yth" userLabel="登录">
-                    <rect key="frame" x="113" y="390" width="95" height="36"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="36" id="3V1-FF-H2Y"/>
-                        <constraint firstAttribute="width" constant="95" id="4bz-bn-A6l"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="15"/>
-                    <state key="normal" title="完成" backgroundImage="Judge"/>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EBx-Nt-uET">
+                    <rect key="frame" x="247" y="61" width="60" height="26"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="全选" backgroundImage="Judge2"/>
                     <connections>
-                        <action selector="queding:" destination="-1" eventType="touchUpInside" id="pEq-z1-N8u"/>
+                        <action selector="quanxuan:" destination="-1" eventType="touchUpInside" id="tj7-BM-yUQ"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eyA-fp-3sx">
-                    <rect key="frame" x="0.0" y="382" width="320" height="1"/>
-                    <color key="backgroundColor" red="0.98823529409999999" green="0.38823529410000002" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="1" id="J9O-Fc-IdD"/>
-                    </constraints>
-                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstItem="hRD-e7-2VW" firstAttribute="top" secondItem="S18-5c-VUW" secondAttribute="bottom" id="0Z9-2d-NX6"/>
-                <constraint firstAttribute="centerX" secondItem="cJt-AW-Yth" secondAttribute="centerX" id="2As-TS-vzn"/>
-                <constraint firstItem="eyA-fp-3sx" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="3BA-q4-yBN"/>
-                <constraint firstItem="NNy-uG-kpc" firstAttribute="top" secondItem="S18-5c-VUW" secondAttribute="bottom" id="D01-ot-0pN"/>
-                <constraint firstItem="S18-5c-VUW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="EZh-lD-myI"/>
-                <constraint firstItem="NNy-uG-kpc" firstAttribute="leading" secondItem="hRD-e7-2VW" secondAttribute="trailing" id="L12-mN-HIh"/>
-                <constraint firstAttribute="bottom" secondItem="hRD-e7-2VW" secondAttribute="bottom" constant="54" id="LeF-nW-SK8"/>
-                <constraint firstAttribute="trailing" secondItem="NNy-uG-kpc" secondAttribute="trailing" id="RFX-Xi-q03"/>
-                <constraint firstItem="S18-5c-VUW" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Vqs-Gj-wBm"/>
-                <constraint firstAttribute="trailing" secondItem="eyA-fp-3sx" secondAttribute="trailing" id="YW7-3X-W4m"/>
-                <constraint firstItem="cJt-AW-Yth" firstAttribute="top" secondItem="eyA-fp-3sx" secondAttribute="bottom" constant="7" id="abo-iJ-Wol"/>
-                <constraint firstItem="cJt-AW-Yth" firstAttribute="top" secondItem="NNy-uG-kpc" secondAttribute="bottom" constant="8" id="fZY-SU-Ou1"/>
-                <constraint firstItem="hRD-e7-2VW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="mAa-VK-hi3"/>
-                <constraint firstAttribute="bottom" secondItem="cJt-AW-Yth" secondAttribute="bottom" constant="10" id="nXf-Y9-Trf"/>
-                <constraint firstAttribute="trailing" secondItem="S18-5c-VUW" secondAttribute="trailing" id="oIB-V4-Svx"/>
-            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
@@ -91,7 +57,7 @@
         </view>
     </objects>
     <resources>
-        <image name="Judge" width="105" height="36"/>
+        <image name="Judge2" width="31" height="23"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

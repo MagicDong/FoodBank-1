@@ -27,7 +27,7 @@
     self.iconView.image = [UIImage imageNamed:product.icon];
     
     // 设置圆角半径
-    self.iconView.layer.cornerRadius = 10;
+    self.iconView.layer.cornerRadius = 8;
     self.iconView.layer.masksToBounds = YES;
     
     self.title.text = product.title;

@@ -131,7 +131,7 @@
 //        ZDLog(@"111111-%@",str);
         if(rsp.rspCode == 0)
         {
-            str = rspDict[@"sessionid"];
+            str = rspDict[ @"sessionid"];
 //            LoginAccount *account=[[LoginAccount alloc]initWithPhone:phone Md5Password:md5Password];
 //            [LoginAccountTool sharedLoginAccountTool].currentAccount=account;
 //            [LoginAccountTool sharedLoginAccountTool].loginState=YES;
@@ -637,6 +637,7 @@
         
     }
 }
+
 
 + (void) _operationLog:(AFHTTPRequestOperation *)operation;
 {

@@ -18,13 +18,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.title = @"辅食添加";
     if(iOS7)
     {
         self.edgesForExtendedLayout = NO;
         self.navigationController.navigationBar.opaque=YES;
     }
+    
 }
 
 /** 已添加按钮 */
@@ -44,7 +44,6 @@
         [controller removeFromParentViewController];
     }
     [self.view removeFromSuperview];
-    
     ZDTabBarController *tabBarVc = [[ZDTabBarController alloc] init];
     UIApplication *app = [UIApplication sharedApplication];
     UIWindow *window = app.keyWindow;

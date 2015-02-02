@@ -9,8 +9,8 @@
 #import "ZDCategoryCell.h"
 @interface ZDCategoryCell ()
 
-
 @property (weak, nonatomic) IBOutlet UILabel *category;
+@property (weak, nonatomic) IBOutlet UIView *xuanzhong;
 
 @end
 @implementation ZDCategoryCell
@@ -29,7 +29,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
-        self.backgroundColor = ZDColor(240, 241, 244);
+        self.backgroundColor = ZDColor(53, 148, 57);
         self.category.font = [UIFont boldSystemFontOfSize:13];
     }
     return self;
@@ -47,10 +47,12 @@
     _zhuangtai = zhuangtai;
     if (zhuangtai) {
         self.backgroundColor = [UIColor whiteColor];
-        self.category.textColor = [UIColor redColor];
+        self.category.textColor = [UIColor colorWithRed:53 green:148 blue:57 alpha:1];
+        self.xuanzhong.hidden = NO;
     }else{
-        self.backgroundColor = ZDColor(240, 241, 244);
-        self.category.textColor = [UIColor blackColor];
+        self.backgroundColor = ZDColor(53, 148, 57);
+        self.category.textColor = [UIColor whiteColor];
+        self.xuanzhong.hidden = YES;
     }
 }
 

@@ -37,7 +37,6 @@
     self.bufuhe.layer.masksToBounds = YES;
     
     
-    
 }
 
 - (IBAction)fuhe:(id)sender {

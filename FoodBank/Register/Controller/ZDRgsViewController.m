@@ -13,7 +13,7 @@
 #import "ZDInitViewController.h"
 #import "ZDBaby.h"
 #import "ZDBabyTool.h"
-//#import <SMS_SDK/SMS_SDK.h>
+#import <SMS_SDK/SMS_SDK.h>
 #import "ZDNetwork.h"
 
 @interface ZDRgsViewController ()
@@ -24,6 +24,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *userName;
 @property (weak, nonatomic) IBOutlet UITextField *password;
 @property (weak, nonatomic) IBOutlet UITextField *password2;
+@property (weak, nonatomic) IBOutlet UIButton *zhuce;
 
 @property (weak, nonatomic) IBOutlet UITextField *yanzheng;
 @property (weak, nonatomic) IBOutlet UIButton *huoquyanzheng;
@@ -45,10 +46,14 @@ int timerCount = 99;
     UIColor *color = ZDColor(114, 208, 96);
     self.yanzheng.layer.borderColor = [color CGColor];
     [UIApplication sharedApplication].statusBarHidden = NO;
+    self.zhuce.backgroundColor = [UIColor colorWithRed:54 green:150 blue:60 alpha:1.0f];
+    [UIApplication sharedApplication].statusBarHidden = YES;
+    
 }
 
 - (void)back{
     [self dismissViewControllerAnimated:YES completion:nil];
+    
 }
 
 - (NSTimer *)timer
@@ -99,9 +104,9 @@ int timerCount = 99;
     if ((1)) {
         self.huoquyanzheng.enabled = NO;
         [MBProgressHUD showSuccess:@"获取验证码成功"];
-//        [SMS_SDK getVerifyCodeByPhoneNumber:self.userName.text AndZone:@"86" result:^(enum SMS_GetVerifyCodeResponseState state) {
-//            
-//        }];
+        [SMS_SDK getVerifyCodeByPhoneNumber:self.userName.text AndZone:@"86" result:^(enum SMS_GetVerifyCodeResponseState state) {
+            
+        }];
 
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.68 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [MBProgressHUD hideHUD];
@@ -155,8 +160,8 @@ int timerCount = 99;
             });
         }
     }];
-    
-//    if (self.password.text.length >= 6  && ([self.password.text isEqualToString:self.password2.text]) && self.password.text.length < 16) {
+
+    //    if (self.password.text.length >= 6  && ([self.password.text isEqualToString:self.password2.text]) && self.password.text.length < 16) {
 //        [SMS_SDK commitVerifyCode:self.yanzheng.text result:^(enum SMS_ResponseState state) {
 //            if (state == SMS_ResponseStateFail) {
 //                [MBProgressHUD showError:@"验证码有误！"];

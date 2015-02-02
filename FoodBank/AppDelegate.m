@@ -20,7 +20,7 @@
 #import "MBProgressHUD+ZD.h"
 #import "UMSocial.h"
 #import "ZDSpecialViewController.h"
-#import <SMS_SDK/SMS_SDK.h>
+//#import "MyUncaughtExceptionHandler.h"
 
 @interface AppDelegate ()
 @property (nonatomic , strong) UIImageView *imageView;
@@ -37,9 +37,9 @@
     
     // 短信注册KEY
 //    APPKEY:  47f01de13458        AppSecret：   ec44a5b1ff4cb948cb16c1a0b1655b23
-    NSString *appKey = @"47f01de13458";
-    NSString *appSecret = @"ec44a5b1ff4cb948cb16c1a0b1655b23";
-    [SMS_SDK  registerApp:appKey withSecret:appSecret];
+//    NSString *appKey = @"47f01de13458";
+//    NSString *appSecret = @"ec44a5b1ff4cb948cb16c1a0b1655b23";
+//    [SMS_SDK  registerApp:appKey withSecret:appSecret];
     
     // 设置友盟app key
     [UMSocialData setAppKey:@"5417d98ffd98c5661607aed9"];
@@ -67,10 +67,6 @@
      ZDBaby *baby = [ZDBabyTool sharedZDBabyTool].account;
 //    BOOL tool = [ZDBabyTool sharedZDBabyTool].removeAccount;
     [UIApplication sharedApplication].statusBarHidden = YES;
-    
-
-
-    
     if ((0))
     {
         // 存储当前版本号
@@ -94,8 +90,7 @@
         }];
     }else{
         //        ZDLog(@"%@",baby.userName);
-        if (baby.userName != nil) {
-    
+        if (baby.userName == nil) {
             ZDRegisterViewController *reg = [[ZDRegisterViewController alloc]init];
             self.window.rootViewController = reg;
             UIImageView *splashScreen = [[UIImageView alloc] initWithFrame:self.window.bounds];
@@ -152,6 +147,7 @@
             splashScreen.image = [UIImage imageNamed:@"loginIcon.png"];
             [self.window addSubview:splashScreen];
             
+            
             [UIView animateWithDuration:1.6 animations:^{
                 CATransform3D transform = CATransform3DMakeScale(1.6, 1.6, 1.0);
                 splashScreen.layer.transform = transform;
@@ -159,6 +155,7 @@
             } completion:^(BOOL finished) {
                 [splashScreen removeFromSuperview];
             }];
+            
         }
     }
 

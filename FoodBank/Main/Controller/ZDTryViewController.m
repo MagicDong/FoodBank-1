@@ -40,6 +40,7 @@
 @property (nonatomic,copy) NSString *cornerID;
 @property (nonatomic,copy) NSString *cornerT;
 @property (nonatomic,copy) NSString *cornerTian;
+
 @end
 
 @implementation ZDTryViewController
@@ -51,7 +52,6 @@
         self.edgesForExtendedLayout = NO;
         self.navigationController.navigationBar.opaque = YES;
     }
-    
     ZDTryChooseButton *tianBtn = [[ZDTryChooseButton alloc]initWithFrame:CGRectMake(241, 76, 71, 40)];
     [tianBtn setImage:[UIImage imageNamed:@"navigationbar_arrow_down"] forState:UIControlStateNormal];
     [tianBtn setTitle:@"3天" forState:UIControlStateNormal];
@@ -88,12 +88,15 @@
 //    @property (nonatomic, strong) UITableView *table;         // 点击按钮出来天数
 //    @property (weak, nonatomic) IBOutlet UITextView *jieshaoTextView;
 //    @property (weak, nonatomic) IBOutlet UITextView *tuijianTextView;
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
+    
 //    [MBProgressHUD showError:@"获取尝试信息中..."];
     [ZDNetwork getTodayTryInfoCallback:^(RspState *rsp, NSArray *array) {
+        
 //        [MBProgressHUD hideHUD];
         if (rsp.rspCode == 0) {
             ZDNewFood *food = array[0];
