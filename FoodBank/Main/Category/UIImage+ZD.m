@@ -6,7 +6,12 @@
 //
 
 #import "UIImage+ZD.h"
-
+/** 是否为4英寸屏 */
+#define Inch4 ([UIScreen mainScreen].bounds.size.height == 568.0)
+/** 是否为4.7英寸屏 */
+#define Inch47 ([UIScreen mainScreen].bounds.size.height == 667.0)
+/** 是否为5.5英寸屏 */
+#define Inch55 ([UIScreen mainScreen].bounds.size.height == 736.0)
 @implementation UIImage (ZD)
 
 /** 截取指定视图中的图片(拍图) */
@@ -35,12 +40,12 @@
     // 0.定义返回的对象
     UIImage *image = nil;
     
-    // 1.判断是否是iOS7
-    if (iOS7) {
-        // 要在图片名称后面拼接_os7
-        NSString *iOS7Name = [name stringByAppendingString:@"_os7"];
-        image = [UIImage imageNamed:iOS7Name];
-    }
+//    // 1.判断是否是iOS7
+//    if (iOS7) {
+//        // 要在图片名称后面拼接_os7
+//        NSString *iOS7Name = [name stringByAppendingString:@"-lv"];
+//        image = [UIImage imageNamed:iOS7Name];
+//    }
     // 2.判断图片是否为nil(因为有的图片是iOS67通用, 没有_os7结尾的图片)
     if (image == nil) {
         image = [UIImage imageNamed:name];

@@ -18,7 +18,7 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8" customClass="SCHCircleView">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="436"/>
-                    <color key="backgroundColor" red="0.81020359850000001" green="0.49136619609999999" blue="0.45793612379999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

@@ -40,6 +40,7 @@
 @property (nonatomic,copy) NSString *cornerID;
 @property (nonatomic,copy) NSString *cornerT;
 @property (nonatomic,copy) NSString *cornerTian;
+@property (weak, nonatomic) IBOutlet UILabel *zhouqiA;
 
 @end
 
@@ -52,14 +53,17 @@
         self.edgesForExtendedLayout = NO;
         self.navigationController.navigationBar.opaque = YES;
     }
-    ZDTryChooseButton *tianBtn = [[ZDTryChooseButton alloc]initWithFrame:CGRectMake(241, 76, 71, 40)];
+    
+    ZDTryChooseButton *tianBtn = [[ZDTryChooseButton alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.zhouqiA.frame), 76, 71, 40)];
     [tianBtn setImage:[UIImage imageNamed:@"navigationbar_arrow_down"] forState:UIControlStateNormal];
     [tianBtn setTitle:@"3天" forState:UIControlStateNormal];
     [tianBtn addTarget:self action:@selector(tianBtnOnClick:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:tianBtn];
     self.tianBtn = tianBtn;
     
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemImage:@"navigationbar_more" highlightedImage:@"navigationbar_more_highlighted" target:self action:@selector(more)];
+    
+    
+//    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemImage:@"navigationbar_more" highlightedImage:@"navigationbar_more_highlighted" target:self action:@selector(more)];
     
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc]init];
     paragraphStyle.lineHeightMultiple = 20.f;
@@ -70,7 +74,7 @@
     NSDictionary *attributes = @{ NSFontAttributeName:[UIFont systemFontOfSize:15], NSParagraphStyleAttributeName:paragraphStyle, NSForegroundColorAttributeName:[UIColor blackColor]
                                   };
     
-    self.jieshaoTextView.attributedText = [[NSAttributedString alloc]initWithString:@"这是一根好黄瓜！这是一根好黄瓜！这是一根好黄瓜！这是一根好黄瓜！这是一根好黄瓜！这是一根好黄瓜！这是一根好黄瓜！这是一根好黄瓜！这是一根好黄瓜！这是一根好黄瓜！这是一根好黄瓜！这是一根好黄瓜！这是一根好黄瓜！这是一根好黄瓜！这是一根好黄瓜！这是一根好黄瓜！这是一根好黄瓜！" attributes:attributes];
+    self.jieshaoTextView.attributedText = [[NSAttributedString alloc]initWithString:@"食材介绍" attributes:attributes];
     self.jieshaoTextView.editable = NO;
     self.jieshaoTextView.backgroundColor = [UIColor clearColor];
     

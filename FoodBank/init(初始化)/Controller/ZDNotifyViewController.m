@@ -23,6 +23,7 @@
         self.edgesForExtendedLayout = NO;
         self.navigationController.navigationBar.opaque=YES;
     }
+    
 }
 
 - (IBAction)zhishi:(UIButton *)sender {

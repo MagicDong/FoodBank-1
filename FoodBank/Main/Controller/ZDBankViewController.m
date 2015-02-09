@@ -47,12 +47,13 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if(self){
         _icon_array = [[NSMutableArray alloc] init];
-        [_icon_array addObject:[UIImage imageNamed:@"login_baobao"]];
-        [_icon_array addObject:[UIImage imageNamed:@"ipad_user_login_sina"]];
-        [_icon_array addObject:[UIImage imageNamed:@"ipad_user_login_qq"]];
-        [_icon_array addObject:[UIImage imageNamed:@"ipad_user_login_qq"]];
-        [_icon_array addObject:[UIImage imageNamed:@"more_baobao_icon.png"]];
-        [_icon_array addObject:[UIImage imageNamed:@"more_baobao_icon.png"]];
+        [_icon_array addObject:[UIImage imageNamed:@"weiguomin"]];
+        [_icon_array addObject:[UIImage imageNamed:@"guomin"]];
+        [_icon_array addObject:[UIImage imageNamed:@"jujue"]];
+        [_icon_array addObject:[UIImage imageNamed:@"weichangshi"]];
+        [_icon_array addObject:[UIImage imageNamed:@"zhou"]];
+        [_icon_array addObject:[UIImage imageNamed:@"yue"]];
+        
     }
     return self;
 }
@@ -60,17 +61,19 @@
 #pragma mark - view
 - (void)viewDidLoad
 {
+    
     [super viewDidLoad];
     _circle_view.circle_view_data_source = self;
     _circle_view.circle_view_delegate    = self;
     _circle_view.show_circle_style       = SChShowCircleWinding;
     [_circle_view reloadData];
-
+    
     if(iOS7)
     {
         self.edgesForExtendedLayout = NO;
         self.navigationController.navigationBar.opaque=YES;
     }
+    
     
 //    UIImagePickerControllerSourceType sourceType = UIImagePickerControllerSourceTypeCamera;
 //    if (![UIImagePickerController isSourceTypeAvailable: UIImagePickerControllerSourceTypeCamera]) {
@@ -84,8 +87,8 @@
 //    picker.allows Editing = YES;//设置可编辑
 //    picker.sourceType = sourceType;
 //    [self presentViewController:picker animated:YES completion:nil];
-//
-        
+    
+    
     
 //    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
 //        
@@ -101,7 +104,7 @@
 //        [alert show];
 //    }
     // 3.添加更多按钮
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemImage:@"navigationbar_more" highlightedImage:@"navigationbar_more_highlighted" target:self action:@selector(more)];
+//    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemImage:@"navigationbar_more" highlightedImage:@"navigationbar_more_highlighted" target:self action:@selector(more)];
 }
 
 - (void)more{
@@ -119,6 +122,7 @@
             self.xiala = NO;
         }];
         return;
+        
     }else{
         // 1.添加按钮蒙板
         UIButton *cover = [[UIButton alloc] init];
@@ -180,15 +184,24 @@
     NSURL *url = [NSURL URLWithString:@"http://www.mamabaodian.com"];
     [[UIApplication sharedApplication] openURL:url];
 }
-
+/** 是否为4英寸屏 */
+#define Inch4 ([UIScreen mainScreen].bounds.size.height >= 568.0)
+/** 是否为4.7英寸屏 */
+#define Inch47 ([UIScreen mainScreen].bounds.size.height >= 667.0)
+/** 是否为5.5英寸屏 */
+#define Inch55 ([UIScreen mainScreen].bounds.size.height >= 736.0)
 #pragma mark - SCHCircleViewDataSource
 - (CGPoint)centerOfCircleView:(SCHCircleView *)circle_view
 {
-    if(Inch4){
-        return CGPointMake(self.view.width / 2, (self.view.width /2) + 20);
+    CGFloat w = [UIScreen mainScreen].bounds.size.width;
+    if(Inch55){
+       return CGPointMake(w / 2, (self.view.width /2) + 100);
+    }else if (Inch47){
+        return CGPointMake(w / 2, (self.view.width /2) + 70);
+    }else if (Inch4){
+        return CGPointMake(w / 2, (self.view.width /2) + 40);
     }
-    
-    return CGPointMake(self.view.width / 2, (self.view.width /2));
+    return CGPointMake(w / 2, (self.view.width /2));
 }
 
 - (NSInteger)numberOfCellInCircleView:(SCHCircleView *)circle_view

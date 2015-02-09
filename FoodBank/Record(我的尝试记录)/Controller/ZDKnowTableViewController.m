@@ -24,7 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"知识库";
-    self.view.backgroundColor = ZDColor(255, 246, 229);
+//    self.view.backgroundColor = ZDColor(255, 246, 229);
 }
 - (NSMutableArray *)menus{
     if (_menus == nil) {

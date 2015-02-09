@@ -30,6 +30,8 @@
         self.navigationController.navigationBar.opaque = YES;
     }
     
+    
+    
     self.fuhe.layer.cornerRadius = 8;
     self.fuhe.layer.masksToBounds = YES;
     

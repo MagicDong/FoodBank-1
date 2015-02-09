@@ -3,9 +3,16 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="weiruan.ttf">
+            <string>MicrosoftYaHei</string>
+        </mutableArray>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZDInitViewController">
             <connections>
+                <outlet property="Finish" destination="2Fu-V5-pIp" id="5MK-En-jEg"/>
+                <outlet property="babyName" destination="Vnz-N8-bDU" id="6Sc-6r-bDJ"/>
                 <outlet property="birthdayView" destination="cT7-aJ-tgg" id="Mgy-6H-mhq"/>
                 <outlet property="nameView" destination="3E6-Nw-qQK" id="mqi-09-Z6e"/>
                 <outlet property="nation" destination="PEw-0P-igN" id="hMc-ae-3mC"/>
@@ -17,41 +24,78 @@
             <rect key="frame" x="0.0" y="44" width="320" height="436"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PEw-0P-igN">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PEw-0P-igN">
                     <rect key="frame" x="20" y="141" width="280" height="44"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user_login_username" translatesAutoresizingMaskIntoConstraints="NO" id="x3M-rR-hlq">
-                            <rect key="frame" x="5" y="7" width="30" height="30"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="denglu-shurukuang" translatesAutoresizingMaskIntoConstraints="NO" id="Ycu-OC-Cj8">
+                            <rect key="frame" x="0.0" y="0.0" width="280" height="46"/>
+                            <rect key="contentStretch" x="0.10000000000000001" y="0.10000000000000001" width="0.5" height="1"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="jibenxinxi-mingzu" translatesAutoresizingMaskIntoConstraints="NO" id="x3M-rR-hlq">
+                            <rect key="frame" x="5" y="3" width="30" height="36"/>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="Ycu-OC-Cj8" secondAttribute="trailing" id="Jpd-Po-9OK"/>
+                        <constraint firstAttribute="height" constant="44" id="P80-WX-3w8"/>
+                        <constraint firstAttribute="bottom" secondItem="Ycu-OC-Cj8" secondAttribute="bottom" constant="-2" id="Uch-be-fKb"/>
+                        <constraint firstItem="Ycu-OC-Cj8" firstAttribute="leading" secondItem="PEw-0P-igN" secondAttribute="leading" id="dYh-0b-F45"/>
+                        <constraint firstItem="Ycu-OC-Cj8" firstAttribute="top" secondItem="PEw-0P-igN" secondAttribute="top" id="kiw-Kw-mfE"/>
+                    </constraints>
                 </view>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cT7-aJ-tgg">
-                    <rect key="frame" x="20" y="90" width="280" height="43"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cT7-aJ-tgg">
+                    <rect key="frame" x="20" y="90" width="280" height="46"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user_login_username" translatesAutoresizingMaskIntoConstraints="NO" id="NOt-eq-XL8">
-                            <rect key="frame" x="5" y="5" width="30" height="30"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="jibenxinxi-riqi" translatesAutoresizingMaskIntoConstraints="NO" id="NOt-eq-XL8">
+                            <rect key="frame" x="5" y="3" width="30" height="36"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="denglu-shurukuang" translatesAutoresizingMaskIntoConstraints="NO" id="dCu-3N-kQR">
+                            <rect key="frame" x="0.0" y="0.0" width="280" height="46"/>
+                            <rect key="contentStretch" x="0.10000000000000001" y="0.10000000000000001" width="0.5" height="1"/>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="dCu-3N-kQR" firstAttribute="leading" secondItem="cT7-aJ-tgg" secondAttribute="leading" id="J4k-4j-DUc"/>
+                        <constraint firstAttribute="bottom" secondItem="dCu-3N-kQR" secondAttribute="bottom" id="NIk-73-NGU"/>
+                        <constraint firstAttribute="height" constant="46" id="UdV-V9-Np5"/>
+                        <constraint firstAttribute="trailing" secondItem="dCu-3N-kQR" secondAttribute="trailing" id="YYV-4a-0LH"/>
+                        <constraint firstItem="dCu-3N-kQR" firstAttribute="top" secondItem="cT7-aJ-tgg" secondAttribute="top" id="xfF-Z5-Kt7"/>
+                    </constraints>
                 </view>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3E6-Nw-qQK">
-                    <rect key="frame" x="20" y="38" width="280" height="44"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3E6-Nw-qQK">
+                    <rect key="frame" x="20" y="38" width="280" height="46"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user_login_username" translatesAutoresizingMaskIntoConstraints="NO" id="Tzx-yF-WO7">
-                            <rect key="frame" x="5" y="7" width="30" height="30"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="denglu-shurukuang" translatesAutoresizingMaskIntoConstraints="NO" id="wyu-Ci-AxY">
+                            <rect key="frame" x="0.0" y="0.0" width="280" height="46"/>
+                            <rect key="contentStretch" x="0.10000000000000001" y="0.10000000000000001" width="0.5" height="1"/>
                         </imageView>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入宝宝学名" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vnz-N8-bDU" userLabel="账号" customClass="ZDSearchBar">
-                            <rect key="frame" x="55" y="7" width="224" height="30"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="jibenxinxi-nicheng" translatesAutoresizingMaskIntoConstraints="NO" id="Tzx-yF-WO7">
+                            <rect key="frame" x="5" y="3" width="30" height="36"/>
+                        </imageView>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入宝宝学名" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vnz-N8-bDU" userLabel="账号">
+                            <rect key="frame" x="50" y="6" width="224" height="30"/>
+                            <fontDescription key="fontDescription" name="MicrosoftYaHei" family="Microsoft YaHei" pointSize="14"/>
                             <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="next"/>
                         </textField>
                     </subviews>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="wyu-Ci-AxY" firstAttribute="top" secondItem="3E6-Nw-qQK" secondAttribute="top" id="6Fy-T5-5Rk"/>
+                        <constraint firstAttribute="bottom" secondItem="wyu-Ci-AxY" secondAttribute="bottom" id="AAL-c3-fGx"/>
+                        <constraint firstAttribute="height" constant="46" id="BQ7-ab-8xn"/>
+                        <constraint firstItem="wyu-Ci-AxY" firstAttribute="leading" secondItem="3E6-Nw-qQK" secondAttribute="leading" id="ERp-md-0ey"/>
+                        <constraint firstAttribute="trailing" secondItem="wyu-Ci-AxY" secondAttribute="trailing" id="ICx-xJ-zSU"/>
+                    </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Fu-V5-pIp" userLabel="登录">
-                    <rect key="frame" x="20" y="193" width="280" height="40"/>
-                    <state key="normal" title="完成">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Fu-V5-pIp" userLabel="登录">
+                    <rect key="frame" x="20" y="212" width="280" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="cGb-5H-PeV"/>
+                    </constraints>
+                    <state key="normal" title="完成" backgroundImage="bg-lv">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -60,13 +104,32 @@
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="2Fu-V5-pIp" secondAttribute="trailing" constant="20" id="0yD-0b-QUg"/>
+                <constraint firstAttribute="trailing" secondItem="PEw-0P-igN" secondAttribute="trailing" constant="20" id="1fe-wD-vZp"/>
+                <constraint firstItem="cT7-aJ-tgg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="385-mi-V8s"/>
+                <constraint firstItem="2Fu-V5-pIp" firstAttribute="top" secondItem="PEw-0P-igN" secondAttribute="bottom" constant="27" id="8vv-LW-bQf"/>
+                <constraint firstItem="3E6-Nw-qQK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="GAo-bT-ZSn"/>
+                <constraint firstAttribute="trailing" secondItem="cT7-aJ-tgg" secondAttribute="trailing" constant="20" id="JhS-MN-VcR"/>
+                <constraint firstItem="PEw-0P-igN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="Nm7-J9-Ey9"/>
+                <constraint firstItem="3E6-Nw-qQK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="38" id="RZ0-ik-MfB"/>
+                <constraint firstItem="cT7-aJ-tgg" firstAttribute="top" secondItem="3E6-Nw-qQK" secondAttribute="bottom" constant="6" id="ZBJ-sE-EtI"/>
+                <constraint firstItem="2Fu-V5-pIp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="bCY-Tg-CLG"/>
+                <constraint firstItem="PEw-0P-igN" firstAttribute="top" secondItem="cT7-aJ-tgg" secondAttribute="bottom" constant="5" id="u13-ZO-xK1"/>
+                <constraint firstAttribute="trailing" secondItem="3E6-Nw-qQK" secondAttribute="trailing" constant="20" id="yAU-S2-Nd8"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="331" y="388"/>
         </view>
     </objects>
     <resources>
-        <image name="user_login_username" width="30" height="30"/>
+        <image name="bg-lv" width="18" height="16"/>
+        <image name="denglu-shurukuang" width="48" height="48"/>
+        <image name="jibenxinxi-mingzu" width="32" height="42"/>
+        <image name="jibenxinxi-nicheng" width="32" height="42"/>
+        <image name="jibenxinxi-riqi" width="32" height="42"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

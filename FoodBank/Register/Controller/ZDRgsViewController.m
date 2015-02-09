@@ -13,9 +13,14 @@
 #import "ZDInitViewController.h"
 #import "ZDBaby.h"
 #import "ZDBabyTool.h"
-#import <SMS_SDK/SMS_SDK.h>
+//#import <SMS_SDK/SMS_SDK.h>
 #import "ZDNetwork.h"
+#import "UIBarButtonItem+ZD.h"
+#import "ZDTiaoKuanViewController.h"
 
+#define iOS7 ([[UIDevice currentDevice].systemVersion floatValue] >= 7.0)
+/** RGB颜色 */
+#define ZDColor(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:255/255.0];
 @interface ZDRgsViewController ()
 
 /**
@@ -25,10 +30,12 @@
 @property (weak, nonatomic) IBOutlet UITextField *password;
 @property (weak, nonatomic) IBOutlet UITextField *password2;
 @property (weak, nonatomic) IBOutlet UIButton *zhuce;
-
 @property (weak, nonatomic) IBOutlet UITextField *yanzheng;
 @property (weak, nonatomic) IBOutlet UIButton *huoquyanzheng;
+@property (weak, nonatomic) IBOutlet UIButton *xieyi;
 @property (strong, nonatomic) NSTimer *timer;
+
+
 @end
 
 @implementation ZDRgsViewController
@@ -41,19 +48,23 @@ int timerCount = 99;
         self.edgesForExtendedLayout = NO;
         self.navigationController.navigationBar.opaque=YES;
     }
-        self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemImage:@"navigationbar_back" highlightedImage:@"navigationbar_back_highlighted" target:self action:@selector(back)];
-    self.yanzheng.layer.borderWidth = 1;
-    UIColor *color = ZDColor(114, 208, 96);
-    self.yanzheng.layer.borderColor = [color CGColor];
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemImage:@"fanhuitubiao" highlightedImage:@"fanhuitubiao" target:self action:@selector(back)];
+//    self.yanzheng.layer.borderWidth = 1;
+//    UIColor *color = ZDColor(114, 208, 96);
+//    self.yanzheng.layer.borderColor = [color CGColor];
     [UIApplication sharedApplication].statusBarHidden = NO;
-    self.zhuce.backgroundColor = [UIColor colorWithRed:54 green:150 blue:60 alpha:1.0f];
-    [UIApplication sharedApplication].statusBarHidden = YES;
-    
+    [self.zhuce setBackgroundColor:[UIColor colorWithRed:53 green:147 blue:58 alpha:1.0]];
+    self.zhuce.layer.cornerRadius = 3;
+    self.zhuce.layer.masksToBounds = YES;
 }
 
 - (void)back{
     [self dismissViewControllerAnimated:YES completion:nil];
     
+}
+- (IBAction)xieyi:(UIButton *)sender {
+    ZDTiaoKuanViewController *tiaokuan = [[ZDTiaoKuanViewController alloc]init];
+    [self.navigationController pushViewController:tiaokuan animated:YES];
 }
 
 - (NSTimer *)timer
@@ -104,9 +115,9 @@ int timerCount = 99;
     if ((1)) {
         self.huoquyanzheng.enabled = NO;
         [MBProgressHUD showSuccess:@"获取验证码成功"];
-        [SMS_SDK getVerifyCodeByPhoneNumber:self.userName.text AndZone:@"86" result:^(enum SMS_GetVerifyCodeResponseState state) {
-            
-        }];
+//        [SMS_SDK getVerifyCodeByPhoneNumber:self.userName.text AndZone:@"86" result:^(enum SMS_GetVerifyCodeResponseState state) {
+//            
+//        }];
 
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.68 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [MBProgressHUD hideHUD];

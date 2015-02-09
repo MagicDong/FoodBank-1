@@ -24,7 +24,7 @@
     ZDKnowModel *m = [[ZDKnowModel alloc] init];
     m.detail = detail;
     m.notClick = YES;
-    m.height = 150;
+    m.height = 180;
     return m;
 }
 @end

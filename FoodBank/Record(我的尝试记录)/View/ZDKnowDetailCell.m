@@ -41,8 +41,11 @@
     if (self) {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         self.contentView.userInteractionEnabled = NO;
-        
-        HBVLinkedTextView *textView = [[HBVLinkedTextView alloc]initWithFrame:CGRectMake(10, 10, self.width-20, 130)];
+//        [UIScreen mainScreen].
+        /** 是否为4.7英寸屏 */
+//    #define Inch47 ([UIScreen mainScreen].bounds.size.height >= 667.0)
+        CGFloat w = [UIScreen mainScreen].bounds.size.width;
+        HBVLinkedTextView *textView = [[HBVLinkedTextView alloc]initWithFrame:CGRectMake(10, 10, w - 20, 170)];
         [self addSubview:textView];
         self.textView = textView;
         
@@ -62,7 +65,7 @@
     NSMutableDictionary *attributes = [@{ NSFontAttributeName:[UIFont systemFontOfSize:15], NSParagraphStyleAttributeName:paragraphStyle, NSForegroundColorAttributeName:[UIColor colorWithRed:153/255. green:102/255. blue:51/255. alpha:1]
                                           }mutableCopy];
     self.textView.attributedText = [[NSAttributedString alloc]initWithString:self.model.detail attributes:attributes];
-    self.textView.backgroundColor = ZDColor(255, 246, 229);
+//    self.textView.backgroundColor = ZDColor(255, 246, 229);
     
 //    if (model.open) {
 //        self.userInteractionEnabled = NO;

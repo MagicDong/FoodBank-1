@@ -38,27 +38,27 @@
         
         // 1.宝贝咨询
         ZDNewsViewController *home = [[ZDNewsViewController alloc] init];
-        [self setupChileViewController:home title:@"宝贝咨询" imageName:@"tab001_1" selectedImageName:@"tab001"];
+        [self setupChileViewController:home title:@"宝贝咨询" imageName:@"tu-baobaozixun" selectedImageName:@"tu-baobaozixun-lv"];
         self.home = home;
         
         // 2.新食材尝试
         ZDTryViewController *message = [[ZDTryViewController alloc] init];
-        [self setupChileViewController:message title:@"新食材尝试" imageName:@"tab002_2" selectedImageName:@"tab002"];
+        [self setupChileViewController:message title:@"新食材尝试" imageName:@"tu-xinshicaichangshi" selectedImageName:@"tu-xinshicaichangshi-lv"];
         self.message = message;
         
         // 3.尝试记录
         ZDRecordViewController *record = [[ZDRecordViewController alloc] init];
-        [self setupChileViewController:record title:@"尝试记录" imageName:@"tab002_2" selectedImageName:@"tab002"];
+        [self setupChileViewController:record title:@"尝试记录" imageName:@"tu-changshijilu" selectedImageName:@"tu-changshijilu-lv"];
         self.record = record;
         
         // 4.宝贝食材银行
         ZDBankViewController *discover = [[ZDBankViewController alloc] init];
-        [self setupChileViewController:discover title:@"宝贝食材银行" imageName:@"tab003_3" selectedImageName:@"tab003"];
+        [self setupChileViewController:discover title:@"食材银行" imageName:@"tu-shicaiyinhang" selectedImageName:@"tu-shicaiyinhang-lv"];
         self.discover = discover;
         
         // 4.我的宝贝
         ZDMyBabyViewController *baby = [[ZDMyBabyViewController alloc] init];
-        [self setupChileViewController:baby title:@"我的宝贝" imageName:@"tab004_4" selectedImageName:@"tab004"];
+        [self setupChileViewController:baby title:@"我的宝贝" imageName:@"tu-wodebaobei" selectedImageName:@"tu-wodebaobei-lv"];
         self.baby = baby;
         
         
@@ -125,16 +125,24 @@
     child.title = title;
     
     child.tabBarItem.image = [UIImage imageWithNamed:imageName];
+    
     // 如果是iOS7 就告诉系统不要渲染图片
     UIImage *selectedImage = [UIImage imageWithNamed:selectedImageName];
+    
     if (iOS7) { //只有iOS7才需要设置原样显示
         selectedImage = [selectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     }
+    
+    
     child.tabBarItem.selectedImage = selectedImage;
+    
     ZDNavViewController *nav = [[ZDNavViewController alloc] initWithRootViewController:child];
+    
     [self addChildViewController:nav];
+    
     // 2.根据对应的子控制器创建子控制器对应的按钮
     [self.customTabBar addTabBarButton:child.tabBarItem];
+    
 }
 
 /**

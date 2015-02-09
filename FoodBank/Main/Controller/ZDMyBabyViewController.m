@@ -40,7 +40,9 @@ static NSString *heardID = @"headerView";
  *  时间选择
  */
 @property (nonatomic ,weak) ZDMoreView *moreView;
+
 @property (nonatomic,assign) BOOL xiala;
+
 @end
 
 @implementation ZDMyBabyViewController
@@ -58,14 +60,15 @@ static NSString *heardID = @"headerView";
     self.tableView.scrollEnabled= YES;
     self.tableView.backgroundColor = ZDColor(219, 219, 219);
     NSString *imageName =[NSString stringWithFormat:@"more_baobao_bg"];
+//    CGFloat w = [UIScreen mainScreen].bounds.size.width;
     _bgIcon = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]];
-    _bgIcon.bounds = CGRectMake(0, 0, self.view.width, 300);
+    _bgIcon.bounds = CGRectMake(0, 0, 414 , 300);
     _bgIcon.layer.anchorPoint = CGPointMake(0.5, 0);
     _bgIcon.layer.position = CGPointMake(160, -95);
     [self.tableView insertSubview:_bgIcon atIndex:0];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     // 3.添加更多按钮
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemImage:@"navigationbar_more" highlightedImage:@"navigationbar_more_highlighted" target:self action:@selector(more)];
+//    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemImage:@"navigationbar_more" highlightedImage:@"navigationbar_more_highlighted" target:self action:@selector(more)];
     
 }
 
@@ -93,6 +96,7 @@ static NSString *heardID = @"headerView";
         cover.frame = self.view.window.frame;
         cover.backgroundColor = [UIColor blackColor];
         [cover addTarget:self action:@selector(smallImage) forControlEvents:UIControlEventTouchUpInside];
+        
         cover.userInteractionEnabled = YES;
         // 控制UIButton的透明度
         [cover setAlpha: 0.0];
@@ -120,7 +124,9 @@ static NSString *heardID = @"headerView";
 - (ZDMoreView *)moreView{
     if (!_moreView) {
         _moreView = [ZDMoreView moreView];
+
         self.moreView.y = self.moreView.y - self.moreView.height;
+//        self.moreView.width = w;
         self.moreView.center = self.view.center;
         self.moreView.borderType = BorderTypeDashed;
         self.moreView.dashPattern = 2;
@@ -184,6 +190,8 @@ static NSString *heardID = @"headerView";
     // 设置footerView
     _headerView = [ZDMoreHeaderView moreHeaderView];
     _headerView.headerDelegate = self;
+    CGFloat w = [UIScreen mainScreen].bounds.size.width;
+    _headerView.width = w;
     self.tableView.tableHeaderView = _headerView;
 }
 
@@ -238,13 +246,15 @@ static NSString *heardID = @"headerView";
 }
 
 - (void)setupGroup1{
-    ZDCommonArrowItem *rsp = [ZDCommonArrowItem itemWithTitle:@"接口测试"];
-    rsp.destVC =  [ZDRspViewController class];
+//    ZDCommonArrowItem *rsp = [ZDCommonArrowItem itemWithTitle:@"接口测试"];
+//    rsp.destVC =  [ZDRspViewController class];
     
     ZDCommonArrowItem *updata = [ZDCommonArrowItem itemWithTitle:@"宝贝知识库"];
+    updata.icon = @"baobeizhishiku";
     updata.destVC =  [ZDKnowTableViewController class];
     
     ZDCommonArrowItem *guide = [ZDCommonArrowItem itemWithTitle:@"新手指南"];
+    guide.icon = @"xinshouzhinan";
 //    __weak typeof(self) weakSelf = self;
     guide.opertion = ^{
         for (UIViewController *controller in self.childViewControllers) {
@@ -258,16 +268,18 @@ static NSString *heardID = @"headerView";
         [app.delegate application:app didFinishLaunchingWithOptions:dict];
     };
     ZDCommonArrowItem *tuijian = [ZDCommonArrowItem itemWithTitle:@"产品推荐"];
+    tuijian.icon = @"chanpintuijian";
     tuijian.destVC = [ZDProductViewController class];
     
     ZDCommonGroup *group = [self addGroup];
-    group.items = @[rsp,updata,guide,tuijian];
+    group.items = @[updata,guide,tuijian];
     
 }
 
 - (void)setupGroup2{
     
     ZDCommonArrowItem *updata = [ZDCommonArrowItem itemWithTitle:@"检测更新"];
+    updata.icon = @"jianshigengxin";
     NSString *key =  (__bridge NSString *)kCFBundleVersionKey;
     NSString *versionCode = [[NSBundle mainBundle] objectForInfoDictionaryKey:key];
     updata.subtitle = [NSString stringWithFormat:@"当前版本:%@",versionCode];
@@ -285,9 +297,11 @@ static NSString *heardID = @"headerView";
         } else {
             [MBProgressHUD showSuccess:@"当前为最新版本"];
         }
+        
     };
     
     ZDCommonArrowItem *clearCache = [ZDCommonArrowItem itemWithTitle:@"清除图片缓存"];
+    clearCache.icon = @"qingchutupian";
     NSString *path = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
     NSString *cachesPath = [path stringByAppendingPathComponent:@"com.hackemist.SDWebImageCache.default"];
     double fileSize = [self sizeAtPath:cachesPath]/(1024.0);

@@ -3,6 +3,14 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="weiruan.ttf">
+            <string>MicrosoftYaHei</string>
+            <string>MicrosoftYaHei</string>
+            <string>MicrosoftYaHei</string>
+            <string>MicrosoftYaHei</string>
+        </mutableArray>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZDFind1ViewController">
             <connections>
@@ -18,19 +26,13 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NYX-iz-lyN" userLabel="注册">
-                    <rect key="frame" x="20" y="120" width="280" height="40"/>
-                    <state key="normal" title="确定">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="queding:" destination="-1" eventType="touchUpInside" id="J4Z-1k-Mwt"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l0p-aU-ZGh">
-                    <rect key="frame" x="208" y="76" width="92" height="33"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l0p-aU-ZGh">
+                    <rect key="frame" x="208" y="83" width="92" height="33"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="92" id="X6q-Sk-AdN"/>
+                        <constraint firstAttribute="height" constant="33" id="o3e-NI-ttL"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="MicrosoftYaHei" family="Microsoft YaHei" pointSize="15"/>
                     <state key="normal" title="获取验证码" backgroundImage="Judge">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -39,16 +41,16 @@
                         <action selector="yanzhegnma:" destination="-1" eventType="touchUpInside" id="4pJ-kg-pox"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MfB-zF-aw0">
-                    <rect key="frame" x="20" y="73" width="175" height="46"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MfB-zF-aw0">
+                    <rect key="frame" x="20" y="80" width="175" height="46"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="denglu-shurukuang" translatesAutoresizingMaskIntoConstraints="NO" id="0jh-43-DvA">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="denglu-shurukuang" translatesAutoresizingMaskIntoConstraints="NO" id="0jh-43-DvA">
                             <rect key="frame" x="0.0" y="0.0" width="175" height="48"/>
                             <rect key="contentStretch" x="0.10000000000000001" y="0.10000000000000001" width="0.5" height="1"/>
                         </imageView>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入验证码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NbZ-Ah-DqQ">
                             <rect key="frame" x="43" y="7" width="120" height="30"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <fontDescription key="fontDescription" name="MicrosoftYaHei" family="Microsoft YaHei" pointSize="14"/>
                             <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="light"/>
                         </textField>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="zhuce-yanzheng" translatesAutoresizingMaskIntoConstraints="NO" id="lZf-6b-aKY">
@@ -56,17 +58,24 @@
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="46" id="9P8-br-ZtY"/>
+                        <constraint firstAttribute="bottom" secondItem="0jh-43-DvA" secondAttribute="bottom" constant="-2" id="REK-Pi-dyK"/>
+                        <constraint firstItem="0jh-43-DvA" firstAttribute="top" secondItem="MfB-zF-aw0" secondAttribute="top" id="cOg-Sy-xpv"/>
+                        <constraint firstAttribute="trailing" secondItem="0jh-43-DvA" secondAttribute="trailing" id="pf1-sY-0RI"/>
+                        <constraint firstItem="0jh-43-DvA" firstAttribute="leading" secondItem="MfB-zF-aw0" secondAttribute="leading" id="sy7-lZ-97N"/>
+                    </constraints>
                 </view>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kfr-o6-tSv">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kfr-o6-tSv">
                     <rect key="frame" x="20" y="20" width="280" height="46"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="denglu-shurukuang" translatesAutoresizingMaskIntoConstraints="NO" id="MgX-24-nXK">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="denglu-shurukuang" translatesAutoresizingMaskIntoConstraints="NO" id="MgX-24-nXK">
                             <rect key="frame" x="0.0" y="0.0" width="280" height="46"/>
                             <rect key="contentStretch" x="0.10000000000000001" y="0.10000000000000001" width="0.5" height="1"/>
                         </imageView>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入手机号码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NXn-Bg-xMZ">
                             <rect key="frame" x="40" y="6" width="234" height="30"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <fontDescription key="fontDescription" name="MicrosoftYaHei" family="Microsoft YaHei" pointSize="14"/>
                             <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="light"/>
                         </textField>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="denglu-shouji" translatesAutoresizingMaskIntoConstraints="NO" id="Sdo-IE-ilP">
@@ -74,9 +83,43 @@
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="MgX-24-nXK" secondAttribute="bottom" id="7cY-KJ-UUn"/>
+                        <constraint firstAttribute="trailing" secondItem="MgX-24-nXK" secondAttribute="trailing" id="DxQ-pk-HOc"/>
+                        <constraint firstItem="MgX-24-nXK" firstAttribute="top" secondItem="Kfr-o6-tSv" secondAttribute="top" id="lNv-HK-9JG"/>
+                        <constraint firstAttribute="height" constant="46" id="pws-k4-vBm"/>
+                        <constraint firstItem="MgX-24-nXK" firstAttribute="leading" secondItem="Kfr-o6-tSv" secondAttribute="leading" id="xZD-Oj-UE6"/>
+                    </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NYX-iz-lyN" userLabel="注册">
+                    <rect key="frame" x="20" y="147" width="280" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="hNU-Nu-Ke2"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="MicrosoftYaHei" family="Microsoft YaHei" pointSize="18"/>
+                    <state key="normal" title="确定" backgroundImage="bg-lv">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="queding:" destination="-1" eventType="touchUpInside" id="J4Z-1k-Mwt"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="l0p-aU-ZGh" secondAttribute="trailing" constant="20" id="1qF-ja-shK"/>
+                <constraint firstItem="NYX-iz-lyN" firstAttribute="top" secondItem="MfB-zF-aw0" secondAttribute="bottom" constant="21" id="3PN-7i-8h4"/>
+                <constraint firstItem="l0p-aU-ZGh" firstAttribute="leading" secondItem="MfB-zF-aw0" secondAttribute="trailing" constant="13" id="DVz-5H-U7d"/>
+                <constraint firstAttribute="trailing" secondItem="Kfr-o6-tSv" secondAttribute="trailing" constant="20" id="Oe1-9C-Dbr"/>
+                <constraint firstItem="NYX-iz-lyN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="Qub-tQ-dcA"/>
+                <constraint firstItem="MfB-zF-aw0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="YIi-Ym-TWe"/>
+                <constraint firstItem="Kfr-o6-tSv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="aQn-3f-XHb"/>
+                <constraint firstItem="l0p-aU-ZGh" firstAttribute="top" secondItem="Kfr-o6-tSv" secondAttribute="bottom" constant="17" id="chy-fu-ZfM"/>
+                <constraint firstItem="Kfr-o6-tSv" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="ngD-8n-Hvk"/>
+                <constraint firstAttribute="trailing" secondItem="NYX-iz-lyN" secondAttribute="trailing" constant="20" id="wdc-jf-NjE"/>
+                <constraint firstItem="MfB-zF-aw0" firstAttribute="top" secondItem="Kfr-o6-tSv" secondAttribute="bottom" constant="14" id="xPD-gP-5zr"/>
+            </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="335" y="284"/>
@@ -84,6 +127,7 @@
     </objects>
     <resources>
         <image name="Judge" width="105" height="36"/>
+        <image name="bg-lv" width="18" height="16"/>
         <image name="denglu-shouji" width="32" height="42"/>
         <image name="denglu-shurukuang" width="48" height="48"/>
         <image name="zhuce-yanzheng" width="32" height="42"/>

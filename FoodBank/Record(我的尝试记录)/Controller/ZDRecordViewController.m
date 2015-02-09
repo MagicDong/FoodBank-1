@@ -31,10 +31,10 @@
 
 /** 之前选中的按钮 */
 @property (nonatomic, strong) UIButton *selectedButton;
-@property (weak, nonatomic) IBOutlet ChoiceButton *anquan;
-@property (weak, nonatomic) IBOutlet ChoiceButton *guomin;
-@property (weak, nonatomic) IBOutlet ChoiceButton *jujue;
-@property (weak, nonatomic) IBOutlet ChoiceButton *weichangshi;
+@property (weak, nonatomic) IBOutlet UIButton *anquan;
+@property (weak, nonatomic) IBOutlet UIButton *guomin;
+@property (weak, nonatomic) IBOutlet UIButton *jujue;
+@property (weak, nonatomic) IBOutlet UIButton *weichangshi;
 @property (weak, nonatomic) IBOutlet UILabel *foodName;
 @property (weak, nonatomic) IBOutlet UILabel *babyName;
 @property (weak, nonatomic) IBOutlet UILabel *babyYue;
@@ -47,6 +47,7 @@
 @property (nonatomic,assign) BOOL xiala;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic,strong) NSArray *titleArray;
+@property (weak, nonatomic) IBOutlet UIImageView *babyIcon;
 @property (nonatomic, assign) NSInteger integer;
 @end
 
@@ -62,56 +63,54 @@ static NSString *categoryCellID = @"categoryCell";
 }
 
 - (IBAction)anquan:(UIButton *)sender {
-    // 取消之前选中按钮的选中状态
-    self.selectedButton.selected = NO;
-    // 设置点中按钮的selected ＝ YES
-    sender.selected = YES;
-    // 将当前按钮作为选中按钮
-    self.selectedButton = sender;
+//    // 取消之前选中按钮的选中状态
+//    self.selectedButton.selected = NO;
+//    // 设置点中按钮的selected ＝ YES
+//    sender.selected = YES;
+//    // 将当前按钮作为选中按钮
+//    self.selectedButton = sender;
     [ZDNetwork postTryResultTryState:@"1" CallBack:^(RspState *rsp) {
         if (rsp.rspCode == 0) {
             UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"提交尝试结果成功！" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
             [alert show];
         }else{
-            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"错误！" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"提交尝试结果失败！" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
             [alert show];
         }
     }];
 }
 
 - (IBAction)guomin:(UIButton *)sender {
-    // 取消之前选中按钮的选中状态
-    self.selectedButton.selected = NO;
-    // 设置点中按钮的selected ＝ YES
-    sender.selected = YES;
-    // 将当前按钮作为选中按钮
-    self.selectedButton = sender;
+//    // 取消之前选中按钮的选中状态
+//    self.selectedButton.selected = NO;
+//    // 设置点中按钮的selected ＝ YES
+//    sender.selected = YES;
+//    // 将当前按钮作为选中按钮
+//    self.selectedButton = sender;
     ZDAllergyViewController *allergy = [[ZDAllergyViewController alloc]init];
     [self.navigationController pushViewController:allergy animated:YES];
 }
 
 
 - (IBAction)jujue:(UIButton *)sender {
-    // 取消之前选中按钮的选中状态 
-    self.selectedButton.selected = NO;
-    // 设置点中按钮的selected ＝ YES
-    sender.selected = YES;
-    // 将当前按钮作为选中按钮
-    self.selectedButton = sender;
+//    // 取消之前选中按钮的选中状态 
+//    self.selectedButton.selected = NO;
+//    // 设置点中按钮的selected ＝ YES
+//    sender.selected = YES;
+//    // 将当前按钮作为选中按钮
+//    self.selectedButton = sender;
     
     ZDRejectViewController *reject = [[ZDRejectViewController alloc]init];
     [self.navigationController pushViewController:reject animated:YES];
 }
 
 - (IBAction)weichangshi:(UIButton *)sender {
-    // 取消之前选中按钮的选中状态
-    self.selectedButton.selected = NO;
-    // 设置点中按钮的selected ＝ YES
-    sender.selected = YES;
-    // 将当前按钮作为选中按钮
-    self.selectedButton = sender;
-    
-    
+//    // 取消之前选中按钮的选中状态
+//    self.selectedButton.selected = NO;
+//    // 设置点中按钮的selected ＝ YES
+//    sender.selected = YES;
+//    // 将当前按钮作为选中按钮
+//    self.selectedButton = sender;
     
     [ZDNetwork postTryResultTryState:@"4" CallBack:^(RspState *rsp) {
         if (rsp.rspCode == 0) {
@@ -155,7 +154,7 @@ int i =0;
 //    day=[comp day];
 //    NSString *date1=[[NSString alloc]initWithFormat:@"%02d月%02d日",month,day];//所要求的周一的日期
     NSMutableArray *arrayM = [[NSMutableArray alloc]init];
-    for (int i = 1; i<=6; i++) {
+    for (int i = 1; i<=7; i++) {
         unsigned units=NSMonthCalendarUnit|NSDayCalendarUnit|NSYearCalendarUnit|NSWeekdayCalendarUnit;
         NSCalendar *mycal=[[NSCalendar alloc]initWithCalendarIdentifier:NSGregorianCalendar];
         NSDate *now=[NSDate date];
@@ -216,7 +215,34 @@ int i =0;
 //    _borderView1.cornerRadius = 10;
 //    _borderView1.borderColor = [UIColor redColor];
 //    _borderView1.backgroundColor = ZDColor(255, 246, 229);
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemImage:@"navigationbar_more" highlightedImage:@"navigationbar_more_highlighted" target:self action:@selector(more)];
+//    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemImage:@"navigationbar_more" highlightedImage:@"navigationbar_more_highlighted" target:self action:@selector(more)];
+    self.anquan.layer.cornerRadius = 5;
+    self.anquan.layer.masksToBounds = YES;
+    self.jujue.layer.cornerRadius = 5;
+    self.jujue.layer.masksToBounds = YES;
+    self.guomin.layer.cornerRadius = 5;
+    self.guomin.layer.masksToBounds = YES;
+    self.weichangshi.layer.cornerRadius = 5;
+    self.weichangshi.layer.masksToBounds = YES;
+    self.babyIcon.layer.cornerRadius = 30;
+    self.babyIcon.layer.masksToBounds = YES;
+    CALayer *layer = [self.babyIcon layer];
+    layer.borderColor = [UIColor colorWithRed:(161)/255.0 green:(255)/255.0 blue:(169)/255.0 alpha:1.0f].CGColor;
+    layer.borderWidth = 1.0f;
+    
+    
+//    [self.babyIcon.layer setBorderWidth:1.5f];
+//    CGFloat r = (CGFloat) 161/255.0;
+//    CGFloat g = (CGFloat) 255/255.0;
+//    CGFloat b = (CGFloat) 169/255.0;
+//    CGFloat a = (CGFloat) 1.0f;
+//    CGFloat components[4] = {r,g,b,a};
+//    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+//    CGColorRef color = (__bridge CGColorRef)(id)CFBridgingRelease(CGColorCreate(colorSpace, components));
+//    CGColorSpaceRelease(colorSpace);
+//    [self.babyIcon.layer setBorderColor:color];
+    
+    
 }
 
 - (void)setupTableView{

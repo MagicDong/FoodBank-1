@@ -44,9 +44,9 @@
         self.contentView.userInteractionEnabled = YES;
         self.accessoryView = [[UIImageView alloc] initWithImage:self.upImage];
         self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        self.backgroundColor = ZDColor(255, 246, 229);
+//        self.backgroundColor = ZDColor(255, 246, 229);
         self.textLabel.font = [UIFont boldSystemFontOfSize:14];
-        self.textLabel.textColor = ZDColor(153, 102, 51);
+        self.textLabel.textColor = ZDColor(53, 158, 58);
     }
     return self;
 }

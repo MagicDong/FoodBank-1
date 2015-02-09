@@ -24,6 +24,7 @@
 #import "ZDBaby.h"
 #import "ZDBabyTool.h"
 #import <SMS_SDK/SMS_SDK.h>
+#import "ZDFind1ViewController.h"
 
 @interface ZDRegisterViewController () <UIWebViewDelegate,UITextFieldDelegate>
 
@@ -38,6 +39,13 @@
 @end
 
 @implementation ZDRegisterViewController
+- (IBAction)find:(UIButton *)sender {
+    ZDFind1ViewController *find = [[ZDFind1ViewController alloc]init];
+    ZDNavViewController *nav = [[ZDNavViewController alloc]initWithRootViewController:find];
+    [self presentViewController:nav animated:YES completion:^{
+        
+    }];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -57,6 +65,14 @@
     NSString *appKey = @"47f01de13458";
     NSString *appSecret = @"ec44a5b1ff4cb948cb16c1a0b1655b23";
     [SMS_SDK  registerApp:appKey withSecret:appSecret];
+//    [self.login setBackgroundColor:[UIColor colorWithRed:53 green:147 blue:58 alpha:1.0]];
+    self.login.backgroundColor = ZDColor(53, 147, 58);
+    self.login.layer.cornerRadius = 3;
+    self.login.layer.masksToBounds = YES;
+    
+    self.rgs.layer.cornerRadius = 3;
+    self.rgs.layer.masksToBounds = YES;
+    
 }
 
 /** 登录按钮 */

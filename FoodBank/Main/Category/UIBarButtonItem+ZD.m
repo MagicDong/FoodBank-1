@@ -28,7 +28,8 @@
     // 设置高亮状态图片
     [btn setImage:[UIImage imageWithNamed:highlightedImage] forState:UIControlStateHighlighted];
     // 设置size
-    btn.size = btn.currentImage.size;
+//    btn.size = btn.currentImage.size;
+    btn.size = CGSizeMake(15, 24);
     // 监听点击事件
     [btn addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
     // 用对象方法自定义视图,实例化一个BarButtonItem

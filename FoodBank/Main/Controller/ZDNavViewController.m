@@ -143,28 +143,30 @@
     // 1.拿到主题对象
     UIBarButtonItem *item = [UIBarButtonItem appearance];
     
-    // 2.设置属性
-    if (!iOS7) {
-        // 2.1设置按钮的背景图片
-        [item setBackgroundImage:[UIImage imageWithNamed:@"navigationbar_button_background"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-    }
+//    // 2.设置属性
+//    if (!iOS7) {
+//        // 2.1设置按钮的背景图片
+//        [item setBackgroundImage:[UIImage imageWithNamed:@"navigationbar_button_background"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+//    }
     
     // 3设置按钮的文字属性
     // 3.1设置默认状态下的文字属性
     NSMutableDictionary *md = [NSMutableDictionary dictionary];
-    md[UITextAttributeTextColor] = [UIColor orangeColor];
+    md[UITextAttributeTextColor] = ZDColor(53, 148, 57);
     md[UITextAttributeTextShadowOffset] = [NSValue valueWithUIOffset:UIOffsetMake(0, 0)];
-    md[UITextAttributeFont] = [UIFont systemFontOfSize:16];
+    
+    md[UITextAttributeFont] = ZDWeiRuan(16);
+    
     [item setTitleTextAttributes:md forState:UIControlStateNormal];
     
     // 3.2设置高亮状态下的文字属性
     NSMutableDictionary *mdHig = [NSMutableDictionary dictionaryWithDictionary:md];
-    mdHig[UITextAttributeTextColor] = [UIColor redColor];
+    mdHig[UITextAttributeTextColor] = ZDColor(53, 148, 57);
     [item setTitleTextAttributes:mdHig forState:UIControlStateHighlighted];
     
     // 3.2设置高亮状态下的文字属性
     NSMutableDictionary *mddisabled = [NSMutableDictionary dictionaryWithDictionary:md];
-    mddisabled[UITextAttributeTextColor] = [UIColor lightGrayColor];
+    mddisabled[UITextAttributeTextColor] = ZDColor(53, 148, 57);
     [item setTitleTextAttributes:mddisabled forState:UIControlStateDisabled];
     
     
@@ -180,7 +182,7 @@
     // 1.2设置主题
     if (!iOS7) {
         // 1.设置导航条背景图片
-        [navBar setBackgroundImage:[UIImage imageWithNamed:@"Judge2"] forBarMetrics:UIBarMetricsDefault];
+//        [navBar setBackgroundImage:[UIImage imageWithNamed:@"bg-lv"] forBarMetrics:UIBarMetricsDefault];
         // 2.设置导航条标题的属性
         NSMutableDictionary *md = [NSMutableDictionary dictionary];
         // 文字颜色
@@ -188,23 +190,26 @@
         // 文字偏移位
         md[UITextAttributeTextShadowOffset] = [NSValue valueWithUIOffset:UIOffsetMake(0, 0)];
         // 文字字体大小
-        md[UITextAttributeFont] = [UIFont systemFontOfSize:20];
+        md[UITextAttributeFont] = ZDWeiRuan(20);
         
         [navBar setTitleTextAttributes:md];
-        
     }
-    // 1.设置导航条背景图片
-    [navBar setBackgroundImage:[UIImage imageWithNamed:@"Judge2"] forBarMetrics:UIBarMetricsDefault];
+
+
     // 2.设置导航条标题的属性
     NSMutableDictionary *md = [NSMutableDictionary dictionary];
-    // 文字颜色
-    md[UITextAttributeTextColor] = [UIColor colorWithRed:53 green:148 blue:57 alpha:1];
+    // 1.设置导航条背景图片
+    [navBar setBackgroundColor:[UIColor whiteColor]];
+//     文字颜色
+    md[UITextAttributeTextColor] = ZDColor(53, 148, 57);
+//    [navBar setBackgroundImage:[UIImage imageWithNamed:@"bg-lv"] forBarMetrics:UIBarMetricsDefault];
+//    md[UITextAttributeTextColor] = [UIColor whiteColor];
     // 文字偏移位
     md[UITextAttributeTextShadowOffset] = [NSValue valueWithUIOffset:UIOffsetMake(0, 0)];
     // 文字字体大小
-    md[UITextAttributeFont] = [UIFont systemFontOfSize:20];
-    [navBar setTitleTextAttributes:md];
+    md[UITextAttributeFont] = [UIFont fontWithName:@"MicrosoftYaHei" size:20.0f];
     
+    [navBar setTitleTextAttributes:md];
     
 }
 
@@ -224,7 +229,7 @@
         // 2.覆盖返回按钮
         
         // 只要覆盖了返回按钮, 系统自带的拖拽返回上一级的功能就会失效
-        viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem itemImage:@"navigationbar_back" highlightedImage:@"navigationbar_back_highlighted" target:self action:@selector(back)];
+        viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem itemImage:@"fanhuitubiao" highlightedImage:@"fanhuitubiao" target:self action:@selector(back)];
         // 3.添加更多按钮
         viewController.navigationItem.rightBarButtonItem = [UIBarButtonItem itemImage:@"navigationbar_more" highlightedImage:@"navigationbar_more_highlighted" target:self action:@selector(more)];
     }

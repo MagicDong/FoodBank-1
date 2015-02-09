@@ -18,7 +18,7 @@
             <rect key="frame" x="0.0" y="44" width="320" height="436"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="NNy-uG-kpc">
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="NNy-uG-kpc">
                     <rect key="frame" x="90" y="94" width="230" height="342"/>
                     <collectionViewLayout key="collectionViewLayout" id="9gk-xM-a8p"/>
                     <connections>
@@ -26,22 +26,32 @@
                         <outlet property="delegate" destination="-1" id="ZDG-fi-QBr"/>
                     </connections>
                 </collectionView>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="      请您将宝宝已尝试过（尝试3-7天）且未发生过敏、拒绝等现象）的食材勾选出来。" translatesAutoresizingMaskIntoConstraints="NO" id="S18-5c-VUW">
-                    <rect key="frame" x="90" y="0.0" width="230" height="60"/>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" directionalLockEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="      请您将宝宝已尝试过（尝试3-7天）且未发生过敏、拒绝等现象）的食材勾选出来。" translatesAutoresizingMaskIntoConstraints="NO" id="S18-5c-VUW">
+                    <rect key="frame" x="90" y="0.0" width="230" height="70"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="70" id="FLb-VC-6cE"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hRD-e7-2VW">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hRD-e7-2VW">
                     <rect key="frame" x="0.0" y="0.0" width="90" height="436"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="90" id="Otu-mD-5ak"/>
+                    </constraints>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="bKP-aq-DNR"/>
                         <outlet property="delegate" destination="-1" id="6Ht-NX-vPi"/>
                     </connections>
                 </tableView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EBx-Nt-uET">
-                    <rect key="frame" x="247" y="61" width="60" height="26"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EBx-Nt-uET">
+                    <rect key="frame" x="247" y="68" width="60" height="26"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="26" id="UIm-do-GYx"/>
+                        <constraint firstAttribute="width" constant="60" id="VLe-k1-zPC"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <state key="normal" title="全选" backgroundImage="Judge2"/>
                     <connections>
@@ -50,6 +60,20 @@
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="EBx-Nt-uET" secondAttribute="trailing" constant="13" id="4Pn-LG-L6O"/>
+                <constraint firstAttribute="trailing" secondItem="NNy-uG-kpc" secondAttribute="trailing" id="4x3-ib-RXg"/>
+                <constraint firstAttribute="trailing" secondItem="S18-5c-VUW" secondAttribute="trailing" id="6AO-f6-0bE"/>
+                <constraint firstItem="hRD-e7-2VW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="7UN-bV-rve"/>
+                <constraint firstItem="NNy-uG-kpc" firstAttribute="leading" secondItem="hRD-e7-2VW" secondAttribute="trailing" id="FlF-JZ-wHk"/>
+                <constraint firstItem="NNy-uG-kpc" firstAttribute="top" secondItem="EBx-Nt-uET" secondAttribute="bottom" id="NDf-fe-aoT"/>
+                <constraint firstItem="EBx-Nt-uET" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="68" id="QOw-il-34J"/>
+                <constraint firstItem="S18-5c-VUW" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="SCN-8O-3aa"/>
+                <constraint firstAttribute="bottom" secondItem="NNy-uG-kpc" secondAttribute="bottom" id="Swb-cb-xdz"/>
+                <constraint firstItem="hRD-e7-2VW" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="TQI-MI-RZA"/>
+                <constraint firstAttribute="bottom" secondItem="hRD-e7-2VW" secondAttribute="bottom" id="ilW-ql-rOB"/>
+                <constraint firstItem="S18-5c-VUW" firstAttribute="leading" secondItem="hRD-e7-2VW" secondAttribute="trailing" id="nsx-z5-EwL"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>

@@ -36,7 +36,7 @@ static NSString *categoryCellID = @"categoryCell";
 @property (nonatomic, strong) NSMutableArray *selectArray;
 @property (nonatomic, strong) NSIndexPath *path;
 @property (nonatomic, assign) NSInteger integer;
-
+@property (nonatomic, strong) NSMutableDictionary *categoryCount;
 @end
 
 @implementation ZDSiKuViewController
@@ -62,7 +62,7 @@ static NSString *categoryCellID = @"categoryCell";
     [self.collection registerNib:nib forCellWithReuseIdentifier:ProductCellID];
 //    [self.collection registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:reusableViewID];
     self.integer = 0;
-    self.quanxuan.layer.cornerRadius = 8;
+    self.quanxuan.layer.cornerRadius = 3;
     self.quanxuan.layer.masksToBounds = YES;
     
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc]init];
@@ -73,16 +73,32 @@ static NSString *categoryCellID = @"categoryCell";
     paragraphStyle.alignment = NSTextAlignmentJustified;
     NSMutableDictionary *attributes = [@{ NSFontAttributeName:[UIFont systemFontOfSize:15], NSParagraphStyleAttributeName:paragraphStyle, NSForegroundColorAttributeName:[UIColor colorWithRed:153/255. green:102/255. blue:51/255. alpha:1]
                                           }mutableCopy];
+    
     self.textView.attributedText = [[NSAttributedString alloc]initWithString:@"请您将宝宝已尝试过（尝试3-7天）且未发生过敏、拒绝等现象）的食材勾选出来。" attributes:attributes];
-
+    
     UINib *categoryNib = [UINib nibWithNibName:@"ZDCategoryCell" bundle:nil];
     [self.tableView registerNib:categoryNib forCellReuseIdentifier:categoryCellID];
     self.tableView.bounces = YES;
     
     // 3.添加更多按钮
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"确定" style:UIBarButtonItemStylePlain target:self action:@selector(queding)];
-
+    
+    self.categoryCount = [NSMutableDictionary dictionary];
+    //    [self.categoryCount setValue:@1 forKey:@"1"];
+    //    [self what_are_you_doing];
 }
+
+//- (void)what_are_you_doing {
+//    if ([[UIDevice currentDevice] respondsToSelector:@selector(setOrientation:)]) {
+//        SEL selector = NSSelectorFromString(@"setOrientation:");
+//        NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:[UIDevice instanceMethodSignatureForSelector:selector]];
+//        [invocation setSelector:selector];
+//        [invocation setTarget:[UIDevice currentDevice]];
+//        int val = UIInterfaceOrientationLandscapeRight;
+//        [invocation setArgument:&val atIndex:2];
+//        [invocation invoke];
+//    }
+//}
 
 - (void)queding{
     // 跳转到TabBarController
@@ -105,6 +121,7 @@ static NSString *categoryCellID = @"categoryCell";
             }
         }];
         
+        
         ZDTabBarController *tabBarVc = [[ZDTabBarController alloc] init];
         UIApplication *app = [UIApplication sharedApplication];
         UIWindow *window = app.keyWindow;
@@ -116,10 +133,12 @@ static NSString *categoryCellID = @"categoryCell";
 
 - (IBAction)quanxuan:(UIButton *)sender {
 //    [self.collection cellForItemAtIndexPath:];
-    for (int row=0; row<[self.dataList[self.integer] count]; row++) {
-        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:0];
-        [self.collection selectItemAtIndexPath:indexPath animated:NO scrollPosition:UICollectionViewScrollPositionNone];
+    for (int row=0; row<[self.dataList[self.integer] foodGenreList].count; row++) {
+        NSLog(@"%d",row);
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+        [self.collection selectItemAtIndexPath:indexPath animated:YES scrollPosition:UICollectionViewScrollPositionNone];
     }
+    
 }
 
 ////只返回可见的cell
@@ -250,6 +269,7 @@ static NSString *categoryCellID = @"categoryCell";
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    
 //    CZProduct *product = self.dataList[indexPath.item];
     UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
     CZProductCell *product = (CZProductCell *)cell;
@@ -279,7 +299,7 @@ static NSString *categoryCellID = @"categoryCell";
     }
     
     
-//    NSLog(@",,,,,%@",self.selectArray);
+    NSLog(@",,,,,%@",self.selectArray);
 //    NSLog(@"======%@",self.selectArray);
     
 }

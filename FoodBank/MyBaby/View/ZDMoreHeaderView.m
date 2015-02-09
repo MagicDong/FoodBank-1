@@ -39,19 +39,23 @@
 - (void)awakeFromNib{
     self.userIcon.layer.cornerRadius = 30;
     self.userIcon.layer.masksToBounds = YES;
-    [self.userIcon.layer setBorderWidth:1.5f];
-    
-    CGFloat r = (CGFloat) 0/255.0;
-    CGFloat g = (CGFloat) 0/255.0;
-    CGFloat b = (CGFloat) 0/255.0;
-    CGFloat a = (CGFloat) 0;
-    CGFloat components[4] = {r,g,b,a};
-    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-    
-    CGColorRef color = (__bridge CGColorRef)(id)CFBridgingRelease(CGColorCreate(colorSpace, components));
-    CGColorSpaceRelease(colorSpace);
-    [self.userIcon.layer setBorderColor:color];
+//    [self.userIcon.layer setBorderWidth:1.5f];
+//    
+//    CGFloat r = (CGFloat) 0/255.0;
+//    CGFloat g = (CGFloat) 0/255.0;
+//    CGFloat b = (CGFloat) 0/255.0;
+//    CGFloat a = (CGFloat) 0;
+//    CGFloat components[4] = {r,g,b,a};
+//    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+//    
+//    CGColorRef color = (__bridge CGColorRef)(id)CFBridgingRelease(CGColorCreate(colorSpace, components));
+//    CGColorSpaceRelease(colorSpace);
+//    [self.userIcon.layer setBorderColor:color];
 //
+    CALayer *layer = [self.userIcon layer];
+    layer.borderColor = [UIColor colorWithRed:(161)/255.0 green:(255)/255.0 blue:(169)/255.0 alpha:1.0f].CGColor;
+    layer.borderWidth = 1.0f;
+    
     self.xiugai.backgroundColor = [UIColor colorWithRed:(0)/255.0 green:(0)/255.0 blue:(0)/255.0 alpha:0.3];
     [self.xiugai.layer setCornerRadius:10];
     [self.xiugai setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];

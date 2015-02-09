@@ -16,8 +16,8 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IT3-Dy-Qso">
-                    <rect key="frame" x="67" y="169" width="60" height="60"/>
-                    <state key="normal" image="ipad_user_login_qq">
+                    <rect key="frame" x="67" y="240" width="60" height="60"/>
+                    <state key="normal" image="denglu-logo">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -25,8 +25,8 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LTE-oj-e9J">
-                    <rect key="frame" x="190" y="169" width="60" height="60"/>
-                    <state key="normal" image="ipad_user_login_qq">
+                    <rect key="frame" x="190" y="240" width="60" height="60"/>
+                    <state key="normal" image="denglu-logo">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -34,82 +34,61 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="优膳有方iPad版" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sTF-po-2LC">
-                    <rect key="frame" x="51" y="237" width="99" height="21"/>
+                    <rect key="frame" x="51" y="308" width="99" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                    <color key="textColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="宝贝营养秤" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hoh-44-E1c">
-                    <rect key="frame" x="190" y="237" width="70" height="21"/>
+                    <rect key="frame" x="190" y="308" width="70" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                    <color key="textColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vmM-2a-nRZ">
-                    <rect key="frame" x="67" y="266" width="60" height="60"/>
-                    <state key="normal" image="ipad_user_login_qq">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="iPad:" destination="-1" eventType="touchUpInside" id="Q14-0M-Rft"/>
-                        <action selector="yinshijilu:" destination="-1" eventType="touchUpInside" id="Kjo-7B-zG9"/>
-                    </connections>
-                </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="饮食记录" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pez-pq-g3r">
-                    <rect key="frame" x="74" y="334" width="52" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                    <color key="textColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="网址：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kT2-Y9-jXT">
-                    <rect key="frame" x="8" y="140" width="51" height="21"/>
+                    <rect key="frame" x="8" y="190" width="51" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <color key="textColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TMs-WT-Q9E">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="131"/>
+                    <rect key="frame" x="0.0" y="59" width="320" height="123"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="131" id="aJg-m8-eNA"/>
+                        <constraint firstAttribute="width" constant="320" id="3F8-32-VhW"/>
+                        <constraint firstAttribute="height" constant="123" id="NMr-HZ-yaT"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GXR-lQ-r7d">
-                    <rect key="frame" x="56" y="131" width="256" height="39"/>
+                    <rect key="frame" x="56" y="180" width="256" height="39"/>
                     <state key="normal" title="www.mamabaodian.com">
+                        <color key="titleColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="WWW:" destination="-1" eventType="touchUpInside" id="DbP-35-dr8"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="宝贝吃中学" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zlC-OS-Ufg">
-                    <rect key="frame" x="190" y="334" width="70" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                    <color key="textColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="感谢您使用免费版宝贝食材银行APP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jat-GK-LBs">
+                    <rect key="frame" x="8" y="15" width="304" height="36"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="36" id="Orv-TO-mnY"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tQu-Y6-Qye">
-                    <rect key="frame" x="190" y="266" width="60" height="60"/>
-                    <state key="normal" image="ipad_user_login_qq">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="baobeichizhongxue:" destination="-1" eventType="touchUpInside" id="wJi-5A-CdD"/>
-                        <action selector="yingyangcheng:" destination="-1" eventType="touchUpInside" id="AuM-kq-5Uh"/>
-                    </connections>
-                </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logoAbout" translatesAutoresizingMaskIntoConstraints="NO" id="2Hh-qk-9FG">
-                    <rect key="frame" x="39" y="358" width="243" height="72"/>
-                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="TMs-WT-Q9E" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="PmZ-yy-ecx"/>
-                <constraint firstAttribute="trailing" secondItem="TMs-WT-Q9E" secondAttribute="trailing" id="SCm-bR-Kcq"/>
-                <constraint firstItem="TMs-WT-Q9E" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="lrY-bs-5RE"/>
+                <constraint firstItem="TMs-WT-Q9E" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="59" id="9hR-PL-uxY"/>
+                <constraint firstAttribute="trailing" secondItem="TMs-WT-Q9E" secondAttribute="trailing" id="BzT-UN-uEL"/>
+                <constraint firstItem="TMs-WT-Q9E" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="GxL-7W-75Y"/>
+                <constraint firstItem="Jat-GK-LBs" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="15" id="ODI-kb-lYP"/>
+                <constraint firstItem="Jat-GK-LBs" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="l4K-q5-0sM"/>
+                <constraint firstAttribute="trailing" secondItem="Jat-GK-LBs" secondAttribute="trailing" constant="8" id="x3O-zP-x7Z"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
@@ -117,8 +96,7 @@
         </view>
     </objects>
     <resources>
-        <image name="ipad_user_login_qq" width="92" height="92"/>
-        <image name="logoAbout" width="212" height="60"/>
+        <image name="denglu-logo" width="122" height="122"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

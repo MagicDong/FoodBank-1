@@ -26,9 +26,9 @@
     paragraphStyle.firstLineHeadIndent = 20.f;
     paragraphStyle.alignment = NSTextAlignmentJustified;
     
-    NSDictionary *attributes = @{ NSFontAttributeName:[UIFont systemFontOfSize:15], NSParagraphStyleAttributeName:paragraphStyle, NSForegroundColorAttributeName:[UIColor colorWithRed:153/255. green:102/255. blue:51/255. alpha:1]
+    NSDictionary *attributes = @{ NSFontAttributeName:[UIFont systemFontOfSize:15], NSParagraphStyleAttributeName:paragraphStyle, NSForegroundColorAttributeName:[UIColor colorWithRed:0/255. green:102/255. blue:51/255. alpha:1]
                                   };
-    self.product.attributedText = [[NSAttributedString alloc]initWithString:@"感谢您使用免费版宝贝食材银行APP\n登录活好网站，了解更多资讯，更多强大的营养配餐软件期待您的使用！\n通过对应接口您可直接将此APP中的食材库信息导入到其他软件中方便您的使用。" attributes:attributes];
+    self.product.attributedText = [[NSAttributedString alloc]initWithString:@"登录活好网站，了解更多资讯，更多强大的营养配餐软件期待您的使用！\n通过对应接口您可直接将此APP中的食材库信息导入到其他软件中方便您的使用。" attributes:attributes];
 }
 - (IBAction)yinshijilu:(id)sender {
     NSString *appid = @"725296055";

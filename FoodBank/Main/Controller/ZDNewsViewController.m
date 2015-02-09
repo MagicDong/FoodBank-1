@@ -96,7 +96,6 @@ static NSString *PhotosID = @"photosCell";
 //    } completion:^(BOOL finished) {
 //        [imaegView  removeFromSuperview];
 //    }];
-
 }
 
 
@@ -115,9 +114,10 @@ static NSString *PhotosID = @"photosCell";
         self.navigationController.navigationBar.opaque=YES;
     }
     
-    // 3.添加更多按钮
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemImage:@"navigationbar_more" highlightedImage:@"navigationbar_more_highlighted" target:self action:@selector(more)];
     
+    // 3.添加更多按钮
+//    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemImage:@"navigationbar_more" highlightedImage:@"navigationbar_more_highlighted" target:self action:@selector(more)];
+//    
 //    ZDSpecialViewController *specialView = [[ZDSpecialViewController alloc] init];
 //    self.spView = specialView.view;
 //    [self.view.window addSubview:self.spView];

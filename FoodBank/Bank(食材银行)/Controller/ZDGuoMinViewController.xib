@@ -79,7 +79,7 @@
     </objects>
     <resources>
         <image name="Judge" width="105" height="36"/>
-        <image name="baby" width="139" height="164"/>
+        <image name="baby" width="69" height="82"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
