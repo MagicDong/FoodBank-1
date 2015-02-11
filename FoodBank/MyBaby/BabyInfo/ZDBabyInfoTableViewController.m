@@ -225,6 +225,7 @@ static NSString *birthdayCellID = @"birthdayCell";
         cell = [tableView dequeueReusableCellWithIdentifier:birthdayCellID];
         self.birthdayCell = (ZDLoginBirthdayCell *)cell;
     }
+    cell.textLabel.font = [UIFont fontWithName:@"MicrosoftYaHei" size:(13)];
     cell.contentView.userInteractionEnabled = YES;
     //    cell.info = self.infoModel[indexPath.row];
     return cell;

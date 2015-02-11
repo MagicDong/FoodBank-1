@@ -334,6 +334,7 @@ static NSString *heardID = @"headerView";
 }
 - (void)setupGroup3{
     ZDCommonArrowItem *idea = [ZDCommonArrowItem itemWithTitle:@"意见反馈"];
+    idea.icon = @"fankui";
     idea.opertion = ^(){
         NSString *appid = @"908308962";
         NSString *str = [NSString stringWithFormat:@"itms-apps://itunes.apple.com/cn/app/id%@?mt=8", appid];
@@ -341,6 +342,7 @@ static NSString *heardID = @"headerView";
         [[UIApplication sharedApplication] openURL:url];
     };
     ZDCommonArrowItem *about = [ZDCommonArrowItem itemWithTitle:@"关于我们"];
+    about.icon = @"guanyu";
     about.destVC = [ZDAboutViewController class];
     ZDCommonGroup *group = [self addGroup];
     group.items = @[idea,about];

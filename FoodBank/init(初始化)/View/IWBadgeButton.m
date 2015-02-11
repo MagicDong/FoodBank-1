@@ -14,9 +14,11 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self setBackgroundImage:[UIImage resizableImageNamed:@"main_badge"] forState:UIControlStateNormal];
-        self.titleLabel.font = [UIFont systemFontOfSize:10];
+        [self setBackgroundImage:[UIImage resizableImageNamed:@"yuanxin"] forState:UIControlStateNormal];
+        self.titleLabel.font = [UIFont fontWithName:@"MicrosoftYaHei" size:(10)];
+        self.titleLabel.textColor = ZDColor(53, 160, 58);
         self.size = self.currentBackgroundImage.size;
+        
     }
     return self;
 }

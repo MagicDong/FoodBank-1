@@ -249,13 +249,14 @@
         
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
         manager.requestSerializer.timeoutInterval = kTimeout;
+        
 //        manager.responseSerializer = @"text/json";
         // 1.1 修改请求的数据格式 JSON
 //        manager.requestSerializer = [AFJSONRequestSerializer serializer];
         // 1.2 修改响应的数据格式 二进制的数据
 //        manager.responseSerializer = [AFHTTPResponseSerializer serializer];
 //        manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/json"];
-        
+//        
 //      [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", nil];
         
         [manager GET:urlStr parameters:nil  success:^(AFHTTPRequestOperation *operation, id responseObject) {

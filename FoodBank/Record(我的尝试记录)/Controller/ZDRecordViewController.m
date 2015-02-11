@@ -125,34 +125,17 @@ static NSString *categoryCellID = @"categoryCell";
 int i =0;
 - (void)viewDidLoad{
     [super viewDidLoad];
+    [ZDNetwork getTryRecordInfoCallback:^(RspState *rsp, NSArray *array) {
+        if (rsp.rspCode == 0) {
+            self.dataList = array;
+        }else{
+
+        }
+    }];
+    
     [self setupTableView];
     self.title = @"尝试记录";
     
-//    self.integer = 0;
-//    unsigned units=NSMonthCalendarUnit|NSDayCalendarUnit|NSYearCalendarUnit|NSWeekdayCalendarUnit;
-//    NSCalendar *mycal=[[NSCalendar alloc]initWithCalendarIdentifier:NSGregorianCalendar];
-//    NSDate *now=[NSDate date];
-//    NSDateComponents *comp =[mycal components:units fromDate:now];
-//    NSInteger month=[comp month];
-//    NSInteger year =[comp year];
-//    NSInteger day=[comp day];
-//    
-//    NSCalendar *gregorian = [NSCalendar currentCalendar];
-//    NSDateComponents *dateComps = [gregorian components:NSWeekdayCalendarUnit fromDate:now];
-//    int daycount = [dateComps weekday] - 1;
-//    NSDate *weekdaybegin=[now addTimeInterval:-daycount*60*60*24];
-//    NSDate *weekdayend  =[now  addTimeInterval:(6-daycount)*60*60*24];
-//    NSDateFormatter *df1=[[NSDateFormatter alloc]init];
-//    NSLocale *mylocal=[[NSLocale alloc]initWithLocaleIdentifier:@"zh_CN"];
-//    [df1 setLocale:mylocal];
-////    [mylocal release];
-//    [df1 setDateFormat:@"YYYY-MM-d"];
-//    now=weekdaybegin;
-//    comp=[mycal components:units fromDate:now];
-//    month=[comp month];
-//    year =[comp year];
-//    day=[comp day];
-//    NSString *date1=[[NSString alloc]initWithFormat:@"%02d月%02d日",month,day];//所要求的周一的日期
     NSMutableArray *arrayM = [[NSMutableArray alloc]init];
     for (int i = 1; i<=7; i++) {
         unsigned units=NSMonthCalendarUnit|NSDayCalendarUnit|NSYearCalendarUnit|NSWeekdayCalendarUnit;
@@ -167,7 +150,7 @@ int i =0;
         NSDateComponents *dateComps = [gregorian components:NSWeekdayCalendarUnit fromDate:now];
         int daycount = [dateComps weekday] - i;
         NSDate *weekdaybegin = [now addTimeInterval:-daycount*60*60*24];
-        NSDate *weekdayend   = [now  addTimeInterval:(6-daycount)*60*60*24];
+        NSDate *weekdayend   = [now addTimeInterval:(6-daycount)*60*60*24];
         NSDateFormatter *df1=[[NSDateFormatter alloc]init];
         NSLocale *mylocal=[[NSLocale alloc]initWithLocaleIdentifier:@"zh_CN"];
         [df1 setLocale:mylocal];
@@ -199,23 +182,6 @@ int i =0;
     self.titleArray = TitielArray;
     [self.tableView reloadData];
     
-    /*
-     第一个参数是存放你需要显示的title
-     第二个是设置你需要的size
-     */
-//    _ygp = [[YGPSegmentedController alloc]initContentTitle:TitielArray CGRect:CGRectMake(0, 60, self.view.width, 44)];
-//    [_ygp setDelegate:self];
-//    [self.view addSubview:_ygp];
-//    [_ygp initselectedSegmentIndex];
-//
-//    _borderView1.borderType = BorderTypeDashed;
-//    _borderView1.dashPattern = 2;
-//    _borderView1.spacePattern = 2;
-//    _borderView1.borderWidth = 1;
-//    _borderView1.cornerRadius = 10;
-//    _borderView1.borderColor = [UIColor redColor];
-//    _borderView1.backgroundColor = ZDColor(255, 246, 229);
-//    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemImage:@"navigationbar_more" highlightedImage:@"navigationbar_more_highlighted" target:self action:@selector(more)];
     self.anquan.layer.cornerRadius = 5;
     self.anquan.layer.masksToBounds = YES;
     self.jujue.layer.cornerRadius = 5;
@@ -230,19 +196,6 @@ int i =0;
     layer.borderColor = [UIColor colorWithRed:(161)/255.0 green:(255)/255.0 blue:(169)/255.0 alpha:1.0f].CGColor;
     layer.borderWidth = 1.0f;
     
-    
-//    [self.babyIcon.layer setBorderWidth:1.5f];
-//    CGFloat r = (CGFloat) 161/255.0;
-//    CGFloat g = (CGFloat) 255/255.0;
-//    CGFloat b = (CGFloat) 169/255.0;
-//    CGFloat a = (CGFloat) 1.0f;
-//    CGFloat components[4] = {r,g,b,a};
-//    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-//    CGColorRef color = (__bridge CGColorRef)(id)CFBridgingRelease(CGColorCreate(colorSpace, components));
-//    CGColorSpaceRelease(colorSpace);
-//    [self.babyIcon.layer setBorderColor:color];
-    
-    
 }
 
 - (void)setupTableView{
@@ -255,18 +208,6 @@ int i =0;
     return self.titleArray.count;
 }
 
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-//    static NSString *str = @"cell";
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:str];
-//    if (cell ==nil) {
-//        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:str];
-//    }
-//    cell.textLabel.text = self.titleArray[indexPath.row];
-//
-//    
-//    return nil;
-//}
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     //    static NSString *ID = @"share";
     ZDCategoryCell *cell = [tableView dequeueReusableCellWithIdentifier:categoryCellID];
@@ -278,15 +219,11 @@ int i =0;
         cell.zhuangtai = 0;
         cell.selected = NO;
     }
+//    cell.textLabel.font = [UIFont fontWithName:@"MicrosoftYaHei" size:(14)];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
     return cell;
 }
-
-//- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    cell.backgroundColor = [UIColor redColor];
-//}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSIndexPath *p = [NSIndexPath indexPathForItem:i inSection:0];
@@ -300,18 +237,17 @@ int i =0;
     cell.selected = YES;
     i = indexPath.row;
     // 更新表
+//    ZDTryRecord *dict = _dataList[indexPath.row];
+//    [self.foodName setText:dict.mname];
+//    [self.toDay setText:[NSString stringWithFormat:@"%@",dict.isTrying]];
+//    [self.zhouqi setText:[NSString stringWithFormat:@"%@",dict.cycle]];
 }
-
-//- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    ZDCategoryCell *cell = (ZDCategoryCell *)[tableView cellForRowAtIndexPath:indexPath];
-//    cell.zhuangtai = 0;
-//}
 
 // 设置行高
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 53;
+    CGFloat h = [UIScreen mainScreen].bounds.size.height;
+    return ((h - 100 - 98)/7);
 }
 
 - (void)setDataList:(NSArray *)dataList{
@@ -342,38 +278,7 @@ int i =0;
 //    [super viewWillAppear:YES];
 //    dataList=[{"mname":"面粉","cycle":3,"practice":"","tryDate":"2014-12-01","introduce":"","isTrying":2,"grams":10,"micon":""},{"mname":"面粉","cycle":3,"practice":"","tryDate":"2014-12-02","introduce":"","isTrying":1,"grams":10,"micon":""}]
 //    {"mname":"面粉","cycle":3,"practice":"","tryDate":"2014-12-02","introduce":"","isTrying":1,"grams":10,"micon":""}
-    [ZDNetwork getTryRecordInfoCallback:^(RspState *rsp, NSArray *array) {
-        if (rsp.rspCode == 0) {
-            self.dataList = array;
-//            NSLog(@"%d",self.dataList.count);
-//            ZDTryRecord *tryRecord = _dataList[0];
-//            [self.foodName setText:tryRecord.mname];
-//            [self.toDay setText:[NSString stringWithFormat:@"%d",tryRecord.isTrying]];
-//            [self.zhouqi setText:tryRecord.cycle];
-//            NSLog(@"%d",self.dataList.count);
-//            ZDNewFood *food = array[0];
-//            NSString *iconStr = [NSString stringWithFormat:@"http://192.168.1.250/mimag/%@.png",food.mid];
-//            NSURL *url = [NSURL URLWithString:iconStr];
-//            [self.icon sd_setImageWithURL:url];
-//            self.foodName.text = food.mname;
-//            NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc]init];
-//            paragraphStyle.lineHeightMultiple = 20.f;
-//            paragraphStyle.maximumLineHeight = 25.f;
-//            paragraphStyle.minimumLineHeight = 10.f;
-//            paragraphStyle.firstLineHeadIndent = 20.f;
-//            paragraphStyle.alignment = NSTextAlignmentJustified;
-//            NSDictionary *attributes = @{ NSFontAttributeName:[UIFont systemFontOfSize:15], NSParagraphStyleAttributeName:paragraphStyle, NSForegroundColorAttributeName:[UIColor blackColor]};
-//            self.jieshaoTextView.attributedText = [[NSAttributedString alloc]initWithString:food.introduce attributes:attributes];
-//            self.tuijianTextView.attributedText = [[NSAttributedString alloc]initWithString:food.practice attributes:attributes];
-//            self.cornerID = food.mid;
-        }else{
-//            [MBProgressHUD showError:@"网络错误"];
-//            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.58 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//                [MBProgressHUD hideHUD];
-//                
-//            });
-        }
-    }];
+
 //    self.foodName.text = dict.mname;
 //    self.toDay.text = @"11";
 //    ZDTryRecord *dict = self.dataList[0];
@@ -396,7 +301,6 @@ int i =0;
             [self.moreView removeFromSuperview];
             [self.cover removeFromSuperview];
             self.xiala = NO;
-            
         }];
         return;
     }else{

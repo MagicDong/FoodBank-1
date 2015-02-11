@@ -98,7 +98,6 @@
             splashScreen.image = [UIImage imageNamed:@"loginIcon.png"];
             [self.window addSubview:splashScreen];
             
-            
             [UIView animateWithDuration:2.2 animations:^{
                 CATransform3D transform = CATransform3DMakeScale(1.4, 1.4, 1.0);
                 splashScreen.layer.transform = transform;

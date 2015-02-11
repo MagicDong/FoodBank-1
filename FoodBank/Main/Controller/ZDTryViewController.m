@@ -9,7 +9,7 @@
 #import "ZDTryViewController.h"
 #import "ZDTryChooseButton.h"
 #import "ZDTuiJianViewController.h"
-#import "ZDEditViewController.h"
+#import "ZDEditController.h"
 #import "ZDMoreView.h"
 #import "MBProgressHUD+ZD.h"
 #import "ZDNetwork.h"
@@ -22,7 +22,7 @@
 /** 是否是IOS7以上 */
 #define iOS7 ([[UIDevice currentDevice].systemVersion floatValue] >= 7.0)
 
-@interface ZDTryViewController () <UITableViewDataSource,UITableViewDelegate,ZDEditDelegate,UMSocialUIDelegate>
+@interface ZDTryViewController () <UITableViewDataSource,UITableViewDelegate,ZDEditDelegate,UMSocialUIDelegate,UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *icon;   // 食材图片
 @property (weak, nonatomic) IBOutlet UIButton *nameEdit;  // 换食材
 @property (weak, nonatomic) IBOutlet UILabel *ke;         // 克数
@@ -53,8 +53,8 @@
         self.edgesForExtendedLayout = NO;
         self.navigationController.navigationBar.opaque = YES;
     }
-    
-    ZDTryChooseButton *tianBtn = [[ZDTryChooseButton alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.zhouqiA.frame), 76, 71, 40)];
+    CGFloat x = [UIScreen mainScreen].bounds.size.width;
+    ZDTryChooseButton *tianBtn = [[ZDTryChooseButton alloc]initWithFrame:CGRectMake(x - 73, 76, 65, 40)];
     [tianBtn setImage:[UIImage imageNamed:@"navigationbar_arrow_down"] forState:UIControlStateNormal];
     [tianBtn setTitle:@"3天" forState:UIControlStateNormal];
     [tianBtn addTarget:self action:@selector(tianBtnOnClick:) forControlEvents:UIControlEventTouchUpInside];
@@ -62,7 +62,8 @@
     self.tianBtn = tianBtn;
     
     
-    
+    // 3.添加更多按钮
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"确定" style:UIBarButtonItemStylePlain target:self action:@selector(trying)];
 //    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemImage:@"navigationbar_more" highlightedImage:@"navigationbar_more_highlighted" target:self action:@selector(more)];
     
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc]init];
@@ -71,37 +72,25 @@
     paragraphStyle.minimumLineHeight = 10.f;
     paragraphStyle.firstLineHeadIndent = 20.f;
     paragraphStyle.alignment = NSTextAlignmentJustified;
-    NSDictionary *attributes = @{ NSFontAttributeName:[UIFont systemFontOfSize:15], NSParagraphStyleAttributeName:paragraphStyle, NSForegroundColorAttributeName:[UIColor blackColor]
+    NSDictionary *attributes = @{ NSFontAttributeName:[UIFont fontWithName:@"MicrosoftYaHei" size:(15)], NSParagraphStyleAttributeName:paragraphStyle, NSForegroundColorAttributeName:[UIColor blackColor]
                                   };
     
     self.jieshaoTextView.attributedText = [[NSAttributedString alloc]initWithString:@"食材介绍" attributes:attributes];
     self.jieshaoTextView.editable = NO;
     self.jieshaoTextView.backgroundColor = [UIColor clearColor];
     
-    self.tuijianTextView.attributedText = [[NSAttributedString alloc]initWithString:@"直接吃就行！" attributes:attributes];
+    self.tuijianTextView.attributedText = [[NSAttributedString alloc]initWithString:@"暂无介绍" attributes:attributes];
     self.tuijianTextView.editable = NO;
     self.tuijianTextView.backgroundColor = [UIColor clearColor];
     
+    
 //    [{"mname":"芒果","practice":"","pgtpid":42,"introduce":"","mid":558},{"mname":"干裙带菜(泡发)","practice":"","pgtpid":25,"introduce":"","mid":459}];
-//    @property (weak, nonatomic) IBOutlet UIImageView *icon;   // 食材图片
-//    @property (weak, nonatomic) IBOutlet UIButton *nameEdit;  // 换食材
-//    @property (weak, nonatomic) IBOutlet UITextView *jieshao; // 食材介绍
-//    @property (weak, nonatomic) IBOutlet UILabel *ke;         // 克数
-//    @property (nonatomic, strong) UIImage *downImage;         // 向下图片
-//    @property (nonatomic, strong) UIImage *upImage;           // 向上的图片
-//    @property (nonatomic, strong) UITableView *table;         // 点击按钮出来天数
-//    @property (weak, nonatomic) IBOutlet UITextView *jieshaoTextView;
-//    @property (weak, nonatomic) IBOutlet UITextView *tuijianTextView;
-    
+    [self getTryFood];
 }
-
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:YES];
-    
-//    [MBProgressHUD showError:@"获取尝试信息中..."];
+- (void)getTryFood{
     [ZDNetwork getTodayTryInfoCallback:^(RspState *rsp, NSArray *array) {
         
-//        [MBProgressHUD hideHUD];
+        //        [MBProgressHUD hideHUD];
         if (rsp.rspCode == 0) {
             ZDNewFood *food = array[0];
             NSString *iconStr = [NSString stringWithFormat:@"http://192.168.1.250/mimag/%@.png",food.mid];
@@ -114,20 +103,53 @@
             paragraphStyle.minimumLineHeight = 10.f;
             paragraphStyle.firstLineHeadIndent = 20.f;
             paragraphStyle.alignment = NSTextAlignmentJustified;
-            NSDictionary *attributes = @{ NSFontAttributeName:[UIFont systemFontOfSize:15], NSParagraphStyleAttributeName:paragraphStyle, NSForegroundColorAttributeName:[UIColor blackColor]};
+            NSDictionary *attributes = @{ NSFontAttributeName:[UIFont fontWithName:@"MicrosoftYaHei" size:(15)], NSParagraphStyleAttributeName:paragraphStyle, NSForegroundColorAttributeName:[UIColor blackColor]};
             self.jieshaoTextView.attributedText = [[NSAttributedString alloc]initWithString:food.introduce attributes:attributes];
             self.tuijianTextView.attributedText = [[NSAttributedString alloc]initWithString:food.practice attributes:attributes];
             self.cornerID = food.mid;
         }else{
             
-//            [MBProgressHUD showError:@"网络错误"];
-//            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.68 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//                [MBProgressHUD hideHUD];
-//            });
+            //            [MBProgressHUD showError:@"网络错误"];
+            //            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.68 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            //                [MBProgressHUD hideHUD];
+            //            });
             
             return;
         }
     }];
+}
+- (void)didSelectedMid:(NSDictionary *)mid{
+    
+    NSLog(@"%@",mid);
+    
+    NSString *iconStr = [NSString stringWithFormat:@"http://192.168.1.250/mimag/%@.png",mid[@"mid"]];
+    NSURL *url = [NSURL URLWithString:iconStr];
+    [self.icon sd_setImageWithURL:url];
+    self.foodName.text = mid[@"mname"];
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc]init];
+    paragraphStyle.lineHeightMultiple = 20.f;
+    paragraphStyle.maximumLineHeight = 25.f;
+    paragraphStyle.minimumLineHeight = 10.f;
+    paragraphStyle.firstLineHeadIndent = 20.f;
+    paragraphStyle.alignment = NSTextAlignmentJustified;
+    NSDictionary *attributes = @{ NSFontAttributeName:[UIFont systemFontOfSize:15], NSParagraphStyleAttributeName:paragraphStyle, NSForegroundColorAttributeName:[UIColor blackColor]};
+//    self.jieshaoTextView.attributedText = [[NSAttributedString alloc]initWithString:mid[@"introduce"] attributes:attributes];
+//    self.tuijianTextView.attributedText = [[NSAttributedString alloc]initWithString:mid[@"practice"] attributes:attributes];
+    self.cornerID = mid[@"mid"];
+    
+//    NSString *iconStr = [NSString stringWithFormat:@"http://192.168.1.250/mimag/%@.png",foodDict[@"mid"]];
+//    NSURL *url = [NSURL URLWithString:iconStr];
+//    [self.iconView sd_setImageWithURL:url];
+//    self.title.text = foodDict[@"mname"];
+//    self.mid = foodDict[@"mid"];
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
+    
+    //    [MBProgressHUD showError:@"获取尝试信息中..."];
+
 }
 
 
@@ -226,7 +248,7 @@
     if (try.currentImage == self.downImage ) {
         // 向下 --> 向上
         [try setImage:self.upImage forState:UIControlStateNormal];
-        UITableView *tian = [[UITableView alloc]initWithFrame:CGRectMake(226, CGRectGetMaxY(try.frame), 91, 150) style:UITableViewStylePlain];
+        UITableView *tian = [[UITableView alloc]initWithFrame:CGRectMake(CGRectGetMinX(self.tianBtn.frame) -5, CGRectGetMaxY(try.frame), 72, 150) style:UITableViewStylePlain];
         [self.view addSubview:tian];
         tian.alpha= 0;
         tian.delegate = self;
@@ -273,7 +295,7 @@
         cell.textLabel.text = @"3天";
     }
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    cell.textLabel.font = [UIFont systemFontOfSize:15];
+    cell.textLabel.font = [UIFont systemFontOfSize:14];
     return cell;
 }
 
@@ -337,33 +359,48 @@
 }
 
 - (IBAction)name:(id)sender {
-    ZDEditViewController *edit = [[ZDEditViewController alloc]init];
+    ZDEditController *edit = [[ZDEditController alloc]init];
+    edit.delegate = self;
     [self.navigationController  pushViewController:edit animated:YES];
 }
 
-- (IBAction)queding:(id)sender {
-    
+- (void)trying{
     if (self.cornerTian == nil) {
         self.cornerTian = @"3";
     }
-    [MBProgressHUD showMessage:@"获取尝试信息中..."];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.62 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [MBProgressHUD hideHUD];
-#pragma 提交尝试食材
-        if (self.cornerID) {
-            [ZDNetwork postToDayTryFoodSta:@"1" mid:@"1" cycle:self.cornerTian grams:@"5" Callback:^(RspState *rsp) {
-                if (rsp.rspCode == 0) {
-                    [MBProgressHUD hideHUD];
-                }else{
-                    [MBProgressHUD showError:@"网络错误"];
-                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.68 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                        [MBProgressHUD hideHUD];
-                    });
-                    return;
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"确认要提交尝试新食材吗？" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+    [alert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    switch (buttonIndex) {
+        case 0:
+            break;
+            
+        case 1:
+            [MBProgressHUD showMessage:@"提交尝试"];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.62 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                if (self.cornerID) {
+                    [ZDNetwork postToDayTryFoodSta:@"1" mid:self.cornerID cycle:self.cornerTian grams:@"5" Callback:^(RspState *rsp) {
+                        if (rsp.rspCode == 0) {
+                            [MBProgressHUD hideHUD];
+                            [MBProgressHUD showMessage:@"提交成功！"];
+                            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.46 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                                [MBProgressHUD hideHUD];
+                            });
+                        }else{
+                            [MBProgressHUD hideHUD];
+                            [MBProgressHUD showError:@"该食材正在尝试中!"];
+                            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.68 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                                [MBProgressHUD hideHUD];
+                            });
+                            return;
+                        }
+                    }];
                 }
-            }];
-        }
-    });
+            });
+            break;
+    }
 }
 
 - (UIImage *)downImage

@@ -75,6 +75,7 @@ NSString const *badgeValueKey = @"badgeValueKey";
     // Make sure that for small value, the badge will be big enough
     CGFloat minHeight = expectedLabelSize.height;
     
+    
     // Using a const we make sure the badge respect the minimum size
     minHeight = (minHeight < self.badgeMinSize) ? self.badgeMinSize : expectedLabelSize.height;
     CGFloat minWidth = expectedLabelSize.width;

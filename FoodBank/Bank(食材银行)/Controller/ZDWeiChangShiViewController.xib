@@ -15,50 +15,8 @@
             <rect key="frame" x="0.0" y="44" width="320" height="436"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ucu-kb-U9o">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="57"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="宝贝未尝试食材库" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMJ-eF-X4R">
-                            <rect key="frame" x="46" y="17" width="136" height="25"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="136" id="4O6-yP-1Qa"/>
-                                <constraint firstAttribute="height" constant="25" id="aN9-J2-eMx"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                            <color key="textColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baby" translatesAutoresizingMaskIntoConstraints="NO" id="nIB-ri-yYP">
-                            <rect key="frame" x="8" y="13" width="30" height="31"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="30" id="8OK-Ic-grr"/>
-                                <constraint firstAttribute="height" constant="31" id="a0U-cj-aj7"/>
-                            </constraints>
-                        </imageView>
-                    </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstItem="rMJ-eF-X4R" firstAttribute="top" secondItem="Ucu-kb-U9o" secondAttribute="top" constant="17" id="4VL-XA-P13"/>
-                        <constraint firstItem="rMJ-eF-X4R" firstAttribute="leading" secondItem="nIB-ri-yYP" secondAttribute="trailing" constant="8" id="7Vg-Lx-fJd"/>
-                        <constraint firstAttribute="height" constant="57" id="IiV-2y-e8U"/>
-                        <constraint firstItem="nIB-ri-yYP" firstAttribute="top" secondItem="Ucu-kb-U9o" secondAttribute="top" constant="13" id="RbP-ad-rc4"/>
-                        <constraint firstItem="nIB-ri-yYP" firstAttribute="leading" secondItem="Ucu-kb-U9o" secondAttribute="leading" constant="8" id="cmh-UG-G0H"/>
-                    </constraints>
-                </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uba-BI-uzS" userLabel="登录">
-                    <rect key="frame" x="125" y="389" width="71" height="32"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="71" id="BWd-fz-h4X"/>
-                        <constraint firstAttribute="height" constant="32" id="jNv-Sb-rpt"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="15"/>
-                    <state key="normal" title="确定" backgroundImage="Judge"/>
-                    <connections>
-                        <action selector="queding:" destination="-1" eventType="touchUpInside" id="Qze-Je-4Vk"/>
-                    </connections>
-                </button>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Okz-D6-ynK">
-                    <rect key="frame" x="8" y="54" width="304" height="327"/>
+                    <rect key="frame" x="8" y="52" width="304" height="376"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="y5M-AG-7Gt">
                         <size key="itemSize" width="50" height="50"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -70,18 +28,34 @@
                         <outlet property="delegate" destination="-1" id="pp1-F4-svm"/>
                     </connections>
                 </collectionView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baby" translatesAutoresizingMaskIntoConstraints="NO" id="nIB-ri-yYP">
+                    <rect key="frame" x="8" y="13" width="30" height="31"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="KNM-ja-BRh"/>
+                        <constraint firstAttribute="height" constant="31" id="VP6-It-Quj"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="宝贝未尝试食材库" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMJ-eF-X4R">
+                    <rect key="frame" x="46" y="19" width="136" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="136" id="ati-9B-RSY"/>
+                        <constraint firstAttribute="height" constant="25" id="yPf-dN-yIN"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <color key="textColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="Okz-D6-ynK" secondAttribute="trailing" constant="8" id="3I8-1b-QsW"/>
-                <constraint firstItem="Uba-BI-uzS" firstAttribute="top" secondItem="Okz-D6-ynK" secondAttribute="bottom" constant="8" id="OsA-jF-UCW"/>
-                <constraint firstItem="Ucu-kb-U9o" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Szc-Af-Bud"/>
-                <constraint firstItem="Okz-D6-ynK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="54" id="V7t-ol-HiS"/>
-                <constraint firstItem="Ucu-kb-U9o" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="YKf-lL-JBS"/>
-                <constraint firstAttribute="bottom" secondItem="Uba-BI-uzS" secondAttribute="bottom" constant="15" id="aoS-de-Kg8"/>
-                <constraint firstAttribute="trailing" secondItem="Ucu-kb-U9o" secondAttribute="trailing" id="nbo-NM-a8o"/>
-                <constraint firstAttribute="centerX" secondItem="Uba-BI-uzS" secondAttribute="centerX" id="p3m-ZV-OUb"/>
-                <constraint firstItem="Okz-D6-ynK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="sKJ-5v-TiS"/>
+                <constraint firstAttribute="bottom" secondItem="Okz-D6-ynK" secondAttribute="bottom" constant="8" id="2ha-v1-510"/>
+                <constraint firstAttribute="trailing" secondItem="Okz-D6-ynK" secondAttribute="trailing" constant="8" id="B89-Tc-dFf"/>
+                <constraint firstItem="Okz-D6-ynK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="EEO-qP-A6b"/>
+                <constraint firstItem="rMJ-eF-X4R" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="19" id="IXK-1A-IKq"/>
+                <constraint firstItem="nIB-ri-yYP" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="13" id="JiW-hZ-cvA"/>
+                <constraint firstItem="Okz-D6-ynK" firstAttribute="top" secondItem="rMJ-eF-X4R" secondAttribute="bottom" constant="8" id="LRv-ri-xJb"/>
+                <constraint firstItem="nIB-ri-yYP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="te0-RA-yZX"/>
+                <constraint firstItem="rMJ-eF-X4R" firstAttribute="leading" secondItem="nIB-ri-yYP" secondAttribute="trailing" constant="8" id="yh8-OV-AF7"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
@@ -89,8 +63,7 @@
         </view>
     </objects>
     <resources>
-        <image name="Judge" width="105" height="36"/>
-        <image name="baby" width="139" height="164"/>
+        <image name="baby" width="69" height="82"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

@@ -37,6 +37,7 @@
  *  民族按钮
  */
 @property (nonatomic, strong)  ZDChooseButton *BtnNation;
+@property (weak, nonatomic) IBOutlet UIImageView *birIcon;
 
 /**
  *  过敏按钮
@@ -135,7 +136,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    if(iOS7)
+    {
+        self.edgesForExtendedLayout = NO;
+        self.navigationController.navigationBar.opaque = YES;
+    }
     self.title = @"宝宝基本信息";
     UIImage *image = self.downImage;
     ZDChooseButton *BtnBirthday = [[ZDChooseButton alloc]initWithFrame:CGRectMake(50, 7, self.birthdayView.width - 15 , 30)];
@@ -145,7 +150,11 @@
     BtnBirthday.titleLabel.font = [UIFont fontWithName:@"MicrosoftYaHei" size:14];
     [self.birthdayView addSubview:BtnBirthday];
     self.BtnBirthday = BtnBirthday;
-    
+//    UIImage *image = [UIImage  imageWithNamed:@"jibenxinxi-riqi"];
+    UIImageView *imagess = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"jibenxinxi-riqi"]];
+    imagess.frame = CGRectMake(5, 3, 30, 36);
+    [self.birthdayView addSubview:imagess];
+//    jibenxinxi-riqi
 //    resizableImageNamed
     ZDChooseButton *BtnNation = [[ZDChooseButton alloc]initWithFrame:CGRectMake(50, 7, self.nation.width - 15, 30)];
     [BtnNation setImage:image forState:UIControlStateNormal];
@@ -154,13 +163,17 @@
     BtnNation.titleLabel.font = [UIFont fontWithName:@"MicrosoftYaHei" size:14];
     [self.nation addSubview:BtnNation];
     self.BtnNation = BtnNation;
-    
+//    NSLog(@"%f",self.birIcon.frame.origin.x);
+//        NSLog(@"%f",self.birIcon.frame.origin.y);
+//        NSLog(@"%f",self.birIcon.width);
+//        NSLog(@"%f",self.birIcon.height);
     UIImage *images = [UIImage imageNamed:@"textF.png"];
     self.nameView.backgroundColor = [UIColor colorWithPatternImage:[images stretchableImageWithLeftCapWidth:0.5 topCapHeight:0.5]];
     self.birthdayView.backgroundColor = [UIColor colorWithPatternImage:[images stretchableImageWithLeftCapWidth:0.8 topCapHeight:0.8]];
     self.nation.backgroundColor = [UIColor colorWithPatternImage:[images stretchableImageWithLeftCapWidth:0.1 topCapHeight:0.1]];
     self.Finish.layer.cornerRadius = 3;
     self.Finish.layer.masksToBounds = YES;
+    
 //    ZDChooseButton *BtnAllergy = [[ZDChooseButton alloc]initWithFrame:CGRectMake(51, 112, 221, 40)];
 //    [BtnAllergy setImage:image forState:UIControlStateNormal];
 //    [BtnAllergy setTitle:@"请选择父母过敏食材" forState:UIControlStateNormal];
@@ -170,11 +183,7 @@
 //    
 //    self.navigationItem.leftBarButtonItem = NULL;
 //    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]init];
-    if(iOS7)
-    {
-        self.edgesForExtendedLayout = NO;
-        self.navigationController.navigationBar.opaque = YES;
-    }
+
 
 //    汉族、回族、维吾尔族、哈萨克族、乌兹别克族、塔吉克族、塔塔尔族、柯尔克孜族、撒拉族、东乡族、保安族、阿昌族、白族 、布朗族 、布依族 、朝鲜族、达斡尔族、傣族、德昂族、侗族、独龙族、鄂伦春族 、俄罗斯族、鄂温克族、高山族、仡佬族、哈尼族、赫哲族、基诺族、京族、景颇族、拉祜族、黎族、傈僳族、珞巴族、满族、毛南族、门巴族、蒙古族、苗族、仫佬族、纳西族、怒族、普米族、羌族、畲族、水族、土族、土家族、佤族、锡伯族 、瑶族、彝族、裕固族、藏族、壮族
     
@@ -209,6 +218,7 @@
         _datePickerView = [ZDDatePickerView datePickerView];
         _datePickerView.y = self.view.height;
         // 设置代理
+        _datePickerView.width = [UIScreen mainScreen].bounds.size.width;
         _datePickerView.delegate = self;
         [self.view addSubview:_datePickerView];
         
@@ -239,6 +249,7 @@
         
         _nationView = [ZDNationView nationView];
         _nationView.y = self.view.height;
+        _nationView.width = [UIScreen mainScreen].bounds.size.width;
         // 设置代理
         _nationView.delegate = self;
         [self.view addSubview:_nationView];

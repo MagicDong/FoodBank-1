@@ -14,7 +14,11 @@
 @property (weak, nonatomic) IBOutlet UIImageView *sikuImage;
 @end
 @implementation ZDSiKuCell
-
+- (void)awakeFromNib {
+    CALayer *layer = [self.sikuImage layer];
+    layer.borderColor = [UIColor lightGrayColor].CGColor;
+    layer.borderWidth = 1.0f;
+}
 - (IBAction)sikuBtn:(UIButton *)sender
 {
     

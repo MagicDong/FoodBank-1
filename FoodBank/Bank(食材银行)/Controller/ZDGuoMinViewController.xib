@@ -15,38 +15,8 @@
             <rect key="frame" x="0.0" y="44" width="320" height="436"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uYK-bR-pcj">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="57"/>
-                    <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="baby" translatesAutoresizingMaskIntoConstraints="NO" id="ymz-Ek-vZo">
-                            <rect key="frame" x="8" y="13" width="30" height="31"/>
-                        </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="宝贝过敏食材库" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Cs-Lc-aYi">
-                            <rect key="frame" x="46" y="17" width="136" height="25"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                            <color key="textColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="57" id="61w-Kc-brs"/>
-                    </constraints>
-                </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJt-AW-Yth" userLabel="登录">
-                    <rect key="frame" x="125" y="389" width="71" height="32"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="71" id="4To-UE-F4b"/>
-                        <constraint firstAttribute="height" constant="32" id="R1D-3Z-WWT"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="15"/>
-                    <state key="normal" title="确定" backgroundImage="Judge"/>
-                    <connections>
-                        <action selector="queding:" destination="-1" eventType="touchUpInside" id="pEq-z1-N8u"/>
-                    </connections>
-                </button>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="uP2-5C-6J6">
-                    <rect key="frame" x="8" y="49" width="304" height="332"/>
+                    <rect key="frame" x="8" y="54" width="304" height="374"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Y6t-Af-gke">
                         <size key="itemSize" width="50" height="50"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -58,18 +28,34 @@
                         <outlet property="delegate" destination="-1" id="op5-gV-PUn"/>
                     </connections>
                 </collectionView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baby" translatesAutoresizingMaskIntoConstraints="NO" id="ymz-Ek-vZo">
+                    <rect key="frame" x="8" y="15" width="30" height="31"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="KJs-QR-jVG"/>
+                        <constraint firstAttribute="height" constant="31" id="k9k-rN-r3o"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="宝贝过敏食材库" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Cs-Lc-aYi">
+                    <rect key="frame" x="46" y="21" width="136" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="136" id="Xlk-ey-tLg"/>
+                        <constraint firstAttribute="height" constant="25" id="qSx-jk-btR"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <color key="textColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="cJt-AW-Yth" firstAttribute="top" secondItem="uP2-5C-6J6" secondAttribute="bottom" constant="8" id="2T9-22-Q9F"/>
-                <constraint firstItem="uP2-5C-6J6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="4IM-6s-ORe"/>
-                <constraint firstAttribute="centerX" secondItem="cJt-AW-Yth" secondAttribute="centerX" id="A6S-Er-eug"/>
-                <constraint firstItem="uYK-bR-pcj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="BYh-Py-qTd"/>
-                <constraint firstAttribute="trailing" secondItem="uYK-bR-pcj" secondAttribute="trailing" id="K6e-VZ-Xb6"/>
-                <constraint firstItem="uP2-5C-6J6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="49" id="WkJ-s1-si8"/>
-                <constraint firstItem="uYK-bR-pcj" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="bSh-KQ-q0K"/>
-                <constraint firstAttribute="bottom" secondItem="cJt-AW-Yth" secondAttribute="bottom" constant="15" id="cQ1-hb-zyB"/>
-                <constraint firstAttribute="trailing" secondItem="uP2-5C-6J6" secondAttribute="trailing" constant="8" id="kjc-S0-Lw4"/>
+                <constraint firstAttribute="trailing" secondItem="uP2-5C-6J6" secondAttribute="trailing" constant="8" id="7ZB-mT-J0g"/>
+                <constraint firstAttribute="bottom" secondItem="uP2-5C-6J6" secondAttribute="bottom" constant="8" id="9f9-zP-Ytk"/>
+                <constraint firstItem="ymz-Ek-vZo" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="15" id="K3q-cE-Jrr"/>
+                <constraint firstItem="4Cs-Lc-aYi" firstAttribute="leading" secondItem="ymz-Ek-vZo" secondAttribute="trailing" constant="8" id="Noo-Bu-aSv"/>
+                <constraint firstItem="ymz-Ek-vZo" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="UY8-nR-r2n"/>
+                <constraint firstItem="uP2-5C-6J6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="ZW5-M3-kpD"/>
+                <constraint firstItem="uP2-5C-6J6" firstAttribute="top" secondItem="4Cs-Lc-aYi" secondAttribute="bottom" constant="8" id="eDa-YD-fa3"/>
+                <constraint firstItem="4Cs-Lc-aYi" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="21" id="gNl-e8-Yjf"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
@@ -78,7 +64,6 @@
         </view>
     </objects>
     <resources>
-        <image name="Judge" width="105" height="36"/>
         <image name="baby" width="69" height="82"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

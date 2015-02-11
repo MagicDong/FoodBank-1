@@ -45,7 +45,7 @@
         self.accessoryView = [[UIImageView alloc] initWithImage:self.upImage];
         self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 //        self.backgroundColor = ZDColor(255, 246, 229);
-        self.textLabel.font = [UIFont boldSystemFontOfSize:14];
+        self.textLabel.font = [UIFont fontWithName:@"MicrosoftYaHei" size:(14)];
         self.textLabel.textColor = ZDColor(53, 158, 58);
     }
     return self;
@@ -122,6 +122,7 @@
 - (void)setRow:(NSInteger)row{
     _row = row;
     self.textLabel.text =  [NSString stringWithFormat:@"%d、%@",row,self.textLabel.text];
+
 }
 
 @end

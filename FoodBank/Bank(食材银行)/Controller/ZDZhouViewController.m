@@ -35,11 +35,12 @@
     paragraphStyle.lineHeightMultiple = 10.f;
     paragraphStyle.maximumLineHeight = 20.f;
     paragraphStyle.minimumLineHeight = 20.f;
-    paragraphStyle.firstLineHeadIndent = 25.f;
     paragraphStyle.alignment = NSTextAlignmentJustified;
-    NSMutableDictionary *attributes = [@{ NSFontAttributeName:[UIFont systemFontOfSize:15], NSParagraphStyleAttributeName:paragraphStyle, NSForegroundColorAttributeName:[UIColor colorWithRed:153/255. green:102/255. blue:51/255. alpha:1]
+    
+    NSMutableDictionary *attributes = [@{ NSFontAttributeName:[UIFont fontWithName:@"MicrosoftYaHei" size:(16)], NSParagraphStyleAttributeName:paragraphStyle, NSForegroundColorAttributeName:[UIColor colorWithRed:0/255. green:0/255. blue:0/255. alpha:1]
                                           }mutableCopy];
-    self.zhouzongjie.attributedText = [[NSAttributedString alloc]initWithString:@"请您将宝宝父母已过敏（发生过敏、拒绝等现象）的食材勾选出来。" attributes:attributes];
+    NSString *str = [NSString stringWithFormat:@"本周您给宝宝尝试了 %@ 个新食材，为：%@ 。\n恭喜您！宝宝的食材银行又多了 %@ 个安全食材;\n%@ 个新食材出现了过敏症状以及 %@ 个新食材被拒绝，未进入食材银行;"];
+    self.zhouzongjie.attributedText = [[NSAttributedString alloc]initWithString:@"本周" attributes:attributes];
 }
 
 @end

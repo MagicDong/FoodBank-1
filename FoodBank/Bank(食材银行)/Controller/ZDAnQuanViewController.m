@@ -103,6 +103,7 @@ static NSString *reusableViewID = @"SectionHeader";
 
 - (void)chushihua{
     self.title = @"未过敏食材库";
+    
     if(iOS7)
     {
         self.edgesForExtendedLayout = NO;

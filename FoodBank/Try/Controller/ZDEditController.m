@@ -6,7 +6,7 @@
 //  Copyright (c) 2014年 Dong. All rights reserved.
 //
 
-#import "ZDSiKuViewController.h"
+#import "ZDEditController.h"
 #import "ZDTabBarController.h"
 #import "CZProductCell.h"
 #import "CZProduct.h"
@@ -14,13 +14,12 @@
 #import "MBProgressHUD+ZD.h"
 #import "ZDCategoryCell.h"
 #import "ZDNetwork.h"
-#import "AppDelegate.h"
 
 static NSString *ProductCellID = @"ProductCell";
 static NSString *reusableViewID = @"SectionHeader";
 static NSString *categoryCellID = @"categoryCell";
 
-@interface ZDSiKuViewController () <UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UIAlertViewDelegate>
+@interface ZDEditController () <UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UITableViewDataSource,UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -40,7 +39,7 @@ static NSString *categoryCellID = @"categoryCell";
 @property (nonatomic, strong) NSMutableDictionary *categoryCount;
 @end
 
-@implementation ZDSiKuViewController
+@implementation ZDEditController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -82,9 +81,11 @@ static NSString *categoryCellID = @"categoryCell";
     self.tableView.bounces = YES;
     
     // 3.添加更多按钮
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"确定" style:UIBarButtonItemStylePlain target:self action:@selector(quedingd)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"确定" style:UIBarButtonItemStylePlain target:self action:@selector(queding)];
     
-        //    [self.categoryCount setValue:@1 forKey:@"1"];
+    
+    self.categoryCount = [NSMutableDictionary dictionary];
+    //    [self.categoryCount setValue:@1 forKey:@"1"];
     //    [self what_are_you_doing];
 }
 
@@ -100,53 +101,35 @@ static NSString *categoryCellID = @"categoryCell";
 //    }
 //}
 
-- (void)quedingd{
-    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"确认完成初始化食材库吗？" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
-    [alert show];
-
-}
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    switch (buttonIndex) {
-        case 0:
-            
-            break;
-        case 1:
-
-            [MBProgressHUD showMessage:@"初始化中"];
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.35 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                [ZDNetwork postBabySiKuInfoWithMids:self.selectArray CallBack:^(RspState *rsp) {
-                    if (rsp.rspCode == 0) {
-                        [MBProgressHUD hideHUD];
-                        // 跳转到TabBarController
-                        for (UIViewController *controller in self.childViewControllers) {
-                            // 将子视图控制器的视图从父视图中删除
-                            [controller.view removeFromSuperview];
-                            // 将视图控制器从父视图控制器中删除
-                            [controller removeFromParentViewController];
-                        }
-                        [self.view removeFromSuperview];
-                        ZDTabBarController *tabBarVc = [[ZDTabBarController alloc] init];
-                        UIApplication *app = [UIApplication sharedApplication];
-                        AppDelegate *apps = app.delegate;
-                        apps.window.rootViewController = tabBarVc;
-                        
-                    }else{
-                        [MBProgressHUD hideHUD];
-                        for (UIViewController *controller in self.childViewControllers) {
-                            // 将子视图控制器的视图从父视图中删除
-                            [controller.view removeFromSuperview];
-                            // 将视图控制器从父视图控制器中删除
-                            [controller removeFromParentViewController];
-                        }
-                        [self.view removeFromSuperview];
-                        ZDTabBarController *tabBarVc = [[ZDTabBarController alloc] init];
-                        UIApplication *app = [UIApplication sharedApplication];
-                        AppDelegate *apps = app.delegate;
-                        apps.window.rootViewController = tabBarVc;
-                    }
-                }];
-            });
+- (void)queding{
+    // 跳转到TabBarController
+    for (UIViewController *controller in self.childViewControllers) {
+        // 将子视图控制器的视图从父视图中删除
+        [controller.view removeFromSuperview];
+        // 将视图控制器从父视图控制器中删除
+        [controller removeFromParentViewController];
     }
+    [self.view removeFromSuperview];
+    [MBProgressHUD showMessage:@"初始化中"];
+    [MBProgressHUD hideHUD];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.35 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [ZDNetwork postBabySiKuInfoWithMids:self.selectArray CallBack:^(RspState *rsp) {
+            if (rsp.rspCode == 0) {
+                [MBProgressHUD hideHUD];
+            }else{
+                [MBProgressHUD hideHUD];
+            }
+        }];
+        
+        
+        ZDTabBarController *tabBarVc = [[ZDTabBarController alloc] init];
+        UIApplication *app = [UIApplication sharedApplication];
+        UIWindow *window = app.keyWindow;
+        app.statusBarHidden = NO;
+        window.rootViewController = tabBarVc;
+    });
+    
 }
 
 - (IBAction)quanxuan:(UIButton *)sender {
@@ -169,14 +152,9 @@ static NSString *categoryCellID = @"categoryCell";
     [self.tableView selectRowAtIndexPath:selectedIndexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
 }
 
+#pragma mark - 数据源方法
 
-#pragma mark - Table view data source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    self.categoryCount = [NSMutableDictionary dictionary];
-    for (int i = 0; i<self.dataList.count; i++) {
-        NSString *str = [NSString stringWithFormat:@"%d",i];
-        [self.categoryCount setObject:@0 forKey:str];
-    }
     return self.dataList.count;
 }
 
@@ -227,7 +205,7 @@ static NSString *categoryCellID = @"categoryCell";
 // 设置行高
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 58;
+    return 44;
 }
 
 - (NSArray *)dataList{
@@ -293,59 +271,46 @@ static NSString *categoryCellID = @"categoryCell";
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     
+    ZDFoodCategory *foodCategory = self.dataList[self.integer];
+    NSDictionary *dict = foodCategory.foodGenreList[indexPath.row];
+    
+    if ([self.delegate respondsToSelector:@selector(didSelectedMid:)]) {
+        [self.delegate didSelectedMid:dict];
+    }
+    [self.navigationController popViewControllerAnimated:YES];
+    
 //    CZProduct *product = self.dataList[indexPath.item];
-    NSInteger oldCount = self.selectArray.count;
-    UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
-    CZProductCell *product = (CZProductCell *)cell;
-    product.selectBtn.selected = !product.selectBtn.selected;
-    if (product.selectBtn.selected) {
-        if ([self.selectArray containsObject:product.mid]) {
-            [self.selectArray removeObject:product.mid];
-        }else{
-            [self.selectArray addObject:product.mid];
-        }
-    }else{
-        
-        NSMutableArray *filteredArray = [[NSMutableArray alloc]initWithObjects:product.mid, nil];
-        /*
-         方法一：利用NSPredicate
-         注：NSPredicate所属Cocoa框架，在密码、用户名等正则判断中经常用到。
-         类似于SQL语句
-         NOT 不是
-         SELF 代表字符串本身
-         IN 范围运算符
-         那么NOT (SELF IN %@) 意思就是：不是这里所指定的字符串的值
-         */
-        NSPredicate * filterPredicate = [NSPredicate predicateWithFormat:@"NOT (SELF IN %@)",filteredArray];
-        //过滤数组
-        NSArray * reslutFilteredArray = [self.selectArray filteredArrayUsingPredicate:filterPredicate];
-        self.selectArray = [reslutFilteredArray mutableCopy];
-    }
+//    UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
+//    CZProductCell *product = (CZProductCell *)cell;
+//    product.selectBtn.selected = !product.selectBtn.selected;
+//    if (product.selectBtn.selected) {
+//        if ([self.selectArray containsObject:product.mid]) {
+//            [self.selectArray removeObject:product.mid];
+//        }else{
+//            [self.selectArray addObject:product.mid];
+//        }
+//    }else{
+//        
+//        NSMutableArray *filteredArray = [[NSMutableArray alloc]initWithObjects:product.mid, nil];
+//        /*
+//         方法一：利用NSPredicate
+//         注：NSPredicate所属Cocoa框架，在密码、用户名等正则判断中经常用到。
+//         类似于SQL语句
+//         NOT 不是
+//         SELF 代表字符串本身
+//         IN 范围运算符
+//         那么NOT (SELF IN %@) 意思就是：不是这里所指定的字符串的值
+//         */
+//        NSPredicate * filterPredicate = [NSPredicate predicateWithFormat:@"NOT (SELF IN %@)",filteredArray];
+//        //过滤数组
+//        NSArray * reslutFilteredArray = [self.selectArray filteredArrayUsingPredicate:filterPredicate];
+//        self.selectArray = [reslutFilteredArray mutableCopy];
+//    }
     
-//    [self.categoryCount setValue:@1 forKey:@"1"];
-    NSString *str = [NSString stringWithFormat:@"%d",(int)self.integer];
     
-    NSInteger integer =  (NSInteger)self.categoryCount[str];
+//    NSLog(@",,,,,%@",self.selectArray);
+//    NSLog(@"======%@",self.selectArray);
     
-    NSInteger newCount = self.selectArray.count;
-    if (oldCount < newCount) {
-        integer++;
-    }else{
-        integer--;
-    }
-    
-    [self.categoryCount setValue:@(integer) forKey:str];
-    ZDCategoryCell *category =  (ZDCategoryCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:self.integer inSection:0]];
-    NSString *s = [NSString stringWithFormat:@"%d",(int)self.integer];
-    NSInteger categoryValue = self.categoryCount[s];
-    NSLog(@"%d",categoryValue);
-    category.bage = 10;
-    
-//    category.bage = 
-    
-//    cell
-    
-//    cell
 }
 
 - (NSMutableArray *)selectArray{
@@ -355,28 +320,6 @@ static NSString *categoryCellID = @"categoryCell";
     return _selectArray;
 }
 
-#pragma mark - 数据源方法
-// 返回每个section（分组）中的item（条目，小格子）的数量
-//- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
-//{
-//    return [self.products[section] count];
-//}
-//- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-//    return self.products.count;
-//}
-//
-//- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
-//{
-//    UICollectionReusableView *reusable = [[UICollectionReusableView alloc]init];
-//    return reusable;
-//}
-//
-//- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
-//{
-////    static NSString *ID = @"Cell";
-//    UICollectionViewCell *cell = [[UICollectionViewCell alloc]init];
-//    return cell;
-//}
 
 - (void)chushihua{
     self.title = @"初始化食材库";

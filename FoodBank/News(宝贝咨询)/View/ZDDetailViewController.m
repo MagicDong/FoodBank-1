@@ -65,7 +65,7 @@
     
     // 2. 来源和时间
     [html appendFormat:@"<p>%@ %@</p>", dict[@"source"], dict[@"ptime"]];
-    
+    NSLog(@"%@",dict);
     // 3. 正文
     [html appendFormat:@"%@", [self bodyTextWithDict:dict]];
     

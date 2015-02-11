@@ -10,10 +10,13 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="206"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="78R-V6-56g">
+                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="78R-V6-56g">
                     <rect key="frame" x="0.0" y="44" width="320" height="162"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="162" id="LaL-Ok-Qk9"/>
+                    </constraints>
                 </pickerView>
-                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G7K-Ox-AsW">
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G7K-Ox-AsW">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                     <items>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="eF2-Wt-Gbg"/>
@@ -27,6 +30,15 @@
                 </toolbar>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="78R-V6-56g" secondAttribute="trailing" id="5CZ-If-d2C"/>
+                <constraint firstAttribute="bottom" secondItem="78R-V6-56g" secondAttribute="bottom" id="7dS-9e-Tve"/>
+                <constraint firstItem="G7K-Ox-AsW" firstAttribute="leading" secondItem="EHN-VK-pCP" secondAttribute="leading" id="Eqq-6K-vrk"/>
+                <constraint firstItem="78R-V6-56g" firstAttribute="top" secondItem="G7K-Ox-AsW" secondAttribute="bottom" id="X7y-ap-0ec"/>
+                <constraint firstItem="G7K-Ox-AsW" firstAttribute="top" secondItem="EHN-VK-pCP" secondAttribute="top" id="aWC-nd-Hnt"/>
+                <constraint firstAttribute="trailing" secondItem="G7K-Ox-AsW" secondAttribute="trailing" id="jIC-C0-MWc"/>
+                <constraint firstItem="78R-V6-56g" firstAttribute="leading" secondItem="EHN-VK-pCP" secondAttribute="leading" id="mnW-dM-T0T"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>

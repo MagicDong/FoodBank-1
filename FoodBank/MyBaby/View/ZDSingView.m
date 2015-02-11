@@ -33,7 +33,7 @@
   
     [self.view addSubview:self.textView];
     self.textView.text = @"输入签名...";
-    ZDLog(@"%@",self.textView);
+//    ZDLog(@"%@",self.textView);
     self.textView.backgroundColor = [UIColor greenColor];
     self.textView.delegate = self;
     self.textView.returnKeyType = UIReturnKeyDone;

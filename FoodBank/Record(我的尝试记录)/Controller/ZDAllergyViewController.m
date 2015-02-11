@@ -36,6 +36,11 @@ __weak IBOutlet LBorderView *_borderView1;
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    if(iOS7)
+    {
+        self.edgesForExtendedLayout = NO;
+        self.navigationController.navigationBar.opaque=YES;
+    }
     self.title = @"过敏反馈";
     self.qitaTextField.delegate = self;
     _borderView1.borderType = BorderTypeDashed;
@@ -51,9 +56,10 @@ __weak IBOutlet LBorderView *_borderView1;
     paragraphStyle.minimumLineHeight = 15.f;
     paragraphStyle.firstLineHeadIndent = 20.f;
     paragraphStyle.alignment = NSTextAlignmentJustified;
-    NSDictionary *attributes = @{ NSFontAttributeName:[UIFont systemFontOfSize:15], NSParagraphStyleAttributeName:paragraphStyle, NSForegroundColorAttributeName:[UIColor colorWithRed:202/255. green:57/255. blue:21/255. alpha:1]
-                                  };
+    NSDictionary *attributes = @{ NSFontAttributeName:[UIFont fontWithName:@"MicrosoftYaHei" size:(15)], NSParagraphStyleAttributeName:paragraphStyle, NSForegroundColorAttributeName:[UIColor colorWithRed:202/255. green:57/255. blue:21/255. alpha:1]};
+    
     self.jianjie.attributedText = [[NSAttributedString alloc]initWithString:@"    当孩子在新食材尝试中对某食材出现过敏现象后，请您带孩子去医院就医并遵医嘱自行安排对该食材的再次尝试时间。过敏食材的再次尝试应注意事项与方法，您可以去知识库进行查询；\n    当您准备好了给孩子再次尝试曾经过敏的食材，请对个人信息中的过敏食材库进行更新。并且该过敏食材再次尝试安全后，根据您的意见，我们可以将该食材从过敏食材库中移出并加入到安全食材库。" attributes:attributes];
+    
 }
 
 - (IBAction)fuxie:(UIButton *)sender {

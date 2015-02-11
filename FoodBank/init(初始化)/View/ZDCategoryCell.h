@@ -13,5 +13,5 @@
 @property (copy, nonatomic) NSString *title;
 
 @property (assign, nonatomic) NSInteger zhuangtai;
-
+@property (assign, nonatomic) NSInteger bage;
 @end

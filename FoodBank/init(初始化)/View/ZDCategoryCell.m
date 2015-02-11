@@ -32,7 +32,7 @@
     if (self) {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         self.backgroundColor = ZDColor(53, 148, 57);
-        self.category.font = [UIFont boldSystemFontOfSize:13];
+        self.category.font = [UIFont fontWithName:@"MicrosoftYaHei" size:(13)];
         self.category.textColor = [UIColor colorWithRed:53 green:148 blue:57 alpha:1];
         
         // 添加红色原点按钮
@@ -70,6 +70,7 @@
         self.backgroundColor = ZDColor(53, 148, 57);
         self.category.textColor = [UIColor whiteColor];
         self.xuanzhong.hidden = YES;
+        self.badgeBtn.hidden = NO;
     }
     // 让self监听_item的badgeValue属性的改变
     /*
@@ -77,13 +78,16 @@
      NSKeyValueObservingOptionOld = 返回原始的值给我们
      NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld 返回原始的和最新的值给我们
      */
-    [_xuanzhong addObserver:self forKeyPath:@"badgeValue" options:0 context:nil];
+//    [self addObserver:self forKeyPath:@"bage" options:0 context:nil];
+
+}
+- (void)setBage:(NSInteger)bage{
+//    NSLog(@"%ld",(long)bage);
+    _badgeBtn.badgeValue = [NSString stringWithFormat:@"%d",(int)bage];
     
+//}
 }
-- (void)dealloc
-{
-    [_xuanzhong removeObserver:self forKeyPath:@"badgeValue"];
-}
+
 
 
 @end

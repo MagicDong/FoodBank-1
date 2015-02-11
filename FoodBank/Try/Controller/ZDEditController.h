@@ -1,24 +1,22 @@
 //
-//  ZDEditViewController.h
+//  ZDSiKuViewController.h
 //  FoodBank
 //
-//  Created by apple-jiexian on 14-10-11.
+//  Created by apple-jiexian on 14-9-28.
 //  Copyright (c) 2014年 Dong. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-
 @protocol ZDEditDelegate <NSObject>
 
 @optional
 
-- (void)didSelectedMid:(NSString *)mid;
+- (void)didSelectedMid:(NSDictionary *)mid;
 
 @end
 
-
-@interface ZDEditViewController : UIViewController
+@interface ZDEditController : UIViewController
 
 @property (nonatomic,weak) id<ZDEditDelegate> delegate;
 

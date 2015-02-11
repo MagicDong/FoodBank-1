@@ -38,7 +38,7 @@
     [self.view addSubview:webView];
     self.title = @"关于我们";
     // 1.具体数据
-//    self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"BG"]];
+    self.tableView.backgroundColor = [UIColor whiteColor];
     ZDCommonItem *mark = [ZDCommonArrowItem itemWithTitle:@"评分支持"];
     mark.opertion = ^{
         NSString *appid = @"725296055";

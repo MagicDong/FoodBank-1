@@ -8,7 +8,6 @@
 #import "ZDNavViewController.h"
 #import "ZDTryChooseButton.h"
 #import "ZDTuiJianViewController.h"
-#import "ZDEditViewController.h"
 #import "ZDMoreView.h"
 #import "UMSocial.h"
 @interface ZDNavViewController ()<UMSocialUIDelegate>
@@ -83,8 +82,6 @@
 //        return;
 //    }
 
-    
-    
 }
 
 - (void)smallImage{

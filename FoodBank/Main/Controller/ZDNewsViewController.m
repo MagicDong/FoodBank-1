@@ -257,6 +257,7 @@ static NSString *PhotosID = @"photosCell";
     }
 }
 
+                  
 - (void)smallImage{
     
 }
@@ -278,6 +279,7 @@ static NSString *PhotosID = @"photosCell";
 - (void)loadIphoneNews{
     NSString *url = [NSString stringWithFormat:ZDIphoneNew20];
     [ZDHttpTool getWithUrl:url params:nil success:^(NSDictionary *dict) {
+//         NSLog(@"%@",dict);
         self.dataList = dict[ZDIPhoneInfo];
         self.isMore = NO;
         [self.tableView headerEndRefreshing];
@@ -298,6 +300,7 @@ static NSString *PhotosID = @"photosCell";
     self.isMore = YES;
     NSString *url = [NSString stringWithFormat:@"http://c.3g.163.com/nc/article/headline/T1397116135282/20-40.html"];
     [ZDHttpTool getWithUrl:url params:nil success:^(NSDictionary *dict) {
+       
         NSMutableArray *array = dict[ZDIPhoneInfo];
         NSMutableArray *temp = [[NSMutableArray alloc]init];
         [temp addObjectsFromArray:self.dataList];

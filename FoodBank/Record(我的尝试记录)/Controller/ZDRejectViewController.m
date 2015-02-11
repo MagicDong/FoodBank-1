@@ -26,7 +26,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    if(iOS7)
+    {
+        self.edgesForExtendedLayout = NO;
+        self.navigationController.navigationBar.opaque=YES;
+    }
     self.title = @"拒绝反馈";
     _borderView1.borderType = BorderTypeDashed;
     _borderView1.dashPattern = 1;
@@ -44,7 +48,7 @@
     paragraphStyle.firstLineHeadIndent = 20.f;
     paragraphStyle.alignment = NSTextAlignmentJustified;
     
-    NSMutableDictionary *attributes = [@{ NSFontAttributeName:[UIFont systemFontOfSize:15], NSParagraphStyleAttributeName:paragraphStyle, NSForegroundColorAttributeName:[UIColor colorWithRed:202/255. green:57/255. blue:21/255. alpha:1]
+    NSMutableDictionary *attributes = [@{ NSFontAttributeName:[UIFont fontWithName:@"MicrosoftYaHei" size:(15)], NSParagraphStyleAttributeName:paragraphStyle, NSForegroundColorAttributeName:[UIColor colorWithRed:202/255. green:57/255. blue:21/255. alpha:1]
                                          }mutableCopy];
 
     self.jianjie.attributedText = [[NSAttributedString alloc]initWithString:@"    当宝宝拒绝尝试这个新食材时，家长应尊重宝宝的意见，立即停止食用此食材。因为有可能孩子只是因为身体不舒服、情绪不好等临时原因而不愿意食用此食材。若家长坚持，可能真的会造成宝宝对这个食材厌恶而拒绝。如果当时家长没有坚持，在经过1个月的忘却期后再给孩子重新尝试，宝宝可能就顺利接受了。请家长尽量找出拒绝的原因，以便下一次尝试时能够避免该情况发生。" attributes:attributes];

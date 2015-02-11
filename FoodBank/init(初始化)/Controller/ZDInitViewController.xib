@@ -6,6 +6,7 @@
     <customFonts key="customFonts">
         <mutableArray key="weiruan.ttf">
             <string>MicrosoftYaHei</string>
+            <string>MicrosoftYaHei</string>
         </mutableArray>
     </customFonts>
     <objects>
@@ -13,6 +14,7 @@
             <connections>
                 <outlet property="Finish" destination="2Fu-V5-pIp" id="5MK-En-jEg"/>
                 <outlet property="babyName" destination="Vnz-N8-bDU" id="6Sc-6r-bDJ"/>
+                <outlet property="birIcon" destination="NOt-eq-XL8" id="UNR-oP-FOw"/>
                 <outlet property="birthdayView" destination="cT7-aJ-tgg" id="Mgy-6H-mhq"/>
                 <outlet property="nameView" destination="3E6-Nw-qQK" id="mqi-09-Z6e"/>
                 <outlet property="nation" destination="PEw-0P-igN" id="hMc-ae-3mC"/>
@@ -57,11 +59,11 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="dCu-3N-kQR" firstAttribute="leading" secondItem="cT7-aJ-tgg" secondAttribute="leading" id="J4k-4j-DUc"/>
-                        <constraint firstAttribute="bottom" secondItem="dCu-3N-kQR" secondAttribute="bottom" id="NIk-73-NGU"/>
+                        <constraint firstItem="dCu-3N-kQR" firstAttribute="top" secondItem="cT7-aJ-tgg" secondAttribute="top" id="3qZ-6p-RCv"/>
+                        <constraint firstAttribute="trailing" secondItem="dCu-3N-kQR" secondAttribute="trailing" id="SXw-sJ-NWR"/>
                         <constraint firstAttribute="height" constant="46" id="UdV-V9-Np5"/>
-                        <constraint firstAttribute="trailing" secondItem="dCu-3N-kQR" secondAttribute="trailing" id="YYV-4a-0LH"/>
-                        <constraint firstItem="dCu-3N-kQR" firstAttribute="top" secondItem="cT7-aJ-tgg" secondAttribute="top" id="xfF-Z5-Kt7"/>
+                        <constraint firstAttribute="bottom" secondItem="dCu-3N-kQR" secondAttribute="bottom" id="cyy-k6-uaY"/>
+                        <constraint firstItem="dCu-3N-kQR" firstAttribute="leading" secondItem="cT7-aJ-tgg" secondAttribute="leading" id="vVq-fY-TuY"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3E6-Nw-qQK">
@@ -94,6 +96,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="cGb-5H-PeV"/>
                     </constraints>
+                    <fontDescription key="fontDescription" name="MicrosoftYaHei" family="Microsoft YaHei" pointSize="15"/>
                     <state key="normal" title="完成" backgroundImage="bg-lv">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>

@@ -45,20 +45,8 @@
                         <constraint firstItem="4Cs-Lc-aYi" firstAttribute="top" secondItem="uYK-bR-pcj" secondAttribute="top" constant="17" id="zYp-jG-3bt"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJt-AW-Yth" userLabel="登录">
-                    <rect key="frame" x="125" y="389" width="71" height="32"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="71" id="nV8-mu-yYk"/>
-                        <constraint firstAttribute="height" constant="32" id="zPf-72-L4a"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="15"/>
-                    <state key="normal" title="确定" backgroundImage="Judge"/>
-                    <connections>
-                        <action selector="queding:" destination="-1" eventType="touchUpInside" id="pEq-z1-N8u"/>
-                    </connections>
-                </button>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="vJd-cx-6mm">
-                    <rect key="frame" x="8" y="52" width="304" height="329"/>
+                    <rect key="frame" x="8" y="52" width="304" height="376"/>
                     <collectionViewLayout key="collectionViewLayout" id="FIA-XW-dgN"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="7vA-xb-XiI"/>
@@ -68,15 +56,13 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="cJt-AW-Yth" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="125" id="3XR-9d-djJ"/>
+                <constraint firstAttribute="trailing" secondItem="vJd-cx-6mm" secondAttribute="trailing" constant="8" id="2bT-Dz-dlg"/>
                 <constraint firstItem="uYK-bR-pcj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="3br-ef-R9p"/>
-                <constraint firstAttribute="bottom" secondItem="cJt-AW-Yth" secondAttribute="bottom" constant="15" id="4BL-wU-AJS"/>
-                <constraint firstAttribute="trailing" secondItem="vJd-cx-6mm" secondAttribute="trailing" constant="8" id="L8v-20-BkW"/>
-                <constraint firstItem="cJt-AW-Yth" firstAttribute="top" secondItem="vJd-cx-6mm" secondAttribute="bottom" constant="8" id="SH7-ED-3Zl"/>
+                <constraint firstItem="vJd-cx-6mm" firstAttribute="top" secondItem="uYK-bR-pcj" secondAttribute="bottom" constant="1" id="3iW-CR-Xuu"/>
+                <constraint firstItem="vJd-cx-6mm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="fY9-q6-BxN"/>
                 <constraint firstAttribute="trailing" secondItem="uYK-bR-pcj" secondAttribute="trailing" id="fic-oI-iNb"/>
                 <constraint firstItem="uYK-bR-pcj" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ibQ-md-8f4"/>
-                <constraint firstItem="vJd-cx-6mm" firstAttribute="top" secondItem="uYK-bR-pcj" secondAttribute="bottom" constant="1" id="pPp-aY-8oa"/>
-                <constraint firstItem="vJd-cx-6mm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="pZE-Dj-CPt"/>
+                <constraint firstAttribute="bottom" secondItem="vJd-cx-6mm" secondAttribute="bottom" constant="8" id="rT1-b7-wwC"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
@@ -85,7 +71,6 @@
         </view>
     </objects>
     <resources>
-        <image name="Judge" width="105" height="36"/>
         <image name="baby" width="69" height="82"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
