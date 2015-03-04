@@ -11,7 +11,7 @@
 #import "ZDNetwork.h"
 #import "MBProgressHUD+ZD.h"
 
-@interface ZDAllergyViewController ()<UITextFieldDelegate>{
+@interface ZDAllergyViewController ()<UITextFieldDelegate,UIAlertViewDelegate>{
 __weak IBOutlet LBorderView *_borderView1;
 }
 @property (weak, nonatomic) IBOutlet UITextField *qitaTextField;
@@ -119,8 +119,9 @@ __weak IBOutlet LBorderView *_borderView1;
     
     NSDictionary *attributes = @{ NSFontAttributeName:[UIFont systemFontOfSize:15], NSParagraphStyleAttributeName:paragraphStyle, NSForegroundColorAttributeName:[UIColor colorWithRed:202/255. green:57/255. blue:21/255. alpha:1]
                                   };
-    
     self.jianjie.attributedText = [[NSAttributedString alloc]initWithString:@"    请您立即停止食用该食材，观察宝宝的腹痛情况，若腹痛情况较轻，待宝宝腹痛完全消失后，间隔一段时间，适当减量再次添加，如仍有腹痛症状，此食物短期内不宜食用。若腹痛情况加重请及时就医确诊。" attributes:attributes];
+    
+    
 }
 
 - (IBAction)pizhen:(UIButton *)sender {
@@ -229,17 +230,40 @@ __weak IBOutlet LBorderView *_borderView1;
     
 }
 - (IBAction)queding:(UIButton *)sender {
-    [ZDNetwork postTryResultTryState:@"2" CallBack:^(RspState *rsp) {
-        if (rsp.rspCode == 0) {
-            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"提交尝试结果成功！" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-            [alert show];
-        }else{
-            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"错误！" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-            [alert show];
-        }
-    }];
+    
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"确认要提交尝试结果吗？" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+    [alert show];
 }
 
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    switch (buttonIndex) {
+        case 0:
+            break;
+            
+        case 1:
+            [MBProgressHUD showMessage:@"提交尝试"];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.40 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [ZDNetwork postTryResultTryState:@"2" CallBack:^(RspState *rsp) {
+                    if (rsp.rspCode == 0) {
+                        [MBProgressHUD hideHUD];
+                        [MBProgressHUD showMessage:@"提交尝试结果成功！"];
+                        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.60 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                            [MBProgressHUD hideHUD];
+                        });
+                    }else{
+                        [MBProgressHUD hideHUD];
+                        [MBProgressHUD showError:@"提交尝试结果失败！"];
+                        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.68 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                            [MBProgressHUD hideHUD];
+                        });
+                        return;
+                    }
+                }];
+            });
+            break;
+    }
+}
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     [self.qitaTextField resignFirstResponder];

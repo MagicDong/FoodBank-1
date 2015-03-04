@@ -64,8 +64,8 @@
     
     // 3.添加更多按钮
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"确定" style:UIBarButtonItemStylePlain target:self action:@selector(trying)];
-//    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemImage:@"navigationbar_more" highlightedImage:@"navigationbar_more_highlighted" target:self action:@selector(more)];
     
+//    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemImage:@"navigationbar_more" highlightedImage:@"navigationbar_more_highlighted" target:self action:@selector(more)];
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc]init];
     paragraphStyle.lineHeightMultiple = 20.f;
     paragraphStyle.maximumLineHeight = 25.f;
@@ -83,13 +83,11 @@
     self.tuijianTextView.editable = NO;
     self.tuijianTextView.backgroundColor = [UIColor clearColor];
     
-    
 //    [{"mname":"芒果","practice":"","pgtpid":42,"introduce":"","mid":558},{"mname":"干裙带菜(泡发)","practice":"","pgtpid":25,"introduce":"","mid":459}];
     [self getTryFood];
 }
 - (void)getTryFood{
     [ZDNetwork getTodayTryInfoCallback:^(RspState *rsp, NSArray *array) {
-        
         //        [MBProgressHUD hideHUD];
         if (rsp.rspCode == 0) {
             ZDNewFood *food = array[0];
@@ -104,8 +102,16 @@
             paragraphStyle.firstLineHeadIndent = 20.f;
             paragraphStyle.alignment = NSTextAlignmentJustified;
             NSDictionary *attributes = @{ NSFontAttributeName:[UIFont fontWithName:@"MicrosoftYaHei" size:(15)], NSParagraphStyleAttributeName:paragraphStyle, NSForegroundColorAttributeName:[UIColor blackColor]};
-            self.jieshaoTextView.attributedText = [[NSAttributedString alloc]initWithString:food.introduce attributes:attributes];
-            self.tuijianTextView.attributedText = [[NSAttributedString alloc]initWithString:food.practice attributes:attributes];
+            if([self isNull:food.introduce]){
+                self.jieshaoTextView.attributedText = [[NSAttributedString alloc]initWithString:food.introduce attributes:attributes];
+            }else{
+                self.jieshaoTextView.attributedText = [[NSAttributedString alloc]initWithString:@"暂无介绍" attributes:attributes];
+            }
+            if([self isNull:food.zzgc]){
+                self.tuijianTextView.attributedText = [[NSAttributedString alloc]initWithString:food.zzgc attributes:attributes];
+            }else{
+                self.tuijianTextView.attributedText = [[NSAttributedString alloc]initWithString:@"暂无介绍" attributes:attributes];
+            }
             self.cornerID = food.mid;
         }else{
             
@@ -118,24 +124,73 @@
         }
     }];
 }
+-(BOOL)isNull:(id)object
+{
+    // 判断是否为空串
+    if ([object isEqual:[NSNull null]]) {
+        return NO;
+    }
+    else if ([object isKindOfClass:[NSNull class]])
+    {
+        return NO;
+    }
+    else if (object==nil){
+        return NO;
+    }
+    return YES;
+}
 - (void)didSelectedMid:(NSDictionary *)mid{
+//    {"name":"小麦面粉（富强粉、特一粉）","id":1,"level":0,"cookname":"面粉","sta":2,"fbname":null,"zzgc":null,"mdesc":"小麦经磨制加工后，即成为面粉，也称小麦粉。面粉中所含营养物质主要是淀粉，其次还有蛋白质、脂肪、维生素、矿物质等，是面制类食物面条、包子、饺子、馒头、面包等的基本原料。","aliasname":"富强粉，特一粉","tp":20,"pgtp":16,"yysids":"4,2,6","isdel":false,"fhmonth":"123456789ABC","mtpname":"面粉"}
+//    NSLog(@"%@",mid);
+    self.cornerID = mid[@"mid"];
+    [ZDNetwork getInfoWithId:mid[@"mid"] CallBack:^(RspState *rsp, NSDictionary *rspDict) {
+        if (rsp.rspCode == 0) {
+            NSString *iconStr = [NSString stringWithFormat:@"http://192.168.1.250/mimag/%@.png",mid[@"mid"]];
+            NSURL *url = [NSURL URLWithString:iconStr];
+            [self.icon sd_setImageWithURL:url];
+            self.foodName.text = rspDict[@"cookname"];
+            NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc]init];
+            paragraphStyle.lineHeightMultiple = 20.f;
+            paragraphStyle.maximumLineHeight = 25.f;
+            paragraphStyle.minimumLineHeight = 10.f;
+            paragraphStyle.firstLineHeadIndent = 20.f;
+            paragraphStyle.alignment = NSTextAlignmentJustified;
+            NSDictionary *attributes = @{ NSFontAttributeName:[UIFont fontWithName:@"MicrosoftYaHei" size:(15)], NSParagraphStyleAttributeName:paragraphStyle, NSForegroundColorAttributeName:[UIColor blackColor]};
+            if([self isNull:rspDict[@"mdesc"]]){
+                self.jieshaoTextView.attributedText = [[NSAttributedString alloc]initWithString:rspDict[@"mdesc"] attributes:attributes];
+            }else{
+                self.jieshaoTextView.attributedText = [[NSAttributedString alloc]initWithString:@"暂无介绍" attributes:attributes];
+            }
+            if([self isNull:rspDict[@"zzgc"]]){
+                self.tuijianTextView.attributedText = [[NSAttributedString alloc]initWithString:rspDict[@"zzgc"] attributes:attributes];
+            }else{
+                self.tuijianTextView.attributedText = [[NSAttributedString alloc]initWithString:@"暂无介绍" attributes:attributes];
+            }
+        }else{
+            //            [MBProgressHUD showError:@"网络错误"];
+            //            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.68 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            //                [MBProgressHUD hideHUD];
+            //            });
+            
+            return;
+        }
+    }];
     
-    NSLog(@"%@",mid);
-    
-    NSString *iconStr = [NSString stringWithFormat:@"http://192.168.1.250/mimag/%@.png",mid[@"mid"]];
-    NSURL *url = [NSURL URLWithString:iconStr];
-    [self.icon sd_setImageWithURL:url];
-    self.foodName.text = mid[@"mname"];
-    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc]init];
-    paragraphStyle.lineHeightMultiple = 20.f;
-    paragraphStyle.maximumLineHeight = 25.f;
-    paragraphStyle.minimumLineHeight = 10.f;
-    paragraphStyle.firstLineHeadIndent = 20.f;
-    paragraphStyle.alignment = NSTextAlignmentJustified;
-    NSDictionary *attributes = @{ NSFontAttributeName:[UIFont systemFontOfSize:15], NSParagraphStyleAttributeName:paragraphStyle, NSForegroundColorAttributeName:[UIColor blackColor]};
+//    /mobile/getMaterialById.do;jsessionid=
+//    NSString *iconStr = [NSString stringWithFormat:@"http://192.168.1.250/mimag/%@.png",mid[@"mid"]];
+//    NSURL *url = [NSURL URLWithString:iconStr];
+//    [self.icon sd_setImageWithURL:url];
+//    self.foodName.text = mid[@"mname"];
+//    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc]init];
+//    paragraphStyle.lineHeightMultiple = 20.f;
+//    paragraphStyle.maximumLineHeight = 25.f;
+//    paragraphStyle.minimumLineHeight = 10.f;
+//    paragraphStyle.firstLineHeadIndent = 20.f;
+//    paragraphStyle.alignment = NSTextAlignmentJustified;
+//    NSDictionary *attributes = @{ NSFontAttributeName:[UIFont systemFontOfSize:15], NSParagraphStyleAttributeName:paragraphStyle, NSForegroundColorAttributeName:[UIColor blackColor]};
 //    self.jieshaoTextView.attributedText = [[NSAttributedString alloc]initWithString:mid[@"introduce"] attributes:attributes];
 //    self.tuijianTextView.attributedText = [[NSAttributedString alloc]initWithString:mid[@"practice"] attributes:attributes];
-    self.cornerID = mid[@"mid"];
+
     
 //    NSString *iconStr = [NSString stringWithFormat:@"http://192.168.1.250/mimag/%@.png",foodDict[@"mid"]];
 //    NSURL *url = [NSURL URLWithString:iconStr];
@@ -248,7 +303,7 @@
     if (try.currentImage == self.downImage ) {
         // 向下 --> 向上
         [try setImage:self.upImage forState:UIControlStateNormal];
-        UITableView *tian = [[UITableView alloc]initWithFrame:CGRectMake(CGRectGetMinX(self.tianBtn.frame) -5, CGRectGetMaxY(try.frame), 72, 150) style:UITableViewStylePlain];
+        UITableView *tian = [[UITableView alloc]initWithFrame:CGRectMake(CGRectGetMinX(self.tianBtn.frame) -8, CGRectGetMaxY(try.frame), 76, 150) style:UITableViewStylePlain];
         [self.view addSubview:tian];
         tian.alpha= 0;
         tian.delegate = self;

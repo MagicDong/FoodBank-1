@@ -20,9 +20,10 @@
 #import "ZDTuiJianViewController.h"
 #import "ZDNetwork.h"
 #import "ZDTryRecord.h"
-#import "ZDCategoryCell.h"
+//#import "ZDCategoryCell.h"
+#import "ZDDateCell.h"
 
-@interface ZDRecordViewController ()<ZDMoreViewDelegate,UITableViewDataSource,UITableViewDelegate>
+@interface ZDRecordViewController ()<ZDMoreViewDelegate,UITableViewDataSource,UITableViewDelegate,UIAlertViewDelegate>
 {
     YGPSegmentedController * _ygp;
     UILabel * label;
@@ -43,6 +44,7 @@
 @property (nonatomic, strong) NSArray *dataList;
 @property (nonatomic, assign) BOOL isIng;
 @property (nonatomic, strong)UIButton *cover;
+@property (weak, nonatomic) IBOutlet UITextView *foodInfo;
 @property (nonatomic ,weak) ZDMoreView *moreView;
 @property (nonatomic,assign) BOOL xiala;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -59,7 +61,6 @@ static NSString *categoryCellID = @"categoryCell";
     ZDTuiJianViewController *present = [[ZDTuiJianViewController alloc]init];
     present.foodInfo = foodInfo;
     [self.navigationController pushViewController:present animated:YES];
-    
 }
 
 - (IBAction)anquan:(UIButton *)sender {
@@ -69,16 +70,11 @@ static NSString *categoryCellID = @"categoryCell";
 //    sender.selected = YES;
 //    // 将当前按钮作为选中按钮
 //    self.selectedButton = sender;
-    [ZDNetwork postTryResultTryState:@"1" CallBack:^(RspState *rsp) {
-        if (rsp.rspCode == 0) {
-            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"提交尝试结果成功！" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-            [alert show];
-        }else{
-            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"提交尝试结果失败！" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-            [alert show];
-        }
-    }];
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"确认要提交尝试新食材吗？" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+    alert.tag = 1;
+    [alert show];
 }
+
 
 - (IBAction)guomin:(UIButton *)sender {
 //    // 取消之前选中按钮的选中状态
@@ -93,13 +89,13 @@ static NSString *categoryCellID = @"categoryCell";
 
 
 - (IBAction)jujue:(UIButton *)sender {
+    
 //    // 取消之前选中按钮的选中状态 
 //    self.selectedButton.selected = NO;
 //    // 设置点中按钮的selected ＝ YES
 //    sender.selected = YES;
 //    // 将当前按钮作为选中按钮
 //    self.selectedButton = sender;
-    
     ZDRejectViewController *reject = [[ZDRejectViewController alloc]init];
     [self.navigationController pushViewController:reject animated:YES];
 }
@@ -111,28 +107,67 @@ static NSString *categoryCellID = @"categoryCell";
 //    sender.selected = YES;
 //    // 将当前按钮作为选中按钮
 //    self.selectedButton = sender;
-    
-    [ZDNetwork postTryResultTryState:@"4" CallBack:^(RspState *rsp) {
-        if (rsp.rspCode == 0) {
-            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"提交尝试结果成功！" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-            [alert show];
-        }else{
-            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"错误！" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-            [alert show];
-        }
-    }];
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"确认要提交尝试结果吗？" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+    alert.tag = 4;
+    [alert show];
 }
-int i =0;
+
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    switch (buttonIndex) {
+        case 0:
+            break;
+            
+        case 1:
+            if (alertView.tag == 1) {
+                [MBProgressHUD showMessage:@"提交尝试"];
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.40 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [ZDNetwork postTryResultTryState:@"1" CallBack:^(RspState *rsp) {
+                        if (rsp.rspCode == 0) {
+                            [MBProgressHUD hideHUD];
+                            [MBProgressHUD showMessage:@"提交尝试结果成功！"];
+                            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.60 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                                [MBProgressHUD hideHUD];
+                            });
+                        }else{
+                            [MBProgressHUD hideHUD];
+                            [MBProgressHUD showError:@"提交尝试结果失败！"];
+                            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.68 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                                [MBProgressHUD hideHUD];
+                            });
+                            return;
+                        }
+                    }];
+                });
+            }else{
+                [MBProgressHUD showMessage:@"提交尝试"];
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.40 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [ZDNetwork postTryResultTryState:@"4" CallBack:^(RspState *rsp) {
+                        if (rsp.rspCode == 0) {
+                            [MBProgressHUD hideHUD];
+                            [MBProgressHUD showMessage:@"提交尝试结果成功！"];
+                            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.60 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                                [MBProgressHUD hideHUD];
+                            });
+                        }else{
+                            [MBProgressHUD hideHUD];
+                            [MBProgressHUD showError:@"提交尝试结果失败！"];
+                            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.68 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                                [MBProgressHUD hideHUD];
+                            });
+                            return;
+                        }
+                    }];
+                });
+                
+            }
+            break;
+    }
+}
+
+int i=0;
 - (void)viewDidLoad{
     [super viewDidLoad];
-    [ZDNetwork getTryRecordInfoCallback:^(RspState *rsp, NSArray *array) {
-        if (rsp.rspCode == 0) {
-            self.dataList = array;
-        }else{
-
-        }
-    }];
-    
     [self setupTableView];
     self.title = @"尝试记录";
     
@@ -181,7 +216,8 @@ int i =0;
     
     self.titleArray = TitielArray;
     [self.tableView reloadData];
-    
+    self.foodInfo.editable = NO;
+    self.foodInfo.backgroundColor = [UIColor clearColor];
     self.anquan.layer.cornerRadius = 5;
     self.anquan.layer.masksToBounds = YES;
     self.jujue.layer.cornerRadius = 5;
@@ -198,6 +234,16 @@ int i =0;
     
 }
 
+- (void)viewDidAppear:(BOOL)animated{
+    [ZDNetwork getTryRecordInfoCallback:^(RspState *rsp, NSArray *array) {
+        if (rsp.rspCode == 0) {
+            self.dataList = array;
+            //            NSLog(@"==%@",array);
+        }else{
+            
+        }
+    }];
+}
 - (void)setupTableView{
     
     
@@ -210,7 +256,7 @@ int i =0;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     //    static NSString *ID = @"share";
-    ZDCategoryCell *cell = [tableView dequeueReusableCellWithIdentifier:categoryCellID];
+    ZDDateCell *cell = [tableView dequeueReusableCellWithIdentifier:categoryCellID];
     cell.title = self.titleArray[indexPath.row];
     if (indexPath.row == i) {
         cell.zhuangtai = 1;
@@ -228,19 +274,53 @@ int i =0;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSIndexPath *p = [NSIndexPath indexPathForItem:i inSection:0];
     
-    ZDCategoryCell *deCell =  (ZDCategoryCell *)[tableView cellForRowAtIndexPath:p];
+    ZDDateCell *deCell =  (ZDDateCell *)[tableView cellForRowAtIndexPath:p];
     deCell.selected = NO;
     deCell.zhuangtai = 0;
     
-    ZDCategoryCell *cell =  (ZDCategoryCell *)[tableView cellForRowAtIndexPath:indexPath];
+    ZDDateCell *cell =  (ZDDateCell *)[tableView cellForRowAtIndexPath:indexPath];
     cell.zhuangtai = 1;
     cell.selected = YES;
     i = indexPath.row;
+    
     // 更新表
-//    ZDTryRecord *dict = _dataList[indexPath.row];
-//    [self.foodName setText:dict.mname];
-//    [self.toDay setText:[NSString stringWithFormat:@"%@",dict.isTrying]];
-//    [self.zhouqi setText:[NSString stringWithFormat:@"%@",dict.cycle]];
+    if ([_dataList[indexPath.row]  isEqual:@""]) {
+        [self.foodName setText:@"未尝试新食材"];
+        [self.toDay setText:[NSString stringWithFormat:@"%d",0]];
+        [self.zhouqi setText:[NSString stringWithFormat:@"%d",0]];
+        NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc]init];
+        paragraphStyle.lineHeightMultiple = 20.f;
+        paragraphStyle.maximumLineHeight = 25.f;
+        paragraphStyle.minimumLineHeight = 10.f;
+        paragraphStyle.firstLineHeadIndent = 20.f;
+        paragraphStyle.alignment = NSTextAlignmentJustified;
+        NSDictionary *attributes = @{ NSFontAttributeName:[UIFont fontWithName:@"MicrosoftYaHei" size:(15)], NSParagraphStyleAttributeName:paragraphStyle, NSForegroundColorAttributeName:[UIColor blackColor]
+                                      };
+        NSString *str = [NSString stringWithFormat:@"暂无介绍"];
+        self.foodInfo.attributedText = [[NSAttributedString alloc]initWithString:str attributes:attributes];
+    }else{
+        
+        ZDTryRecord *dict = _dataList[indexPath.row];
+        [self.foodName setText:dict.mname];
+        [self.toDay setText:[NSString stringWithFormat:@"%@",dict.isTrying]];
+        [self.zhouqi setText:[NSString stringWithFormat:@"%@",dict.cycle]];
+        NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc]init];
+        paragraphStyle.lineHeightMultiple = 20.f;
+        paragraphStyle.maximumLineHeight = 25.f;
+        paragraphStyle.minimumLineHeight = 10.f;
+        paragraphStyle.firstLineHeadIndent = 20.f;
+        paragraphStyle.alignment = NSTextAlignmentJustified;
+        NSDictionary *attributes = @{ NSFontAttributeName:[UIFont fontWithName:@"MicrosoftYaHei" size:(15)], NSParagraphStyleAttributeName:paragraphStyle, NSForegroundColorAttributeName:[UIColor blackColor]
+                                      };
+        if (![dict.introduce isEqual:[NSNull class]]) {
+            NSString *str = [NSString stringWithFormat:@"%@",dict.introduce];
+            self.foodInfo.attributedText = [[NSAttributedString alloc]initWithString:str attributes:attributes];
+        }else{
+            NSString *str = [NSString stringWithFormat:@"暂无介绍"];
+            self.foodInfo.attributedText = [[NSAttributedString alloc]initWithString:str attributes:attributes];
+        }
+    }
+    
 }
 
 // 设置行高
@@ -252,46 +332,51 @@ int i =0;
 
 - (void)setDataList:(NSArray *)dataList{
     _dataList = dataList;
-    ZDTryRecord *dict = _dataList[0];
-    [self.foodName setText:dict.mname];
-    [self.toDay setText:[NSString stringWithFormat:@"%@",dict.isTrying]];
-    [self.zhouqi setText:[NSString stringWithFormat:@"%@",dict.cycle]];
-//    NSLog(@"%d",self.dataList.count);
-//    if (_dataList) {
-//
-//        ZDTryRecord *dict = self.dataList[0];
-//        self.foodName.text = dict.mname;
-//        self.toDay.text = [[NSString alloc]initWithFormat:@"%d",dict.isTrying];
-//        self.zhouqi.text = dict.cycle;
-//        ZDLog(@"%@",self.foodName.text);
-//        ZDLog(@"%@",self.toDay.text);
-//        ZDLog(@"%@",self.zhouqi.text);
-//    }
+    if ([_dataList[0]  isEqual:@""]) {
+        [self.foodName setText:@"未尝试新食材"];
+        [self.toDay setText:[NSString stringWithFormat:@"%d",0]];
+        [self.zhouqi setText:[NSString stringWithFormat:@"%d",0]];
+        NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc]init];
+        paragraphStyle.lineHeightMultiple = 20.f;
+        paragraphStyle.maximumLineHeight = 25.f;
+        paragraphStyle.minimumLineHeight = 10.f;
+        paragraphStyle.firstLineHeadIndent = 20.f;
+        paragraphStyle.alignment = NSTextAlignmentJustified;
+        NSDictionary *attributes = @{ NSFontAttributeName:[UIFont fontWithName:@"MicrosoftYaHei" size:(15)], NSParagraphStyleAttributeName:paragraphStyle, NSForegroundColorAttributeName:[UIColor blackColor]
+                                      };
+        NSString *str = [NSString stringWithFormat:@"暂无介绍"];
+        self.foodInfo.attributedText = [[NSAttributedString alloc]initWithString:str attributes:attributes];
+
+    }else{
+        ZDTryRecord *dict = _dataList[0];
+        [self.foodName setText:dict.mname];
+        [self.toDay setText:[NSString stringWithFormat:@"%@",dict.isTrying]];
+        [self.zhouqi setText:[NSString stringWithFormat:@"%@",dict.cycle]];
+        NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc]init];
+        paragraphStyle.lineHeightMultiple = 20.f;
+        paragraphStyle.maximumLineHeight = 25.f;
+        paragraphStyle.minimumLineHeight = 10.f;
+        paragraphStyle.firstLineHeadIndent = 20.f;
+        paragraphStyle.alignment = NSTextAlignmentJustified;
+        NSDictionary *attributes = @{ NSFontAttributeName:[UIFont fontWithName:@"MicrosoftYaHei" size:(15)], NSParagraphStyleAttributeName:paragraphStyle, NSForegroundColorAttributeName:[UIColor blackColor]
+                                      };
+        if (![dict.introduce isEqual:[NSNull class]]) {
+            NSString *str = [NSString stringWithFormat:@"%@",dict.introduce];
+            self.foodInfo.attributedText = [[NSAttributedString alloc]initWithString:str attributes:attributes];
+        }else{
+            NSString *str = [NSString stringWithFormat:@"暂无介绍"];
+            self.foodInfo.attributedText = [[NSAttributedString alloc]initWithString:str attributes:attributes];
+        }
+    }
+    
 }
 
-//@property (weak, nonatomic) IBOutlet UILabel *foodName;
-//@property (weak, nonatomic) IBOutlet UILabel *babyName;
-//@property (weak, nonatomic) IBOutlet UILabel *babyYue;
-//@property (weak, nonatomic) IBOutlet UILabel *toDay;
-//@property (weak, nonatomic) IBOutlet UILabel *zhouqi;
 - (void)viewWillAppear:(BOOL)animated{
-//    [super viewWillAppear:YES];
-//    dataList=[{"mname":"面粉","cycle":3,"practice":"","tryDate":"2014-12-01","introduce":"","isTrying":2,"grams":10,"micon":""},{"mname":"面粉","cycle":3,"practice":"","tryDate":"2014-12-02","introduce":"","isTrying":1,"grams":10,"micon":""}]
-//    {"mname":"面粉","cycle":3,"practice":"","tryDate":"2014-12-02","introduce":"","isTrying":1,"grams":10,"micon":""}
 
-//    self.foodName.text = dict.mname;
-//    self.toDay.text = @"11";
-//    ZDTryRecord *dict = self.dataList[0];
-//    self.foodName.text = dict.mname;
-//    self.toDay.text = [[NSString alloc]initWithFormat:@"%d",dict.isTrying];
-//    self.zhouqi.text = dict.cycle;
-//    ZDLog(@"%@",self.foodName.text);
-//    ZDLog(@"%@",self.toDay.text);
-//    ZDLog(@"%@",self.zhouqi.text);
 }
 
 - (void)more{
-    // 把控制器View中的iconView带到控制器View的最前面
+// 把控制器View中的iconView带到控制器View的最前面
     [self.view.window bringSubviewToFront:self.moreView];
     if (self.xiala) {
         [UIView animateWithDuration:0.5 animations:^{
@@ -346,6 +431,7 @@ int i =0;
         self.moreView.backgroundColor = ZDColor(255, 246, 229)
         self.moreView.delegate = self;
         [self.view.window  addSubview:_moreView];
+        
     }
     return _moreView;
 }
@@ -366,16 +452,12 @@ int i =0;
     [[UIApplication sharedApplication] openURL:url];
 }
 
-- (void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:YES];
-
-}
-
 -(void)segmentedViewController:(YGPSegmentedController *)segmentedControl touchedAtIndex:(NSUInteger)index
 {
     if (segmentedControl == _ygp) {
         switch (index) {
             case 0:
+                
 //                if (_dataList) {
 //                    ZDTryRecord *dict = _dataList[0];
 //                    self.foodName.text = dict.mname;
@@ -383,14 +465,17 @@ int i =0;
 //                }
                 break;
             case 1:
+                
 //                if (_dataList) {
 //                    ZDTryRecord *dict = _dataList[1];
 //                    self.foodName.text = dict.mname;
 //                    self.toDay.text = [[NSString alloc]initWithFormat:@"%d",dict.isTrying];
 //                }
                 
+                
                 break;
             case 2:
+                
 //                if (_dataList) {
 //                    ZDTryRecord *dict = _dataList[2];
 //                    self.foodName.text = dict.mname;

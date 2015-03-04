@@ -30,7 +30,12 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+    if ([launchOptions[@"news"] isEqualToString:@"news"]) {
+        ZDNewfeatureViewController *newfeature = [[ZDNewfeatureViewController alloc] init];
+        self.window.rootViewController = newfeature;
+        [self.window makeKeyAndVisible];
+        return  YES;
+    }
     NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
     
     application.statusBarHidden = NO;
@@ -45,7 +50,6 @@
     [UMSocialData setAppKey:@"5417d98ffd98c5661607aed9"];
     
     // 设置JPush推送
-    
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // 设置全局状态栏的颜色
@@ -68,8 +72,9 @@
      ZDBaby *baby = [ZDBabyTool sharedZDBabyTool].account;
 //    BOOL tool = [ZDBabyTool sharedZDBabyTool].removeAccount;
     [UIApplication sharedApplication].statusBarHidden = YES;
-    if ((0))
+    if ([currentVersion compare:sandBoxVersion] ==  NSOrderedDescending)
     {
+        
         // 存储当前版本号
         [defaults setObject:currentVersion forKey:key];
         [defaults synchronize];
@@ -79,7 +84,7 @@
         self.window.rootViewController = newfeature;
         
         UIImageView *splashScreen = [[UIImageView alloc] initWithFrame:self.window.bounds];
-        splashScreen.image = [UIImage imageNamed:@"loginIcon.png"];
+        splashScreen.image = [UIImage imageNamed:@"LaunchImage-736h.png"];
         [self.window addSubview:splashScreen];
         
         [UIView animateWithDuration:1.6 animations:^{
@@ -91,11 +96,12 @@
         }];
     }else{
         //        ZDLog(@"%@",baby.userName);
-        if (baby.userName != nil) {
+//        if (baby.userName == nil) {
+        if (0) {
             ZDRegisterViewController *reg = [[ZDRegisterViewController alloc]init];
             self.window.rootViewController = reg;
             UIImageView *splashScreen = [[UIImageView alloc] initWithFrame:self.window.bounds];
-            splashScreen.image = [UIImage imageNamed:@"loginIcon.png"];
+            splashScreen.image = [UIImage imageNamed:@"LaunchImage-736h.png"];
             [self.window addSubview:splashScreen];
             
             [UIView animateWithDuration:2.2 animations:^{
@@ -111,44 +117,44 @@
 //            ZDBaby *baby = [ZDBabyTool sharedZDBabyTool].account;
 //            [ZDNetwork LoginWithPhone:baby.userName Password:baby.password Callback:^(RspState *rsp, NSString *jsessionid) {
 //                if (rsp.rspCode == 0) {
-//                    ZDBabyTool *babyTool = [ZDBabyTool sharedZDBabyTool];
-//                    ZDBaby *bb = [[ZDBaby alloc]init];
-//                    bb.userName =  baby.userName;
-//                    bb.password =  baby.password;
-//                    bb.jsessionid = jsessionid;
-//                    [babyTool saveAccount:bb];
-//                    
-//                    //                    ZDTabBarController *tabBarVc = [[ZDTabBarController alloc] init];
-//                    //                    UIApplication *app = [UIApplication sharedApplication];
-//                    //                    UIWindow *window = app.keyWindow;
-//                    //                    app.statusBarHidden = NO;
-//                    //                    window.rootViewController = tabBarVc;
-//                    //                    [window makeKeyAndVisible];
+            
+            
+                    ZDTabBarController *tabBarVc = [[ZDTabBarController alloc] init];
+                    UIApplication *app = [UIApplication sharedApplication];
+                    UIWindow *window = app.keyWindow;
+                    app.statusBarHidden = NO;
+                    window.rootViewController = tabBarVc;
+                    [window makeKeyAndVisible];
+
+            
 //                }else{
+//
 //                    [MBProgressHUD showError:@"网络错误"];
 //                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.68 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 //                        [MBProgressHUD hideHUD];
 //                    });
 //                    
-//                    //                    ZDTabBarController *tabBarVc = [[ZDTabBarController alloc] init];
-//                    //                    UIApplication *app = [UIApplication sharedApplication];
-//                    //                    UIWindow *window = app.keyWindow;
-//                    //                    app.statusBarHidden = NO;
-//                    //                    window.rootViewController = tabBarVc;
-//                    //                    [window makeKeyAndVisible];
+//                    ZDTabBarController *tabBarVc = [[ZDTabBarController alloc] init];
+//                    UIApplication *app = [UIApplication sharedApplication];
+//                    UIWindow *window = app.keyWindow;
+//                    app.statusBarHidden = NO;
+//                    window.rootViewController = tabBarVc;
+//                    [window makeKeyAndVisible];
 //                }
 //            }];
-            ZDTabBarController *tabBarVc = [[ZDTabBarController alloc] init];
-            UIApplication *app = [UIApplication sharedApplication];
-            UIWindow *window = app.keyWindow;
-            app.statusBarHidden = NO;
-            window.rootViewController = tabBarVc;
-            [window makeKeyAndVisible];
+    
+            
+
+//            ZDTabBarController *tabBarVc = [[ZDTabBarController alloc] init];
+//            UIApplication *app = [UIApplication sharedApplication];
+//            UIWindow *window = app.keyWindow;
+//            app.statusBarHidden = NO;
+//            window.rootViewController = tabBarVc;
+//            [window makeKeyAndVisible];
             
             UIImageView *splashScreen = [[UIImageView alloc] initWithFrame:self.window.bounds];
-            splashScreen.image = [UIImage imageNamed:@"loginIcon.png"];
+            splashScreen.image = [UIImage imageNamed:@"LaunchImage-736h.png"];
             [self.window addSubview:splashScreen];
-            
             
             [UIView animateWithDuration:1.6 animations:^{
                 CATransform3D transform = CATransform3DMakeScale(1.6, 1.6, 1.0);
@@ -157,10 +163,8 @@
             } completion:^(BOOL finished) {
                 [splashScreen removeFromSuperview];
             }];
-            
         }
     }
-
     return YES;
 }
 

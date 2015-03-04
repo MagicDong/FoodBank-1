@@ -15,6 +15,7 @@
 #import "ZDCategoryCell.h"
 #import "ZDNetwork.h"
 #import "AppDelegate.h"
+#import "YTKKeyValueStore.h"
 
 static NSString *ProductCellID = @"ProductCell";
 static NSString *reusableViewID = @"SectionHeader";
@@ -38,6 +39,7 @@ static NSString *categoryCellID = @"categoryCell";
 @property (nonatomic, strong) NSIndexPath *path;
 @property (nonatomic, assign) NSInteger integer;
 @property (nonatomic, strong) NSMutableDictionary *categoryCount;
+@property (nonatomic, strong) YTKKeyValueStore *store;
 @end
 
 @implementation ZDSiKuViewController
@@ -84,21 +86,23 @@ static NSString *categoryCellID = @"categoryCell";
     // 3.添加更多按钮
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"确定" style:UIBarButtonItemStylePlain target:self action:@selector(quedingd)];
     
-        //    [self.categoryCount setValue:@1 forKey:@"1"];
-    //    [self what_are_you_doing];
+    YTKKeyValueStore *store = [[YTKKeyValueStore alloc] initDBWithName:@"test.db"];
+    self.store = store;
+    NSString *tableName = @"user_table";
+    [store createTableWithName:tableName];
+    for (int i = 0; i<16; i++) {
+        NSNumber *number = @0;
+        NSString *str = [NSString stringWithFormat:@"%d",i];
+        [store putNumber:number withId:str intoTable:tableName];
+    }
+    NSIndexPath *selectedIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+//    self.tableView.setexclusiveTouch = YES;
+    [self.tableView selectRowAtIndexPath:selectedIndexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
+    [self.tableView setNeedsDisplay];
+    self.collection.allowsMultipleSelection = YES;
+    
+    self.integer = selectedIndexPath.row;
 }
-
-//- (void)what_are_you_doing {
-//    if ([[UIDevice currentDevice] respondsToSelector:@selector(setOrientation:)]) {
-//        SEL selector = NSSelectorFromString(@"setOrientation:");
-//        NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:[UIDevice instanceMethodSignatureForSelector:selector]];
-//        [invocation setSelector:selector];
-//        [invocation setTarget:[UIDevice currentDevice]];
-//        int val = UIInterfaceOrientationLandscapeRight;
-//        [invocation setArgument:&val atIndex:2];
-//        [invocation invoke];
-//    }
-//}
 
 - (void)quedingd{
     UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"确认完成初始化食材库吗？" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
@@ -148,15 +152,167 @@ static NSString *categoryCellID = @"categoryCell";
             });
     }
 }
-
+int quanxuan;
 - (IBAction)quanxuan:(UIButton *)sender {
 //    [self.collection cellForItemAtIndexPath:];
-    for (int row=0; row<[self.dataList[self.integer] foodGenreList].count; row++) {
-        NSLog(@"%d",row);
-        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-        [self.collection selectItemAtIndexPath:indexPath animated:YES scrollPosition:UICollectionViewScrollPositionNone];
+    quanxuan++;
+    if (quanxuan%2 ==0) {
+        for (int row=0; row<[self.dataList[self.integer] foodGenreList].count; row++) {
+            //        NSLog(@"%d",row);
+            NSInteger oldCount = self.selectArray.count;
+            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:0];
+            //        [self.collection cellForItemAtIndexPath:indexPath];
+            //        [self.collection selectItemAtIndexPath:indexPath animated:NO scrollPosition:UICollectionViewScrollPositionNone];
+            //        [self.collection setNeedsDisplay];
+            //
+            //
+            //        ZDFoodCategory *foodCategory = self.dataList[self.integer];
+            //        NSDictionary *dict = foodCategory.foodGenreList[indexPath.row];
+            //        cell.foodDict = dict;
+            //        cell.selectArray = self.selectArray;
+            //        self.clearsSelectionOnViewWillAppear = NO;
+            
+            UICollectionViewCell *cell = [self.collection cellForItemAtIndexPath:indexPath];
+            CZProductCell *product = (CZProductCell *)cell;
+//            if (!product.selectBtn.selected) {
+            product.selectBtn.selected = NO;
+//            }
+            //        product.selectBtn.selected = !product.selectBtn.selected;
+            if (product.selectBtn.selected) {
+                if ([self.selectArray containsObject:product.mid]) {
+                    [self.selectArray removeObject:product.mid];
+                }else{
+                    [self.selectArray addObject:product.mid];
+                }
+            }else{
+                
+                NSMutableArray *filteredArray = [[NSMutableArray alloc]initWithObjects:product.mid, nil];
+                /*
+                 方法一：利用NSPredicate
+                 注：NSPredicate所属Cocoa框架，在密码、用户名等正则判断中经常用到。
+                 类似于SQL语句
+                 NOT 不是
+                 SELF 代表字符串本身
+                 IN 范围运算符
+                 那么NOT (SELF IN %@) 意思就是：不是这里所指定的字符串的值
+                 */
+                NSPredicate * filterPredicate = [NSPredicate predicateWithFormat:@"NOT (SELF IN %@)",filteredArray];
+                //过滤数组
+                NSArray * reslutFilteredArray = [self.selectArray filteredArrayUsingPredicate:filterPredicate];
+                self.selectArray = [reslutFilteredArray mutableCopy];
+            }
+            
+            
+            NSInteger newCount = self.selectArray.count;
+            if (oldCount < newCount) {
+                NSString *str = [NSString stringWithFormat:@"%ld",(long)self.integer];
+                NSNumber *number = [self.store getNumberById:str fromTable:@"user_table"];
+                NSInteger iiii = [number integerValue];
+                iiii++;
+                NSNumber *num = [NSNumber numberWithInteger:iiii];
+                [self.store putNumber:num withId:str intoTable:@"user_table"];
+//                NSLog(@"%@",num);
+            }else{
+                NSString *str = [NSString stringWithFormat:@"%ld",(long)self.integer];
+                NSNumber *number = [self.store getNumberById:str fromTable:@"user_table"];
+                NSInteger iiii = [number integerValue];
+                iiii--;
+                NSNumber *num = [NSNumber numberWithInteger:iiii];
+                [self.store putNumber:num withId:str intoTable:@"user_table"];
+//                NSLog(@"%@",num);
+            }
+            
+            
+            ZDCategoryCell *category =  (ZDCategoryCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:self.integer inSection:0]];
+            NSString *str = [NSString stringWithFormat:@"%ld",(long)self.integer];
+            NSNumber *number = [self.store getNumberById:str fromTable:@"user_table"];
+            NSInteger iiii = [number integerValue];
+            if(iiii <= 0){
+                category.bage = 0;
+            }else{
+                category.bage = iiii;
+            }
+            
+            
+        }
+    }else{
+        for (int row=0; row<[self.dataList[self.integer] foodGenreList].count; row++) {
+            //        NSLog(@"%d",row);
+            NSInteger oldCount = self.selectArray.count;
+            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:0];
+            //        [self.collection cellForItemAtIndexPath:indexPath];
+            //        [self.collection selectItemAtIndexPath:indexPath animated:NO scrollPosition:UICollectionViewScrollPositionNone];
+            //        [self.collection setNeedsDisplay];
+            //
+            //
+            //        ZDFoodCategory *foodCategory = self.dataList[self.integer];
+            //        NSDictionary *dict = foodCategory.foodGenreList[indexPath.row];
+            //        cell.foodDict = dict;
+            //        cell.selectArray = self.selectArray;
+            //        self.clearsSelectionOnViewWillAppear = NO;
+            
+            UICollectionViewCell *cell = [self.collection cellForItemAtIndexPath:indexPath];
+            CZProductCell *product = (CZProductCell *)cell;
+//            if (!product.selectBtn.selected) {
+            product.selectBtn.selected = YES;
+//            }
+            //        product.selectBtn.selected = !product.selectBtn.selected;
+            if (product.selectBtn.selected) {
+                if ([self.selectArray containsObject:product.mid]) {
+                    [self.selectArray removeObject:product.mid];
+                }else{
+                    [self.selectArray addObject:product.mid];
+                }
+            }else{
+                
+                NSMutableArray *filteredArray = [[NSMutableArray alloc]initWithObjects:product.mid, nil];
+                /*
+                 方法一：利用NSPredicate
+                 注：NSPredicate所属Cocoa框架，在密码、用户名等正则判断中经常用到。
+                 类似于SQL语句
+                 NOT 不是
+                 SELF 代表字符串本身
+                 IN 范围运算符
+                 那么NOT (SELF IN %@) 意思就是：不是这里所指定的字符串的值
+                 */
+                NSPredicate * filterPredicate = [NSPredicate predicateWithFormat:@"NOT (SELF IN %@)",filteredArray];
+                //过滤数组
+                NSArray * reslutFilteredArray = [self.selectArray filteredArrayUsingPredicate:filterPredicate];
+                self.selectArray = [reslutFilteredArray mutableCopy];
+            }
+            
+            
+            NSInteger newCount = self.selectArray.count;
+            if (oldCount < newCount) {
+                NSString *str = [NSString stringWithFormat:@"%ld",(long)self.integer];
+                NSNumber *number = [self.store getNumberById:str fromTable:@"user_table"];
+                NSInteger iiii = [number integerValue];
+                iiii++;
+                NSNumber *num = [NSNumber numberWithInteger:iiii];
+                [self.store putNumber:num withId:str intoTable:@"user_table"];
+                //                NSLog(@"%@",num);
+            }else{
+                NSString *str = [NSString stringWithFormat:@"%ld",(long)self.integer];
+                NSNumber *number = [self.store getNumberById:str fromTable:@"user_table"];
+                NSInteger iiii = [number integerValue];
+                iiii--;
+                NSNumber *num = [NSNumber numberWithInteger:iiii];
+                [self.store putNumber:num withId:str intoTable:@"user_table"];
+                //                NSLog(@"%@",num);
+            }
+            
+            
+            ZDCategoryCell *category =  (ZDCategoryCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:self.integer inSection:0]];
+            NSString *str = [NSString stringWithFormat:@"%ld",(long)self.integer];
+            NSNumber *number = [self.store getNumberById:str fromTable:@"user_table"];
+            NSInteger iiii = [number integerValue];
+            if(iiii <= 0){
+                category.bage = 0;
+            }else{
+                category.bage = iiii;
+            }
+        }
     }
-    
 }
 
 ////只返回可见的cell
@@ -165,8 +321,7 @@ static NSString *categoryCellID = @"categoryCell";
 //- (UITableViewCell *)dequeueReusableCellWithIdentifier:(NSString *)identifier
 
 - (void)viewDidAppear:(BOOL)animated{
-    NSIndexPath *selectedIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    [self.tableView selectRowAtIndexPath:selectedIndexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
+
 }
 
 
@@ -212,9 +367,14 @@ static NSString *categoryCellID = @"categoryCell";
 //}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (self.integer == 0) {
+        ZDCategoryCell *cell =  (ZDCategoryCell *)[tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+        cell.zhuangtai = 0;
+    }
     ZDCategoryCell *cell =  (ZDCategoryCell *)[tableView cellForRowAtIndexPath:indexPath];
     cell.zhuangtai = 1;
     self.integer = indexPath.row;
+    quanxuan = 0;
     [self.collection reloadData];
 }
 
@@ -290,6 +450,7 @@ static NSString *categoryCellID = @"categoryCell";
 //    return headerView;
 //}
 
+int countcount;
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     
@@ -322,24 +483,32 @@ static NSString *categoryCellID = @"categoryCell";
         self.selectArray = [reslutFilteredArray mutableCopy];
     }
     
-//    [self.categoryCount setValue:@1 forKey:@"1"];
-    NSString *str = [NSString stringWithFormat:@"%d",(int)self.integer];
-    
-    NSInteger integer =  (NSInteger)self.categoryCount[str];
     
     NSInteger newCount = self.selectArray.count;
     if (oldCount < newCount) {
-        integer++;
+        NSString *str = [NSString stringWithFormat:@"%ld",(long)self.integer];
+        NSNumber *number = [self.store getNumberById:str fromTable:@"user_table"];
+        NSInteger iiii = [number integerValue];
+        iiii++;
+        NSNumber *num = [NSNumber numberWithInteger:iiii];
+        [self.store putNumber:num withId:str intoTable:@"user_table"];
+//        NSLog(@"%@",num);
     }else{
-        integer--;
+        NSString *str = [NSString stringWithFormat:@"%ld",(long)self.integer];
+        NSNumber *number = [self.store getNumberById:str fromTable:@"user_table"];
+        NSInteger iiii = [number integerValue];
+        iiii--;
+        NSNumber *num = [NSNumber numberWithInteger:iiii];
+        [self.store putNumber:num withId:str intoTable:@"user_table"];
+//        NSLog(@"%@",num);
     }
+
     
-    [self.categoryCount setValue:@(integer) forKey:str];
     ZDCategoryCell *category =  (ZDCategoryCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:self.integer inSection:0]];
-    NSString *s = [NSString stringWithFormat:@"%d",(int)self.integer];
-    NSInteger categoryValue = self.categoryCount[s];
-    NSLog(@"%d",categoryValue);
-    category.bage = 10;
+    NSString *str = [NSString stringWithFormat:@"%ld",(long)self.integer];
+    NSNumber *number = [self.store getNumberById:str fromTable:@"user_table"];
+    NSInteger iiii = [number integerValue];
+    category.bage = iiii;
     
 //    category.bage = 
     

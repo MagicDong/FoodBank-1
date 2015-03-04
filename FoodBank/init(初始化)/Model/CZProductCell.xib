@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <objects>
@@ -24,17 +25,27 @@
                         <state key="normal" image="weixuanzhong">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
-                        <state key="selected" image="user_checkbox_seleted"/>
+                        <state key="selected" image="xuanzhong"/>
                     </button>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IZo-Ad-rHc">
-                        <rect key="frame" x="13" y="0.0" width="50" height="50"/>
-                    </imageView>
+                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mbb-lo-6Vz">
+                        <rect key="frame" x="13" y="1" width="52" height="52"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="shicaikuang" translatesAutoresizingMaskIntoConstraints="NO" id="DgL-Yv-HTB" userLabel="kuang">
+                                <rect key="frame" x="0.0" y="0.0" width="52" height="52"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IZo-Ad-rHc">
+                                <rect key="frame" x="3" y="3" width="46" height="46"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <size key="customSize" width="106" height="86"/>
             <connections>
                 <outlet property="iconView" destination="IZo-Ad-rHc" id="Cdl-J6-i2x"/>
+                <outlet property="imageView" destination="Mbb-lo-6Vz" id="u3H-vX-4Ih"/>
                 <outlet property="selectBtn" destination="OdW-2r-JMg" id="Nbs-bb-1JH"/>
                 <outlet property="title" destination="7rG-Cq-ssV" id="dZZ-Dt-m4S"/>
             </connections>
@@ -42,8 +53,9 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="user_checkbox_seleted" width="44" height="44"/>
+        <image name="shicaikuang" width="62" height="62"/>
         <image name="weixuanzhong" width="14" height="14"/>
+        <image name="xuanzhong" width="14" height="14"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

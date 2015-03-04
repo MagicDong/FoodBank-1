@@ -10,7 +10,7 @@
 @class CZProduct;
 
 @interface ZDProductCell : UICollectionViewCell
-
+@property (nonatomic, copy) NSString *mid;
 @property (nonatomic, strong) CZProduct *product;
-
+@property (nonatomic, strong) NSDictionary *foodDict;
 @end

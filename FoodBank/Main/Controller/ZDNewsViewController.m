@@ -24,7 +24,7 @@
 #import "UIImage+ZD.h"
 #import "ZDMoreView.h"
 #import "ZDSpecialViewController.h"
-#import <SMS_SDK/SMS_SDK.h>
+//#import <SMS_SDK/SMS_SDK.h>
 
 
 static NSString *TitleCellID = @"TitleCell";
@@ -376,6 +376,7 @@ static NSString *PhotosID = @"photosCell";
 //    NSRange range = [isPhotos rangeOfString:@"_" options:NSBackwardsSearch];
      NSArray *array = self.dataList[indexPath.row][@"imgextra"];
     if (array.count != 0 ) {
+        
         NSMutableArray *array = [NSMutableArray array];
         
         UIImageView *imageView1 = [[UIImageView alloc]init];

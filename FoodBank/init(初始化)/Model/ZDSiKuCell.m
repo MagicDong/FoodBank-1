@@ -16,8 +16,8 @@
 @implementation ZDSiKuCell
 - (void)awakeFromNib {
     CALayer *layer = [self.sikuImage layer];
-    layer.borderColor = [UIColor lightGrayColor].CGColor;
-    layer.borderWidth = 1.0f;
+    layer.borderColor = [UIColor redColor].CGColor;
+    layer.borderWidth = 1.0f; 
 }
 - (IBAction)sikuBtn:(UIButton *)sender
 {

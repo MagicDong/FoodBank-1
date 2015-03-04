@@ -18,8 +18,13 @@
 #import "MBProgressHUD+ZD.h"
 
 // 当前新特性页面的个数
-#define ZDNewfeatureImageCount 5
-
+#define ZDNewfeatureImageCount 3
+/** 是否为4英寸屏 */
+#define Inch4 ([UIScreen mainScreen].bounds.size.height >= 568.0)
+/** 是否为4.7英寸屏 */
+#define Inch47 ([UIScreen mainScreen].bounds.size.height >= 667.0)
+/** 是否为5.5英寸屏 */
+#define Inch55 ([UIScreen mainScreen].bounds.size.height >= 736.0)
 @interface ZDNewfeatureViewController () <UIScrollViewDelegate>
 @property (nonatomic, weak)  UIPageControl *pageControl;
 @end
@@ -42,7 +47,7 @@
     // 1.添加scrollerView
     [self setupScrollerView];
     // 2.添加PageControl
-    [self setupPageControl];
+//    [self setupPageControl];
 }
 /**
  *  添加PageControl
@@ -74,16 +79,20 @@
     CGFloat height = scrollerView.height;
     for (int i = 0; i < ZDNewfeatureImageCount; i++) {
         // 1.拼接图片名称
-        NSString *imageName = [NSString stringWithFormat:@"boot_new_%d_960", i+ 1];
+        NSString *imageName = [NSString stringWithFormat:@"boot_new_%d_480", i+ 1];
         if (Inch4) {
             /*
              默认情况下系统只支持自动加载启动图片的-568h图片
              如果-568h不是启动图片, 系统不会自动加载
              需要手动设置图片为4inch的图片, 已经手动拼接图片的名称
              */
-            imageName = [NSString stringWithFormat:@"boot_new_%d_1136", i+ 1];
+            imageName = [NSString stringWithFormat:@"boot_new_%d_568", i+ 1];
+        }else if(Inch47){
+            imageName = [NSString stringWithFormat:@"boot_new_%d_667", i+ 1];
+        }else if(Inch55){
+            imageName = [NSString stringWithFormat:@"boot_new_%d_736", i+ 1];
         }
-        UIImage *image = [UIImage imageWithNamed:imageName];
+        UIImage *image = [UIImage imageNamed:imageName];
         // 2.创建UIImageView
         UIImageView *iv = [[UIImageView alloc] initWithImage:image];
         // 3.设置frame
@@ -100,7 +109,7 @@
             // 1.添加开始按钮
             [self setupStartButton:iv];
             // 2.添加分享按钮
-            [self setupShareButton:iv];
+//            [self setupShareButton:iv];
         }
     }
     
@@ -149,14 +158,14 @@
     UIButton *startButton = [[UIButton alloc] init];
     [imageView addSubview:startButton];
     // 2.设置背景图片
-    [startButton setBackgroundImage:[UIImage imageWithNamed:@"new_feature_finish_button"] forState:UIControlStateNormal];
-    [startButton setBackgroundImage:[UIImage imageWithNamed:@"new_feature_finish_button_highlighted"] forState:UIControlStateHighlighted];
-    // 3.设置文字
-    [startButton setTitle:@"随便逛逛" forState:UIControlStateNormal];
+//    [startButton setBackgroundImage:[UIImage imageWithNamed:@"new_feature_finish_button"] forState:UIControlStateNormal];
+//    [startButton setBackgroundImage:[UIImage imageWithNamed:@"new_feature_finish_button_highlighted"] forState:UIControlStateHighlighted];
+//    // 3.设置文字
+//    [startButton setTitle:@"随便逛逛" forState:UIControlStateNormal];
     // 4.设置frame
-    startButton.size = startButton.currentBackgroundImage.size;
-    startButton.centerX = self.view.width * 0.5;
-    startButton.centerY = self.view.height * 0.8;
+    startButton.size = CGSizeMake(300 , 400);
+    startButton.centerX = self.view.width * 0.3;
+    startButton.centerY = self.view.height * 0.7;
     // 5.监听按钮点击事件
     [startButton addTarget:self action:@selector(start) forControlEvents:UIControlEventTouchUpInside];
 }
@@ -172,6 +181,13 @@
     ZDBaby *baby = [ZDBabyTool sharedZDBabyTool].account;
     
     if (baby.userName == nil) {
+        ZDRegisterViewController *tabBarVc = [[ZDRegisterViewController alloc] init];
+        UIApplication *app = [UIApplication sharedApplication];
+        UIWindow *window = app.keyWindow;
+        app.statusBarHidden = NO;
+        window.rootViewController = tabBarVc;
+        [window makeKeyAndVisible];
+    }else{
         [ZDNetwork LoginWithPhone:baby.userName Password:baby.password Callback:^(RspState *rsp, NSString *jsessionid) {
             if (rsp.rspCode == 0) {
                 ZDBabyTool *babyTool = [ZDBabyTool sharedZDBabyTool];
@@ -195,14 +211,6 @@
         app.statusBarHidden = NO;
         window.rootViewController = tabBarVc;
         [window makeKeyAndVisible];
-    }else{
-        ZDRegisterViewController *tabBarVc = [[ZDRegisterViewController alloc] init];
-        UIApplication *app = [UIApplication sharedApplication];
-        UIWindow *window = app.keyWindow;
-        app.statusBarHidden = NO;
-        window.rootViewController = tabBarVc;
-        [window makeKeyAndVisible];
-        
     }
 }
 

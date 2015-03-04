@@ -36,6 +36,9 @@
 /* 7、获取初始化宝宝个人四库列表 */
 + (void)getSiKuInfoCallback:(void(^)(RspState *,NSArray *))callback;
 
+// 获取四库
++ (void)getSiKuCategory:(NSString *)str  Callback:(void(^)(RspState *,NSArray *))callback;
+
 /* 8、提交宝宝勾选个人四库信息 */
 + (void)postBabySiKuInfoWithMids:(NSArray *)mids CallBack:(void (^)(RspState *))callBack;
 
@@ -55,10 +58,10 @@
 + (void)postTryResultTryState:(NSString *)tryState CallBack:(void (^)(RspState *))callback;
 
 /* 14、获取周总结 */
-+ (void)getZhouCallback:(void (^)(RspState *))callback;
++ (void)getZhouCallback:(void (^)(RspState *,NSDictionary *))callback;
 
 /* 15、获取月总结 */
-+ (void)getYueCallback:(void (^)(RspState *))callback;
++ (void)getYueCallback:(void (^)(RspState *,NSDictionary *))callback;
 
 /* 16、获取个人四库信息列表 */
 + (void)getSikuInfoWeiChangshiCallback:(void (^)(RspState *))callback;
@@ -66,6 +69,8 @@
 /* 17、获取正在尝试食材 */
 + (void)getTryingFoodCallback:(void (^)(RspState *))callback;
 
+/* 18、根据id获取食材信息 */
++ (void)getInfoWithId:(NSString *)mid CallBack:(void (^)(RspState *,NSDictionary *))callback;
 
 
 @end

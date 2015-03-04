@@ -23,7 +23,7 @@
 #import "ZDNetwork.h"
 #import "ZDBaby.h"
 #import "ZDBabyTool.h"
-#import <SMS_SDK/SMS_SDK.h>
+//#import <SMS_SDK/SMS_SDK.h>
 #import "ZDFind1ViewController.h"
 
 @interface ZDRegisterViewController () <UIWebViewDelegate,UITextFieldDelegate>
@@ -61,10 +61,7 @@
 //    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"login_bg.jpg"]];
     [UIApplication sharedApplication].statusBarHidden = YES;
     
-    //    APPKEY:  47f01de13458        AppSecret：   ec44a5b1ff4cb948cb16c1a0b1655b23
-    NSString *appKey = @"47f01de13458";
-    NSString *appSecret = @"ec44a5b1ff4cb948cb16c1a0b1655b23";
-    [SMS_SDK  registerApp:appKey withSecret:appSecret];
+
 //    [self.login setBackgroundColor:[UIColor colorWithRed:53 green:147 blue:58 alpha:1.0]];
     self.login.backgroundColor = ZDColor(53, 147, 58);
     self.login.layer.cornerRadius = 3;
@@ -78,26 +75,26 @@
 /** 登录按钮 */
 - (IBAction)login:(UIButton *)sender {
     
-    if(self.user.text.length == 0){
-        UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"温馨提示" message:@"用户名不能为空" delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
-        [alert show];
-        return;
-    }
-    if(self.user.text.length != 11){
-        UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"温馨提示" message:@"用户名错误" delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
-        [alert show];
-        return;
-    }
-    if(self.pwd.text.length  == 0){
-        UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"温馨提示" message:@"密码不能为空" delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
-        [alert show];
-        return;
-    }
-    if(self.pwd.text.length < 6){
-        UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"温馨提示" message:@"密码不正确" delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
-        [alert show];
-        return;
-    }
+//    if(self.user.text.length == 0){
+//        UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"温馨提示" message:@"用户名不能为空" delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
+//        [alert show];
+//        return;
+//    }
+//    if(self.user.text.length != 11){
+//        UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"温馨提示" message:@"用户名错误" delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
+//        [alert show];
+//        return;
+//    }
+//    if(self.pwd.text.length  == 0){
+//        UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"温馨提示" message:@"密码不能为空" delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
+//        [alert show];
+//        return;
+//    }
+//    if(self.pwd.text.length < 6){
+//        UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"温馨提示" message:@"密码不正确" delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
+//        [alert show];
+//        return;
+//    }
     
     [ZDNetwork LoginWithPhone:self.user.text Password:self.pwd.text Callback:^(RspState *rsp,NSString *jsessionid) {
         if (rsp.rspCode == 0) {

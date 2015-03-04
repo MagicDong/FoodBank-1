@@ -50,6 +50,8 @@ static NSString *reusableViewID = @"SectionHeader";
     [self.collection registerNib:nib forCellWithReuseIdentifier:ProductCellID];
     
     [self.collection registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:reusableViewID];
+    
+//    {"foodGenre":"谷类","foodGenreList":[["55","薏米","薏米"]]},
 }
 
 - (NSArray *)dataList

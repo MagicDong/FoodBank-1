@@ -19,7 +19,7 @@
 #import "ZDSiKuViewController.h"
 #import "ZDSelectViewController.h"
 
-@interface ZDInitViewController () <ZDDatePickerViewDelegate,ZDNationViewDelegate,ZDMoreViewDelegate,ZDSelectDelegate>
+@interface ZDInitViewController () <ZDDatePickerViewDelegate,ZDNationViewDelegate,ZDMoreViewDelegate,ZDSelectDelegate,UITextFieldDelegate>
 
 /**
  *  向下的图片
@@ -68,7 +68,7 @@
 @end
 
 @implementation ZDInitViewController
-
+#define kAlphaNum @"[`~!@#$^&*()%=|{}':;',\\[\\]./? ~!@#¥......&*()——|{}【】‘;:” “'。,、?]"
 
 - (IBAction)Finish:(UIButton *)sender {
     
@@ -109,7 +109,8 @@
         NSCalendar *calendar = [NSCalendar currentCalendar];
         NSDateComponents *cmps = [calendar components:NSCalendarUnitDay fromDate:newDate toDate:today options:0];
         if (cmps.day >= 180) {
-            [ZDNetwork  postBabyInfoWithBirthday:self.BtnBirthday.titleLabel.text nation:nation allergy:@"" CallBack:^(RspState * rsp) {
+            [ZDNetwork  postBabyInfoWithBirthday:self.BtnBirthday.titleLabel.text nation:nation allergy:self.babyName.text CallBack:^(RspState * rsp) {
+                
                 if (rsp.rspCode == 0) {
                     
                 }
@@ -141,9 +142,10 @@
         self.edgesForExtendedLayout = NO;
         self.navigationController.navigationBar.opaque = YES;
     }
+    self.babyName.delegate = self;
     self.title = @"宝宝基本信息";
     UIImage *image = self.downImage;
-    ZDChooseButton *BtnBirthday = [[ZDChooseButton alloc]initWithFrame:CGRectMake(50, 7, self.birthdayView.width - 15 , 30)];
+    ZDChooseButton *BtnBirthday = [[ZDChooseButton alloc]initWithFrame:CGRectMake(50, 7, [UIScreen mainScreen].bounds.size.width - 100 , 30)];
     [BtnBirthday setImage:image forState:UIControlStateNormal];
     [BtnBirthday setTitle:@"请选择宝宝出生日期" forState:UIControlStateNormal];
     [BtnBirthday addTarget:self action:@selector(birthdayBtnOnClick:) forControlEvents:UIControlEventTouchUpInside];
@@ -156,17 +158,19 @@
     [self.birthdayView addSubview:imagess];
 //    jibenxinxi-riqi
 //    resizableImageNamed
-    ZDChooseButton *BtnNation = [[ZDChooseButton alloc]initWithFrame:CGRectMake(50, 7, self.nation.width - 15, 30)];
+    ZDChooseButton *BtnNation = [[ZDChooseButton alloc]initWithFrame:CGRectMake(50, 7, [UIScreen mainScreen].bounds.size.width - 100, 30)];
     [BtnNation setImage:image forState:UIControlStateNormal];
     [BtnNation setTitle:@"请选择宝宝民族" forState:UIControlStateNormal];
     [BtnNation addTarget:self action:@selector(nationBtnOnClick:) forControlEvents:UIControlEventTouchUpInside];
     BtnNation.titleLabel.font = [UIFont fontWithName:@"MicrosoftYaHei" size:14];
     [self.nation addSubview:BtnNation];
     self.BtnNation = BtnNation;
+    
 //    NSLog(@"%f",self.birIcon.frame.origin.x);
 //        NSLog(@"%f",self.birIcon.frame.origin.y);
 //        NSLog(@"%f",self.birIcon.width);
 //        NSLog(@"%f",self.birIcon.height);
+    
     UIImage *images = [UIImage imageNamed:@"textF.png"];
     self.nameView.backgroundColor = [UIColor colorWithPatternImage:[images stretchableImageWithLeftCapWidth:0.5 topCapHeight:0.5]];
     self.birthdayView.backgroundColor = [UIColor colorWithPatternImage:[images stretchableImageWithLeftCapWidth:0.8 topCapHeight:0.8]];
@@ -179,7 +183,7 @@
 //    [BtnAllergy setTitle:@"请选择父母过敏食材" forState:UIControlStateNormal];
 //    [BtnAllergy addTarget:self action:@selector(allergyBtnOnClick:) forControlEvents:UIControlEventTouchUpInside];
 //    [self.userView addSubview:BtnAllergy];
-//    self.BtnAllergy = BtnAllergy;
+//    self.BtnAllergy = BtnAllergy;       
 //    
 //    self.navigationItem.leftBarButtonItem = NULL;
 //    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]init];
@@ -188,6 +192,19 @@
 //    汉族、回族、维吾尔族、哈萨克族、乌兹别克族、塔吉克族、塔塔尔族、柯尔克孜族、撒拉族、东乡族、保安族、阿昌族、白族 、布朗族 、布依族 、朝鲜族、达斡尔族、傣族、德昂族、侗族、独龙族、鄂伦春族 、俄罗斯族、鄂温克族、高山族、仡佬族、哈尼族、赫哲族、基诺族、京族、景颇族、拉祜族、黎族、傈僳族、珞巴族、满族、毛南族、门巴族、蒙古族、苗族、仫佬族、纳西族、怒族、普米族、羌族、畲族、水族、土族、土家族、佤族、锡伯族 、瑶族、彝族、裕固族、藏族、壮族
     
     
+}
+- (void)textFieldDidEndEditing:(UITextField *)textField{
+    NSCharacterSet *cs;
+    cs = [[NSCharacterSet characterSetWithCharactersInString:kAlphaNum]invertedSet];
+    
+    NSString *filtered = [[textField.text componentsSeparatedByCharactersInSet:cs]componentsJoinedByString:@""];
+    
+    BOOL cantChange = [textField.text isEqualToString:filtered];
+    if (cantChange) {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"用户名非法！" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alert show];
+        self.babyName.text = nil;
+    }
 }
 
 #pragma mark - ZDDatePickerViewDelegate
@@ -201,7 +218,6 @@
     self.datePickerView.y = self.view.height - self.datePickerView.height;
     [UIView animateWithDuration:0.25 animations:^{
         self.datePickerView.y = self.view.height;
-        
     } completion:^(BOOL finished) {
         [self.datePickerView removeFromSuperview];
     }];
@@ -241,6 +257,17 @@
     }
 }
 
+
+//-(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+//    NSCharacterSet *cs;
+//    cs = [[NSCharacterSet characterSetWithCharactersInString:kAlphaNum]invertedSet];
+//    
+//    NSString *filtered = [[string componentsSeparatedByCharactersInSet:cs]componentsJoinedByString:@""];
+//    
+//    BOOL cantChange = [string isEqualToString:filtered];
+//    
+//    return !cantChange; 
+//}
 - (void)nationBtnOnClick:(ZDChooseButton *)titleBtn
 {
     // 1.取出按钮中的图片判断当前的图片是向上还是向下

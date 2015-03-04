@@ -18,6 +18,10 @@
 #import "viewCell.h"
 #import <QuartzCore/QuartzCore.h>
 #import "ZDMoreView.h"
+#import "ZDAnQuanController.h"
+#import "ZDGuoMinController.h"
+#import "ZDJuJueController.h"
+#import "ZDWeiChangShiController.h"
 
 @interface ZDBankViewController () <SCHCircleViewDataSource,SCHCircleViewDelegate,ZDMoreViewDelegate>
 //,UIImagePickerControllerDelegate,UINavigationControllerDelegate
@@ -223,16 +227,16 @@
     if(self.circle_view.is_single_tap_animation){return ;}
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.58 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         if (index == 0) {
-            ZDAnQuanViewController *anquan = [[ZDAnQuanViewController alloc]init];
+            ZDAnQuanController *anquan = [[ZDAnQuanController alloc]init];
             [self.navigationController pushViewController:anquan animated:YES];
         }else if (index == 1){
-            ZDGuoMinViewController *guomin = [[ZDGuoMinViewController alloc]init];
+            ZDGuoMinController *guomin = [[ZDGuoMinController alloc]init];
             [self.navigationController pushViewController:guomin animated:YES];
         }else if (index == 2){
-            ZDJuJueViewController *jujue = [[ZDJuJueViewController alloc]init];
+            ZDJuJueController *jujue = [[ZDJuJueController alloc]init];
             [self.navigationController pushViewController:jujue animated:YES];
         }else if (index == 3){
-            ZDWeiChangShiViewController *weichangshi = [[ZDWeiChangShiViewController alloc]init];
+            ZDWeiChangShiController *weichangshi = [[ZDWeiChangShiController alloc]init];
             [self.navigationController pushViewController:weichangshi animated:YES];
         }else if (index == 4){
             ZDZhouViewController *zhou = [[ZDZhouViewController alloc]init];

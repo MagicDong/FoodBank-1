@@ -13,11 +13,19 @@
 
 @interface CZProductCell()
 @property (weak, nonatomic) IBOutlet UIImageView *iconView;
+@property (weak, nonatomic) IBOutlet UIView *imageView;
 @property (weak, nonatomic) IBOutlet UILabel *title;
 @end
 
 @implementation CZProductCell
-
+- (void)awakeFromNib{
+//    CALayer *layer = [self.iconView layer];
+//    layer.borderColor = [UIColor lightTextColor].CGColor;
+//    layer.borderWidth = 1.0f;
+    self.iconView.layer.cornerRadius = 3;
+    self.iconView.layer.masksToBounds = YES;
+//    [self.imageView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"shicaikuang"]]];
+}
 // 用模型设置UI
 - (void)setProduct:(CZProduct *)product
 {
@@ -29,6 +37,10 @@
     // 设置圆角半径
     self.iconView.layer.cornerRadius = 8;
     self.iconView.layer.masksToBounds = YES;
+    
+    CALayer *layer = [self.iconView layer];
+    layer.borderColor = [UIColor lightGrayColor].CGColor;
+    layer.borderWidth = 1.0f;
     
     self.title.text = product.title;
     

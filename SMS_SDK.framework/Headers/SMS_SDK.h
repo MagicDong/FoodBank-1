@@ -2,8 +2,8 @@
 //  SMS_SDK.h
 //  SMS_SDKDemo
 //
-//  Created by 刘靖煌 on 14-8-28.
-//  Copyright (c) 2014年 掌淘科技. All rights reserved.
+//  Created by 严军 on 14-8-28.
+//  Copyright (c) 2014年 严军. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -16,7 +16,6 @@
  */
 @interface SMS_SDK : NSObject <MFMessageComposeViewControllerDelegate>
 
-
 /**
  * @brief 注册应用，此方法在应用启动时调用一次并且只能在主线程调用(The registration application, this method is called during application startup time and only in the main thread calls)
  * @param appKey ,应用key,在shareSDK官网中注册的应用Key(Application of key, application of Key registered in the official website of shareSDK)
@@ -24,31 +23,39 @@
  */
 +(void)registerApp:(NSString*)appKey withSecret:(NSString*)appSecret;
 
-
-#pragma mark - 获取appKey、appSecret、addressBook
 /**
  * @brief 获取appkey(Access to appkey)
+ * @return 返回appkey(Returns appkey)
  */
 +(NSString*)appKey;
 
 /**
  * @brief 获取appsecret(Access to appsecret)
+ * @return 返回appsecret(Returns to appsecret)
  */
 +(NSString*)appSecret;
 
 /**
- * @brief 获取通讯录数据(Gets the addressBook list data)
+ * @brief 获取通讯录数据(Gets the mail list data)
  * @return 返回的数组里面存储的数据类型是SMS_AddressBook(The returned array inside the storage data type is SMS_AddressBook)
  */
 +(NSMutableArray*)addressBook;
 
-
-#pragma mark - 获取支持区号、获取验证码和提交验证码
 /**
- * @brief 请求所支持的区号(Request support code)
+ * @brief 发送短信(Send text messages)
+ * @param 要发送短信的号码(Receive SMS mobile phone number)
+ * @param 要发送的信息(Information to be transmitted)
+ */
++(void)sendSMS:(NSString*)tel AndMessage:(NSString*)msg;
+
+
+/**
+ * @brief 向服务端请求获取通讯录好友信息(To obtain the mail list server request information friends)
+ * @param 调用参数 默认填choose=1(The calling parameter default fill choose=1)
  * @param 请求结果回调block(Results the callback request block)
  */
-+(void)getZone:(GetZoneBlock)result;
++(void)getAppContactFriends:(int)choose
+                     result:(GetAppContactFriendsBlock)result;
 
 /**
  * @brief 获取验证码(Gets the verification code)
@@ -68,33 +75,20 @@
 +(void)commitVerifyCode:(NSString *)code
                  result:(CommitVerifyCodeBlock)result;
 
-
-#pragma mark - 是否启用通讯录好友功能、提交用户资料、请求通讯好友信息
 /**
- * @brief 是否启用通讯录好友功能(Whether to enable the mail list friend function)
- * @param YES 代表启用 NO 代表不启用 默认为启用(YES is enabled NO is not enabled Is enabled by default)
+ * @brief 请求所支持的区号(Request support code)
+ * @param 请求结果回调block(Results the callback request block)
  */
-+(void)enableAppContactFriends:(BOOL)state;
++(void)getZone:(GetZoneBlock)result;
 
 /**
- * @brief 提交用户资料(Submit user data)
+ * @brief 提交用户资料(Submitted user data)
  * @param 用户信息(User information)
  * @param 请求结果回调block(Results the callback request block)
  */
 +(void)submitUserInfo:(SMS_UserInfo*)user
                result:(SubmitUserInfoBlock)result;
 
-/**
- * @brief 向服务端请求获取通讯录好友信息(To obtain the mail list server request information friends)
- * @param 调用参数 默认填choose=1(The calling parameter default fill choose=1)
- * @param 请求结果回调block(Results the callback request block)
- */
-+(void)getAppContactFriends:(int)choose
-                     result:(GetAppContactFriendsBlock)result;
-
-
-
-#pragma mark - 设置最新好友条数、显示最新好友条数
 /**
  * @brief 设置最近新好友条数(The most recent set of the number of new friends)
  * @param 好友条数(The number of friends)
@@ -107,14 +101,10 @@
  */
 +(void)showFriendsBadge:(ShowNewFriendsCountBlock)result;
 
-
-#pragma mark - 发送短信
 /**
- * @brief 发送短信(Send text messages)
- * @param 要发送短信的号码(Receive SMS mobile phone number)
- * @param 要发送的信息(Information to be transmitted)
+ * @brief 是否启用通讯录好友功能(Whether to enable the mail list friend function)
+ * @param YES 代表启用 NO 代表不启用 默认为启用(YES is enabled NO is not enabled Is enabled by default)
  */
-+(void)sendSMS:(NSString*)tel AndMessage:(NSString*)msg;
-
++(void)enableAppContactFriends:(BOOL)state;
 
 @end

@@ -10,7 +10,7 @@
 #import "AFNetworking.h"
 #import "RspState.h"
 #import <CommonCrypto/CommonDigest.h>
-#import <SMS_SDK/SMS_SDK.h>
+//#import <SMS_SDK/SMS_SDK.h>
 #import "MJExtension.h"
 #import "ZDFoodCategory.h"
 #import "ZDNewFood.h"
@@ -213,7 +213,7 @@
 //    NSLog(@"%@",strUrl);
     NSDictionary *para =@{@"birthday":strUrl,
                           @"nation":nation,
-                          @"allergy":allergy
+                          @"allergy":allergy   
                           };
 //    NSLog(@"%@,,%@,,,%@",birthday,nation,allergy);
     //  1汉族   3  回族    11 满族    0其他
@@ -292,6 +292,64 @@
     }
 }
 
+
+/* 7、获取四库未尝试库 */
++ (void)getSiKuCategory:(NSString *)str  Callback:(void(^)(RspState *,NSArray *))callback
+{
+    //    /mobile/getUserTryingMaterial2.do;jsessionid=
+    ZDBaby *baby =  [ZDBabyTool sharedZDBabyTool].account;
+    NSString *jessionid = baby.jsessionid;
+    if (jessionid == nil) {
+        return;
+    }else{
+        NSDictionary *para =@{@"tp":str};
+        NSString *urlStr = [NSString stringWithFormat:@"%@/mobile/getUserMaterialLib.do;jsessionid=%@", kBaseURL, jessionid];
+        
+        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+        manager.requestSerializer.timeoutInterval = kTimeout;
+        
+        //        manager.responseSerializer = @"text/json";
+        // 1.1 修改请求的数据格式 JSON
+        //        manager.requestSerializer = [AFJSONRequestSerializer serializer];
+        // 1.2 修改响应的数据格式 二进制的数据
+        //        manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+        //        manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/json"];
+        //
+        //      [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", nil];
+        
+        [manager GET:urlStr parameters:para  success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            [self _operationLog:operation];
+            
+            NSDictionary *rspDict = responseObject;
+            
+            RspState *rsp = [[RspState alloc]initWithDict:rspDict];
+            //        {"foodGenre":"谷类","foodGenreList":[["1","面粉","面粉","谷类"],["8","婴幼儿面","面粉","谷类"]
+            NSMutableArray *foodGenreArray = nil;
+            if(rsp.rspCode == 0)
+            {
+                //            "foodGenre":"谷类","foodGenreList"
+                NSArray *rspList = rspDict[@"dataList"];
+                foodGenreArray = [NSMutableArray array];
+                for(NSDictionary *foodGenre in rspList)
+                {
+                    ZDFoodCategory *foodCategory = [ZDFoodCategory initWithDict:foodGenre];
+                    [foodGenreArray addObject:foodCategory];
+                }
+            }
+            //            ZDLog(@"..,.,.,.,.%d,",foodGenreArray.count);
+            //            [self _netRspProcess:rsp];
+            callback(rsp,foodGenreArray);
+            
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            [self _operationLog:operation];
+            
+            RspState *rsp = [RspState rspStateNetError];
+            
+            callback(rsp,nil);
+        }];
+    }
+}
+
 /* 8、提交宝宝勾选个人四库信息 */
 + (void)postBabySiKuInfoWithMids:(NSArray *)mids CallBack:(void (^)(RspState *))callback;
 {
@@ -305,7 +363,8 @@
 //        [NSCharacterSet characterSetWithCharactersInString", "]//把字符串转化为字符集合
 //        -------拼接
         NSString * str = [mids componentsJoinedByString:@","];
-        NSLog(@"str ==  %@",str);
+//        NSLog(@"str ==  %@",str);
+        
 //        NSString *str = @"";
 //        NSMutableString *midsStr = [[NSMutableString alloc]initWithString:@""];
 //        for (int i = 0; i < mids.count; i++ ) {
@@ -462,8 +521,16 @@
                 NSArray *rspList = rspDict[@"dataList"];
                 for(NSDictionary *dict in rspList)
                 {
-                    ZDTryRecord *tryRecord = [ZDTryRecord initWithDict:dict];
-                    [departmentList addObject:tryRecord];
+                    if ([dict isEqual:[NSNull null]]) {
+                        [departmentList addObject:@""];
+                    }else if ([dict isKindOfClass:[NSNull class]]){
+                        [departmentList addObject:@""];
+                    }else if (dict==nil){
+                        [departmentList addObject:@""];
+                    }else{
+                        ZDTryRecord *tryRecord = [ZDTryRecord initWithDict:dict];
+                        [departmentList addObject:tryRecord];
+                    }
                 }
             }
             
@@ -478,7 +545,21 @@
         }];
     }
 }
-
+-(BOOL)isNulls:(id)object
+{
+    // 判断是否为空串
+    if ([object isEqual:[NSNull null]]) {
+        return NO;
+    }
+    else if ([object isKindOfClass:[NSNull class]])
+    {
+        return NO;
+    }
+    else if (object==nil){
+        return NO;
+    }
+    return YES;
+}
 /* 13、提交尝试结果 */
 + (void)postTryResultTryState:(NSString *)tryState CallBack:(void (^)(RspState *))callback
 {
@@ -512,8 +593,7 @@
 }
 
 /* 14、获取周总结 */
-+ (void)getZhouCallback:(void (^)(RspState *))callback
-{
++ (void)getZhouCallback:(void (^)(RspState *,NSDictionary *))callback{
 //    /mobile/getWeekUserLibStat.do;jsessionid=
     ZDBaby *baby =  [ZDBabyTool sharedZDBabyTool].account;
     NSString *jessionid = baby.jsessionid;
@@ -529,22 +609,21 @@
             
             NSDictionary *rspDict = responseObject;
             RspState *rsp = [[RspState alloc]initWithDict:rspDict];
+//            NSLog(@"====%@",rspDict);
             if(rsp.rspCode == 0)
             {
                 
             }
-            callback(rsp);
+            callback(rsp,rspDict);
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             RspState *rsp = [RspState rspStateNetError];
-            callback(rsp);
+            callback(rsp,nil);
         }];
     }
 }
 
 /* 15、获取月总结 */
-+ (void)getYueCallback:(void (^)(RspState *))callback
-{
-    
++ (void)getYueCallback:(void (^)(RspState *,NSDictionary *))callback{
 //    /mobile/getMonthUserLibStat.do;jsessionid=
     ZDBaby *baby =  [ZDBabyTool sharedZDBabyTool].account;
     NSString *jessionid = baby.jsessionid;
@@ -560,14 +639,15 @@
             
             NSDictionary *rspDict = responseObject;
             RspState *rsp = [[RspState alloc]initWithDict:rspDict];
+//            NSLog(@"=====%@",rspDict);
             if(rsp.rspCode == 0)
             {
                 
             }
-            callback(rsp);
+            callback(rsp,rspDict);
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             RspState *rsp = [RspState rspStateNetError];
-            callback(rsp);
+            callback(rsp,nil);
         }];
     }
 }
@@ -628,7 +708,36 @@
         }];
     }
 }
-///mobile/getTryingMaterial.do;jsessionid=
+//  /mobile/getMaterialById.do;jsessionid=
+/* 18、根据id获取食材信息 */
++ (void)getInfoWithId:(NSString *)mid CallBack:(void (^)(RspState *,NSDictionary *))callback{
+    ZDBaby *baby =  [ZDBabyTool sharedZDBabyTool].account;
+    NSString *jessionid = baby.jsessionid;
+    if (jessionid == nil) {
+        return;
+    }else{
+        NSString *urlStr = [NSString stringWithFormat:@"%@/mobile/getMaterialById.do;jsessionid=%@", kBaseURL,jessionid];
+        NSDictionary *para =@{@"mid":mid};
+        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+        manager.requestSerializer.timeoutInterval = kTimeout;
+        [manager GET:urlStr parameters:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            [self _operationLog:operation];
+            
+            NSDictionary *rspDict = responseObject;
+            RspState *rsp = [[RspState alloc]initWithDict:rspDict];
+            NSDictionary *dict = rspDict[@"material"];
+            if(rsp.rspCode == 0)
+            {
+                
+            }
+            callback(rsp,dict);
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            RspState *rsp = [RspState rspStateNetError];
+            callback(rsp,nil);
+        }];
+    }
+}
+
 
 #pragma mark ------ private function
 + (void) netRspProcess:(RspState *)rsp

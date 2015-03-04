@@ -15,9 +15,12 @@
     self = [super initWithFrame:frame];
     if (self) {
         [self setBackgroundImage:[UIImage resizableImageNamed:@"yuanxin"] forState:UIControlStateNormal];
-        self.titleLabel.font = [UIFont fontWithName:@"MicrosoftYaHei" size:(10)];
-        self.titleLabel.textColor = ZDColor(53, 160, 58);
+//        self.titleLabel.font = [UIFont fontWithName:@"MicrosoftYaHei" size:(10)];
+        self.titleLabel.font = [UIFont systemFontOfSize:13];
+//        UIColor *color = [UIColor colorWithRed:53.0f green:160.0f blue:57.0f alpha:1.0f];
+        [self setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
         self.size = self.currentBackgroundImage.size;
+        self.hidden = YES;
         
     }
     return self;
@@ -25,9 +28,10 @@
 
 - (void)setBadgeValue:(NSString *)badgeValue
 {
+//    NSLog(@"====%@",badgeValue);
     if (badgeValue.intValue) {
         // 有未读消息
-        self.hidden = NO;
+//        self.hidden = NO;
         
         NSString *value = nil;
         if (badgeValue.intValue >= 100) {

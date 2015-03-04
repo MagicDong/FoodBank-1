@@ -21,7 +21,7 @@
     self = [super init];
     if (self) {
         _mname = dict[@"mname"];
-        _practice = dict[@"practice"];
+        _zzgc = dict[@"zzgc"];
         _pgtpid = dict[@"pgtpid"];
         _introduce = dict[@"introduce"];
         _mid = dict[@"mid"];

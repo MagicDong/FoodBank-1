@@ -49,6 +49,12 @@ int timerCount = 99;
         self.navigationController.navigationBar.opaque=YES;
     }
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemImage:@"fanhuitubiao" highlightedImage:@"fanhuitubiao" target:self action:@selector(back)];
+    
+    //    APPKEY:  47f01de13458        AppSecret：   ec44a5b1ff4cb948cb16c1a0b1655b23
+//    NSString *appKey = @"47f01de13458";
+//    NSString *appSecret = @"ec44a5b1ff4cb948cb16c1a0b1655b23";
+//    [SMS_SDK  registerApp:appKey withSecret:appSecret];
+    
 //    self.yanzheng.layer.borderWidth = 1;
 //    UIColor *color = ZDColor(114, 208, 96);
 //    self.yanzheng.layer.borderColor = [color CGColor];
@@ -111,8 +117,7 @@ int timerCount = 99;
 
 - (IBAction)huoquyanzheng:(UIButton *)sender {
     
-//    if ([self isValidateMobile:self.userName.text]) {
-    if ((1)) {
+    if ([self isValidateMobile:self.userName.text]) {
         self.huoquyanzheng.enabled = NO;
         [MBProgressHUD showSuccess:@"获取验证码成功"];
 //        [SMS_SDK getVerifyCodeByPhoneNumber:self.userName.text AndZone:@"86" result:^(enum SMS_GetVerifyCodeResponseState state) {
@@ -171,8 +176,8 @@ int timerCount = 99;
             });
         }
     }];
-
-    //    if (self.password.text.length >= 6  && ([self.password.text isEqualToString:self.password2.text]) && self.password.text.length < 16) {
+    
+//    if (self.password.text.length >= 6  && ([self.password.text isEqualToString:self.password2.text]) && self.password.text.length < 16) {
 //        [SMS_SDK commitVerifyCode:self.yanzheng.text result:^(enum SMS_ResponseState state) {
 //            if (state == SMS_ResponseStateFail) {
 //                [MBProgressHUD showError:@"验证码有误！"];

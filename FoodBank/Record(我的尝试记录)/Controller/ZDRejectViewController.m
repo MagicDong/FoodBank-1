@@ -12,8 +12,9 @@
 #import "UIColor+HBVHarmonies.h"
 #import "ZDKnowTableViewController.h"
 #import "ZDNetwork.h"
+#import "MBProgressHUD+ZD.h"
 
-@interface ZDRejectViewController (){
+@interface ZDRejectViewController ()<UIAlertViewDelegate>{
     __weak IBOutlet LBorderView *_borderView1;
 }
 @property (weak, nonatomic) IBOutlet HBVLinkedTextView *jianjie;
@@ -214,15 +215,40 @@
 }
 
 - (IBAction)isOK:(UIButton *)sender {
-    [ZDNetwork postTryResultTryState:@"3" CallBack:^(RspState *rsp) {
-        if (rsp.rspCode == 0) {
-            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"提交尝试结果成功！" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-            [alert show];
-        }else{
-            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"错误！" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-            [alert show];
-        }
-    }];
+    
+    
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"确认要提交尝试结果吗？" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+    [alert show];
+}
+
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    switch (buttonIndex) {
+        case 0:
+            break;
+            
+        case 1:
+            [MBProgressHUD showMessage:@"提交尝试"];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.40 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [ZDNetwork postTryResultTryState:@"2" CallBack:^(RspState *rsp) {
+                    if (rsp.rspCode == 0) {
+                        [MBProgressHUD hideHUD];
+                        [MBProgressHUD showMessage:@"提交尝试结果成功！"];
+                        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.60 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                            [MBProgressHUD hideHUD];
+                        });
+                    }else{
+                        [MBProgressHUD hideHUD];
+                        [MBProgressHUD showError:@"提交尝试结果失败！"];
+                        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.68 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                            [MBProgressHUD hideHUD];
+                        });
+                        return;
+                    }
+                }];
+            });
+            break;
+    }
 }
 
 

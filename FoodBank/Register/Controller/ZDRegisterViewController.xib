@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -39,10 +40,14 @@
                             <rect key="frame" x="0.0" y="0.0" width="280" height="46"/>
                             <rect key="contentStretch" x="0.10000000000000001" y="0.10000000000000001" width="0.5" height="1"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="denglu-shouji" translatesAutoresizingMaskIntoConstraints="NO" id="9j6-aX-L2m">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="denglu-shouji" translatesAutoresizingMaskIntoConstraints="NO" id="9j6-aX-L2m">
                             <rect key="frame" x="5" y="3" width="30" height="36"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="36" id="T3x-di-0qx"/>
+                                <constraint firstAttribute="width" constant="30" id="lVh-w6-bVV"/>
+                            </constraints>
                         </imageView>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入手机号码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QKa-l0-TPa" userLabel="账号" customClass="ZDSearchBar">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入手机号码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QKa-l0-TPa" userLabel="账号" customClass="ZDSearchBar">
                             <rect key="frame" x="42" y="6" width="218" height="30"/>
                             <fontDescription key="fontDescription" name="MicrosoftYaHei" family="Microsoft YaHei" pointSize="14"/>
                             <textInputTraits key="textInputTraits" spellCheckingType="no" keyboardType="numberPad" returnKeyType="next"/>
@@ -51,8 +56,14 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="kLZ-ek-oFe" secondAttribute="bottom" id="4xr-wN-n5a"/>
+                        <constraint firstItem="9j6-aX-L2m" firstAttribute="top" secondItem="VqW-4M-J51" secondAttribute="top" constant="3" id="8HH-H3-bvy"/>
+                        <constraint firstItem="QKa-l0-TPa" firstAttribute="top" secondItem="VqW-4M-J51" secondAttribute="top" constant="6" id="DCk-fC-k0M"/>
+                        <constraint firstAttribute="bottom" secondItem="QKa-l0-TPa" secondAttribute="bottom" constant="10" id="Y6i-fD-JgK"/>
                         <constraint firstAttribute="height" constant="46" id="YzP-Vx-aRe"/>
+                        <constraint firstAttribute="trailing" secondItem="QKa-l0-TPa" secondAttribute="trailing" constant="20" id="fKQ-Zt-sYg"/>
                         <constraint firstItem="kLZ-ek-oFe" firstAttribute="top" secondItem="VqW-4M-J51" secondAttribute="top" id="g0Q-94-G4H"/>
+                        <constraint firstItem="QKa-l0-TPa" firstAttribute="leading" secondItem="9j6-aX-L2m" secondAttribute="trailing" constant="7" id="i7K-0l-Spa"/>
+                        <constraint firstItem="9j6-aX-L2m" firstAttribute="leading" secondItem="VqW-4M-J51" secondAttribute="leading" constant="5" id="jBK-H0-ojl"/>
                         <constraint firstAttribute="trailing" secondItem="kLZ-ek-oFe" secondAttribute="trailing" id="rza-MB-qPY"/>
                         <constraint firstItem="kLZ-ek-oFe" firstAttribute="leading" secondItem="VqW-4M-J51" secondAttribute="leading" id="w37-CD-wsj"/>
                     </constraints>
@@ -130,10 +141,14 @@
                             <rect key="frame" x="0.0" y="0.0" width="280" height="45"/>
                             <rect key="contentStretch" x="0.10000000000000001" y="0.10000000000000001" width="0.5" height="1"/>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="denglu-mimatupian" translatesAutoresizingMaskIntoConstraints="NO" id="s9o-hq-qu9">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="denglu-mimatupian" translatesAutoresizingMaskIntoConstraints="NO" id="s9o-hq-qu9">
                             <rect key="frame" x="5" y="3" width="30" height="36"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="30" id="EUR-WG-b1s"/>
+                                <constraint firstAttribute="height" constant="36" id="Jb1-SE-K6Y"/>
+                            </constraints>
                         </imageView>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Ie-dM-IpY" userLabel="密码" customClass="ZDSearchBar">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Ie-dM-IpY" userLabel="密码" customClass="ZDSearchBar">
                             <rect key="frame" x="42" y="6" width="218" height="30"/>
                             <fontDescription key="fontDescription" name="MicrosoftYaHei" family="Microsoft YaHei" pointSize="14"/>
                             <textInputTraits key="textInputTraits" returnKeyType="join" secureTextEntry="YES"/>
@@ -142,10 +157,16 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="7LV-Zu-kkX" firstAttribute="top" secondItem="b6K-gv-BQl" secondAttribute="top" id="AZp-y4-lzL"/>
+                        <constraint firstItem="1Ie-dM-IpY" firstAttribute="leading" secondItem="s9o-hq-qu9" secondAttribute="trailing" constant="7" id="B9w-y5-wwn"/>
+                        <constraint firstAttribute="trailing" secondItem="1Ie-dM-IpY" secondAttribute="trailing" constant="20" id="Gzv-mS-tXG"/>
+                        <constraint firstItem="s9o-hq-qu9" firstAttribute="top" secondItem="b6K-gv-BQl" secondAttribute="top" constant="3" id="NYG-5K-IuW"/>
                         <constraint firstAttribute="height" constant="45" id="TBw-UH-vmM"/>
+                        <constraint firstAttribute="bottom" secondItem="1Ie-dM-IpY" secondAttribute="bottom" constant="9" id="cPY-bo-nPG"/>
+                        <constraint firstItem="1Ie-dM-IpY" firstAttribute="top" secondItem="b6K-gv-BQl" secondAttribute="top" constant="6" id="e2R-Lk-J4n"/>
                         <constraint firstItem="7LV-Zu-kkX" firstAttribute="leading" secondItem="b6K-gv-BQl" secondAttribute="leading" id="iAD-6g-y5J"/>
                         <constraint firstAttribute="bottom" secondItem="7LV-Zu-kkX" secondAttribute="bottom" id="mzb-ym-i4R"/>
                         <constraint firstAttribute="trailing" secondItem="7LV-Zu-kkX" secondAttribute="trailing" id="qz9-Db-1Ly"/>
+                        <constraint firstItem="s9o-hq-qu9" firstAttribute="leading" secondItem="b6K-gv-BQl" secondAttribute="leading" constant="5" id="vGn-Kr-qdy"/>
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GJ9-8E-64p">

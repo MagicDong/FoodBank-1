@@ -135,11 +135,10 @@ static NSString *categoryCellID = @"categoryCell";
 - (IBAction)quanxuan:(UIButton *)sender {
 //    [self.collection cellForItemAtIndexPath:];
     for (int row=0; row<[self.dataList[self.integer] foodGenreList].count; row++) {
-        NSLog(@"%d",row);
+//        NSLog(@"%d",row);
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
         [self.collection selectItemAtIndexPath:indexPath animated:YES scrollPosition:UICollectionViewScrollPositionNone];
     }
-    
 }
 
 ////只返回可见的cell
@@ -205,7 +204,7 @@ static NSString *categoryCellID = @"categoryCell";
 // 设置行高
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 44;
+    return 58;
 }
 
 - (NSArray *)dataList{
@@ -322,7 +321,7 @@ static NSString *categoryCellID = @"categoryCell";
 
 
 - (void)chushihua{
-    self.title = @"初始化食材库";
+    self.title = @"更换尝试新食材";
     if(iOS7)
     {
         self.edgesForExtendedLayout = NO;
@@ -335,10 +334,6 @@ static NSString *categoryCellID = @"categoryCell";
     sender.selected = YES;
     self.selectedBtn = sender;
 }
-
-//- (IBAction)queding:(UIButton *)sender {
-//
-//}
 
 - (void)dealloc{
 //    ZDLog(@"四库界面销毁");

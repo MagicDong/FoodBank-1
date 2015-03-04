@@ -40,7 +40,7 @@
     //注意：分享到微信好友、微信朋友圈、微信收藏、QQ空间、QQ好友、来往好友、来往朋友圈、易信好友、易信朋友圈、Facebook、Twitter、Instagram等平台需要参考各自的集成方法
     [UMSocialSnsService presentSnsIconSheetView:self
                                          appKey:@"5417d98ffd98c5661607aed9"
-                                      shareText:@"你要分享的文字"
+                                      shareText:@"宝贝食材银行"
                                      shareImage:[UIImage imageNamed:@"icon.png"]
                                 shareToSnsNames:[NSArray arrayWithObjects:UMShareToQQ,UMShareToQzone,UMShareToSina,UMShareToTencent,UMShareToRenren,UMShareToWechatTimeline,UMShareToDouban,UMShareToSms,nil]
                                        delegate:self];

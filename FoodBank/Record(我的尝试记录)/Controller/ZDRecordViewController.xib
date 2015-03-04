@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -31,6 +32,7 @@
                 <outlet property="babyIcon" destination="Tp7-5a-0xv" id="icy-av-PCX"/>
                 <outlet property="babyName" destination="o8s-bT-3Vf" id="o8a-ow-dJt"/>
                 <outlet property="babyYue" destination="Q46-H7-Mgu" id="rYy-MV-qy1"/>
+                <outlet property="foodInfo" destination="VSq-mH-DXN" id="Fl0-0z-r4w"/>
                 <outlet property="foodName" destination="JJo-O5-Huv" id="ORP-bD-ed3"/>
                 <outlet property="guomin" destination="AOj-6k-ygg" id="06Q-tG-MAW"/>
                 <outlet property="jujue" destination="GOp-wr-y9q" id="Czk-Ki-NC9"/>
@@ -49,148 +51,9 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="宝宝姓名：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T0G-n7-KOU">
                     <rect key="frame" x="103" y="18" width="86" height="21"/>
                     <fontDescription key="fontDescription" name="MicrosoftYaHei" family="Microsoft YaHei" pointSize="16"/>
+                    <color key="textColor" red="0.39215686274509803" green="0.39215686274509803" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="icD-fK-2Ga" customClass="LBorderView">
-                    <rect key="frame" x="90" y="83" width="230" height="353"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="尝试食材：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Be2-nO-UuG">
-                            <rect key="frame" x="6" y="8" width="80" height="21"/>
-                            <fontDescription key="fontDescription" name="MicrosoftYaHei" family="Microsoft YaHei" pointSize="16"/>
-                            <color key="textColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="尝试周期： " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ObU-t9-S6d">
-                            <rect key="frame" x="6" y="40" width="80" height="21"/>
-                            <fontDescription key="fontDescription" name="MicrosoftYaHei" family="Microsoft YaHei" pointSize="16"/>
-                            <color key="textColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="今日尝试第      天" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ENi-SR-rK9">
-                            <rect key="frame" x="6" y="72" width="288" height="21"/>
-                            <fontDescription key="fontDescription" name="MicrosoftYaHei" family="Microsoft YaHei" pointSize="16"/>
-                            <color key="textColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4iG-g7-Xx2">
-                            <rect key="frame" x="135" y="315" width="69" height="26"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="69" id="mJw-bY-SSf"/>
-                                <constraint firstAttribute="height" constant="26" id="wL0-Im-4ug"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" name="MicrosoftYaHei" family="Microsoft YaHei" pointSize="15"/>
-                            <state key="normal" title="未尝试" backgroundImage="Judge2">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <state key="selected" image="radiobox-green-checked"/>
-                            <connections>
-                                <action selector="weichangshi:" destination="-1" eventType="touchUpInside" id="L5U-FU-2xt"/>
-                            </connections>
-                        </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6d-2j-49x">
-                            <rect key="frame" x="95" y="40" width="17" height="21"/>
-                            <fontDescription key="fontDescription" name="MicrosoftYaHei" family="Microsoft YaHei" pointSize="16"/>
-                            <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="天" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vg2-8x-ogQ">
-                            <rect key="frame" x="114" y="40" width="17" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                            <color key="textColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3RM-4z-dv5">
-                            <rect key="frame" x="95" y="72" width="17" height="21"/>
-                            <fontDescription key="fontDescription" name="MicrosoftYaHei" family="Microsoft YaHei" pointSize="16"/>
-                            <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GWC-Jg-Drm">
-                            <rect key="frame" x="25" y="284" width="69" height="26"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="26" id="b1U-pr-Quw"/>
-                                <constraint firstAttribute="width" constant="69" id="uDm-kR-OnG"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" name="MicrosoftYaHei" family="Microsoft YaHei" pointSize="15"/>
-                            <state key="normal" title="安全" backgroundImage="Judge2">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <state key="selected" image="radiobox-green-checked"/>
-                            <connections>
-                                <action selector="anquan:" destination="-1" eventType="touchUpInside" id="lUg-Pk-I4v"/>
-                            </connections>
-                        </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="黄瓜" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JJo-O5-Huv">
-                            <rect key="frame" x="88" y="8" width="200" height="21"/>
-                            <fontDescription key="fontDescription" name="MicrosoftYaHei" family="Microsoft YaHei" pointSize="16"/>
-                            <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请您勾选尝试完成情况" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDN-Qu-BLn">
-                            <rect key="frame" x="6" y="254" width="288" height="21"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="21" id="UkU-ao-Sp4"/>
-                                <constraint firstAttribute="width" constant="288" id="ix0-d0-sFr"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" name="MicrosoftYaHei" family="Microsoft YaHei" pointSize="16"/>
-                            <color key="textColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="食材介绍：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j03-cO-jsB">
-                            <rect key="frame" x="8" y="101" width="288" height="21"/>
-                            <fontDescription key="fontDescription" name="MicrosoftYaHei" family="Microsoft YaHei" pointSize="16"/>
-                            <color key="textColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GOp-wr-y9q">
-                            <rect key="frame" x="25" y="315" width="69" height="26"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="69" id="XdU-Dd-9t5"/>
-                                <constraint firstAttribute="height" constant="26" id="nFz-NJ-ttp"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" name="MicrosoftYaHei" family="Microsoft YaHei" pointSize="15"/>
-                            <state key="normal" title="拒绝" backgroundImage="Judge2">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <state key="selected" image="radiobox-green-checked"/>
-                            <connections>
-                                <action selector="jujue:" destination="-1" eventType="touchUpInside" id="IZG-fx-Za8"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AOj-6k-ygg">
-                            <rect key="frame" x="135" y="284" width="69" height="26"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="69" id="3Vq-rP-cPG"/>
-                                <constraint firstAttribute="height" constant="26" id="HcZ-vQ-WYp"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" name="MicrosoftYaHei" family="Microsoft YaHei" pointSize="15"/>
-                            <state key="normal" title="过敏" backgroundImage="Judge2">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <state key="selected" image="radiobox-green-checked"/>
-                            <connections>
-                                <action selector="guomin:" destination="-1" eventType="touchUpInside" id="C74-Wz-GR8"/>
-                            </connections>
-                        </button>
-                    </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstItem="GWC-Jg-Drm" firstAttribute="top" secondItem="cDN-Qu-BLn" secondAttribute="bottom" constant="9" id="Goc-yP-lv4"/>
-                        <constraint firstItem="4iG-g7-Xx2" firstAttribute="top" secondItem="AOj-6k-ygg" secondAttribute="bottom" constant="5" id="HVS-th-KDt"/>
-                        <constraint firstItem="GOp-wr-y9q" firstAttribute="top" secondItem="GWC-Jg-Drm" secondAttribute="bottom" constant="5" id="cCN-8X-JSa"/>
-                        <constraint firstItem="GOp-wr-y9q" firstAttribute="leading" secondItem="icD-fK-2Ga" secondAttribute="leading" constant="25" id="dJp-L0-PB4"/>
-                        <constraint firstAttribute="trailing" secondItem="AOj-6k-ygg" secondAttribute="trailing" constant="26" id="htK-R3-6S3"/>
-                        <constraint firstAttribute="bottom" secondItem="GOp-wr-y9q" secondAttribute="bottom" constant="12" id="hzK-nt-Lfh"/>
-                        <constraint firstItem="cDN-Qu-BLn" firstAttribute="leading" secondItem="icD-fK-2Ga" secondAttribute="leading" constant="6" id="ich-uG-Mz3"/>
-                        <constraint firstAttribute="bottom" secondItem="4iG-g7-Xx2" secondAttribute="bottom" constant="12" id="nTk-MA-lmk"/>
-                        <constraint firstAttribute="trailing" secondItem="4iG-g7-Xx2" secondAttribute="trailing" constant="26" id="nd9-L6-lNv"/>
-                        <constraint firstItem="GWC-Jg-Drm" firstAttribute="leading" secondItem="icD-fK-2Ga" secondAttribute="leading" constant="25" id="rIL-Ue-835"/>
-                    </constraints>
-                </view>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baby" translatesAutoresizingMaskIntoConstraints="NO" id="Tp7-5a-0xv">
                     <rect key="frame" x="15" y="14" width="60" height="60"/>
                     <constraints>
@@ -212,6 +75,7 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="宝宝月龄：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8qz-qw-eIS">
                     <rect key="frame" x="103" y="47" width="215" height="21"/>
                     <fontDescription key="fontDescription" name="MicrosoftYaHei" family="Microsoft YaHei" pointSize="16"/>
+                    <color key="textColor" red="0.39215686274509803" green="0.39215686274509803" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="7个月" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q46-H7-Mgu">
@@ -233,12 +97,214 @@
                         <constraint firstAttribute="height" constant="1" id="wCU-oa-Pfh"/>
                     </constraints>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ocR-eC-vPA">
+                    <rect key="frame" x="90" y="83" width="1" height="353"/>
+                    <color key="backgroundColor" red="0.66274509800000003" green="1" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="1" id="0IM-Er-7c1"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="icD-fK-2Ga" customClass="LBorderView">
+                    <rect key="frame" x="91" y="83" width="229" height="353"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="尝试食材：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Be2-nO-UuG">
+                            <rect key="frame" x="13" y="8" width="80" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="80" id="YuR-uN-aR4"/>
+                                <constraint firstAttribute="height" constant="21" id="hV9-dd-3W2"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="MicrosoftYaHei" family="Microsoft YaHei" pointSize="16"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="尝试周期： " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ObU-t9-S6d">
+                            <rect key="frame" x="13" y="40" width="80" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="FME-YT-h5e"/>
+                                <constraint firstAttribute="width" constant="80" id="ziU-f0-hfy"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="MicrosoftYaHei" family="Microsoft YaHei" pointSize="16"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="今日尝试第        天" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ENi-SR-rK9">
+                            <rect key="frame" x="13" y="73" width="288" height="22"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="22" id="2Mv-ov-5VE"/>
+                                <constraint firstAttribute="width" constant="288" id="EBK-uv-RDJ"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="MicrosoftYaHei" family="Microsoft YaHei" pointSize="16"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4iG-g7-Xx2">
+                            <rect key="frame" x="134" y="311" width="69" height="26"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="69" id="mJw-bY-SSf"/>
+                                <constraint firstAttribute="height" constant="26" id="wL0-Im-4ug"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="MicrosoftYaHei" family="Microsoft YaHei" pointSize="15"/>
+                            <state key="normal" title="未尝试" backgroundImage="Judge2">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="radiobox-green-checked"/>
+                            <connections>
+                                <action selector="weichangshi:" destination="-1" eventType="touchUpInside" id="L5U-FU-2xt"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6d-2j-49x">
+                            <rect key="frame" x="106" y="41" width="30" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="30" id="1ST-AG-YCM"/>
+                                <constraint firstAttribute="height" constant="21" id="aa4-jo-42H"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="MicrosoftYaHei" family="Microsoft YaHei" pointSize="16"/>
+                            <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="天" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vg2-8x-ogQ">
+                            <rect key="frame" x="129" y="41" width="17" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="eyx-yP-P4L"/>
+                                <constraint firstAttribute="width" constant="17" id="pW9-V6-xmZ"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GWC-Jg-Drm">
+                            <rect key="frame" x="25" y="275" width="69" height="26"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="26" id="b1U-pr-Quw"/>
+                                <constraint firstAttribute="width" constant="69" id="uDm-kR-OnG"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="MicrosoftYaHei" family="Microsoft YaHei" pointSize="15"/>
+                            <state key="normal" title="安全" backgroundImage="Judge2">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="radiobox-green-checked"/>
+                            <connections>
+                                <action selector="anquan:" destination="-1" eventType="touchUpInside" id="lUg-Pk-I4v"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="未尝试新食材" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JJo-O5-Huv">
+                            <rect key="frame" x="96" y="8" width="200" height="22"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="200" id="fIi-h2-Uub"/>
+                                <constraint firstAttribute="height" constant="21" id="ggg-3J-fNm"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="MicrosoftYaHei" family="Microsoft YaHei" pointSize="16"/>
+                            <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请您勾选尝试完成情况" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDN-Qu-BLn">
+                            <rect key="frame" x="15" y="245" width="288" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="UkU-ao-Sp4"/>
+                                <constraint firstAttribute="width" constant="288" id="ix0-d0-sFr"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="MicrosoftYaHei" family="Microsoft YaHei" pointSize="16"/>
+                            <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="食材介绍：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j03-cO-jsB">
+                            <rect key="frame" x="13" y="102" width="200" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="200" id="KiB-0Q-2zO"/>
+                                <constraint firstAttribute="height" constant="21" id="ULu-0b-3iP"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="MicrosoftYaHei" family="Microsoft YaHei" pointSize="16"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GOp-wr-y9q">
+                            <rect key="frame" x="25" y="311" width="69" height="26"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="69" id="XdU-Dd-9t5"/>
+                                <constraint firstAttribute="height" constant="26" id="nFz-NJ-ttp"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="MicrosoftYaHei" family="Microsoft YaHei" pointSize="15"/>
+                            <state key="normal" title="拒绝" backgroundImage="Judge2">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="radiobox-green-checked"/>
+                            <connections>
+                                <action selector="jujue:" destination="-1" eventType="touchUpInside" id="IZG-fx-Za8"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AOj-6k-ygg">
+                            <rect key="frame" x="134" y="275" width="69" height="26"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="69" id="3Vq-rP-cPG"/>
+                                <constraint firstAttribute="height" constant="26" id="HcZ-vQ-WYp"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="MicrosoftYaHei" family="Microsoft YaHei" pointSize="15"/>
+                            <state key="normal" title="过敏" backgroundImage="Judge2">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="radiobox-green-checked"/>
+                            <connections>
+                                <action selector="guomin:" destination="-1" eventType="touchUpInside" id="C74-Wz-GR8"/>
+                            </connections>
+                        </button>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="暂无介绍" translatesAutoresizingMaskIntoConstraints="NO" id="VSq-mH-DXN">
+                            <rect key="frame" x="13" y="127" width="208" height="115"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3RM-4z-dv5">
+                            <rect key="frame" x="106" y="74" width="30" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="30" id="5KO-0M-JdH"/>
+                                <constraint firstAttribute="height" constant="21" id="dAr-7m-dCW"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="MicrosoftYaHei" family="Microsoft YaHei" pointSize="16"/>
+                            <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="cDN-Qu-BLn" firstAttribute="top" secondItem="VSq-mH-DXN" secondAttribute="bottom" constant="3" id="1c9-li-ccb"/>
+                        <constraint firstItem="d6d-2j-49x" firstAttribute="leading" secondItem="ObU-t9-S6d" secondAttribute="trailing" constant="13" id="1dt-lm-5EY"/>
+                        <constraint firstItem="3RM-4z-dv5" firstAttribute="leading" secondItem="icD-fK-2Ga" secondAttribute="leading" constant="106" id="3vQ-pw-VJU"/>
+                        <constraint firstItem="ENi-SR-rK9" firstAttribute="top" secondItem="vg2-8x-ogQ" secondAttribute="bottom" constant="11" id="6yB-nt-DCZ"/>
+                        <constraint firstItem="ObU-t9-S6d" firstAttribute="leading" secondItem="icD-fK-2Ga" secondAttribute="leading" constant="13" id="Blm-NQ-tGY"/>
+                        <constraint firstItem="d6d-2j-49x" firstAttribute="top" secondItem="JJo-O5-Huv" secondAttribute="bottom" constant="11" id="GWR-7e-ufn"/>
+                        <constraint firstItem="GWC-Jg-Drm" firstAttribute="top" secondItem="cDN-Qu-BLn" secondAttribute="bottom" constant="9" id="Goc-yP-lv4"/>
+                        <constraint firstItem="4iG-g7-Xx2" firstAttribute="top" secondItem="AOj-6k-ygg" secondAttribute="bottom" constant="10" id="HVS-th-KDt"/>
+                        <constraint firstAttribute="trailing" secondItem="VSq-mH-DXN" secondAttribute="trailing" constant="8" id="HYz-B5-7kz"/>
+                        <constraint firstItem="ENi-SR-rK9" firstAttribute="leading" secondItem="icD-fK-2Ga" secondAttribute="leading" constant="13" id="J0Q-n7-fwj"/>
+                        <constraint firstItem="vg2-8x-ogQ" firstAttribute="top" secondItem="JJo-O5-Huv" secondAttribute="bottom" constant="11" id="N4Z-C3-bcW"/>
+                        <constraint firstItem="vg2-8x-ogQ" firstAttribute="leading" secondItem="ObU-t9-S6d" secondAttribute="trailing" constant="36" id="OGp-gZ-gSv"/>
+                        <constraint firstItem="ObU-t9-S6d" firstAttribute="top" secondItem="Be2-nO-UuG" secondAttribute="bottom" constant="11" id="YOd-J2-NMy"/>
+                        <constraint firstItem="JJo-O5-Huv" firstAttribute="leading" secondItem="Be2-nO-UuG" secondAttribute="trailing" constant="3" id="Zl8-dc-lmw"/>
+                        <constraint firstItem="GOp-wr-y9q" firstAttribute="top" secondItem="GWC-Jg-Drm" secondAttribute="bottom" constant="10" id="cCN-8X-JSa"/>
+                        <constraint firstItem="GOp-wr-y9q" firstAttribute="leading" secondItem="icD-fK-2Ga" secondAttribute="leading" constant="25" id="dJp-L0-PB4"/>
+                        <constraint firstItem="VSq-mH-DXN" firstAttribute="leading" secondItem="icD-fK-2Ga" secondAttribute="leading" constant="13" id="e8o-S8-o7K"/>
+                        <constraint firstItem="VSq-mH-DXN" firstAttribute="top" secondItem="j03-cO-jsB" secondAttribute="bottom" constant="4" id="fqA-8v-1qZ"/>
+                        <constraint firstItem="j03-cO-jsB" firstAttribute="top" secondItem="3RM-4z-dv5" secondAttribute="bottom" constant="7" id="gEU-FH-mIu"/>
+                        <constraint firstAttribute="trailing" secondItem="AOj-6k-ygg" secondAttribute="trailing" constant="26" id="htK-R3-6S3"/>
+                        <constraint firstItem="3RM-4z-dv5" firstAttribute="top" secondItem="vg2-8x-ogQ" secondAttribute="bottom" constant="12" id="hvk-Wd-E8c"/>
+                        <constraint firstAttribute="bottom" secondItem="GOp-wr-y9q" secondAttribute="bottom" constant="16" id="hzK-nt-Lfh"/>
+                        <constraint firstItem="cDN-Qu-BLn" firstAttribute="leading" secondItem="icD-fK-2Ga" secondAttribute="leading" constant="15" id="ich-uG-Mz3"/>
+                        <constraint firstItem="Be2-nO-UuG" firstAttribute="top" secondItem="icD-fK-2Ga" secondAttribute="top" constant="8" id="luj-lL-QjN"/>
+                        <constraint firstAttribute="bottom" secondItem="4iG-g7-Xx2" secondAttribute="bottom" constant="16" id="nTk-MA-lmk"/>
+                        <constraint firstAttribute="trailing" secondItem="4iG-g7-Xx2" secondAttribute="trailing" constant="26" id="nd9-L6-lNv"/>
+                        <constraint firstItem="j03-cO-jsB" firstAttribute="leading" secondItem="icD-fK-2Ga" secondAttribute="leading" constant="13" id="nde-QE-Mtb"/>
+                        <constraint firstItem="Be2-nO-UuG" firstAttribute="leading" secondItem="icD-fK-2Ga" secondAttribute="leading" constant="13" id="pEm-2l-Fk5"/>
+                        <constraint firstItem="GWC-Jg-Drm" firstAttribute="leading" secondItem="icD-fK-2Ga" secondAttribute="leading" constant="25" id="rIL-Ue-835"/>
+                        <constraint firstItem="JJo-O5-Huv" firstAttribute="top" secondItem="icD-fK-2Ga" secondAttribute="top" constant="8" id="sGJ-i3-sop"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="icD-fK-2Ga" firstAttribute="leading" secondItem="qHa-SW-7bu" secondAttribute="trailing" id="GOV-iB-n9D"/>
+                <constraint firstItem="ocR-eC-vPA" firstAttribute="leading" secondItem="qHa-SW-7bu" secondAttribute="trailing" id="9wm-Ur-0co"/>
+                <constraint firstItem="icD-fK-2Ga" firstAttribute="leading" secondItem="qHa-SW-7bu" secondAttribute="trailing" constant="1" id="GOV-iB-n9D"/>
                 <constraint firstAttribute="trailing" secondItem="icD-fK-2Ga" secondAttribute="trailing" id="GUY-Bf-e5P"/>
                 <constraint firstItem="Tp7-5a-0xv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="LCa-QJ-y3g"/>
+                <constraint firstAttribute="bottom" secondItem="ocR-eC-vPA" secondAttribute="bottom" id="O4h-VO-m8H"/>
                 <constraint firstItem="vUZ-02-Qh7" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="PSW-NL-7z9"/>
                 <constraint firstAttribute="trailing" secondItem="vUZ-02-Qh7" secondAttribute="trailing" id="QEM-aL-rg3"/>
                 <constraint firstItem="qHa-SW-7bu" firstAttribute="top" secondItem="Tp7-5a-0xv" secondAttribute="bottom" constant="9" id="SV2-sA-Mrt"/>
@@ -247,8 +313,10 @@
                 <constraint firstAttribute="bottom" secondItem="qHa-SW-7bu" secondAttribute="bottom" id="hK4-Xp-e8m"/>
                 <constraint firstItem="vUZ-02-Qh7" firstAttribute="top" secondItem="Tp7-5a-0xv" secondAttribute="bottom" constant="8" id="ikJ-yv-zYe"/>
                 <constraint firstAttribute="bottom" secondItem="icD-fK-2Ga" secondAttribute="bottom" id="kMZ-tv-Mqt"/>
+                <constraint firstItem="ocR-eC-vPA" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="83" id="lrf-cC-6HU"/>
                 <constraint firstItem="qHa-SW-7bu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="n4T-Qz-xzi"/>
                 <constraint firstItem="icD-fK-2Ga" firstAttribute="top" secondItem="vUZ-02-Qh7" secondAttribute="bottom" id="r1o-Ta-wFO"/>
+                <constraint firstItem="icD-fK-2Ga" firstAttribute="leading" secondItem="ocR-eC-vPA" secondAttribute="trailing" id="rK8-76-aVB"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>

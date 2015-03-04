@@ -11,7 +11,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="fWb-Cz-tQo">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchImage-736h.png" translatesAutoresizingMaskIntoConstraints="NO" id="fWb-Cz-tQo">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                 </imageView>
             </subviews>
@@ -28,6 +28,6 @@
         </view>
     </objects>
     <resources>
-        <image name="loginIcon.png" width="640" height="1136"/>
+        <image name="LaunchImage-736h.png" width="1242" height="2208"/>
     </resources>
 </document>

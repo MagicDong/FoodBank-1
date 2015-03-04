@@ -93,8 +93,10 @@
 //    }
     if (isOpen) {
         self.accessoryView = [[UIImageView alloc] initWithImage:self.upImage];
+        
     }else{
         self.accessoryView = [[UIImageView alloc] initWithImage:self.downImage];
+        
     }
 }
 

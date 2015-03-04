@@ -18,7 +18,16 @@
 @implementation ZDCategoryCell
 
 - (void)awakeFromNib {
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
+    self.backgroundColor = ZDColor(53, 148, 57);
+    self.category.font = [UIFont fontWithName:@"MicrosoftYaHei" size:(13)];
+    self.category.textColor = [UIColor colorWithRed:53 green:148 blue:57 alpha:1];
     
+    // 添加红色原点按钮
+    IWBadgeButton *badgeBtn = [[IWBadgeButton alloc] init];
+    [self addSubview:badgeBtn];
+    self.badgeBtn = badgeBtn;
+    badgeBtn.hidden = YES;
 }
 
 + (instancetype)categoryCell
@@ -30,16 +39,9 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        self.selectionStyle = UITableViewCellSelectionStyleNone;
-        self.backgroundColor = ZDColor(53, 148, 57);
-        self.category.font = [UIFont fontWithName:@"MicrosoftYaHei" size:(13)];
-        self.category.textColor = [UIColor colorWithRed:53 green:148 blue:57 alpha:1];
+
         
-        // 添加红色原点按钮
-        IWBadgeButton *badgeBtn = [[IWBadgeButton alloc] init];
-        [self addSubview:badgeBtn];
-        self.badgeBtn = badgeBtn;
-        badgeBtn.hidden = YES;
+
     }
     return self;
 }
@@ -49,7 +51,9 @@
     
     // 设置红色原点的位置
     self.badgeBtn.y = 0;
-    self.badgeBtn.x = self.width - self.badgeBtn.width - 5;
+    self.badgeBtn.x = self.width - self.badgeBtn.width -1;
+    self.badgeBtn.width = 25;
+    self.badgeBtn.height = 25;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -66,11 +70,17 @@
         self.backgroundColor = [UIColor whiteColor];
         self.category.textColor = ZDColor(53, 148, 57);
         self.xuanzhong.hidden = NO;
+        self.badgeBtn.hidden = YES;
     }else{
         self.backgroundColor = ZDColor(53, 148, 57);
         self.category.textColor = [UIColor whiteColor];
         self.xuanzhong.hidden = YES;
-        self.badgeBtn.hidden = NO;
+        if (self.badgeBtn.titleLabel.text.intValue) {
+            self.badgeBtn.hidden = NO;
+        }else{
+            self.badgeBtn.hidden = YES;
+        }
+
     }
     // 让self监听_item的badgeValue属性的改变
     /*
@@ -85,6 +95,24 @@
 //    NSLog(@"%ld",(long)bage);
     _badgeBtn.badgeValue = [NSString stringWithFormat:@"%d",(int)bage];
     
+//    if (bage) {
+//        // 有未读消息
+//        self.badgeBtn.hidden = NO;
+//        
+//        NSString *value = nil;
+//        if (bage >= 100) {
+//            
+//            value = @"N";
+//        }else
+//        {
+//            value = badgeValue;
+//        }
+//        [self setTitle:value forState:UIControlStateNormal];
+//        
+//    }else
+//    {
+//        self.hidden = YES;
+//    }
 //}
 }
 

@@ -10,7 +10,7 @@
 //{"mname":"芒果","practice":"","pgtpid":42,"introduce":"","mid":558}
 @interface ZDNewFood : NSObject
 @property (nonatomic , copy  ) NSString *mname;
-@property (nonatomic , copy  ) NSString *practice;
+@property (nonatomic , copy  ) NSString *zzgc;
 @property (nonatomic , copy  ) NSString *pgtpid;
 @property (nonatomic , copy  ) NSString *introduce;
 @property (nonatomic , copy  ) NSString *mid;
